@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RFdiffusion · WebGPU</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #deeceb;
+        background: #0d171c;
+        color-scheme: dark;
+      }
+      body {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 24px;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 550;
+      }
+      p {
+        color: #9bb9bf;
+        max-width: 70ch;
+        line-height: 1.5;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 28px;
+      }
+      label {
+        display: block;
+        margin: 16px 0 5px;
+        font-size: 14px;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        font: inherit;
+        padding: 10px;
+        border: 1px solid #37515c;
+        background: #15272e;
+        border-radius: 6px;
+        box-sizing: border-box;
+        color: inherit;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      #run {
+        background: #90dac8;
+        color: #10251d;
+        border: 0;
+      }
+      canvas {
+        width: 100%;
+        height: 480px;
+        border: 1px solid #29434c;
+        border-radius: 12px;
+        background: #102129;
+      }
+      progress {
+        width: 100%;
+        accent-color: #90dac8;
+      }
+      #status {
+        font:
+          13px ui-monospace,
+          monospace;
+        white-space: pre-wrap;
+        min-height: 60px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 700px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        canvas {
+          height: 350px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RFdiffusion in your browser</h1>
+    <p>
+      Original Base checkpoint. Generate a backbone with local WebGPU compute.
+      The model does not design an amino-acid sequence. Drag the structure to
+      rotate it.
+    </p>
+    <div class="layout">
+      <form id="form">
+        <label for="mode">Design mode</label
+        ><select id="mode">
+          <option value="unconditional">Unconditional</option>
+          <option value="motif">Motif scaffolding</option>
+          <option value="symmetric">Symmetric assembly</option></select
+        ><label for="precision">Weight precision</label
+        ><select id="precision">
+          <option>int8</option>
+          <option>fp16</option>
+          <option>fp32</option></select
+        ><label for="length">Total residues</label
+        ><input id="length" type="number" value="24" min="2" max="256" /><label
+          for="steps"
+          >Reverse steps (50 for the full schedule)</label
+        ><input id="steps" type="number" value="50" min="1" max="50" /><label
+          for="seed"
+          >Seed</label
+        ><input id="seed" type="number" value="1" />
+        <div id="symmetryFields" hidden>
+          <label for="symmetry">Cyclic / dihedral group</label
+          ><input id="symmetry" value="c3" />
+        </div>
+        <div id="motifFields" hidden>
+          <label for="pdb">Input PDB</label
+          ><input id="pdb" type="file" accept=".pdb,.ent" /><label for="contig"
+            >Contig</label
+          ><input id="contig" value="8/A1-4/12" />
+        </div>
+        <div class="actions">
+          <button id="run" type="submit">Generate backbone</button
+          ><button id="cancel" type="button" disabled>Cancel</button>
+        </div>
+      </form>
+      <main>
+        <canvas id="view" width="900" height="700"></canvas
+        ><label for="frame">Trajectory frame</label
+        ><input
+          id="frame"
+          type="range"
+          min="0"
+          max="0"
+          value="0"
+          disabled
+        /><progress id="progress" value="0" max="1"></progress>
+        <div id="status" role="status">
+          Ready. Exported weights must be available in ../weights/.
+        </div>
+        <div class="actions">
+          <button id="download" disabled>Download PDB</button
+          ><button id="release">Release GPU</button>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

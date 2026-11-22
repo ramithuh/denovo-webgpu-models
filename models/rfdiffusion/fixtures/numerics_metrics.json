@@ -1,0 +1,206 @@
+{
+  "cpu": {
+    "norm1": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm2": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "softmax3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm8": {
+      "relRMS": 4.163758554314847e-8,
+      "maxAbs": 4.76837158203125e-7
+    },
+    "softmax8": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm24": {
+      "relRMS": 5.0494750857549996e-8,
+      "maxAbs": 4.76837158203125e-7
+    },
+    "softmax24": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm32": {
+      "relRMS": 5.6864783946929704e-8,
+      "maxAbs": 9.5367431640625e-7
+    },
+    "softmax32": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm64": {
+      "relRMS": 7.225264108904464e-8,
+      "maxAbs": 0.0000019073486328125
+    },
+    "softmax64": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm128": {
+      "relRMS": 8.496501507253593e-8,
+      "maxAbs": 0.000003814697265625
+    },
+    "softmax128": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm256": {
+      "relRMS": 1.2084940126633654e-7,
+      "maxAbs": 0.00000476837158203125
+    },
+    "softmax256": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "sh": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "cross": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "matmul3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "group": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "softmaxAxis": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "dglSoftmax": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "quaternion": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "fma": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "scalarScale": {
+      "relRMS": 0,
+      "maxAbs": 0
+    }
+  },
+  "gpu": {
+    "norm1": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm2": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "softmax3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm8": {
+      "relRMS": 4.163758554314847e-8,
+      "maxAbs": 4.76837158203125e-7
+    },
+    "softmax8": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm24": {
+      "relRMS": 5.0494750857549996e-8,
+      "maxAbs": 4.76837158203125e-7
+    },
+    "softmax24": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm32": {
+      "relRMS": 5.6864783946929704e-8,
+      "maxAbs": 9.5367431640625e-7
+    },
+    "softmax32": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm64": {
+      "relRMS": 7.225264108904464e-8,
+      "maxAbs": 0.0000019073486328125
+    },
+    "softmax64": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm128": {
+      "relRMS": 8.496501507253593e-8,
+      "maxAbs": 0.000003814697265625
+    },
+    "softmax128": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "norm256": {
+      "relRMS": 1.2084940126633654e-7,
+      "maxAbs": 0.00000476837158203125
+    },
+    "softmax256": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "sh": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "cross": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "matmul3": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "group": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "softmaxAxis": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "dglSoftmax": {
+      "relRMS": 8.330539406910761e-41,
+      "maxAbs": 7.346839692639297e-40
+    },
+    "quaternion": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "fma": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "scalarScale": {
+      "relRMS": 0,
+      "maxAbs": 0
+    }
+  }
+}

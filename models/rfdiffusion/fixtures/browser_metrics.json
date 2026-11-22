@@ -1,0 +1,12 @@
+{
+  "offline": [
+    "cache",
+    "opfs"
+  ],
+  "safariStorageDeniedFallback": true,
+  "externalDeviceOwnership": true,
+  "workerPx0": {
+    "relRMS": 0,
+    "maxAbs": 0
+  }
+}

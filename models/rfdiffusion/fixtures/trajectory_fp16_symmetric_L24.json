@@ -1,0 +1,510 @@
+{
+  "name": "trajectory_fp16_symmetric_L24",
+  "length": 24,
+  "mode": "symmetric",
+  "precision": "fp16",
+  "noiseSeed": 444,
+  "noisePolicy": "independent draws from one seeded stream; input preparation does not reseed",
+  "binary": "../.cache/fixtures/trajectory_fp16_symmetric_L24.bin",
+  "initial": {
+    "offset": 0,
+    "length": 1008,
+    "shape": [
+      24,
+      14,
+      3
+    ]
+  },
+  "sequence": {
+    "offset": 4032,
+    "length": 24,
+    "shape": [
+      24
+    ]
+  },
+  "mask": {
+    "offset": 4128,
+    "length": 24,
+    "shape": [
+      24
+    ]
+  },
+  "steps": [
+    {
+      "t": 50,
+      "translation": {
+        "offset": 4224,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotationNoise": {
+        "offset": 4512,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotation": {
+        "offset": 4800,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "px0": {
+        "offset": 5664,
+        "length": 288,
+        "shape": [
+          24,
+          4,
+          3
+        ]
+      },
+      "xyz": {
+        "offset": 6816,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "coords": {
+        "offset": 7680,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "inputs": {
+        "msa_latent": {
+          "offset": 8544,
+          "length": 1152,
+          "shape": [
+            1,
+            1,
+            24,
+            48
+          ]
+        },
+        "msa_full": {
+          "offset": 13152,
+          "length": 600,
+          "shape": [
+            1,
+            1,
+            24,
+            25
+          ]
+        },
+        "seq": {
+          "offset": 15552,
+          "length": 528,
+          "shape": [
+            1,
+            24,
+            22
+          ]
+        },
+        "xyz": {
+          "offset": 17664,
+          "length": 216,
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "idx": {
+          "offset": 18528,
+          "length": 24,
+          "shape": [
+            1,
+            24
+          ]
+        },
+        "t": {
+          "offset": 18624,
+          "length": 1,
+          "shape": []
+        },
+        "t1d": {
+          "offset": 18628,
+          "length": 528,
+          "shape": [
+            1,
+            1,
+            24,
+            22
+          ]
+        },
+        "t2d": {
+          "offset": 20740,
+          "length": 25344,
+          "shape": [
+            1,
+            1,
+            24,
+            24,
+            44
+          ]
+        },
+        "xyz_t": {
+          "offset": 122116,
+          "length": 216,
+          "shape": [
+            1,
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "alpha_t": {
+          "offset": 122980,
+          "length": 720,
+          "shape": [
+            1,
+            1,
+            24,
+            30
+          ]
+        },
+        "motif_mask": {
+          "offset": 125860,
+          "length": 24,
+          "shape": [
+            24
+          ]
+        }
+      }
+    },
+    {
+      "t": 49,
+      "translation": {
+        "offset": 125956,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotationNoise": {
+        "offset": 126244,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotation": {
+        "offset": 126532,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "px0": {
+        "offset": 127396,
+        "length": 288,
+        "shape": [
+          24,
+          4,
+          3
+        ]
+      },
+      "xyz": {
+        "offset": 128548,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "coords": {
+        "offset": 129412,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "inputs": {
+        "msa_latent": {
+          "offset": 130276,
+          "length": 1152,
+          "shape": [
+            1,
+            1,
+            24,
+            48
+          ]
+        },
+        "msa_full": {
+          "offset": 134884,
+          "length": 600,
+          "shape": [
+            1,
+            1,
+            24,
+            25
+          ]
+        },
+        "seq": {
+          "offset": 137284,
+          "length": 528,
+          "shape": [
+            1,
+            24,
+            22
+          ]
+        },
+        "xyz": {
+          "offset": 139396,
+          "length": 216,
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "idx": {
+          "offset": 140260,
+          "length": 24,
+          "shape": [
+            1,
+            24
+          ]
+        },
+        "t": {
+          "offset": 140356,
+          "length": 1,
+          "shape": []
+        },
+        "t1d": {
+          "offset": 140360,
+          "length": 528,
+          "shape": [
+            1,
+            1,
+            24,
+            22
+          ]
+        },
+        "t2d": {
+          "offset": 142472,
+          "length": 25344,
+          "shape": [
+            1,
+            1,
+            24,
+            24,
+            44
+          ]
+        },
+        "xyz_t": {
+          "offset": 243848,
+          "length": 216,
+          "shape": [
+            1,
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "alpha_t": {
+          "offset": 244712,
+          "length": 720,
+          "shape": [
+            1,
+            1,
+            24,
+            30
+          ]
+        },
+        "motif_mask": {
+          "offset": 247592,
+          "length": 24,
+          "shape": [
+            24
+          ]
+        }
+      }
+    },
+    {
+      "t": 48,
+      "translation": {
+        "offset": 247688,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotationNoise": {
+        "offset": 247976,
+        "length": 72,
+        "shape": [
+          24,
+          3
+        ]
+      },
+      "rotation": {
+        "offset": 248264,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "px0": {
+        "offset": 249128,
+        "length": 288,
+        "shape": [
+          24,
+          4,
+          3
+        ]
+      },
+      "xyz": {
+        "offset": 250280,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "coords": {
+        "offset": 251144,
+        "length": 216,
+        "shape": [
+          24,
+          3,
+          3
+        ]
+      },
+      "inputs": {
+        "msa_latent": {
+          "offset": 252008,
+          "length": 1152,
+          "shape": [
+            1,
+            1,
+            24,
+            48
+          ]
+        },
+        "msa_full": {
+          "offset": 256616,
+          "length": 600,
+          "shape": [
+            1,
+            1,
+            24,
+            25
+          ]
+        },
+        "seq": {
+          "offset": 259016,
+          "length": 528,
+          "shape": [
+            1,
+            24,
+            22
+          ]
+        },
+        "xyz": {
+          "offset": 261128,
+          "length": 216,
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "idx": {
+          "offset": 261992,
+          "length": 24,
+          "shape": [
+            1,
+            24
+          ]
+        },
+        "t": {
+          "offset": 262088,
+          "length": 1,
+          "shape": []
+        },
+        "t1d": {
+          "offset": 262092,
+          "length": 528,
+          "shape": [
+            1,
+            1,
+            24,
+            22
+          ]
+        },
+        "t2d": {
+          "offset": 264204,
+          "length": 25344,
+          "shape": [
+            1,
+            1,
+            24,
+            24,
+            44
+          ]
+        },
+        "xyz_t": {
+          "offset": 365580,
+          "length": 216,
+          "shape": [
+            1,
+            1,
+            24,
+            3,
+            3
+          ]
+        },
+        "alpha_t": {
+          "offset": 366444,
+          "length": 720,
+          "shape": [
+            1,
+            1,
+            24,
+            30
+          ]
+        },
+        "motif_mask": {
+          "offset": 369324,
+          "length": 24,
+          "shape": [
+            24
+          ]
+        }
+      }
+    }
+  ],
+  "binary_sha256": "d2568140294f59926cbc469f262c225cd4e99882453b85286b9c0960cfc8a608",
+  "binary_byteLength": 369420
+}

@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "name": "fp32_unconditional_L24",
+      "precision": "fp32",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "fp32_unconditional_L24_selfcond",
+      "precision": "fp32",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true
+    },
+    {
+      "name": "fp32_motif_L24",
+      "precision": "fp32",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "fp32_symmetric_L24",
+      "precision": "fp32",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "fp16_unconditional_L24",
+      "precision": "fp16",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "fp16_unconditional_L24_selfcond",
+      "precision": "fp16",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true
+    },
+    {
+      "name": "fp16_motif_L24",
+      "precision": "fp16",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "fp16_symmetric_L24",
+      "precision": "fp16",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "int8_unconditional_L24",
+      "precision": "int8",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "int8_unconditional_L24_selfcond",
+      "precision": "int8",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true
+    },
+    {
+      "name": "int8_motif_L24",
+      "precision": "int8",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false
+    },
+    {
+      "name": "int8_symmetric_L24",
+      "precision": "int8",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false
+    }
+  ],
+  "trajectories": [
+    "trajectory_fp32_unconditional_L24",
+    "trajectory_fp32_motif_L24",
+    "trajectory_fp32_symmetric_L24",
+    "trajectory_fp16_unconditional_L24",
+    "trajectory_fp16_motif_L24",
+    "trajectory_fp16_symmetric_L24",
+    "trajectory_int8_unconditional_L24",
+    "trajectory_int8_motif_L24",
+    "trajectory_int8_symmetric_L24"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@denovo/rfdiffusion-webgpu",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/gpu.test.mjs test/length64.test.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.58.2"
+  },
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./worker": "./webgpu/worker.js",
+    "./structure": "./shared/structure.js"
+  },
+  "files": [
+    "shared/",
+    "webgpu/",
+    "cpu/",
+    "LICENSE",
+    "README_WEBGPU.md"
+  ]
+}

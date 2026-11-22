@@ -1,0 +1,56 @@
+[
+  {
+    "name": "fp32_unconditional_L64",
+    "traceCount": 256,
+    "worst": {
+      "name": "plddt",
+      "relRMS": 2.3366826601779983e-7,
+      "maxAbs": 8.940696716308594e-8
+    },
+    "px0": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "backbone": {
+      "relRMS": 2.2260273159592786e-8,
+      "maxAbs": 9.5367431640625e-7
+    },
+    "timingMs": 4940.699999809265
+  },
+  {
+    "name": "fp16_unconditional_L64",
+    "traceCount": 256,
+    "worst": {
+      "name": "plddt",
+      "relRMS": 2.728738119332612e-7,
+      "maxAbs": 1.1920928955078125e-7
+    },
+    "px0": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "backbone": {
+      "relRMS": 2.0938626803983533e-8,
+      "maxAbs": 9.5367431640625e-7
+    },
+    "timingMs": 2069.9000005722046
+  },
+  {
+    "name": "int8_unconditional_L64",
+    "traceCount": 256,
+    "worst": {
+      "name": "plddt",
+      "relRMS": 2.914785721405113e-7,
+      "maxAbs": 1.1920928955078125e-7
+    },
+    "px0": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "backbone": {
+      "relRMS": 2.219434847886931e-8,
+      "maxAbs": 9.5367431640625e-7
+    },
+    "timingMs": 2195.3999996185303
+  }
+]

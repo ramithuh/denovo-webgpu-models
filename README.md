@@ -15,6 +15,8 @@ Weights are sharded (≤ 25 MB per `.safetensors` file) and hosted on Hugging Fa
 | **ThermoMPNN** | [`models/thermompnn/`](models/thermompnn/README_WEBGPU.md) | Stability ΔΔG saturation scan | [`ramithuh/thermompnn-webgpu`](https://huggingface.co/ramithuh/thermompnn-webgpu) | Verified end-to-end GPU parity |
 | **AntiFold / ESM-IF1** | [`models/antifold-esmif1/`](models/antifold-esmif1/README_WEBGPU.md) | Antibody CDR & inverse folding | [`ramithuh/antifold-esmif1-webgpu`](https://huggingface.co/ramithuh/antifold-esmif1-webgpu) | Verified end-to-end GPU parity |
 | **Dyna-1** | [`models/dyna1/`](models/dyna1/README_WEBGPU.md) | Residue dynamics / flexibility prediction | [`ramithuh/dyna1-webgpu`](https://huggingface.co/ramithuh/dyna1-webgpu) | Verified end-to-end GPU parity |
+| **EvoDiff-Seq 38M** | [`models/evodiff/`](models/evodiff/README_WEBGPU.md) | Order-agnostic masked sequence diffusion (ByteNet) | Pending HF upload (`weights/oa_dm_38m/`) | Verified end-to-end GPU parity (`relRMS 9.8e-7`) |
+| **Original RFdiffusion** | [`models/rfdiffusion/`](models/rfdiffusion/README_WEBGPU.md) | SE(3) backbone, motif & symmetric diffusion (`Base_ckpt.pt`) | Pending HF upload (`weights/base/`) | Verified end-to-end GPU parity (`relRMS 0.0` N/CA/C) |
 
 *(Standalone flagship sibling repo: [`ramithuh/genie3-webgpu`](https://github.com/ramithuh/genie3-webgpu).)*
 

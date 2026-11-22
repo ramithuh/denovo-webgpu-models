@@ -1,0 +1,20 @@
+[
+  {
+    "precision": "fp32",
+    "total_bytes": 240013816,
+    "shards": 10,
+    "tensor_reload_exact": true
+  },
+  {
+    "precision": "fp16",
+    "total_bytes": 125190104,
+    "shards": 6,
+    "tensor_reload_exact": true
+  },
+  {
+    "precision": "int8",
+    "total_bytes": 69060952,
+    "shards": 3,
+    "tensor_reload_exact": true
+  }
+]

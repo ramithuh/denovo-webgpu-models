@@ -1,0 +1,119 @@
+{
+  "reference": "Direct original Base_ckpt.pt model_state_dict forward, separately executed",
+  "originalForwardMs": {
+    "('unconditional', False)": 1978.1194580718875,
+    "('unconditional', True)": 1811.1921790987253,
+    "('motif', False)": 2046.2759621441364,
+    "('symmetric', False)": 1843.1439409032464
+  },
+  "coordinates": [
+    {
+      "name": "fp32_unconditional_L24",
+      "precision": "fp32",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "name": "fp32_unconditional_L24_selfcond",
+      "precision": "fp32",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "name": "fp32_motif_L24",
+      "precision": "fp32",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "name": "fp32_symmetric_L24",
+      "precision": "fp32",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "name": "fp16_unconditional_L24",
+      "precision": "fp16",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.000242327093755643,
+      "caRmsdAngstrom": 0.002870316161426924
+    },
+    {
+      "name": "fp16_unconditional_L24_selfcond",
+      "precision": "fp16",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true,
+      "relRMS": 0.000242074570778894,
+      "caRmsdAngstrom": 0.0028343002679417904
+    },
+    {
+      "name": "fp16_motif_L24",
+      "precision": "fp16",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.0002609904320000453,
+      "caRmsdAngstrom": 0.0033717156974231617
+    },
+    {
+      "name": "fp16_symmetric_L24",
+      "precision": "fp16",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.0004808119008914971,
+      "caRmsdAngstrom": 0.002370903831650895
+    },
+    {
+      "name": "int8_unconditional_L24",
+      "precision": "int8",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.015003878941148258,
+      "caRmsdAngstrom": 0.17205912133127454
+    },
+    {
+      "name": "int8_unconditional_L24_selfcond",
+      "precision": "int8",
+      "mode": "unconditional",
+      "length": 24,
+      "selfcond": true,
+      "relRMS": 0.013591533424363098,
+      "caRmsdAngstrom": 0.15801292087812
+    },
+    {
+      "name": "int8_motif_L24",
+      "precision": "int8",
+      "mode": "motif",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.007625664672261198,
+      "caRmsdAngstrom": 0.0985460594316643
+    },
+    {
+      "name": "int8_symmetric_L24",
+      "precision": "int8",
+      "mode": "symmetric",
+      "length": 24,
+      "selfcond": false,
+      "relRMS": 0.008073137242273308,
+      "caRmsdAngstrom": 0.0404246462650649
+    }
+  ]
+}

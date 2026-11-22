@@ -1,11 +1,9 @@
 # Protein model porting references
 
-Use the [One-Shot WebGPU Model Porting Prompt](../docs/PORTING_A_MODEL.md) for all four ports. Each has early reference evidence. All four still have Milestone 1 open.
+Use the [One-Shot WebGPU Model Porting Prompt](../docs/PORTING_A_MODEL.md) for the remaining Wave 2 ports (`EvoDiff-Seq OA_DM_38M` and `Original RFdiffusion` have been promoted to `models/`). Each remaining entry below has early reference evidence with Milestone 1+ in progress.
 
 | Paper and PyTorch comparison | What works here | What would produce a model result |
 | --- | --- | --- |
-| [EvoDiff-Seq OA_DM_38M](evodiff/README.md) | All 31 token IDs and 64 input embedding values for a fixed example match the upstream CPU reference. | PyTorch processes those vectors through the residual network and decoder to score each possible amino acid. The local implementation ends at the embedding lookup. |
-| [Original RFdiffusion](rfdiffusion/README.md) | JavaScript and Chromium WebGPU rotate supplied coordinates into cyclic and dihedral arrangements. They match PyTorch across 288 fixture components to within 2.39 × 10⁻⁷ on NVIDIA hardware. | Upstream runs a learned denoiser to produce backbone coordinates over multiple steps. The local shader implements the symmetry operation for coordinates already supplied. |
 | [ESM3 Open](esm3/README.md) | Sequence IDs, backbone coordinates, and presence flags match upstream on deposited inputs, including a missing-atom case. | The Open checkpoint's learned encoders, transformer and output heads supply predictions. The local checks stop at input preparation. |
 | [BoltzGen](boltzgen/README.md) | A byte-range probe and offline replay verify the ZIP indexes of two PyTorch checkpoint archives. Full-file hashes are publisher metadata. | Upstream loads the weights and computes atom coordinates. The local inspector reads storage sizes and names. |
 

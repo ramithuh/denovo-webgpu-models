@@ -1,0 +1,2590 @@
+{
+  "name": "fp16_motif_L24",
+  "length": 24,
+  "precision": "fp16",
+  "mode": "motif",
+  "selfcond": false,
+  "inputs": {
+    "msa_latent": {
+      "offset": 0,
+      "length": 1152,
+      "shape": [
+        1,
+        1,
+        24,
+        48
+      ]
+    },
+    "msa_full": {
+      "offset": 4608,
+      "length": 600,
+      "shape": [
+        1,
+        1,
+        24,
+        25
+      ]
+    },
+    "seq": {
+      "offset": 7008,
+      "length": 528,
+      "shape": [
+        1,
+        24,
+        22
+      ]
+    },
+    "xyz": {
+      "offset": 9120,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "idx": {
+      "offset": 9984,
+      "length": 24,
+      "shape": [
+        1,
+        24
+      ]
+    },
+    "t": {
+      "offset": 10080,
+      "length": 1,
+      "shape": []
+    },
+    "t1d": {
+      "offset": 10084,
+      "length": 528,
+      "shape": [
+        1,
+        1,
+        24,
+        22
+      ]
+    },
+    "t2d": {
+      "offset": 12196,
+      "length": 25344,
+      "shape": [
+        1,
+        1,
+        24,
+        24,
+        44
+      ]
+    },
+    "xyz_t": {
+      "offset": 113572,
+      "length": 216,
+      "shape": [
+        1,
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "alpha_t": {
+      "offset": 114436,
+      "length": 720,
+      "shape": [
+        1,
+        1,
+        24,
+        30
+      ]
+    },
+    "motif_mask": {
+      "offset": 117316,
+      "length": 24,
+      "shape": [
+        24
+      ]
+    }
+  },
+  "binary": "../.cache/fixtures/fp16_motif_L24.bin",
+  "oracleMs": 2491.359746083617,
+  "traces": {
+    "latent_emb.msa": {
+      "offset": 117412,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "latent_emb.pair": {
+      "offset": 141988,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "latent_emb.state": {
+      "offset": 436900,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "full_emb": {
+      "offset": 443044,
+      "length": 1536,
+      "shape": [
+        1,
+        1,
+        24,
+        64
+      ]
+    },
+    "recycle.msa": {
+      "offset": 449188,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "recycle.pair": {
+      "offset": 473764,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "recycle.state": {
+      "offset": 768676,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "templ_emb.templ_stack.block.0": {
+      "offset": 774820,
+      "length": 36864,
+      "shape": [
+        1,
+        24,
+        24,
+        64
+      ]
+    },
+    "templ_emb.templ_stack.block.1": {
+      "offset": 922276,
+      "length": 36864,
+      "shape": [
+        1,
+        24,
+        24,
+        64
+      ]
+    },
+    "templ_emb.pair": {
+      "offset": 1069732,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "templ_emb.state": {
+      "offset": 1364644,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.extra_block.0.0.msa": {
+      "offset": 1370788,
+      "length": 1536,
+      "shape": [
+        1,
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.extra_block.0.0.pair": {
+      "offset": 1376932,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.extra_block.0.0.R": {
+      "offset": 1671844,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.extra_block.0.0.T": {
+      "offset": 1672708,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.extra_block.0.0.state": {
+      "offset": 1672996,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.extra_block.0.0.alpha": {
+      "offset": 1673764,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.extra_block.1.1.msa": {
+      "offset": 1675684,
+      "length": 1536,
+      "shape": [
+        1,
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.extra_block.1.1.pair": {
+      "offset": 1681828,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.extra_block.1.1.R": {
+      "offset": 1976740,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.extra_block.1.1.T": {
+      "offset": 1977604,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.extra_block.1.1.state": {
+      "offset": 1977892,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.extra_block.1.1.alpha": {
+      "offset": 1978660,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.extra_block.2.2.msa": {
+      "offset": 1980580,
+      "length": 1536,
+      "shape": [
+        1,
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.extra_block.2.2.pair": {
+      "offset": 1986724,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.extra_block.2.2.R": {
+      "offset": 2281636,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.extra_block.2.2.T": {
+      "offset": 2282500,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.extra_block.2.2.state": {
+      "offset": 2282788,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.extra_block.2.2.alpha": {
+      "offset": 2283556,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.extra_block.3.3.msa": {
+      "offset": 2285476,
+      "length": 1536,
+      "shape": [
+        1,
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.extra_block.3.3.pair": {
+      "offset": 2291620,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.extra_block.3.3.R": {
+      "offset": 2586532,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.extra_block.3.3.T": {
+      "offset": 2587396,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.extra_block.3.3.state": {
+      "offset": 2587684,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.extra_block.3.3.alpha": {
+      "offset": 2588452,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.0.0.msa": {
+      "offset": 2590372,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.0.0.pair": {
+      "offset": 2614948,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.0.0.R": {
+      "offset": 2909860,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.0.0.T": {
+      "offset": 2910724,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.0.0.state": {
+      "offset": 2911012,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.0.0.alpha": {
+      "offset": 2911780,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.1.1.msa": {
+      "offset": 2913700,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.1.1.pair": {
+      "offset": 2938276,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.1.1.R": {
+      "offset": 3233188,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.1.1.T": {
+      "offset": 3234052,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.1.1.state": {
+      "offset": 3234340,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.1.1.alpha": {
+      "offset": 3235108,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.2.2.msa": {
+      "offset": 3237028,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.2.2.pair": {
+      "offset": 3261604,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.2.2.R": {
+      "offset": 3556516,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.2.2.T": {
+      "offset": 3557380,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.2.2.state": {
+      "offset": 3557668,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.2.2.alpha": {
+      "offset": 3558436,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.3.3.msa": {
+      "offset": 3560356,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.3.3.pair": {
+      "offset": 3584932,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.3.3.R": {
+      "offset": 3879844,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.3.3.T": {
+      "offset": 3880708,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.3.3.state": {
+      "offset": 3880996,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.3.3.alpha": {
+      "offset": 3881764,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.4.4.msa": {
+      "offset": 3883684,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.4.4.pair": {
+      "offset": 3908260,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.4.4.R": {
+      "offset": 4203172,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.4.4.T": {
+      "offset": 4204036,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.4.4.state": {
+      "offset": 4204324,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.4.4.alpha": {
+      "offset": 4205092,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.5.5.msa": {
+      "offset": 4207012,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.5.5.pair": {
+      "offset": 4231588,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.5.5.R": {
+      "offset": 4526500,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.5.5.T": {
+      "offset": 4527364,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.5.5.state": {
+      "offset": 4527652,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.5.5.alpha": {
+      "offset": 4528420,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.6.6.msa": {
+      "offset": 4530340,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.6.6.pair": {
+      "offset": 4554916,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.6.6.R": {
+      "offset": 4849828,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.6.6.T": {
+      "offset": 4850692,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.6.6.state": {
+      "offset": 4850980,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.6.6.alpha": {
+      "offset": 4851748,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.7.7.msa": {
+      "offset": 4853668,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.7.7.pair": {
+      "offset": 4878244,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.7.7.R": {
+      "offset": 5173156,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.7.7.T": {
+      "offset": 5174020,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.7.7.state": {
+      "offset": 5174308,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.7.7.alpha": {
+      "offset": 5175076,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.8.8.msa": {
+      "offset": 5176996,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.8.8.pair": {
+      "offset": 5201572,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.8.8.R": {
+      "offset": 5496484,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.8.8.T": {
+      "offset": 5497348,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.8.8.state": {
+      "offset": 5497636,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.8.8.alpha": {
+      "offset": 5498404,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.9.9.msa": {
+      "offset": 5500324,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.9.9.pair": {
+      "offset": 5524900,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.9.9.R": {
+      "offset": 5819812,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.9.9.T": {
+      "offset": 5820676,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.9.9.state": {
+      "offset": 5820964,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.9.9.alpha": {
+      "offset": 5821732,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.10.10.msa": {
+      "offset": 5823652,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.10.10.pair": {
+      "offset": 5848228,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.10.10.R": {
+      "offset": 6143140,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.10.10.T": {
+      "offset": 6144004,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.10.10.state": {
+      "offset": 6144292,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.10.10.alpha": {
+      "offset": 6145060,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.11.11.msa": {
+      "offset": 6146980,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.11.11.pair": {
+      "offset": 6171556,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.11.11.R": {
+      "offset": 6466468,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.11.11.T": {
+      "offset": 6467332,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.11.11.state": {
+      "offset": 6467620,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.11.11.alpha": {
+      "offset": 6468388,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.12.12.msa": {
+      "offset": 6470308,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.12.12.pair": {
+      "offset": 6494884,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.12.12.R": {
+      "offset": 6789796,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.12.12.T": {
+      "offset": 6790660,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.12.12.state": {
+      "offset": 6790948,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.12.12.alpha": {
+      "offset": 6791716,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.13.13.msa": {
+      "offset": 6793636,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.13.13.pair": {
+      "offset": 6818212,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.13.13.R": {
+      "offset": 7113124,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.13.13.T": {
+      "offset": 7113988,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.13.13.state": {
+      "offset": 7114276,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.13.13.alpha": {
+      "offset": 7115044,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.14.14.msa": {
+      "offset": 7116964,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.14.14.pair": {
+      "offset": 7141540,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.14.14.R": {
+      "offset": 7436452,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.14.14.T": {
+      "offset": 7437316,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.14.14.state": {
+      "offset": 7437604,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.14.14.alpha": {
+      "offset": 7438372,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.15.15.msa": {
+      "offset": 7440292,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.15.15.pair": {
+      "offset": 7464868,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.15.15.R": {
+      "offset": 7759780,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.15.15.T": {
+      "offset": 7760644,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.15.15.state": {
+      "offset": 7760932,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.15.15.alpha": {
+      "offset": 7761700,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.16.16.msa": {
+      "offset": 7763620,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.16.16.pair": {
+      "offset": 7788196,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.16.16.R": {
+      "offset": 8083108,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.16.16.T": {
+      "offset": 8083972,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.16.16.state": {
+      "offset": 8084260,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.16.16.alpha": {
+      "offset": 8085028,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.17.17.msa": {
+      "offset": 8086948,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.17.17.pair": {
+      "offset": 8111524,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.17.17.R": {
+      "offset": 8406436,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.17.17.T": {
+      "offset": 8407300,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.17.17.state": {
+      "offset": 8407588,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.17.17.alpha": {
+      "offset": 8408356,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.18.18.msa": {
+      "offset": 8410276,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.18.18.pair": {
+      "offset": 8434852,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.18.18.R": {
+      "offset": 8729764,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.18.18.T": {
+      "offset": 8730628,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.18.18.state": {
+      "offset": 8730916,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.18.18.alpha": {
+      "offset": 8731684,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.19.19.msa": {
+      "offset": 8733604,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.19.19.pair": {
+      "offset": 8758180,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.19.19.R": {
+      "offset": 9053092,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.19.19.T": {
+      "offset": 9053956,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.19.19.state": {
+      "offset": 9054244,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.19.19.alpha": {
+      "offset": 9055012,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.20.20.msa": {
+      "offset": 9056932,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.20.20.pair": {
+      "offset": 9081508,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.20.20.R": {
+      "offset": 9376420,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.20.20.T": {
+      "offset": 9377284,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.20.20.state": {
+      "offset": 9377572,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.20.20.alpha": {
+      "offset": 9378340,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.21.21.msa": {
+      "offset": 9380260,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.21.21.pair": {
+      "offset": 9404836,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.21.21.R": {
+      "offset": 9699748,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.21.21.T": {
+      "offset": 9700612,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.21.21.state": {
+      "offset": 9700900,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.21.21.alpha": {
+      "offset": 9701668,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.22.22.msa": {
+      "offset": 9703588,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.22.22.pair": {
+      "offset": 9728164,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.22.22.R": {
+      "offset": 10023076,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.22.22.T": {
+      "offset": 10023940,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.22.22.state": {
+      "offset": 10024228,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.22.22.alpha": {
+      "offset": 10024996,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.23.23.msa": {
+      "offset": 10026916,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.23.23.pair": {
+      "offset": 10051492,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.23.23.R": {
+      "offset": 10346404,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.23.23.T": {
+      "offset": 10347268,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.23.23.state": {
+      "offset": 10347556,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.23.23.alpha": {
+      "offset": 10348324,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.24.24.msa": {
+      "offset": 10350244,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.24.24.pair": {
+      "offset": 10374820,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.24.24.R": {
+      "offset": 10669732,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.24.24.T": {
+      "offset": 10670596,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.24.24.state": {
+      "offset": 10670884,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.24.24.alpha": {
+      "offset": 10671652,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.25.25.msa": {
+      "offset": 10673572,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.25.25.pair": {
+      "offset": 10698148,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.25.25.R": {
+      "offset": 10993060,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.25.25.T": {
+      "offset": 10993924,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.25.25.state": {
+      "offset": 10994212,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.25.25.alpha": {
+      "offset": 10994980,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.26.26.msa": {
+      "offset": 10996900,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.26.26.pair": {
+      "offset": 11021476,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.26.26.R": {
+      "offset": 11316388,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.26.26.T": {
+      "offset": 11317252,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.26.26.state": {
+      "offset": 11317540,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.26.26.alpha": {
+      "offset": 11318308,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.27.27.msa": {
+      "offset": 11320228,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.27.27.pair": {
+      "offset": 11344804,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.27.27.R": {
+      "offset": 11639716,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.27.27.T": {
+      "offset": 11640580,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.27.27.state": {
+      "offset": 11640868,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.27.27.alpha": {
+      "offset": 11641636,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.28.28.msa": {
+      "offset": 11643556,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.28.28.pair": {
+      "offset": 11668132,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.28.28.R": {
+      "offset": 11963044,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.28.28.T": {
+      "offset": 11963908,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.28.28.state": {
+      "offset": 11964196,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.28.28.alpha": {
+      "offset": 11964964,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.29.29.msa": {
+      "offset": 11966884,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.29.29.pair": {
+      "offset": 11991460,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.29.29.R": {
+      "offset": 12286372,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.29.29.T": {
+      "offset": 12287236,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.29.29.state": {
+      "offset": 12287524,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.29.29.alpha": {
+      "offset": 12288292,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.30.30.msa": {
+      "offset": 12290212,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.30.30.pair": {
+      "offset": 12314788,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.30.30.R": {
+      "offset": 12609700,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.30.30.T": {
+      "offset": 12610564,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.30.30.state": {
+      "offset": 12610852,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.30.30.alpha": {
+      "offset": 12611620,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.main_block.31.31.msa": {
+      "offset": 12613540,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.main_block.31.31.pair": {
+      "offset": 12638116,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.main_block.31.31.R": {
+      "offset": 12933028,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.main_block.31.31.T": {
+      "offset": 12933892,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.main_block.31.31.state": {
+      "offset": 12934180,
+      "length": 192,
+      "shape": [
+        1,
+        24,
+        8
+      ]
+    },
+    "simulator.main_block.31.31.alpha": {
+      "offset": 12934948,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.str_refiner.0.R": {
+      "offset": 12936868,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.str_refiner.0.T": {
+      "offset": 12937732,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.str_refiner.0.state": {
+      "offset": 12938020,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.str_refiner.0.alpha": {
+      "offset": 12944164,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.str_refiner.0.msa": {
+      "offset": 12946084,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.str_refiner.0.pair": {
+      "offset": 12970660,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.str_refiner.1.R": {
+      "offset": 13265572,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.str_refiner.1.T": {
+      "offset": 13266436,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.str_refiner.1.state": {
+      "offset": 13266724,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.str_refiner.1.alpha": {
+      "offset": 13272868,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.str_refiner.1.msa": {
+      "offset": 13274788,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.str_refiner.1.pair": {
+      "offset": 13299364,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.str_refiner.2.R": {
+      "offset": 13594276,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.str_refiner.2.T": {
+      "offset": 13595140,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.str_refiner.2.state": {
+      "offset": 13595428,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.str_refiner.2.alpha": {
+      "offset": 13601572,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.str_refiner.2.msa": {
+      "offset": 13603492,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.str_refiner.2.pair": {
+      "offset": 13628068,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "simulator.str_refiner.3.R": {
+      "offset": 13922980,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "simulator.str_refiner.3.T": {
+      "offset": 13923844,
+      "length": 72,
+      "shape": [
+        1,
+        24,
+        3
+      ]
+    },
+    "simulator.str_refiner.3.state": {
+      "offset": 13924132,
+      "length": 1536,
+      "shape": [
+        1,
+        24,
+        64
+      ]
+    },
+    "simulator.str_refiner.3.alpha": {
+      "offset": 13930276,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "simulator.str_refiner.3.msa": {
+      "offset": 13932196,
+      "length": 6144,
+      "shape": [
+        1,
+        1,
+        24,
+        256
+      ]
+    },
+    "simulator.str_refiner.3.pair": {
+      "offset": 13956772,
+      "length": 73728,
+      "shape": [
+        1,
+        24,
+        24,
+        128
+      ]
+    },
+    "px0": {
+      "offset": 14251684,
+      "length": 216,
+      "shape": [
+        1,
+        24,
+        3,
+        3
+      ]
+    },
+    "alpha": {
+      "offset": 14252548,
+      "length": 480,
+      "shape": [
+        1,
+        24,
+        10,
+        2
+      ]
+    },
+    "logits": {
+      "offset": 14254468,
+      "length": 504,
+      "shape": [
+        1,
+        24,
+        21
+      ]
+    },
+    "plddt": {
+      "offset": 14256484,
+      "length": 24,
+      "shape": [
+        1,
+        24
+      ]
+    },
+    "backbone": {
+      "offset": 14256580,
+      "length": 288,
+      "shape": [
+        1,
+        24,
+        4,
+        3
+      ]
+    }
+  },
+  "binary_sha256": "1c4411a1cbc66b3f680a7e547ea3ea4ab0199cc7921c1fa98e9b4daefad79fee",
+  "binary_byteLength": 14257732
+}

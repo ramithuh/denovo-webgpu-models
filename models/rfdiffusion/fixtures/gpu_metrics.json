@@ -1,0 +1,1049 @@
+{
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false
+  },
+  "records": [
+    {
+      "name": "fp32_unconditional_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.4376691960899159e-7,
+        "maxAbs": 1.4901161193847656e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.1443794775452685e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 3885.5,
+      "loadMs": 1496
+    },
+    {
+      "name": "fp32_unconditional_L24_selfcond",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.5893967261886236e-7,
+        "maxAbs": 1.4901161193847656e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.099954333831093e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 600.1999998092651,
+      "loadMs": 1496
+    },
+    {
+      "name": "fp32_motif_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.2840507493788723e-7,
+        "maxAbs": 2.384185791015625e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.594893565837226e-8,
+        "maxAbs": 0.0000019073486328125
+      },
+      "timingMs": 589,
+      "loadMs": 1496
+    },
+    {
+      "name": "fp32_symmetric_L24",
+      "traceCount": 257,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 2.2975379650404533e-7,
+        "maxAbs": 1.7881393432617188e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 3.141485028814225e-8,
+        "maxAbs": 4.76837158203125e-7
+      },
+      "timingMs": 487.30000019073486,
+      "loadMs": 1496
+    },
+    {
+      "name": "trajectory_fp32_unconditional_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 2.1443794775452685e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 2.1401208064607796e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.5118055465956722e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 2.909462004495322e-7,
+          "maxAbs": 0.00001049041748046875
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 2.7963062259011404e-7,
+          "maxAbs": 0.00001049041748046875
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 4.2457901778296786e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.5223487486530957e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 4.932252394991606e-7,
+          "maxAbs": 0.000009655952453613281
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 4.907059536868005e-7,
+          "maxAbs": 0.000009655952453613281
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 6.802862247277033e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.4493392511890163e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 1058.8000001907349
+    },
+    {
+      "name": "trajectory_fp32_motif_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 4.331146892643113e-7,
+          "maxAbs": 0.000011444091796875
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 1.884202194340491e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.2695987693737626e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 1.9242599729576466e-7,
+          "maxAbs": 0.0000057220458984375
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 5.039069215207259e-7,
+          "maxAbs": 0.0000095367431640625
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 2.943211674198897e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.4382137361076007e-7,
+          "maxAbs": 2.682209014892578e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 9.544676473627042e-7,
+          "maxAbs": 0.000030308961868286133
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 6.422897236956015e-7,
+          "maxAbs": 0.00001239776611328125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 5.236885945529717e-8,
+          "maxAbs": 0.000001430511474609375
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.2354805437192335e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 885.8999996185303
+    },
+    {
+      "name": "trajectory_fp32_symmetric_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 1.8246935573188536e-8,
+          "maxAbs": 4.76837158203125e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 3.966932347133603e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.512725315991896e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 0.0000010116859482806028,
+          "maxAbs": 0.000007197260856628418
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 0.0000013187491833189676,
+          "maxAbs": 0.00000858306884765625
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 6.164844124277893e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.5489158837094166e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 0.000004408489132879733,
+          "maxAbs": 0.00003409385681152344
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 0.000003796176052545234,
+          "maxAbs": 0.000025391578674316406
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 9.264833717014207e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.4681289172894208e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 832.3000001907349
+    },
+    {
+      "name": "fp16_unconditional_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 2.520491970433099e-7,
+        "maxAbs": 2.384185791015625e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.4922072602295254e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 1557.5999994277954,
+      "loadMs": 978.6000003814697
+    },
+    {
+      "name": "fp16_unconditional_L24_selfcond",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.6629994248865103e-7,
+        "maxAbs": 1.7881393432617188e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.4656986216246343e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 561.3999996185303,
+      "loadMs": 978.6000003814697
+    },
+    {
+      "name": "fp16_motif_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.6110670279281047e-7,
+        "maxAbs": 2.384185791015625e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 1.4558827591235715e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 792.9000005722046,
+      "loadMs": 978.6000003814697
+    },
+    {
+      "name": "fp16_symmetric_L24",
+      "traceCount": 257,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.8895938765422998e-7,
+        "maxAbs": 8.940696716308594e-8
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.914431227305397e-8,
+        "maxAbs": 4.76837158203125e-7
+      },
+      "timingMs": 890.5,
+      "loadMs": 978.6000003814697
+    },
+    {
+      "name": "trajectory_fp16_unconditional_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 2.4922072602295254e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 2.1861113921017718e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.45491271988097e-7,
+          "maxAbs": 2.384185791015625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 3.253016510291672e-7,
+          "maxAbs": 0.0000095367431640625
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 3.207601826237785e-7,
+          "maxAbs": 0.00001049041748046875
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 5.074423632329398e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.4451719666113472e-7,
+          "maxAbs": 2.384185791015625e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 0.0000014045503746828185,
+          "maxAbs": 0.0000286102294921875
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 0.0000014302806624481326,
+          "maxAbs": 0.0000286102294921875
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 7.460671943201294e-8,
+          "maxAbs": 0.00000286102294921875
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.701412129527979e-7,
+          "maxAbs": 3.203749656677246e-7
+        }
+      ],
+      "timingMs": 947
+    },
+    {
+      "name": "trajectory_fp16_motif_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 3.34024009065587e-7,
+          "maxAbs": 0.000009059906005859375
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 2.3666582542681256e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.3492752756282328e-7,
+          "maxAbs": 2.384185791015625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 4.0879101431804967e-7,
+          "maxAbs": 0.000009924173355102539
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 5.620989890105909e-7,
+          "maxAbs": 0.0000095367431640625
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 3.9830685126916416e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.4541813318087742e-7,
+          "maxAbs": 2.682209014892578e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 7.642323421330603e-7,
+          "maxAbs": 0.00002193450927734375
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 0.0000013709730725459356,
+          "maxAbs": 0.00002574920654296875
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 4.979034109537178e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.1238172462925962e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 833.5
+    },
+    {
+      "name": "trajectory_fp16_symmetric_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 2.2908987997012127e-8,
+          "maxAbs": 4.76837158203125e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 4.2241020512050045e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.404091377306447e-7,
+          "maxAbs": 2.682209014892578e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 0.000002544185936145713,
+          "maxAbs": 0.000012755393981933594
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 0.0000017907736460071163,
+          "maxAbs": 0.000012099742889404297
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 5.521214578844933e-8,
+          "maxAbs": 0.000001430511474609375
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.6568642011006222e-7,
+          "maxAbs": 4.172325134277344e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 0.0000016309590337188348,
+          "maxAbs": 0.000019311904907226562
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 0.0000021168358977738322,
+          "maxAbs": 0.000012159347534179688
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 7.354355233391082e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.2185855107718195e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 864.1999998092651
+    },
+    {
+      "name": "int8_unconditional_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.601740463648083e-7,
+        "maxAbs": 1.7881393432617188e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.1595764020652084e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 1629.6999998092651,
+      "loadMs": 623.0999994277954
+    },
+    {
+      "name": "int8_unconditional_L24_selfcond",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.6895783034293967e-7,
+        "maxAbs": 1.7881393432617188e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.4596213918590793e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "timingMs": 860,
+      "loadMs": 623.0999994277954
+    },
+    {
+      "name": "int8_motif_L24",
+      "traceCount": 256,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 1.5787304930362538e-7,
+        "maxAbs": 2.980232238769531e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.219861879980651e-8,
+        "maxAbs": 0.0000019073486328125
+      },
+      "timingMs": 942.8000001907349,
+      "loadMs": 623.0999994277954
+    },
+    {
+      "name": "int8_symmetric_L24",
+      "traceCount": 257,
+      "worst": {
+        "name": "plddt",
+        "relRMS": 2.0412718966879044e-7,
+        "maxAbs": 1.4901161193847656e-7
+      },
+      "px0": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "backbone": {
+        "relRMS": 2.0931704493777185e-8,
+        "maxAbs": 4.76837158203125e-7
+      },
+      "timingMs": 888.5,
+      "loadMs": 623.0999994277954
+    },
+    {
+      "name": "trajectory_int8_unconditional_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 2.1595764020652084e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 2.438228001424071e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.5469921616554662e-7,
+          "maxAbs": 2.682209014892578e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 6.678279713030549e-7,
+          "maxAbs": 0.00002956390380859375
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 6.379491587760339e-7,
+          "maxAbs": 0.00002956390380859375
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 5.060085876489531e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.6631520403979198e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 5.53015214993552e-7,
+          "maxAbs": 0.00000858306884765625
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 5.490549807281954e-7,
+          "maxAbs": 0.000008106231689453125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 6.677702013524055e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.321362284790618e-7,
+          "maxAbs": 1.7881393432617188e-7
+        }
+      ],
+      "timingMs": 855
+    },
+    {
+      "name": "trajectory_int8_motif_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 4.560385959061436e-7,
+          "maxAbs": 0.000012874603271484375
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 2.6735884816892578e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.3582759940825285e-7,
+          "maxAbs": 2.384185791015625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 4.3770069289270536e-7,
+          "maxAbs": 0.0000133514404296875
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 4.358883334274093e-7,
+          "maxAbs": 0.0000057220458984375
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 3.609685134455954e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.5619362883271261e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 5.479993030984753e-7,
+          "maxAbs": 0.0000152587890625
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 4.863301882185172e-7,
+          "maxAbs": 0.0000095367431640625
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 5.5554656859209714e-8,
+          "maxAbs": 0.000001430511474609375
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.3437150546251918e-7,
+          "maxAbs": 2.980232238769531e-7
+        }
+      ],
+      "timingMs": 822.1000003814697
+    },
+    {
+      "name": "trajectory_int8_symmetric_L24",
+      "metrics": [
+        {
+          "step": 0,
+          "t": 50,
+          "key": "px0",
+          "relRMS": 2.4548736729410355e-8,
+          "maxAbs": 4.76837158203125e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "xyz",
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "coords",
+          "relRMS": 3.3227829787474686e-8,
+          "maxAbs": 9.5367431640625e-7
+        },
+        {
+          "step": 0,
+          "t": 50,
+          "key": "rotation",
+          "relRMS": 1.3652231887847063e-7,
+          "maxAbs": 2.384185791015625e-7
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "px0",
+          "relRMS": 0.0000015206707530087875,
+          "maxAbs": 0.000009775161743164062
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "xyz",
+          "relRMS": 0.0000013899059478453549,
+          "maxAbs": 0.00000762939453125
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "coords",
+          "relRMS": 5.574767097510234e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        {
+          "step": 1,
+          "t": 49,
+          "key": "rotation",
+          "relRMS": 1.4983903644838363e-7,
+          "maxAbs": 2.980232238769531e-7
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "px0",
+          "relRMS": 0.000001386222729293472,
+          "maxAbs": 0.000012874603271484375
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "xyz",
+          "relRMS": 0.0000024047912279768897,
+          "maxAbs": 0.0000133514404296875
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "coords",
+          "relRMS": 6.733925535430389e-8,
+          "maxAbs": 0.000001430511474609375
+        },
+        {
+          "step": 2,
+          "t": 48,
+          "key": "rotation",
+          "relRMS": 1.320744642432331e-7,
+          "maxAbs": 2.384185791015625e-7
+        }
+      ],
+      "timingMs": 885.8999996185303
+    }
+  ]
+}

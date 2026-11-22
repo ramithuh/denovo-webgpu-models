@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-11-22T04:17:21.589Z",
+  "upstreamCommit": "86507b6538f51fce57b5a72477165f03999ed7ae",
+  "node": "v22.21.1",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false
+  },
+  "runtimeSourceSha256": "b499dab4633b9dcb4e33f3ce5170c3f785a111655866182aab059140fe50f783",
+  "runtimeFiles": [
+    "shared/alignment.js",
+    "shared/backbone.js",
+    "shared/chemical-constants.js",
+    "shared/constants.js",
+    "shared/diffusion-constants.js",
+    "shared/diffusion.js",
+    "shared/engine.js",
+    "shared/fma.js",
+    "shared/geometry.js",
+    "shared/loader.js",
+    "shared/moments.js",
+    "shared/network.js",
+    "shared/numeric.js",
+    "shared/preprocess.js",
+    "shared/sampler.js",
+    "shared/structure.js",
+    "shared/symmetry.mjs",
+    "shared/tensor.js",
+    "cpu/algebra.js",
+    "cpu/index.js",
+    "webgpu/algebra.js",
+    "webgpu/device.js",
+    "webgpu/edge-softmax.js",
+    "webgpu/index.js",
+    "webgpu/symmetry-webgpu.mjs",
+    "webgpu/worker.js"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "durationMs": 651349.920524,
+      "log": ".cache/final-npm-test.log",
+      "logSha256": "e2bac180b3e62751308f3d1728bf201fd1b7ec22d3a78341b4075c1ed5c33429"
+    },
+    {
+      "command": "npm run test:cpu",
+      "tests": 1,
+      "pass": 1,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "durationMs": 561227.346743,
+      "log": ".cache/final-test-cpu.log",
+      "logSha256": "e1ce53240d8a1c5aaa990626d68d8569acf755e72c8c072d8014ad288582bd5c"
+    },
+    {
+      "command": "npm run test:gpu",
+      "tests": 2,
+      "pass": 2,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "durationMs": 42349.749548,
+      "log": ".cache/final-test-gpu.log",
+      "logSha256": "cd338a5c9ef9068fe87caaedbdfcf8fce8a68d3a3f3a4cf3911b46eb3e9aa97a"
+    },
+    {
+      "command": "node --test test/benchmark.test.mjs",
+      "tests": 1,
+      "pass": 1,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "durationMs": 28305.02318,
+      "log": ".cache/final-benchmark.log",
+      "logSha256": "7064614f93caefc65083c3026246624c39d2dde7f40f62dcac5224ae815fbd99"
+    }
+  ]
+}

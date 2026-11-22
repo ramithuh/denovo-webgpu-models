@@ -1,0 +1,25 @@
+{
+  "wgpu_py": "0.29.0",
+  "adapter": {
+    "vendor": "NVIDIA",
+    "architecture": "",
+    "device": "NVIDIA GB10",
+    "description": "580.159.03",
+    "stackgroup_min_size": 4,
+    "stackgroup_max_size": 128,
+    "vendor_id": 4318,
+    "device_id": 11794,
+    "adapter_type": "IntegratedGPU",
+    "backend_type": "Vulkan"
+  },
+  "validated": [
+    "embedding.wgsl",
+    "fp16.wgsl",
+    "fp32.wgsl",
+    "int8.wgsl",
+    "native_f16.wgsl",
+    "norm.wgsl",
+    "residual.wgsl"
+  ],
+  "skipped": 0
+}

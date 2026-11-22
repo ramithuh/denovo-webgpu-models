@@ -1,0 +1,23 @@
+[
+  {
+    "command": "npm test",
+    "exitCode": 0,
+    "seconds": 135.96436608489603,
+    "startedUTC": "2026-11-22T02:19:43.254010+00:00",
+    "log": ".cache/final-npm-test.log"
+  },
+  {
+    "command": "npm run test:cpu",
+    "exitCode": 0,
+    "seconds": 97.7201558239758,
+    "startedUTC": "2026-11-22T02:21:59.218640+00:00",
+    "log": ".cache/final-cpu.log"
+  },
+  {
+    "command": "npm run test:gpu",
+    "exitCode": 0,
+    "seconds": 36.110793945379555,
+    "startedUTC": "2026-11-22T02:23:36.939265+00:00",
+    "log": ".cache/final-gpu.log"
+  }
+]

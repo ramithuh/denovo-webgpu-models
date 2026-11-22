@@ -1,0 +1,222 @@
+{
+  "reference": "Pinned upstream FP32 trajectory; identical initial coordinates and Gaussian noise verified",
+  "alignment": "none",
+  "coordinates": [
+    {
+      "mode": "unconditional",
+      "precision": "fp32",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "unconditional",
+      "precision": "fp32",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "unconditional",
+      "precision": "fp32",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "unconditional",
+      "precision": "fp16",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.00024293487931170067,
+      "caRmsdAngstrom": 0.002870316161426924
+    },
+    {
+      "mode": "unconditional",
+      "precision": "fp16",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0001689877532523762,
+      "caRmsdAngstrom": 0.0019273199218371587
+    },
+    {
+      "mode": "unconditional",
+      "precision": "fp16",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.00031221154979259276,
+      "caRmsdAngstrom": 0.003260756189866946
+    },
+    {
+      "mode": "unconditional",
+      "precision": "int8",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.01588717703647685,
+      "caRmsdAngstrom": 0.17205912133127454
+    },
+    {
+      "mode": "unconditional",
+      "precision": "int8",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.013859943256628184,
+      "caRmsdAngstrom": 0.12777740532339157
+    },
+    {
+      "mode": "unconditional",
+      "precision": "int8",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.008085508106959741,
+      "caRmsdAngstrom": 0.08893508411274993
+    },
+    {
+      "mode": "motif",
+      "precision": "fp32",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "motif",
+      "precision": "fp32",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "motif",
+      "precision": "fp32",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "motif",
+      "precision": "fp16",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.00014614952311087798,
+      "caRmsdAngstrom": 0.00226172421672414
+    },
+    {
+      "mode": "motif",
+      "precision": "fp16",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.00022574304121661553,
+      "caRmsdAngstrom": 0.003316344108198647
+    },
+    {
+      "mode": "motif",
+      "precision": "fp16",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.00046131871098518056,
+      "caRmsdAngstrom": 0.007297684649883722
+    },
+    {
+      "mode": "motif",
+      "precision": "int8",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.006358134507577362,
+      "caRmsdAngstrom": 0.09759737145768138
+    },
+    {
+      "mode": "motif",
+      "precision": "int8",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.02795144566801302,
+      "caRmsdAngstrom": 0.41121234109067345
+    },
+    {
+      "mode": "motif",
+      "precision": "int8",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.03150347650688295,
+      "caRmsdAngstrom": 0.49592253505316897
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp32",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp32",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp32",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.0,
+      "caRmsdAngstrom": 0.0
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp16",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.00033050958606494206,
+      "caRmsdAngstrom": 0.0015277227585332011
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp16",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0005703516558796955,
+      "caRmsdAngstrom": 0.0025476997843178074
+    },
+    {
+      "mode": "symmetric",
+      "precision": "fp16",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.003651521203298364,
+      "caRmsdAngstrom": 0.011880553514504025
+    },
+    {
+      "mode": "symmetric",
+      "precision": "int8",
+      "step": 1,
+      "t": 50,
+      "relRMS": 0.008508557771134182,
+      "caRmsdAngstrom": 0.04186806345032208
+    },
+    {
+      "mode": "symmetric",
+      "precision": "int8",
+      "step": 2,
+      "t": 49,
+      "relRMS": 0.0390707806659335,
+      "caRmsdAngstrom": 0.16428131173569316
+    },
+    {
+      "mode": "symmetric",
+      "precision": "int8",
+      "step": 3,
+      "t": 48,
+      "relRMS": 0.06980534159134553,
+      "caRmsdAngstrom": 0.17112267797907343
+    }
+  ]
+}

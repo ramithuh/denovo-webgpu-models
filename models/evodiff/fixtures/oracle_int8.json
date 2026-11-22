@@ -1,0 +1,1955 @@
+{
+  "precision": "int8",
+  "upstream": {
+    "evodiff": "33206e99446f799ec11cf6e57d66ffaec837be91",
+    "protein-sequence-models": "af695772c4a1c056d930c95ec7e6428aa042f5cd"
+  },
+  "torch": "2.9.0+cpu",
+  "A": [
+    {
+      "name": "gfp",
+      "sequence": "MSK#EELFTGVVPILVELDGDVNGH#FSVSGE",
+      "tokens": [
+        10,
+        15,
+        8,
+        28,
+        3,
+        3,
+        9,
+        4,
+        16,
+        5,
+        17,
+        17,
+        12,
+        7,
+        9,
+        17,
+        3,
+        9,
+        2,
+        5,
+        2,
+        17,
+        11,
+        5,
+        6,
+        28,
+        4,
+        15,
+        17,
+        15,
+        5,
+        3
+      ],
+      "inputMask": null,
+      "trace": {
+        "embedding": "A.gfp.embedding",
+        "projection": "A.gfp.projection",
+        "block.0": "A.gfp.block.0",
+        "block.1": "A.gfp.block.1",
+        "block.2": "A.gfp.block.2",
+        "block.3": "A.gfp.block.3",
+        "block.4": "A.gfp.block.4",
+        "block.5": "A.gfp.block.5",
+        "block.6": "A.gfp.block.6",
+        "block.7": "A.gfp.block.7",
+        "block.8": "A.gfp.block.8",
+        "block.9": "A.gfp.block.9",
+        "block.10": "A.gfp.block.10",
+        "block.11": "A.gfp.block.11",
+        "block.12": "A.gfp.block.12",
+        "block.13": "A.gfp.block.13",
+        "block.14": "A.gfp.block.14",
+        "block.15": "A.gfp.block.15",
+        "final_norm": "A.gfp.final_norm",
+        "logits": "A.gfp.logits"
+      }
+    },
+    {
+      "name": "ubiquitin",
+      "sequence": "MQI#VKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+      "tokens": [
+        10,
+        13,
+        7,
+        28,
+        17,
+        8,
+        16,
+        9,
+        16,
+        5,
+        8,
+        16,
+        7,
+        16,
+        9,
+        3,
+        17,
+        3,
+        12,
+        15,
+        2,
+        16,
+        7,
+        3,
+        11,
+        17,
+        8,
+        0,
+        8,
+        7,
+        13,
+        2,
+        8,
+        3,
+        5,
+        7,
+        12,
+        12,
+        2,
+        13,
+        13,
+        14,
+        9,
+        7,
+        4,
+        0,
+        5,
+        8,
+        13,
+        9,
+        3,
+        2,
+        5,
+        14,
+        16,
+        9,
+        15,
+        2,
+        19,
+        11,
+        7,
+        13,
+        8,
+        3,
+        15,
+        16,
+        9,
+        6,
+        9,
+        17,
+        9,
+        14,
+        9,
+        14,
+        5,
+        5
+      ],
+      "inputMask": null,
+      "trace": {
+        "embedding": "A.ubiquitin.embedding",
+        "projection": "A.ubiquitin.projection",
+        "block.0": "A.ubiquitin.block.0",
+        "block.1": "A.ubiquitin.block.1",
+        "block.2": "A.ubiquitin.block.2",
+        "block.3": "A.ubiquitin.block.3",
+        "block.4": "A.ubiquitin.block.4",
+        "block.5": "A.ubiquitin.block.5",
+        "block.6": "A.ubiquitin.block.6",
+        "block.7": "A.ubiquitin.block.7",
+        "block.8": "A.ubiquitin.block.8",
+        "block.9": "A.ubiquitin.block.9",
+        "block.10": "A.ubiquitin.block.10",
+        "block.11": "A.ubiquitin.block.11",
+        "block.12": "A.ubiquitin.block.12",
+        "block.13": "A.ubiquitin.block.13",
+        "block.14": "A.ubiquitin.block.14",
+        "block.15": "A.ubiquitin.block.15",
+        "final_norm": "A.ubiquitin.final_norm",
+        "logits": "A.ubiquitin.logits"
+      }
+    },
+    {
+      "name": "specials",
+      "sequence": "ACDEFGHIKLMNPQRSTVWYBZXJOU-*#@!",
+      "tokens": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "inputMask": null,
+      "trace": {
+        "embedding": "A.specials.embedding",
+        "projection": "A.specials.projection",
+        "block.0": "A.specials.block.0",
+        "block.1": "A.specials.block.1",
+        "block.2": "A.specials.block.2",
+        "block.3": "A.specials.block.3",
+        "block.4": "A.specials.block.4",
+        "block.5": "A.specials.block.5",
+        "block.6": "A.specials.block.6",
+        "block.7": "A.specials.block.7",
+        "block.8": "A.specials.block.8",
+        "block.9": "A.specials.block.9",
+        "block.10": "A.specials.block.10",
+        "block.11": "A.specials.block.11",
+        "block.12": "A.specials.block.12",
+        "block.13": "A.specials.block.13",
+        "block.14": "A.specials.block.14",
+        "block.15": "A.specials.block.15",
+        "final_norm": "A.specials.final_norm",
+        "logits": "A.specials.logits"
+      }
+    },
+    {
+      "name": "padding_mask",
+      "sequence": "MSK#EELF!!!!",
+      "tokens": [
+        10,
+        15,
+        8,
+        28,
+        3,
+        3,
+        9,
+        4,
+        30,
+        30,
+        30,
+        30
+      ],
+      "inputMask": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "trace": {
+        "embedding": "A.padding_mask.embedding",
+        "projection": "A.padding_mask.projection",
+        "block.0": "A.padding_mask.block.0",
+        "block.1": "A.padding_mask.block.1",
+        "block.2": "A.padding_mask.block.2",
+        "block.3": "A.padding_mask.block.3",
+        "block.4": "A.padding_mask.block.4",
+        "block.5": "A.padding_mask.block.5",
+        "block.6": "A.padding_mask.block.6",
+        "block.7": "A.padding_mask.block.7",
+        "block.8": "A.padding_mask.block.8",
+        "block.9": "A.padding_mask.block.9",
+        "block.10": "A.padding_mask.block.10",
+        "block.11": "A.padding_mask.block.11",
+        "block.12": "A.padding_mask.block.12",
+        "block.13": "A.padding_mask.block.13",
+        "block.14": "A.padding_mask.block.14",
+        "block.15": "A.padding_mask.block.15",
+        "final_norm": "A.padding_mask.final_norm",
+        "logits": "A.padding_mask.logits"
+      }
+    },
+    {
+      "name": "long_dilation",
+      "sequence": "#CDEFGHIKLMNPQRST#WYACDEFGHIKLMNPQ#STVWYACDEFGHIKLM#PQRSTVWYACDEFGHI#LMNPQRSTVWYACDEF#HIKLMNPQRSTVWYAC#EFGHIKLMNPQRSTVW#ACDEFGHIKLMNPQRS#VWYACDEFGHIKLMNP#RSTVWYACDEFGHIKL#NPQRSTVWYACDEFGH#KLMNPQRSTVWYACDE#GHIKLMNPQRSTVWYA#DEFGHIKLMNPQRSTV#YACDEFGHIKLMNPQR#T",
+      "tokens": [
+        28,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        28,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        28,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        28,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        28,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        28,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        28,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        28,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        28,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        28,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        28,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        28,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        1,
+        2,
+        3,
+        28,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        0,
+        28,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        28,
+        19,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        28,
+        16
+      ],
+      "inputMask": null,
+      "trace": {
+        "embedding": "A.long_dilation.embedding",
+        "projection": "A.long_dilation.projection",
+        "block.0": "A.long_dilation.block.0",
+        "block.1": "A.long_dilation.block.1",
+        "block.2": "A.long_dilation.block.2",
+        "block.3": "A.long_dilation.block.3",
+        "block.4": "A.long_dilation.block.4",
+        "block.5": "A.long_dilation.block.5",
+        "block.6": "A.long_dilation.block.6",
+        "block.7": "A.long_dilation.block.7",
+        "block.8": "A.long_dilation.block.8",
+        "block.9": "A.long_dilation.block.9",
+        "block.10": "A.long_dilation.block.10",
+        "block.11": "A.long_dilation.block.11",
+        "block.12": "A.long_dilation.block.12",
+        "block.13": "A.long_dilation.block.13",
+        "block.14": "A.long_dilation.block.14",
+        "block.15": "A.long_dilation.block.15",
+        "final_norm": "A.long_dilation.final_norm",
+        "logits": "A.long_dilation.logits"
+      }
+    }
+  ],
+  "B": {
+    "initialSequence": "########################",
+    "order": [
+      22,
+      15,
+      14,
+      0,
+      4,
+      2,
+      10,
+      18,
+      8,
+      5,
+      13,
+      23,
+      3,
+      16,
+      21,
+      7,
+      17,
+      6,
+      20,
+      11,
+      9,
+      19,
+      12,
+      1
+    ],
+    "uniforms": [
+      0.9471186233003012,
+      0.09778444610733561,
+      0.8055165875120799,
+      0.7323718987386296,
+      0.12831711957144099,
+      0.51226591896089,
+      0.16598165944335985,
+      0.6421889868884207,
+      0.4986160500451583,
+      0.08556722608800127,
+      0.7446063769927346,
+      0.3116240225812049,
+      0.8711819016523272,
+      0.3749761967135927,
+      0.8195414338228857,
+      0.8175659223870251,
+      0.10510586985252279,
+      0.8885409126934193,
+      0.8480834894901295,
+      0.47204680535415855,
+      0.6515935693002429,
+      0.2569247438973532,
+      0.12004446201394459,
+      0.16817110710507277
+    ],
+    "steps": [
+      {
+        "position": 22,
+        "uniform": 0.9471186233003012,
+        "token": 17,
+        "logits": "B.0.logits"
+      },
+      {
+        "position": 15,
+        "uniform": 0.09778444610733561,
+        "token": 1,
+        "logits": "B.1.logits"
+      },
+      {
+        "position": 14,
+        "uniform": 0.8055165875120799,
+        "token": 15,
+        "logits": "B.2.logits"
+      },
+      {
+        "position": 0,
+        "uniform": 0.7323718987386296,
+        "token": 10,
+        "logits": "B.3.logits"
+      },
+      {
+        "position": 4,
+        "uniform": 0.12831711957144099,
+        "token": 2,
+        "logits": "B.4.logits"
+      },
+      {
+        "position": 2,
+        "uniform": 0.51226591896089,
+        "token": 9,
+        "logits": "B.5.logits"
+      },
+      {
+        "position": 10,
+        "uniform": 0.16598165944335985,
+        "token": 3,
+        "logits": "B.6.logits"
+      },
+      {
+        "position": 18,
+        "uniform": 0.6421889868884207,
+        "token": 12,
+        "logits": "B.7.logits"
+      },
+      {
+        "position": 8,
+        "uniform": 0.4986160500451583,
+        "token": 9,
+        "logits": "B.8.logits"
+      },
+      {
+        "position": 5,
+        "uniform": 0.08556722608800127,
+        "token": 1,
+        "logits": "B.9.logits"
+      },
+      {
+        "position": 13,
+        "uniform": 0.7446063769927346,
+        "token": 15,
+        "logits": "B.10.logits"
+      },
+      {
+        "position": 23,
+        "uniform": 0.3116240225812049,
+        "token": 6,
+        "logits": "B.11.logits"
+      },
+      {
+        "position": 3,
+        "uniform": 0.8711819016523272,
+        "token": 16,
+        "logits": "B.12.logits"
+      },
+      {
+        "position": 16,
+        "uniform": 0.3749761967135927,
+        "token": 8,
+        "logits": "B.13.logits"
+      },
+      {
+        "position": 21,
+        "uniform": 0.8195414338228857,
+        "token": 15,
+        "logits": "B.14.logits"
+      },
+      {
+        "position": 7,
+        "uniform": 0.8175659223870251,
+        "token": 15,
+        "logits": "B.15.logits"
+      },
+      {
+        "position": 17,
+        "uniform": 0.10510586985252279,
+        "token": 2,
+        "logits": "B.16.logits"
+      },
+      {
+        "position": 6,
+        "uniform": 0.8885409126934193,
+        "token": 16,
+        "logits": "B.17.logits"
+      },
+      {
+        "position": 20,
+        "uniform": 0.8480834894901295,
+        "token": 16,
+        "logits": "B.18.logits"
+      },
+      {
+        "position": 11,
+        "uniform": 0.47204680535415855,
+        "token": 9,
+        "logits": "B.19.logits"
+      },
+      {
+        "position": 9,
+        "uniform": 0.6515935693002429,
+        "token": 13,
+        "logits": "B.20.logits"
+      },
+      {
+        "position": 19,
+        "uniform": 0.2569247438973532,
+        "token": 5,
+        "logits": "B.21.logits"
+      },
+      {
+        "position": 12,
+        "uniform": 0.12004446201394459,
+        "token": 4,
+        "logits": "B.22.logits"
+      },
+      {
+        "position": 1,
+        "uniform": 0.16817110710507277,
+        "token": 3,
+        "logits": "B.23.logits"
+      }
+    ],
+    "tokens": [
+      10,
+      3,
+      9,
+      16,
+      2,
+      1,
+      16,
+      15,
+      9,
+      13,
+      3,
+      9,
+      4,
+      15,
+      15,
+      1,
+      8,
+      2,
+      12,
+      5,
+      16,
+      15,
+      17,
+      6
+    ],
+    "sequence": "MELTDCTSLQELFSSCKDPGTSVH"
+  },
+  "C": {
+    "initialSequence": "####ACDE####",
+    "order": [
+      3,
+      10,
+      9,
+      0,
+      2,
+      8,
+      1,
+      11
+    ],
+    "uniforms": [
+      0.08092664252632797,
+      0.7744698576982261,
+      0.7836731665585441,
+      0.8182750826176703,
+      0.8821052643777526,
+      0.8577082395245639,
+      0.4525685655602175,
+      0.23279604199362347
+    ],
+    "steps": [
+      {
+        "position": 3,
+        "uniform": 0.08092664252632797,
+        "token": 0,
+        "logits": "C.0.logits"
+      },
+      {
+        "position": 10,
+        "uniform": 0.7744698576982261,
+        "token": 15,
+        "logits": "C.1.logits"
+      },
+      {
+        "position": 9,
+        "uniform": 0.7836731665585441,
+        "token": 15,
+        "logits": "C.2.logits"
+      },
+      {
+        "position": 0,
+        "uniform": 0.8182750826176703,
+        "token": 10,
+        "logits": "C.3.logits"
+      },
+      {
+        "position": 2,
+        "uniform": 0.8821052643777526,
+        "token": 16,
+        "logits": "C.4.logits"
+      },
+      {
+        "position": 8,
+        "uniform": 0.8577082395245639,
+        "token": 16,
+        "logits": "C.5.logits"
+      },
+      {
+        "position": 1,
+        "uniform": 0.4525685655602175,
+        "token": 9,
+        "logits": "C.6.logits"
+      },
+      {
+        "position": 11,
+        "uniform": 0.23279604199362347,
+        "token": 5,
+        "logits": "C.7.logits"
+      }
+    ],
+    "tokens": [
+      10,
+      9,
+      16,
+      0,
+      0,
+      1,
+      2,
+      3,
+      16,
+      15,
+      15,
+      5
+    ],
+    "sequence": "MLTAACDETSSG"
+  },
+  "binary": {
+    "file": ".cache/fixtures/int8.bin",
+    "byteLength": 30228000,
+    "sha256": "9b03b57f82bdbfdbc6db4f3aa4c375cf91634599042425d266629eb21ecae857",
+    "tensors": {
+      "A.gfp.embedding": {
+        "offset": 0,
+        "byteLength": 1024,
+        "shape": [
+          32,
+          8
+        ]
+      },
+      "A.gfp.projection": {
+        "offset": 1024,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.0": {
+        "offset": 132096,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.1": {
+        "offset": 263168,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.2": {
+        "offset": 394240,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.3": {
+        "offset": 525312,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.4": {
+        "offset": 656384,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.5": {
+        "offset": 787456,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.6": {
+        "offset": 918528,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.7": {
+        "offset": 1049600,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.8": {
+        "offset": 1180672,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.9": {
+        "offset": 1311744,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.10": {
+        "offset": 1442816,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.11": {
+        "offset": 1573888,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.12": {
+        "offset": 1704960,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.13": {
+        "offset": 1836032,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.14": {
+        "offset": 1967104,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.block.15": {
+        "offset": 2098176,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.final_norm": {
+        "offset": 2229248,
+        "byteLength": 131072,
+        "shape": [
+          32,
+          1024
+        ]
+      },
+      "A.gfp.logits": {
+        "offset": 2360320,
+        "byteLength": 3968,
+        "shape": [
+          32,
+          31
+        ]
+      },
+      "A.ubiquitin.embedding": {
+        "offset": 2364288,
+        "byteLength": 2432,
+        "shape": [
+          76,
+          8
+        ]
+      },
+      "A.ubiquitin.projection": {
+        "offset": 2366720,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.0": {
+        "offset": 2678016,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.1": {
+        "offset": 2989312,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.2": {
+        "offset": 3300608,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.3": {
+        "offset": 3611904,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.4": {
+        "offset": 3923200,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.5": {
+        "offset": 4234496,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.6": {
+        "offset": 4545792,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.7": {
+        "offset": 4857088,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.8": {
+        "offset": 5168384,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.9": {
+        "offset": 5479680,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.10": {
+        "offset": 5790976,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.11": {
+        "offset": 6102272,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.12": {
+        "offset": 6413568,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.13": {
+        "offset": 6724864,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.14": {
+        "offset": 7036160,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.block.15": {
+        "offset": 7347456,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.final_norm": {
+        "offset": 7658752,
+        "byteLength": 311296,
+        "shape": [
+          76,
+          1024
+        ]
+      },
+      "A.ubiquitin.logits": {
+        "offset": 7970048,
+        "byteLength": 9424,
+        "shape": [
+          76,
+          31
+        ]
+      },
+      "A.specials.embedding": {
+        "offset": 7979472,
+        "byteLength": 992,
+        "shape": [
+          31,
+          8
+        ]
+      },
+      "A.specials.projection": {
+        "offset": 7980464,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.0": {
+        "offset": 8107440,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.1": {
+        "offset": 8234416,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.2": {
+        "offset": 8361392,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.3": {
+        "offset": 8488368,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.4": {
+        "offset": 8615344,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.5": {
+        "offset": 8742320,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.6": {
+        "offset": 8869296,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.7": {
+        "offset": 8996272,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.8": {
+        "offset": 9123248,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.9": {
+        "offset": 9250224,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.10": {
+        "offset": 9377200,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.11": {
+        "offset": 9504176,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.12": {
+        "offset": 9631152,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.13": {
+        "offset": 9758128,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.14": {
+        "offset": 9885104,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.block.15": {
+        "offset": 10012080,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.final_norm": {
+        "offset": 10139056,
+        "byteLength": 126976,
+        "shape": [
+          31,
+          1024
+        ]
+      },
+      "A.specials.logits": {
+        "offset": 10266032,
+        "byteLength": 3844,
+        "shape": [
+          31,
+          31
+        ]
+      },
+      "A.padding_mask.embedding": {
+        "offset": 10269876,
+        "byteLength": 384,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "A.padding_mask.projection": {
+        "offset": 10270260,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.0": {
+        "offset": 10319412,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.1": {
+        "offset": 10368564,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.2": {
+        "offset": 10417716,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.3": {
+        "offset": 10466868,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.4": {
+        "offset": 10516020,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.5": {
+        "offset": 10565172,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.6": {
+        "offset": 10614324,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.7": {
+        "offset": 10663476,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.8": {
+        "offset": 10712628,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.9": {
+        "offset": 10761780,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.10": {
+        "offset": 10810932,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.11": {
+        "offset": 10860084,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.12": {
+        "offset": 10909236,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.13": {
+        "offset": 10958388,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.14": {
+        "offset": 11007540,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.block.15": {
+        "offset": 11056692,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.final_norm": {
+        "offset": 11105844,
+        "byteLength": 49152,
+        "shape": [
+          12,
+          1024
+        ]
+      },
+      "A.padding_mask.logits": {
+        "offset": 11154996,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "A.long_dilation.embedding": {
+        "offset": 11156484,
+        "byteLength": 8224,
+        "shape": [
+          257,
+          8
+        ]
+      },
+      "A.long_dilation.projection": {
+        "offset": 11164708,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.0": {
+        "offset": 12217380,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.1": {
+        "offset": 13270052,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.2": {
+        "offset": 14322724,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.3": {
+        "offset": 15375396,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.4": {
+        "offset": 16428068,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.5": {
+        "offset": 17480740,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.6": {
+        "offset": 18533412,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.7": {
+        "offset": 19586084,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.8": {
+        "offset": 20638756,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.9": {
+        "offset": 21691428,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.10": {
+        "offset": 22744100,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.11": {
+        "offset": 23796772,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.12": {
+        "offset": 24849444,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.13": {
+        "offset": 25902116,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.14": {
+        "offset": 26954788,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.block.15": {
+        "offset": 28007460,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.final_norm": {
+        "offset": 29060132,
+        "byteLength": 1052672,
+        "shape": [
+          257,
+          1024
+        ]
+      },
+      "A.long_dilation.logits": {
+        "offset": 30112804,
+        "byteLength": 31868,
+        "shape": [
+          257,
+          31
+        ]
+      },
+      "B.0.logits": {
+        "offset": 30144672,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.1.logits": {
+        "offset": 30147648,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.2.logits": {
+        "offset": 30150624,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.3.logits": {
+        "offset": 30153600,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.4.logits": {
+        "offset": 30156576,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.5.logits": {
+        "offset": 30159552,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.6.logits": {
+        "offset": 30162528,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.7.logits": {
+        "offset": 30165504,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.8.logits": {
+        "offset": 30168480,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.9.logits": {
+        "offset": 30171456,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.10.logits": {
+        "offset": 30174432,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.11.logits": {
+        "offset": 30177408,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.12.logits": {
+        "offset": 30180384,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.13.logits": {
+        "offset": 30183360,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.14.logits": {
+        "offset": 30186336,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.15.logits": {
+        "offset": 30189312,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.16.logits": {
+        "offset": 30192288,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.17.logits": {
+        "offset": 30195264,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.18.logits": {
+        "offset": 30198240,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.19.logits": {
+        "offset": 30201216,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.20.logits": {
+        "offset": 30204192,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.21.logits": {
+        "offset": 30207168,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.22.logits": {
+        "offset": 30210144,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "B.23.logits": {
+        "offset": 30213120,
+        "byteLength": 2976,
+        "shape": [
+          24,
+          31
+        ]
+      },
+      "C.0.logits": {
+        "offset": 30216096,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.1.logits": {
+        "offset": 30217584,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.2.logits": {
+        "offset": 30219072,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.3.logits": {
+        "offset": 30220560,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.4.logits": {
+        "offset": 30222048,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.5.logits": {
+        "offset": 30223536,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.6.logits": {
+        "offset": 30225024,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      },
+      "C.7.logits": {
+        "offset": 30226512,
+        "byteLength": 1488,
+        "shape": [
+          12,
+          31
+        ]
+      }
+    }
+  }
+}

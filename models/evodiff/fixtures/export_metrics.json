@@ -1,0 +1,244 @@
+{
+  "fp32": {
+    "total_bytes": 151582116,
+    "total_params": 37890327,
+    "num_tensors": 199,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 24310060,
+        "sha256": "db6ea7a949499fd93c3fec3d931e040effd0be3b62ccfbdd08984f839bec1bed"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 23135552,
+        "sha256": "1f037b1c057f8b8697f6dfe04095251f32c8336cf90440e8a87792bf7cc16900"
+      },
+      {
+        "file": "model-003.safetensors",
+        "byteLength": 24179600,
+        "sha256": "1fd4723f36d1861557d6352621e96aa682b9c17fa1a45261d3879e557c142d5a"
+      },
+      {
+        "file": "model-004.safetensors",
+        "byteLength": 23135528,
+        "sha256": "47d1dc9f80ca5d9837341e936dbdb801e24e3bcf7895ad75fe92c115206a0f64"
+      },
+      {
+        "file": "model-005.safetensors",
+        "byteLength": 24179568,
+        "sha256": "40964eb3f4f4caa780cfd771e81214e690563515e393b3b3e47c6e8a9110675d"
+      },
+      {
+        "file": "model-006.safetensors",
+        "byteLength": 23135520,
+        "sha256": "bf4582b7ec4f73188017afc4a7d2afb241ab5d936fbf8bb4a1d1059a31a19234"
+      },
+      {
+        "file": "model-007.safetensors",
+        "byteLength": 9506288,
+        "sha256": "63ec1eb8f033c40f68d8d787b94a9ca5f327213b5af20a8ed3ce952a3983832f"
+      }
+    ],
+    "roundtrip": {
+      "gfp": {
+        "logits": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        },
+        "probabilities": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        }
+      },
+      "ubiquitin": {
+        "logits": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        },
+        "probabilities": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        }
+      },
+      "specials": {
+        "logits": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        },
+        "probabilities": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        }
+      },
+      "padding_mask": {
+        "logits": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        },
+        "probabilities": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        }
+      },
+      "long_dilation": {
+        "logits": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        },
+        "probabilities": {
+          "relRMS": 0.0,
+          "maxAbs": 0.0
+        }
+      }
+    }
+  },
+  "fp16": {
+    "total_bytes": 76004036,
+    "total_params": 37890327,
+    "num_tensors": 199,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 23788932,
+        "sha256": "d1ee3479d626766378f7b2e0494be6aa496c63edfc7f0fc611d3507b9819a2c5"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 23721936,
+        "sha256": "804fb84208d2989e2c47724b47922e355dcf194a2e8ba8895134876a5a684188"
+      },
+      {
+        "file": "model-003.safetensors",
+        "byteLength": 23721904,
+        "sha256": "cca68343490c25e2a9ece557a864d134931f09fa1c94cb00a553d7e25b1767e7"
+      },
+      {
+        "file": "model-004.safetensors",
+        "byteLength": 4771264,
+        "sha256": "d9327816f918f96075e1361ed9ee9d6a4d793addbc07eb0b24bb8fc0e7143e34"
+      }
+    ],
+    "roundtrip": {
+      "gfp": {
+        "logits": {
+          "relRMS": 0.00015657436727543677,
+          "maxAbs": 0.0048656463623046875
+        },
+        "probabilities": {
+          "relRMS": 0.00010698792289432433,
+          "maxAbs": 3.7007033824920654e-05
+        }
+      },
+      "ubiquitin": {
+        "logits": {
+          "relRMS": 0.0001751947141766787,
+          "maxAbs": 0.01007080078125
+        },
+        "probabilities": {
+          "relRMS": 0.000290659186153644,
+          "maxAbs": 0.001013636589050293
+        }
+      },
+      "specials": {
+        "logits": {
+          "relRMS": 0.00017568459417036068,
+          "maxAbs": 0.0052394866943359375
+        },
+        "probabilities": {
+          "relRMS": 0.0004820991051585799,
+          "maxAbs": 0.00038313865661621094
+        }
+      },
+      "padding_mask": {
+        "logits": {
+          "relRMS": 0.00015559922775328224,
+          "maxAbs": 0.004852294921875
+        },
+        "probabilities": {
+          "relRMS": 0.0001256314076623,
+          "maxAbs": 7.098913192749023e-05
+        }
+      },
+      "long_dilation": {
+        "logits": {
+          "relRMS": 0.00018966594991113298,
+          "maxAbs": 0.009052276611328125
+        },
+        "probabilities": {
+          "relRMS": 0.00026157031037980056,
+          "maxAbs": 0.0007178187370300293
+        }
+      }
+    }
+  },
+  "int8": {
+    "total_bytes": 38356136,
+    "total_params": 37890327,
+    "num_tensors": 199,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 23971624,
+        "sha256": "8cd88fd4a8411d97fe34e9a9389bf45265611676c696ddd4d6727ada34ef67c2"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 14384512,
+        "sha256": "713bdae7c7465796e02fc38a3d94d85a6a0051529130bef3341399701422d866"
+      }
+    ],
+    "roundtrip": {
+      "gfp": {
+        "logits": {
+          "relRMS": 0.0019026076139684429,
+          "maxAbs": 0.11040735244750977
+        },
+        "probabilities": {
+          "relRMS": 0.004819465622163403,
+          "maxAbs": 0.0015966370701789856
+        }
+      },
+      "ubiquitin": {
+        "logits": {
+          "relRMS": 0.005296564769089423,
+          "maxAbs": 0.2941427230834961
+        },
+        "probabilities": {
+          "relRMS": 0.011427320963488625,
+          "maxAbs": 0.05008053779602051
+        }
+      },
+      "specials": {
+        "logits": {
+          "relRMS": 0.002706163035574102,
+          "maxAbs": 0.14130640029907227
+        },
+        "probabilities": {
+          "relRMS": 0.014887602208551868,
+          "maxAbs": 0.00937199592590332
+        }
+      },
+      "padding_mask": {
+        "logits": {
+          "relRMS": 0.001949225159628259,
+          "maxAbs": 0.08453750610351562
+        },
+        "probabilities": {
+          "relRMS": 0.005149740534700446,
+          "maxAbs": 0.0012705326080322266
+        }
+      },
+      "long_dilation": {
+        "logits": {
+          "relRMS": 0.007060655695094266,
+          "maxAbs": 0.3358154296875
+        },
+        "probabilities": {
+          "relRMS": 0.01240132702698882,
+          "maxAbs": 0.0364605188369751
+        }
+      }
+    }
+  }
+}
