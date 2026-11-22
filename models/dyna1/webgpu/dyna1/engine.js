@@ -97,7 +97,7 @@ class Engine {
     x=await residual(x,await linear(relu,p+'.linear2',F,D));save(`head.${i}`,x);this.releaseExcept(x,traces);
    }
    const logits=await linear(await ln(x,'head.norm2',{eps:1e-12}),'head.output_layer',D,1);
-   const probs=await elem(L,`y[i]=1.0/(1.0+exp(-(x[i]-${Math.log(.05/.95)})));`,[logits]);
+   const probs=await elem(L,`y[i]=1.0/(1.0+exp(-(x[i]-(${Math.log(.05/.95)}))));`,[logits]);
    traces.logits={buffer:logits,n:L};traces.probs={buffer:probs,n:L};
    const size=Object.values(traces).reduce((a,t)=>a+t.n*4,0);
    const readback=this.device.createBuffer({size,usage:GPUBufferUsage.MAP_READ|GPUBufferUsage.COPY_DST});this.buffers.add(readback);this.temporary.add(readback);
