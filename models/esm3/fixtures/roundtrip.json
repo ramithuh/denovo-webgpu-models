@@ -1,0 +1,101 @@
+{
+  "fp32": {
+    "strict_load": true,
+    "final_outputs": {
+      "sequence_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "structure_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "ss8_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "sasa_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "function_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "residue_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "embeddings": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      }
+    }
+  },
+  "fp16": {
+    "strict_load": true,
+    "final_outputs": {
+      "sequence_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "structure_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "ss8_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "sasa_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "function_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "residue_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "embeddings": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      }
+    }
+  },
+  "int8": {
+    "strict_load": true,
+    "final_outputs": {
+      "sequence_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "structure_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "ss8_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "sasa_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "function_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "residue_logits": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      },
+      "embeddings": {
+        "relRms": 0.0,
+        "maxAbs": 0.0
+      }
+    }
+  }
+}

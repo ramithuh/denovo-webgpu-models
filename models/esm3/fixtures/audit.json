@@ -1,0 +1,71 @@
+{
+  "upstream_commit": "d49ee4606ea4a95a8bc7388171a6e21fefdf1c26",
+  "checkpoints": {
+    "esm": {
+      "file": "esm3_sm_open_v1.pth",
+      "bytes": 2803646068,
+      "sha256": "5ead5a135c658068db6a4f1b933e72d6110992c4668822e1c0e2dcc53e38acd9",
+      "state_elements": 1401735748,
+      "tensors": 539,
+      "dtypes": [
+        "torch.bfloat16"
+      ]
+    },
+    "encoder": {
+      "file": "esm3_structure_encoder_v0.pth",
+      "bytes": 62349276,
+      "sha256": "467acbaee703ba3ccde6e75241a912a316952e5ff071355f85c1d33c68704f40",
+      "state_elements": 31168896,
+      "tensors": 34,
+      "dtypes": [
+        "torch.bfloat16"
+      ]
+    },
+    "decoder": {
+      "file": "esm3_structure_decoder_v0.pth",
+      "bytes": 1237213098,
+      "sha256": "3b726258a44274792b40ce7ea307e10c5da09936368a4ffa2970264d909da65b",
+      "state_elements": 618552905,
+      "tensors": 319,
+      "dtypes": [
+        "torch.bfloat16"
+      ]
+    },
+    "function_decoder": {
+      "file": "esm3_function_decoder_v0.pth",
+      "bytes": 1299947178,
+      "sha256": "f76d074efcaccfe21365a4fa96f212dadd66798e1e49d809ab7ffbe025d227c9",
+      "state_elements": 649964420,
+      "tensors": 56,
+      "dtypes": [
+        "torch.bfloat16"
+      ]
+    }
+  },
+  "bundles": {
+    "fp32": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 8205998164,
+      "weight_rel_rms": 0.0,
+      "shards": 505,
+      "max_shard_bytes": 24934600
+    },
+    "fp16": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 4135516508,
+      "weight_rel_rms": 2.8609821559432732e-11,
+      "shards": 216,
+      "max_shard_bytes": 24932552
+    },
+    "int8": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 2105212488,
+      "weight_rel_rms": 9.647658387995284e-05,
+      "shards": 109,
+      "max_shard_bytes": 24932552
+    }
+  }
+}

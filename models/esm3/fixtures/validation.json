@@ -1,0 +1,418 @@
+{
+  "status": "passed",
+  "date": "2026-11-22T05:11:58.714Z",
+  "model": "esm3-sm-open-v1",
+  "upstreamCommit": "d49ee4606ea4a95a8bc7388171a6e21fefdf1c26",
+  "arithmetic": "F32 activations and accumulation, matching dequantized storage precision in PyTorch; TF32 off",
+  "thresholdRelRms": 0.0001,
+  "commands": {
+    "npm test": {
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "logSHA256": "d09a04b3c91eed1737ee82243b8bc7e50d6d11ad68c910f67ad04f26b65b5be1"
+    },
+    "npm run test:cpu": {
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "logSHA256": "1a208d0af6dd01e074bd80318aa8664cf321131013a5db1548e8f8328e36407c"
+    },
+    "npm run test:gpu": {
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "logSHA256": "64fc9549651bdc873d23a26f0c16dfdd2396efdb99ed43a965d16bca7ecfccea"
+    }
+  },
+  "precision": {
+    "fp32": {
+      "adapter": {
+        "vendor": "nvidia",
+        "architecture": "",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "coldLoadMs": 31871.5,
+      "weightBytes": 8205830212,
+      "maxTraceRelRms": 0.0000034212460607396107,
+      "finalSequenceLogitsRelRms": 2.7406111346036645e-7,
+      "decodedCoordinatesRelRms": 0.0000010540484438845259,
+      "generatedCoordinatesRelRms": 5.966135118660754e-7,
+      "warmMedianMs": {
+        "20": 91.40000057220459,
+        "64": 198.39999961853027,
+        "128": 355.3999996185303
+      }
+    },
+    "fp16": {
+      "adapter": {
+        "vendor": "nvidia",
+        "architecture": "",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "coldLoadMs": 15821,
+      "weightBytes": 4135394884,
+      "maxTraceRelRms": 0.000002332078249796701,
+      "finalSequenceLogitsRelRms": 2.5880205865708604e-7,
+      "decodedCoordinatesRelRms": 0.0000010225393465546323,
+      "generatedCoordinatesRelRms": 8.319705792877909e-7,
+      "warmMedianMs": {
+        "20": 77.09999942779541,
+        "64": 155.5,
+        "128": 276.29999923706055
+      }
+    },
+    "fp16-native": {
+      "adapter": {
+        "vendor": "nvidia",
+        "architecture": "",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "coldLoadMs": 16020,
+      "weightBytes": 4135394884,
+      "maxTraceRelRms": 0.000002332078249796701,
+      "finalSequenceLogitsRelRms": 2.5880205865708604e-7,
+      "decodedCoordinatesRelRms": 0.0000010225393465546323,
+      "generatedCoordinatesRelRms": 8.319705792877909e-7,
+      "warmMedianMs": {
+        "20": 78.80000019073486,
+        "64": 163.5,
+        "128": 261.8999996185303
+      }
+    },
+    "int8": {
+      "adapter": {
+        "vendor": "nvidia",
+        "architecture": "",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "coldLoadMs": 7774.699999809265,
+      "weightBytes": 2105064696,
+      "maxTraceRelRms": 0.0000023250625982824512,
+      "finalSequenceLogitsRelRms": 2.6356218112419476e-7,
+      "decodedCoordinatesRelRms": 7.591376337343923e-7,
+      "generatedCoordinatesRelRms": 7.407388398572298e-7,
+      "warmMedianMs": {
+        "20": 66.79999923706055,
+        "64": 143.89999961853027,
+        "128": 267.5
+      }
+    }
+  },
+  "cpu": {
+    "maxTraceRelRms": 0.000004226548124855172
+  },
+  "browser": {
+    "ok": true,
+    "cacheAPI": true,
+    "opfs": true,
+    "privateModeFallback": true,
+    "moduleWorker": true,
+    "demoStructureGeneration": true
+  },
+  "roundtripExact": true,
+  "exports": {
+    "fp32": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 8205998164,
+      "weight_rel_rms": 0,
+      "shards": 505,
+      "max_shard_bytes": 24934600
+    },
+    "fp16": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 4135516508,
+      "weight_rel_rms": 2.8609821559432732e-11,
+      "shards": 216,
+      "max_shard_bytes": 24932552
+    },
+    "int8": {
+      "total_params": 2051457549,
+      "num_tensors": 892,
+      "total_bytes": 2105212488,
+      "weight_rel_rms": 0.00009647658387995284,
+      "shards": 109,
+      "max_shard_bytes": 24932552
+    }
+  },
+  "quantizationDrift": {
+    "fp16": {
+      "sequence.sequence_logits": {
+        "relRms": 2.047351897822903e-7,
+        "maxAbs": 0.00001811981201171875
+      },
+      "sequence.structure_logits": {
+        "relRms": 2.9996266786447784e-7,
+        "maxAbs": 0.0000553131103515625
+      },
+      "sequence.ss8_logits": {
+        "relRms": 4.786904549220352e-7,
+        "maxAbs": 0.0000152587890625
+      },
+      "sequence.sasa_logits": {
+        "relRms": 4.849599282649289e-7,
+        "maxAbs": 0.000019073486328125
+      },
+      "sequence.function_logits": {
+        "relRms": 3.6445643923317803e-7,
+        "maxAbs": 0.0001373291015625
+      },
+      "sequence.residue_logits": {
+        "relRms": 4.748870355675698e-7,
+        "maxAbs": 0.0000362396240234375
+      },
+      "sequence.embeddings": {
+        "relRms": 9.514260288300864e-7,
+        "maxAbs": 0.0078125
+      },
+      "decode.coordinates": {
+        "relRms": 5.961166696861668e-7,
+        "maxAbs": 0.000010967254638671875
+      },
+      "decode.plddt": {
+        "relRms": 8.923142752348287e-8,
+        "maxAbs": 1.1920928955078125e-7
+      },
+      "masked.sequence_logits": {
+        "relRms": 2.026731228084909e-7,
+        "maxAbs": 0.000019073486328125
+      },
+      "masked.structure_logits": {
+        "relRms": 2.596476317850335e-7,
+        "maxAbs": 0.00006103515625
+      },
+      "masked.ss8_logits": {
+        "relRms": 4.089397622686691e-7,
+        "maxAbs": 0.00001811981201171875
+      },
+      "masked.sasa_logits": {
+        "relRms": 4.706688971464857e-7,
+        "maxAbs": 0.0000209808349609375
+      },
+      "masked.function_logits": {
+        "relRms": 4.471118938655861e-7,
+        "maxAbs": 0.00014495849609375
+      },
+      "masked.residue_logits": {
+        "relRms": 4.394361058918434e-7,
+        "maxAbs": 0.00002765655517578125
+      },
+      "masked.embeddings": {
+        "relRms": 9.275084629513447e-7,
+        "maxAbs": 0.005859375
+      },
+      "inverse.sequence_logits": {
+        "relRms": 3.0060273604783e-7,
+        "maxAbs": 0.000026702880859375
+      },
+      "inverse.structure_logits": {
+        "relRms": 4.774277596481131e-7,
+        "maxAbs": 0.0000514984130859375
+      },
+      "inverse.ss8_logits": {
+        "relRms": 5.428506594341225e-7,
+        "maxAbs": 0.0000247955322265625
+      },
+      "inverse.sasa_logits": {
+        "relRms": 5.091543323991159e-7,
+        "maxAbs": 0.00002288818359375
+      },
+      "inverse.function_logits": {
+        "relRms": 5.570409911222146e-7,
+        "maxAbs": 0.00017547607421875
+      },
+      "inverse.residue_logits": {
+        "relRms": 5.578376669829235e-7,
+        "maxAbs": 0.00003719329833984375
+      },
+      "inverse.embeddings": {
+        "relRms": 0.000001232449767466669,
+        "maxAbs": 0.0048828125
+      },
+      "multitrack.sequence_logits": {
+        "relRms": 2.4447352156100943e-7,
+        "maxAbs": 0.0000209808349609375
+      },
+      "multitrack.structure_logits": {
+        "relRms": 3.1784808898317645e-7,
+        "maxAbs": 0.00005340576171875
+      },
+      "multitrack.ss8_logits": {
+        "relRms": 5.168119877057846e-7,
+        "maxAbs": 0.000019073486328125
+      },
+      "multitrack.sasa_logits": {
+        "relRms": 3.907076417986045e-7,
+        "maxAbs": 0.000011444091796875
+      },
+      "multitrack.function_logits": {
+        "relRms": 8.428146401083561e-7,
+        "maxAbs": 0.0002288818359375
+      },
+      "multitrack.residue_logits": {
+        "relRms": 5.995692946214783e-7,
+        "maxAbs": 0.0000286102294921875
+      },
+      "multitrack.embeddings": {
+        "relRms": 0.0000012446898049700477,
+        "maxAbs": 0.013671875
+      }
+    },
+    "int8": {
+      "sequence.sequence_logits": {
+        "relRms": 0.001785072871042359,
+        "maxAbs": 0.09720420837402344
+      },
+      "sequence.structure_logits": {
+        "relRms": 0.00258540538571177,
+        "maxAbs": 0.38978004455566406
+      },
+      "sequence.ss8_logits": {
+        "relRms": 0.005623189834533601,
+        "maxAbs": 0.2195119857788086
+      },
+      "sequence.sasa_logits": {
+        "relRms": 0.005547331233309124,
+        "maxAbs": 0.2063121795654297
+      },
+      "sequence.function_logits": {
+        "relRms": 0.002414254586188135,
+        "maxAbs": 0.8198471069335938
+      },
+      "sequence.residue_logits": {
+        "relRms": 0.0035065927555291004,
+        "maxAbs": 0.24416351318359375
+      },
+      "sequence.embeddings": {
+        "relRms": 0.008615036099556795,
+        "maxAbs": 44.9736328125
+      },
+      "decode.coordinates": {
+        "relRms": 0.04046805079261348,
+        "maxAbs": 0.9604887962341309
+      },
+      "decode.plddt": {
+        "relRms": 0.01229624375621167,
+        "maxAbs": 0.014586210250854492
+      },
+      "masked.sequence_logits": {
+        "relRms": 0.001852485051759125,
+        "maxAbs": 0.11193656921386719
+      },
+      "masked.structure_logits": {
+        "relRms": 0.002495504612893975,
+        "maxAbs": 0.33786582946777344
+      },
+      "masked.ss8_logits": {
+        "relRms": 0.005345892548060033,
+        "maxAbs": 0.2026500701904297
+      },
+      "masked.sasa_logits": {
+        "relRms": 0.005756102420568781,
+        "maxAbs": 0.1974353790283203
+      },
+      "masked.function_logits": {
+        "relRms": 0.0025694605968796026,
+        "maxAbs": 0.8871917724609375
+      },
+      "masked.residue_logits": {
+        "relRms": 0.0035169439507425596,
+        "maxAbs": 0.25292396545410156
+      },
+      "masked.embeddings": {
+        "relRms": 0.008749524353435416,
+        "maxAbs": 41.275390625
+      },
+      "inverse.sequence_logits": {
+        "relRms": 0.0019626471960096565,
+        "maxAbs": 0.18028831481933594
+      },
+      "inverse.structure_logits": {
+        "relRms": 0.0033129272022417553,
+        "maxAbs": 0.40755271911621094
+      },
+      "inverse.ss8_logits": {
+        "relRms": 0.005906495067189886,
+        "maxAbs": 0.2315502166748047
+      },
+      "inverse.sasa_logits": {
+        "relRms": 0.003950243347647829,
+        "maxAbs": 0.17427444458007812
+      },
+      "inverse.function_logits": {
+        "relRms": 0.0026947543228328257,
+        "maxAbs": 0.6538848876953125
+      },
+      "inverse.residue_logits": {
+        "relRms": 0.0036021523006882546,
+        "maxAbs": 0.22377300262451172
+      },
+      "inverse.embeddings": {
+        "relRms": 0.009559614409163317,
+        "maxAbs": 50.82421875
+      },
+      "multitrack.sequence_logits": {
+        "relRms": 0.0018739999539153522,
+        "maxAbs": 0.12963485717773438
+      },
+      "multitrack.structure_logits": {
+        "relRms": 0.003485319112710253,
+        "maxAbs": 0.44431304931640625
+      },
+      "multitrack.ss8_logits": {
+        "relRms": 0.0064189479398741155,
+        "maxAbs": 0.17923450469970703
+      },
+      "multitrack.sasa_logits": {
+        "relRms": 0.003953053602841197,
+        "maxAbs": 0.18943405151367188
+      },
+      "multitrack.function_logits": {
+        "relRms": 0.002250416645435908,
+        "maxAbs": 0.6798171997070312
+      },
+      "multitrack.residue_logits": {
+        "relRms": 0.004073338906567011,
+        "maxAbs": 0.28022003173828125
+      },
+      "multitrack.embeddings": {
+        "relRms": 0.010584717010984858,
+        "maxAbs": 41.708984375
+      }
+    }
+  },
+  "scope": {
+    "trunkBlocks": 48,
+    "structureEncoderGeometricBlocks": 2,
+    "structureDecoderBlocks": 30,
+    "functionInputAndOutputHeads": true,
+    "functionTextDecoder": false,
+    "int4": false
+  },
+  "runtimeSHA256": {
+    "shared/api.js": "d88b98b16efc408a37a7e7617e2ef5c9b2e8b53d2017cfa5911e6b8d43b5f5c0",
+    "shared/index.js": "54ef403c6ddfcbd03cc1485c15d89205ddd23b4a2efcd0b7a5b4cd7ebe08aa69",
+    "shared/input.js": "8415b65a1c781f729272a245bb060aaf024347527e9335c48b2699a44aecfa9a",
+    "shared/model.js": "3bcf47e0bd74dab6b309d2ac3df11c7ff79a943c790ccae2a454f3a03747b357",
+    "shared/weights.js": "77c58cd41b57cf5573fbbda4e926b53bd9e9ef709d76bbea34c9d4d2e0c410c0",
+    "cpu/backend.js": "061632d6d9e37c0e8ab161ba94dcf001776599afbfd2480bfd1b1d99a4e4b9fc",
+    "cpu/index.js": "41137bae4a25d928752bd958aee3bfd74c8ceef7a16a8c8b28df30ef154486ee",
+    "webgpu/backend.js": "2c03f5cd797e025ed39d77e457bb5d0101aa7f60888c3644944996f001bc0fa3",
+    "webgpu/index.js": "402f54aa3077323d26756f555b435606add9ec7d9511b22eb97b4f1c6f9c2245",
+    "webgpu/shaders.js": "902d8402d2e8c9740d23f9f09a5a6c9fbf5be391501cceccebb3b4133881efe2",
+    "webgpu/worker.js": "d6304338835ef2505dc945a03c0fe6c77808db9a54ee3967ca02be6767abb8f1"
+  }
+}

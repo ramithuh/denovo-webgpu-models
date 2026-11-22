@@ -1,11 +1,10 @@
 # Protein model porting references
 
-Use the [One-Shot WebGPU Model Porting Prompt](../docs/PORTING_A_MODEL.md) for the remaining Wave 2 ports (`EvoDiff-Seq OA_DM_38M` and `Original RFdiffusion` have been promoted to `models/`). Each remaining entry below has early reference evidence with Milestone 1+ in progress.
+Use the [One-Shot WebGPU Model Porting Prompt](../docs/PORTING_A_MODEL.md) for the remaining Wave 2 port (`EvoDiff-Seq OA_DM_38M`, `Original RFdiffusion`, and `ESM3 Open 1.4B` have been promoted to `models/`).
 
 | Paper and PyTorch comparison | What works here | What would produce a model result |
 | --- | --- | --- |
-| [ESM3 Open](esm3/README.md) | Sequence IDs, backbone coordinates, and presence flags match upstream on deposited inputs, including a missing-atom case. | The Open checkpoint's learned encoders, transformer and output heads supply predictions. The local checks stop at input preparation. |
-| [BoltzGen](boltzgen/README.md) | A byte-range probe and offline replay verify the ZIP indexes of two PyTorch checkpoint archives. Full-file hashes are publisher metadata. | Upstream loads the weights and computes atom coordinates. The local inspector reads storage sizes and names. |
+| [BoltzGen](boltzgen/README.md) | A byte-range probe and offline replay verify the ZIP indexes of two PyTorch checkpoint archives. Full-file hashes are publisher metadata. | Upstream loads the weights and computes atom coordinates. Dynamic-length/dynamic-step WebGPU upgrade is in progress. |
 
 Replay the four CPU and file-format checks offline with Node 22.21 or newer and Python 3. The RFdiffusion page linked above has a separate hardware smoke test.
 

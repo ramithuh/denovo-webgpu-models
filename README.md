@@ -17,6 +17,7 @@ Weights are sharded (≤ 25 MB per `.safetensors` file) and hosted on Hugging Fa
 | **Dyna-1** | [`models/dyna1/`](models/dyna1/README_WEBGPU.md) | Residue dynamics / flexibility prediction | [`ramithuh/dyna1-webgpu`](https://huggingface.co/ramithuh/dyna1-webgpu) | Verified end-to-end GPU parity |
 | **EvoDiff-Seq 38M** | [`models/evodiff/`](models/evodiff/README_WEBGPU.md) | Order-agnostic masked sequence diffusion (ByteNet) | Pending HF upload (`weights/oa_dm_38m/`) | Verified end-to-end GPU parity (`relRMS 9.8e-7`) |
 | **Original RFdiffusion** | [`models/rfdiffusion/`](models/rfdiffusion/README_WEBGPU.md) | SE(3) backbone, motif & symmetric diffusion (`Base_ckpt.pt`) | Pending HF upload (`weights/base/`) | Verified end-to-end GPU parity (`relRMS 0.0` N/CA/C) |
+| **ESM3 Open 1.4B** | [`models/esm3/`](models/esm3/README_WEBGPU.md) | 48-block multimodal seq/struct/SS8/SASA + VQ-VAE encoder/decoder | Pending HF upload (`weights/`) | Verified end-to-end GPU parity (`relRMS 2.59e-7`, 77–262 ms) |
 
 *(Standalone flagship sibling repo: [`ramithuh/genie3-webgpu`](https://github.com/ramithuh/genie3-webgpu).)*
 

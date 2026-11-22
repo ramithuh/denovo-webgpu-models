@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "cacheAPI": true,
+  "opfs": true,
+  "privateModeFallback": true,
+  "moduleWorker": true,
+  "demoStructureGeneration": true
+}

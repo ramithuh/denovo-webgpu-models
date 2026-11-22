@@ -1,0 +1,3722 @@
+{
+  "model": "esm3-sm-open-v1",
+  "upstream_commit": "d49ee4606ea4a95a8bc7388171a6e21fefdf1c26",
+  "precision": "int8",
+  "compute": "float32; TF32 disabled; storage-dequantized matching precision",
+  "binary": "../weights/oracle-int8.bin",
+  "sha256": "85492771e3315b85822eeb25fd92106abeba1a270b6ad71f9156228db551f61b",
+  "cases": {
+    "sequence": {
+      "input": {
+        "sequence_tokens": [
+          0,
+          17,
+          4,
+          19,
+          12,
+          16,
+          22,
+          4,
+          15,
+          13,
+          6,
+          6,
+          14,
+          8,
+          8,
+          6,
+          10,
+          14,
+          14,
+          14,
+          8,
+          2
+        ]
+      },
+      "outputs": [
+        "esm.encoder",
+        "esm.transformer.blocks.0",
+        "esm.transformer.blocks.1",
+        "esm.transformer.blocks.2",
+        "esm.transformer.blocks.3",
+        "esm.transformer.blocks.4",
+        "esm.transformer.blocks.5",
+        "esm.transformer.blocks.6",
+        "esm.transformer.blocks.7",
+        "esm.transformer.blocks.8",
+        "esm.transformer.blocks.9",
+        "esm.transformer.blocks.10",
+        "esm.transformer.blocks.11",
+        "esm.transformer.blocks.12",
+        "esm.transformer.blocks.13",
+        "esm.transformer.blocks.14",
+        "esm.transformer.blocks.15",
+        "esm.transformer.blocks.16",
+        "esm.transformer.blocks.17",
+        "esm.transformer.blocks.18",
+        "esm.transformer.blocks.19",
+        "esm.transformer.blocks.20",
+        "esm.transformer.blocks.21",
+        "esm.transformer.blocks.22",
+        "esm.transformer.blocks.23",
+        "esm.transformer.blocks.24",
+        "esm.transformer.blocks.25",
+        "esm.transformer.blocks.26",
+        "esm.transformer.blocks.27",
+        "esm.transformer.blocks.28",
+        "esm.transformer.blocks.29",
+        "esm.transformer.blocks.30",
+        "esm.transformer.blocks.31",
+        "esm.transformer.blocks.32",
+        "esm.transformer.blocks.33",
+        "esm.transformer.blocks.34",
+        "esm.transformer.blocks.35",
+        "esm.transformer.blocks.36",
+        "esm.transformer.blocks.37",
+        "esm.transformer.blocks.38",
+        "esm.transformer.blocks.39",
+        "esm.transformer.blocks.40",
+        "esm.transformer.blocks.41",
+        "esm.transformer.blocks.42",
+        "esm.transformer.blocks.43",
+        "esm.transformer.blocks.44",
+        "esm.transformer.blocks.45",
+        "esm.transformer.blocks.46",
+        "esm.transformer.blocks.47",
+        "esm.normalized",
+        "sequence_logits",
+        "structure_logits",
+        "ss8_logits",
+        "sasa_logits",
+        "function_logits",
+        "residue_logits",
+        "embeddings"
+      ]
+    },
+    "decode": {
+      "tokens": [
+        4098,
+        3715,
+        264,
+        264,
+        264,
+        588,
+        317,
+        1894,
+        2056,
+        2871,
+        1862,
+        187,
+        951,
+        2874,
+        1185,
+        2597,
+        3163,
+        1570,
+        1570,
+        2854,
+        264,
+        4097
+      ],
+      "outputs": [
+        "decoder.embedding",
+        "decoder.decoder_stack.blocks.0",
+        "decoder.decoder_stack.blocks.1",
+        "decoder.decoder_stack.blocks.2",
+        "decoder.decoder_stack.blocks.3",
+        "decoder.decoder_stack.blocks.4",
+        "decoder.decoder_stack.blocks.5",
+        "decoder.decoder_stack.blocks.6",
+        "decoder.decoder_stack.blocks.7",
+        "decoder.decoder_stack.blocks.8",
+        "decoder.decoder_stack.blocks.9",
+        "decoder.decoder_stack.blocks.10",
+        "decoder.decoder_stack.blocks.11",
+        "decoder.decoder_stack.blocks.12",
+        "decoder.decoder_stack.blocks.13",
+        "decoder.decoder_stack.blocks.14",
+        "decoder.decoder_stack.blocks.15",
+        "decoder.decoder_stack.blocks.16",
+        "decoder.decoder_stack.blocks.17",
+        "decoder.decoder_stack.blocks.18",
+        "decoder.decoder_stack.blocks.19",
+        "decoder.decoder_stack.blocks.20",
+        "decoder.decoder_stack.blocks.21",
+        "decoder.decoder_stack.blocks.22",
+        "decoder.decoder_stack.blocks.23",
+        "decoder.decoder_stack.blocks.24",
+        "decoder.decoder_stack.blocks.25",
+        "decoder.decoder_stack.blocks.26",
+        "decoder.decoder_stack.blocks.27",
+        "decoder.decoder_stack.blocks.28",
+        "decoder.decoder_stack.blocks.29",
+        "decoder.normalized",
+        "decoder.projection",
+        "decoder.pairwise_logits",
+        "coordinates",
+        "plddt",
+        "affine",
+        "predicted_aligned_error",
+        "ptm"
+      ]
+    },
+    "masked": {
+      "input": {
+        "sequence_tokens": [
+          0,
+          17,
+          32,
+          19,
+          32,
+          16,
+          22,
+          4,
+          32,
+          13,
+          6,
+          6,
+          14,
+          32,
+          8,
+          6,
+          10,
+          14,
+          14,
+          14,
+          8,
+          2
+        ]
+      },
+      "outputs": [
+        "esm.encoder",
+        "esm.transformer.blocks.0",
+        "esm.transformer.blocks.1",
+        "esm.transformer.blocks.2",
+        "esm.transformer.blocks.3",
+        "esm.transformer.blocks.4",
+        "esm.transformer.blocks.5",
+        "esm.transformer.blocks.6",
+        "esm.transformer.blocks.7",
+        "esm.transformer.blocks.8",
+        "esm.transformer.blocks.9",
+        "esm.transformer.blocks.10",
+        "esm.transformer.blocks.11",
+        "esm.transformer.blocks.12",
+        "esm.transformer.blocks.13",
+        "esm.transformer.blocks.14",
+        "esm.transformer.blocks.15",
+        "esm.transformer.blocks.16",
+        "esm.transformer.blocks.17",
+        "esm.transformer.blocks.18",
+        "esm.transformer.blocks.19",
+        "esm.transformer.blocks.20",
+        "esm.transformer.blocks.21",
+        "esm.transformer.blocks.22",
+        "esm.transformer.blocks.23",
+        "esm.transformer.blocks.24",
+        "esm.transformer.blocks.25",
+        "esm.transformer.blocks.26",
+        "esm.transformer.blocks.27",
+        "esm.transformer.blocks.28",
+        "esm.transformer.blocks.29",
+        "esm.transformer.blocks.30",
+        "esm.transformer.blocks.31",
+        "esm.transformer.blocks.32",
+        "esm.transformer.blocks.33",
+        "esm.transformer.blocks.34",
+        "esm.transformer.blocks.35",
+        "esm.transformer.blocks.36",
+        "esm.transformer.blocks.37",
+        "esm.transformer.blocks.38",
+        "esm.transformer.blocks.39",
+        "esm.transformer.blocks.40",
+        "esm.transformer.blocks.41",
+        "esm.transformer.blocks.42",
+        "esm.transformer.blocks.43",
+        "esm.transformer.blocks.44",
+        "esm.transformer.blocks.45",
+        "esm.transformer.blocks.46",
+        "esm.transformer.blocks.47",
+        "esm.normalized",
+        "sequence_logits",
+        "structure_logits",
+        "ss8_logits",
+        "sasa_logits",
+        "function_logits",
+        "residue_logits",
+        "embeddings"
+      ]
+    },
+    "inverse": {
+      "input": {
+        "sequence_tokens": [
+          0,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          2
+        ],
+        "structure_coords": [
+          [
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            [
+              -8.901000022888184,
+              4.126999855041504,
+              -0.5550000071525574
+            ],
+            [
+              -8.607999801635742,
+              3.134999990463257,
+              -1.6180000305175781
+            ],
+            [
+              -7.117000102996826,
+              2.9639999866485596,
+              -1.8969999551773071
+            ]
+          ],
+          [
+            [
+              -6.379000186920166,
+              4.031000137329102,
+              -2.2279999256134033
+            ],
+            [
+              -4.922999858856201,
+              4.001999855041504,
+              -2.4519999027252197
+            ],
+            [
+              -4.136000156402588,
+              3.187000036239624,
+              -1.4040000438690186
+            ]
+          ],
+          [
+            [
+              -4.354000091552734,
+              3.4549999237060547,
+              -0.11100000143051147
+            ],
+            [
+              -3.690000057220459,
+              2.73799991607666,
+              0.9810000061988831
+            ],
+            [
+              -4.1020002365112305,
+              1.25600004196167,
+              1.0740000009536743
+            ]
+          ],
+          [
+            [
+              -5.3420000076293945,
+              0.925000011920929,
+              0.6890000104904175
+            ],
+            [
+              -5.85699987411499,
+              -0.4490000009536743,
+              0.6129999756813049
+            ],
+            [
+              -5.089000225067139,
+              -1.2209999561309814,
+              -0.4699999988079071
+            ]
+          ],
+          [
+            [
+              -4.9070000648498535,
+              -0.6010000109672546,
+              -1.6449999809265137
+            ],
+            [
+              -4.122000217437744,
+              -1.1670000553131104,
+              -2.743000030517578
+            ],
+            [
+              -2.628999948501587,
+              -1.3209999799728394,
+              -2.390000104904175
+            ]
+          ],
+          [
+            [
+              -2.0739998817443848,
+              -0.45899999141693115,
+              -1.527999997138977
+            ],
+            [
+              -0.7160000205039978,
+              -0.6309999823570251,
+              -0.9929999709129333
+            ],
+            [
+              -0.6309999823570251,
+              -1.7660000324249268,
+              0.04399999976158142
+            ]
+          ],
+          [
+            [
+              -1.600000023841858,
+              -1.8600000143051147,
+              0.9670000076293945
+            ],
+            [
+              -1.6410000324249268,
+              -2.931999921798706,
+              1.9630000591278076
+            ],
+            [
+              -1.847000002861023,
+              -4.318999767303467,
+              1.3420000076293945
+            ]
+          ],
+          [
+            [
+              -2.753000020980835,
+              -4.480999946594238,
+              0.36000001430511475
+            ],
+            [
+              -3.0239999294281006,
+              -5.790999889373779,
+              -0.26899999380111694
+            ],
+            [
+              -1.7960000038146973,
+              -6.427000045776367,
+              -0.9369999766349792
+            ]
+          ],
+          [
+            [
+              -0.828000009059906,
+              -5.60699987411499,
+              -1.3550000190734863
+            ],
+            [
+              0.4659999907016754,
+              -6.015999794006348,
+              -1.9049999713897705
+            ],
+            [
+              1.4809999465942383,
+              -6.464000225067139,
+              -0.8320000171661377
+            ]
+          ],
+          [
+            [
+              1.184999942779541,
+              -6.2779998779296875,
+              0.46399998664855957
+            ],
+            [
+              2.059999942779541,
+              -6.618000030517578,
+              1.593000054359436
+            ],
+            [
+              2.628000020980835,
+              -5.4120001792907715,
+              2.3529999256134033
+            ]
+          ],
+          [
+            [
+              2.171999931335449,
+              -4.186999797821045,
+              2.055000066757202
+            ],
+            [
+              2.625999927520752,
+              -2.9670000076293945,
+              2.7230000495910645
+            ],
+            [
+              4.1570000648498535,
+              -2.802000045776367,
+              2.6540000438690186
+            ]
+          ],
+          [
+            [
+              4.870999813079834,
+              -2.6510000228881836,
+              3.7939999103546143
+            ],
+            [
+              6.333000183105469,
+              -2.5329999923706055,
+              3.805999994277954
+            ],
+            [
+              7.058000087738037,
+              -3.7290000915527344,
+              3.1649999618530273
+            ]
+          ],
+          [
+            [
+              6.4629998207092285,
+              -4.928999900817871,
+              3.2049999237060547
+            ],
+            [
+              7.048999786376953,
+              -6.178999900817871,
+              2.7039999961853027
+            ],
+            [
+              6.896999835968018,
+              -6.36899995803833,
+              1.184999942779541
+            ]
+          ],
+          [
+            [
+              6.63700008392334,
+              -5.289999961853027,
+              0.4339999854564667
+            ],
+            [
+              6.388999938964844,
+              -5.315000057220459,
+              -1.0149999856948853
+            ],
+            [
+              7.331999778747559,
+              -4.40500020980835,
+              -1.8229999542236328
+            ]
+          ],
+          [
+            [
+              8.418999671936035,
+              -3.9200000762939453,
+              -1.2020000219345093
+            ],
+            [
+              9.451000213623047,
+              -3.115999937057495,
+              -1.8700000047683716
+            ],
+            [
+              8.984000205993652,
+              -1.725000023841858,
+              -2.315999984741211
+            ]
+          ],
+          [
+            [
+              7.955999851226807,
+              -1.1640000343322754,
+              -1.659999966621399
+            ],
+            [
+              7.289000034332275,
+              0.08399999886751175,
+              -2.053999900817871
+            ],
+            [
+              6.855000019073486,
+              0.9160000085830688,
+              -0.8289999961853027
+            ]
+          ],
+          [
+            [
+              7.156000137329102,
+              2.2300000190734863,
+              -0.7799999713897705
+            ],
+            [
+              6.7820000648498535,
+              3.0880000591278076,
+              0.3449999988079071
+            ],
+            [
+              5.261000156402588,
+              3.3310000896453857,
+              0.39500001072883606
+            ]
+          ],
+          [
+            [
+              4.710000038146973,
+              3.739000082015991,
+              1.5549999475479126
+            ],
+            [
+              3.2869999408721924,
+              4.031000137329102,
+              1.6859999895095825
+            ],
+            [
+              2.9010000228881836,
+              5.304999828338623,
+              0.9129999876022339
+            ]
+          ],
+          [
+            [
+              1.687999963760376,
+              5.360000133514404,
+              0.335999995470047
+            ],
+            [
+              1.184999942779541,
+              6.543000221252441,
+              -0.3529999852180481
+            ],
+            [
+              0.7149999737739563,
+              7.60699987411499,
+              0.6549999713897705
+            ]
+          ],
+          [
+            [
+              1.2710000276565552,
+              8.821999549865723,
+              0.5490000247955322
+            ],
+            [
+              0.8519999980926514,
+              10.027000427246094,
+              1.284999966621399
+            ],
+            [
+              -0.4059999883174896,
+              10.656999588012695,
+              0.6830000281333923
+            ]
+          ],
+          [
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ]
+          ]
+        ],
+        "per_res_plddt": [
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      "outputs": [
+        "encoder.frames",
+        "encoder.edges",
+        "encoder.embedding",
+        "encoder.transformer.blocks.0",
+        "encoder.transformer.blocks.1",
+        "encoder.pre_vq",
+        "encoder.tokens",
+        "esm.encoder",
+        "esm.transformer.blocks.0",
+        "esm.transformer.blocks.1",
+        "esm.transformer.blocks.2",
+        "esm.transformer.blocks.3",
+        "esm.transformer.blocks.4",
+        "esm.transformer.blocks.5",
+        "esm.transformer.blocks.6",
+        "esm.transformer.blocks.7",
+        "esm.transformer.blocks.8",
+        "esm.transformer.blocks.9",
+        "esm.transformer.blocks.10",
+        "esm.transformer.blocks.11",
+        "esm.transformer.blocks.12",
+        "esm.transformer.blocks.13",
+        "esm.transformer.blocks.14",
+        "esm.transformer.blocks.15",
+        "esm.transformer.blocks.16",
+        "esm.transformer.blocks.17",
+        "esm.transformer.blocks.18",
+        "esm.transformer.blocks.19",
+        "esm.transformer.blocks.20",
+        "esm.transformer.blocks.21",
+        "esm.transformer.blocks.22",
+        "esm.transformer.blocks.23",
+        "esm.transformer.blocks.24",
+        "esm.transformer.blocks.25",
+        "esm.transformer.blocks.26",
+        "esm.transformer.blocks.27",
+        "esm.transformer.blocks.28",
+        "esm.transformer.blocks.29",
+        "esm.transformer.blocks.30",
+        "esm.transformer.blocks.31",
+        "esm.transformer.blocks.32",
+        "esm.transformer.blocks.33",
+        "esm.transformer.blocks.34",
+        "esm.transformer.blocks.35",
+        "esm.transformer.blocks.36",
+        "esm.transformer.blocks.37",
+        "esm.transformer.blocks.38",
+        "esm.transformer.blocks.39",
+        "esm.transformer.blocks.40",
+        "esm.transformer.blocks.41",
+        "esm.transformer.blocks.42",
+        "esm.transformer.blocks.43",
+        "esm.transformer.blocks.44",
+        "esm.transformer.blocks.45",
+        "esm.transformer.blocks.46",
+        "esm.transformer.blocks.47",
+        "esm.normalized",
+        "sequence_logits",
+        "structure_logits",
+        "ss8_logits",
+        "sasa_logits",
+        "function_logits",
+        "residue_logits",
+        "embeddings"
+      ]
+    },
+    "multitrack": {
+      "input": {
+        "sequence_tokens": [
+          0,
+          5,
+          23,
+          13,
+          9,
+          18,
+          6,
+          21,
+          12,
+          15,
+          4,
+          20,
+          17,
+          2
+        ],
+        "ss8_tokens": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          3,
+          4,
+          5,
+          6,
+          0
+        ],
+        "sasa_tokens": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          0
+        ],
+        "function_tokens": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "residue_annotation_tokens": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            29,
+            122,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "outputs": [
+        "esm.encoder",
+        "esm.transformer.blocks.0",
+        "esm.transformer.blocks.1",
+        "esm.transformer.blocks.2",
+        "esm.transformer.blocks.3",
+        "esm.transformer.blocks.4",
+        "esm.transformer.blocks.5",
+        "esm.transformer.blocks.6",
+        "esm.transformer.blocks.7",
+        "esm.transformer.blocks.8",
+        "esm.transformer.blocks.9",
+        "esm.transformer.blocks.10",
+        "esm.transformer.blocks.11",
+        "esm.transformer.blocks.12",
+        "esm.transformer.blocks.13",
+        "esm.transformer.blocks.14",
+        "esm.transformer.blocks.15",
+        "esm.transformer.blocks.16",
+        "esm.transformer.blocks.17",
+        "esm.transformer.blocks.18",
+        "esm.transformer.blocks.19",
+        "esm.transformer.blocks.20",
+        "esm.transformer.blocks.21",
+        "esm.transformer.blocks.22",
+        "esm.transformer.blocks.23",
+        "esm.transformer.blocks.24",
+        "esm.transformer.blocks.25",
+        "esm.transformer.blocks.26",
+        "esm.transformer.blocks.27",
+        "esm.transformer.blocks.28",
+        "esm.transformer.blocks.29",
+        "esm.transformer.blocks.30",
+        "esm.transformer.blocks.31",
+        "esm.transformer.blocks.32",
+        "esm.transformer.blocks.33",
+        "esm.transformer.blocks.34",
+        "esm.transformer.blocks.35",
+        "esm.transformer.blocks.36",
+        "esm.transformer.blocks.37",
+        "esm.transformer.blocks.38",
+        "esm.transformer.blocks.39",
+        "esm.transformer.blocks.40",
+        "esm.transformer.blocks.41",
+        "esm.transformer.blocks.42",
+        "esm.transformer.blocks.43",
+        "esm.transformer.blocks.44",
+        "esm.transformer.blocks.45",
+        "esm.transformer.blocks.46",
+        "esm.transformer.blocks.47",
+        "esm.normalized",
+        "sequence_logits",
+        "structure_logits",
+        "ss8_logits",
+        "sasa_logits",
+        "function_logits",
+        "residue_logits",
+        "embeddings"
+      ]
+    }
+  },
+  "tensors": {
+    "sequence/esm.encoder": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 0,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.0": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 135168,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.1": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 270336,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.2": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 405504,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.3": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 540672,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.4": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 675840,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.5": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 811008,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.6": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 946176,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.7": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1081344,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.8": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1216512,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.9": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1351680,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.10": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1486848,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.11": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1622016,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.12": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1757184,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.13": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 1892352,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.14": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2027520,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.15": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2162688,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.16": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2297856,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.17": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2433024,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.18": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2568192,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.19": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2703360,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.20": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2838528,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.21": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 2973696,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.22": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3108864,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.23": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3244032,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.24": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3379200,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.25": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3514368,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.26": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3649536,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.27": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3784704,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.28": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 3919872,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.29": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4055040,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.30": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4190208,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.31": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4325376,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.32": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4460544,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.33": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4595712,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.34": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4730880,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.35": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 4866048,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.36": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5001216,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.37": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5136384,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.38": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5271552,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.39": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5406720,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.40": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5541888,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.41": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5677056,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.42": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5812224,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.43": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 5947392,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.44": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 6082560,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.45": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 6217728,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.46": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 6352896,
+      "bytes": 135168
+    },
+    "sequence/esm.transformer.blocks.47": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 6488064,
+      "bytes": 135168
+    },
+    "sequence/esm.normalized": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 6623232,
+      "bytes": 135168
+    },
+    "sequence/sequence_logits": {
+      "shape": [
+        1,
+        22,
+        64
+      ],
+      "offset": 6758400,
+      "bytes": 5632
+    },
+    "sequence/structure_logits": {
+      "shape": [
+        1,
+        22,
+        4096
+      ],
+      "offset": 6764032,
+      "bytes": 360448
+    },
+    "sequence/ss8_logits": {
+      "shape": [
+        1,
+        22,
+        11
+      ],
+      "offset": 7124480,
+      "bytes": 968
+    },
+    "sequence/sasa_logits": {
+      "shape": [
+        1,
+        22,
+        19
+      ],
+      "offset": 7125448,
+      "bytes": 1672
+    },
+    "sequence/function_logits": {
+      "shape": [
+        1,
+        22,
+        8,
+        260
+      ],
+      "offset": 7127120,
+      "bytes": 183040
+    },
+    "sequence/residue_logits": {
+      "shape": [
+        1,
+        22,
+        1478
+      ],
+      "offset": 7310160,
+      "bytes": 130064
+    },
+    "sequence/embeddings": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 7440224,
+      "bytes": 135168
+    },
+    "decode/decoder.embedding": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 7575392,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.0": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 7688032,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.1": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 7800672,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.2": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 7913312,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.3": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8025952,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.4": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8138592,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.5": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8251232,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.6": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8363872,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.7": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8476512,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.8": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8589152,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.9": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8701792,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.10": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8814432,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.11": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 8927072,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.12": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9039712,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.13": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9152352,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.14": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9264992,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.15": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9377632,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.16": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9490272,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.17": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9602912,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.18": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9715552,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.19": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9828192,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.20": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 9940832,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.21": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10053472,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.22": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10166112,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.23": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10278752,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.24": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10391392,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.25": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10504032,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.26": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10616672,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.27": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10729312,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.28": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10841952,
+      "bytes": 112640
+    },
+    "decode/decoder.decoder_stack.blocks.29": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 10954592,
+      "bytes": 112640
+    },
+    "decode/decoder.normalized": {
+      "shape": [
+        1,
+        22,
+        1280
+      ],
+      "offset": 11067232,
+      "bytes": 112640
+    },
+    "decode/decoder.projection": {
+      "shape": [
+        1,
+        22,
+        23
+      ],
+      "offset": 11179872,
+      "bytes": 2024
+    },
+    "decode/decoder.pairwise_logits": {
+      "shape": [
+        1,
+        22,
+        22,
+        224
+      ],
+      "offset": 11181896,
+      "bytes": 433664
+    },
+    "decode/coordinates": {
+      "shape": [
+        1,
+        22,
+        3,
+        3
+      ],
+      "offset": 11615560,
+      "bytes": 792
+    },
+    "decode/plddt": {
+      "shape": [
+        1,
+        22
+      ],
+      "offset": 11616352,
+      "bytes": 88
+    },
+    "decode/affine": {
+      "shape": [
+        1,
+        22,
+        12
+      ],
+      "offset": 11616440,
+      "bytes": 1056
+    },
+    "decode/predicted_aligned_error": {
+      "shape": [
+        1,
+        22,
+        22
+      ],
+      "offset": 11617496,
+      "bytes": 1936
+    },
+    "decode/ptm": {
+      "shape": [
+        1
+      ],
+      "offset": 11619432,
+      "bytes": 4
+    },
+    "masked/esm.encoder": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 11619436,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.0": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 11754604,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.1": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 11889772,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.2": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12024940,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.3": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12160108,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.4": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12295276,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.5": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12430444,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.6": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12565612,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.7": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12700780,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.8": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12835948,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.9": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 12971116,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.10": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13106284,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.11": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13241452,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.12": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13376620,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.13": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13511788,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.14": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13646956,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.15": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13782124,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.16": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 13917292,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.17": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14052460,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.18": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14187628,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.19": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14322796,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.20": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14457964,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.21": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14593132,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.22": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14728300,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.23": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14863468,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.24": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 14998636,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.25": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15133804,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.26": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15268972,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.27": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15404140,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.28": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15539308,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.29": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15674476,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.30": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15809644,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.31": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 15944812,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.32": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16079980,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.33": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16215148,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.34": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16350316,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.35": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16485484,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.36": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16620652,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.37": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16755820,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.38": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 16890988,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.39": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17026156,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.40": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17161324,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.41": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17296492,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.42": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17431660,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.43": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17566828,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.44": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17701996,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.45": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17837164,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.46": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 17972332,
+      "bytes": 135168
+    },
+    "masked/esm.transformer.blocks.47": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 18107500,
+      "bytes": 135168
+    },
+    "masked/esm.normalized": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 18242668,
+      "bytes": 135168
+    },
+    "masked/sequence_logits": {
+      "shape": [
+        1,
+        22,
+        64
+      ],
+      "offset": 18377836,
+      "bytes": 5632
+    },
+    "masked/structure_logits": {
+      "shape": [
+        1,
+        22,
+        4096
+      ],
+      "offset": 18383468,
+      "bytes": 360448
+    },
+    "masked/ss8_logits": {
+      "shape": [
+        1,
+        22,
+        11
+      ],
+      "offset": 18743916,
+      "bytes": 968
+    },
+    "masked/sasa_logits": {
+      "shape": [
+        1,
+        22,
+        19
+      ],
+      "offset": 18744884,
+      "bytes": 1672
+    },
+    "masked/function_logits": {
+      "shape": [
+        1,
+        22,
+        8,
+        260
+      ],
+      "offset": 18746556,
+      "bytes": 183040
+    },
+    "masked/residue_logits": {
+      "shape": [
+        1,
+        22,
+        1478
+      ],
+      "offset": 18929596,
+      "bytes": 130064
+    },
+    "masked/embeddings": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 19059660,
+      "bytes": 135168
+    },
+    "inverse/encoder.frames": {
+      "shape": [
+        1,
+        22,
+        13
+      ],
+      "offset": 19194828,
+      "bytes": 1144
+    },
+    "inverse/encoder.edges": {
+      "shape": [
+        1,
+        22,
+        16
+      ],
+      "offset": 19195972,
+      "bytes": 1408
+    },
+    "inverse/encoder.embedding": {
+      "shape": [
+        22,
+        16,
+        1024
+      ],
+      "offset": 19197380,
+      "bytes": 1441792
+    },
+    "inverse/encoder.transformer.blocks.0": {
+      "shape": [
+        22,
+        16,
+        1024
+      ],
+      "offset": 20639172,
+      "bytes": 1441792
+    },
+    "inverse/encoder.transformer.blocks.1": {
+      "shape": [
+        22,
+        16,
+        1024
+      ],
+      "offset": 22080964,
+      "bytes": 1441792
+    },
+    "inverse/encoder.pre_vq": {
+      "shape": [
+        1,
+        22,
+        128
+      ],
+      "offset": 23522756,
+      "bytes": 11264
+    },
+    "inverse/encoder.tokens": {
+      "shape": [
+        1,
+        22
+      ],
+      "offset": 23534020,
+      "bytes": 88
+    },
+    "inverse/esm.encoder": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 23534108,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.0": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 23669276,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.1": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 23804444,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.2": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 23939612,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.3": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24074780,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.4": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24209948,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.5": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24345116,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.6": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24480284,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.7": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24615452,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.8": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24750620,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.9": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 24885788,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.10": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25020956,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.11": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25156124,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.12": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25291292,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.13": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25426460,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.14": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25561628,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.15": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25696796,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.16": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25831964,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.17": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 25967132,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.18": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26102300,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.19": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26237468,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.20": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26372636,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.21": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26507804,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.22": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26642972,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.23": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26778140,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.24": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 26913308,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.25": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27048476,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.26": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27183644,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.27": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27318812,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.28": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27453980,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.29": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27589148,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.30": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27724316,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.31": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27859484,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.32": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 27994652,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.33": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28129820,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.34": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28264988,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.35": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28400156,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.36": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28535324,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.37": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28670492,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.38": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28805660,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.39": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 28940828,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.40": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29075996,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.41": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29211164,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.42": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29346332,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.43": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29481500,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.44": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29616668,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.45": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29751836,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.46": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 29887004,
+      "bytes": 135168
+    },
+    "inverse/esm.transformer.blocks.47": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 30022172,
+      "bytes": 135168
+    },
+    "inverse/esm.normalized": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 30157340,
+      "bytes": 135168
+    },
+    "inverse/sequence_logits": {
+      "shape": [
+        1,
+        22,
+        64
+      ],
+      "offset": 30292508,
+      "bytes": 5632
+    },
+    "inverse/structure_logits": {
+      "shape": [
+        1,
+        22,
+        4096
+      ],
+      "offset": 30298140,
+      "bytes": 360448
+    },
+    "inverse/ss8_logits": {
+      "shape": [
+        1,
+        22,
+        11
+      ],
+      "offset": 30658588,
+      "bytes": 968
+    },
+    "inverse/sasa_logits": {
+      "shape": [
+        1,
+        22,
+        19
+      ],
+      "offset": 30659556,
+      "bytes": 1672
+    },
+    "inverse/function_logits": {
+      "shape": [
+        1,
+        22,
+        8,
+        260
+      ],
+      "offset": 30661228,
+      "bytes": 183040
+    },
+    "inverse/residue_logits": {
+      "shape": [
+        1,
+        22,
+        1478
+      ],
+      "offset": 30844268,
+      "bytes": 130064
+    },
+    "inverse/embeddings": {
+      "shape": [
+        1,
+        22,
+        1536
+      ],
+      "offset": 30974332,
+      "bytes": 135168
+    },
+    "multitrack/esm.encoder": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31109500,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.0": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31195516,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.1": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31281532,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.2": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31367548,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.3": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31453564,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.4": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31539580,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.5": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31625596,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.6": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31711612,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.7": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31797628,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.8": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31883644,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.9": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 31969660,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.10": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32055676,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.11": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32141692,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.12": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32227708,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.13": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32313724,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.14": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32399740,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.15": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32485756,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.16": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32571772,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.17": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32657788,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.18": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32743804,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.19": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32829820,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.20": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 32915836,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.21": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33001852,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.22": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33087868,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.23": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33173884,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.24": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33259900,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.25": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33345916,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.26": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33431932,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.27": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33517948,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.28": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33603964,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.29": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33689980,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.30": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33775996,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.31": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33862012,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.32": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 33948028,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.33": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34034044,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.34": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34120060,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.35": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34206076,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.36": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34292092,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.37": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34378108,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.38": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34464124,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.39": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34550140,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.40": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34636156,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.41": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34722172,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.42": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34808188,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.43": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34894204,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.44": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 34980220,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.45": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 35066236,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.46": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 35152252,
+      "bytes": 86016
+    },
+    "multitrack/esm.transformer.blocks.47": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 35238268,
+      "bytes": 86016
+    },
+    "multitrack/esm.normalized": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 35324284,
+      "bytes": 86016
+    },
+    "multitrack/sequence_logits": {
+      "shape": [
+        1,
+        14,
+        64
+      ],
+      "offset": 35410300,
+      "bytes": 3584
+    },
+    "multitrack/structure_logits": {
+      "shape": [
+        1,
+        14,
+        4096
+      ],
+      "offset": 35413884,
+      "bytes": 229376
+    },
+    "multitrack/ss8_logits": {
+      "shape": [
+        1,
+        14,
+        11
+      ],
+      "offset": 35643260,
+      "bytes": 616
+    },
+    "multitrack/sasa_logits": {
+      "shape": [
+        1,
+        14,
+        19
+      ],
+      "offset": 35643876,
+      "bytes": 1064
+    },
+    "multitrack/function_logits": {
+      "shape": [
+        1,
+        14,
+        8,
+        260
+      ],
+      "offset": 35644940,
+      "bytes": 116480
+    },
+    "multitrack/residue_logits": {
+      "shape": [
+        1,
+        14,
+        1478
+      ],
+      "offset": 35761420,
+      "bytes": 82768
+    },
+    "multitrack/embeddings": {
+      "shape": [
+        1,
+        14,
+        1536
+      ],
+      "offset": 35844188,
+      "bytes": 86016
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "awaiting_project_association",
+  "reason": "Launchpad submit_report returned project_required; this repository is absent from list_projects.",
+  "available_projects": [
+    {
+      "name": "xymol-genie3-port",
+      "id": "d79a2006-c25b-4556-a5e8-d48908b93b62"
+    },
+    {
+      "name": "xymol-flow-matching",
+      "id": "769701fe-c653-45e1-84f5-c14b63d798f9"
+    },
+    {
+      "name": "xymol-flow-map",
+      "id": "c1fc7f35-66b9-4da6-b63e-bf53867b7350"
+    }
+  ],
+  "payload": {
+    "agent_session_id": "01a2017f-3114-7512-a687-05f3cd7b1d18",
+    "title": "ESM3 Open: full multimodal WebGPU port verified on NVIDIA GB10",
+    "takeaway": "The full 48-block trunk, geometric conditioning, VQ structure encoder/30-block decoder and iterative generation pass hardware WebGPU parity. Maximum GPU trace relRMS is 3.42e-6 (CPU 4.23e-6); all required commands pass with zero failures and skips.",
+    "hypothesis": "Dyna1's verified transformer kernels can be extended to ESM3 Open's complete requested multimodal and structure-generation paths with relRMS below 1e-4 against matching PyTorch arithmetic.",
+    "outcome": "supported",
+    "details": "Local NVIDIA GB10 Chromium/Vulkan validation, driver 580.159.03, Chromium 153.0.8010.12. These were local processes, not Slurm/Launchpad jobs; no job IDs exist. Evidence is under /home/ruh/ramith/personal_projects/denovo-webgpu-models/models/esm3/fixtures/: validation.json, gpu.json, cpu.json, browser.json, roundtrip.json and quantization.json.\n\nIncludes all 48 trunk blocks, block-0 geometric attention, all six output heads and their numeric input tracks, the two-block geometric VQ encoder, and the 30-block decoder through coordinates, rigid frames, pLDDT, PAE and pTM. Sequence fill, inverse folding and structure generation match PyTorch step logits and token trajectories. The separate function-to-text/InterPro decoder is audited but excluded; numeric function and residue conditioning/output heads are included.\n\nFP32 / FP16 packed / FP16 native-storage / INT8 sequence-logit relRMS: 2.74e-7 / 2.59e-7 / 2.59e-7 / 2.64e-7. Decoded coordinate relRMS: 1.05e-6 / 1.02e-6 / 1.02e-6 / 7.59e-7. INT8 warm forward medians at L=20/64/128: 66.8/143.9/267.5 ms. All arithmetic uses F32 activations and accumulation with matching dequantized-storage PyTorch references, not FP16 activation autocast.\n\nSeparate INT8 drift versus the original cached BF16 values executed in FP32: 0.1785% relRMS sequence logits and 4.0468% end-to-end decoded coordinates, including changed discrete structure tokens. FP16 drift is near arithmetic roundoff. All strict PyTorch bundle reloads reproduce reference final outputs bit for bit.\n\nFP32/FP16/INT8 exports are 8.206/4.136/2.105 GB, every shard below 25 MB with SHA-256 manifests. Large files are gitignored. npm test: 7 passed; npm run test:cpu: 1 passed; npm run test:gpu: one comprehensive four-mode test passed. Every command has zero failures and zero skips. Lifecycle, load-error cleanup, aborts, external-device ownership, Cache API/OPFS offline hits, storage-denial fallback, real Worker folding, demo and vendor sync are covered. No commit, push, Hugging Face upload or deployment was performed.",
+    "next_steps": [
+      "Optional: integrate the worker/runtime into denovo.run using the documented vendor-sync command and a chosen weight-bundle URL."
+    ]
+  }
+}

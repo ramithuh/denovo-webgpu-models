@@ -1,0 +1,1123 @@
+{
+  "sequence": {
+    "timingMs": 18353.603234000002,
+    "tensors": {
+      "esm.encoder": {
+        "relRms": 3.858054208984211e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "esm.transformer.blocks.0": {
+        "relRms": 3.251092143474218e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.1": {
+        "relRms": 2.828661011025748e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.2": {
+        "relRms": 2.7897725817949807e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.3": {
+        "relRms": 2.799666400287061e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.4": {
+        "relRms": 2.7318225999531973e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.5": {
+        "relRms": 2.64413110005045e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.6": {
+        "relRms": 2.6494792096669205e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.7": {
+        "relRms": 2.7063824160877234e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.8": {
+        "relRms": 2.590776659657925e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.9": {
+        "relRms": 2.5139970096268223e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.10": {
+        "relRms": 2.559116145615995e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.11": {
+        "relRms": 2.5016292574555595e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.12": {
+        "relRms": 2.498997672226848e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.13": {
+        "relRms": 2.492678267532456e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.14": {
+        "relRms": 2.504367880437352e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.15": {
+        "relRms": 2.614284306966329e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.16": {
+        "relRms": 2.580702124755228e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.17": {
+        "relRms": 2.5961209203721047e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.18": {
+        "relRms": 2.6336388115919036e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.19": {
+        "relRms": 2.579500316272745e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.20": {
+        "relRms": 2.5863793425461346e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.21": {
+        "relRms": 2.650462367346971e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.22": {
+        "relRms": 2.668287360932399e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.23": {
+        "relRms": 2.790193866631938e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.24": {
+        "relRms": 2.9271826085355995e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.25": {
+        "relRms": 3.0799417092982357e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.26": {
+        "relRms": 3.339356440969222e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.27": {
+        "relRms": 3.7747268561340464e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.28": {
+        "relRms": 4.317934328530459e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.29": {
+        "relRms": 5.088026608576495e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.30": {
+        "relRms": 5.85775665463936e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.31": {
+        "relRms": 6.120516245348262e-7,
+        "maxAbs": 0.000335693359375
+      },
+      "esm.transformer.blocks.32": {
+        "relRms": 6.672125707813512e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.33": {
+        "relRms": 6.752781807402721e-7,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.34": {
+        "relRms": 7.472210427142968e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.35": {
+        "relRms": 8.40090200163382e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.36": {
+        "relRms": 9.438267755862595e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.37": {
+        "relRms": 0.0000010687132361993757,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.38": {
+        "relRms": 0.0000011306230241244231,
+        "maxAbs": 0.000335693359375
+      },
+      "esm.transformer.blocks.39": {
+        "relRms": 0.0000011981506115879068,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.40": {
+        "relRms": 0.0000013246697165688407,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.41": {
+        "relRms": 0.0000013795899087905692,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.42": {
+        "relRms": 0.0000014904383064237422,
+        "maxAbs": 0.000640869140625
+      },
+      "esm.transformer.blocks.43": {
+        "relRms": 0.000001607890782242198,
+        "maxAbs": 0.001068115234375
+      },
+      "esm.transformer.blocks.44": {
+        "relRms": 0.0000016403441723660456,
+        "maxAbs": 0.0015869140625
+      },
+      "esm.transformer.blocks.45": {
+        "relRms": 0.0000017415310771132847,
+        "maxAbs": 0.0015869140625
+      },
+      "esm.transformer.blocks.46": {
+        "relRms": 0.0000017743586348043577,
+        "maxAbs": 0.00146484375
+      },
+      "esm.transformer.blocks.47": {
+        "relRms": 0.0000010834242176961714,
+        "maxAbs": 0.01171875
+      },
+      "esm.normalized": {
+        "relRms": 0.0000010418175187886535,
+        "maxAbs": 0.000011444091796875
+      },
+      "sequence_logits": {
+        "relRms": 4.920698396044152e-7,
+        "maxAbs": 0.000030517578125
+      },
+      "structure_logits": {
+        "relRms": 6.092119219822486e-7,
+        "maxAbs": 0.000080108642578125
+      },
+      "ss8_logits": {
+        "relRms": 6.805541771827043e-7,
+        "maxAbs": 0.0000286102294921875
+      },
+      "sasa_logits": {
+        "relRms": 7.341065335967928e-7,
+        "maxAbs": 0.0000400543212890625
+      },
+      "function_logits": {
+        "relRms": 6.875247646135548e-7,
+        "maxAbs": 0.000244140625
+      },
+      "residue_logits": {
+        "relRms": 8.835952851357703e-7,
+        "maxAbs": 0.00005936622619628906
+      },
+      "embeddings": {
+        "relRms": 0.0000010834242176961714,
+        "maxAbs": 0.01171875
+      }
+    }
+  },
+  "decode": {
+    "timingMs": 8112.819732000004,
+    "tensors": {
+      "decoder.embedding": {
+        "relRms": 0,
+        "maxAbs": 0
+      },
+      "decoder.decoder_stack.blocks.0": {
+        "relRms": 9.886307888271857e-7,
+        "maxAbs": 0.00014495849609375
+      },
+      "decoder.decoder_stack.blocks.1": {
+        "relRms": 4.940743794532217e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.2": {
+        "relRms": 4.698451133228659e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "decoder.decoder_stack.blocks.3": {
+        "relRms": 5.112238676530083e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.4": {
+        "relRms": 5.101176492849374e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.5": {
+        "relRms": 5.134732411330487e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.6": {
+        "relRms": 5.19064299561833e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.7": {
+        "relRms": 5.298918838504863e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.8": {
+        "relRms": 5.390970639032879e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.9": {
+        "relRms": 5.490082975533594e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.10": {
+        "relRms": 5.758001783200217e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.11": {
+        "relRms": 5.787455347403412e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.12": {
+        "relRms": 5.994333598655073e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.13": {
+        "relRms": 6.43478413607455e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.14": {
+        "relRms": 6.86115721061833e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.15": {
+        "relRms": 7.441551622646464e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.16": {
+        "relRms": 8.106387401301495e-7,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.17": {
+        "relRms": 9.008326990955455e-7,
+        "maxAbs": 0.00054931640625
+      },
+      "decoder.decoder_stack.blocks.18": {
+        "relRms": 0.000001051347569931194,
+        "maxAbs": 0.00054931640625
+      },
+      "decoder.decoder_stack.blocks.19": {
+        "relRms": 0.0000010820148142422206,
+        "maxAbs": 0.00054931640625
+      },
+      "decoder.decoder_stack.blocks.20": {
+        "relRms": 0.000001196528706980646,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.21": {
+        "relRms": 0.0000012345732056752186,
+        "maxAbs": 0.00048828125
+      },
+      "decoder.decoder_stack.blocks.22": {
+        "relRms": 0.0000013063277383344676,
+        "maxAbs": 0.00054931640625
+      },
+      "decoder.decoder_stack.blocks.23": {
+        "relRms": 0.000001423758550481269,
+        "maxAbs": 0.00081634521484375
+      },
+      "decoder.decoder_stack.blocks.24": {
+        "relRms": 0.0000014093413974583549,
+        "maxAbs": 0.000682830810546875
+      },
+      "decoder.decoder_stack.blocks.25": {
+        "relRms": 0.000001448385061059032,
+        "maxAbs": 0.000732421875
+      },
+      "decoder.decoder_stack.blocks.26": {
+        "relRms": 0.0000014350860039726693,
+        "maxAbs": 0.00091552734375
+      },
+      "decoder.decoder_stack.blocks.27": {
+        "relRms": 0.0000014185075103089974,
+        "maxAbs": 0.0009765625
+      },
+      "decoder.decoder_stack.blocks.28": {
+        "relRms": 0.0000014019065333647251,
+        "maxAbs": 0.00103759765625
+      },
+      "decoder.decoder_stack.blocks.29": {
+        "relRms": 0.000001370632471171664,
+        "maxAbs": 0.00091552734375
+      },
+      "decoder.normalized": {
+        "relRms": 0.0000013278144551084806,
+        "maxAbs": 0.00000858306884765625
+      },
+      "decoder.projection": {
+        "relRms": 0.0000016304276876064043,
+        "maxAbs": 0.000009179115295410156
+      },
+      "decoder.pairwise_logits": {
+        "relRms": 0.0000015805948174344992,
+        "maxAbs": 0.00030297040939331055
+      },
+      "coordinates": {
+        "relRms": 0.0000015498234531794844,
+        "maxAbs": 0.00002193450927734375
+      },
+      "plddt": {
+        "relRms": 1.3532616012109678e-7,
+        "maxAbs": 1.7881393432617188e-7
+      },
+      "affine": {
+        "relRms": 0.0000015516371336032164,
+        "maxAbs": 0.000021696090698242188
+      },
+      "predicted_aligned_error": {
+        "relRms": 5.919441583271478e-7,
+        "maxAbs": 0.00002956390380859375
+      },
+      "ptm": {
+        "relRms": 0.000004226548124855172,
+        "maxAbs": 1.7136335372924805e-7
+      }
+    }
+  },
+  "masked": {
+    "timingMs": 18321.092178,
+    "tensors": {
+      "esm.encoder": {
+        "relRms": 3.848355579796164e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "esm.transformer.blocks.0": {
+        "relRms": 4.1199657519089206e-7,
+        "maxAbs": 0.000396728515625
+      },
+      "esm.transformer.blocks.1": {
+        "relRms": 3.9962357878034274e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.2": {
+        "relRms": 4.0717944047095064e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.3": {
+        "relRms": 3.9823921474264747e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.4": {
+        "relRms": 3.970999498069775e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.5": {
+        "relRms": 3.6173123799923845e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.6": {
+        "relRms": 3.4933373266655146e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.7": {
+        "relRms": 3.421268812626736e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.8": {
+        "relRms": 3.382824189000748e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.9": {
+        "relRms": 3.331810982448226e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.10": {
+        "relRms": 3.2106025155833315e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.11": {
+        "relRms": 3.178377319988999e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.12": {
+        "relRms": 3.1075883159736724e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.13": {
+        "relRms": 3.0372429361526883e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.14": {
+        "relRms": 3.0257994838244625e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.15": {
+        "relRms": 3.096762916682702e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.16": {
+        "relRms": 3.1102975433817426e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.17": {
+        "relRms": 3.064809825434612e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.18": {
+        "relRms": 3.029053669469327e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.19": {
+        "relRms": 3.037214576007209e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.20": {
+        "relRms": 3.048200085006548e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.21": {
+        "relRms": 3.1238375740922323e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.22": {
+        "relRms": 3.098112528809361e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.23": {
+        "relRms": 3.2265597681878654e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.24": {
+        "relRms": 3.2687713478164836e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.25": {
+        "relRms": 3.43017257127877e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.26": {
+        "relRms": 3.556596383517207e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.27": {
+        "relRms": 4.064471986769421e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.28": {
+        "relRms": 4.425558743744584e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.29": {
+        "relRms": 5.176638208046784e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.30": {
+        "relRms": 5.900735571881461e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.31": {
+        "relRms": 6.214770212258871e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.32": {
+        "relRms": 6.950761059333923e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.33": {
+        "relRms": 7.357763708225886e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.34": {
+        "relRms": 8.042877875849335e-7,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.35": {
+        "relRms": 8.7273361167487e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.36": {
+        "relRms": 9.530666051091196e-7,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.37": {
+        "relRms": 0.000001057106110737245,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.38": {
+        "relRms": 0.0000011286962077359187,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.39": {
+        "relRms": 0.000001224535454306727,
+        "maxAbs": 0.000335693359375
+      },
+      "esm.transformer.blocks.40": {
+        "relRms": 0.000001345711846082084,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.41": {
+        "relRms": 0.0000013910335345657193,
+        "maxAbs": 0.000518798828125
+      },
+      "esm.transformer.blocks.42": {
+        "relRms": 0.000001525509631919449,
+        "maxAbs": 0.000579833984375
+      },
+      "esm.transformer.blocks.43": {
+        "relRms": 0.0000016187238424784596,
+        "maxAbs": 0.00079345703125
+      },
+      "esm.transformer.blocks.44": {
+        "relRms": 0.0000017266120274089876,
+        "maxAbs": 0.0009765625
+      },
+      "esm.transformer.blocks.45": {
+        "relRms": 0.0000018242796872138957,
+        "maxAbs": 0.00146484375
+      },
+      "esm.transformer.blocks.46": {
+        "relRms": 0.0000018696529422165241,
+        "maxAbs": 0.0025634765625
+      },
+      "esm.transformer.blocks.47": {
+        "relRms": 0.0000010477859235300718,
+        "maxAbs": 0.0126953125
+      },
+      "esm.normalized": {
+        "relRms": 0.0000010039915650358,
+        "maxAbs": 0.0000133514404296875
+      },
+      "sequence_logits": {
+        "relRms": 5.144394596988319e-7,
+        "maxAbs": 0.000034332275390625
+      },
+      "structure_logits": {
+        "relRms": 5.975175177949312e-7,
+        "maxAbs": 0.000091552734375
+      },
+      "ss8_logits": {
+        "relRms": 5.934198004365223e-7,
+        "maxAbs": 0.000026702880859375
+      },
+      "sasa_logits": {
+        "relRms": 8.0974547586869e-7,
+        "maxAbs": 0.00003814697265625
+      },
+      "function_logits": {
+        "relRms": 6.717113106108002e-7,
+        "maxAbs": 0.00023651123046875
+      },
+      "residue_logits": {
+        "relRms": 9.400373904368496e-7,
+        "maxAbs": 0.00005125999450683594
+      },
+      "embeddings": {
+        "relRms": 0.0000010477859235300718,
+        "maxAbs": 0.0126953125
+      }
+    }
+  },
+  "inverse": {
+    "timingMs": 24687.290446999992,
+    "tensors": {
+      "encoder.frames": {
+        "relRms": 2.420079457742738e-7,
+        "maxAbs": 0.0000036247074604034424
+      },
+      "encoder.edges": {
+        "relRms": 0,
+        "maxAbs": 0
+      },
+      "encoder.embedding": {
+        "relRms": 0,
+        "maxAbs": 0
+      },
+      "encoder.transformer.blocks.0": {
+        "relRms": 0.0000017026299639202127,
+        "maxAbs": 0.0001983642578125
+      },
+      "encoder.transformer.blocks.1": {
+        "relRms": 0.0000019144362760031964,
+        "maxAbs": 0.0001983642578125
+      },
+      "encoder.pre_vq": {
+        "relRms": 6.735444084726562e-7,
+        "maxAbs": 0.00001621246337890625
+      },
+      "encoder.tokens": {
+        "relRms": 0,
+        "maxAbs": 0
+      },
+      "esm.encoder": {
+        "relRms": 4.329018330864984e-8,
+        "maxAbs": 4.76837158203125e-7
+      },
+      "esm.transformer.blocks.0": {
+        "relRms": 4.5462089147555985e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.1": {
+        "relRms": 4.5011028108501613e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.2": {
+        "relRms": 4.5868621186262095e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.3": {
+        "relRms": 4.5746332151910144e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.4": {
+        "relRms": 4.628308418110677e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.5": {
+        "relRms": 4.694105997520041e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.6": {
+        "relRms": 4.6020069666897883e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.7": {
+        "relRms": 4.78935577120116e-7,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.8": {
+        "relRms": 5.088268210772252e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.9": {
+        "relRms": 5.269401843546517e-7,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.10": {
+        "relRms": 5.392758752216937e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.11": {
+        "relRms": 5.459872235572172e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.12": {
+        "relRms": 5.494002953557677e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.13": {
+        "relRms": 5.522112923398036e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.14": {
+        "relRms": 5.576340701864356e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.15": {
+        "relRms": 5.555606178738668e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.16": {
+        "relRms": 5.567764915504188e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.17": {
+        "relRms": 5.574462172382603e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.18": {
+        "relRms": 5.56037227311409e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.19": {
+        "relRms": 5.561481161316755e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.20": {
+        "relRms": 5.58626215249893e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.21": {
+        "relRms": 5.650019515736905e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.22": {
+        "relRms": 5.797590827734233e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.23": {
+        "relRms": 5.968761281262257e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.24": {
+        "relRms": 6.108933679322852e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.25": {
+        "relRms": 6.355514982558293e-7,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.26": {
+        "relRms": 6.582928038705938e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.27": {
+        "relRms": 7.055851531669085e-7,
+        "maxAbs": 0.00054931640625
+      },
+      "esm.transformer.blocks.28": {
+        "relRms": 7.928173855155355e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.29": {
+        "relRms": 8.827638717957985e-7,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.30": {
+        "relRms": 0.0000010034960760929284,
+        "maxAbs": 0.000518798828125
+      },
+      "esm.transformer.blocks.31": {
+        "relRms": 0.000001036151987337959,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.32": {
+        "relRms": 0.0000012122851249356744,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.33": {
+        "relRms": 0.0000014764214558987896,
+        "maxAbs": 0.00048828125
+      },
+      "esm.transformer.blocks.34": {
+        "relRms": 0.0000015655353403769294,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.35": {
+        "relRms": 0.000001714627213105775,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.36": {
+        "relRms": 0.0000017838665064012323,
+        "maxAbs": 0.0006103515625
+      },
+      "esm.transformer.blocks.37": {
+        "relRms": 0.0000018545857163865935,
+        "maxAbs": 0.00079345703125
+      },
+      "esm.transformer.blocks.38": {
+        "relRms": 0.000001789246626897501,
+        "maxAbs": 0.00079345703125
+      },
+      "esm.transformer.blocks.39": {
+        "relRms": 0.000001752680449944717,
+        "maxAbs": 0.00067138671875
+      },
+      "esm.transformer.blocks.40": {
+        "relRms": 0.0000017579274424540897,
+        "maxAbs": 0.0006103515625
+      },
+      "esm.transformer.blocks.41": {
+        "relRms": 0.0000016711875333516165,
+        "maxAbs": 0.0008544921875
+      },
+      "esm.transformer.blocks.42": {
+        "relRms": 0.000001683386523811792,
+        "maxAbs": 0.0008544921875
+      },
+      "esm.transformer.blocks.43": {
+        "relRms": 0.0000017248853252955129,
+        "maxAbs": 0.0015869140625
+      },
+      "esm.transformer.blocks.44": {
+        "relRms": 0.0000017537994314757786,
+        "maxAbs": 0.001220703125
+      },
+      "esm.transformer.blocks.45": {
+        "relRms": 0.0000018115015814496822,
+        "maxAbs": 0.001220703125
+      },
+      "esm.transformer.blocks.46": {
+        "relRms": 0.0000018274586181013656,
+        "maxAbs": 0.00146484375
+      },
+      "esm.transformer.blocks.47": {
+        "relRms": 0.000001258530044883666,
+        "maxAbs": 0.013671875
+      },
+      "esm.normalized": {
+        "relRms": 0.0000013503671352140015,
+        "maxAbs": 0.000010967254638671875
+      },
+      "sequence_logits": {
+        "relRms": 5.466198089255872e-7,
+        "maxAbs": 0.000041961669921875
+      },
+      "structure_logits": {
+        "relRms": 6.859848743282919e-7,
+        "maxAbs": 0.000095367431640625
+      },
+      "ss8_logits": {
+        "relRms": 7.836510662349046e-7,
+        "maxAbs": 0.0000362396240234375
+      },
+      "sasa_logits": {
+        "relRms": 7.29672409493578e-7,
+        "maxAbs": 0.0000457763671875
+      },
+      "function_logits": {
+        "relRms": 5.694316596347671e-7,
+        "maxAbs": 0.0001678466796875
+      },
+      "residue_logits": {
+        "relRms": 9.448673705988979e-7,
+        "maxAbs": 0.000055789947509765625
+      },
+      "embeddings": {
+        "relRms": 0.000001258530044883666,
+        "maxAbs": 0.013671875
+      }
+    }
+  },
+  "multitrack": {
+    "timingMs": 11675.949173,
+    "tensors": {
+      "esm.encoder": {
+        "relRms": 3.208304072396467e-8,
+        "maxAbs": 9.5367431640625e-7
+      },
+      "esm.transformer.blocks.0": {
+        "relRms": 2.605422689693929e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.1": {
+        "relRms": 2.62880004807618e-7,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.2": {
+        "relRms": 2.665975499545635e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.3": {
+        "relRms": 2.691635327887798e-7,
+        "maxAbs": 0.000152587890625
+      },
+      "esm.transformer.blocks.4": {
+        "relRms": 2.778021313282397e-7,
+        "maxAbs": 0.0001220703125
+      },
+      "esm.transformer.blocks.5": {
+        "relRms": 2.9293179898550253e-7,
+        "maxAbs": 0.0001220703125
+      },
+      "esm.transformer.blocks.6": {
+        "relRms": 2.9546959173376837e-7,
+        "maxAbs": 0.0001220703125
+      },
+      "esm.transformer.blocks.7": {
+        "relRms": 3.1242371445414366e-7,
+        "maxAbs": 0.0001220703125
+      },
+      "esm.transformer.blocks.8": {
+        "relRms": 3.363748944626166e-7,
+        "maxAbs": 0.000152587890625
+      },
+      "esm.transformer.blocks.9": {
+        "relRms": 3.5302152309673914e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.10": {
+        "relRms": 3.658814366953392e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.11": {
+        "relRms": 3.7264802407079567e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.12": {
+        "relRms": 3.8435421990875383e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.13": {
+        "relRms": 3.8340321241577937e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.14": {
+        "relRms": 3.8362060784108653e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.15": {
+        "relRms": 3.833790643552067e-7,
+        "maxAbs": 0.00018310546875
+      },
+      "esm.transformer.blocks.16": {
+        "relRms": 3.9627979274978254e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.17": {
+        "relRms": 4.0165240989825314e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.18": {
+        "relRms": 4.115617062068762e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.19": {
+        "relRms": 4.146190115583532e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.20": {
+        "relRms": 4.3029686413734246e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.21": {
+        "relRms": 4.427867590604896e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.22": {
+        "relRms": 4.5589654997840974e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.23": {
+        "relRms": 4.767084066060874e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.24": {
+        "relRms": 4.956378100734684e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.25": {
+        "relRms": 5.228899443154064e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.26": {
+        "relRms": 5.702305024159768e-7,
+        "maxAbs": 0.000244140625
+      },
+      "esm.transformer.blocks.27": {
+        "relRms": 6.320678858537316e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.28": {
+        "relRms": 7.167453551533378e-7,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.29": {
+        "relRms": 8.357368787687193e-7,
+        "maxAbs": 0.000335693359375
+      },
+      "esm.transformer.blocks.30": {
+        "relRms": 0.000001026488181213001,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.31": {
+        "relRms": 0.0000010392817437039218,
+        "maxAbs": 0.000274658203125
+      },
+      "esm.transformer.blocks.32": {
+        "relRms": 0.000001224239702291081,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.33": {
+        "relRms": 0.0000011969075778380612,
+        "maxAbs": 0.000213623046875
+      },
+      "esm.transformer.blocks.34": {
+        "relRms": 0.0000013852001073303606,
+        "maxAbs": 0.000518798828125
+      },
+      "esm.transformer.blocks.35": {
+        "relRms": 0.000001697566577115461,
+        "maxAbs": 0.00030517578125
+      },
+      "esm.transformer.blocks.36": {
+        "relRms": 0.0000018469915151192515,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.37": {
+        "relRms": 0.000002020631214022637,
+        "maxAbs": 0.00042724609375
+      },
+      "esm.transformer.blocks.38": {
+        "relRms": 0.0000020960801446805466,
+        "maxAbs": 0.0003662109375
+      },
+      "esm.transformer.blocks.39": {
+        "relRms": 0.000002168498248412447,
+        "maxAbs": 0.0006103515625
+      },
+      "esm.transformer.blocks.40": {
+        "relRms": 0.000002365938434444391,
+        "maxAbs": 0.0008544921875
+      },
+      "esm.transformer.blocks.41": {
+        "relRms": 0.0000022853572428832253,
+        "maxAbs": 0.0010986328125
+      },
+      "esm.transformer.blocks.42": {
+        "relRms": 0.000002453513828468008,
+        "maxAbs": 0.0008544921875
+      },
+      "esm.transformer.blocks.43": {
+        "relRms": 0.00000239883064063853,
+        "maxAbs": 0.0018310546875
+      },
+      "esm.transformer.blocks.44": {
+        "relRms": 0.000002498779976609741,
+        "maxAbs": 0.001708984375
+      },
+      "esm.transformer.blocks.45": {
+        "relRms": 0.000002631194069739732,
+        "maxAbs": 0.0023193359375
+      },
+      "esm.transformer.blocks.46": {
+        "relRms": 0.000002829181143090845,
+        "maxAbs": 0.00341796875
+      },
+      "esm.transformer.blocks.47": {
+        "relRms": 0.0000014619290909546432,
+        "maxAbs": 0.01171875
+      },
+      "esm.normalized": {
+        "relRms": 0.0000013500090185862015,
+        "maxAbs": 0.00001621246337890625
+      },
+      "sequence_logits": {
+        "relRms": 5.388405376014808e-7,
+        "maxAbs": 0.00003814697265625
+      },
+      "structure_logits": {
+        "relRms": 6.235846251654412e-7,
+        "maxAbs": 0.000080108642578125
+      },
+      "ss8_logits": {
+        "relRms": 7.133558988986919e-7,
+        "maxAbs": 0.00002193450927734375
+      },
+      "sasa_logits": {
+        "relRms": 7.301147472674613e-7,
+        "maxAbs": 0.000030517578125
+      },
+      "function_logits": {
+        "relRms": 7.958938869991245e-7,
+        "maxAbs": 0.000244140625
+      },
+      "residue_logits": {
+        "relRms": 0.000001097337131026766,
+        "maxAbs": 0.000056743621826171875
+      },
+      "embeddings": {
+        "relRms": 0.0000014619290909546432,
+        "maxAbs": 0.01171875
+      }
+    }
+  }
+}
