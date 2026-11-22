@@ -1,0 +1,13 @@
+{
+  "name": "unconditional_l8_s3",
+  "mode": "unconditional",
+  "L": 8,
+  "numSteps": 3,
+  "seed": 42,
+  "variant": "adherence",
+  "precision": "fp32",
+  "upstream_commit": "6472b44e8072187e6eaa51271ae6838245206013",
+  "seconds": 7.143361968919635,
+  "nAtoms": 112,
+  "tokens": 8
+}

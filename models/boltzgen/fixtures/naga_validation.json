@@ -1,0 +1,19 @@
+{
+  "validator": "wgpu-native/Naga",
+  "wgpu_python": "0.28.0",
+  "adapter": {
+    "vendor": "NVIDIA",
+    "architecture": "",
+    "device": "NVIDIA GB10",
+    "description": "580.159.03",
+    "stackgroup_min_size": 4,
+    "stackgroup_max_size": 128,
+    "vendor_id": 4318,
+    "device_id": 11794,
+    "adapter_type": "IntegratedGPU",
+    "backend_type": "Vulkan"
+  },
+  "shaders": 1806,
+  "failures": 0,
+  "seconds": 21.019630978815258
+}

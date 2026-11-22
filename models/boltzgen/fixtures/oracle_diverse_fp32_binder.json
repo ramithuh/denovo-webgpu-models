@@ -1,0 +1,19 @@
+{
+  "variant": "diverse",
+  "precision": "fp32",
+  "mode": "binder",
+  "upstream_commit": "6472b44e8072187e6eaa51271ae6838245206013",
+  "seed": 42,
+  "steps": 3,
+  "recycling_steps": 0,
+  "seconds": 3.2883084379136562,
+  "atoms": 36,
+  "padded_atoms": 64,
+  "tokens": 4,
+  "finite": true,
+  "output_shape": [
+    1,
+    64,
+    3
+  ]
+}

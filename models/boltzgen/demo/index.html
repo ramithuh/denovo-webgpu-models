@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BoltzGen · WebGPU</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      :root {
+        color-scheme: dark;
+        font: 15px system-ui;
+        background: #101820;
+        color: #e6eef3;
+      }
+      body {
+        margin: 0;
+        max-width: 1200px;
+        margin: auto;
+        padding: 32px;
+      }
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        border-bottom: 1px solid #30404d;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-weight: 550;
+        letter-spacing: -1px;
+      }
+      header span {
+        color: #9db5c6;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 320px minmax(0, 1fr);
+        gap: 28px;
+      }
+      aside {
+        min-width: 0;
+        display: grid;
+        gap: 16px;
+        align-content: start;
+      }
+      label {
+        min-width: 0;
+        display: grid;
+        gap: 7px;
+        color: #b9cad5;
+      }
+      select,
+      input,
+      textarea,
+      button {
+        font: inherit;
+        color: inherit;
+        background: #182630;
+        border: 1px solid #3a5162;
+        padding: 10px;
+        border-radius: 6px;
+      }
+      select,
+      input,
+      textarea {
+        width: 100%;
+        min-width: 0;
+      }
+      button {
+        cursor: pointer;
+        background: #256779;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      .buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      progress {
+        width: 100%;
+        accent-color: #72d1c3;
+      }
+      canvas {
+        width: 100%;
+        height: 480px;
+        background: #14212b;
+        border: 1px solid #30404d;
+        border-radius: 10px;
+      }
+      p {
+        line-height: 1.55;
+        color: #b9cad5;
+      }
+      pre {
+        white-space: pre-wrap;
+        font-size: 13px;
+        color: #a8c7d8;
+      }
+      small {
+        line-height: 1.5;
+        color: #9db5c6;
+      }
+      textarea {
+        height: 100px;
+        font-size: 12px;
+      }
+      a {
+        color: #72d1c3;
+      }
+      @media (max-width: 750px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+        canvas {
+          height: 360px;
+        }
+        body {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BoltzGen</h1>
+      <span>All-atom diffusion · local WebGPU</span>
+    </header>
+    <main>
+      <aside>
+        <label
+          >Checkpoint<select id="variant">
+            <option value="diverse">Diverse</option>
+            <option value="adherence">Adherence</option>
+          </select></label
+        >
+        <label
+          >Weight precision<select id="precision">
+            <option value="fp16">FP16 · 995 MB</option>
+            <option value="int8">INT8 · 504 MB</option>
+            <option value="fp32">FP32 · 1.99 GB</option>
+          </select></label
+        >
+        <label
+          >Design mode<select id="mode">
+            <option value="unconditional">Unconditional monomer</option>
+            <option value="binder">Target-conditioned binder</option>
+          </select></label
+        >
+        <label
+          >Design length<input
+            id="length"
+            type="number"
+            min="1"
+            value="16"
+            step="1"
+        /></label>
+        <label
+          >Diffusion steps<input
+            id="numSteps"
+            type="number"
+            min="1"
+            value="20"
+            step="1"
+        /></label>
+        <label
+          >Recycling steps<input
+            id="recyclingSteps"
+            type="number"
+            min="0"
+            value="0"
+            step="1"
+        /></label>
+        <label>Seed<input id="seed" type="number" value="42" step="1" /></label>
+        <label id="targetLabel" hidden
+          >Target protein (PDB text)<textarea
+            id="target"
+            placeholder="Paste a protein PDB with N, CA, C, O atoms"
+          ></textarea>
+        </label>
+        <div class="buttons">
+          <button id="run">Load & generate</button
+          ><button id="cancel" disabled>Cancel</button
+          ><button id="release" disabled>Release GPU</button
+          ><button id="download" disabled>Download coordinates</button>
+        </div>
+        <progress id="progress" max="1" value="0"></progress
+        ><small id="status" role="status"
+          >Ready. Weights stay in this browser; no remote inference.</small
+        >
+        <small
+          >Green: designed atoms. Blue: target atoms. Target coordinates
+          condition the model; generated coordinates are not clamped to the
+          input.</small
+        >
+      </aside>
+      <section>
+        <canvas
+          id="view"
+          width="900"
+          height="600"
+          aria-label="Predicted atom coordinates"
+        ></canvas>
+        <p>
+          Drag to rotate the atom view. The diffusion network predicts every
+          atom slot. Target structure is supplied through the checkpoint’s
+          conditioning features.
+        </p>
+        <pre id="metrics"></pre>
+        <p>
+          <a href="../README_WEBGPU.md"
+            >Architecture, scope, and measured validation</a
+          >
+        </p>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

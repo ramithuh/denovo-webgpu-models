@@ -1,0 +1,78 @@
+{
+  "variant": "adherence",
+  "precision": "fp32",
+  "mode": "unconditional_l8_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.0000027480449944514666,
+      "maxAbs": 0.000040531158447265625,
+      "paddedRelRMS": 0.0000026657477143282535
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000005468196311922307,
+      "maxAbs": 0.00146484375,
+      "paddedRelRMS": 0.000005623829401466211
+    },
+    "trajectory.2": {
+      "relRMS": 0.0000012725980605098538,
+      "maxAbs": 0.0000457763671875,
+      "paddedRelRMS": 0.000001376943211309992
+    },
+    "trajectory.3": {
+      "relRMS": 0.0000027480449944514666,
+      "maxAbs": 0.000040531158447265625,
+      "paddedRelRMS": 0.0000026657477143282535
+    },
+    "trajectory.4": {
+      "relRMS": 0.0000027480449944514666,
+      "maxAbs": 0.000040531158447265625,
+      "paddedRelRMS": 0.0000026657477143282535
+    },
+    "denoised.0": {
+      "relRMS": 0.0000016256322638779312,
+      "maxAbs": 0.000087738037109375,
+      "paddedRelRMS": 0.0000016060990245664262
+    },
+    "denoised.1": {
+      "relRMS": 0.0000012305353818495254,
+      "maxAbs": 0.0000476837158203125,
+      "paddedRelRMS": 0.0000013392514225124568
+    },
+    "denoised.2": {
+      "relRMS": 0.0000027480446754786597,
+      "maxAbs": 0.000040531158447265625,
+      "paddedRelRMS": 0.0000026657474844528772
+    }
+  },
+  "seconds": 1.8688000001907348,
+  "warmSeconds": 0.3685999994277954,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 166.30000019073486
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 169.5
+    }
+  ],
+  "coldLoadMs": 10427.099999427795,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 1985992584,
+    "transientBytes": 0,
+    "totalBytes": 1985992584,
+    "pipelines": 372,
+    "allocations": 5669
+  }
+}

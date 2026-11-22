@@ -1,0 +1,38 @@
+[
+  {
+    "variant": "diverse",
+    "precision": "fp32",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  },
+  {
+    "variant": "diverse",
+    "precision": "fp16",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  },
+  {
+    "variant": "diverse",
+    "precision": "int8",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  },
+  {
+    "variant": "adherence",
+    "precision": "fp32",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  },
+  {
+    "variant": "adherence",
+    "precision": "fp16",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  },
+  {
+    "variant": "adherence",
+    "precision": "int8",
+    "strict_load_state_dict": true,
+    "all_finite": true
+  }
+]

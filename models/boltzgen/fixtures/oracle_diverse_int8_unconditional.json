@@ -1,0 +1,19 @@
+{
+  "variant": "diverse",
+  "precision": "int8",
+  "mode": "unconditional",
+  "upstream_commit": "6472b44e8072187e6eaa51271ae6838245206013",
+  "seed": 42,
+  "steps": 3,
+  "recycling_steps": 0,
+  "seconds": 7.023295964114368,
+  "atoms": 56,
+  "padded_atoms": 64,
+  "tokens": 4,
+  "finite": true,
+  "output_shape": [
+    1,
+    64,
+    3
+  ]
+}

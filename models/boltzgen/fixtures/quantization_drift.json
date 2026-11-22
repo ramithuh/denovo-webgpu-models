@@ -1,0 +1,156 @@
+[
+  {
+    "precision": "fp16",
+    "case": "unconditional_l8_s3",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.0011465532837962248,
+        "maxAbs": 0.024068832397460938
+      },
+      "denoised.0": {
+        "relRMS": 0.00022594668830937261,
+        "maxAbs": 0.009897232055664062
+      },
+      "denoised.1": {
+        "relRMS": 0.0004201893984641324,
+        "maxAbs": 0.027619361877441406
+      },
+      "denoised.2": {
+        "relRMS": 0.0011465532837962248,
+        "maxAbs": 0.024068832397460938
+      }
+    }
+  },
+  {
+    "precision": "int8",
+    "case": "unconditional_l8_s3",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.06376019456378773,
+        "maxAbs": 1.0468182563781738
+      },
+      "denoised.0": {
+        "relRMS": 0.020168146032469067,
+        "maxAbs": 0.5931449830532074
+      },
+      "denoised.1": {
+        "relRMS": 0.02696000451993438,
+        "maxAbs": 0.9674148559570312
+      },
+      "denoised.2": {
+        "relRMS": 0.06376019456378773,
+        "maxAbs": 1.0468182563781738
+      }
+    }
+  },
+  {
+    "precision": "fp16",
+    "case": "unconditional_l24_s5",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.000741684097846074,
+        "maxAbs": 0.03525710105895996
+      },
+      "denoised.0": {
+        "relRMS": 0.000251185460532883,
+        "maxAbs": 0.010334014892578125
+      },
+      "denoised.1": {
+        "relRMS": 0.0003749878147265317,
+        "maxAbs": 0.018413543701171875
+      },
+      "denoised.2": {
+        "relRMS": 0.0002532044476036082,
+        "maxAbs": 0.008630752563476562
+      },
+      "denoised.3": {
+        "relRMS": 0.0006913161844158135,
+        "maxAbs": 0.03462362289428711
+      },
+      "denoised.4": {
+        "relRMS": 0.0007416840980580957,
+        "maxAbs": 0.03525710105895996
+      }
+    }
+  },
+  {
+    "precision": "int8",
+    "case": "unconditional_l24_s5",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.053856083274817425,
+        "maxAbs": 2.6519487500190735
+      },
+      "denoised.0": {
+        "relRMS": 0.016279446630348183,
+        "maxAbs": 0.608814001083374
+      },
+      "denoised.1": {
+        "relRMS": 0.02064008622545281,
+        "maxAbs": 0.7711566686630249
+      },
+      "denoised.2": {
+        "relRMS": 0.016672158955499623,
+        "maxAbs": 0.6202852725982666
+      },
+      "denoised.3": {
+        "relRMS": 0.050565045344416075,
+        "maxAbs": 2.6079392433166504
+      },
+      "denoised.4": {
+        "relRMS": 0.05385608327499924,
+        "maxAbs": 2.6519487500190735
+      }
+    }
+  },
+  {
+    "precision": "fp16",
+    "case": "binder_l8_t12_s3",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.003474269924360975,
+        "maxAbs": 0.07285499572753906
+      },
+      "denoised.0": {
+        "relRMS": 0.00026542613574472945,
+        "maxAbs": 0.00843954086303711
+      },
+      "denoised.1": {
+        "relRMS": 0.001209379092889112,
+        "maxAbs": 0.07927513122558594
+      },
+      "denoised.2": {
+        "relRMS": 0.003474269924360975,
+        "maxAbs": 0.07285499572753906
+      }
+    }
+  },
+  {
+    "precision": "int8",
+    "case": "binder_l8_t12_s3",
+    "comparison": "dequantized weights with FP32 arithmetic versus original checkpoint FP32",
+    "tensors": {
+      "atom_coords": {
+        "relRMS": 0.018762243025100576,
+        "maxAbs": 0.2939763069152832
+      },
+      "denoised.0": {
+        "relRMS": 0.013808648951488289,
+        "maxAbs": 0.4446725845336914
+      },
+      "denoised.1": {
+        "relRMS": 0.01045815830529956,
+        "maxAbs": 0.3906698226928711
+      },
+      "denoised.2": {
+        "relRMS": 0.018762243025100576,
+        "maxAbs": 0.2939763069152832
+      }
+    }
+  }
+]

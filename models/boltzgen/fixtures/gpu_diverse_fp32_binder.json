@@ -1,0 +1,86 @@
+{
+  "variant": "diverse",
+  "precision": "fp32",
+  "mode": "binder",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.00008261831305278465,
+      "maxAbs": 0.0015316009521484375,
+      "paddedRelRMS": 0.00006975297254455505
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.00006722767491483653,
+      "maxAbs": 0.012176513671875,
+      "paddedRelRMS": 0.00006069581003001204
+    },
+    "trajectory.2": {
+      "relRMS": 0.000047823150981795337,
+      "maxAbs": 0.00162506103515625,
+      "paddedRelRMS": 0.00003770038891434059
+    },
+    "trajectory.3": {
+      "relRMS": 0.00008261831305278465,
+      "maxAbs": 0.0015316009521484375,
+      "paddedRelRMS": 0.00006975297254455505
+    },
+    "trajectory.4": {
+      "relRMS": 0.00008261831305278465,
+      "maxAbs": 0.0015316009521484375,
+      "paddedRelRMS": 0.00006975297254455505
+    },
+    "denoised.0": {
+      "relRMS": 0.000019551795987426233,
+      "maxAbs": 0.0006313323974609375,
+      "paddedRelRMS": 0.000011821537624123967
+    },
+    "denoised.1": {
+      "relRMS": 0.00004782569497923509,
+      "maxAbs": 0.0016281604766845703,
+      "paddedRelRMS": 0.000037695484483438046
+    },
+    "denoised.2": {
+      "relRMS": 0.00008261831305278465,
+      "maxAbs": 0.0015316009521484375,
+      "paddedRelRMS": 0.00006975297254455505
+    }
+  },
+  "seconds": 1.2548999996185304,
+  "warmSeconds": 1.3519000005722046,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 811.3999996185303
+    },
+    {
+      "phase": "denoise0",
+      "milliseconds": 139.30000019073486
+    },
+    {
+      "phase": "denoise1",
+      "milliseconds": 133
+    },
+    {
+      "phase": "denoise2",
+      "milliseconds": 133.89999961853027
+    }
+  ],
+  "coldLoadMs": 11780.800000190735,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 1985992584,
+    "transientBytes": 0,
+    "totalBytes": 1985992584,
+    "pipelines": 506,
+    "allocations": 6883
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "variant": "diverse",
+  "precision": "fp32",
+  "mode": "unconditional_l8_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.00001739350861275794,
+      "maxAbs": 0.00032782554626464844,
+      "paddedRelRMS": 0.000014694717211737313
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000008400665430604283,
+      "maxAbs": 0.00146484375,
+      "paddedRelRMS": 0.000008340431059042813
+    },
+    "trajectory.2": {
+      "relRMS": 0.000006107666442151274,
+      "maxAbs": 0.000293731689453125,
+      "paddedRelRMS": 0.0000057394431200572325
+    },
+    "trajectory.3": {
+      "relRMS": 0.00001739350861275794,
+      "maxAbs": 0.00032782554626464844,
+      "paddedRelRMS": 0.000014694717211737313
+    },
+    "trajectory.4": {
+      "relRMS": 0.00001739350861275794,
+      "maxAbs": 0.00032782554626464844,
+      "paddedRelRMS": 0.000014694717211737313
+    },
+    "denoised.0": {
+      "relRMS": 0.000002465654477910572,
+      "maxAbs": 0.00009918212890625,
+      "paddedRelRMS": 0.0000023091008513124047
+    },
+    "denoised.1": {
+      "relRMS": 0.00000611434424880004,
+      "maxAbs": 0.000293731689453125,
+      "paddedRelRMS": 0.000005746912738789081
+    },
+    "denoised.2": {
+      "relRMS": 0.00001739350861275794,
+      "maxAbs": 0.00032782554626464844,
+      "paddedRelRMS": 0.000014694717211737313
+    }
+  },
+  "seconds": 4.462200000762939,
+  "warmSeconds": 0.38360000038146974,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 173.19999980926514
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 166.60000038146973
+    }
+  ],
+  "coldLoadMs": 10094.300000190735,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 1985992584,
+    "transientBytes": 0,
+    "totalBytes": 1985992584,
+    "pipelines": 372,
+    "allocations": 5669
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "unconditional_l24_s5",
+  "mode": "unconditional",
+  "L": 24,
+  "numSteps": 5,
+  "seed": 43,
+  "variant": "diverse",
+  "precision": "int8",
+  "upstream_commit": "6472b44e8072187e6eaa51271ae6838245206013",
+  "seconds": 10.56917677167803,
+  "nAtoms": 336,
+  "tokens": 24
+}

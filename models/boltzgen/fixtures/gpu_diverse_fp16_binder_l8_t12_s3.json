@@ -1,0 +1,78 @@
+{
+  "variant": "diverse",
+  "precision": "fp16",
+  "mode": "binder_l8_t12_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000014485549191311135,
+      "maxAbs": 0.00017690658569335938,
+      "paddedRelRMS": 0.000014485549191311135
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000008316796436458231,
+      "maxAbs": 0.00146484375,
+      "paddedRelRMS": 0.000008316796436458231
+    },
+    "trajectory.2": {
+      "relRMS": 0.000005481602235371789,
+      "maxAbs": 0.0002288818359375,
+      "paddedRelRMS": 0.000005481602235371789
+    },
+    "trajectory.3": {
+      "relRMS": 0.000014485549191311135,
+      "maxAbs": 0.00017690658569335938,
+      "paddedRelRMS": 0.000014485549191311135
+    },
+    "trajectory.4": {
+      "relRMS": 0.000014485549191311135,
+      "maxAbs": 0.00017690658569335938,
+      "paddedRelRMS": 0.000014485549191311135
+    },
+    "denoised.0": {
+      "relRMS": 0.000002541239462262071,
+      "maxAbs": 0.00010347366333007812,
+      "paddedRelRMS": 0.000002541239462262071
+    },
+    "denoised.1": {
+      "relRMS": 0.00000547262196443815,
+      "maxAbs": 0.000217437744140625,
+      "paddedRelRMS": 0.00000547262196443815
+    },
+    "denoised.2": {
+      "relRMS": 0.000014485549191311135,
+      "maxAbs": 0.00017690658569335938,
+      "paddedRelRMS": 0.000014485549191311135
+    }
+  },
+  "seconds": 1.7905,
+  "warmSeconds": 0.43239999961853026,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 197.0999994277954
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 178.30000019073486
+    }
+  ],
+  "coldLoadMs": 4896.60000038147,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 994301256,
+    "transientBytes": 0,
+    "totalBytes": 994301256,
+    "pipelines": 1024,
+    "allocations": 7635
+  }
+}

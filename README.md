@@ -18,12 +18,13 @@ Weights are sharded (≤ 25 MB per `.safetensors` file) and hosted on Hugging Fa
 | **EvoDiff-Seq 38M** | [`models/evodiff/`](models/evodiff/README_WEBGPU.md) | Order-agnostic masked sequence diffusion (ByteNet) | Pending HF upload (`weights/oa_dm_38m/`) | Verified end-to-end GPU parity (`relRMS 9.8e-7`) |
 | **Original RFdiffusion** | [`models/rfdiffusion/`](models/rfdiffusion/README_WEBGPU.md) | SE(3) backbone, motif & symmetric diffusion (`Base_ckpt.pt`) | Pending HF upload (`weights/base/`) | Verified end-to-end GPU parity (`relRMS 0.0` N/CA/C) |
 | **ESM3 Open 1.4B** | [`models/esm3/`](models/esm3/README_WEBGPU.md) | 48-block multimodal seq/struct/SS8/SASA + VQ-VAE encoder/decoder | Pending HF upload (`weights/`) | Verified end-to-end GPU parity (`relRMS 2.59e-7`, 77–262 ms) |
+| **BoltzGen** | [`models/boltzgen/`](models/boltzgen/README_WEBGPU.md) | Dynamic-length all-atom generative binder/motif/monomer diffusion (`diverse` + `adherence`) | Pending HF upload (`weights/`) | Verified end-to-end GPU parity (`relRMS 2.99e-5`, packed 994/503 MB) |
 
 *(Standalone flagship sibling repo: [`ramithuh/genie3-webgpu`](https://github.com/ramithuh/genie3-webgpu).)*
 
-## Staging / In-Progress (`staging/`)
+## Staging / In-Progress
 
-Early Milestone-0/prep notes and component checks (tokenizer, symmetry kernel, parser, archive audit) that have **not** yet reached end-to-end PyTorch parity live in [`staging/`](staging/README.md). Models are promoted from `staging/` to `models/` (and uploaded to Hugging Face) **only** after passing full end-to-end hardware WebGPU parity against the pinned PyTorch checkpoint.
+All Wave 1 & Wave 2 models (`EvoDiff-Seq 38M`, `Original RFdiffusion`, `ESM3 Open 1.4B`, and `BoltzGen`) have passed full end-to-end NVIDIA GB10 WebGPU parity and been promoted into `models/`.
 
 ## Porting a New Model
 

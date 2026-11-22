@@ -1,0 +1,62 @@
+[
+  {
+    "variant": "diverse",
+    "precision": "fp32",
+    "shards": 85,
+    "total_bytes": 1986613032,
+    "relRMS": 0.0,
+    "maxAbs": 0.0,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  },
+  {
+    "variant": "diverse",
+    "precision": "fp16",
+    "shards": 43,
+    "total_bytes": 994910864,
+    "relRMS": 0.00020610312206088865,
+    "maxAbs": 0.003871917724609375,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  },
+  {
+    "variant": "diverse",
+    "precision": "int8",
+    "shards": 22,
+    "total_bytes": 503526060,
+    "relRMS": 0.009025234480180533,
+    "maxAbs": 0.040057241916656494,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  },
+  {
+    "variant": "adherence",
+    "precision": "fp32",
+    "shards": 85,
+    "total_bytes": 1986613032,
+    "relRMS": 0.0,
+    "maxAbs": 0.0,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  },
+  {
+    "variant": "adherence",
+    "precision": "fp16",
+    "shards": 43,
+    "total_bytes": 994910864,
+    "relRMS": 0.0002061858373355867,
+    "maxAbs": 0.0038957595825195312,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  },
+  {
+    "variant": "adherence",
+    "precision": "int8",
+    "shards": 22,
+    "total_bytes": 503526060,
+    "relRMS": 0.009037291930296946,
+    "maxAbs": 0.04066081717610359,
+    "all_tensor_bytes_verified": true,
+    "scope": "weights; output drift measured by dump_oracle.py"
+  }
+]

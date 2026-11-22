@@ -1,0 +1,78 @@
+{
+  "variant": "adherence",
+  "precision": "fp32",
+  "mode": "binder_l8_t12_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000010445793653035746,
+      "maxAbs": 0.00013953447341918945,
+      "paddedRelRMS": 0.000010445793653035746
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000008305353024593236,
+      "maxAbs": 0.001953125,
+      "paddedRelRMS": 0.000008305353024593236
+    },
+    "trajectory.2": {
+      "relRMS": 0.0000035158879485037635,
+      "maxAbs": 0.0001659393310546875,
+      "paddedRelRMS": 0.0000035158879485037635
+    },
+    "trajectory.3": {
+      "relRMS": 0.000010445793653035746,
+      "maxAbs": 0.00013953447341918945,
+      "paddedRelRMS": 0.000010445793653035746
+    },
+    "trajectory.4": {
+      "relRMS": 0.000010445793653035746,
+      "maxAbs": 0.00013953447341918945,
+      "paddedRelRMS": 0.000010445793653035746
+    },
+    "denoised.0": {
+      "relRMS": 0.0000021691030377101397,
+      "maxAbs": 0.00007414817810058594,
+      "paddedRelRMS": 0.0000021691030377101397
+    },
+    "denoised.1": {
+      "relRMS": 0.000003511058485856786,
+      "maxAbs": 0.0001659393310546875,
+      "paddedRelRMS": 0.000003511058485856786
+    },
+    "denoised.2": {
+      "relRMS": 0.000010445793653035746,
+      "maxAbs": 0.00013953447341918945,
+      "paddedRelRMS": 0.000010445793653035746
+    }
+  },
+  "seconds": 1.6749000005722046,
+  "warmSeconds": 0.3825,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 176.19999980926514
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 178.9000005722046
+    }
+  ],
+  "coldLoadMs": 10427.099999427795,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 1985992584,
+    "transientBytes": 0,
+    "totalBytes": 1985992584,
+    "pipelines": 1024,
+    "allocations": 7635
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000025028380177618646,
+      "maxAbs": 0.0006299018859863281,
+      "paddedRelRMS": 0.0000210206504389877
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000006018177551101896,
+      "maxAbs": 0.00146484375,
+      "paddedRelRMS": 0.000006028198549536275
+    },
+    "trajectory.2": {
+      "relRMS": 0.000008673729916704896,
+      "maxAbs": 0.0006628036499023438,
+      "paddedRelRMS": 0.000008131895700262196
+    },
+    "trajectory.3": {
+      "relRMS": 0.000025028380177618646,
+      "maxAbs": 0.0006299018859863281,
+      "paddedRelRMS": 0.0000210206504389877
+    },
+    "trajectory.4": {
+      "relRMS": 0.000025028380177618646,
+      "maxAbs": 0.0006299018859863281,
+      "paddedRelRMS": 0.0000210206504389877
+    },
+    "denoised.0": {
+      "relRMS": 0.0000017944996636544503,
+      "maxAbs": 0.000057220458984375,
+      "paddedRelRMS": 0.0000016794231756125137
+    },
+    "denoised.1": {
+      "relRMS": 0.000008661478983774468,
+      "maxAbs": 0.000659942626953125,
+      "paddedRelRMS": 0.000008118784791709052
+    },
+    "denoised.2": {
+      "relRMS": 0.000025028380177618646,
+      "maxAbs": 0.0006299018859863281,
+      "paddedRelRMS": 0.0000210206504389877
+    }
+  },
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "cachesChecked": [
+    "cache",
+    "opfs"
+  ],
+  "privateModeFallback": true,
+  "newSeedGeneration": true,
+  "extended": [
+    {
+      "L": 32,
+      "numSteps": 20,
+      "seconds": 6.14889999961853
+    },
+    {
+      "L": 64,
+      "numSteps": 50,
+      "seconds": 10.002800000190735
+    }
+  ]
+}

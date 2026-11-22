@@ -1,0 +1,68 @@
+{
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000007921041341699352,
+      "maxAbs": 0.00034427642822265625,
+      "paddedRelRMS": 0.000007910853990308366
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.00000785727118562891,
+      "maxAbs": 0.00146484375,
+      "paddedRelRMS": 0.000008525700800676688
+    },
+    "trajectory.2": {
+      "relRMS": 0.0000072571193093267065,
+      "maxAbs": 0.00029754638671875,
+      "paddedRelRMS": 0.000007057621371231632
+    },
+    "trajectory.3": {
+      "relRMS": 0.000007921041341699352,
+      "maxAbs": 0.00034427642822265625,
+      "paddedRelRMS": 0.000007910853990308366
+    },
+    "trajectory.4": {
+      "relRMS": 0.000007921041341699352,
+      "maxAbs": 0.00034427642822265625,
+      "paddedRelRMS": 0.000007910853990308366
+    },
+    "denoised.0": {
+      "relRMS": 0.0000036970653577982423,
+      "maxAbs": 0.0001659393310546875,
+      "paddedRelRMS": 0.0000034735260364264666
+    },
+    "denoised.1": {
+      "relRMS": 0.000007237090166042362,
+      "maxAbs": 0.00029754638671875,
+      "paddedRelRMS": 0.000007037177646999544
+    },
+    "denoised.2": {
+      "relRMS": 0.000007921041341699352,
+      "maxAbs": 0.00034427642822265625,
+      "paddedRelRMS": 0.000007910853990308366
+    }
+  },
+  "seconds": 7.534931411999991,
+  "timings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 2546.298815999995
+    },
+    {
+      "phase": "denoise0",
+      "milliseconds": 1630.8434669999988
+    },
+    {
+      "phase": "denoise1",
+      "milliseconds": 1633.7297289999988
+    },
+    {
+      "phase": "denoise2",
+      "milliseconds": 1626.574974999996
+    }
+  ]
+}

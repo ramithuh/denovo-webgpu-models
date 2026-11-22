@@ -1,0 +1,29 @@
+{
+  "name": "motif_l16_s5_r1",
+  "mode": "motif",
+  "L": 16,
+  "numSteps": 5,
+  "recyclingSteps": 1,
+  "seed": 45,
+  "targetFile": "fixtures/1crn-12.pdb",
+  "motifIndices": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "variant": "diverse",
+  "precision": "fp16",
+  "upstream_commit": "6472b44e8072187e6eaa51271ae6838245206013",
+  "seconds": 6.760531411506236,
+  "nAtoms": 104,
+  "tokens": 16
+}

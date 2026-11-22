@@ -1,0 +1,98 @@
+{
+  "variant": "diverse",
+  "precision": "fp16",
+  "mode": "motif_l16_s5_r1",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000007501654274524946,
+      "maxAbs": 0.0001220703125,
+      "paddedRelRMS": 0.000007221997776663328
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.00001342955494357628,
+      "maxAbs": 0.0244140625,
+      "paddedRelRMS": 0.000013251323419201636
+    },
+    "trajectory.2": {
+      "relRMS": 0.000014491261127110333,
+      "maxAbs": 0.00390625,
+      "paddedRelRMS": 0.000014101411663484367
+    },
+    "trajectory.3": {
+      "relRMS": 0.00000381747820082892,
+      "maxAbs": 0.000213623046875,
+      "paddedRelRMS": 0.000003603662112907029
+    },
+    "trajectory.4": {
+      "relRMS": 0.000006762259075268432,
+      "maxAbs": 0.00010466575622558594,
+      "paddedRelRMS": 0.0000067341360742027134
+    },
+    "trajectory.5": {
+      "relRMS": 0.000007501654274524946,
+      "maxAbs": 0.0001220703125,
+      "paddedRelRMS": 0.000007221997776663328
+    },
+    "trajectory.6": {
+      "relRMS": 0.000007501654274524946,
+      "maxAbs": 0.0001220703125,
+      "paddedRelRMS": 0.000007221997776663328
+    },
+    "denoised.0": {
+      "relRMS": 0.000004148204847441937,
+      "maxAbs": 0.0001392364501953125,
+      "paddedRelRMS": 0.000003687204032428569
+    },
+    "denoised.1": {
+      "relRMS": 0.000003247480614946144,
+      "maxAbs": 0.00010967254638671875,
+      "paddedRelRMS": 0.0000029446965703836094
+    },
+    "denoised.2": {
+      "relRMS": 0.0000032789519376800865,
+      "maxAbs": 0.0001506805419921875,
+      "paddedRelRMS": 0.0000029857584538737452
+    },
+    "denoised.3": {
+      "relRMS": 0.000006761419632985715,
+      "maxAbs": 0.00010442733764648438,
+      "paddedRelRMS": 0.00000673283961702823
+    },
+    "denoised.4": {
+      "relRMS": 0.000007501654274524946,
+      "maxAbs": 0.0001220703125,
+      "paddedRelRMS": 0.000007221997776663328
+    }
+  },
+  "seconds": 3.393699999809265,
+  "warmSeconds": 0.6996999998092651,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 351.0999994277954
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 291.80000019073486
+    }
+  ],
+  "coldLoadMs": 4896.60000038147,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 994301256,
+    "transientBytes": 0,
+    "totalBytes": 994301256,
+    "pipelines": 1024,
+    "allocations": 8553
+  }
+}

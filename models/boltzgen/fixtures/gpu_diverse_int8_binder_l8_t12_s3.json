@@ -1,0 +1,78 @@
+{
+  "variant": "diverse",
+  "precision": "int8",
+  "mode": "binder_l8_t12_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.000008906967799617358,
+      "maxAbs": 0.00018215179443359375,
+      "paddedRelRMS": 0.000008906967799617358
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000010655084611380253,
+      "maxAbs": 0.001953125,
+      "paddedRelRMS": 0.000010655084611380253
+    },
+    "trajectory.2": {
+      "relRMS": 0.0000029839779999653974,
+      "maxAbs": 0.000202178955078125,
+      "paddedRelRMS": 0.0000029839779999653974
+    },
+    "trajectory.3": {
+      "relRMS": 0.000008906967799617358,
+      "maxAbs": 0.00018215179443359375,
+      "paddedRelRMS": 0.000008906967799617358
+    },
+    "trajectory.4": {
+      "relRMS": 0.000008906967799617358,
+      "maxAbs": 0.00018215179443359375,
+      "paddedRelRMS": 0.000008906967799617358
+    },
+    "denoised.0": {
+      "relRMS": 0.000001688985210020854,
+      "maxAbs": 0.00006723403930664062,
+      "paddedRelRMS": 0.000001688985210020854
+    },
+    "denoised.1": {
+      "relRMS": 0.000002963009708863361,
+      "maxAbs": 0.000202178955078125,
+      "paddedRelRMS": 0.000002963009708863361
+    },
+    "denoised.2": {
+      "relRMS": 0.000008906967799617358,
+      "maxAbs": 0.00018215179443359375,
+      "paddedRelRMS": 0.000008906967799617358
+    }
+  },
+  "seconds": 1.611300000190735,
+  "warmSeconds": 0.5443000001907349,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 269.20000076293945
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 221.89999961853027
+    }
+  ],
+  "coldLoadMs": 2395.5999994277954,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 502533780,
+    "transientBytes": 0,
+    "totalBytes": 502533780,
+    "pipelines": 1024,
+    "allocations": 10497
+  }
+}

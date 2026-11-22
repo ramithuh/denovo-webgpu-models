@@ -1,0 +1,78 @@
+{
+  "variant": "diverse",
+  "precision": "fp32",
+  "mode": "binder_l8_t12_s3",
+  "stats": {
+    "atom_coords": {
+      "relRMS": 0.00002394527900418484,
+      "maxAbs": 0.0005385875701904297,
+      "paddedRelRMS": 0.00002394527900418484
+    },
+    "trajectory.0": {
+      "relRMS": 0,
+      "maxAbs": 0,
+      "paddedRelRMS": 0
+    },
+    "trajectory.1": {
+      "relRMS": 0.000014335520330565268,
+      "maxAbs": 0.0029296875,
+      "paddedRelRMS": 0.000014335520330565268
+    },
+    "trajectory.2": {
+      "relRMS": 0.000008145601857648642,
+      "maxAbs": 0.0004482269287109375,
+      "paddedRelRMS": 0.000008145601857648642
+    },
+    "trajectory.3": {
+      "relRMS": 0.00002394527900418484,
+      "maxAbs": 0.0005385875701904297,
+      "paddedRelRMS": 0.00002394527900418484
+    },
+    "trajectory.4": {
+      "relRMS": 0.00002394527900418484,
+      "maxAbs": 0.0005385875701904297,
+      "paddedRelRMS": 0.00002394527900418484
+    },
+    "denoised.0": {
+      "relRMS": 0.000003975740653044574,
+      "maxAbs": 0.00014209747314453125,
+      "paddedRelRMS": 0.000003975740653044574
+    },
+    "denoised.1": {
+      "relRMS": 0.000008148092010650923,
+      "maxAbs": 0.00045013427734375,
+      "paddedRelRMS": 0.000008148092010650923
+    },
+    "denoised.2": {
+      "relRMS": 0.00002394527900418484,
+      "maxAbs": 0.0005385875701904297,
+      "paddedRelRMS": 0.00002394527900418484
+    }
+  },
+  "seconds": 3.86539999961853,
+  "warmSeconds": 0.43110000038146973,
+  "warmTimings": [
+    {
+      "phase": "trunk",
+      "milliseconds": 197.69999980926514
+    },
+    {
+      "phase": "diffusion",
+      "milliseconds": 182.30000019073486
+    }
+  ],
+  "coldLoadMs": 10094.300000190735,
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "memory": {
+    "persistentBytes": 1985992584,
+    "transientBytes": 0,
+    "totalBytes": 1985992584,
+    "pipelines": 1024,
+    "allocations": 7635
+  }
+}
