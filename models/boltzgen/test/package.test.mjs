@@ -89,6 +89,14 @@ test("dynamic features, target identities, input validation, and random schedule
   assert.equal(f.metadata.atoms[112].residue, "THR");
   assert.equal(f.get("f:design_mask").data[8], 0);
   assert.equal(f.get("f:token_distance_mask").data[8 * 20 + 19], 1);
+  assert.equal(f.metadata.hotspotCount, 0);
+  const fHot = createFeatures({ mode: "binder", L: 8, targetPDB: pdb, hotspots: ["A:1", "A:3"] });
+  assert.equal(fHot.metadata.hotspotCount, 2);
+  assert.equal(fHot.get("f:binding_type").data[8], 1);
+  assert.equal(fHot.get("f:binding_type").data[9], 0);
+  assert.equal(fHot.get("f:binding_type").data[10], 1);
+  assert.equal(fHot.get("f:binding_type").data[0], 0);
+  assert.throws(() => createFeatures({ mode: "binder", L: 8, targetPDB: pdb, hotspots: ["Z:999"] }));
   const motif = createFeatures({
     mode: "motif",
     L: 16,

@@ -26,7 +26,7 @@ export async function denoise(
   const keep = [...Object.values(f), frames.trans, frames.rots];
   const collect = async (...xs) => {
     signal?.throwIfAborted();
-    await o.checkpoint([...keep, ...xs]);
+    await o.checkpoint([...keep, ...xs], { sync: false });
   };
   const pm = o.einsum("i,j->ij", f.residue_mask, f.residue_mask),
     pm3 = o.reshape(pm, [L, L, 1]);

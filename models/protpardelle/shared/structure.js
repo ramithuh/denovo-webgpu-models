@@ -78,7 +78,7 @@ function cifTokens(text) {
   }
   return tokens;
 }
-function cifRows(text) {
+function cifRows(text, { seqIdField = "auth" } = {}) {
   const tokens = cifTokens(text),
     rows = [];
   let model;
@@ -104,9 +104,22 @@ function cifRows(text) {
           current = get("pdbx_PDB_model_num") ?? "1";
         model ??= current;
         if (model !== current) continue;
-        // Upstream explicitly uses label_seq_id, not auth_seq_id.
-        if (get("label_seq_id") === "." || get("label_seq_id") === "?")
+        const labelSeq = get("label_seq_id");
+        const authSeq = get("auth_seq_id");
+        const rawSeq =
+          seqIdField === "label"
+            ? labelSeq
+            : authSeq && authSeq !== "." && authSeq !== "?"
+              ? authSeq
+              : labelSeq;
+        if (!rawSeq || rawSeq === "." || rawSeq === "?") continue;
+        if (seqIdField === "label" && (labelSeq === "." || labelSeq === "?"))
           continue;
+        const rawAuthChain = get("auth_asym_id");
+        const chain =
+          rawAuthChain && rawAuthChain !== "." && rawAuthChain !== "?"
+            ? rawAuthChain
+            : get("label_asym_id");
         rows.push({
           record: get("group_PDB"),
           atom: get("label_atom_id"),
@@ -114,8 +127,8 @@ function cifRows(text) {
             ? ""
             : get("label_alt_id"),
           resname: get("label_comp_id"),
-          chain: get("auth_asym_id") ?? get("label_asym_id"),
-          resid: Number(get("label_seq_id")),
+          chain,
+          resid: Number(rawSeq),
           icode: [".", "?"].includes(get("pdbx_PDB_ins_code"))
             ? ""
             : get("pdbx_PDB_ins_code"),
@@ -129,11 +142,11 @@ function cifRows(text) {
 }
 export function parseStructure(
   text,
-  { format = "pdb", chainId, chainResidueGap = 200 } = {},
+  { format = "pdb", chainId, chainResidueGap = 200, seqIdField = "auth" } = {},
 ) {
   if (!["pdb", "cif", "mmcif"].includes(format))
     throw new Error("Unknown structure format");
-  const rows = format === "pdb" ? pdbRows(text) : cifRows(text),
+  const rows = format === "pdb" ? pdbRows(text) : cifRows(text, { seqIdField }),
     chains = new Map();
   for (const row of rows) {
     if (chainId !== undefined && row.chain !== chainId) continue;

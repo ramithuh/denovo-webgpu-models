@@ -147,7 +147,9 @@ export async function initializeEngine(o, options, metadata = {}) {
       noises,
       signal,
       onStep,
+      onProgress,
       onStage,
+      readStepCoordinates = true,
       trajectory = false,
     } = {}) {
       return run(async () => {
@@ -205,12 +207,17 @@ export async function initializeEngine(o, options, metadata = {}) {
             t,
             scale,
           );
-          if (trajectory || onStep) {
+          if (trajectory || (onStep && readStepCoordinates)) {
             const xyz = await o.read(trans);
             if (trajectory) saved.push(xyz);
             await onStep?.({ step: t, coordinates: xyz });
+          } else if (onStep) {
+            await onStep({ step: t });
           }
-          await o.checkpoint([...Object.values(ft), trans]);
+          onProgress?.({ step: steps - t + 1, totalSteps: steps, t });
+          await o.checkpoint([...Object.values(ft), trans], {
+            sync: t === 1 || t % 5 === 0,
+          });
           signal?.throwIfAborted();
         }
         const rotations = frenet(o, trans, ft.chain_index, ft.residue_mask);

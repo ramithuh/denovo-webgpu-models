@@ -234,6 +234,7 @@ class Engine {
       returnAttentions = false,
       hiddenLayer,
       traceRow,
+      rowOnly = false,
       sequenceIds,
       wildTypeTokens,
       signal,
@@ -259,6 +260,11 @@ class Engine {
       (!Number.isInteger(traceRow) || traceRow < 0 || traceRow >= L)
     )
       throw new RangeError("Invalid trace row");
+    if (
+      rowOnly &&
+      (traceRow === undefined || traceRow < 1 || traceRow >= L - 1)
+    )
+      throw new RangeError("rowOnly requires an interior traceRow");
     if (
       wildTypeTokens !== undefined &&
       (wildTypeTokens.length !== L ||
@@ -397,13 +403,15 @@ class Engine {
       }
       x = await ln(x, "transformer.norm");
       save("final_ln", x);
-      traces.tokenEmbeddings = { buffer: x, n: L * D };
-      traces.pooled = {
-        buffer: await this.dispatch(poolSource(L, D), [x], D, [
-          Math.ceil(D / 256),
-        ]),
-        n: D,
-      };
+      if (!rowOnly) {
+        traces.tokenEmbeddings = { buffer: x, n: L * D };
+        traces.pooled = {
+          buffer: await this.dispatch(poolSource(L, D), [x], D, [
+            Math.ceil(D / 256),
+          ]),
+          n: D,
+        };
+      }
       x = await linear(x, "sequence_head.0");
       save("head.0", x);
       x = await this.dispatch(geluSource(L * D), [x], L * D, [
@@ -415,26 +423,53 @@ class Engine {
       const logits = await linear(x, "sequence_head.3", D, 64);
       save("head.3", logits, L * 64, 64);
       save("logits", logits, L * 64, 64);
-      traces.outputLogits = { buffer: logits, n: L * 64 };
+      if (rowOnly) {
+        const rowLogits = this.buffer(64 * 4, true);
+        this.encoder ??= this.device.createCommandEncoder();
+        this.encoder.copyBufferToBuffer(
+          logits,
+          traceRow * 64 * 4,
+          rowLogits,
+          0,
+          64 * 4,
+        );
+        traces.outputLogits = { buffer: rowLogits, n: 64 };
+      } else {
+        traces.outputLogits = { buffer: logits, n: L * 64 };
+      }
       const wt = wildTypeTokens
         ? this.buffer(Int32Array.from(wildTypeTokens), true)
         : tokenBuffer;
-      traces.taskScores = {
-        buffer: await this.dispatch(
-          taskScoresSource(L, AA_IDS),
-          [logits, wt],
-          (L - 2) * 42,
-          [Math.ceil((L - 2) / 64)],
-        ),
-        n: (L - 2) * 42,
-      };
+      const taskBuf = await this.dispatch(
+        taskScoresSource(L, AA_IDS),
+        [logits, wt],
+        (L - 2) * 42,
+        [Math.ceil((L - 2) / 64)],
+      );
+      if (rowOnly) {
+        const rowTask = this.buffer(42 * 4, true);
+        this.encoder ??= this.device.createCommandEncoder();
+        this.encoder.copyBufferToBuffer(
+          taskBuf,
+          (traceRow - 1) * 42 * 4,
+          rowTask,
+          0,
+          42 * 4,
+        );
+        traces.taskScores = { buffer: rowTask, n: 42 };
+      } else {
+        traces.taskScores = { buffer: taskBuf, n: (L - 2) * 42 };
+      }
       const values = await this.readOutputs(traces, signal),
-        embeddings = values.tokenEmbeddings.slice(D, (L - 1) * D);
-      const llr = new Float32Array((L - 2) * 20),
-        wtLogProbs = new Float32Array(L - 2),
-        canonicalProbabilities = new Float32Array((L - 2) * 20),
-        predictions = new Int32Array(L - 2);
-      for (let p = 0; p < L - 2; p++) {
+        embeddings = values.tokenEmbeddings
+          ? values.tokenEmbeddings.slice(D, (L - 1) * D)
+          : undefined;
+      const scoreRows = rowOnly ? 1 : L - 2;
+      const llr = new Float32Array(scoreRows * 20),
+        wtLogProbs = new Float32Array(scoreRows),
+        canonicalProbabilities = new Float32Array(scoreRows * 20),
+        predictions = new Int32Array(scoreRows);
+      for (let p = 0; p < scoreRows; p++) {
         llr.set(values.taskScores.subarray(p * 42, p * 42 + 20), p * 20);
         canonicalProbabilities.set(
           values.taskScores.subarray(p * 42 + 20, p * 42 + 40),

@@ -118,10 +118,33 @@ export async function sample(
       );
     x = o.add(o.einsum("nij,naj->nai", R, x), translation);
     coords = await o.read(x);
+    const motifCom = [0, 0, 0];
+    let motifCount = 0;
+    for (let i = 0; i < L; i++) {
+      const srcCoords = (mapping?.[i] ?? mapping?.[i % (mapping?.length || L)])?.source?.coords;
+      if (mask[i] && srcCoords) {
+        motifCom[0] += srcCoords[3];
+        motifCom[1] += srcCoords[4];
+        motifCom[2] += srcCoords[5];
+        motifCount++;
+      }
+    }
+    if (motifCount > 0) {
+      motifCom[0] /= motifCount;
+      motifCom[1] /= motifCount;
+      motifCom[2] /= motifCount;
+    }
     const expanded = new Float32Array(L * 42).fill(NaN);
     for (let i = 0; i < L; i++) {
       expanded.set(coords.slice(i * 12, i * 12 + 12), i * 42);
-      if (mask[i]) expanded.set(mapping[i].source.coords, i * 42);
+      const srcCoords = (mapping?.[i] ?? mapping?.[i % (mapping?.length || L)])?.source?.coords;
+      if (mask[i] && srcCoords) {
+        const off = i * 42;
+        for (let k = 0; k < 42; k++) {
+          const v = srcCoords[k];
+          expanded[off + k] = Number.isFinite(v) ? v - motifCom[k % 3] : v;
+        }
+      }
     }
     coords = expanded;
   }
@@ -137,9 +160,15 @@ export async function sample(
   let selfCondition = null,
     trajectory = [],
     last;
+  const tSchedule = Array.from({ length: numSteps }, (_, s) =>
+    numSteps === 1
+      ? 50
+      : Math.max(1, Math.min(50, Math.round(50 - (s * 49) / (numSteps - 1)))),
+  );
   for (let step = 0; step < numSteps; step++) {
     abort(signal);
-    const t = 50 - step,
+    const t = tSchedule[step],
+      nextT = step + 1 < numSteps ? tSchedule[step + 1] : 0,
       input = prepareInput({
         length: L,
         coords,
@@ -152,7 +181,15 @@ export async function sample(
     onInputs?.(step, input);
     const predicted = await infer(input, {
       signal,
-      onProgress: (p) => onProgress?.({ ...p, step: step + 1, numSteps, t }),
+      onProgress: (p) =>
+        onProgress?.({
+          ...p,
+          blockTotal: p?.blockTotal ?? p?.total,
+          step: step + 1,
+          numSteps,
+          total: numSteps,
+          t,
+        }),
     });
     let raw = o.tensor([L, 3, 3], predicted.px0),
       px0 = o.tensor([L, 4, 3], predicted.coords);
@@ -171,7 +208,7 @@ export async function sample(
     let next,
       rotation = null;
     const supplied = recordedNoise?.steps?.[step];
-    if (t > 1) {
+    if (step < numSteps - 1 && t > 1) {
       px0 = alignMotif(o, px0, current, mask);
       const trans = o.tensor(
           [L, 3],
@@ -187,6 +224,7 @@ export async function sample(
           xt: o.slice(current, 1, 0, 3),
           px0,
           t,
+          nextT,
           translationNoise: trans,
           rotationNoise: rot,
           mask,
@@ -218,6 +256,7 @@ export async function sample(
       phase: "step",
       step: step + 1,
       numSteps,
+      total: numSteps,
       t,
       fraction: (step + 1) / numSteps,
     });
@@ -225,10 +264,24 @@ export async function sample(
   if (symmetry)
     last = await o.read(applySymmetry(o, o.tensor([L, 4, 3], last), symmetry));
   o.clear();
+  const motifIndices = [],
+    nativeMotifCoords = [];
+  for (let i = 0; i < L; i++) {
+    if (mask[i]) {
+      const srcCoords = (mapping?.[i] ?? mapping?.[i % (mapping?.length || L)])?.source?.coords;
+      if (srcCoords && Number.isFinite(srcCoords[3]) && Number.isFinite(srcCoords[4]) && Number.isFinite(srcCoords[5])) {
+        motifIndices.push(i);
+        nativeMotifCoords.push([srcCoords[3], srcCoords[4], srcCoords[5]]);
+      }
+    }
+  }
   return {
     pdbText: writePDB(last, ids, { chains }),
     coords: last,
     sequence: ids,
+    diffusionMask: mask,
+    motifIndices,
+    nativeMotifCoords,
     trajectory,
     timingMs: performance.now() - start,
   };

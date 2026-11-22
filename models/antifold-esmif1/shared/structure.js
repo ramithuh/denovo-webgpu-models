@@ -113,8 +113,8 @@ export function regionMask(residues,{regions=['CDR1','CDR2','CDR3'],numbering='i
   if(!heavyChain)throw new Error('Region selection requires an explicit heavy chain');
   const bounds=numbering==='imgt'?{H:[[27,38],[56,65],[105,117]],L:[[27,38],[56,65],[105,117]]}:{H:[[31,35],[50,65],[95,102]],L:[[24,34],[50,56],[89,97]]};
   const selectors=regions.map(region=>{
-    let m=/^([^:]+):(-?\d+[A-Za-z]?(?:--?\d+)?(?:,-?\d+[A-Za-z]?(?:--?\d+)?)*)$/.exec(region);
-    if(m){const chain=m[1]==='H'?heavyChain:m[1]==='L'?lightChain:m[1];const ranges=m[2].split(',').map(p=>{const r=/^(-?\d+)([A-Za-z]?)(?:-(-?\d+))?$/.exec(p);const a=+r[1],b=r[3]===undefined?a:+r[3];if(b<a)throw new Error('Reversed residue range');return {a,b,ins:r[2]};});return r=>r.chain===chain&&ranges.some(x=>r.number>=x.a&&r.number<=x.b&&(!x.ins||r.insertion===x.ins));}
+    let m=/^([^:]+):(-?\d+[A-Za-z]?(?:--?\d+[A-Za-z]?)?(?:,-?\d+[A-Za-z]?(?:--?\d+[A-Za-z]?)?)*)$/.exec(region);
+    if(m){const chain=m[1]==='H'?heavyChain:m[1]==='L'?lightChain:m[1];const ranges=m[2].split(',').map(p=>{const r=/^(-?\d+)([A-Za-z]?)(?:-(-?\d+)([A-Za-z]?))?$/.exec(p);const a=+r[1],startIns=r[2].toUpperCase(),isRange=r[3]!==undefined,b=isRange?+r[3]:a,endIns=isRange?(r[4]??'').toUpperCase():startIns;if(b<a||(b===a&&startIns>endIns))throw new Error('Reversed residue range');return {a,b,startIns,endIns};});return r=>r.chain===chain&&ranges.some(x=>{const ins=(r.insertion??'').toUpperCase();return (r.number>x.a||(r.number===x.a&&(!x.startIns||ins>=x.startIns)))&&(r.number<x.b||(r.number===x.b&&(!x.endIns||ins<=x.endIns)));});}
     m=/^(all|CDR|FW)([HL]?)([1-4]?)$/.exec(region);if(!m)throw new Error(`Invalid region ${region}`);
     const [,type,role,num]=m;if(type==='CDR'&&num==='4')throw new Error('No CDR4');
     return r=>{

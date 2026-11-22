@@ -30,6 +30,9 @@ const bodies = {
  var maximum=-3.402823466e38;for(var e=begin;e<end;e++){let edge=u32(c[e]);maximum=max(maximum,b[edge*p.d+head]);}
  var denom=0.0;var accum=0.0;for(var e=begin;e<end;e++){let edge=u32(c[e]);let prob=exp(b[edge*p.d+head]-maximum);denom+=prob;let at=edge*p.k+select(head*p.c,0u,p.k==p.c)+col;accum+=prob*a[at];}
  if(denom>0.0){sum+=accum/denom/f32(p.d);}}out[i]=sum;`,
+  catOneHot: `if(col<p.k){out[i]=a[col];}else{out[i]=select(0.0,1.0,(col-p.k)==u32(b[0]));}`,
+  chiAngle: `let raw=-180.0+f32(u32(a[0]))*5.0+b[0];let s=raw+180.0;let m=s-360.0*floor(s/360.0);out[0]=select(m,0.0,m>=360.0)-180.0;`,
+  maskRow: `out[i]=a[i]*b[p.k];`,
 };
 export const OP_SHADERS = Object.fromEntries(
   Object.entries(bodies).map(([kind, body]) => [
@@ -41,6 +44,75 @@ export const OP_SHADERS = Object.fromEntries(
 }`,
   ]),
 );
+OP_SHADERS.sampleIndex = header + `
+@compute @workgroup_size(1)
+fn main() {
+  let k = p.k;
+  let temp = bitcast<f32>(p.d);
+  let uniformVal = bitcast<f32>(p.e);
+  let hasMask = p.f != 0u;
+  if (temp <= 0.0) {
+    var bestIdx = 0u;
+    var bestVal = -3.402823466e38;
+    var hasBest = false;
+    for (var j = 0u; j < k; j++) {
+      if (!hasMask || b[j] > 0.5) {
+        if (!hasBest || a[j] > bestVal) { bestVal = a[j]; bestIdx = j; hasBest = true; }
+      }
+    }
+    out[0] = f32(bestIdx);
+    return;
+  }
+  var maxVal = -3.402823466e38;
+  var lastValid = k - 1u;
+  var hasValid = false;
+  for (var j = 0u; j < k; j++) {
+    if (!hasMask || b[j] > 0.5) {
+      if (!hasValid || a[j] > maxVal) { maxVal = a[j]; }
+      lastValid = j;
+      hasValid = true;
+    }
+  }
+  var sum = 0.0;
+  for (var j = 0u; j < k; j++) {
+    if (!hasMask || b[j] > 0.5) {
+      sum += exp((a[j] - maxVal) / temp);
+    }
+  }
+  var cdf = 0.0;
+  var choice = lastValid;
+  for (var j = 0u; j < k; j++) {
+    if (!hasMask || b[j] > 0.5) {
+      cdf += exp((a[j] - maxVal) / temp) / sum;
+      if (uniformVal <= cdf) { choice = j; break; }
+    }
+  }
+  out[0] = f32(choice);
+}`;
+OP_SHADERS.chiRbf = header + `
+@compute @workgroup_size(1)
+fn main() {
+  let ang = a[0];
+  var s = 0.0;
+  for (var j = 0u; j < 72u; j++) {
+    let center = -180.0 + f32(j) * 5.0;
+    let d1raw = center - ang;
+    let d1 = d1raw - 360.0 * floor(d1raw / 360.0);
+    let d2raw = ang - center;
+    let d2 = d2raw - 360.0 * floor(d2raw / 360.0);
+    let mn = min(d1, d2) / 2.5;
+    s += exp(-0.5 * mn * mn);
+  }
+  for (var j = 0u; j < 72u; j++) {
+    let center = -180.0 + f32(j) * 5.0;
+    let d1raw = center - ang;
+    let d1 = d1raw - 360.0 * floor(d1raw / 360.0);
+    let d2raw = ang - center;
+    let d2 = d2raw - 360.0 * floor(d2raw / 360.0);
+    let mn = min(d1, d2) / 2.5;
+    out[j] = exp(-0.5 * mn * mn) / s;
+  }
+}`;
 OP_SHADERS.norm = header + `
 var<workgroup> partial: array<f32, 128>;
 

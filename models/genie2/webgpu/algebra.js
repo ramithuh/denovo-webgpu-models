@@ -205,7 +205,7 @@ fn rfSqrt(x:f32)->f32 {let y=sqrt(x);if(x==0.0){return 0.0;}return y+fma(-y,y,x)
       b.destroy();
     }
   }
-  async checkpoint(keep = []) {
+  async checkpoint(keep = [], { sync = true } = {}) {
     this.flush();
     const live = new Set(
       keep
@@ -222,7 +222,7 @@ fn rfSqrt(x:f32)->f32 {let y=sqrt(x);if(x==0.0){return 0.0;}return y+fma(-y,y,x)
           this.available.add(b);
         }
       }
-    await this.device.queue.onSubmittedWorkDone();
+    if (sync) await this.device.queue.onSubmittedWorkDone();
     if (this.validationError) throw this.validationError;
   }
   clear() {

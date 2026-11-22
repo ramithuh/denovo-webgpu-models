@@ -89,6 +89,139 @@ function targetResidues({ targetPDB, targetSequence, targetCoords, target }) {
     };
   });
 }
+function parseHotspotToken(tok) {
+  const t = String(tok ?? "").trim();
+  if (!t) return null;
+  const colonRange =
+    /^([A-Za-z0-9_]):(-?\d+)([A-Za-z]?)(?:-(-?\d+)([A-Za-z]?))?$/.exec(t);
+  if (colonRange) {
+    return {
+      chain: colonRange[1],
+      start: Number(colonRange[2]),
+      startIns: (colonRange[3] || "").toUpperCase(),
+      end:
+        colonRange[4] !== undefined
+          ? Number(colonRange[4])
+          : Number(colonRange[2]),
+      endIns: (
+        colonRange[4] !== undefined
+          ? colonRange[5] || ""
+          : colonRange[3] || ""
+      ).toUpperCase(),
+      exactId:
+        colonRange[4] === undefined
+          ? `${colonRange[2]}${colonRange[3] || ""}`
+          : null,
+    };
+  }
+  const bare =
+    /^([A-Za-z_])?(-?\d+)([A-Za-z]?)(?:-([A-Za-z_])?(-?\d+)([A-Za-z]?))?$/.exec(
+      t,
+    );
+  if (!bare) return null;
+  const c1 = bare[1] || null;
+  const c2 = bare[4] || null;
+  if (c1 && c2 && c1.toUpperCase() !== c2.toUpperCase())
+    throw Error(`Hotspot range "${t}" crosses chains (${c1} vs ${c2})`);
+  const hasEnd = bare[5] !== undefined;
+  return {
+    chain: c1 ?? c2,
+    start: Number(bare[2]),
+    startIns: (bare[3] || "").toUpperCase(),
+    end: hasEnd ? Number(bare[5]) : Number(bare[2]),
+    endIns: (hasEnd ? bare[6] || "" : bare[3] || "").toUpperCase(),
+    exactId: hasEnd ? null : `${bare[2]}${bare[3] || ""}`,
+  };
+}
+function splitResId(id) {
+  const m = /^(-?\d+)([A-Za-z]*)$/.exec(String(id ?? "").trim());
+  return m ? { num: Number(m[1]), ins: (m[2] || "").toUpperCase() } : null;
+}
+function matchesHotspotSpec(r, spec, defaultChain) {
+  const wantChain = spec.chain ?? defaultChain;
+  if (
+    wantChain &&
+    r.chain !== wantChain &&
+    r.chain.toUpperCase() !== wantChain.toUpperCase()
+  )
+    return false;
+  if (spec.exactId !== null)
+    return r.id.toUpperCase() === spec.exactId.toUpperCase();
+  const parsed = splitResId(r.id);
+  if (!parsed) return false;
+  const forward =
+    spec.start < spec.end ||
+    (spec.start === spec.end && spec.startIns <= spec.endIns);
+  const lo = forward ? spec.start : spec.end;
+  const loIns = forward ? spec.startIns : spec.endIns;
+  const hi = forward ? spec.end : spec.start;
+  const hiIns = forward ? spec.endIns : spec.startIns;
+  if (lo === hi && !loIns && !hiIns)
+    return parsed.num === lo && parsed.ins === "";
+  const aboveLo =
+    parsed.num > lo || (parsed.num === lo && (!loIns || parsed.ins >= loIns));
+  const belowHi =
+    parsed.num < hi || (parsed.num === hi && (!hiIns || parsed.ins <= hiIns));
+  return aboveLo && belowHi;
+}
+function resolveBindingHotspots(hotspots, targets) {
+  const matchedKeys = new Set();
+  if (hotspots === undefined || hotspots === null || hotspots === "")
+    return matchedKeys;
+  const items =
+    typeof hotspots === "string"
+      ? hotspots.split(/[,\s]+/).filter(Boolean)
+      : Array.isArray(hotspots)
+        ? hotspots
+        : null;
+  if (!items)
+    throw Error("hotspots must be a string or array of target residue selectors");
+  if (!items.length) return matchedKeys;
+  const defaultChain = targets[0]?.chain ?? "B";
+  for (const item of items) {
+    if (typeof item === "number") {
+      if (!Number.isSafeInteger(item) || item < 0 || item >= targets.length)
+        throw Error(
+          `Hotspot index ${item} out of range [0, ${targets.length})`,
+        );
+      const r = targets[item];
+      matchedKeys.add(`${r.chain}:${r.id}`);
+      continue;
+    }
+    if (item && typeof item === "object") {
+      const ch = item.chain ? String(item.chain).trim() : defaultChain;
+      const id =
+        item.id !== undefined
+          ? String(item.id).trim()
+          : item.number !== undefined
+            ? `${item.number}${item.insertionCode ?? ""}`
+            : "";
+      const hits = targets.filter(
+        (r) =>
+          (r.chain === ch || r.chain.toUpperCase() === ch.toUpperCase()) &&
+          r.id.toUpperCase() === id.toUpperCase(),
+      );
+      if (!hits.length)
+        throw Error(`Hotspot ${ch}:${id} not found in target residues`);
+      for (const h of hits) matchedKeys.add(`${h.chain}:${h.id}`);
+      continue;
+    }
+    const rawStr = String(item).trim();
+    if (!rawStr) continue;
+    const direct = targets.filter((r) => `${r.chain}:${r.id}` === rawStr);
+    if (direct.length) {
+      for (const h of direct) matchedKeys.add(`${h.chain}:${h.id}`);
+      continue;
+    }
+    const spec = parseHotspotToken(rawStr);
+    if (!spec) throw Error(`Invalid hotspot selector "${rawStr}"`);
+    const hits = targets.filter((r) => matchesHotspotSpec(r, spec, defaultChain));
+    if (!hits.length)
+      throw Error(`Hotspot "${rawStr}" not found in target residues`);
+    for (const h of hits) matchedKeys.add(`${h.chain}:${h.id}`);
+  }
+  return matchedKeys;
+}
 export function createFeatures(options = {}) {
   const {
     mode = "unconditional",
@@ -100,6 +233,7 @@ export function createFeatures(options = {}) {
   if (!Number.isSafeInteger(L) || L < 1)
     throw Error("L must be a positive integer");
   const targets = mode === "unconditional" ? [] : targetResidues(options);
+  const hotspotKeys = resolveBindingHotspots(options.hotspots, targets);
   let slots;
   if (mode === "motif") {
     const indices = options.motifIndices;
@@ -210,6 +344,8 @@ export function createFeatures(options = {}) {
     tok.feature_asym_id[t] = chain;
     tok.entity_id[t] = chain;
     tok.design_mask[t] = designed ? 1 : 0;
+    tok.binding_type[t] =
+      !designed && hotspotKeys.has(`${r.chain}:${r.id}`) ? 1 : 0;
     const id = designed ? 22 : chem.id;
     rt[t * 33 + id] = profile[t * 33 + id] = 1;
     msa[t] = id;
@@ -285,6 +421,7 @@ export function createFeatures(options = {}) {
     nDesigned: slots.filter((r) => !r).length,
     nTokens: N,
     nAtoms: count,
+    hotspotCount: tok.binding_type.reduce((s, v) => s + (v === 1 ? 1 : 0), 0),
     mode,
     atoms,
   };

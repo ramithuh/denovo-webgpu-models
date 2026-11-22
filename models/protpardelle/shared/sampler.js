@@ -371,10 +371,21 @@ export async function sample(
   if (!jump && !uniform) seq = bbSeq;
   if (!known && (jump || uniform)) seq = sampleSequence(uniformLogprobs);
   let state0 = jump ? ops.zeros(n, 219) : null,
-    stateT = jump ? scale(gaussian("randn", 219), schedule[0]) : null,
+    stateT = jump ? scale(gaussian("randn", 219), sigma) : null,
     lastSigma = jump
-      ? arr(new Float32Array(n * 73).fill(schedule[0]), 73)
+      ? arr(new Float32Array(n * 73).fill(sigma), 73)
       : null;
+  if (jump && (pd || options.initialCoordinates)) {
+    stateT = point(
+      219,
+      [stateT, x, seq, map73],
+      `let mapped=i32(b3[u32(b2[r])*73u+c/3u]);b4[i]=select(b0[i],b1[r*111u+u32(max(mapped,0))*3u+c%3u],mapped>=0);`,
+      (i, r, c, [old, xInit, s, map]) => {
+        const a = map[s[r] * 73 + Math.floor(c / 3)];
+        return a < 0 ? old[i] : xInit[r * 111 + a * 3 + (c % 3)];
+      },
+    );
+  }
   let selfCond = null,
     x0 = null,
     logprobs = null,
@@ -386,15 +397,16 @@ export async function sample(
   const outputs = {};
   for (let step = 0; step < numSteps - begin; step++) {
     abort(signal);
-    let next = schedule[begin + step + 1];
-    if (step === numSteps - 1) next = 0;
+    const absStep = begin + step;
+    let next = schedule[absStep + 1];
+    if (absStep === numSteps - 1) next = 0;
     const gamma =
       next >= (options.sTMin ?? 0.01) * sd && next <= (options.sTMax ?? 50) * sd
-        ? (options.sChurn ?? 50) / numSteps
+        ? Math.min((options.sChurn ?? 50) / numSteps, Math.SQRT2 - 1)
         : 0;
     const runMPNN =
       sidechain &&
-      step > Math.trunc(numSteps * (options.skipMPNNProportion ?? 0.7));
+      absStep > Math.trunc(numSteps * (options.skipMPNNProportion ?? 0.7));
     let oldSeq = seq,
       m = atomMask(seq);
     if (sidechain && jump) x = fill(x, m, x0, gaussian(), sigma);
@@ -434,8 +446,8 @@ export async function sample(
       else if (task === "backbone") xhat = applyMask(xhat, bbMask);
       const activeReplace =
         replace &&
-        step >= (cc.replacementStart ?? 0) * numSteps &&
-        step < (cc.replacementEnd ?? 0.92) * numSteps;
+        absStep >= (cc.replacementStart ?? 0) * numSteps &&
+        absStep < (cc.replacementEnd ?? 0.92) * numSteps;
       let rep = xhat;
       if (activeReplace)
         rep = point(
@@ -518,10 +530,10 @@ export async function sample(
         let resample = true;
         const anneal = options.annealSequence;
         if (anneal) {
-          const begin = Math.trunc(
+          const skipBegin = Math.trunc(
               numSteps * (options.skipMPNNProportion ?? 0.7),
             ),
-            time = 1 - (step - begin) / Math.max(1, numSteps - begin),
+            time = 1 - (absStep - skipBegin) / Math.max(1, numSteps - skipBegin),
             rate =
               anneal === "linear"
                 ? time
@@ -534,8 +546,8 @@ export async function sample(
       let guidanceScale = 0;
       if (
         gradient &&
-        step >= (cc.reconstructionStart ?? 0) * numSteps &&
-        step < (cc.reconstructionEnd ?? 2) * numSteps
+        absStep >= (cc.reconstructionStart ?? 0) * numSteps &&
+        absStep < (cc.reconstructionEnd ?? 2) * numSteps
       ) {
         const schedule = cc.guidanceSchedule ?? "custom";
         guidanceScale =
@@ -543,14 +555,14 @@ export async function sample(
           (schedule === "constant"
             ? 1
             : schedule === "quadratic"
-              ? (step / numSteps) ** 2
+              ? (absStep / numSteps) ** 2
               : schedule === "cubic"
-                ? (step / numSteps) ** 3
-                : step < 250
+                ? (absStep / numSteps) ** 3
+                : absStep < 250
                   ? 0.01
-                  : step < 400
+                  : absStep < 400
                     ? 0.1
-                    : step < 450
+                    : absStep < 450
                       ? 0.5
                       : 1);
       }

@@ -69,7 +69,7 @@ function cifAtoms(text) {
           ),
           get = (a, b) => clean(row[a] ?? "") || clean(row[b] ?? "");
         atoms.push({
-          record: row.group_PDB ?? "ATOM",
+          record: clean(row.group_PDB ?? "") || "ATOM",
           serial: row.id,
           name: get("auth_atom_id", "label_atom_id"),
           resname: get("auth_comp_id", "label_comp_id"),
@@ -129,10 +129,17 @@ export function parseStructure(text, { format, useWater = false } = {}) {
       ? cifAtoms(text)
       : pdbAtoms(text);
   if (!atoms.length) throw Error("No atoms in structure");
+  const altPrio = (alt) => {
+    if (alt === "") return 0;
+    if (alt === "A" || alt === "1") return 1;
+    if (alt === "B" || alt === "2") return 2;
+    return 3;
+  };
   const model = atoms[0].model,
     chains = new Map();
   for (const a of atoms) {
-    if (a.model !== model || !["", "A"].includes(a.altloc)) continue;
+    const prio = altPrio(a.altloc);
+    if (a.model !== model || prio > 2) continue;
     const ck = a.segment + "|" + a.chain;
     let residues = chains.get(ck);
     if (!residues) {
@@ -142,21 +149,69 @@ export function parseStructure(text, { format, useWater = false } = {}) {
     const key = a.resnum + "|" + a.icode;
     let res = residues.get(key);
     if (!res) {
-      res = { ...a, atoms: new Map(), id: `${a.chain}:${a.resnum}${a.icode}` };
+      res = {
+        ...a,
+        atoms: new Map(),
+        atomPrio: new Map(),
+        resPrio: prio,
+        id: `${a.chain}:${a.resnum}${a.icode}`,
+      };
       residues.set(key, res);
+    } else if (res.resname !== a.resname) {
+      if (prio < res.resPrio) {
+        res.record = a.record;
+        res.resname = a.resname;
+        res.resPrio = prio;
+        res.atoms.clear();
+        res.atomPrio.clear();
+      } else if (prio > res.resPrio) {
+        continue;
+      } else {
+        throw Error(`Conflicting residue names at ${res.id}`);
+      }
     }
-    if (res.resname !== a.resname)
-      throw Error(`Conflicting residue names at ${res.id}`);
-    if (!res.atoms.has(a.name)) res.atoms.set(a.name, a);
+    const atomName = a.resname === "MSE" && a.name === "SE" ? "SD" : a.name;
+    const prevPrio = res.atomPrio.get(atomName);
+    if (prevPrio === undefined || prio < prevPrio) {
+      res.atoms.set(atomName, atomName === a.name ? a : { ...a, name: atomName });
+      res.atomPrio.set(atomName, prio);
+    }
   }
-  const residues = [],
+  const PROTEIN_RESIDUES = new Set([
+      ...constants.residueNames.slice(0, 20),
+      "MSE",
+      "UNK",
+    ]),
+    NUCLEIC_RESIDUES = new Set([
+      "A",
+      "C",
+      "G",
+      "U",
+      "I",
+      "DA",
+      "DC",
+      "DG",
+      "DT",
+      "DI",
+      "ADE",
+      "CYT",
+      "GUA",
+      "THY",
+      "URA",
+    ]),
+    residues = [],
     ligands = [];
   let group = 0;
   for (const chain of chains.values())
     for (const res of chain.values()) {
-      if (res.resname === "HOH" && !useWater) continue;
+      if (["HOH", "WAT", "DOD"].includes(res.resname) && !useWater) continue;
       if (["N", "CA", "C", "O"].every((n) => res.atoms.has(n)))
         residues.push(res);
+      else if (
+        PROTEIN_RESIDUES.has(res.resname) ||
+        (res.record === "ATOM" && !NUCLEIC_RESIDUES.has(res.resname))
+      )
+        continue;
       else {
         for (const a of res.atoms.values()) ligands.push({ ...a, group });
         group++;
@@ -174,13 +229,17 @@ export function featurize(structure, weights, config, opts = {}) {
     sequence = new Int32Array(n),
     chi = new Float32Array(n * 4).fill(NaN),
     fixed = new Int32Array(n);
-  const xyz = (r, a) => r?.atoms.get(a)?.xyz ?? [NaN, NaN, NaN],
+  const xyz = (r, a) =>
+      r?.atoms.get(a)?.xyz ??
+      (a === "SD" && r?.resname === "MSE" ? r?.atoms.get("SE")?.xyz : undefined) ??
+      [NaN, NaN, NaN],
     distance = (a, b) => Math.hypot(...sub(a, b));
   for (let i = 0; i < n; i++) {
     const r = residues[i],
       p = residues[i - 1],
       next = residues[i + 1];
-    sequence[i] = constants.residueNames.indexOf(r.resname);
+    const canonicalResname = r.resname === "MSE" ? "MET" : r.resname;
+    sequence[i] = constants.residueNames.indexOf(canonicalResname);
     if (sequence[i] < 0) sequence[i] = 20;
     const same = (a) => a && a.chain === r.chain && a.segment === r.segment;
     if (same(p) && distance(xyz(p, "CA"), xyz(r, "CA")) < 4.1)

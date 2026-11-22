@@ -349,7 +349,233 @@ export class LaserModel {
       let drawIndex = 0,
         choiceIndex = 0;
       const draw = () => (opts.uniforms ? opts.uniforms[drawIndex++] : rng());
-      for (const node of order) {
+      const gpuPipelined =
+        typeof b.readMany === "function" &&
+        typeof b.sampleIndex === "function" &&
+        typeof b.catOneHot === "function" &&
+        typeof b.chiAngle === "function" &&
+        typeof b.chiRbf === "function" &&
+        typeof b.maskRow === "function";
+      if (gpuPipelined) {
+        const omitSet = new Set("X" + (opts.omitAAs ?? ""));
+        const omitMaskData = new Float32Array(21).fill(1);
+        for (const aa of omitSet) {
+          const k = this.config.alphabet.indexOf(aa);
+          if (k < 0) throw Error(`Unknown amino acid ${aa}`);
+          omitMaskData[k] = 0;
+        }
+        const omitMaskGpu = b.from(omitMaskData, 1, 21);
+        const seqEmbedWeight = b.weight("sequence_label_embedding.weight");
+        const chiMaskTable = b.weights["rotamer_builder.aa_to_chi_angle_mask"].data;
+        const chiMaskGpu = b.from(
+          Float32Array.from({ length: 22 * 4 }, (_, idx) => {
+            const aa = Math.floor(idx / 4);
+            const k = idx % 4;
+            return chiMaskTable[(aa >= 20 ? 7 : aa) * 4 + k] ? 1 : 0;
+          }),
+          22,
+          4,
+        );
+        const labelsGpu = b.from(new Float32Array(n + 1).fill(21), n + 1, 1);
+        const chiEncFlat = b.zeros((n + 1) * 4, 72);
+        const chiEncView = { buffer: chiEncFlat.buffer, r: n + 1, c: 288 };
+        const allSeqLogitsGpu = b.zeros(n, 21);
+        const allChiLogitsGpu = b.zeros(n * 4, 72);
+        const allChiBinsGpu = b.zeros(n * 4, 1);
+        const allChiAnglesGpu = b.zeros(n * 4, 1);
+
+        for (const node of order) {
+          opts.signal?.throwIfAborted();
+          const stepMark = b.mark();
+          const pEdges = batch.pp[1]
+              .map((s, e) => (s === node ? e : -1))
+              .filter((e) => e >= 0),
+            lEdges = batch.lp[1]
+              .map((s, e) => (s === node ? e : -1))
+              .filter((e) => e >= 0);
+          const masked = pEdges.filter((e) => !decoded.has(batch.pp[0][e])),
+            unmasked = pEdges.filter((e) => decoded.has(batch.pp[0][e])),
+            edges = [...masked, ...unmasked],
+            src = edges.map((e) => batch.pp[0][e]);
+          const gatherIdx = src.map((s, i) => (i < masked.length ? n : s));
+          const seq = b.gather(seqEmbedWeight, b.gather(labelsGpu, gatherIdx));
+          const prevChi = b.gather(chiEncView, gatherIdx);
+          const prefix = b.cat([seq, prevChi, b.gather(pe, edges)]),
+            ligSource = b.gather(
+              lig.s,
+              lEdges.map((e) => batch.lp[0][e]),
+            ),
+            ligEdge = b.gather(ple, lEdges);
+          for (let i = 0; i < 3; i++) {
+            const allSrc = b.rows([
+              b.gather(
+                prot.s,
+                masked.map((e) => batch.pp[0][e]),
+              ),
+              b.gather(
+                stack[i].s,
+                unmasked.map((e) => batch.pp[0][e]),
+              ),
+            ]);
+            const prev = {
+              s: b.gather(stack[i].s, [node]),
+              v: b.gather(stack[i].v, [node]),
+            };
+            const out = this.hetero(
+              prev,
+              [b.cat([prefix, allSrc]), ligSource],
+              [
+                b.gather(
+                  prev.s,
+                  edges.map(() => 0),
+                ),
+                b.gather(
+                  prev.s,
+                  lEdges.map(() => 0),
+                ),
+              ],
+              [b.zeros(edges.length, 0), ligEdge],
+              [edges.map(() => 0), lEdges.map(() => 0)],
+              `protein_decoder_layers.${i}.hetgat`,
+            );
+            b.assign(stack[i + 1].s, node, out.s);
+            b.assign(stack[i + 1].v, node, out.v);
+          }
+          let curr = {
+            s: b.gather(stack[3].s, [node]),
+            v: b.gather(stack[3].v, [node]),
+          };
+          const seqLogitsGpu = b.linear(curr.s, "sequence_output_layer");
+          b.assign(allSeqLogitsGpu, node, seqLogitsGpu);
+          const fixed = batch.fixed?.[node];
+          const seqDraw = draw();
+          const seqOverride = opts.choices ? opts.choices[choiceIndex++] : null;
+          const labelGpu = fixed
+            ? b.from([batch.sequence[node]], 1, 1)
+            : seqOverride !== null
+              ? b.from([seqOverride], 1, 1)
+              : b.sampleIndex(
+                  seqLogitsGpu,
+                  opts.temperature ?? 0.1,
+                  seqDraw,
+                  omitMaskGpu,
+                );
+          b.assign(labelsGpu, node, labelGpu);
+          const embed = b.gather(seqEmbedWeight, labelGpu);
+          const labelMaskGpu = b.gather(chiMaskGpu, labelGpu);
+          let prevGpu = b.zeros(1, 0);
+          for (let i = 0; i < 4; i++) {
+            const chiLogitsGpu = this.mlp(
+              i === 0 ? b.cat([curr.s, embed]) : b.cat([curr.s, embed, prevGpu]),
+              `chi_prediction_layers.${i}`,
+            );
+            b.assign(allChiLogitsGpu, node * 4 + i, chiLogitsGpu);
+            const chiDraw = draw();
+            const choiceGpu = opts.choices
+              ? b.from([opts.choices[choiceIndex++]], 1, 1)
+              : b.sampleIndex(chiLogitsGpu, opts.chiTemperature ?? 0.1, chiDraw);
+            b.assign(allChiBinsGpu, node * 4 + i, choiceGpu);
+            let angleGpu;
+            if (fixed && Number.isFinite(batch.chi?.[node * 4 + i])) {
+              angleGpu = b.from([batch.chi[node * 4 + i]], 1, 1);
+            } else {
+              const offsetGpu = this.mlp(
+                b.catOneHot(chiLogitsGpu, choiceGpu),
+                `chi_offset_prediction_layers.${i}`,
+              );
+              angleGpu = b.chiAngle(choiceGpu, offsetGpu);
+            }
+            b.assign(allChiAnglesGpu, node * 4 + i, angleGpu);
+            const encodingGpu = b.chiRbf(angleGpu);
+            b.assign(
+              chiEncFlat,
+              node * 4 + i,
+              b.maskRow(encodingGpu, labelMaskGpu, i),
+            );
+            prevGpu = i === 0 ? encodingGpu : b.cat([prevGpu, encodingGpu]);
+            if (i < 3) {
+              curr = this.eqnorm(
+                this.gvp(
+                  { s: b.cat([curr.s, prevGpu]), v: curr.v },
+                  `chi_vector_update_layers.${i}`,
+                ),
+                `chi_vector_layer_norms.${i}`,
+              );
+            }
+          }
+          decoded.add(node);
+          b.releaseSince(stepMark);
+          if (
+            decoded.size % 16 === 0 &&
+            decoded.size < n &&
+            typeof b.sync === "function"
+          ) {
+            await b.sync();
+          }
+          opts.onProgress?.({
+            phase: "design",
+            completed: decoded.size,
+            total: n,
+          });
+        }
+
+        const [
+          labelsData,
+          allSeqLogitsData,
+          allChiLogitsData,
+          allChiBinsData,
+          allChiAnglesData,
+        ] = await b.readMany([
+          labelsGpu,
+          allSeqLogitsGpu,
+          allChiLogitsGpu,
+          allChiBinsGpu,
+          allChiAnglesGpu,
+        ]);
+
+        for (let node = 0; node < n; node++) {
+          labels[node] = Math.round(labelsData[node]);
+          const seqSlice = allSeqLogitsData.subarray(node * 21, (node + 1) * 21);
+          logits.set(seqSlice, node * 21);
+          if (!batch.fixed?.[node]) {
+            for (const aa of omitSet) {
+              const k = this.config.alphabet.indexOf(aa);
+              logits[node * 21 + k] = -3.4028234663852886e38;
+            }
+          }
+          for (let i = 0; i < 4; i++) {
+            const mask =
+              chiMaskTable[(labels[node] === 20 ? 7 : labels[node]) * 4 + i];
+            if (mask) {
+              chiBins[node * 4 + i] = Math.round(allChiBinsData[node * 4 + i]);
+              chis[node * 4 + i] = allChiAnglesData[node * 4 + i];
+              chiLogits.set(
+                allChiLogitsData.subarray(
+                  (node * 4 + i) * 72,
+                  (node * 4 + i + 1) * 72,
+                ),
+                node * 288 + i * 72,
+              );
+            }
+          }
+        }
+        if (trace) {
+          for (const node of order) {
+            rawSequence.push(
+              ...allSeqLogitsData.subarray(node * 21, (node + 1) * 21),
+            );
+            for (let i = 0; i < 4; i++) {
+              rawChi[i].push(
+                ...allChiLogitsData.subarray(
+                  (node * 4 + i) * 72,
+                  (node * 4 + i + 1) * 72,
+                ),
+              );
+            }
+          }
+        }
+      } else {
+        for (const node of order) {
         opts.signal?.throwIfAborted();
         const stepMark = b.mark();
         const pEdges = batch.pp[1]
@@ -505,6 +731,7 @@ export class LaserModel {
           completed: decoded.size,
           total: n,
         });
+        }
       }
       const result = {
         sequence: labels,

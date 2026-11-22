@@ -75,11 +75,15 @@ export async function runTask(
       signal,
       wildTypeTokens: tokens,
       traceRow: p + 1,
+      rowOnly: true,
       returnIntermediates: !!onTrace || !!intermediateRows,
     });
-    llr.set(out.llr.subarray(p * 20, (p + 1) * 20), p * 20);
-    wtLogProbs[p] = out.wtLogProbs[p];
-    maskedLogits.set(out.logits.subarray((p + 1) * 64, (p + 2) * 64), p * 64);
+    const llrOff = out.llr.length === 20 ? 0 : p * 20;
+    llr.set(out.llr.subarray(llrOff, llrOff + 20), p * 20);
+    wtLogProbs[p] =
+      out.wtLogProbs.length === 1 ? out.wtLogProbs[0] : out.wtLogProbs[p];
+    const logOff = out.logits.length === 64 ? 0 : (p + 1) * 64;
+    maskedLogits.set(out.logits.subarray(logOff, logOff + 64), p * 64);
     if (intermediateRows) intermediateRows.push(out.intermediates);
     if (onTrace) await onTrace(p, out.intermediates);
     onProgress?.({ phase: "mask-sweep", loaded: p + 1, total: L });

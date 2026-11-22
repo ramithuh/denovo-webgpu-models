@@ -42,6 +42,7 @@ test("PDB/mmCIF features match pinned upstream including edge cases", async () =
       {
         format: c.file.endsWith(".cif") ? "cif" : "pdb",
         chainResidueGap: c.gap,
+        seqIdField: "label",
       },
     );
     for (const [key, reference] of Object.entries({

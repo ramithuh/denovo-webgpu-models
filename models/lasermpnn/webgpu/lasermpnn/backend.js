@@ -168,14 +168,19 @@ export class GpuBackend {
     pass.dispatchWorkgroups(...groups);
     pass.end();
   }
-  op(kind, inputs, r, c, k = 0, d = 0, e = 0) {
+  op(kind, inputs, r, c, k = 0, d = 0, e = 0, f = 0) {
     const out = this.zeros(r, c);
     if (!r || !c) return out;
     const args = [...inputs];
     while (args.length < 4) args.push(this.zero);
     args.push(out);
-    const groups = kind === "norm" ? r : Math.ceil((r * c) / 128);
-    this.dispatch(kind, args, new Uint32Array([r, c, k, d, e, 0, 0, 0]), [
+    const groups =
+      kind === "norm"
+        ? r
+        : kind === "sampleIndex" || kind === "chiRbf"
+          ? 1
+          : Math.ceil((r * c) / 128);
+    this.dispatch(kind, args, new Uint32Array([r, c, k, d, e, f, 0, 0]), [
       Math.min(groups, 65535),
       Math.ceil(groups / 65535),
     ]);
@@ -191,15 +196,14 @@ export class GpuBackend {
     return xs.reduce((a, b) => this.op("cat", [a, b], a.r, a.c + b.c, a.c));
   }
   gather(x, idx) {
-    return this.op(
-      "gather",
-      [x, this.from(idx, idx.length, 1)],
-      idx.length,
-      x.c,
-    );
+    const idxTensor =
+      Array.isArray(idx) || ArrayBuffer.isView(idx)
+        ? this.from(idx, idx.length, 1)
+        : idx;
+    return this.op("gather", [x, idxTensor], idxTensor.r, x.c);
   }
   assign(x, row, y) {
-    if (!y.r * y.c) return;
+    if (!y.r || !y.c) return;
     this.encoder ??= this.device.createCommandEncoder();
     this.encoder.copyBufferToBuffer(
       y.buffer,
@@ -208,6 +212,31 @@ export class GpuBackend {
       row * x.c * 4,
       y.r * y.c * 4,
     );
+  }
+  sampleIndex(logits, temp, uniform, maskTensor = null) {
+    const tVal = temp == null ? 0 : temp;
+    return this.op(
+      "sampleIndex",
+      [logits, maskTensor ?? this.zero],
+      1,
+      1,
+      logits.c,
+      fbits(tVal),
+      fbits(uniform),
+      maskTensor ? 1 : 0,
+    );
+  }
+  catOneHot(chiLogits, choiceTensor) {
+    return this.op("catOneHot", [chiLogits, choiceTensor], 1, chiLogits.c + 72, chiLogits.c);
+  }
+  chiAngle(choiceTensor, offsetTensor) {
+    return this.op("chiAngle", [choiceTensor, offsetTensor], 1, 1);
+  }
+  chiRbf(angleTensor) {
+    return this.op("chiRbf", [angleTensor], 1, 72);
+  }
+  maskRow(rowTensor, maskTensor, idx) {
+    return this.op("maskRow", [rowTensor, maskTensor], rowTensor.r, rowTensor.c, idx);
   }
   norm(x, key) {
     return this.op(
@@ -286,7 +315,7 @@ export class GpuBackend {
     }
   }
   async read(x) {
-    if (!x.r * x.c) return new Float32Array();
+    if (!x.r || !x.c) return new Float32Array();
     const size = x.r * x.c * 4,
       staging = this.device.createBuffer({
         size,
@@ -298,6 +327,45 @@ export class GpuBackend {
     try {
       await staging.mapAsync(GPUMapMode.READ);
       return new Float32Array(staging.getMappedRange().slice(0));
+    } finally {
+      staging.destroy();
+    }
+  }
+  async sync() {
+    this.flush();
+    await this.device.queue.onSubmittedWorkDone();
+  }
+  async readMany(xs) {
+    const sizes = xs.map((x) => (x && x.r && x.c ? x.r * x.c * 4 : 0));
+    const total = sizes.reduce((a, b) => a + b, 0);
+    if (!total) return xs.map(() => new Float32Array());
+    const staging = this.device.createBuffer({
+      size: total,
+      usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST,
+    });
+    this.encoder ??= this.device.createCommandEncoder();
+    let offset = 0;
+    for (let i = 0; i < xs.length; i++) {
+      if (sizes[i] > 0) {
+        this.encoder.copyBufferToBuffer(xs[i].buffer, 0, staging, offset, sizes[i]);
+        offset += sizes[i];
+      }
+    }
+    this.flush();
+    try {
+      await staging.mapAsync(GPUMapMode.READ);
+      const mapped = staging.getMappedRange();
+      const out = [];
+      let pos = 0;
+      for (let i = 0; i < xs.length; i++) {
+        if (sizes[i] > 0) {
+          out.push(new Float32Array(mapped.slice(pos, pos + sizes[i])));
+          pos += sizes[i];
+        } else {
+          out.push(new Float32Array());
+        }
+      }
+      return out;
     } finally {
       staging.destroy();
     }

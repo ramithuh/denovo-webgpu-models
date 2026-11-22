@@ -12,7 +12,7 @@ export function rotationExp(o, v) {
     wg = `let b=(i/9u)*3u;let k=i%9u;let x=a0[b];let y=a0[b+1u];let z=a0[b+2u];let a=sqrt(x*x+y*y+z*z);var s=1.0-a*a/6.0;var c=0.5-a*a/24.0;if(a>1e-5){s=sin(a)/a;c=(1.0-cos(a))/(a*a);}var r=array<f32,9>(1.0-c*(y*y+z*z),c*x*y-s*z,c*x*z+s*y,c*x*y+s*z,1.0-c*(x*x+z*z),c*y*z-s*x,c*x*z-s*y,c*y*z+s*x,1.0-c*(x*x+y*y));o[i]=r[k];`;
   return o.kernel([L, 3, 3], [v], js, wg);
 }
-export function rotationUpdate(o, xt, px0, t, noise) {
+export function rotationUpdate(o, xt, px0, t, noise, nextT = t - 1) {
   const L = xt.shape[0],
     rt = rigidFrames(o, xt).R,
     r0 = rigidFrames(o, px0).R,
@@ -25,22 +25,40 @@ export function rotationUpdate(o, xt, px0, t, noise) {
       `const a=a0[i],q=Math.max(0,Math.min(999,a*1000/Math.PI-1)),lo=Math.floor(q),hi=Math.min(lo+1,999),s=a1[lo]+(a1[hi]-a1[lo])*(q-lo);o[i]=a>1e-8?s/a:0;`,
       `let a=a0[i];let q=clamp(a*1000.0/3.141592653589793-1.0,0.0,999.0);let lo=u32(floor(q));let hi=min(lo+1u,999u);let s=mix(a1[lo],a1[hi],q-f32(lo));var v=0.0;if(a>1e-8){v=s/a;}o[i]=v;`,
     ),
-    g = schedule.g[t - 1];
+    g = schedule.g[t - 1],
+    dt = (t - nextT) / 50;
   return rotationExp(
     o,
     o.add(
-      o.mul(o.mul(log, scale), Math.fround(g * g) / 50),
-      o.mul(noise, g * Math.sqrt(1 / 50)),
+      o.mul(
+        o.mul(log, scale),
+        nextT === t - 1 ? Math.fround(g * g) / 50 : Math.fround(g * g * dt),
+      ),
+      o.mul(noise, g * Math.sqrt(dt)),
     ),
   );
 }
 export function reverseStep(
   o,
-  { xt, px0, t, translationNoise, rotationNoise, mask, rotationUpdates },
+  { xt, px0, t, nextT = t - 1, translationNoise, rotationNoise, mask, rotationUpdates },
 ) {
   const L = xt.shape[0];
   if (t < 2 || t > 50 || !Number.isInteger(t))
     throw Error("Reverse update t must be in [2,50]");
+  if (!Number.isInteger(nextT) || nextT < 1 || nextT >= t)
+    throw Error("Reverse update nextT must be in [1,t-1]");
+  let coef0 = schedule.coef0[t - 1],
+    coefT = schedule.coefT[t - 1],
+    transStd = schedule.translationStd[t - 1];
+  if (nextT !== t - 1) {
+    const abT = schedule.alphabar[t - 1],
+      abPrev = schedule.alphabar[nextT - 1],
+      alphaEff = abT / abPrev,
+      betaEff = 1 - alphaEff;
+    coef0 = (Math.sqrt(abPrev) * betaEff) / (1 - abT);
+    coefT = (Math.sqrt(alphaEff) * (1 - abPrev)) / (1 - abT);
+    transStd = Math.sqrt(((1 - abPrev) / (1 - abT)) * betaEff);
+  }
   const cA = (x) => o.reshape(o.slice(x, 1, 1, 2), [L, 3]),
     ca = cA(xt),
     pred = cA(px0),
@@ -50,17 +68,11 @@ export function reverseStep(
     ),
     scaledCA = o.mul(ca, 0.25),
     scaledPred = o.mul(pred, 0.25),
-    mu = o.add(
-      o.mul(scaledPred, schedule.coef0[t - 1]),
-      o.mul(scaledCA, schedule.coefT[t - 1]),
-    ),
-    sampled = o.add(
-      mu,
-      o.mul(translationNoise, schedule.translationStd[t - 1]),
-    ),
+    mu = o.add(o.mul(scaledPred, coef0), o.mul(scaledCA, coefT)),
+    sampled = o.add(mu, o.mul(translationNoise, transStd)),
     delta = o.mul(o.div(o.sub(sampled, scaledCA), 0.25), movable);
   let rotation =
-    rotationUpdates ?? rotationUpdate(o, xt, px0, t, rotationNoise);
+    rotationUpdates ?? rotationUpdate(o, xt, px0, t, rotationNoise, nextT);
   const identity = o.tensor([1, 3, 3], [1, 0, 0, 0, 1, 0, 0, 0, 1]);
   rotation = o.add(
     o.mul(rotation, o.reshape(movable, [L, 1, 1])),
