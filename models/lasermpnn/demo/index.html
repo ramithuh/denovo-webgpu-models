@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LASErMPNN · WebGPU</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font: 16px/1.5 system-ui;
+      background: #111820;
+      color: #e3edf5;
+    }
+    body {
+      max-width: 980px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+    p {
+      color: #a4b9cb;
+    }
+    fieldset {
+      border: 1px solid #344c60;
+      border-radius: 8px;
+      margin: 1rem 0;
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    input,
+    select,
+    button,
+    textarea {
+      font: inherit;
+      border: 1px solid #486279;
+      border-radius: 5px;
+      background: #1c2b38;
+      color: inherit;
+      padding: 0.5rem;
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font: 12px/1.4 monospace;
+      min-height: 210px;
+    }
+    button {
+      cursor: pointer;
+      background: #255b72;
+    }
+    button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    pre {
+      overflow: auto;
+      padding: 1rem;
+      background: #17232e;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    a {
+      color: #83cfde;
+    }
+    #status {
+      min-height: 1.5rem;
+    }
+    small {
+      color: #a4b9cb;
+    }
+  </style>
+  <h1>LASErMPNN <small>in your browser</small></h1>
+  <p>
+    Design protein sequences and sidechains around a protonated ligand.
+    Inference runs locally with WebGPU.
+  </p>
+  <fieldset>
+    <label
+      >Structure (PDB or mmCIF)<input
+        id="file"
+        type="file"
+        accept=".pdb,.cif,.mmcif" /></label
+    ><button id="example">Load holo example</button>
+  </fieldset>
+  <textarea
+    id="structure"
+    aria-label="Protein and ligand structure text"
+    placeholder="Load a structure or paste PDB/mmCIF here"
+  ></textarea>
+  <fieldset>
+    <label
+      >Weights URL<input id="url" size="35" value="../weights/fp32"
+    /></label>
+    <label
+      >Weight precision<select id="precision">
+        <option>fp32</option>
+        <option>fp16</option>
+        <option>int8</option>
+      </select></label
+    >
+    <label
+      >Sequence temperature<input
+        id="temperature"
+        type="number"
+        min="0"
+        step="0.05"
+        value="0.1"
+    /></label>
+    <label
+      >χ temperature<input
+        id="chiTemperature"
+        type="number"
+        min="0"
+        step="0.05"
+        value="0.1"
+    /></label>
+    <label>Seed<input id="seed" type="number" min="0" value="42" /></label>
+    <label>Sequences<input id="count" type="number" min="1" value="1" /></label>
+    <label>Fixed positions<input id="fixed" placeholder="A:12, A:13" /></label>
+    <label>Design chains<input id="chains" placeholder="All chains" /></label>
+    <label>Omit amino acids<input id="omit" placeholder="e.g. C" /></label>
+    <label
+      ><span>Binding-site design</span
+      ><span><input id="shell" type="checkbox" /> First shell only</span></label
+    >
+    <label
+      ><span>GPU feature</span
+      ><span><input id="half" type="checkbox" /> shader-f16</span></label
+    >
+  </fieldset>
+  <p>
+    <small
+      >FP16 and INT8 change model outputs. FP16 weight rounding exceeds the
+      original 5e-4 logit target; FP32 is the validated quality baseline.</small
+    >
+  </p>
+  <button id="run">Design</button>
+  <button id="cancel" disabled>Cancel</button>
+  <p id="status" role="status">
+    Ready. Input coordinates stay in this browser.
+  </p>
+  <div id="downloads"></div>
+  <pre id="output">Sequences and log-likelihood scores will appear here.</pre>
+  <script type="module">
+    import { createLaserMpnnEngine } from "../webgpu/index.js";
+    const $ = (id) => document.getElementById(id);
+    let controller, engine;
+    const objectUrls = [];
+    $("file").onchange = async () => {
+      if ($("file").files[0])
+        $("structure").value = await $("file").files[0].text();
+    };
+    $("example").onclick = async () => {
+      try {
+        const res = await fetch("../example_pdbs/4jnj-1_prot.pdb");
+        if (!res.ok) throw Error(res.status);
+        $("structure").value = await res.text();
+      } catch (e) {
+        $("status").textContent = String(e);
+      }
+    };
+    $("precision").onchange = () => {
+      $("url").value = $("url").value.replace(
+        /\/(fp32|fp16|int8)\/?$/,
+        `/${$("precision").value}`,
+      );
+    };
+    $("cancel").onclick = () => controller?.abort();
+    $("run").onclick = async () => {
+      $("run").disabled = true;
+      $("cancel").disabled = false;
+      controller = new AbortController();
+      $("downloads").replaceChildren();
+      for (const url of objectUrls) URL.revokeObjectURL(url);
+      objectUrls.length = 0;
+      try {
+        engine = await createLaserMpnnEngine({
+          baseUrl: $("url").value,
+          precision: $("precision").value,
+          shaderF16: $("half").checked,
+          signal: controller.signal,
+          onProgress: (p) => {
+            $("status").textContent =
+              p.phase === "weights"
+                ? `Loading weights: ${(p.loaded / 1e6).toFixed(1)} / ${(p.total / 1e6).toFixed(1)} MB`
+                : `Designing residue ${p.completed} / ${p.total}`;
+          },
+        });
+        const list = (id) =>
+          $(id)
+            .value.split(",")
+            .map((x) => x.trim())
+            .filter(Boolean);
+        const result = await engine.design($("structure").value, {
+          temperature: Number($("temperature").value),
+          chiTemperature: Number($("chiTemperature").value),
+          seed: Number($("seed").value),
+          numSequences: Number($("count").value),
+          fixedPositions: list("fixed"),
+          designChains: list("chains").length ? list("chains") : undefined,
+          omitAAs: $("omit").value.trim(),
+          firstShellOnly: $("shell").checked,
+        });
+        $("output").textContent = result.sequences
+          .map(
+            (s, i) =>
+              `>design_${i + 1} sequence_logp=${result.scores[i].sequenceLogLikelihood.toFixed(3)} chi_logp=${result.scores[i].chiLogLikelihood.toFixed(3)}\n${s}`,
+          )
+          .join("\n\n");
+        result.pdbTexts.forEach((pdb, i) => {
+          const a = document.createElement("a"),
+            url = URL.createObjectURL(
+              new Blob([pdb], { type: "chemical/x-pdb" }),
+            );
+          objectUrls.push(url);
+          a.href = url;
+          a.download = `laser_design_${i + 1}.pdb`;
+          a.textContent = `Download design ${i + 1} PDB`;
+          a.style.marginRight = "1rem";
+          $("downloads").append(a);
+        });
+        $("status").textContent =
+          `Done in ${(result.timingMs / 1000).toFixed(2)} seconds.`;
+      } catch (e) {
+        $("status").textContent =
+          e.name === "AbortError" ? "Cancelled." : String(e.message ?? e);
+      } finally {
+        engine?.destroy();
+        engine = null;
+        $("run").disabled = false;
+        $("cancel").disabled = true;
+      }
+    };
+  </script>
+</html>

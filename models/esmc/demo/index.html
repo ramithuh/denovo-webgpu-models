@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ESMC · Protein sequence explorer</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #11191d;
+        --panel: #1b272c;
+        --ink: #edf2e8;
+        --muted: #a3b2af;
+        --accent: #d5ed91;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.5 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 48px 24px;
+      }
+      header {
+        border-bottom: 1px solid #40504d;
+        padding-bottom: 26px;
+        margin-bottom: 30px;
+      }
+      .tag {
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      h1 {
+        font:
+          500 clamp(32px, 5vw, 52px) / 1.1 Georgia,
+          serif;
+        margin: 12px 0;
+      }
+      p {
+        color: var(--muted);
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 24px;
+      }
+      section {
+        background: var(--panel);
+        padding: 24px;
+        border-radius: 12px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        margin: 16px 0 5px;
+      }
+      select,
+      input,
+      textarea,
+      button {
+        font: inherit;
+        border: 1px solid #52625b;
+        border-radius: 6px;
+        padding: 10px;
+        background: #142024;
+        color: var(--ink);
+        max-width: 100%;
+      }
+      select,
+      input,
+      textarea {
+        width: 100%;
+      }
+      textarea {
+        font: 14px/1.7 monospace;
+        resize: vertical;
+      }
+      button {
+        cursor: pointer;
+        margin: 12px 5px 0 0;
+      }
+      button.primary {
+        background: var(--accent);
+        color: #15231e;
+        border-color: var(--accent);
+        font-weight: 650;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+      }
+      .row > * {
+        flex: 1;
+      }
+      progress {
+        width: 100%;
+        accent-color: var(--accent);
+        height: 12px;
+        margin-top: 20px;
+      }
+      #status {
+        min-height: 48px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      canvas {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        background: #142024;
+        border-radius: 6px;
+      }
+      #result {
+        white-space: pre-wrap;
+        font: 13px/1.6 monospace;
+        overflow-wrap: anywhere;
+      }
+      #hover {
+        font: 13px monospace;
+        color: var(--accent);
+        min-height: 40px;
+      }
+      small {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      @media (max-width: 780px) {
+        main {
+          padding: 24px 14px;
+        }
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="tag">ESMC-300M · Local inference</div>
+        <h1>Explore a protein’s sequence.</h1>
+        <p>
+          Embeddings, mutation scores, naturalness, and masked predictions in
+          your browser.
+        </p>
+      </header>
+      <div class="layout">
+        <section aria-label="Inference controls">
+          <label for="preset">Example protein</label
+          ><select id="preset">
+            <option value="trp">Trp-cage · 20 residues</option>
+            <option value="ubi">Ubiquitin · 76 residues</option>
+          </select>
+          <label for="sequence">Protein sequence</label
+          ><textarea id="sequence" rows="5" spellcheck="false">
+NLYIQWLKDGGPSSGRPPPS</textarea
+          >
+          <div class="row">
+            <div>
+              <label for="precision">Weight precision</label
+              ><select id="precision">
+                <option value="int8">INT8 · 335 MB</option>
+                <option value="fp16">FP16 · 667 MB</option>
+                <option value="fp32">FP32 · 1.33 GB</option>
+              </select>
+            </div>
+            <div>
+              <label for="cache">Offline storage</label
+              ><select id="cache">
+                <option value="cache">Browser cache</option>
+                <option value="opfs">Private file storage</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+          </div>
+          <label for="mode">Analysis</label
+          ><select id="mode">
+            <option value="embeddings">Sequence embeddings</option>
+            <option value="logits">MLM logits</option>
+            <option value="wildtype">Wild-type mutation scores</option>
+            <option value="masked">Masked mutation scores</option>
+            <option value="naturalness">Pseudo-perplexity / naturalness</option>
+            <option value="fill">Fill masked positions</option>
+          </select>
+          <label for="positions"
+            >Mask positions (1-based, comma-separated)</label
+          ><input id="positions" value="2,19" inputmode="numeric" />
+          <label for="hiddenLayer">Hidden layer (0–29, optional)</label
+          ><input
+            id="hiddenLayer"
+            type="number"
+            min="0"
+            max="29"
+            placeholder="Final LayerNorm embeddings"
+          />
+          <button id="run" class="primary">Run analysis</button
+          ><button id="cancel" disabled>Cancel</button
+          ><button id="release">Release GPU</button>
+          <progress
+            id="progress"
+            value="0"
+            max="1"
+            aria-label="Inference progress"
+          ></progress>
+          <div id="status" role="status" aria-live="polite">
+            Ready. Requires a browser with hardware WebGPU.
+          </div>
+          <small
+            >Sequence data stays on this device. First use downloads the
+            selected model. Masked scoring runs one forward pass per
+            residue.</small
+          >
+        </section>
+        <section aria-label="Results">
+          <div class="tag">Results</div>
+          <p id="summary">Run an analysis to see the results.</p>
+          <canvas
+            id="plot"
+            width="700"
+            height="380"
+            aria-label="Residue result visualization"
+          ></canvas>
+          <div id="hover"></div>
+          <pre id="result"></pre>
+          <button id="csv" disabled>Download CSV</button
+          ><button id="fasta" disabled>Download FASTA</button>
+          <p>
+            <small
+              >Mutation scores are model log-likelihood ratios, not
+              experimentally measured fitness. Positive scores favor the
+              alternate amino acid. Naturalness uses masked WT log probabilities
+              over all 64 vocabulary logits.</small
+            >
+          </p>
+        </section>
+      </div>
+      <p>
+        <a href="../README_WEBGPU.md">Engineering specification</a> · MIT ·
+        ESMC-300M
+      </p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

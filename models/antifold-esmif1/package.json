@@ -1,0 +1,15 @@
+{
+  "name": "antifold-esmif1-webgpu",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Shared browser-native GVP-Transformer engine for AntiFold and ESM-IF1",
+  "license": "BSD-3-Clause AND MIT",
+  "exports": {".": "./webgpu/index.js", "./shared": "./shared/index.js", "./cpu": "./cpu/index.js", "./webgpu": "./webgpu/index.js"},
+  "files": ["shared", "cpu", "webgpu", "LICENSE", "README_WEBGPU.md"],
+  "scripts": {
+    "test": "npm run test:unit && npm run test:cpu && npm run test:gpu",
+    "test:unit": "node --test test/shared.test.mjs",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node --test test/gpu.test.mjs"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "thermompnn-webgpu",
+  "version": "0.1.0",
+  "description": "Dependency-free browser WebGPU ThermoMPNN point-mutation stability prediction",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./shared": "./shared/index.js"
+  },
+  "files": [
+    "shared/",
+    "cpu/",
+    "webgpu/",
+    "LICENSE",
+    "README_WEBGPU.md",
+    "ARCHITECTURE.md"
+  ],
+  "scripts": {
+    "test": "node --test test/shared.test.mjs test/vendor.test.mjs && npm run test:cpu && npm run test:gpu",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node test/gpu.mjs",
+    "demo": "node tools/serve.mjs",
+    "vendor:smoke": "node sync-upstream.mjs .cache/vendor-smoke --write"
+  },
+  "devDependencies": {
+    "playwright-core": "1.58.2"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "protpardelle-webgpu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./cpu": "./cpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./shared": "./shared/loader.js"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test --test-concurrency=1 test/shared.test.mjs test/cpu.test.mjs test/sampler-cpu.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/gpu.test.mjs test/sampler-gpu.test.mjs test/browser-contract.test.mjs test/demo.test.mjs test/benchmark-gpu.test.mjs",
+    "demo": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

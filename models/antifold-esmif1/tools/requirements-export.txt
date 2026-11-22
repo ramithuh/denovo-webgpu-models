@@ -1,0 +1,7 @@
+torch==2.9.1
+torch-geometric==2.7.0
+numpy==1.26.4
+pandas==2.3.3
+biotite==1.5.0
+biopython==1.86
+safetensors==0.6.2

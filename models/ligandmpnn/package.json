@@ -1,0 +1,25 @@
+{
+  "name": "ligandmpnn-webgpu",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Browser-native LigandMPNN inference with a CPU reference",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./shared": "./shared/ligandmpnn/index.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:cpu": "node --test test/cpu_parity.test.mjs test/parser.test.mjs",
+    "test:gpu": "node --test test/webgpu_shaders.test.mjs test/webgpu_parity.test.mjs"
+  },
+  "files": [
+    "webgpu/",
+    "shared/",
+    "cpu/",
+    "README_WEBGPU.md",
+    "LICENSE"
+  ]
+}

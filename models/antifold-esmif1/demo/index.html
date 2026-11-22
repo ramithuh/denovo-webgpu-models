@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AntiFold + ESM-IF1 · Structure to sequence</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="mark">AF / IF1</div><span>Structure → sequence</span><span class="badge">Runs on your GPU</span></header>
+<main><section class="intro"><p class="eyebrow">INVERSE PROTEIN FOLDING</p><h1>Explore the sequences<br>your structure can support.</h1><p>Antibody design with AntiFold. General protein design with ESM-IF1.<br>Structure and inference stay in this browser.</p></section>
+<div class="workspace"><section class="panel"><h2>1. Structure & model</h2>
+<label>Structure file <input id="file" type="file" accept=".pdb,.cif,.mmcif"></label>
+<div class="examples"><span>Try an example</span><button id="example-monomer">Trp-cage</button><button id="example-antibody">VH + VL</button><button id="example-vhh">VHH</button></div>
+<textarea id="structure" rows="6" placeholder="Or paste PDB / mmCIF coordinates here" aria-label="Structure coordinates"></textarea>
+<div class="row"><label>Model<select id="variant"><option value="antifold">AntiFold · antibodies</option><option value="esmif1">ESM-IF1 · proteins</option></select></label><label>Precision<select id="precision"><option value="fp32">FP32 · reference</option><option value="fp16" selected>FP16 · balanced</option><option value="int8">INT8 · compact</option></select></label></div>
+<label>Selected chains, in order<input id="chains" placeholder="H, L (blank uses all protein chains)"></label>
+<div class="row"><label>Heavy / VHH chain<input id="heavy" value="H"></label><label>Light chain<input id="light" value="L"></label><label>Target chain<input id="target" placeholder="Optional"></label></div>
+<p class="hint">Use supplied IMGT or Kabat residue numbering for antibody region selection.</p>
+<h2>2. Task & constraints</h2>
+<label>Task<select id="mode"><option value="score">Sequence likelihood & residue preferences</option><option value="independent">Native-conditioned region sampling</option><option value="autoregressive">Autoregressive sequence sampling</option></select></label>
+<label>Candidate sequence <span class="optional">optional for scoring; includes chain linkers</span><textarea id="sequence" rows="2" placeholder="Blank uses the sequence in the structure"></textarea></label>
+<div class="row"><label>Numbering<select id="numbering"><option value="imgt">IMGT</option><option value="kabat">Kabat</option></select></label><label>Temperature<input id="temperature" type="number" min="0.001" step="0.05" value="0.7"></label></div>
+<label>Regions to vary<input id="regions" placeholder="CDRH3, CDRL3 or H:100A (blank = all)"></label>
+<label>Fixed residues<input id="fixed" placeholder="H:105=Y, L:109A=G"></label>
+<label class="checkbox"><input type="checkbox" id="limit"> Limit independent sampling to expected variation</label>
+<div class="actions"><button id="run" class="primary">Run model <span>↗</span></button><button id="cancel" disabled>Cancel</button><button id="release">Release GPU</button></div>
+<progress id="progress" value="0" max="1"></progress><p id="status" role="status">Choose a structure to begin.</p>
+</section><section class="panel results"><div class="result-title"><h2>Results</h2><span id="duration"></span></div>
+<div class="empty" id="empty"><span>∿</span><p>Residue preferences and designed sequences<br>will appear here.</p></div>
+<div id="result" hidden><div class="metrics"><div><small>Mean log likelihood</small><strong id="likelihood">—</strong></div><div><small>Perplexity</small><strong id="perplexity">—</strong></div></div>
+<h3>Sequence</h3><pre id="result-sequence"></pre><h3>Residue preference</h3><p class="hint">Highest canonical amino acid probability at each residue.</p><canvas id="plot" width="900" height="240" aria-label="Per-residue amino acid preference"></canvas>
+<div class="downloads"><button id="fasta">FASTA ↓</button><button id="csv">CSV ↓</button><button id="download-structure">Input structure ↓</button></div></div>
+<div class="footnote">FP16 and INT8 round model weights. Use FP32 when comparing small score differences. Sequences are model proposals for experimental evaluation.</div>
+</section></div></main><footer>AntiFold + ESM-IF1 · Shared GVP-Transformer · <a href="../README_WEBGPU.md">Engineering specification</a></footer><script type="module" src="app.js"></script></body></html>

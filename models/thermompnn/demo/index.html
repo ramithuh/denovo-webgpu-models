@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ThermoMPNN • Mutation stability</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#">ThermoMPNN <span>WEBGPU</span></a
+      ><a href="../README_WEBGPU.md">Engineering notes ↗</a>
+    </header>
+    <main>
+      <div class="intro">
+        <div class="eyebrow">STRUCTURE → MUTATION STABILITY</div>
+        <h1>Explore every substitution.</h1>
+        <p>
+          Score protein point mutations directly in your browser. Your structure
+          stays on this device.
+        </p>
+      </div>
+      <div class="layout">
+        <section class="panel controls" aria-label="Prediction controls">
+          <h2>1 <span>Choose a structure</span></h2>
+          <label class="upload"
+            >PDB or mmCIF<input id="file" type="file" accept=".pdb,.cif,.mmcif"
+          /></label>
+          <button class="text-button" id="example">
+            Load example structure · 12 residues
+          </button>
+          <label
+            >Structure text<textarea
+              id="structure"
+              rows="7"
+              spellcheck="false"
+              placeholder="Paste ATOM records or mmCIF atom_site data"
+            ></textarea>
+          </label>
+          <label
+            >Chains <span class="hint">Leave blank for all chains</span
+            ><input id="chains" placeholder="A, B or Alpha, Beta"
+          /></label>
+          <h2>2 <span>Configure prediction</span></h2>
+          <div class="row">
+            <label
+              >Precision<select id="precision">
+                <option value="fp32">FP32 · reference accuracy</option>
+                <option value="fp16">FP16 · smaller download</option>
+                <option value="int8">INT8 · smallest download</option>
+              </select></label
+            ><label
+              >Weight cache<select id="cache">
+                <option value="cache">Browser cache</option>
+                <option value="opfs">Local file storage</option>
+                <option value="none">None</option>
+              </select></label
+            >
+          </div>
+          <label
+            >Mode<select id="mode">
+              <option value="ssm">Full site saturation · L × 20</option>
+              <option value="targeted">Targeted point mutants</option>
+            </select></label
+          >
+          <label id="mutation-field" hidden
+            >Mutations
+            <span class="hint"
+              >One per line: chain:number[insertion code]:mutant</span
+            ><textarea
+              id="mutations"
+              rows="3"
+              placeholder="A:3:V&#10;A:100A:G&#10;Beta:-2:A"
+            ></textarea>
+          </label>
+          <label
+            >Weights location<input id="base" value="../weights/default"
+          /></label>
+          <div class="actions">
+            <button id="run" class="primary">Predict stability</button
+            ><button id="cancel" disabled>Cancel</button>
+          </div>
+          <progress
+            id="progress"
+            max="100"
+            value="0"
+            aria-label="Prediction progress"
+          ></progress>
+          <p id="status" role="status">
+            Ready. Requires a hardware WebGPU browser.
+          </p>
+          <button id="release">Release GPU</button>
+        </section>
+        <section class="panel results" aria-label="Prediction results">
+          <div class="result-heading">
+            <div>
+              <div class="eyebrow">PREDICTED ΔΔG · kcal/mol</div>
+              <h2>Substitution landscape</h2>
+            </div>
+            <span id="summary" class="badge">No prediction yet</span>
+          </div>
+          <p class="help">
+            Negative values predict stabilization. Each column is a residue;
+            each row is a mutant amino acid. Gray columns mark gaps or unknown
+            residues.
+          </p>
+          <div class="legend">
+            <span class="cool"></span>Stabilizing<span class="neutral"></span
+            >Neutral<span class="warm"></span>Destabilizing
+          </div>
+          <div id="empty">
+            Load a structure and run a prediction to explore its mutation
+            landscape.
+          </div>
+          <div class="plot-scroll">
+            <canvas
+              id="heatmap"
+              width="760"
+              height="460"
+              hidden
+              aria-label="Mutation ddG heatmap"
+            ></canvas>
+          </div>
+          <p id="hover" class="hover">
+            Hover over a cell for residue identity and score.
+          </p>
+          <div class="downloads">
+            <button id="csv" disabled>Download CSV</button
+            ><button id="fasta" disabled>Download FASTA</button
+            ><button id="source" disabled>Download structure</button>
+          </div>
+          <div class="table-heading">
+            <h3 id="table-title">Best substitutions per site</h3>
+            <label class="check"
+              ><input type="checkbox" id="cys" checked />Include cysteine</label
+            >
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Chain</th>
+                  <th>Residue</th>
+                  <th>WT</th>
+                  <th>Mutant</th>
+                  <th>ΔΔG</th>
+                </tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+          <p class="footnote">
+            Single substitutions only. Multi-chain context is retained unless
+            chains are selected. Predictions at incomplete backbone sites are
+            flagged; these examples are numerical validation, not experimental
+            calibration.
+          </p>
+        </section>
+      </div>
+      <footer>
+        ThermoMPNN · Kuhlman Lab · MIT · All neural inference runs in WebGPU.
+      </footer>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

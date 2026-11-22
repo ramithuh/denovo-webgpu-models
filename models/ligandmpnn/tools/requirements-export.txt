@@ -1,0 +1,4 @@
+torch==2.15.0
+numpy==2.4.6
+safetensors==0.8.0
+prody==2.6.1

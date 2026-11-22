@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1L2Y",
+    "chains": [{"chainId": "A", "sequence": "NLYIQWLKDGGPSSGRPPPS"}],
+    "upstreamIds": [0, 17, 4, 19, 12, 16, 22, 4, 15, 13, 6, 6, 14, 8, 8, 6, 10, 14, 14, 14, 8, 2],
+    "backbone": {
+      "file": "1l2y-model1-backbone.pdb",
+      "allObservedSha256": "e006d5c8e04dde8abf72a44bc59273c6117e13faf11b57489f72648c8bfd06e1",
+      "firstNitrogenOmittedSha256": "448d698ed02b098e7e812a1fdc80d6ffd672ff9ecb2df00263824e87977c9be9"
+    }
+  },
+  {
+    "id": "4INS",
+    "chains": [
+      {"chainId": "A", "sequence": "GIVEQCCTSICSLYQLENYCN"},
+      {"chainId": "B", "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKA"}
+    ],
+    "upstreamIds": [
+      0, 6, 12, 7, 9, 16, 23, 23, 11, 8, 12, 23, 8, 4, 19, 16, 4, 9, 17, 19, 23, 17,
+      31, 18, 7, 17, 16, 21, 4, 23, 6, 8, 21, 4, 7, 9, 5, 4, 19, 4, 7, 23, 6, 9, 10,
+      6, 18, 18, 19, 11, 14, 15, 5, 2
+    ]
+  }
+]

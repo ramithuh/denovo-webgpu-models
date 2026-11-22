@@ -1,0 +1,26 @@
+{
+  "name": "dyna1-webgpu",
+  "version": "0.1.0",
+  "description": "Sequence-only Dyna-1 ESM-3 inference in browser WebGPU and a CPU reference",
+  "type": "module",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./cpu": "./cpu/dyna1/index.js",
+    "./shared": "./shared/dyna1/index.js"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu_parity.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/webgpu_shaders.test.mjs test/webgpu_parity.test.mjs"
+  },
+  "license": "MIT",
+  "files": [
+    "webgpu/",
+    "cpu/",
+    "shared/",
+    "README_WEBGPU.md",
+    "LICENSE.md",
+    "sync-upstream.mjs"
+  ]
+}

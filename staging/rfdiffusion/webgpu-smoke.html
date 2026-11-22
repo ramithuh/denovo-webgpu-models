@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>RFdiffusion symmetry WebGPU parity</title>
+<h1>RFdiffusion symmetry WebGPU parity</h1>
+<pre id="result" aria-live="polite">Checking WebGPU…</pre>
+<script type="module">
+  const display = document.querySelector('#result')
+  const report = { status: 'running', cases: [] }
+  let device
+  try {
+    const { createSymmetryExpander } = await import('./symmetry-webgpu.mjs')
+    const adapter = await navigator.gpu?.requestAdapter({ powerPreference: 'high-performance' })
+    if (!adapter) throw new Error('WebGPU adapter unavailable')
+    const { vendor, architecture, device: deviceId, description, isFallbackAdapter } = adapter.info ?? {}
+    report.adapter = { vendor, architecture, device: deviceId, description, isFallbackAdapter }
+    const identity = [vendor, architecture, deviceId, description].join(' ')
+    const software = /swiftshader|llvmpipe|lavapipe|softpipe|software|basic render driver|\bwarp\b|\bcpu\b/i
+    if (isFallbackAdapter === true || software.test(identity)) {
+      throw new Error('Hardware required: browser reported a software or fallback WebGPU adapter')
+    }
+    // Privacy settings can return blank fields or placeholder strings.
+    const placeholder = /^(?:unknown|unavailable|unspecified|redacted|generic|none|null|n\/?a|0x0+)$/i
+    const disclosed = [vendor, architecture, deviceId, description].some(field =>
+      typeof field === 'string' && field.trim() && !placeholder.test(field.trim())
+    )
+    if (isFallbackAdapter !== false || !disclosed) {
+      throw new Error('Hardware required: WebGPU adapter identity or fallback status is unverifiable')
+    }
+    device = await adapter.requestDevice()
+    device.pushErrorScope('validation')
+    const expand = await createSymmetryExpander(device)
+    const response = await fetch('./symmetry-reference.json')
+    if (!response.ok) throw new Error(`Fixture request failed (${response.status})`)
+    const fixture = await response.json()
+    report.upstreamCommit = fixture.upstreamCommit
+
+    async function compare(group, points, expected) {
+      const result = await expand(group, Float32Array.from(points))
+      if (result.length !== expected.length) throw new Error(`${group} output length mismatch`)
+      let maxError = 0
+      for (let i = 0; i < result.length; i++) {
+        maxError = Math.max(maxError, Math.abs(result[i] - expected[i]))
+      }
+      if (!(maxError <= 1e-6)) throw new Error(`${group} coordinate error ${maxError}`)
+      report.cases.push({ group, points: points.length / 3, components: result.length, maxError })
+    }
+    for (const [group, copies] of Object.entries(fixture.expected)) {
+      await compare(group, fixture.unit, copies.flat())
+    }
+    // Repeat each asymmetric unit to cover dispatches spanning several workgroups.
+    const repeat = points => Array.from({ length: 19 }, () => points).flat()
+    await compare('d5', repeat(fixture.unit), fixture.expected.d5.flatMap(repeat))
+    const validation = await device.popErrorScope()
+    if (validation) throw new Error(validation.message)
+    report.status = 'pass'
+  } catch (error) {
+    report.status = 'fail'
+    report.message = String(error)
+  } finally {
+    device?.destroy()
+    display.textContent = JSON.stringify(report, null, 2)
+  }
+</script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "lasermpnn-webgpu",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./cpu": "./cpu/lasermpnn/index.js",
+    "./shared": "./shared/lasermpnn/index.js"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu_parity.test.mjs test/features.test.mjs test/structure.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/webgpu_shaders.test.mjs test/webgpu_parity.test.mjs"
+  }
+}

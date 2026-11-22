@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+  <title>LigandMPNN · Browser protein design</title>
+  <style>
+    :root {
+      font:
+        16px/1.5 system-ui,
+        sans-serif;
+      color: #e6eef2;
+      background: #101b23;
+      color-scheme: dark;
+    }
+    body {
+      max-width: 960px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+    h1 {
+      font-size: 42px;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+    }
+    p {
+      color: #a6bdc8;
+    }
+    section {
+      border: 1px solid #304550;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      background: #172730;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      color: #b9cbd4;
+      margin: 12px 0 6px;
+    }
+    input,
+    textarea,
+    select,
+    button {
+      font: inherit;
+      border: 1px solid #3c5664;
+      border-radius: 6px;
+      padding: 10px;
+      background: #0f1d26;
+      color: inherit;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      font: 12px/1.4 monospace;
+    }
+    input {
+      max-width: 100%;
+      width: 100%;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    button {
+      cursor: pointer;
+      margin: 14px 8px 0 0;
+    }
+    button.primary {
+      background: #87dfb8;
+      color: #10251d;
+      border: 0;
+      font-weight: 650;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font: 13px/1.6 monospace;
+    }
+    #status {
+      color: #87dfb8;
+    }
+    small {
+      color: #a6bdc8;
+    }
+    input[type="checkbox"] {
+      width: auto;
+    }
+  </style>
+  <h1>LigandMPNN</h1>
+  <p>
+    Design protein sequences in your browser, conditioned on ligands, metals,
+    DNA or RNA. Structure data stays on this device.
+  </p>
+  <section>
+    <h2>Holo structure</h2>
+    <input id="file" type="file" accept=".pdb,.cif,.mmcif" /><button
+      id="example"
+    >
+      Load zinc + DNA example</button
+    ><label for="structure">PDB or mmCIF</label
+    ><textarea
+      id="structure"
+      rows="10"
+      placeholder="Paste your structure, or choose a file"
+    ></textarea>
+  </section>
+  <section>
+    <h2>Design settings</h2>
+    <div class="grid">
+      <div>
+        <label for="base">Weights base URL</label
+        ><input id="base" value="../weights" />
+      </div>
+      <div>
+        <label for="variant">Model</label
+        ><select id="variant">
+          <option value="ligandmpnn_v_32_010_25">LigandMPNN 010</option>
+          <option value="ligandmpnn_v_32_020_25">LigandMPNN 020</option>
+        </select>
+      </div>
+      <div>
+        <label for="precision">Weight precision</label
+        ><select id="precision">
+          <option value="fp32">FP32</option>
+          <option value="fp16">FP16</option>
+          <option value="int8">INT8</option>
+        </select>
+      </div>
+      <div>
+        <label for="temperature">Temperature</label
+        ><input
+          id="temperature"
+          type="number"
+          min="0.001"
+          step="0.05"
+          value="0.3"
+        />
+      </div>
+      <div>
+        <label for="count">Sequences</label
+        ><input id="count" type="number" min="1" step="1" value="1" />
+      </div>
+      <div>
+        <label for="seed">Seed</label
+        ><input id="seed" type="number" value="42" />
+      </div>
+      <div>
+        <label for="chains">Design chains (blank = all)</label
+        ><input id="chains" placeholder="A B" />
+      </div>
+      <div>
+        <label for="fixed">Fixed residues or chains</label
+        ><input id="fixed" placeholder="A102 B" />
+      </div>
+      <div>
+        <label for="omit">Omit amino acids</label
+        ><input id="omit" placeholder="C" />
+      </div>
+    </div>
+    <label
+      ><input id="context" type="checkbox" checked /> Use ligand / atom
+      context</label
+    ><label
+      ><input id="sidechains" type="checkbox" /> Use sidechains of fixed
+      residues as context</label
+    >
+    <button class="primary" id="run">Design sequences</button
+    ><button id="cancel" disabled>Cancel</button>
+    <p id="status" role="status" aria-live="polite">
+      Requires WebGPU in a secure browser context.
+    </p>
+  </section>
+  <section>
+    <h2>Results</h2>
+    <pre id="result">Sequences and scores will appear here.</pre>
+    <button id="download" disabled>Download FASTA</button>
+    <p>
+      <small
+        >Scores are mean negative log probabilities; lower values indicate
+        higher model likelihood. These scores are not experimental
+        validation.</small
+      >
+    </p>
+  </section>
+  <script type="module">
+    const $ = (id) => document.getElementById(id),
+      worker = new Worker(new URL("./worker.js", import.meta.url), {
+        type: "module",
+      });
+    let fasta = "";
+    $("file").onchange = async () => {
+      if ($("file").files[0])
+        $("structure").value = await $("file").files[0].text();
+    };
+    $("example").onclick = async () => {
+      const r = await fetch("../fixtures/holo_1BC8.pdb");
+      if (!r.ok) {
+        $("status").textContent = "Example unavailable";
+        return;
+      }
+      $("structure").value = await r.text();
+      $("chains").value = "C";
+      $("fixed").value = "C8 C9";
+    };
+    $("run").onclick = () => {
+      if (!$("structure").value.trim()) {
+        $("status").textContent = "Choose or paste a structure first.";
+        return;
+      }
+      $("run").disabled = true;
+      $("cancel").disabled = false;
+      $("status").textContent = "Loading model…";
+      worker.postMessage({
+        type: "design",
+        structure: $("structure").value,
+        config: {
+          baseUrl: new URL($("base").value, location.href).href,
+          variant: $("variant").value,
+          precision: $("precision").value,
+        },
+        options: {
+          temperature: +$("temperature").value,
+          numSequences: +$("count").value,
+          seed: +$("seed").value,
+          designChains: $("chains").value,
+          fixedPositions: $("fixed").value,
+          omitAAs: $("omit").value,
+          useAtomContext: $("context").checked,
+          useSideChainContext: $("sidechains").checked,
+        },
+      });
+    };
+    $("cancel").onclick = () => {
+      worker.postMessage({ type: "cancel" });
+      $("status").textContent = "Cancelling…";
+    };
+    worker.onmessage = ({ data }) => {
+      if (data.type === "progress") {
+        $("status").textContent =
+          `Loading weights: ${Math.round((data.progress.loaded / data.progress.total) * 100)}%`;
+        return;
+      }
+      $("run").disabled = false;
+      $("cancel").disabled = true;
+      if (data.type === "error") {
+        $("status").textContent = data.message;
+        return;
+      }
+      const r = data.result;
+      fasta = r.sequences
+        .map(
+          (s, i) =>
+            `>design_${i + 1} global=${r.scores[i].global.toFixed(4)} ligand=${r.scores[i].ligand.toFixed(4)}\n${s}`,
+        )
+        .join("\n");
+      $("result").textContent = fasta;
+      $("status").textContent =
+        `Completed ${r.sequences.length} sequence(s) in ${(r.timingMs / 1000).toFixed(2)} seconds`;
+      $("download").disabled = false;
+    };
+    worker.onerror = (e) => {
+      $("status").textContent = e.message;
+      $("run").disabled = false;
+      $("cancel").disabled = true;
+    };
+    $("download").onclick = () => {
+      const u = URL.createObjectURL(
+          new Blob([fasta + "\n"], { type: "text/plain" }),
+        ),
+        a = document.createElement("a");
+      a.href = u;
+      a.download = "ligandmpnn.fasta";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(u), 1000);
+    };
+    addEventListener("pagehide", () => {
+      worker.postMessage({ type: "destroy" });
+      worker.terminate();
+    });
+  </script>
+</html>

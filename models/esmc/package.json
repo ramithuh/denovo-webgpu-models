@@ -1,0 +1,27 @@
+{
+  "name": "esmc-webgpu",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Complete ESMC-300M inference with dependency-free ES modules and WGSL",
+  "license": "MIT",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./shared": "./shared/index.js"
+  },
+  "files": [
+    "shared/",
+    "cpu/",
+    "webgpu/",
+    "LICENSE",
+    "README_WEBGPU.md",
+    "ARCHITECTURE.md",
+    "sync-upstream.mjs"
+  ],
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/gpu.test.mjs test/browser.test.mjs test/streaming-attention.test.mjs"
+  }
+}

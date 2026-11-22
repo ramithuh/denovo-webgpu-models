@@ -1,0 +1,30 @@
+# Dependencies & build artifacts
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Upstream checkouts, caches, and model weights (hosted on Hugging Face)
+.cache/
+weights/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.tar
+*.tar.gz
+*.zip
+*.bin
+*.npy
+*.npz
+*.onnx
+
+# Keep small checked-in JSON/text fixtures, ignore large binary fixture dumps
+!staging/**/*.json
+
+# OS & editor junk
+.DS_Store
+*.swp
+.env
+.env.*
