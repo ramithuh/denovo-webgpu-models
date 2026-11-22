@@ -1,0 +1,730 @@
+{
+  "ok": true,
+  "modes": {
+    "fp32-core": {
+      "1UBQ": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.985158187573927e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998582
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 8.173255230140263e-7,
+            "maxAbs": 0.000007152557373046875,
+            "correlation": 0.9999999999859263
+          },
+          "probs": {
+            "relRms": 0.000002328509548991491,
+            "maxAbs": 0.0000014603137969970703,
+            "correlation": 0.9999999999883711
+          },
+          "medianMs": 198.4000005722046,
+          "warmMs": [
+            199,
+            197.29999923706055,
+            198.4000005722046
+          ],
+          "encodeMedianMs": 85
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 6.392756469941828e-7,
+            "maxAbs": 0.000008106231689453125,
+            "correlation": 0.9999999999841015
+          },
+          "probs": {
+            "relRms": 0.0000018916052846026855,
+            "maxAbs": 0.0000011771917343139648,
+            "correlation": 0.9999999999895107
+          },
+          "coldMs": 199.69999980926514
+        }
+      },
+      "1OCA": {
+        "length": 165,
+        "tokensExact": 165,
+        "tokensTotal": 165,
+        "preVq": {
+          "relRms": 4.835306579479422e-7,
+          "maxAbs": 0.000019073486328125,
+          "correlation": 0.9999999999998648
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 5.739823839274394e-7,
+            "maxAbs": 0.0000050067901611328125,
+            "correlation": 0.9999999999960062
+          },
+          "probs": {
+            "relRms": 6.978327407069877e-7,
+            "maxAbs": 0.0000011920928955078125,
+            "correlation": 0.9999999999956322
+          },
+          "medianMs": 407.5,
+          "warmMs": [
+            408.5999994277954,
+            407.5,
+            404.19999980926514
+          ],
+          "encodeMedianMs": 174.5999994277954
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 5.824272677034285e-7,
+            "maxAbs": 0.000005245208740234375,
+            "correlation": 0.999999999988207
+          },
+          "probs": {
+            "relRms": 9.011221400683476e-7,
+            "maxAbs": 0.0000011622905731201172,
+            "correlation": 0.9999999999881491
+          },
+          "coldMs": 419.19999980926514
+        }
+      },
+      "1RYK": {
+        "length": 69,
+        "tokensExact": 69,
+        "tokensTotal": 69,
+        "preVq": {
+          "relRms": 4.5886373907714594e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998829
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 6.209299956981813e-7,
+            "maxAbs": 0.00000667572021484375,
+            "correlation": 0.9999999999929848
+          },
+          "probs": {
+            "relRms": 0.0000017401467508700585,
+            "maxAbs": 0.0000011771917343139648,
+            "correlation": 0.9999999999946174
+          },
+          "medianMs": 184.30000019073486,
+          "warmMs": [
+            184.30000019073486,
+            184.80000019073486,
+            183.29999923706055
+          ],
+          "encodeMedianMs": 74.90000057220459
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 6.3162784226995e-7,
+            "maxAbs": 0.00000667572021484375,
+            "correlation": 0.9999999999873866
+          },
+          "probs": {
+            "relRms": 0.000001666693662041614,
+            "maxAbs": 0.000001341104507446289,
+            "correlation": 0.9999999999908546
+          },
+          "coldMs": 183.10000038146973
+        }
+      },
+      "1UBQ_missing": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.882013006858433e-7,
+          "maxAbs": 0.00001049041748046875,
+          "correlation": 0.9999999999998644
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 5.90802160686768e-7,
+            "maxAbs": 0.000006198883056640625,
+            "correlation": 0.9999999999937296
+          },
+          "probs": {
+            "relRms": 0.0000013165218149295674,
+            "maxAbs": 0.0000011324882507324219,
+            "correlation": 0.9999999999957903
+          },
+          "medianMs": 192.60000038146973,
+          "warmMs": [
+            194,
+            192.60000038146973,
+            191.4000005722046
+          ],
+          "encodeMedianMs": 81.30000019073486
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 5.602651693379056e-7,
+            "maxAbs": 0.000007152557373046875,
+            "correlation": 0.9999999999900147
+          },
+          "probs": {
+            "relRms": 0.0000015067192199727469,
+            "maxAbs": 0.0000010132789611816406,
+            "correlation": 0.9999999999930101
+          },
+          "coldMs": 196.5
+        }
+      },
+      "_summary": {
+        "mode": "fp32-core",
+        "mainWeightBytes": 3361671188,
+        "withStructWeightBytes": 3449415188,
+        "structEncoderWeightBytes": 87744000,
+        "seqOnlyUbqProbRelRms": 6.453387192346312e-7,
+        "chunked228TokensExact": "228/228",
+        "chunked228EncodeMs": 307.30000019073486
+      }
+    },
+    "fp16-core": {
+      "1UBQ": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.985158187573927e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998582
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00008384427244895296,
+            "maxAbs": 0.0008053779602050781,
+            "correlation": 0.9999999757664577
+          },
+          "probs": {
+            "relRms": 0.000256501371866454,
+            "maxAbs": 0.00019347667694091797,
+            "correlation": 0.9999999777678408
+          },
+          "medianMs": 165.80000019073486,
+          "warmMs": [
+            167.80000019073486,
+            163.4000005722046,
+            165.80000019073486
+          ],
+          "encodeMedianMs": 81.5
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00012831910718272098,
+            "maxAbs": 0.0018596649169921875,
+            "correlation": 0.9999998624828916
+          },
+          "probs": {
+            "relRms": 0.0004002104446847608,
+            "maxAbs": 0.00033551454544067383,
+            "correlation": 0.9999998856764809
+          },
+          "coldMs": 166.80000019073486
+        }
+      },
+      "1OCA": {
+        "length": 165,
+        "tokensExact": 165,
+        "tokensTotal": 165,
+        "preVq": {
+          "relRms": 4.835306579479422e-7,
+          "maxAbs": 0.000019073486328125,
+          "correlation": 0.9999999999998648
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00005543096087162853,
+            "maxAbs": 0.0003739595413208008,
+            "correlation": 0.9999999797946543
+          },
+          "probs": {
+            "relRms": 0.00006613898011162726,
+            "maxAbs": 0.00009125471115112305,
+            "correlation": 0.9999999796606115
+          },
+          "medianMs": 345.30000019073486,
+          "warmMs": [
+            345.30000019073486,
+            344.6000003814697,
+            345.6000003814697
+          ],
+          "encodeMedianMs": 172
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00011068532585899462,
+            "maxAbs": 0.0005021095275878906,
+            "correlation": 0.999999982877066
+          },
+          "probs": {
+            "relRms": 0.00017165546743474355,
+            "maxAbs": 0.00012201070785522461,
+            "correlation": 0.9999999815359883
+          },
+          "coldMs": 348.80000019073486
+        }
+      },
+      "1RYK": {
+        "length": 69,
+        "tokensExact": 69,
+        "tokensTotal": 69,
+        "preVq": {
+          "relRms": 4.5886373907714594e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998829
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00017771811726971005,
+            "maxAbs": 0.0017681121826171875,
+            "correlation": 0.9999998920806532
+          },
+          "probs": {
+            "relRms": 0.0004908197685896025,
+            "maxAbs": 0.0003228038549423218,
+            "correlation": 0.9999998683208372
+          },
+          "medianMs": 157.39999961853027,
+          "warmMs": [
+            157.39999961853027,
+            156.80000019073486,
+            159.89999961853027
+          ],
+          "encodeMedianMs": 74.59999942779541
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00007656366030802235,
+            "maxAbs": 0.0004253387451171875,
+            "correlation": 0.999999996573795
+          },
+          "probs": {
+            "relRms": 0.00021705134436081903,
+            "maxAbs": 0.00009620189666748047,
+            "correlation": 0.9999999962749133
+          },
+          "coldMs": 158.10000038146973
+        }
+      },
+      "1UBQ_missing": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.882013006858433e-7,
+          "maxAbs": 0.00001049041748046875,
+          "correlation": 0.9999999999998644
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00009428501329893794,
+            "maxAbs": 0.00047707557678222656,
+            "correlation": 0.9999999976524746
+          },
+          "probs": {
+            "relRms": 0.0002286381674698616,
+            "maxAbs": 0.00011914968490600586,
+            "correlation": 0.9999999958865203
+          },
+          "medianMs": 169,
+          "warmMs": [
+            172.80000019073486,
+            169,
+            168
+          ],
+          "encodeMedianMs": 88.10000038146973
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00007427626396582024,
+            "maxAbs": 0.00039386749267578125,
+            "correlation": 0.9999999977861956
+          },
+          "probs": {
+            "relRms": 0.0002166439957624161,
+            "maxAbs": 0.00009402632713317871,
+            "correlation": 0.9999999973362602
+          },
+          "coldMs": 173.69999980926514
+        }
+      },
+      "_summary": {
+        "mode": "fp16-core",
+        "mainWeightBytes": 1744763924,
+        "withStructWeightBytes": 1832507924,
+        "structEncoderWeightBytes": 87744000,
+        "seqOnlyUbqProbRelRms": 0.0001510939949387252,
+        "chunked228TokensExact": "228/228",
+        "chunked228EncodeMs": 296.5
+      }
+    },
+    "fp16-native": {
+      "1UBQ": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.985158187573927e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998582
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00008384427244895296,
+            "maxAbs": 0.0008053779602050781,
+            "correlation": 0.9999999757664577
+          },
+          "probs": {
+            "relRms": 0.000256501371866454,
+            "maxAbs": 0.00019347667694091797,
+            "correlation": 0.9999999777678408
+          },
+          "medianMs": 165.5,
+          "warmMs": [
+            165.4000005722046,
+            167.10000038146973,
+            165.5
+          ],
+          "encodeMedianMs": 83.69999980926514
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00012831910718272098,
+            "maxAbs": 0.0018596649169921875,
+            "correlation": 0.9999998624828916
+          },
+          "probs": {
+            "relRms": 0.0004002104446847608,
+            "maxAbs": 0.00033551454544067383,
+            "correlation": 0.9999998856764809
+          },
+          "coldMs": 168.69999980926514
+        }
+      },
+      "1OCA": {
+        "length": 165,
+        "tokensExact": 165,
+        "tokensTotal": 165,
+        "preVq": {
+          "relRms": 4.835306579479422e-7,
+          "maxAbs": 0.000019073486328125,
+          "correlation": 0.9999999999998648
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00005543096087162853,
+            "maxAbs": 0.0003739595413208008,
+            "correlation": 0.9999999797946543
+          },
+          "probs": {
+            "relRms": 0.00006613898011162726,
+            "maxAbs": 0.00009125471115112305,
+            "correlation": 0.9999999796606115
+          },
+          "medianMs": 344.20000076293945,
+          "warmMs": [
+            345.30000019073486,
+            343.8999996185303,
+            344.20000076293945
+          ],
+          "encodeMedianMs": 170.10000038146973
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00011068532585899462,
+            "maxAbs": 0.0005021095275878906,
+            "correlation": 0.999999982877066
+          },
+          "probs": {
+            "relRms": 0.00017165546743474355,
+            "maxAbs": 0.00012201070785522461,
+            "correlation": 0.9999999815359883
+          },
+          "coldMs": 346.8999996185303
+        }
+      },
+      "1RYK": {
+        "length": 69,
+        "tokensExact": 69,
+        "tokensTotal": 69,
+        "preVq": {
+          "relRms": 4.5886373907714594e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998829
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00017771811726971005,
+            "maxAbs": 0.0017681121826171875,
+            "correlation": 0.9999998920806532
+          },
+          "probs": {
+            "relRms": 0.0004908197685896025,
+            "maxAbs": 0.0003228038549423218,
+            "correlation": 0.9999998683208372
+          },
+          "medianMs": 158,
+          "warmMs": [
+            158.39999961853027,
+            158,
+            157.0999994277954
+          ],
+          "encodeMedianMs": 74.89999961853027
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00007656366030802235,
+            "maxAbs": 0.0004253387451171875,
+            "correlation": 0.999999996573795
+          },
+          "probs": {
+            "relRms": 0.00021705134436081903,
+            "maxAbs": 0.00009620189666748047,
+            "correlation": 0.9999999962749133
+          },
+          "coldMs": 158.20000076293945
+        }
+      },
+      "1UBQ_missing": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.882013006858433e-7,
+          "maxAbs": 0.00001049041748046875,
+          "correlation": 0.9999999999998644
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.00009428501329893794,
+            "maxAbs": 0.00047707557678222656,
+            "correlation": 0.9999999976524746
+          },
+          "probs": {
+            "relRms": 0.0002286381674698616,
+            "maxAbs": 0.00011914968490600586,
+            "correlation": 0.9999999958865203
+          },
+          "medianMs": 165.60000038146973,
+          "warmMs": [
+            165.60000038146973,
+            167.29999923706055,
+            164.19999980926514
+          ],
+          "encodeMedianMs": 81.5
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00007427626396582024,
+            "maxAbs": 0.00039386749267578125,
+            "correlation": 0.9999999977861956
+          },
+          "probs": {
+            "relRms": 0.0002166439957624161,
+            "maxAbs": 0.00009402632713317871,
+            "correlation": 0.9999999973362602
+          },
+          "coldMs": 168.79999923706055
+        }
+      },
+      "_summary": {
+        "mode": "fp16-native",
+        "mainWeightBytes": 1744763924,
+        "withStructWeightBytes": 1832507924,
+        "structEncoderWeightBytes": 87744000,
+        "seqOnlyUbqProbRelRms": 0.0001510939949387252,
+        "chunked228TokensExact": "228/228",
+        "chunked228EncodeMs": 298.30000019073486
+      }
+    },
+    "int8-core": {
+      "1UBQ": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.985158187573927e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998582
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.03078526963692943,
+            "maxAbs": 0.4871058464050293,
+            "correlation": 0.9820532905632051
+          },
+          "probs": {
+            "relRms": 0.09963375612823028,
+            "maxAbs": 0.10688310861587524,
+            "correlation": 0.9792352441990766
+          },
+          "medianMs": 167.9000005722046,
+          "warmMs": [
+            161.20000076293945,
+            169.39999961853027,
+            167.9000005722046
+          ],
+          "encodeMedianMs": 83.89999961853027
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.02383313349285055,
+            "maxAbs": 0.6110787391662598,
+            "correlation": 0.9839689838201211
+          },
+          "probs": {
+            "relRms": 0.06928059752627133,
+            "maxAbs": 0.09252989292144775,
+            "correlation": 0.9894290164041185
+          },
+          "coldMs": 163.89999961853027
+        }
+      },
+      "1OCA": {
+        "length": 165,
+        "tokensExact": 165,
+        "tokensTotal": 165,
+        "preVq": {
+          "relRms": 4.835306579479422e-7,
+          "maxAbs": 0.000019073486328125,
+          "correlation": 0.9999999999998648
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.010538409748559763,
+            "maxAbs": 0.07382869720458984,
+            "correlation": 0.9996457140214046
+          },
+          "probs": {
+            "relRms": 0.012832959888540964,
+            "maxAbs": 0.018450826406478882,
+            "correlation": 0.9996324337325311
+          },
+          "medianMs": 342.9000005722046,
+          "warmMs": [
+            357.80000019073486,
+            342.9000005722046,
+            341.69999980926514
+          ],
+          "encodeMedianMs": 173.10000038146973
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.013705320789090158,
+            "maxAbs": 0.19401049613952637,
+            "correlation": 0.9933935992627106
+          },
+          "probs": {
+            "relRms": 0.02149117919818185,
+            "maxAbs": 0.04845923185348511,
+            "correlation": 0.9932914044750863
+          },
+          "coldMs": 359.3999996185303
+        }
+      },
+      "1RYK": {
+        "length": 69,
+        "tokensExact": 69,
+        "tokensTotal": 69,
+        "preVq": {
+          "relRms": 4.5886373907714594e-7,
+          "maxAbs": 0.00001621246337890625,
+          "correlation": 0.9999999999998829
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.009814059144528648,
+            "maxAbs": 0.15019893646240234,
+            "correlation": 0.9981760172668956
+          },
+          "probs": {
+            "relRms": 0.030157660098388328,
+            "maxAbs": 0.02635534107685089,
+            "correlation": 0.9982033450831351
+          },
+          "medianMs": 154.39999961853027,
+          "warmMs": [
+            152.4000005722046,
+            154.39999961853027,
+            154.69999980926514
+          ],
+          "encodeMedianMs": 75.19999980926514
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.008425712673090065,
+            "maxAbs": 0.12551069259643555,
+            "correlation": 0.9983901291652019
+          },
+          "probs": {
+            "relRms": 0.028113183607545073,
+            "maxAbs": 0.031171023845672607,
+            "correlation": 0.997809750877778
+          },
+          "coldMs": 152.60000038146973
+        }
+      },
+      "1UBQ_missing": {
+        "length": 76,
+        "tokensExact": 76,
+        "tokensTotal": 76,
+        "preVq": {
+          "relRms": 4.882013006858433e-7,
+          "maxAbs": 0.00001049041748046875,
+          "correlation": 0.9999999999998644
+        },
+        "seqStruct": {
+          "logits": {
+            "relRms": 0.0030532984979130882,
+            "maxAbs": 0.034537315368652344,
+            "correlation": 0.9998799198521144
+          },
+          "probs": {
+            "relRms": 0.007817540576051005,
+            "maxAbs": 0.006476163864135742,
+            "correlation": 0.9998785708929526
+          },
+          "medianMs": 161.29999923706055,
+          "warmMs": [
+            161.29999923706055,
+            166.0999994277954,
+            160.80000019073486
+          ],
+          "encodeMedianMs": 82
+        },
+        "structOnly": {
+          "logits": {
+            "relRms": 0.00292143890953972,
+            "maxAbs": 0.0249021053314209,
+            "correlation": 0.9999539237779875
+          },
+          "probs": {
+            "relRms": 0.008512326150531963,
+            "maxAbs": 0.005889952182769775,
+            "correlation": 0.9999612067036234
+          },
+          "coldMs": 160.69999980926514
+        }
+      },
+      "_summary": {
+        "mode": "int8-core",
+        "mainWeightBytes": 843865624,
+        "withStructWeightBytes": 931609624,
+        "structEncoderWeightBytes": 87744000,
+        "seqOnlyUbqProbRelRms": 0.005798674759222507,
+        "chunked228TokensExact": "228/228",
+        "chunked228EncodeMs": 278.0999994277954
+      }
+    }
+  },
+  "validationErrors": [],
+  "adapterInfo": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false
+  },
+  "hasF16": true
+}

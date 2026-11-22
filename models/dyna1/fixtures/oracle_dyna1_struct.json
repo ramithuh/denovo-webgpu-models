@@ -1,0 +1,354 @@
+{
+  "format": "dyna1-struct-oracle-v1",
+  "upstream_commit": "814a453fd85305536b919901e41062b91d5c9d86",
+  "torch_version": "2.15.0+cu132",
+  "device": "cpu",
+  "dtype": "float32",
+  "proteins": {
+    "1UBQ": {
+      "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+      "length": 76
+    },
+    "1OCA": {
+      "sequence": "MVNPTVFFDIAVDGEPLGRVSFELFADKVPKTAENFRALSTGEKGFGYKGSCFHRIIPGFMCQGGDFTRHNGTGGKSIYGEKFEDENFILKHTGPGILSMANAGPNTNGSQFFICTAKTEWLDGKHVVFGKVKEGMNIVEAMERFGSRNGKTSKKITIADCGQLE",
+      "length": 165
+    },
+    "1RYK": {
+      "sequence": "MNKDEAGGNWKQFKGKVKEQWGKLTDDDMTIIEGKRDQLVGKIQERYGYQKDQAEKEVVDWETRNEYRW",
+      "length": 69
+    },
+    "1UBQ_missing": {
+      "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+      "length": 76
+    }
+  },
+  "tensors": {
+    "1UBQ.coords": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        3,
+        3
+      ],
+      "byteOffset": 0,
+      "byteLength": 2736
+    },
+    "1UBQ.structure_tokens": {
+      "dtype": "I32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 2736,
+      "byteLength": 304
+    },
+    "1UBQ.pre_vq": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        128
+      ],
+      "byteOffset": 3040,
+      "byteLength": 38912
+    },
+    "1UBQ.seq_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 41952,
+      "byteLength": 304
+    },
+    "1UBQ.seq_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 42256,
+      "byteLength": 304
+    },
+    "1UBQ.seq_struct.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 42560,
+      "byteLength": 304
+    },
+    "1UBQ.seq_struct.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 42864,
+      "byteLength": 304
+    },
+    "1UBQ.struct_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 43168,
+      "byteLength": 304
+    },
+    "1UBQ.struct_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 43472,
+      "byteLength": 304
+    },
+    "1UBQ.seq_struct.embedding": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        1536
+      ],
+      "byteOffset": 43776,
+      "byteLength": 466944
+    },
+    "1UBQ.seq_struct.final_embeddings": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        1536
+      ],
+      "byteOffset": 510720,
+      "byteLength": 466944
+    },
+    "1UBQ.struct_only.embedding": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        1536
+      ],
+      "byteOffset": 977664,
+      "byteLength": 466944
+    },
+    "1OCA.coords": {
+      "dtype": "F32",
+      "shape": [
+        165,
+        3,
+        3
+      ],
+      "byteOffset": 1444608,
+      "byteLength": 5940
+    },
+    "1OCA.structure_tokens": {
+      "dtype": "I32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1450548,
+      "byteLength": 660
+    },
+    "1OCA.pre_vq": {
+      "dtype": "F32",
+      "shape": [
+        165,
+        128
+      ],
+      "byteOffset": 1451208,
+      "byteLength": 84480
+    },
+    "1OCA.seq_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1535688,
+      "byteLength": 660
+    },
+    "1OCA.seq_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1536348,
+      "byteLength": 660
+    },
+    "1OCA.seq_struct.logits": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1537008,
+      "byteLength": 660
+    },
+    "1OCA.seq_struct.probs": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1537668,
+      "byteLength": 660
+    },
+    "1OCA.struct_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1538328,
+      "byteLength": 660
+    },
+    "1OCA.struct_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        165
+      ],
+      "byteOffset": 1538988,
+      "byteLength": 660
+    },
+    "1RYK.coords": {
+      "dtype": "F32",
+      "shape": [
+        69,
+        3,
+        3
+      ],
+      "byteOffset": 1539648,
+      "byteLength": 2484
+    },
+    "1RYK.structure_tokens": {
+      "dtype": "I32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1542132,
+      "byteLength": 276
+    },
+    "1RYK.pre_vq": {
+      "dtype": "F32",
+      "shape": [
+        69,
+        128
+      ],
+      "byteOffset": 1542408,
+      "byteLength": 35328
+    },
+    "1RYK.seq_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1577736,
+      "byteLength": 276
+    },
+    "1RYK.seq_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1578012,
+      "byteLength": 276
+    },
+    "1RYK.seq_struct.logits": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1578288,
+      "byteLength": 276
+    },
+    "1RYK.seq_struct.probs": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1578564,
+      "byteLength": 276
+    },
+    "1RYK.struct_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1578840,
+      "byteLength": 276
+    },
+    "1RYK.struct_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        69
+      ],
+      "byteOffset": 1579116,
+      "byteLength": 276
+    },
+    "1UBQ_missing.coords": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        3,
+        3
+      ],
+      "byteOffset": 1579392,
+      "byteLength": 2736
+    },
+    "1UBQ_missing.structure_tokens": {
+      "dtype": "I32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1582128,
+      "byteLength": 304
+    },
+    "1UBQ_missing.pre_vq": {
+      "dtype": "F32",
+      "shape": [
+        76,
+        128
+      ],
+      "byteOffset": 1582432,
+      "byteLength": 38912
+    },
+    "1UBQ_missing.seq_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1621344,
+      "byteLength": 304
+    },
+    "1UBQ_missing.seq_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1621648,
+      "byteLength": 304
+    },
+    "1UBQ_missing.seq_struct.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1621952,
+      "byteLength": 304
+    },
+    "1UBQ_missing.seq_struct.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1622256,
+      "byteLength": 304
+    },
+    "1UBQ_missing.struct_only.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1622560,
+      "byteLength": 304
+    },
+    "1UBQ_missing.struct_only.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 1622864,
+      "byteLength": 304
+    }
+  }
+}

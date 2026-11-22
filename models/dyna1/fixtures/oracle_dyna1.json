@@ -1,0 +1,802 @@
+{
+  "format": "dyna1-oracle-v1",
+  "sequences": {
+    "trp_cage": "NLYIQWLKDGGPSSGRPPPS",
+    "ubiquitin": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+  },
+  "tensors": {
+    "trp_cage.tokens": {
+      "dtype": "I32",
+      "shape": [
+        1,
+        20
+      ],
+      "byteOffset": 0,
+      "byteLength": 80
+    },
+    "trp_cage.embedding": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 80,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.0": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 122960,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.1": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 245840,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.2": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 368720,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.3": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 491600,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.4": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 614480,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.5": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 737360,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.6": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 860240,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.7": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 983120,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.8": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1106000,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.9": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1228880,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.10": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1351760,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.11": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1474640,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.12": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1597520,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.13": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1720400,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.14": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1843280,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.15": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 1966160,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.16": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2089040,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.17": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2211920,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.18": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2334800,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.19": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2457680,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.20": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2580560,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.21": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2703440,
+      "byteLength": 122880
+    },
+    "trp_cage.backbone.22": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2826320,
+      "byteLength": 122880
+    },
+    "trp_cage.final_embeddings": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 2949200,
+      "byteLength": 122880
+    },
+    "trp_cage.head.0": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3072080,
+      "byteLength": 122880
+    },
+    "trp_cage.head.1": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3194960,
+      "byteLength": 122880
+    },
+    "trp_cage.head.2": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3317840,
+      "byteLength": 122880
+    },
+    "trp_cage.head.3": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3440720,
+      "byteLength": 122880
+    },
+    "trp_cage.head.4": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3563600,
+      "byteLength": 122880
+    },
+    "trp_cage.head.5": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3686480,
+      "byteLength": 122880
+    },
+    "trp_cage.head.6": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3809360,
+      "byteLength": 122880
+    },
+    "trp_cage.head.7": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 3932240,
+      "byteLength": 122880
+    },
+    "trp_cage.head.8": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 4055120,
+      "byteLength": 122880
+    },
+    "trp_cage.head.9": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 4178000,
+      "byteLength": 122880
+    },
+    "trp_cage.head.10": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 4300880,
+      "byteLength": 122880
+    },
+    "trp_cage.head.11": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        20,
+        1536
+      ],
+      "byteOffset": 4423760,
+      "byteLength": 122880
+    },
+    "trp_cage.logits": {
+      "dtype": "F32",
+      "shape": [
+        20
+      ],
+      "byteOffset": 4546640,
+      "byteLength": 80
+    },
+    "trp_cage.probs": {
+      "dtype": "F32",
+      "shape": [
+        20
+      ],
+      "byteOffset": 4546720,
+      "byteLength": 80
+    },
+    "ubiquitin.tokens": {
+      "dtype": "I32",
+      "shape": [
+        1,
+        76
+      ],
+      "byteOffset": 4546800,
+      "byteLength": 304
+    },
+    "ubiquitin.embedding": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 4547104,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.0": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 5014048,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.1": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 5480992,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.2": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 5947936,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.3": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 6414880,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.4": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 6881824,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.5": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 7348768,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.6": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 7815712,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.7": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 8282656,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.8": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 8749600,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.9": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 9216544,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.10": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 9683488,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.11": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 10150432,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.12": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 10617376,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.13": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 11084320,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.14": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 11551264,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.15": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 12018208,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.16": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 12485152,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.17": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 12952096,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.18": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 13419040,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.19": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 13885984,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.20": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 14352928,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.21": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 14819872,
+      "byteLength": 466944
+    },
+    "ubiquitin.backbone.22": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 15286816,
+      "byteLength": 466944
+    },
+    "ubiquitin.final_embeddings": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 15753760,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.0": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 16220704,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.1": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 16687648,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.2": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 17154592,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.3": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 17621536,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.4": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 18088480,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.5": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 18555424,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.6": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 19022368,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.7": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 19489312,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.8": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 19956256,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.9": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 20423200,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.10": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 20890144,
+      "byteLength": 466944
+    },
+    "ubiquitin.head.11": {
+      "dtype": "F32",
+      "shape": [
+        1,
+        76,
+        1536
+      ],
+      "byteOffset": 21357088,
+      "byteLength": 466944
+    },
+    "ubiquitin.logits": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 21824032,
+      "byteLength": 304
+    },
+    "ubiquitin.probs": {
+      "dtype": "F32",
+      "shape": [
+        76
+      ],
+      "byteOffset": 21824336,
+      "byteLength": 304
+    }
+  },
+  "torch_version": "2.15.0+cu132",
+  "device": "cpu",
+  "dtype": "float32"
+}

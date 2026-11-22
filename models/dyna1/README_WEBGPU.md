@@ -1,6 +1,6 @@
 # dyna1-webgpu
 
-Browser-native, sequence-only inference for the primary published [Dyna-1](https://github.com/WaymentSteeleLab/Dyna-1) model, using the official [gelnesr/Dyna-1](https://huggingface.co/gelnesr/Dyna-1) classifier and [ESM-3 small](https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1) backbone. This port follows the sharded safetensors, dependency-free runtime, and upstream intermediate-trace validation approach of `genie3-webgpu`.
+Browser-native inference for the primary published [Dyna-1](https://github.com/WaymentSteeleLab/Dyna-1) model, supporting **sequence-only**, **sequence + structure** (`dyna1.py --pdb ... --use_pdb_seq`), and **structure-only** (`dyna1.py --pdb ...`) modes using the official [gelnesr/Dyna-1](https://huggingface.co/gelnesr/Dyna-1) classifier, [ESM-3 small](https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1) backbone, and ESM-3 VQ-VAE `StructureTokenEncoder`. This port follows the sharded safetensors, dependency-free runtime, and upstream intermediate-trace validation approach of `genie3-webgpu`.
 
 ## Exact inference architecture
 
@@ -8,17 +8,18 @@ Upstream commit: `814a453fd85305536b919901e41062b91d5c9d86`. The primary model i
 
 | Component | Inference behavior |
 | --- | --- |
-| Input | Canonical amino acids; ESM vocabulary; **no BOS/EOS**, matching `dyna1.py` |
-| Input encoder | 1536 channels; sequence embedding plus constant missing structure/annotation tracks and pLDDT RBF projections |
+| Input | Canonical amino acids (ESM vocabulary, **no BOS/EOS**, matching `dyna1.py`) and/or backbone 3D `(N, CA, C)` Å coordinates or discrete ESM-3 structure tokens (`0..4095`, `4096` mask) |
+| Structure tokenizer *(optional, lazy-loaded)* | ESM-3 VQ-VAE `StructureTokenEncoder` (`esm3_structure_encoder_v0.pth`): Gram-Schmidt local frames (`eps=1e-10`), `K=16` CA kNN graph, relative positional embedding (`bins=32`), 2 geometric attention + SwiGLU transformer blocks (`d_model=1024`, `v_heads=128`, `ffn=4096`, chunked by `192` residues to stay under the 128 MB default WebGPU storage buffer limit), `pre_vq_proj` (`1024 → 128`), and 4096-entry Euclidean codebook argmin |
+| Input encoder | 1536 channels; base `embedding.weight[seqTok]` holds `seq_embed[seqTok] + struct_embed[4096] + const_other_missing_tracks`; structure-conditioned modes add `structure_tokens_embed_delta[structTok] = struct_embed[structTok] - struct_embed[4096]`; structure-only mode uses `seqTok = 32` (`<mask>`), matching `ESM3.forward(sequence_tokens=None, structure_tokens=...)` |
 | Backbone | First **23 of 48** ESM-3 blocks, 24 attention heads × 64 channels; full-channel Q/K LayerNorm followed by split-half RoPE; pre-LN attention; SwiGLU with width 4096 |
 | Residual scaling | Divide each backbone attention/FFN update by `sqrt(48/36)`, retaining the original 48-layer scaling |
-| Geometry | Missing coordinates yield an all-false frame mask; block 0 geometric update is exactly zero and omitted |
+| Geometry | Upstream `ESM_model.forward` does not pass `structure_coords` to `ESM3.forward`, so block-0 `geom_attn` has an all-false frame mask and remains zero |
 | Classifier input | `hidden_states[22]`, **before** ESM-3 final LayerNorm; later ESM blocks/output heads do not influence the prediction |
 | Classifier | Outer LayerNorm (`eps=1e-12`), 12 pre-LN transformer encoder layers, 6 heads × 256 channels, ReLU FFN width 2048, outer LayerNorm, linear `1536 → 1` |
 | Inner normalization | `eps=1e-5`; dropout disabled |
 | Probability | `sigmoid(logit - log(0.05/0.95))`, exactly the upstream prior correction |
 
-The exported inference graph has **840,417,793 parameters**. Missing-track embeddings are precomputed in the upstream FP32 addition order. The full original 48-block upstream forward and this specialized FP32 bundle agree **bit for bit** on both oracle inputs. Outputs are exchange probabilities and classifier logits; logits are not calibrated physical exchange rates in inverse seconds. Structure-conditioned inference is outside this sequence-only API.
+The main exported inference graph has **840,417,793 parameters**, and the optional additive `structure_encoder/` bundle adds **36,939,648 parameters** (`87.73 MB` across 6 shards `<= 25 MB`, weight relRMS `4.06e-10` vs original BF16 `esm3_structure_encoder_v0.pth`, giving **100% exact discrete structure tokens** across all tested proteins). Existing `int8/`, `fp16/`, and `fp32/` bundles remain 100% untouched and backwards-compatible; sequence-only calls incur zero extra downloads or compute. Outputs are exchange probabilities and classifier logits; logits are not calibrated physical exchange rates in inverse seconds.
 
 ## Export and reproducibility
 
@@ -187,4 +188,67 @@ Measured on **NVIDIA GB10**, driver **580.159.03**, Chromium **153.0.8010.12** (
 
 Warm timings are medians of three complete `predict()` calls per sequence, after the traced first call. They include JavaScript command preparation and GPU readback, exclude weight loading and initial pipeline compilation, and were measured without an exclusive GPU reservation. Cold and individual warm measurements, per-tensor maxAbs/relRMS/correlation, feature flags, and live weight-buffer bytes are recorded in [`fixtures/gpu_metrics.json`](fixtures/gpu_metrics.json). INT8 live weight buffers occupy about 844 MB, FP16 mixed 1.745 GB, and FP32 3.362 GB; scratch allocations are additional and reused between blocks.
 
-The final `npm test` suite covers six tests: browser caches/Worker imports; CPU oracle parity; tokenizer validation; the standalone demo; full hardware GPU parity/latency/lifecycle; and shader compilation. The demo test executes a real INT8 prediction and verifies plotted residue results and model release. All six passed with no skips.
+The final `npm test` suite covers nine tests: browser caches/Worker imports; CPU sequence-only oracle parity; CPU structure-conditioned parity; tokenizer and structure input validation; the standalone demo; full hardware GPU sequence-only parity/latency/lifecycle; full hardware GPU structure-encoder + `seq+struct` + `struct-only` parity/latency/chunking/lazy-load; and shader compilation (22 WGSL variants). All nine pass with no skips.
+
+## Structure-conditioned inference (`seq+struct` & `struct-only`)
+
+The additive `structure_encoder/` bundle (`87,731,896` bytes across 6 safetensors shards `<= 25 MB`, weight relRMS `4.06e-10`) is lazily fetched only when `structureCoords`, `backbone3Coords`, or `structureTokens` are passed to `predict()` or `encodeStructure()`, or eagerly via `await engine.preloadStructureEncoder()`.
+
+```js
+import { createDyna1Engine } from 'dyna1-webgpu/webgpu';
+
+const engine = await createDyna1Engine({
+  baseUrl: 'https://huggingface.co/ramithuh/dyna1-webgpu/resolve/main',
+  precision: 'fp16', // or 'int8' / 'fp32'
+  cache: 'cache',
+  onProgress: ({ phase, loaded, total }) => {
+    // phase is 'weights' during main load, 'structure-encoder' on lazy structure load
+  },
+});
+
+// 1. Sequence + structure (matches `dyna1.py --pdb ... --use_pdb_seq`)
+// structureCoords accepts flat Float32Array(L*9) [(N,CA,C)x(x,y,z) Å], { n, ca, c }, or [L][3][3]
+// Missing backbone atoms may be NaN / Infinity / null (masked identically to ESM-3).
+const both = await engine.predict(sequence, { structureCoords });
+console.log(both.mode, both.structureTokens, both.probs, both.logits);
+
+// 2. Structure-only (matches `dyna1.py --pdb ...` without --use_pdb_seq)
+const structOnly = await engine.predict(null, { structureCoords });
+
+// 3. Standalone structure tokenization or reusing precomputed tokens
+const { structureTokens } = await engine.encodeStructure(structureCoords);
+const reused = await engine.predict(sequence, { structureTokens, mode: 'seq+struct' });
+```
+
+### Verified structure-conditioned hardware results (NVIDIA GB10 WebGPU)
+
+Discrete `StructureTokenEncoder` tokens match PyTorch upstream **386/386 (100.0%)** across Ubiquitin (`1UBQ`, 76 aa), Cyclophilin A (`1OCA`, 165 aa), YjbJ rigid control (`1RYK`, 69 aa), and `1UBQ_missing` (3 residues with `NaN` backbone atoms), plus **228/228 (100.0%)** on a multi-chunk `L=228` (`>192` chunk boundary) test. `pre_vq` relRMS is `4.6e-7 – 5.0e-7`.
+
+| Protein | Upstream `seq-only` mean (min–max) | Upstream `seq+struct` mean (min–max) | Upstream `struct-only` mean (min–max) |
+| --- | ---: | ---: | ---: |
+| `1UBQ` (76 aa) | `0.5526` (`0.4041–0.8089`) | `0.2347` (`0.1081–0.5990`) | `0.2052` (`0.1098–0.6156`) |
+| `1OCA` (165 aa) | `0.6626` (`0.4914–0.8501`) | `0.5350` (`0.2444–0.8817`) | `0.4724` (`0.2518–0.6946`) |
+| `1RYK` (69 aa) | `0.5593` (`0.3590–0.7166`) | `0.2167` (`0.0842–0.6661`) | `0.2397` (`0.1123–0.5551`) |
+
+| GPU mode | Protein | Tokens exact | `seq+struct` prob relRMS (`r`) | `struct-only` prob relRMS (`r`) | Encode ms | Total warm ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| `fp32-core` | `1UBQ` | 76/76 | `2.33e-6` (`1.000000`) | `1.89e-6` (`1.000000`) | 82.3 | 194.0 |
+| `fp32-core` | `1OCA` | 165/165 | `6.98e-7` (`1.000000`) | `9.01e-7` (`1.000000`) | 172.7 | 404.1 |
+| `fp32-core` | `1RYK` | 69/69 | `1.74e-6` (`1.000000`) | `1.67e-6` (`1.000000`) | 74.2 | 183.7 |
+| `fp32-core` | `1UBQ_missing` | 76/76 | `1.32e-6` (`1.000000`) | `1.51e-6` (`1.000000`) | 82.7 | 191.8 |
+| `fp16-native` | `1UBQ` | 76/76 | `2.57e-4` (`1.000000`) | `4.00e-4` (`1.000000`) | 83.8 | 167.0 |
+| `fp16-native` | `1OCA` | 165/165 | `6.61e-5` (`1.000000`) | `1.72e-4` (`1.000000`) | 178.2 | 350.1 |
+| `fp16-native` | `1RYK` | 69/69 | `4.91e-4` (`1.000000`) | `2.17e-4` (`1.000000`) | 77.7 | 159.6 |
+| `fp16-native` | `1UBQ_missing` | 76/76 | `2.29e-4` (`1.000000`) | `2.17e-4` (`1.000000`) | 84.1 | 167.3 |
+| `int8-core` | `1UBQ` | 76/76 | `9.96e-2` (`0.979235`) | `6.93e-2` (`0.989429`) | 81.9 | 167.7 |
+| `int8-core` | `1OCA` | 165/165 | `1.28e-2` (`0.999632`) | `2.15e-2` (`0.993291`) | 175.8 | 344.4 |
+| `int8-core` | `1RYK` | 69/69 | `3.02e-2` (`0.998203`) | `2.81e-2` (`0.997810`) | 75.7 | 153.8 |
+| `int8-core` | `1UBQ_missing` | 76/76 | `7.82e-3` (`0.999879`) | `8.51e-3` (`0.999961`) | 81.6 | 161.5 |
+
+Full per-mode metrics are saved in [`fixtures/gpu_struct_metrics.json`](fixtures/gpu_struct_metrics.json) and [`fixtures/struct_precision_metrics.json`](fixtures/struct_precision_metrics.json). To re-export the structure encoder bundle and oracle locally:
+
+```bash
+.venv/bin/python tools/download_weights.py
+.venv/bin/python tools/export_structure_encoder.py
+.venv/bin/python tools/dump_struct_oracle.py
+```

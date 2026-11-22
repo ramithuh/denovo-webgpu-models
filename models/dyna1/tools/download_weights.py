@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 FILES=[
  ('dyna1.pt','https://huggingface.co/gelnesr/Dyna-1/resolve/main/dyna1.pt','f6531b77aaa2593932adb4731278b17c26aabad7a8ffff4da92e8805c558735e'),
  ('esm3_sm_open_v1.pth','https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1/resolve/main/data/weights/esm3_sm_open_v1.pth','5ead5a135c658068db6a4f1b933e72d6110992c4668822e1c0e2dcc53e38acd9'),
+ ('esm3_structure_encoder_v0.pth','https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1/resolve/main/data/weights/esm3_structure_encoder_v0.pth','467acbaee703ba3ccde6e75241a912a316952e5ff071355f85c1d33c68704f40'),
 ]
 def digest(p):
  h=hashlib.sha256()

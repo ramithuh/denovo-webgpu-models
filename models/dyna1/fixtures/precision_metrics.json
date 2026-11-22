@@ -1,0 +1,140 @@
+{
+  "fp32": {
+    "trp_cage": {
+      "embedding": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      },
+      "final_embeddings": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      },
+      "logits": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      },
+      "probs": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      }
+    },
+    "ubiquitin": {
+      "embedding": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      },
+      "final_embeddings": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      },
+      "logits": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 0.9999999999999998
+      },
+      "probs": {
+        "rel_rms": 0.0,
+        "max_abs": 0.0,
+        "correlation": 1.0
+      }
+    }
+  },
+  "fp16": {
+    "trp_cage": {
+      "embedding": {
+        "rel_rms": 0.00019201694804802985,
+        "max_abs": 0.0036792755126953125,
+        "correlation": 0.9999999822018323
+      },
+      "final_embeddings": {
+        "rel_rms": 1.7560627529125026e-05,
+        "max_abs": 0.01416015625,
+        "correlation": 0.9999999998478588
+      },
+      "logits": {
+        "rel_rms": 0.00012262124964454498,
+        "max_abs": 0.0003209114074707031,
+        "correlation": 0.9999999973051796
+      },
+      "probs": {
+        "rel_rms": 7.188837676253648e-05,
+        "max_abs": 7.653236389160156e-05,
+        "correlation": 0.9999999974444196
+      }
+    },
+    "ubiquitin": {
+      "embedding": {
+        "rel_rms": 0.00019822933015064585,
+        "max_abs": 0.0036792755126953125,
+        "correlation": 0.9999999812677249
+      },
+      "final_embeddings": {
+        "rel_rms": 1.7537966862874104e-05,
+        "max_abs": 0.01397705078125,
+        "correlation": 0.9999999998495228
+      },
+      "logits": {
+        "rel_rms": 0.00012635243834611517,
+        "max_abs": 0.0004367828369140625,
+        "correlation": 0.9999999925563312
+      },
+      "probs": {
+        "rel_rms": 0.00015110183822444746,
+        "max_abs": 0.0001087188720703125,
+        "correlation": 0.9999999907640298
+      }
+    }
+  },
+  "int8": {
+    "trp_cage": {
+      "embedding": {
+        "rel_rms": 0.042542751920526506,
+        "max_abs": 0.06344321370124817,
+        "correlation": 0.999096717935694
+      },
+      "final_embeddings": {
+        "rel_rms": 0.004313557101677713,
+        "max_abs": 1.1884765625,
+        "correlation": 0.9999909902413681
+      },
+      "logits": {
+        "rel_rms": 0.005465309577929808,
+        "max_abs": 0.02034449577331543,
+        "correlation": 0.9999140530689719
+      },
+      "probs": {
+        "rel_rms": 0.003443774586153383,
+        "max_abs": 0.004842817783355713,
+        "correlation": 0.9999272776333944
+      }
+    },
+    "ubiquitin": {
+      "embedding": {
+        "rel_rms": 0.042382025833924926,
+        "max_abs": 0.06344321370124817,
+        "correlation": 0.9991027850829168
+      },
+      "final_embeddings": {
+        "rel_rms": 0.004234124534867035,
+        "max_abs": 2.28265380859375,
+        "correlation": 0.9999913539801097
+      },
+      "logits": {
+        "rel_rms": 0.005030704036354327,
+        "max_abs": 0.037630558013916016,
+        "correlation": 0.9995332885569466
+      },
+      "probs": {
+        "rel_rms": 0.005798685797162545,
+        "max_abs": 0.008754730224609375,
+        "correlation": 0.9995089279861414
+      }
+    }
+  }
+}
