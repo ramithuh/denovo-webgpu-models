@@ -46,7 +46,7 @@ export async function createGVPTransformerEngine({baseUrl,variant='antifold',pre
    const enc=await encode(ops,p,{},false,signal),tokens=new Int32Array(length+1);tokens[0]=33;const replayLogits=[];
    for(let i=0;i<length;i++){
     signal?.throwIfAborted();const logits=await decode(ops,enc,tokens.subarray(0,i+1),{},false,signal);
-    const sampled=await ops.elem([1,1],`var m=-3.402823e38;for(var j=0u;j<35u;j++){m=max(m,x0[${i*35}u+j]);}var sum=0.0;for(var j=0u;j<35u;j++){sum+=exp((x0[${i*35}u+j]-m)/${temperature});}var cumulative=0.0;var token=34u;for(var j=0u;j<35u;j++){cumulative+=exp((x0[${i*35}u+j]-m)/${temperature})/sum;if(${uniforms[i]}<cumulative){token=j;break;}}y[0]=f32(token);`,[logits]);
+    const sampled=await ops.elem([1,1],`var aa:array<u32,20>=array<u32,20>(${Array.from(CANONICAL_TOKENS,t=>t+'u').join(',')});var m=-3.402823e38;for(var j=0u;j<20u;j++){m=max(m,x0[${i*35}u+aa[j]]);}var sum=0.0;for(var j=0u;j<20u;j++){sum+=exp((x0[${i*35}u+aa[j]]-m)/${temperature});}var cumulative=0.0;var token=aa[19u];for(var j=0u;j<20u;j++){cumulative+=exp((x0[${i*35}u+aa[j]]-m)/${temperature})/sum;if(${uniforms[i]}<cumulative){token=aa[j];break;}}y[0]=f32(token);`,[logits]);
     const values=await ops.readMany({sampled,...(returnIntermediates?{logits}:{})});signal?.throwIfAborted();tokens[i+1]=fixed[i]===undefined?values.sampled[0]:typeof fixed[i]==='number'?fixed[i]:VOCAB.indexOf(fixed[i]);if(returnIntermediates)replayLogits.push(...values.logits.subarray(i*35,(i+1)*35));ops.keep([enc.x,enc.padding]);
    }
    return {tokens:tokens.slice(1),sequence:Array.from(tokens.slice(1),t=>VOCAB[t]).join(''),timingMs:performance.now()-started,...(returnIntermediates?{logits:Float32Array.from(replayLogits)}:{})};
