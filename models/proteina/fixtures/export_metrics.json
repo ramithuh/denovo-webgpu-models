@@ -1,0 +1,38 @@
+{
+  "fp32": {
+    "strict_model_reload": true,
+    "precision": "fp32",
+    "tensors": 490,
+    "parameters": 191102976,
+    "shards": 46,
+    "bytes": 764469552,
+    "max_shard_bytes": 23616944,
+    "roundtrip_max_abs": 0,
+    "weight_drift_relRMS": 0.0,
+    "weight_drift_max_abs": 0.0
+  },
+  "fp16": {
+    "strict_model_reload": true,
+    "precision": "fp16",
+    "tensors": 490,
+    "parameters": 191102976,
+    "shards": 16,
+    "bytes": 383506160,
+    "max_shard_bytes": 24846912,
+    "roundtrip_max_abs": 0,
+    "weight_drift_relRMS": 0.00010846394694398485,
+    "weight_drift_max_abs": 0.0002435445785522461
+  },
+  "int8": {
+    "strict_model_reload": true,
+    "precision": "int8",
+    "tensors": 490,
+    "parameters": 191102976,
+    "shards": 8,
+    "bytes": 194007924,
+    "max_shard_bytes": 24638320,
+    "roundtrip_max_abs": 0,
+    "weight_drift_relRMS": 0.003940688618321112,
+    "weight_drift_max_abs": 0.002371072769165039
+  }
+}

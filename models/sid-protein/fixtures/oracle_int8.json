@@ -1,0 +1,906 @@
+{
+  "commit": "dfef6a29d975451144e8b0449c12cbea28b4ae15",
+  "torch": "2.9.0+cpu",
+  "reference": "pinned upstream classes, CPU FP32 arithmetic; quantized weights decoded to FP32",
+  "cases": [
+    {
+      "name": "L32_T16",
+      "seed": 5,
+      "length": 32,
+      "steps": 16,
+      "noiseScale": 0.45,
+      "cathIndices": null,
+      "times": [
+        0.2920542359352112,
+        0.46911555528640747,
+        0.5972830057144165,
+        0.6980048418045044,
+        0.7735355496406555,
+        0.8282091617584229,
+        0.8711750507354736,
+        0.9033949375152588,
+        0.9267175197601318,
+        0.9450458884239197,
+        0.9587902426719666,
+        0.9687392115592957,
+        0.976557731628418,
+        0.9824207425117493,
+        0.9866647720336914,
+        0.9900000095367432
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L32_T16_noise.bin",
+        "shape": [
+          16,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "8d46afaff191db1f61c5ddcaeacee4c0215836a03ed3f38c95c7d19cb9ce658d"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L32_T16_input.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "7c14ec87eee821353816b6c277512460872fc2250f5438a10ac46fd6f1e2bb14"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L32_T16_forward.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "d9358c5030cd61ec6a9999bad058e5d5df0d49b15ac004602d946534ecafdeab"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L32_T16_trajectory.bin",
+        "shape": [
+          16,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "65e1fd285e117429d4559d0d57801cb956ff88a49befb85f778917580764ba53"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L32_T16_sampler_inputs.bin",
+        "shape": [
+          16,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "fa3e853eea858753f2a7b0ac6003fbface662137ad5af6fba60025b36d5c0128"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L32_T16_cond_factory.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f07a9ea5c9632a6a13592e7a47f8ad494a9e8ccbb768d1308f37ad2865de42da"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L32_T16_transition_c_2.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f678dbed1a1733ab5179fee3421ffcd0393efd153eee8696a3eff9b68f603cd7"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L32_T16_init_repr_factory.bin",
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "byteLength": 98304,
+          "sha256": "fc977d9a0d01668444a3ffdd720aa9fcc4bd7e56d34716770258ec85bd1f7ff9"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L32_T16_pair_repr_builder.bin",
+          "shape": [
+            1,
+            32,
+            32,
+            512
+          ],
+          "byteLength": 2097152,
+          "sha256": "03cd6ea1c49c6b2eb31ae48750b3c57893aed17dba90f7d10b8b9e29305af505"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L32_T16_transformer_layers.0.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "33d232360382d6e0182d6d90740369a2468c5486d5bdf35c0d94c80120bef3a2"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L32_T16_transformer_layers.14.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "1a39bd038b129a47306a92ffe2bb46f789f2730af2f4d30b7fcc3f6b752c1f9b"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L32_T16_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "byteLength": 384,
+          "sha256": "43af76531d2bc2a95f2e3575b6aaf8406d7f1132493fd40c2da35800c435764d"
+        }
+      },
+      "seconds": 3.7760298252105713,
+      "quantizationDrift": {
+        "relRms": 0.22975540206348863,
+        "maxAbs": 0.35299456119537354
+      }
+    },
+    {
+      "name": "L64_T16",
+      "seed": 5,
+      "length": 64,
+      "steps": 16,
+      "noiseScale": 0.45,
+      "cathIndices": null,
+      "times": [
+        0.2920542359352112,
+        0.46911555528640747,
+        0.5972830057144165,
+        0.6980048418045044,
+        0.7735355496406555,
+        0.8282091617584229,
+        0.8711750507354736,
+        0.9033949375152588,
+        0.9267175197601318,
+        0.9450458884239197,
+        0.9587902426719666,
+        0.9687392115592957,
+        0.976557731628418,
+        0.9824207425117493,
+        0.9866647720336914,
+        0.9900000095367432
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L64_T16_noise.bin",
+        "shape": [
+          16,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 12288,
+        "sha256": "e2d548fd531bc122d05f9b43dbe9410fb50b9a92a3104ace1c710d38ba2e1317"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L64_T16_input.bin",
+        "shape": [
+          1,
+          64,
+          3
+        ],
+        "byteLength": 768,
+        "sha256": "f85b1d0d37eea44bf81032bde334a8a40fc76caeba2e91e057219804b8dd259c"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L64_T16_forward.bin",
+        "shape": [
+          1,
+          64,
+          3
+        ],
+        "byteLength": 768,
+        "sha256": "d3044547004c768d3373e01fe2e93a2b3520d65fb4645946f16138059b5f64ff"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L64_T16_trajectory.bin",
+        "shape": [
+          16,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 12288,
+        "sha256": "bef39035da69ea72a0929de0ba757b8747dc584f242fdaa56dbddba3e13494cc"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L64_T16_sampler_inputs.bin",
+        "shape": [
+          16,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 12288,
+        "sha256": "83249130fa6477a8555a8f8b7852848919042a1f1fb60102a2cb809085e3e9a2"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L64_T16_cond_factory.bin",
+          "shape": [
+            1,
+            64,
+            512
+          ],
+          "byteLength": 131072,
+          "sha256": "dbf0be6478b922bd5cd802b81dec5e57b5965c165fc0b7f6f941140f5a646ce3"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L64_T16_transition_c_2.bin",
+          "shape": [
+            1,
+            64,
+            512
+          ],
+          "byteLength": 131072,
+          "sha256": "9b1c081c4d0d76c2eee17146c967604465071f632f3708c0e0d2cf094edc15e7"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L64_T16_init_repr_factory.bin",
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "byteLength": 196608,
+          "sha256": "2ff0dd645808466ae422a686f116b5e8357a540396f10bf6da00f5208acacc00"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L64_T16_pair_repr_builder.bin",
+          "shape": [
+            1,
+            64,
+            64,
+            512
+          ],
+          "byteLength": 8388608,
+          "sha256": "75e7088027938e0df3376e117c9fda9015a90cd503e43b29b8d6e7ae47ce0be3"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L64_T16_transformer_layers.0.bin",
+          "shape": [
+            1,
+            74,
+            768
+          ],
+          "byteLength": 227328,
+          "sha256": "d756fa832e5fc275b60b865acaddcde6deefe09c491c844afaa6c2d20fe07e39"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L64_T16_transformer_layers.14.bin",
+          "shape": [
+            1,
+            74,
+            768
+          ],
+          "byteLength": 227328,
+          "sha256": "2752a6a6a1d75285f88d0bb2d766b1dc14f238efcc2150f0ac4dd716562a2e91"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L64_T16_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "byteLength": 768,
+          "sha256": "35217b999cfc6cb03ba56f914c5f620d48d628c50b335ac6951b562f1c735420"
+        }
+      },
+      "seconds": 5.139380216598511,
+      "quantizationDrift": {
+        "relRms": 0.004407539983257963,
+        "maxAbs": 0.007117152214050293
+      }
+    },
+    {
+      "name": "L32_T4",
+      "seed": 5,
+      "length": 32,
+      "steps": 4,
+      "noiseScale": 0.45,
+      "cathIndices": null,
+      "times": [
+        0.2920542359352112,
+        0.8282091617584229,
+        0.9587902426719666,
+        0.9900000095367432
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L32_T4_noise.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "fb24168b0e9f8c63b4285a11c9df026500fb1c14f4f7aced13257ae2b7283cfc"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L32_T4_input.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "7c14ec87eee821353816b6c277512460872fc2250f5438a10ac46fd6f1e2bb14"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L32_T4_forward.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "d9358c5030cd61ec6a9999bad058e5d5df0d49b15ac004602d946534ecafdeab"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L32_T4_trajectory.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "8e0d1019457dedd4b9ac6f1484dc77dbc82d8b212c3780b0e4b70d9113810549"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L32_T4_sampler_inputs.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "1b021372e9025ad06688e769d3a3d9d7ad476da899f94c4e56a525ddd9227fb2"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L32_T4_cond_factory.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f07a9ea5c9632a6a13592e7a47f8ad494a9e8ccbb768d1308f37ad2865de42da"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L32_T4_transition_c_2.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f678dbed1a1733ab5179fee3421ffcd0393efd153eee8696a3eff9b68f603cd7"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L32_T4_init_repr_factory.bin",
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "byteLength": 98304,
+          "sha256": "fc977d9a0d01668444a3ffdd720aa9fcc4bd7e56d34716770258ec85bd1f7ff9"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L32_T4_pair_repr_builder.bin",
+          "shape": [
+            1,
+            32,
+            32,
+            512
+          ],
+          "byteLength": 2097152,
+          "sha256": "03cd6ea1c49c6b2eb31ae48750b3c57893aed17dba90f7d10b8b9e29305af505"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L32_T4_transformer_layers.0.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "33d232360382d6e0182d6d90740369a2468c5486d5bdf35c0d94c80120bef3a2"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L32_T4_transformer_layers.14.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "1a39bd038b129a47306a92ffe2bb46f789f2730af2f4d30b7fcc3f6b752c1f9b"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L32_T4_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "byteLength": 384,
+          "sha256": "43af76531d2bc2a95f2e3575b6aaf8406d7f1132493fd40c2da35800c435764d"
+        }
+      },
+      "seconds": 0.9770941734313965,
+      "quantizationDrift": {
+        "relRms": 0.013025196207227382,
+        "maxAbs": 0.01675918698310852
+      }
+    },
+    {
+      "name": "L64_T8",
+      "seed": 5,
+      "length": 64,
+      "steps": 8,
+      "noiseScale": 0.45,
+      "cathIndices": null,
+      "times": [
+        0.2920542359352112,
+        0.615408182144165,
+        0.7910704016685486,
+        0.8864989280700684,
+        0.9376265406608582,
+        0.9661155939102173,
+        0.9815922975540161,
+        0.9900000095367432
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L64_T8_noise.bin",
+        "shape": [
+          8,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "8d46afaff191db1f61c5ddcaeacee4c0215836a03ed3f38c95c7d19cb9ce658d"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L64_T8_input.bin",
+        "shape": [
+          1,
+          64,
+          3
+        ],
+        "byteLength": 768,
+        "sha256": "f85b1d0d37eea44bf81032bde334a8a40fc76caeba2e91e057219804b8dd259c"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L64_T8_forward.bin",
+        "shape": [
+          1,
+          64,
+          3
+        ],
+        "byteLength": 768,
+        "sha256": "d3044547004c768d3373e01fe2e93a2b3520d65fb4645946f16138059b5f64ff"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L64_T8_trajectory.bin",
+        "shape": [
+          8,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "1029421724900f39b11c9809cae244dd815831df1d1b04b51ccce397bcba6329"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L64_T8_sampler_inputs.bin",
+        "shape": [
+          8,
+          1,
+          64,
+          3
+        ],
+        "byteLength": 6144,
+        "sha256": "38904fe72de4ad4f9e0db4fb96303b3f8c17c078cee16cd71cda00590775b320"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L64_T8_cond_factory.bin",
+          "shape": [
+            1,
+            64,
+            512
+          ],
+          "byteLength": 131072,
+          "sha256": "dbf0be6478b922bd5cd802b81dec5e57b5965c165fc0b7f6f941140f5a646ce3"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L64_T8_transition_c_2.bin",
+          "shape": [
+            1,
+            64,
+            512
+          ],
+          "byteLength": 131072,
+          "sha256": "9b1c081c4d0d76c2eee17146c967604465071f632f3708c0e0d2cf094edc15e7"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L64_T8_init_repr_factory.bin",
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "byteLength": 196608,
+          "sha256": "2ff0dd645808466ae422a686f116b5e8357a540396f10bf6da00f5208acacc00"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L64_T8_pair_repr_builder.bin",
+          "shape": [
+            1,
+            64,
+            64,
+            512
+          ],
+          "byteLength": 8388608,
+          "sha256": "75e7088027938e0df3376e117c9fda9015a90cd503e43b29b8d6e7ae47ce0be3"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L64_T8_transformer_layers.0.bin",
+          "shape": [
+            1,
+            74,
+            768
+          ],
+          "byteLength": 227328,
+          "sha256": "d756fa832e5fc275b60b865acaddcde6deefe09c491c844afaa6c2d20fe07e39"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L64_T8_transformer_layers.14.bin",
+          "shape": [
+            1,
+            74,
+            768
+          ],
+          "byteLength": 227328,
+          "sha256": "2752a6a6a1d75285f88d0bb2d766b1dc14f238efcc2150f0ac4dd716562a2e91"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L64_T8_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "byteLength": 768,
+          "sha256": "35217b999cfc6cb03ba56f914c5f620d48d628c50b335ac6951b562f1c735420"
+        }
+      },
+      "seconds": 2.606340169906616,
+      "quantizationDrift": {
+        "relRms": 0.007455115888673067,
+        "maxAbs": 0.021014699712395668
+      }
+    },
+    {
+      "name": "L32_T1",
+      "seed": 5,
+      "length": 32,
+      "steps": 1,
+      "noiseScale": 0.45,
+      "cathIndices": null,
+      "times": [
+        0.3700000047683716
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L32_T1_noise.bin",
+        "shape": [
+          1,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "e7f46a7bf08661a488fa95d29fe2cd612fd1fc75f731041cf07f45b948635bcd"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L32_T1_input.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "7c14ec87eee821353816b6c277512460872fc2250f5438a10ac46fd6f1e2bb14"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L32_T1_forward.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "d9358c5030cd61ec6a9999bad058e5d5df0d49b15ac004602d946534ecafdeab"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L32_T1_trajectory.bin",
+        "shape": [
+          1,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "d8f3e39d25164d32a7460a4169b114cff5b729f4af6e44b6206985941eeeb9ca"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L32_T1_sampler_inputs.bin",
+        "shape": [
+          1,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "ccd25f888e67368e3c61b484d1722d5db37072ce73c040c3b98e830f58a83f55"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L32_T1_cond_factory.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f07a9ea5c9632a6a13592e7a47f8ad494a9e8ccbb768d1308f37ad2865de42da"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L32_T1_transition_c_2.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "f678dbed1a1733ab5179fee3421ffcd0393efd153eee8696a3eff9b68f603cd7"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L32_T1_init_repr_factory.bin",
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "byteLength": 98304,
+          "sha256": "fc977d9a0d01668444a3ffdd720aa9fcc4bd7e56d34716770258ec85bd1f7ff9"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L32_T1_pair_repr_builder.bin",
+          "shape": [
+            1,
+            32,
+            32,
+            512
+          ],
+          "byteLength": 2097152,
+          "sha256": "03cd6ea1c49c6b2eb31ae48750b3c57893aed17dba90f7d10b8b9e29305af505"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L32_T1_transformer_layers.0.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "33d232360382d6e0182d6d90740369a2468c5486d5bdf35c0d94c80120bef3a2"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L32_T1_transformer_layers.14.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "1a39bd038b129a47306a92ffe2bb46f789f2730af2f4d30b7fcc3f6b752c1f9b"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L32_T1_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "byteLength": 384,
+          "sha256": "43af76531d2bc2a95f2e3575b6aaf8406d7f1132493fd40c2da35800c435764d"
+        }
+      },
+      "seconds": 0.2437596321105957,
+      "quantizationDrift": {
+        "relRms": 0.009190949940923619,
+        "maxAbs": 0.006498903036117554
+      }
+    },
+    {
+      "name": "L32_T4_cath",
+      "seed": 5,
+      "length": 32,
+      "steps": 4,
+      "noiseScale": 0.3,
+      "cathIndices": [
+        0,
+        0,
+        0
+      ],
+      "times": [
+        0.2920542359352112,
+        0.8282091617584229,
+        0.9587902426719666,
+        0.9900000095367432
+      ],
+      "noise": {
+        "file": ".cache/fixtures/L32_T4_cath_noise.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "fb24168b0e9f8c63b4285a11c9df026500fb1c14f4f7aced13257ae2b7283cfc"
+      },
+      "forwardInput": {
+        "file": ".cache/fixtures/L32_T4_cath_input.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "7c14ec87eee821353816b6c277512460872fc2250f5438a10ac46fd6f1e2bb14"
+      },
+      "forward": {
+        "file": ".cache/fixtures/int8_L32_T4_cath_forward.bin",
+        "shape": [
+          1,
+          32,
+          3
+        ],
+        "byteLength": 384,
+        "sha256": "5248f508a2281ad6584fcd94f0e4a27ae6bd30da09a427fa2d4abb50923eae64"
+      },
+      "trajectory": {
+        "file": ".cache/fixtures/int8_L32_T4_cath_trajectory.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "ecabbe76284325641a785b6f0f6b2c3c4e78a1845ca4c2d88bb2dca0c7178c43"
+      },
+      "samplerInputs": {
+        "file": ".cache/fixtures/int8_L32_T4_cath_sampler_inputs.bin",
+        "shape": [
+          4,
+          1,
+          32,
+          3
+        ],
+        "byteLength": 1536,
+        "sha256": "b4e681fefaddd9e68c64005cf992d2914fff952d29796f294edd3a15eedaef0d"
+      },
+      "traces": {
+        "cond_factory": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_cond_factory.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "516a5a8c4f749a761dc892515afcd789fbb85c5e1eb7928627dbee730a911ced"
+        },
+        "transition_c_2": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_transition_c_2.bin",
+          "shape": [
+            1,
+            32,
+            512
+          ],
+          "byteLength": 65536,
+          "sha256": "7f275ebd4a7b9fde61e9614a00a665aa8ac44d98a36e53930664306c70cedbb4"
+        },
+        "init_repr_factory": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_init_repr_factory.bin",
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "byteLength": 98304,
+          "sha256": "fc977d9a0d01668444a3ffdd720aa9fcc4bd7e56d34716770258ec85bd1f7ff9"
+        },
+        "pair_repr_builder": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_pair_repr_builder.bin",
+          "shape": [
+            1,
+            32,
+            32,
+            512
+          ],
+          "byteLength": 2097152,
+          "sha256": "03cd6ea1c49c6b2eb31ae48750b3c57893aed17dba90f7d10b8b9e29305af505"
+        },
+        "transformer_layers.0": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_transformer_layers.0.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "f1c94ba4803a576c57864bccb6ba413c7aa7108ed086a672f1b25efca9ec59c6"
+        },
+        "transformer_layers.14": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_transformer_layers.14.bin",
+          "shape": [
+            1,
+            42,
+            768
+          ],
+          "byteLength": 129024,
+          "sha256": "f5cb01da920bf5c7f04239a4329ed7b31aaf34b469b5c56cc6a913cacf4b341a"
+        },
+        "coors_3d_decoder": {
+          "file": ".cache/fixtures/int8_L32_T4_cath_coors_3d_decoder.bin",
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "byteLength": 384,
+          "sha256": "9ecb3033e804c1faba8d0f320614b48e69cb6693069c010a531c1bfbedd68ec0"
+        }
+      },
+      "seconds": 0.9688153266906738,
+      "quantizationDrift": {
+        "relRms": 0.019077964703630677,
+        "maxAbs": 0.022479623556137085
+      }
+    }
+  ]
+}

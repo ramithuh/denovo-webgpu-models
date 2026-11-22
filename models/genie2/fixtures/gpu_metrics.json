@@ -1,0 +1,569 @@
+{
+  "ok": true,
+  "reference": "unmodified pinned PyTorch",
+  "threshold": 0.0001,
+  "adapterInfo": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "records": [
+    {
+      "case": "fp32_unconditional_L24_T2",
+      "final": {
+        "relRms": 5.07154855682368e-7,
+        "maxAbs": 0.0000019073486328125,
+        "correlation": 0.9999999999998738
+      },
+      "trajectory": [
+        {
+          "relRms": 5.330224661956704e-7,
+          "maxAbs": 0.0000025033950805664062,
+          "correlation": 0.9999999999998553
+        },
+        {
+          "relRms": 5.07154855682368e-7,
+          "maxAbs": 0.0000019073486328125,
+          "correlation": 0.9999999999998738
+        }
+      ],
+      "elapsedMs": 210.80000019073486,
+      "loadMs": 483.69999980926514,
+      "repeatTiming": {
+        "firstMeasuredMs": 89.60000038146973,
+        "repeatMs": 92.69999980926514,
+        "prewarmed": true
+      }
+    },
+    {
+      "case": "fp32_single_motif_L24_T2",
+      "final": {
+        "relRms": 5.369123500242835e-7,
+        "maxAbs": 0.0000016689300537109375,
+        "correlation": 0.9999999999998683
+      },
+      "trajectory": [
+        {
+          "relRms": 6.439682977530737e-7,
+          "maxAbs": 0.0000019669532775878906,
+          "correlation": 0.9999999999997938
+        },
+        {
+          "relRms": 5.369123500242835e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999998683
+        }
+      ],
+      "elapsedMs": 250.69999980926514,
+      "loadMs": 483.69999980926514
+    },
+    {
+      "case": "fp32_multi_motif_L24_T2",
+      "final": {
+        "relRms": 6.789644325818405e-7,
+        "maxAbs": 0.0000029206275939941406,
+        "correlation": 0.999999999999746
+      },
+      "trajectory": [
+        {
+          "relRms": 6.335343212529433e-7,
+          "maxAbs": 0.0000022649765014648438,
+          "correlation": 0.9999999999997811
+        },
+        {
+          "relRms": 6.789644325818405e-7,
+          "maxAbs": 0.0000029206275939941406,
+          "correlation": 0.999999999999746
+        }
+      ],
+      "elapsedMs": 188.0999994277954,
+      "loadMs": 483.69999980926514
+    },
+    {
+      "case": "fp32_unconditional_L48_T3",
+      "final": {
+        "relRms": 6.739270909264779e-7,
+        "maxAbs": 0.0000021457672119140625,
+        "correlation": 0.9999999999997833
+      },
+      "trajectory": [
+        {
+          "relRms": 6.114692919569708e-7,
+          "maxAbs": 0.0000024139881134033203,
+          "correlation": 0.9999999999998135
+        },
+        {
+          "relRms": 6.799695721058597e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999997772
+        },
+        {
+          "relRms": 6.739270909264779e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999997833
+        }
+      ],
+      "elapsedMs": 955,
+      "loadMs": 483.69999980926514
+    },
+    {
+      "case": "fp32_single_motif_L48_T3",
+      "final": {
+        "relRms": 6.281111912586504e-7,
+        "maxAbs": 0.000003337860107421875,
+        "correlation": 0.9999999999998203
+      },
+      "trajectory": [
+        {
+          "relRms": 5.694449637647344e-7,
+          "maxAbs": 0.0000019818544387817383,
+          "correlation": 0.9999999999998436
+        },
+        {
+          "relRms": 5.556539594187333e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999998527
+        },
+        {
+          "relRms": 6.281111912586504e-7,
+          "maxAbs": 0.000003337860107421875,
+          "correlation": 0.9999999999998203
+        }
+      ],
+      "elapsedMs": 306,
+      "loadMs": 483.69999980926514
+    },
+    {
+      "case": "fp32_multi_motif_L48_T3",
+      "final": {
+        "relRms": 5.921429009181185e-7,
+        "maxAbs": 0.0000032186508178710938,
+        "correlation": 0.9999999999998267
+      },
+      "trajectory": [
+        {
+          "relRms": 5.537027022034536e-7,
+          "maxAbs": 0.0000022649765014648438,
+          "correlation": 0.9999999999998507
+        },
+        {
+          "relRms": 5.269857171490214e-7,
+          "maxAbs": 0.0000025033950805664062,
+          "correlation": 0.9999999999998662
+        },
+        {
+          "relRms": 5.921429009181185e-7,
+          "maxAbs": 0.0000032186508178710938,
+          "correlation": 0.9999999999998267
+        }
+      ],
+      "elapsedMs": 301,
+      "loadMs": 483.69999980926514
+    },
+    {
+      "case": "fp16_unconditional_L24_T2",
+      "final": {
+        "relRms": 3.867115934491213e-7,
+        "maxAbs": 0.0000016689300537109375,
+        "correlation": 0.9999999999999264
+      },
+      "trajectory": [
+        {
+          "relRms": 4.242253823259915e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999999089
+        },
+        {
+          "relRms": 3.867115934491213e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999999264
+        }
+      ],
+      "elapsedMs": 166.39999961853027,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "fp16_single_motif_L24_T2",
+      "final": {
+        "relRms": 4.112706613813388e-7,
+        "maxAbs": 0.0000016689300537109375,
+        "correlation": 0.9999999999999198
+      },
+      "trajectory": [
+        {
+          "relRms": 4.868913916061783e-7,
+          "maxAbs": 0.0000022351741790771484,
+          "correlation": 0.9999999999998759
+        },
+        {
+          "relRms": 4.112706613813388e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999999198
+        }
+      ],
+      "elapsedMs": 159.4000005722046,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "fp16_multi_motif_L24_T2",
+      "final": {
+        "relRms": 4.790710052672334e-7,
+        "maxAbs": 0.0000016689300537109375,
+        "correlation": 0.9999999999999137
+      },
+      "trajectory": [
+        {
+          "relRms": 4.877740312386445e-7,
+          "maxAbs": 0.0000019073486328125,
+          "correlation": 0.9999999999998865
+        },
+        {
+          "relRms": 4.790710052672334e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999999137
+        }
+      ],
+      "elapsedMs": 152.80000019073486,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "fp16_unconditional_L48_T3",
+      "final": {
+        "relRms": 6.36080348496298e-7,
+        "maxAbs": 0.000002682209014892578,
+        "correlation": 0.9999999999998245
+      },
+      "trajectory": [
+        {
+          "relRms": 5.527923076222101e-7,
+          "maxAbs": 0.0000019073486328125,
+          "correlation": 0.9999999999998539
+        },
+        {
+          "relRms": 5.914249941129291e-7,
+          "maxAbs": 0.0000022649765014648438,
+          "correlation": 0.9999999999998467
+        },
+        {
+          "relRms": 6.36080348496298e-7,
+          "maxAbs": 0.000002682209014892578,
+          "correlation": 0.9999999999998245
+        }
+      ],
+      "elapsedMs": 380.29999923706055,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "fp16_single_motif_L48_T3",
+      "final": {
+        "relRms": 5.194015011797949e-7,
+        "maxAbs": 0.000002384185791015625,
+        "correlation": 0.9999999999998785
+      },
+      "trajectory": [
+        {
+          "relRms": 5.418279361397833e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999998629
+        },
+        {
+          "relRms": 4.850084461604819e-7,
+          "maxAbs": 0.0000015497207641601562,
+          "correlation": 0.9999999999998865
+        },
+        {
+          "relRms": 5.194015011797949e-7,
+          "maxAbs": 0.000002384185791015625,
+          "correlation": 0.9999999999998785
+        }
+      ],
+      "elapsedMs": 285.19999980926514,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "fp16_multi_motif_L48_T3",
+      "final": {
+        "relRms": 6.036274360166881e-7,
+        "maxAbs": 0.0000021457672119140625,
+        "correlation": 0.9999999999998155
+      },
+      "trajectory": [
+        {
+          "relRms": 4.854668259733174e-7,
+          "maxAbs": 0.0000013113021850585938,
+          "correlation": 0.9999999999998846
+        },
+        {
+          "relRms": 5.572691163299826e-7,
+          "maxAbs": 0.0000019073486328125,
+          "correlation": 0.999999999999844
+        },
+        {
+          "relRms": 6.036274360166881e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999998155
+        }
+      ],
+      "elapsedMs": 317.8999996185303,
+      "loadMs": 424.19999980926514
+    },
+    {
+      "case": "int8_unconditional_L24_T2",
+      "final": {
+        "relRms": 4.6803099522261323e-7,
+        "maxAbs": 0.0000016689300537109375,
+        "correlation": 0.9999999999998808
+      },
+      "trajectory": [
+        {
+          "relRms": 4.99226182492021e-7,
+          "maxAbs": 0.0000015497207641601562,
+          "correlation": 0.9999999999998648
+        },
+        {
+          "relRms": 4.6803099522261323e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999998808
+        }
+      ],
+      "elapsedMs": 163.80000019073486,
+      "loadMs": 317.5
+    },
+    {
+      "case": "int8_single_motif_L24_T2",
+      "final": {
+        "relRms": 5.916929449640462e-7,
+        "maxAbs": 0.0000025033950805664062,
+        "correlation": 0.9999999999998338
+      },
+      "trajectory": [
+        {
+          "relRms": 6.313960755856828e-7,
+          "maxAbs": 0.000002384185791015625,
+          "correlation": 0.9999999999997945
+        },
+        {
+          "relRms": 5.916929449640462e-7,
+          "maxAbs": 0.0000025033950805664062,
+          "correlation": 0.9999999999998338
+        }
+      ],
+      "elapsedMs": 163.89999961853027,
+      "loadMs": 317.5
+    },
+    {
+      "case": "int8_multi_motif_L24_T2",
+      "final": {
+        "relRms": 4.908079453237384e-7,
+        "maxAbs": 0.0000017881393432617188,
+        "correlation": 0.9999999999998677
+      },
+      "trajectory": [
+        {
+          "relRms": 4.888044503912996e-7,
+          "maxAbs": 0.0000016689300537109375,
+          "correlation": 0.9999999999998741
+        },
+        {
+          "relRms": 4.908079453237384e-7,
+          "maxAbs": 0.0000017881393432617188,
+          "correlation": 0.9999999999998677
+        }
+      ],
+      "elapsedMs": 161.10000038146973,
+      "loadMs": 317.5
+    },
+    {
+      "case": "int8_unconditional_L48_T3",
+      "final": {
+        "relRms": 7.070415106639116e-7,
+        "maxAbs": 0.0000022649765014648438,
+        "correlation": 0.9999999999997802
+      },
+      "trajectory": [
+        {
+          "relRms": 4.603226200383174e-7,
+          "maxAbs": 0.000001430511474609375,
+          "correlation": 0.9999999999998951
+        },
+        {
+          "relRms": 6.328938393611164e-7,
+          "maxAbs": 0.000002384185791015625,
+          "correlation": 0.9999999999998148
+        },
+        {
+          "relRms": 7.070415106639116e-7,
+          "maxAbs": 0.0000022649765014648438,
+          "correlation": 0.9999999999997802
+        }
+      ],
+      "elapsedMs": 416.80000019073486,
+      "loadMs": 317.5
+    },
+    {
+      "case": "int8_single_motif_L48_T3",
+      "final": {
+        "relRms": 5.814765337024843e-7,
+        "maxAbs": 0.0000026226043701171875,
+        "correlation": 0.9999999999998481
+      },
+      "trajectory": [
+        {
+          "relRms": 4.888698284307245e-7,
+          "maxAbs": 0.000001430511474609375,
+          "correlation": 0.9999999999998848
+        },
+        {
+          "relRms": 5.479741337717357e-7,
+          "maxAbs": 0.000002384185791015625,
+          "correlation": 0.9999999999998618
+        },
+        {
+          "relRms": 5.814765337024843e-7,
+          "maxAbs": 0.0000026226043701171875,
+          "correlation": 0.9999999999998481
+        }
+      ],
+      "elapsedMs": 298.0999994277954,
+      "loadMs": 317.5
+    },
+    {
+      "case": "int8_multi_motif_L48_T3",
+      "final": {
+        "relRms": 5.308755237044853e-7,
+        "maxAbs": 0.0000021457672119140625,
+        "correlation": 0.9999999999998568
+      },
+      "trajectory": [
+        {
+          "relRms": 5.008839715264385e-7,
+          "maxAbs": 0.0000018775463104248047,
+          "correlation": 0.9999999999998727
+        },
+        {
+          "relRms": 5.372936441423896e-7,
+          "maxAbs": 0.0000019073486328125,
+          "correlation": 0.9999999999998547
+        },
+        {
+          "relRms": 5.308755237044853e-7,
+          "maxAbs": 0.0000021457672119140625,
+          "correlation": 0.9999999999998568
+        }
+      ],
+      "elapsedMs": 315.5999994277954,
+      "loadMs": 317.5
+    }
+  ],
+  "memory": {
+    "fp32": {
+      "bytes": 62928320,
+      "transientBuffers": 0
+    },
+    "fp16": {
+      "bytes": 31566784,
+      "transientBuffers": 0
+    },
+    "int8": {
+      "bytes": 16020224,
+      "transientBuffers": 0
+    }
+  },
+  "timings": {
+    "fp32": {
+      "loadMs": 483.69999980926514,
+      "coldForwardMs": 752.8000001907349,
+      "warmForwardMs": 98.09999942779541,
+      "length": 24
+    },
+    "fp16": {
+      "loadMs": 424.19999980926514,
+      "coldForwardMs": 224.5999994277954,
+      "warmForwardMs": 85.80000019073486,
+      "length": 24
+    },
+    "int8": {
+      "loadMs": 317.5,
+      "coldForwardMs": 196.20000076293945,
+      "warmForwardMs": 87.39999961853027,
+      "length": 24
+    }
+  },
+  "ratios": {
+    "fp16": 0.5016308078779157,
+    "int8": 0.25457892408378296
+  },
+  "lifecycle": [
+    {
+      "precision": "fp32",
+      "kind": "abort",
+      "transientBuffers": 0
+    },
+    {
+      "precision": "fp32",
+      "kind": "error",
+      "transientBuffers": 0
+    },
+    {
+      "precision": "fp16",
+      "kind": "abort",
+      "transientBuffers": 0
+    },
+    {
+      "precision": "fp16",
+      "kind": "error",
+      "transientBuffers": 0
+    },
+    {
+      "precision": "int8",
+      "kind": "abort",
+      "transientBuffers": 0
+    },
+    {
+      "precision": "int8",
+      "kind": "error",
+      "transientBuffers": 0
+    },
+    {
+      "externalDeviceSurvived": true,
+      "bufferLimitsEnforced": true
+    }
+  ],
+  "workerResult": {
+    "adapterInfo": {
+      "vendor": "nvidia",
+      "architecture": "",
+      "device": "",
+      "description": ""
+    },
+    "isFallbackAdapter": false,
+    "precision": "fp32",
+    "vsMain": {
+      "relRms": 0,
+      "maxAbs": 0,
+      "correlation": 1
+    },
+    "memory": {
+      "bytes": 62928320,
+      "transientBuffers": 0
+    }
+  },
+  "storage": [
+    {
+      "cache": "cache",
+      "offlineReload": true
+    },
+    {
+      "cache": "opfs",
+      "offlineReload": true
+    },
+    {
+      "cache": "opfs",
+      "simulatedPrivateModeFallback": true
+    }
+  ],
+  "skipped": 0,
+  "passed": true,
+  "hostGPU": "NVIDIA GB10, 580.159.03"
+}

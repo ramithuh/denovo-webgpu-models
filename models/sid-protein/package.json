@@ -1,0 +1,19 @@
+{
+  "name": "@denovo/sid-protein-webgpu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./shared": "./shared/index.js",
+    "./worker": "./webgpu/worker.js"
+  },
+  "scripts": {
+    "test": "npm run test:shared && npm run test:cpu && npm run test:gpu",
+    "test:shared": "node --test test/shared.test.mjs",
+    "test:cpu": "node test/cpu.mjs",
+    "test:gpu": "node test/gpu.mjs",
+    "serve": "node tools/server.mjs"
+  }
+}

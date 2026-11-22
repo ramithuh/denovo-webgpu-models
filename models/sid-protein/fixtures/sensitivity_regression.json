@@ -1,0 +1,76 @@
+{
+  "name": "L64_T8_seed1298",
+  "length": 64,
+  "steps": 8,
+  "noiseScale": 0.45,
+  "cathIndices": null,
+  "times": [
+    0.2920542359352112,
+    0.615408182144165,
+    0.7910704016685486,
+    0.8864989280700684,
+    0.9376265406608582,
+    0.9661155939102173,
+    0.9815922975540161,
+    0.9900000095367432
+  ],
+  "noise": {
+    "file": ".cache/fixtures/sensitivity/L64_T8_noise.bin",
+    "shape": [
+      8,
+      1,
+      64,
+      3
+    ],
+    "byteLength": 6144,
+    "sha256": "6cd004ef66cb104609f19ed0cab6888ccbebd2ce9196ea263a8787260efac3b6"
+  },
+  "forwardInput": {
+    "file": ".cache/fixtures/sensitivity/L64_T8_input.bin",
+    "shape": [
+      1,
+      64,
+      3
+    ],
+    "byteLength": 768,
+    "sha256": "bcb6e38108583a0318dde8dcdcf6a028cfa8ff92c93e2b023ea83b5799f2a5f1"
+  },
+  "forward": {
+    "file": ".cache/fixtures/sensitivity/fp32_L64_T8_forward.bin",
+    "shape": [
+      1,
+      64,
+      3
+    ],
+    "byteLength": 768,
+    "sha256": "985810832d82b3d796ca5dab7f76d5a763c3840a5d5cf7d53585ee126bbe2b91"
+  },
+  "trajectory": {
+    "file": ".cache/fixtures/sensitivity/fp32_L64_T8_trajectory.bin",
+    "shape": [
+      8,
+      1,
+      64,
+      3
+    ],
+    "byteLength": 6144,
+    "sha256": "88c85734bccfae37b4cff86fa8aaae69a1ec6454162750ad1f88405c764cfb66"
+  },
+  "samplerInputs": {
+    "file": ".cache/fixtures/sensitivity/fp32_L64_T8_sampler_inputs.bin",
+    "shape": [
+      8,
+      1,
+      64,
+      3
+    ],
+    "byteLength": 6144,
+    "sha256": "17e43502458462c0ad0cde7a257332c859f00d906726374ee079d44955798268"
+  },
+  "seconds": 2.7379982471466064,
+  "quantizationDrift": {
+    "relRms": 0.0,
+    "maxAbs": 0.0
+  },
+  "seed": 1298
+}

@@ -1,0 +1,11 @@
+{
+  "command": "npm test",
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 253620.861446,
+  "hardware": "NVIDIA GB10; Chromium native Vulkan",
+  "log": ".cache/npm-test.log",
+  "scope": "Declared matrix only; known stress failures documented separately"
+}

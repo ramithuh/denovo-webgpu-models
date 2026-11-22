@@ -1,0 +1,3595 @@
+{
+  "bb_encoder.trunk.ipa_0.head_weights": [
+    8
+  ],
+  "bb_encoder.trunk.ipa_0.linear_q.weight": [
+    2048,
+    256
+  ],
+  "bb_encoder.trunk.ipa_0.linear_q.bias": [
+    2048
+  ],
+  "bb_encoder.trunk.ipa_0.linear_kv.weight": [
+    4096,
+    256
+  ],
+  "bb_encoder.trunk.ipa_0.linear_kv.bias": [
+    4096
+  ],
+  "bb_encoder.trunk.ipa_0.linear_q_points.weight": [
+    192,
+    256
+  ],
+  "bb_encoder.trunk.ipa_0.linear_q_points.bias": [
+    192
+  ],
+  "bb_encoder.trunk.ipa_0.linear_kv_points.weight": [
+    480,
+    256
+  ],
+  "bb_encoder.trunk.ipa_0.linear_kv_points.bias": [
+    480
+  ],
+  "bb_encoder.trunk.ipa_0.linear_b.weight": [
+    8,
+    128
+  ],
+  "bb_encoder.trunk.ipa_0.linear_b.bias": [
+    8
+  ],
+  "bb_encoder.trunk.ipa_0.down_z.weight": [
+    32,
+    128
+  ],
+  "bb_encoder.trunk.ipa_0.down_z.bias": [
+    32
+  ],
+  "bb_encoder.trunk.ipa_0.linear_out.weight": [
+    256,
+    2688
+  ],
+  "bb_encoder.trunk.ipa_0.linear_out.bias": [
+    256
+  ],
+  "bb_encoder.trunk.ipa_0.linear_rbf.weight": [
+    1,
+    20
+  ],
+  "bb_encoder.trunk.ipa_0.linear_rbf.bias": [
+    1
+  ],
+  "bb_encoder.trunk.ipa_ln_0.weight": [
+    256
+  ],
+  "bb_encoder.trunk.ipa_ln_0.bias": [
+    256
+  ],
+  "bb_encoder.trunk.skip_embed_0.weight": [
+    64,
+    256
+  ],
+  "bb_encoder.trunk.skip_embed_0.bias": [
+    64
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.linear1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.linear2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.norm1.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.norm1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.norm2.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.0.norm2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.linear1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.linear2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.norm1.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.norm1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.norm2.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_0.layers.1.norm2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.post_tfmr_0.weight": [
+    256,
+    320
+  ],
+  "bb_encoder.trunk.post_tfmr_0.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_1.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_2.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.linear_3.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.ln.weight": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_0.ln.bias": [
+    256
+  ],
+  "bb_encoder.trunk.bb_update_0.linear.weight": [
+    6,
+    256
+  ],
+  "bb_encoder.trunk.bb_update_0.linear.bias": [
+    6
+  ],
+  "bb_encoder.trunk.edge_transition_0.initial_embed.weight": [
+    128,
+    256
+  ],
+  "bb_encoder.trunk.edge_transition_0.initial_embed.bias": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_0.trunk.0.weight": [
+    384,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_0.trunk.0.bias": [
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_0.trunk.2.weight": [
+    384,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_0.trunk.2.bias": [
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_0.final_layer.weight": [
+    128,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_0.final_layer.bias": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_0.layer_norm.weight": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_0.layer_norm.bias": [
+    128
+  ],
+  "bb_encoder.trunk.ipa_1.head_weights": [
+    8
+  ],
+  "bb_encoder.trunk.ipa_1.linear_q.weight": [
+    2048,
+    256
+  ],
+  "bb_encoder.trunk.ipa_1.linear_q.bias": [
+    2048
+  ],
+  "bb_encoder.trunk.ipa_1.linear_kv.weight": [
+    4096,
+    256
+  ],
+  "bb_encoder.trunk.ipa_1.linear_kv.bias": [
+    4096
+  ],
+  "bb_encoder.trunk.ipa_1.linear_q_points.weight": [
+    192,
+    256
+  ],
+  "bb_encoder.trunk.ipa_1.linear_q_points.bias": [
+    192
+  ],
+  "bb_encoder.trunk.ipa_1.linear_kv_points.weight": [
+    480,
+    256
+  ],
+  "bb_encoder.trunk.ipa_1.linear_kv_points.bias": [
+    480
+  ],
+  "bb_encoder.trunk.ipa_1.linear_b.weight": [
+    8,
+    128
+  ],
+  "bb_encoder.trunk.ipa_1.linear_b.bias": [
+    8
+  ],
+  "bb_encoder.trunk.ipa_1.down_z.weight": [
+    32,
+    128
+  ],
+  "bb_encoder.trunk.ipa_1.down_z.bias": [
+    32
+  ],
+  "bb_encoder.trunk.ipa_1.linear_out.weight": [
+    256,
+    2688
+  ],
+  "bb_encoder.trunk.ipa_1.linear_out.bias": [
+    256
+  ],
+  "bb_encoder.trunk.ipa_1.linear_rbf.weight": [
+    1,
+    20
+  ],
+  "bb_encoder.trunk.ipa_1.linear_rbf.bias": [
+    1
+  ],
+  "bb_encoder.trunk.ipa_ln_1.weight": [
+    256
+  ],
+  "bb_encoder.trunk.ipa_ln_1.bias": [
+    256
+  ],
+  "bb_encoder.trunk.skip_embed_1.weight": [
+    64,
+    256
+  ],
+  "bb_encoder.trunk.skip_embed_1.bias": [
+    64
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.linear1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.linear2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.norm1.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.norm1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.norm2.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.0.norm2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.linear1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.linear2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.norm1.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.norm1.bias": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.norm2.weight": [
+    320
+  ],
+  "bb_encoder.trunk.seq_tfmr_1.layers.1.norm2.bias": [
+    320
+  ],
+  "bb_encoder.trunk.post_tfmr_1.weight": [
+    256,
+    320
+  ],
+  "bb_encoder.trunk.post_tfmr_1.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_1.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_2.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.linear_3.bias": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.ln.weight": [
+    256
+  ],
+  "bb_encoder.trunk.node_transition_1.ln.bias": [
+    256
+  ],
+  "bb_encoder.trunk.bb_update_1.linear.weight": [
+    6,
+    256
+  ],
+  "bb_encoder.trunk.bb_update_1.linear.bias": [
+    6
+  ],
+  "bb_encoder.trunk.edge_transition_1.initial_embed.weight": [
+    128,
+    256
+  ],
+  "bb_encoder.trunk.edge_transition_1.initial_embed.bias": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_1.trunk.0.weight": [
+    384,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_1.trunk.0.bias": [
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_1.trunk.2.weight": [
+    384,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_1.trunk.2.bias": [
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_1.final_layer.weight": [
+    128,
+    384
+  ],
+  "bb_encoder.trunk.edge_transition_1.final_layer.bias": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_1.layer_norm.weight": [
+    128
+  ],
+  "bb_encoder.trunk.edge_transition_1.layer_norm.bias": [
+    128
+  ],
+  "bb_encoder.torsion_pred.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_1.bias": [
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_2.bias": [
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_3.bias": [
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_final.weight": [
+    2,
+    256
+  ],
+  "bb_encoder.torsion_pred.linear_final.bias": [
+    2
+  ],
+  "bb_encoder.embedding_layer.node_embedder.0.weight": [
+    256,
+    65
+  ],
+  "bb_encoder.embedding_layer.node_embedder.0.bias": [
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.2.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.2.bias": [
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.4.weight": [
+    256,
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.4.bias": [
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.5.weight": [
+    256
+  ],
+  "bb_encoder.embedding_layer.node_embedder.5.bias": [
+    256
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.0.weight": [
+    128,
+    120
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.0.bias": [
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.2.weight": [
+    128,
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.2.bias": [
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.4.weight": [
+    128,
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.4.bias": [
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.5.weight": [
+    128
+  ],
+  "bb_encoder.embedding_layer.edge_embedder.5.bias": [
+    128
+  ],
+  "bb_decoder.trunk.ipa_0.head_weights": [
+    8
+  ],
+  "bb_decoder.trunk.ipa_0.linear_q.weight": [
+    2048,
+    256
+  ],
+  "bb_decoder.trunk.ipa_0.linear_q.bias": [
+    2048
+  ],
+  "bb_decoder.trunk.ipa_0.linear_kv.weight": [
+    4096,
+    256
+  ],
+  "bb_decoder.trunk.ipa_0.linear_kv.bias": [
+    4096
+  ],
+  "bb_decoder.trunk.ipa_0.linear_q_points.weight": [
+    192,
+    256
+  ],
+  "bb_decoder.trunk.ipa_0.linear_q_points.bias": [
+    192
+  ],
+  "bb_decoder.trunk.ipa_0.linear_kv_points.weight": [
+    480,
+    256
+  ],
+  "bb_decoder.trunk.ipa_0.linear_kv_points.bias": [
+    480
+  ],
+  "bb_decoder.trunk.ipa_0.linear_b.weight": [
+    8,
+    128
+  ],
+  "bb_decoder.trunk.ipa_0.linear_b.bias": [
+    8
+  ],
+  "bb_decoder.trunk.ipa_0.down_z.weight": [
+    32,
+    128
+  ],
+  "bb_decoder.trunk.ipa_0.down_z.bias": [
+    32
+  ],
+  "bb_decoder.trunk.ipa_0.linear_out.weight": [
+    256,
+    2688
+  ],
+  "bb_decoder.trunk.ipa_0.linear_out.bias": [
+    256
+  ],
+  "bb_decoder.trunk.ipa_0.linear_rbf.weight": [
+    1,
+    20
+  ],
+  "bb_decoder.trunk.ipa_0.linear_rbf.bias": [
+    1
+  ],
+  "bb_decoder.trunk.ipa_ln_0.weight": [
+    256
+  ],
+  "bb_decoder.trunk.ipa_ln_0.bias": [
+    256
+  ],
+  "bb_decoder.trunk.skip_embed_0.weight": [
+    64,
+    256
+  ],
+  "bb_decoder.trunk.skip_embed_0.bias": [
+    64
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.linear1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.linear2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.norm1.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.norm1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.norm2.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.0.norm2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.linear1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.linear2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.norm1.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.norm1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.norm2.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_0.layers.1.norm2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.post_tfmr_0.weight": [
+    256,
+    320
+  ],
+  "bb_decoder.trunk.post_tfmr_0.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_1.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_2.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.linear_3.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.ln.weight": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_0.ln.bias": [
+    256
+  ],
+  "bb_decoder.trunk.bb_update_0.linear.weight": [
+    6,
+    256
+  ],
+  "bb_decoder.trunk.bb_update_0.linear.bias": [
+    6
+  ],
+  "bb_decoder.trunk.edge_transition_0.initial_embed.weight": [
+    128,
+    256
+  ],
+  "bb_decoder.trunk.edge_transition_0.initial_embed.bias": [
+    128
+  ],
+  "bb_decoder.trunk.edge_transition_0.trunk.0.weight": [
+    384,
+    384
+  ],
+  "bb_decoder.trunk.edge_transition_0.trunk.0.bias": [
+    384
+  ],
+  "bb_decoder.trunk.edge_transition_0.trunk.2.weight": [
+    384,
+    384
+  ],
+  "bb_decoder.trunk.edge_transition_0.trunk.2.bias": [
+    384
+  ],
+  "bb_decoder.trunk.edge_transition_0.final_layer.weight": [
+    128,
+    384
+  ],
+  "bb_decoder.trunk.edge_transition_0.final_layer.bias": [
+    128
+  ],
+  "bb_decoder.trunk.edge_transition_0.layer_norm.weight": [
+    128
+  ],
+  "bb_decoder.trunk.edge_transition_0.layer_norm.bias": [
+    128
+  ],
+  "bb_decoder.trunk.ipa_1.head_weights": [
+    8
+  ],
+  "bb_decoder.trunk.ipa_1.linear_q.weight": [
+    2048,
+    256
+  ],
+  "bb_decoder.trunk.ipa_1.linear_q.bias": [
+    2048
+  ],
+  "bb_decoder.trunk.ipa_1.linear_kv.weight": [
+    4096,
+    256
+  ],
+  "bb_decoder.trunk.ipa_1.linear_kv.bias": [
+    4096
+  ],
+  "bb_decoder.trunk.ipa_1.linear_q_points.weight": [
+    192,
+    256
+  ],
+  "bb_decoder.trunk.ipa_1.linear_q_points.bias": [
+    192
+  ],
+  "bb_decoder.trunk.ipa_1.linear_kv_points.weight": [
+    480,
+    256
+  ],
+  "bb_decoder.trunk.ipa_1.linear_kv_points.bias": [
+    480
+  ],
+  "bb_decoder.trunk.ipa_1.linear_b.weight": [
+    8,
+    128
+  ],
+  "bb_decoder.trunk.ipa_1.linear_b.bias": [
+    8
+  ],
+  "bb_decoder.trunk.ipa_1.down_z.weight": [
+    32,
+    128
+  ],
+  "bb_decoder.trunk.ipa_1.down_z.bias": [
+    32
+  ],
+  "bb_decoder.trunk.ipa_1.linear_out.weight": [
+    256,
+    2688
+  ],
+  "bb_decoder.trunk.ipa_1.linear_out.bias": [
+    256
+  ],
+  "bb_decoder.trunk.ipa_1.linear_rbf.weight": [
+    1,
+    20
+  ],
+  "bb_decoder.trunk.ipa_1.linear_rbf.bias": [
+    1
+  ],
+  "bb_decoder.trunk.ipa_ln_1.weight": [
+    256
+  ],
+  "bb_decoder.trunk.ipa_ln_1.bias": [
+    256
+  ],
+  "bb_decoder.trunk.skip_embed_1.weight": [
+    64,
+    256
+  ],
+  "bb_decoder.trunk.skip_embed_1.bias": [
+    64
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.linear1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.linear2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.norm1.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.norm1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.norm2.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.0.norm2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.self_attn.in_proj_weight": [
+    960,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.self_attn.in_proj_bias": [
+    960
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.self_attn.out_proj.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.self_attn.out_proj.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.linear1.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.linear1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.linear2.weight": [
+    320,
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.linear2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.norm1.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.norm1.bias": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.norm2.weight": [
+    320
+  ],
+  "bb_decoder.trunk.seq_tfmr_1.layers.1.norm2.bias": [
+    320
+  ],
+  "bb_decoder.trunk.post_tfmr_1.weight": [
+    256,
+    320
+  ],
+  "bb_decoder.trunk.post_tfmr_1.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_1.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_2.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.linear_3.bias": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.ln.weight": [
+    256
+  ],
+  "bb_decoder.trunk.node_transition_1.ln.bias": [
+    256
+  ],
+  "bb_decoder.trunk.bb_update_1.linear.weight": [
+    6,
+    256
+  ],
+  "bb_decoder.trunk.bb_update_1.linear.bias": [
+    6
+  ],
+  "bb_decoder.torsion_pred.linear_1.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_1.bias": [
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_2.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_2.bias": [
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_3.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_3.bias": [
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_final.weight": [
+    2,
+    256
+  ],
+  "bb_decoder.torsion_pred.linear_final.bias": [
+    2
+  ],
+  "bb_decoder.embedding_layer.node_embedder.0.weight": [
+    256,
+    65
+  ],
+  "bb_decoder.embedding_layer.node_embedder.0.bias": [
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.2.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.2.bias": [
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.4.weight": [
+    256,
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.4.bias": [
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.5.weight": [
+    256
+  ],
+  "bb_decoder.embedding_layer.node_embedder.5.bias": [
+    256
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.0.weight": [
+    128,
+    120
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.0.bias": [
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.2.weight": [
+    128,
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.2.bias": [
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.4.weight": [
+    128,
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.4.bias": [
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.5.weight": [
+    128
+  ],
+  "bb_decoder.embedding_layer.edge_embedder.5.bias": [
+    128
+  ],
+  "seq_encoder.af2_to_esm": [
+    22
+  ],
+  "sequence_to_trunk_network.esm_single_combine": [
+    34
+  ],
+  "sequence_to_trunk_network.pair_mlp.0.weight": [
+    660
+  ],
+  "sequence_to_trunk_network.pair_mlp.0.bias": [
+    660
+  ],
+  "sequence_to_trunk_network.pair_mlp.1.weight": [
+    128,
+    660
+  ],
+  "sequence_to_trunk_network.pair_mlp.1.bias": [
+    128
+  ],
+  "sequence_to_trunk_network.pair_mlp.3.weight": [
+    128,
+    128
+  ],
+  "sequence_to_trunk_network.pair_mlp.3.bias": [
+    128
+  ],
+  "sequence_to_trunk_network.single_mlp.0.weight": [
+    1280
+  ],
+  "sequence_to_trunk_network.single_mlp.0.bias": [
+    1280
+  ],
+  "sequence_to_trunk_network.single_mlp.1.weight": [
+    128,
+    1280
+  ],
+  "sequence_to_trunk_network.single_mlp.1.bias": [
+    128
+  ],
+  "sequence_to_trunk_network.single_mlp.3.weight": [
+    128,
+    128
+  ],
+  "sequence_to_trunk_network.single_mlp.3.bias": [
+    128
+  ],
+  "sequence_to_trunk_network.pairwise_positional_embedding.embedding.weight": [
+    66,
+    128
+  ],
+  "combiner_network.projections_single.bb.weight": [
+    128,
+    256
+  ],
+  "combiner_network.projections_single.bb.bias": [
+    128
+  ],
+  "combiner_network.projections_single.seq.weight": [
+    128,
+    128
+  ],
+  "combiner_network.projections_single.seq.bias": [
+    128
+  ],
+  "combiner_network.projections_pair.bb.weight": [
+    64,
+    128
+  ],
+  "combiner_network.projections_pair.bb.bias": [
+    64
+  ],
+  "combiner_network.projections_pair.seq.weight": [
+    64,
+    128
+  ],
+  "combiner_network.projections_pair.seq.bias": [
+    64
+  ],
+  "combiner_network.layer_norm_single.weight": [
+    256
+  ],
+  "combiner_network.layer_norm_single.bias": [
+    256
+  ],
+  "combiner_network.layer_norm_pair.weight": [
+    128
+  ],
+  "combiner_network.layer_norm_pair.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.layernorm_1.weight": [
+    256
+  ],
+  "trunk_network.blocks.0.layernorm_1.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.layernorm.weight": [
+    256
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.layernorm.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.proj.weight": [
+    128,
+    256
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.proj.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.o_proj.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.sequence_to_pair.o_proj.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.pair_to_sequence.layernorm.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.pair_to_sequence.layernorm.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.pair_to_sequence.linear.weight": [
+    8,
+    128
+  ],
+  "trunk_network.blocks.0.seq_attention.proj.weight": [
+    768,
+    256
+  ],
+  "trunk_network.blocks.0.seq_attention.o_proj.weight": [
+    256,
+    256
+  ],
+  "trunk_network.blocks.0.seq_attention.o_proj.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.seq_attention.g_proj.weight": [
+    256,
+    256
+  ],
+  "trunk_network.blocks.0.seq_attention.g_proj.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_a_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_a_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_a_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_a_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_b_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_b_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_b_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_b_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_z.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.linear_z.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.layer_norm_in.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.layer_norm_in.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.layer_norm_out.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_out.layer_norm_out.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_a_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_a_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_a_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_a_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_b_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_b_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_b_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_b_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_z.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.linear_z.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.layer_norm_in.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.layer_norm_in.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.layer_norm_out.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_mul_in.layer_norm_out.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.layer_norm.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.layer_norm.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.linear.weight": [
+    4,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_q.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_k.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_v.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_o.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_o.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_start.mha.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.layer_norm.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.layer_norm.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.linear.weight": [
+    4,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_q.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_k.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_v.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_o.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_o.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.0.tri_att_end.mha.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.0.weight": [
+    256
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.0.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.1.weight": [
+    1024,
+    256
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.1.bias": [
+    1024
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.3.weight": [
+    256,
+    1024
+  ],
+  "trunk_network.blocks.0.mlp_seq.mlp.3.bias": [
+    256
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.0.weight": [
+    128
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.0.bias": [
+    128
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.1.weight": [
+    512,
+    128
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.1.bias": [
+    512
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.3.weight": [
+    128,
+    512
+  ],
+  "trunk_network.blocks.0.mlp_pair.mlp.3.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.layernorm_1.weight": [
+    256
+  ],
+  "trunk_network.blocks.1.layernorm_1.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.layernorm.weight": [
+    256
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.layernorm.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.proj.weight": [
+    128,
+    256
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.proj.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.o_proj.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.sequence_to_pair.o_proj.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.pair_to_sequence.layernorm.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.pair_to_sequence.layernorm.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.pair_to_sequence.linear.weight": [
+    8,
+    128
+  ],
+  "trunk_network.blocks.1.seq_attention.proj.weight": [
+    768,
+    256
+  ],
+  "trunk_network.blocks.1.seq_attention.o_proj.weight": [
+    256,
+    256
+  ],
+  "trunk_network.blocks.1.seq_attention.o_proj.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.seq_attention.g_proj.weight": [
+    256,
+    256
+  ],
+  "trunk_network.blocks.1.seq_attention.g_proj.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_a_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_a_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_a_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_a_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_b_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_b_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_b_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_b_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_z.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.linear_z.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.layer_norm_in.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.layer_norm_in.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.layer_norm_out.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_out.layer_norm_out.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_a_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_a_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_a_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_a_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_b_p.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_b_p.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_b_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_b_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_z.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.linear_z.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.layer_norm_in.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.layer_norm_in.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.layer_norm_out.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_mul_in.layer_norm_out.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.layer_norm.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.layer_norm.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.linear.weight": [
+    4,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_q.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_k.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_v.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_o.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_o.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_start.mha.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.layer_norm.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.layer_norm.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.linear.weight": [
+    4,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_q.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_k.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_v.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_o.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_o.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_g.weight": [
+    128,
+    128
+  ],
+  "trunk_network.blocks.1.tri_att_end.mha.linear_g.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.0.weight": [
+    256
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.0.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.1.weight": [
+    1024,
+    256
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.1.bias": [
+    1024
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.3.weight": [
+    256,
+    1024
+  ],
+  "trunk_network.blocks.1.mlp_seq.mlp.3.bias": [
+    256
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.0.weight": [
+    128
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.0.bias": [
+    128
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.1.weight": [
+    512,
+    128
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.1.bias": [
+    512
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.3.weight": [
+    128,
+    512
+  ],
+  "trunk_network.blocks.1.mlp_pair.mlp.3.bias": [
+    128
+  ],
+  "trunk_to_decoder_network.lin_single.weight": [
+    256,
+    256
+  ],
+  "trunk_to_decoder_network.lin_single.bias": [
+    256
+  ],
+  "trunk_to_decoder_network.lin_pair.weight": [
+    128,
+    128
+  ],
+  "trunk_to_decoder_network.lin_pair.bias": [
+    128
+  ],
+  "trunk_to_decoder_network.single_layernorm.weight": [
+    256
+  ],
+  "trunk_to_decoder_network.single_layernorm.bias": [
+    256
+  ],
+  "trunk_to_decoder_network.pair_layernorm.weight": [
+    128
+  ],
+  "trunk_to_decoder_network.pair_layernorm.bias": [
+    128
+  ],
+  "seq_encoder.esm.embed_tokens.weight": [
+    33,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.0.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.0.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.0.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.0.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.0.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.1.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.1.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.1.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.1.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.1.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.2.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.2.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.2.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.2.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.2.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.3.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.3.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.3.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.3.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.3.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.4.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.4.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.4.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.4.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.4.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.5.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.5.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.5.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.5.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.5.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.6.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.6.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.6.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.6.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.6.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.7.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.7.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.7.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.7.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.7.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.8.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.8.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.8.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.8.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.8.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.9.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.9.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.9.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.9.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.9.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.10.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.10.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.10.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.10.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.10.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.11.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.11.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.11.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.11.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.11.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.12.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.12.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.12.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.12.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.12.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.13.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.13.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.13.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.13.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.13.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.14.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.14.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.14.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.14.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.14.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.15.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.15.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.15.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.15.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.15.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.16.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.16.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.16.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.16.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.16.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.17.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.17.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.17.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.17.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.17.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.18.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.18.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.18.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.18.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.18.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.19.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.19.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.19.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.19.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.19.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.20.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.20.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.20.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.20.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.20.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.21.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.21.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.21.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.21.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.21.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.22.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.22.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.22.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.22.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.22.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.23.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.23.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.23.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.23.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.23.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.24.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.24.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.24.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.24.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.24.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.25.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.25.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.25.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.25.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.25.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.26.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.26.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.26.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.26.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.26.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.27.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.27.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.27.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.27.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.27.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.28.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.28.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.28.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.28.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.28.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.29.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.29.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.29.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.29.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.29.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.30.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.30.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.30.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.30.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.30.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.31.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.31.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.31.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.31.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.31.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.k_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.k_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.v_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.v_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.q_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.q_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.out_proj.weight": [
+    1280,
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.out_proj.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn.rot_emb.inv_freq": [
+    32
+  ],
+  "seq_encoder.esm.layers.32.self_attn_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.self_attn_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.fc1.weight": [
+    5120,
+    1280
+  ],
+  "seq_encoder.esm.layers.32.fc1.bias": [
+    5120
+  ],
+  "seq_encoder.esm.layers.32.fc2.weight": [
+    1280,
+    5120
+  ],
+  "seq_encoder.esm.layers.32.fc2.bias": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.final_layer_norm.weight": [
+    1280
+  ],
+  "seq_encoder.esm.layers.32.final_layer_norm.bias": [
+    1280
+  ],
+  "seq_encoder.esm.emb_layer_norm_after.weight": [
+    1280
+  ],
+  "seq_encoder.esm.emb_layer_norm_after.bias": [
+    1280
+  ]
+}

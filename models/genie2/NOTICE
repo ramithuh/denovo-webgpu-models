@@ -1,0 +1,19 @@
+Genie 2 WebGPU experimental port
+
+Upstream: https://github.com/aqlaboratory/genie2
+Pinned revision: 9a954578f7b5a39552545eebc6d4794447794c87
+Genie 2 code and official checkpoint: Apache License 2.0 (see LICENSE).
+The translated OpenFold/AlphaFold modules retain attribution to:
+Copyright 2021 AlQuraishi Laboratory
+Copyright 2021 DeepMind Technologies Limited
+
+This package rewrites the inference architecture in JavaScript and WGSL.
+The upstream Python tree is not distributed in this package.
+Tensor algebra, packed loaders and browser harness patterns were adapted from
+this workspace's RFdiffusion, ESMC and EvoDiff implementations.
+
+shared/numeric.js uses the SLEEF exponential polynomial (Boost Software
+License 1.0) and Arm optimized-routines expf coefficients (MIT).
+shared/quaternion.js implements the LAPACK lower Householder and implicit
+QL/QR algorithms. LAPACK attribution and applicable third-party license texts
+are in THIRD_PARTY_LICENSES.txt.

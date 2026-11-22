@@ -1,0 +1,6584 @@
+{
+  "upstream_commit": "cde5de3ead6e4d76f367da6dc5174be9913ef6ca",
+  "torch": "2.9.0+cpu",
+  "cases": [
+    {
+      "name": "fp32_L32_T1_sde",
+      "precision": "fp32",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp32_L32_T1_sde.bin",
+      "byteLength": 2598784,
+      "sha256": "9c99f008ba36df56f2231aefbfbc6f3d964f2fe09a62dd052ae734997ce7de9e",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40448,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40832,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 42880,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 75648,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 173952,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1222528,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1320832,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1419136,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1517440,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1615744,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1714048,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1812352,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1910656,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2008960,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2107264,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2205568,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2303872,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2402176,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2500480,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T1_ode",
+      "precision": "fp32",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp32_L32_T1_ode.bin",
+      "byteLength": 2597376,
+      "sha256": "464b9b4571f4382a4ea43d08f105686fbc46062622681d11a622f17773ba951e",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 41472,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 74240,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 172544,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1221120,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1319424,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1417728,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1516032,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1614336,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1712640,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1810944,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1909248,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2007552,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2105856,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2204160,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2302464,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2400768,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2499072,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T3_sde",
+      "precision": "fp32",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp32_L32_T3_sde.bin",
+      "byteLength": 51328,
+      "sha256": "21de487c4a0ed32d31c7267bcd29ffe0175a3f5eef22bacca25df3dc5d442b64",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 42880,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 43264,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43648,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 44672,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 45696,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 46080,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46464,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 47488,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48512,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48896,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 49280,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 50304,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T3_ode",
+      "precision": "fp32",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp32_L32_T3_ode.bin",
+      "byteLength": 47104,
+      "sha256": "a75ae098fa7ab405854ea260d705cf0412dae4a1596b3c1bd3f33f8b447b54b8",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41856,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 42240,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43264,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44288,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44672,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 45056,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46080,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T1_sde",
+      "precision": "fp32",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp32_L64_T1_sde.bin",
+      "byteLength": 7294720,
+      "sha256": "b5807fc554bb432a5a3c4cd9b3847e5694c449eef4b2a3565fd1fc1ae0a60e4e",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80896,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 81664,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 85760,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 151296,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 347904,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4542208,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4738816,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4935424,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5132032,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5328640,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5525248,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5721856,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5918464,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6115072,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6311680,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6508288,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6704896,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6901504,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7098112,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T1_ode",
+      "precision": "fp32",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp32_L64_T1_ode.bin",
+      "byteLength": 7291904,
+      "sha256": "5c3a997acbdd0f91bde9f4745eaadf9d90863d9b79083890e608d95b1c6312f5",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 82944,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 148480,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 345088,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4539392,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4736000,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4932608,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5129216,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5325824,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5522432,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5719040,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5915648,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6112256,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6308864,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6505472,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6702080,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6898688,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7095296,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T3_sde",
+      "precision": "fp32",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp32_L64_T3_sde.bin",
+      "byteLength": 102656,
+      "sha256": "166220af537dbbe743951007a3307964bc1a2a3d80da22d752231ed19fe5ca56",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 85760,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 86528,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 87296,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 89344,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 91392,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 92160,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92928,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 94976,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97024,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97792,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 98560,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 100608,
+          "length": 512
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T3_ode",
+      "precision": "fp32",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp32_L64_T3_ode.bin",
+      "byteLength": 94208,
+      "sha256": "cc48043c3705ecf4bc4864e0e371f5ea63297b1c0a864ca9318656e2ddd4a1e5",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 83712,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 84480,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 86528,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 88576,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 89344,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 90112,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92160,
+          "length": 512
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T1_sde",
+      "precision": "fp16",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp16_L32_T1_sde.bin",
+      "byteLength": 2598784,
+      "sha256": "514c7308a2d2012af57e0afde7bca801c6647d728b622ad5003677cc989446d2",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40448,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40832,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 42880,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 75648,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 173952,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1222528,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1320832,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1419136,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1517440,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1615744,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1714048,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1812352,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1910656,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2008960,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2107264,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2205568,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2303872,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2402176,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2500480,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T1_ode",
+      "precision": "fp16",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp16_L32_T1_ode.bin",
+      "byteLength": 2597376,
+      "sha256": "737f10338668d56666c09b3128fcb2139d66a8174a2067f7d0b4f0214eb3e616",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 41472,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 74240,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 172544,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1221120,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1319424,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1417728,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1516032,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1614336,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1712640,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1810944,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1909248,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2007552,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2105856,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2204160,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2302464,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2400768,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2499072,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T3_sde",
+      "precision": "fp16",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp16_L32_T3_sde.bin",
+      "byteLength": 51328,
+      "sha256": "d461c399f6f6af51de706504a900ecb489876815caf908467f4eb22e6f7232d5",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 42880,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 43264,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43648,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 44672,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 45696,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 46080,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46464,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 47488,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48512,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48896,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 49280,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 50304,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T3_ode",
+      "precision": "fp16",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp16_L32_T3_ode.bin",
+      "byteLength": 47104,
+      "sha256": "32092efde5f378213f0d8d00b11cfd630963a4684a8a708da0c1a05dfa29a8db",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41856,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 42240,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43264,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44288,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44672,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 45056,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46080,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T1_sde",
+      "precision": "fp16",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp16_L64_T1_sde.bin",
+      "byteLength": 7294720,
+      "sha256": "b71e936224b40105472cc2dde9093928da7a25aa206f9c4e7441a9cac20fa943",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80896,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 81664,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 85760,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 151296,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 347904,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4542208,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4738816,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4935424,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5132032,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5328640,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5525248,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5721856,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5918464,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6115072,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6311680,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6508288,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6704896,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6901504,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7098112,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T1_ode",
+      "precision": "fp16",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp16_L64_T1_ode.bin",
+      "byteLength": 7291904,
+      "sha256": "77d1e9e528f2515d0174f57def3ecf58be529e55897877ca8bbe1d22f7e012d9",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 82944,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 148480,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 345088,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4539392,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4736000,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4932608,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5129216,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5325824,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5522432,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5719040,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5915648,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6112256,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6308864,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6505472,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6702080,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6898688,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7095296,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T3_sde",
+      "precision": "fp16",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp16_L64_T3_sde.bin",
+      "byteLength": 102656,
+      "sha256": "e87223ee0963852c7236f9c618d6e216f87bb53f382c9cb9ef6a2f63451c2bb7",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 85760,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 86528,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 87296,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 89344,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 91392,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 92160,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92928,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 94976,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97024,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97792,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 98560,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 100608,
+          "length": 512
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T3_ode",
+      "precision": "fp16",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp16_L64_T3_ode.bin",
+      "byteLength": 94208,
+      "sha256": "ee88ed721e1221079d601a9ad139953ee8faf3bb6499b7ec5deca6f6183b535c",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 83712,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 84480,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 86528,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 88576,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 89344,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 90112,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92160,
+          "length": 512
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T1_sde",
+      "precision": "int8",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/int8_L32_T1_sde.bin",
+      "byteLength": 2598784,
+      "sha256": "7cd671f7dfc97568c71a67c0abe3611142982d6deef705d026c30719ebc63795",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40448,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40832,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 42880,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 75648,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 173952,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1222528,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1320832,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1419136,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1517440,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1615744,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1714048,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1812352,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1910656,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2008960,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2107264,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2205568,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2303872,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2402176,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2500480,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T1_ode",
+      "precision": "int8",
+      "length": 32,
+      "steps": 1,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/int8_L32_T1_ode.bin",
+      "byteLength": 2597376,
+      "sha256": "160c8e8a5b3cff194140d36ee07ac69af8f63a2bac94326720e787f9e19b5862",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            32,
+            256
+          ],
+          "offset": 41472,
+          "length": 8192
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 74240,
+          "length": 24576
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            32,
+            32,
+            256
+          ],
+          "offset": 172544,
+          "length": 262144
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1221120,
+          "length": 24576
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1319424,
+          "length": 24576
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1417728,
+          "length": 24576
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1516032,
+          "length": 24576
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1614336,
+          "length": 24576
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1712640,
+          "length": 24576
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1810944,
+          "length": 24576
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 1909248,
+          "length": 24576
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2007552,
+          "length": 24576
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2105856,
+          "length": 24576
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2204160,
+          "length": 24576
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2302464,
+          "length": 24576
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2400768,
+          "length": 24576
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            32,
+            768
+          ],
+          "offset": 2499072,
+          "length": 24576
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T3_sde",
+      "precision": "int8",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "sde",
+      "file": ".cache/fixtures/int8_L32_T3_sde.bin",
+      "byteLength": 51328,
+      "sha256": "c4c5c2f0e750e9f9b2cfe66f320ab27dc092cbe85cec9b499762c8c477f633be",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39040,
+          "length": 256
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 40064,
+          "length": 96
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 41856,
+          "length": 256
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 42880,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 43264,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43648,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 44672,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 45696,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 46080,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46464,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 47488,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48512,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 48896,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 49280,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 50304,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T3_ode",
+      "precision": "int8",
+      "length": 32,
+      "steps": 3,
+      "seed": 2349,
+      "mode": "ode",
+      "file": ".cache/fixtures/int8_L32_T3_ode.bin",
+      "byteLength": 47104,
+      "sha256": "556d39b2634f6e1c83814b65c6b76b975f1115e391ad8a98c6b90b47ea54307c",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 0,
+          "length": 96
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 384,
+          "length": 256
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 1408,
+          "length": 96
+        },
+        "final_z": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 1792,
+          "length": 256
+        },
+        "coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 2816,
+          "length": 3552
+        },
+        "logits": {
+          "shape": [
+            1,
+            32,
+            20
+          ],
+          "offset": 17024,
+          "length": 640
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            32
+          ],
+          "offset": 19584,
+          "length": 32
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            32,
+            37
+          ],
+          "offset": 19712,
+          "length": 1184
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            32,
+            37,
+            3
+          ],
+          "offset": 24448,
+          "length": 3552
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 38656,
+          "length": 96
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 39040,
+          "length": 96
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 39424,
+          "length": 256
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 40448,
+          "length": 256
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41472,
+          "length": 96
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 41856,
+          "length": 96
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 42240,
+          "length": 256
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 43264,
+          "length": 256
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44288,
+          "length": 96
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            32,
+            3
+          ],
+          "offset": 44672,
+          "length": 96
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 45056,
+          "length": 256
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            32,
+            8
+          ],
+          "offset": 46080,
+          "length": 256
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T1_sde",
+      "precision": "int8",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/int8_L64_T1_sde.bin",
+      "byteLength": 7294720,
+      "sha256": "0a19b6822d8ab22e841c4340ad03e0e25890d805d89bbdb9102dd15054a65d4e",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80896,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 81664,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 85760,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 151296,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 347904,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4542208,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4738816,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4935424,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5132032,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5328640,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5525248,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5721856,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5918464,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6115072,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6311680,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6508288,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6704896,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6901504,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7098112,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T1_ode",
+      "precision": "int8",
+      "length": 64,
+      "steps": 1,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/int8_L64_T1_ode.bin",
+      "byteLength": 7291904,
+      "sha256": "2d43e69d17d1230b4d31573c08de74a23d89fa0888cf1eead047c252c8badb2e",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "trace.cond_factory": {
+          "shape": [
+            1,
+            64,
+            256
+          ],
+          "offset": 82944,
+          "length": 16384
+        },
+        "trace.init_repr_factory": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 148480,
+          "length": 49152
+        },
+        "trace.pair_repr_builder": {
+          "shape": [
+            1,
+            64,
+            64,
+            256
+          ],
+          "offset": 345088,
+          "length": 1048576
+        },
+        "trace.transformer_layers.0": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4539392,
+          "length": 49152
+        },
+        "trace.transformer_layers.1": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4736000,
+          "length": 49152
+        },
+        "trace.transformer_layers.2": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 4932608,
+          "length": 49152
+        },
+        "trace.transformer_layers.3": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5129216,
+          "length": 49152
+        },
+        "trace.transformer_layers.4": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5325824,
+          "length": 49152
+        },
+        "trace.transformer_layers.5": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5522432,
+          "length": 49152
+        },
+        "trace.transformer_layers.6": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5719040,
+          "length": 49152
+        },
+        "trace.transformer_layers.7": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 5915648,
+          "length": 49152
+        },
+        "trace.transformer_layers.8": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6112256,
+          "length": 49152
+        },
+        "trace.transformer_layers.9": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6308864,
+          "length": 49152
+        },
+        "trace.transformer_layers.10": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6505472,
+          "length": 49152
+        },
+        "trace.transformer_layers.11": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6702080,
+          "length": 49152
+        },
+        "trace.transformer_layers.12": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 6898688,
+          "length": 49152
+        },
+        "trace.transformer_layers.13": {
+          "shape": [
+            1,
+            64,
+            768
+          ],
+          "offset": 7095296,
+          "length": 49152
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T3_sde",
+      "precision": "int8",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "sde",
+      "file": ".cache/fixtures/int8_L64_T3_sde.bin",
+      "byteLength": 102656,
+      "sha256": "24e14cdd6797b5608a100b453b88cb9ddc611480fd9e7e7b530a5d5464c24840",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78080,
+          "length": 512
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 80128,
+          "length": 192
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 83712,
+          "length": 512
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 85760,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 86528,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 87296,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 89344,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 91392,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 92160,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92928,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 94976,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97024,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 97792,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 98560,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 100608,
+          "length": 512
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T3_ode",
+      "precision": "int8",
+      "length": 64,
+      "steps": 3,
+      "seed": 2381,
+      "mode": "ode",
+      "file": ".cache/fixtures/int8_L64_T3_ode.bin",
+      "byteLength": 94208,
+      "sha256": "ff782130c4bf57327338f8f2899637bd7c9b7c400399c850c2d995985e262457",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 0,
+          "length": 192
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 768,
+          "length": 512
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 2816,
+          "length": 192
+        },
+        "final_z": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 3584,
+          "length": 512
+        },
+        "coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 5632,
+          "length": 7104
+        },
+        "logits": {
+          "shape": [
+            1,
+            64,
+            20
+          ],
+          "offset": 34048,
+          "length": 1280
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            64
+          ],
+          "offset": 39168,
+          "length": 64
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            64,
+            37
+          ],
+          "offset": 39424,
+          "length": 2368
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            64,
+            37,
+            3
+          ],
+          "offset": 48896,
+          "length": 7104
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 77312,
+          "length": 192
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 78080,
+          "length": 192
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 78848,
+          "length": 512
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 80896,
+          "length": 512
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 82944,
+          "length": 192
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 83712,
+          "length": 192
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 84480,
+          "length": 512
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 86528,
+          "length": 512
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 88576,
+          "length": 192
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            64,
+            3
+          ],
+          "offset": 89344,
+          "length": 192
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 90112,
+          "length": 512
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            64,
+            8
+          ],
+          "offset": 92160,
+          "length": 512
+        }
+      }
+    }
+  ],
+  "quantization_drift": {
+    "fp16_L32_T1_sde": {
+      "final_ca": {
+        "relRMS": 1.9109004419867265e-06,
+        "maxAbs": 0.0005950927734375
+      },
+      "final_z": {
+        "relRMS": 8.428615718511074e-07,
+        "maxAbs": 0.00042724609375
+      },
+      "coords": {
+        "relRMS": 1.997707877175702e-06,
+        "maxAbs": 0.00067138671875
+      },
+      "logits": {
+        "relRMS": 0.0001061224603750132,
+        "maxAbs": 0.0008133649826049805
+      }
+    },
+    "fp16_L32_T1_ode": {
+      "final_ca": {
+        "relRMS": 0.005621119283845959,
+        "maxAbs": 0.0005795508623123169
+      },
+      "final_z": {
+        "relRMS": 0.001251620686708565,
+        "maxAbs": 0.00042498111724853516
+      },
+      "coords": {
+        "relRMS": 0.005401093865508992,
+        "maxAbs": 0.02200743556022644
+      },
+      "logits": {
+        "relRMS": 0.004243197902632198,
+        "maxAbs": 0.20262694358825684
+      }
+    },
+    "fp16_L32_T3_sde": {
+      "final_ca": {
+        "relRMS": 0.0015151655977971963,
+        "maxAbs": 0.029065608978271484
+      },
+      "final_z": {
+        "relRMS": 4.54060604790046e-05,
+        "maxAbs": 0.010463714599609375
+      },
+      "coords": {
+        "relRMS": 0.0015153787506933362,
+        "maxAbs": 0.029187679290771484
+      },
+      "logits": {
+        "relRMS": 8.014689911772415e-05,
+        "maxAbs": 0.0011816024780273438
+      }
+    },
+    "fp16_L32_T3_ode": {
+      "final_ca": {
+        "relRMS": 0.002206782534587645,
+        "maxAbs": 0.0014817118644714355
+      },
+      "final_z": {
+        "relRMS": 0.006620748572881919,
+        "maxAbs": 0.02187246084213257
+      },
+      "coords": {
+        "relRMS": 0.004885465346494336,
+        "maxAbs": 0.01008722186088562
+      },
+      "logits": {
+        "relRMS": 0.016507817883184984,
+        "maxAbs": 0.7852835655212402
+      }
+    },
+    "fp16_L64_T1_sde": {
+      "final_ca": {
+        "relRMS": 1.943469325277452e-06,
+        "maxAbs": 0.0008544921875
+      },
+      "final_z": {
+        "relRMS": 8.511411882801297e-07,
+        "maxAbs": 0.000457763671875
+      },
+      "coords": {
+        "relRMS": 2.010484581222184e-06,
+        "maxAbs": 0.0009765625
+      },
+      "logits": {
+        "relRMS": 0.00010485545606864334,
+        "maxAbs": 0.0008161067962646484
+      }
+    },
+    "fp16_L64_T1_ode": {
+      "final_ca": {
+        "relRMS": 0.00463780730301188,
+        "maxAbs": 0.0008143223822116852
+      },
+      "final_z": {
+        "relRMS": 0.0016747969978236146,
+        "maxAbs": 0.00046175718307495117
+      },
+      "coords": {
+        "relRMS": 0.00672356002418417,
+        "maxAbs": 0.014626681804656982
+      },
+      "logits": {
+        "relRMS": 0.011202969249187933,
+        "maxAbs": 1.0952777862548828
+      }
+    },
+    "fp16_L64_T3_sde": {
+      "final_ca": {
+        "relRMS": 0.0005957073103248513,
+        "maxAbs": 0.018428802490234375
+      },
+      "final_z": {
+        "relRMS": 4.060061065140626e-05,
+        "maxAbs": 0.00534820556640625
+      },
+      "coords": {
+        "relRMS": 0.0005946376281221609,
+        "maxAbs": 0.01862502098083496
+      },
+      "logits": {
+        "relRMS": 9.01640060790177e-05,
+        "maxAbs": 0.0013446807861328125
+      }
+    },
+    "fp16_L64_T3_ode": {
+      "final_ca": {
+        "relRMS": 0.0022212440117259234,
+        "maxAbs": 0.002881549298763275
+      },
+      "final_z": {
+        "relRMS": 0.00461269082805024,
+        "maxAbs": 0.015222370624542236
+      },
+      "coords": {
+        "relRMS": 0.003831677762098404,
+        "maxAbs": 0.012195378541946411
+      },
+      "logits": {
+        "relRMS": 0.010963943579586723,
+        "maxAbs": 0.6677947044372559
+      }
+    },
+    "int8_L32_T1_sde": {
+      "final_ca": {
+        "relRMS": 4.468642581081064e-05,
+        "maxAbs": 0.016326904296875
+      },
+      "final_z": {
+        "relRMS": 9.616439009550352e-05,
+        "maxAbs": 0.030640602111816406
+      },
+      "coords": {
+        "relRMS": 4.6137315462780304e-05,
+        "maxAbs": 0.0189361572265625
+      },
+      "logits": {
+        "relRMS": 0.005432887615988415,
+        "maxAbs": 0.04330587387084961
+      }
+    },
+    "int8_L32_T1_ode": {
+      "final_ca": {
+        "relRMS": 0.13148996625058743,
+        "maxAbs": 0.016321197152137756
+      },
+      "final_z": {
+        "relRMS": 0.1426305815927595,
+        "maxAbs": 0.03064015507698059
+      },
+      "coords": {
+        "relRMS": 0.13001797659235315,
+        "maxAbs": 0.17630458250641823
+      },
+      "logits": {
+        "relRMS": 0.1743650149661918,
+        "maxAbs": 4.811341762542725
+      }
+    },
+    "int8_L32_T3_sde": {
+      "final_ca": {
+        "relRMS": 0.01358002962353491,
+        "maxAbs": 0.09215641021728516
+      },
+      "final_z": {
+        "relRMS": 0.0013292323911275612,
+        "maxAbs": 0.1864776611328125
+      },
+      "coords": {
+        "relRMS": 0.013600493929991585,
+        "maxAbs": 0.09496140480041504
+      },
+      "logits": {
+        "relRMS": 0.003970724763853437,
+        "maxAbs": 0.04731941223144531
+      }
+    },
+    "int8_L32_T3_ode": {
+      "final_ca": {
+        "relRMS": 0.037193629744938214,
+        "maxAbs": 0.02066725492477417
+      },
+      "final_z": {
+        "relRMS": 0.06884224651809694,
+        "maxAbs": 0.2540644109249115
+      },
+      "coords": {
+        "relRMS": 0.05712208830330391,
+        "maxAbs": 0.13417073339223862
+      },
+      "logits": {
+        "relRMS": 0.14476970350882845,
+        "maxAbs": 6.580544948577881
+      }
+    },
+    "int8_L64_T1_sde": {
+      "final_ca": {
+        "relRMS": 5.2823245851166145e-05,
+        "maxAbs": 0.01728057861328125
+      },
+      "final_z": {
+        "relRMS": 9.455241372190539e-05,
+        "maxAbs": 0.03246498107910156
+      },
+      "coords": {
+        "relRMS": 5.3643975868510215e-05,
+        "maxAbs": 0.018749237060546875
+      },
+      "logits": {
+        "relRMS": 0.005396538055630448,
+        "maxAbs": 0.049880027770996094
+      }
+    },
+    "int8_L64_T1_ode": {
+      "final_ca": {
+        "relRMS": 0.12646033176731677,
+        "maxAbs": 0.01728121191263199
+      },
+      "final_z": {
+        "relRMS": 0.18640995843133154,
+        "maxAbs": 0.03246542997658253
+      },
+      "coords": {
+        "relRMS": 0.12137572654561996,
+        "maxAbs": 0.13526606559753418
+      },
+      "logits": {
+        "relRMS": 0.18692076796624643,
+        "maxAbs": 6.768003821372986
+      }
+    },
+    "int8_L64_T3_sde": {
+      "final_ca": {
+        "relRMS": 0.013168963701137567,
+        "maxAbs": 0.13495850563049316
+      },
+      "final_z": {
+        "relRMS": 0.0013052071719678064,
+        "maxAbs": 0.19378662109375
+      },
+      "coords": {
+        "relRMS": 0.013177261026327557,
+        "maxAbs": 0.13869047164916992
+      },
+      "logits": {
+        "relRMS": 0.004008935182461024,
+        "maxAbs": 0.05026388168334961
+      }
+    },
+    "int8_L64_T3_ode": {
+      "final_ca": {
+        "relRMS": 0.033836307583326,
+        "maxAbs": 0.044937461614608765
+      },
+      "final_z": {
+        "relRMS": 0.06720070462979058,
+        "maxAbs": 0.24369585514068604
+      },
+      "coords": {
+        "relRMS": 0.0566001295357004,
+        "maxAbs": 0.1756882146000862
+      },
+      "logits": {
+        "relRMS": 0.1113485130276665,
+        "maxAbs": 4.70062780380249
+      }
+    }
+  }
+}

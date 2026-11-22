@@ -1,0 +1,157 @@
+{
+  "name": "fp16_motif_L32_T3",
+  "precision": "fp16",
+  "length": 32,
+  "kind": "sample",
+  "steps": 3,
+  "mode": "fixed-frame-motif",
+  "file": ".cache/fixtures/fp16_motif_L32_T3.bin",
+  "sha256": "139b911ee4120362cf6c6714f6eb2a40d1a6be49e348934038909ccf1ce39777",
+  "tensors": {
+    "input.trans_t": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 0,
+      "count": 96
+    },
+    "input.rotmats_t": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 384,
+      "count": 288
+    },
+    "input.res_mask": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1536,
+      "count": 32
+    },
+    "input.diffuse_mask": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1664,
+      "count": 32
+    },
+    "input.res_idx": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1792,
+      "count": 32
+    },
+    "input.so3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 1920,
+      "count": 1
+    },
+    "input.r3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 1924,
+      "count": 1
+    },
+    "output.pred_trans": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 1928,
+      "count": 96
+    },
+    "output.pred_rotmats": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 2312,
+      "count": 288
+    },
+    "output.coords": {
+      "shape": [
+        1,
+        32,
+        5,
+        3
+      ],
+      "offset": 3464,
+      "count": 480
+    },
+    "output.step0.pred_trans": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 5384,
+      "count": 96
+    },
+    "output.step0.pred_rotmats": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 5768,
+      "count": 288
+    },
+    "output.step1.pred_trans": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 6920,
+      "count": 96
+    },
+    "output.step1.pred_rotmats": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 7304,
+      "count": 288
+    },
+    "output.step2.pred_trans": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 8456,
+      "count": 96
+    },
+    "output.step2.pred_rotmats": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 8840,
+      "count": 288
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "int8_L32_sc1",
+  "precision": "int8",
+  "length": 32,
+  "kind": "forward",
+  "selfCondition": true,
+  "file": ".cache/fixtures/int8_L32_sc1.bin",
+  "sha256": "733eabdfa019a33838e0b554fabc6bfe3f06ede6d8ad864247a9b6b0a4e4aea6",
+  "tensors": {
+    "input.trans_t": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 0,
+      "count": 96
+    },
+    "input.rotmats_t": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 384,
+      "count": 288
+    },
+    "input.res_mask": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1536,
+      "count": 32
+    },
+    "input.diffuse_mask": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1664,
+      "count": 32
+    },
+    "input.res_idx": {
+      "shape": [
+        1,
+        32
+      ],
+      "offset": 1792,
+      "count": 32
+    },
+    "input.so3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 1920,
+      "count": 1
+    },
+    "input.r3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 1924,
+      "count": 1
+    },
+    "input.trans_sc": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 1928,
+      "count": 96
+    },
+    "output.pred_trans": {
+      "shape": [
+        1,
+        32,
+        3
+      ],
+      "offset": 2312,
+      "count": 96
+    },
+    "output.pred_rotmats": {
+      "shape": [
+        1,
+        32,
+        3,
+        3
+      ],
+      "offset": 2696,
+      "count": 288
+    },
+    "output.coords": {
+      "shape": [
+        1,
+        32,
+        5,
+        3
+      ],
+      "offset": 3848,
+      "count": 480
+    }
+  }
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>SiD-Protein · Backbone studio</title>
+  <style>
+    :root {
+      font-family: system-ui, sans-serif;
+      color: #dceaf1;
+      background: #10191e;
+      color-scheme: dark;
+    }
+    body {
+      max-width: 1060px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      font-size: 2.6rem;
+      letter-spacing: -0.07em;
+      margin: 0.5rem 0;
+    }
+    p {
+      color: #9db2bc;
+      line-height: 1.6;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    form,
+    section {
+      background: #18252c;
+      border: 1px solid #31434b;
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+      font-size: 0.85rem;
+    }
+    input,
+    select,
+    button {
+      font: inherit;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.65rem;
+      border: 1px solid #425b66;
+      border-radius: 6px;
+      background: #10191e;
+      color: inherit;
+    }
+    button {
+      margin-top: 0.8rem;
+      background: #b4e3be;
+      color: #10231a;
+      border: 0;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+    }
+    #cancel,
+    #release {
+      background: #30454e;
+      color: #dceaf1;
+    }
+    canvas {
+      width: 100%;
+      height: 420px;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-size: 0.8rem;
+      color: #b8cbd3;
+      line-height: 1.5;
+    }
+    a {
+      color: #b4e3be;
+    }
+    small {
+      color: #7e9ba7;
+    }
+    @media (max-width: 700px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      body {
+        margin: 2rem auto;
+      }
+    }
+  </style>
+  <small>STRUCTURE GENERATION / WEBGPU</small>
+  <h1>SiD-Protein</h1>
+  <p>
+    Generate a protein Cα backbone in your browser. Choose a length, generate a
+    structure, and download its PDB.
+  </p>
+  <main>
+    <form id="form">
+      <label for="length">Residues</label
+      ><input
+        id="length"
+        type="number"
+        value="64"
+        min="1"
+        max="512"
+        required
+      /><label for="steps">Sampling steps</label
+      ><input
+        id="steps"
+        type="number"
+        value="16"
+        min="1"
+        max="100"
+        required
+      /><label for="noise">Noise scale</label
+      ><input
+        id="noise"
+        type="number"
+        value="0.45"
+        min="0"
+        step=".01"
+        required
+      /><label for="seed">Seed</label
+      ><input id="seed" type="number" value="5" required /><label
+        for="precision"
+        >Weights</label
+      ><select id="precision">
+        <option value="fp32">FP32 · 765 MB</option>
+        <option value="fp16" selected>FP16 · 383 MB</option>
+        <option value="int8">INT8 · 193 MB</option></select
+      ><button id="generate">Generate backbone</button
+      ><button id="cancel" type="button" disabled>Cancel</button
+      ><button id="release" type="button">Release GPU</button>
+    </form>
+    <section>
+      <canvas
+        id="view"
+        width="800"
+        height="650"
+        aria-label="Generated protein backbone"
+      ></canvas>
+      <pre id="status" role="status">
+Ready. Weights load on the first generation.</pre
+      >
+      <a id="download" hidden download="sid-protein.pdb">Download PDB</a>
+    </section>
+  </main>
+  <p>
+    <small
+      >Cα coordinates only; side chains and amino-acid sequence are not
+      predicted. The model is for research and evaluation.
+      <a href="../README_WEBGPU.md">Model and verification details</a></small
+    >
+  </p>
+  <script type="module" src="./app.js"></script>
+</html>

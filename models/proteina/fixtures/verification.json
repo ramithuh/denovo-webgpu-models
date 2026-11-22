@@ -1,0 +1,77 @@
+{
+  "testedAtUTC": "2026-11-22T07:24:41.713Z",
+  "command": "npm test",
+  "exitCode": 0,
+  "skipped": 0,
+  "sharedTests": 10,
+  "gpu": "NVIDIA GB10, 580.159.03, GPU-cb4201ed-0d40-feb9-d1ff-5766b26ed9a1",
+  "precisions": [
+    "fp32",
+    "fp16",
+    "int8"
+  ],
+  "lengths": [
+    32,
+    64
+  ],
+  "steps": [
+    2,
+    3,
+    4
+  ],
+  "gpuFinalTensorComparisons": 27,
+  "gpuTrajectoryTensorComparisons": 42,
+  "maxGPUFinalRelRMS": 0.00003154350312522923,
+  "maxCPUFinalRelRMS": 0.00003155479057723333,
+  "memoryRatios": {
+    "fp16": 0.5016272633910114,
+    "int8": 0.2536957081952704
+  },
+  "afterDestroyBytes": [
+    0,
+    0,
+    0
+  ],
+  "workerStorage": {
+    "cache": {
+      "offline": true,
+      "relRMS": 4.838076900442682e-7,
+      "maxAbs": 0.0000030994415283203125
+    },
+    "cachePrivateModeFallback": {
+      "relRMS": 4.838076900442682e-7,
+      "maxAbs": 0.0000030994415283203125
+    },
+    "opfs": {
+      "offline": true,
+      "relRMS": 4.838076900442682e-7,
+      "maxAbs": 0.0000030994415283203125
+    },
+    "opfsPrivateModeFallback": {
+      "relRMS": 4.838076900442682e-7,
+      "maxAbs": 0.0000030994415283203125
+    }
+  },
+  "demo": {
+    "generation": true,
+    "preview": true,
+    "pdbDownload": true,
+    "cancel": true,
+    "release": true
+  },
+  "sourceSha256": {
+    "shared/index.js": "5b99845ee958f8de0a428dd99749d79af347211b62e49a75796857b115417f8e",
+    "shared/network.js": "e06e49493cb3f50a2087fb90803657f253caabd344fa394004eb60d2466f0368",
+    "shared/sampling.js": "4e30209cabacadfe7044ac1ae76bfcd26ea2b2b98f4c71a28a5121037f124ba8",
+    "shared/spec.js": "359248d5a75ac537da8df0d0c0579b00e20c80b8de6aba7bc266730d077a566e",
+    "shared/weights.js": "3bc8e15cfb3f74a57a9495036dc7947e3f6237f349054390db373928c92bec5d",
+    "cpu/index.js": "5adfa861541fae77eb7f254af466256ad694e71161e639b03374aa7a0437a47c",
+    "cpu/ops.js": "0129dad74455dd010fa7bf20d707360301304528b03375934cdeb2ea9fa88d85",
+    "webgpu/device.js": "d0d01dab590b397535e16c4a55a36cc381c9c1c3300e26d078b035ff58fd3620",
+    "webgpu/index.js": "166e4c2ceb4becddda47aa1b019c1a333694492411d0d6ab4c0449510400a772",
+    "webgpu/ops.js": "a3b1617182dc94f68678a11ab78057b4603daed954d6789f2056fed113a33b91",
+    "webgpu/shaders.js": "ce7355e60bef2439372c09eb5d77f2d10038fbf767f0c13ef70af9ebbfc04c17",
+    "webgpu/worker-client.js": "93806d5f5c6ab80e3b35de55bd6009f8e1e4377be99ee026d5a94492deaacd1e",
+    "webgpu/worker.js": "fcfaf0bf791382c28c96b75e815362a2a9639f130726028b5afd05b3fb41dd4f"
+  }
+}

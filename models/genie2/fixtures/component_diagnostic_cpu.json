@@ -1,0 +1,152 @@
+{
+  "rows": {
+    "single": {
+      "relRms": 1.6504341137925044e-07,
+      "maxAbs": 1.9073486328125e-06,
+      "correlation": 0.9999999999999768
+    },
+    "orientations": {
+      "relRms": 0,
+      "maxAbs": 0,
+      "correlation": 1
+    },
+    "pair": {
+      "relRms": 1.732162297601829e-07,
+      "maxAbs": 1.9073486328125e-06,
+      "correlation": 0.9999999999999554
+    },
+    "pair_final": {
+      "relRms": 4.3908619653023936e-07,
+      "maxAbs": 4.291534423828125e-06,
+      "correlation": 0.9999999999998318
+    },
+    "structure0.single": {
+      "relRms": 3.9320732545311154e-07,
+      "maxAbs": 8.344650268554688e-07,
+      "correlation": 0.9999999999999124
+    },
+    "structure0.rots": {
+      "relRms": 4.015882576752584e-07,
+      "maxAbs": 8.344650268554688e-07,
+      "correlation": 0.9999999999999201
+    },
+    "structure0.trans": {
+      "relRms": 1.5905185169521333e-07,
+      "maxAbs": 4.76837158203125e-07,
+      "correlation": 0.9999999999999868
+    },
+    "structure1.single": {
+      "relRms": 6.115884058598289e-07,
+      "maxAbs": 1.2069940567016602e-06,
+      "correlation": 0.9999999999998002
+    },
+    "structure1.rots": {
+      "relRms": 9.137019712247154e-07,
+      "maxAbs": 1.6987323760986328e-06,
+      "correlation": 0.9999999999995824
+    },
+    "structure1.trans": {
+      "relRms": 2.2264564589172289e-07,
+      "maxAbs": 5.066394805908203e-07,
+      "correlation": 0.9999999999999719
+    },
+    "structure2.single": {
+      "relRms": 7.935358333687192e-07,
+      "maxAbs": 2.0265579223632812e-06,
+      "correlation": 0.9999999999996722
+    },
+    "structure2.rots": {
+      "relRms": 1.1394239067070942e-06,
+      "maxAbs": 2.0265579223632812e-06,
+      "correlation": 0.999999999999356
+    },
+    "structure2.trans": {
+      "relRms": 3.245077955006676e-07,
+      "maxAbs": 6.556510925292969e-07,
+      "correlation": 0.9999999999999389
+    },
+    "structure3.single": {
+      "relRms": 1.006632979375336e-06,
+      "maxAbs": 2.86102294921875e-06,
+      "correlation": 0.9999999999994732
+    },
+    "structure3.rots": {
+      "relRms": 1.200838655955297e-06,
+      "maxAbs": 2.205371856689453e-06,
+      "correlation": 0.9999999999992811
+    },
+    "structure3.trans": {
+      "relRms": 3.4953740117590766e-07,
+      "maxAbs": 7.152557373046875e-07,
+      "correlation": 0.9999999999999285
+    },
+    "structure4.single": {
+      "relRms": 1.1970556724225304e-06,
+      "maxAbs": 2.86102294921875e-06,
+      "correlation": 0.9999999999992716
+    },
+    "structure4.rots": {
+      "relRms": 1.282676551210881e-06,
+      "maxAbs": 2.2351741790771484e-06,
+      "correlation": 0.9999999999991944
+    },
+    "structure4.trans": {
+      "relRms": 3.9899306847699984e-07,
+      "maxAbs": 7.152557373046875e-07,
+      "correlation": 0.9999999999999015
+    },
+    "structure5.single": {
+      "relRms": 1.1398628197193893e-06,
+      "maxAbs": 2.1457672119140625e-06,
+      "correlation": 0.9999999999993383
+    },
+    "structure5.rots": {
+      "relRms": 1.2902910776021933e-06,
+      "maxAbs": 2.7045607566833496e-06,
+      "correlation": 0.9999999999991864
+    },
+    "structure5.trans": {
+      "relRms": 6.209346493818041e-07,
+      "maxAbs": 1.1324882507324219e-06,
+      "correlation": 0.9999999999997607
+    },
+    "structure6.single": {
+      "relRms": 9.946198954806597e-07,
+      "maxAbs": 2.1457672119140625e-06,
+      "correlation": 0.9999999999994926
+    },
+    "structure6.rots": {
+      "relRms": 1.2695042885294015e-06,
+      "maxAbs": 2.7120113372802734e-06,
+      "correlation": 0.9999999999991953
+    },
+    "structure6.trans": {
+      "relRms": 6.216203952804479e-07,
+      "maxAbs": 1.4901161193847656e-06,
+      "correlation": 0.99999999999978
+    },
+    "structure7.single": {
+      "relRms": 1.7886850503021518e-06,
+      "maxAbs": 9.238719940185547e-07,
+      "correlation": 0.9999999999984147
+    },
+    "structure7.rots": {
+      "relRms": 1.2745852365941424e-06,
+      "maxAbs": 2.682209014892578e-06,
+      "correlation": 0.9999999999991882
+    },
+    "structure7.trans": {
+      "relRms": 5.796662343345775e-07,
+      "maxAbs": 1.2516975402832031e-06,
+      "correlation": 0.9999999999998167
+    },
+    "z": {
+      "relRms": 5.341137721874805e-07,
+      "maxAbs": 1.3113021850585938e-06,
+      "correlation": 0.9999999999998661
+    }
+  },
+  "diagnosticOnly": true,
+  "quaternionFeaturesFromOracle": true,
+  "notAnAcceptanceResult": true
+}

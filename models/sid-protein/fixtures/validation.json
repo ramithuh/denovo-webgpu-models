@@ -1,0 +1,153 @@
+{
+  "ok": true,
+  "skipped": 0,
+  "timestamp": "2026-11-22T08:58:07.224Z",
+  "upstreamCommit": "dfef6a29d975451144e8b0449c12cbea28b4ae15",
+  "runtimeSourceSha256": "734702fec596e199d1ce37fa1ef0f493aa9cd50494a94d858eeadd63b45cce74",
+  "sourceFiles": [
+    "shared/constants.js",
+    "shared/fma.js",
+    "shared/index.js",
+    "shared/model.js",
+    "shared/numeric.js",
+    "shared/sampling.js",
+    "shared/weights.js",
+    "cpu/index.js",
+    "webgpu/device.js",
+    "webgpu/index.js",
+    "webgpu/shaders.js",
+    "webgpu/worker-client.js",
+    "webgpu/worker.js"
+  ],
+  "commands": [
+    "npm run test:gpu",
+    "npm test"
+  ],
+  "logs": {
+    "npm-test.log": "76ef7c84d4e4c1f74714a7885ccfaaa1af3041ba0baa32f0d7e62ac806847fd5",
+    "gpu-release.log": "0f73c7a3b37c93e6e82d07d9292dcce89eac37cdd776d131c4ea16d634e0d56c"
+  },
+  "gpuCases": 18,
+  "cpuCases": 6,
+  "gpuHost": "NVIDIA GB10, 580.159.03, GPU-cb4201ed-0d40-feb9-d1ff-5766b26ed9a1",
+  "contracts": {
+    "numeric": {
+      "rows": [
+        {
+          "name": "norm512",
+          "stats": {
+            "relRms": 0,
+            "maxAbs": 0,
+            "correlation": 1
+          },
+          "exact": 1,
+          "samples": [
+            0.02801588363945484,
+            -0.7927868366241455,
+            0.08722547441720963,
+            -1.7023264169692993,
+            -1.2555981874465942
+          ],
+          "ref": [
+            0.02801588363945484,
+            -0.7927868366241455,
+            0.08722547441720963,
+            -1.7023264169692993,
+            -1.2555981874465942
+          ]
+        },
+        {
+          "name": "norm768",
+          "stats": {
+            "relRms": 0,
+            "maxAbs": 0,
+            "correlation": 1
+          },
+          "exact": 1,
+          "samples": [
+            -2.885591745376587,
+            0.19280177354812622,
+            1.2219973802566528,
+            1.7031217813491821,
+            -0.667194128036499
+          ],
+          "ref": [
+            -2.885591745376587,
+            0.19280177354812622,
+            1.2219973802566528,
+            1.7031217813491821,
+            -0.667194128036499
+          ]
+        },
+        {
+          "name": "time",
+          "stats": {
+            "relRms": 0,
+            "maxAbs": 0,
+            "correlation": 1
+          },
+          "exact": 1
+        },
+        {
+          "name": "position",
+          "stats": {
+            "relRms": 0,
+            "maxAbs": 0,
+            "correlation": 1
+          },
+          "exact": 1
+        }
+      ]
+    },
+    "lifecycle": {
+      "errorCleanup": true,
+      "abortCleanup": true,
+      "recovery": true,
+      "transientBuffers": 0
+    },
+    "sensitivityRegression": {
+      "name": "L64_T8_seed1298",
+      "seed": 1298,
+      "sampling": {
+        "relRms": 0.000007672987798791106,
+        "maxAbs": 0.0000400543212890625,
+        "correlation": 0.9999999999705771
+      },
+      "trajectory": {
+        "relRms": 0.000004590932463035217,
+        "maxAbs": 0.0000400543212890625,
+        "correlation": 0.9999999999894644
+      }
+    },
+    "cache": {
+      "cacheApiColdWarm": true,
+      "opfsColdWarm": true,
+      "safariPrivateModeSimulated": true,
+      "sha256Rejection": true,
+      "multipartInt8ScaleColocation": true
+    },
+    "external": {
+      "externalDevice": true,
+      "idempotentDestroy": true,
+      "loadFailureCleanup": true,
+      "maxBufferSizeRejection": true,
+      "liveBuffers": 0
+    },
+    "worker": {
+      "forward": true,
+      "sampling16": true,
+      "abortCleanup": true,
+      "afterDestroyBytes": 0,
+      "adapterInfo": {
+        "vendor": "nvidia",
+        "architecture": "",
+        "device": "",
+        "description": ""
+      }
+    },
+    "portableHalf": {
+      "packedHalfWithoutShaderF16": true,
+      "sampling16": true
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "checkpoint": "epoch.40.ckpt",
+  "commit": "9a954578f7b5a39552545eebc6d4794447794c87",
+  "cases": [
+    {
+      "name": "fp32_unconditional_L24_T2",
+      "precision": "fp32",
+      "length": 24,
+      "mode": "unconditional",
+      "steps": 2,
+      "scale": 0.6
+    },
+    {
+      "name": "fp32_single_motif_L24_T2",
+      "precision": "fp32",
+      "length": 24,
+      "mode": "single_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "fp32_multi_motif_L24_T2",
+      "precision": "fp32",
+      "length": 24,
+      "mode": "multi_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "fp32_unconditional_L48_T3",
+      "precision": "fp32",
+      "length": 48,
+      "mode": "unconditional",
+      "steps": 3,
+      "scale": 0.6
+    },
+    {
+      "name": "fp32_single_motif_L48_T3",
+      "precision": "fp32",
+      "length": 48,
+      "mode": "single_motif",
+      "steps": 3,
+      "scale": 0.4
+    },
+    {
+      "name": "fp32_multi_motif_L48_T3",
+      "precision": "fp32",
+      "length": 48,
+      "mode": "multi_motif",
+      "steps": 3,
+      "scale": 0.4
+    },
+    {
+      "name": "fp16_unconditional_L24_T2",
+      "precision": "fp16",
+      "length": 24,
+      "mode": "unconditional",
+      "steps": 2,
+      "scale": 0.6
+    },
+    {
+      "name": "fp16_single_motif_L24_T2",
+      "precision": "fp16",
+      "length": 24,
+      "mode": "single_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "fp16_multi_motif_L24_T2",
+      "precision": "fp16",
+      "length": 24,
+      "mode": "multi_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "fp16_unconditional_L48_T3",
+      "precision": "fp16",
+      "length": 48,
+      "mode": "unconditional",
+      "steps": 3,
+      "scale": 0.6
+    },
+    {
+      "name": "fp16_single_motif_L48_T3",
+      "precision": "fp16",
+      "length": 48,
+      "mode": "single_motif",
+      "steps": 3,
+      "scale": 0.4
+    },
+    {
+      "name": "fp16_multi_motif_L48_T3",
+      "precision": "fp16",
+      "length": 48,
+      "mode": "multi_motif",
+      "steps": 3,
+      "scale": 0.4
+    },
+    {
+      "name": "int8_unconditional_L24_T2",
+      "precision": "int8",
+      "length": 24,
+      "mode": "unconditional",
+      "steps": 2,
+      "scale": 0.6
+    },
+    {
+      "name": "int8_single_motif_L24_T2",
+      "precision": "int8",
+      "length": 24,
+      "mode": "single_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "int8_multi_motif_L24_T2",
+      "precision": "int8",
+      "length": 24,
+      "mode": "multi_motif",
+      "steps": 2,
+      "scale": 0.4
+    },
+    {
+      "name": "int8_unconditional_L48_T3",
+      "precision": "int8",
+      "length": 48,
+      "mode": "unconditional",
+      "steps": 3,
+      "scale": 0.6
+    },
+    {
+      "name": "int8_single_motif_L48_T3",
+      "precision": "int8",
+      "length": 48,
+      "mode": "single_motif",
+      "steps": 3,
+      "scale": 0.4
+    },
+    {
+      "name": "int8_multi_motif_L48_T3",
+      "precision": "int8",
+      "length": 48,
+      "mode": "multi_motif",
+      "steps": 3,
+      "scale": 0.4
+    }
+  ],
+  "threshold": 0.0001,
+  "reference": "unmodified pinned PyTorch",
+  "static_graph_capture": false
+}

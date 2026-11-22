@@ -1,0 +1,2513 @@
+{
+  "upstream_commit": "cde5de3ead6e4d76f367da6dc5174be9913ef6ca",
+  "torch": "2.9.0+cpu",
+  "cases": [
+    {
+      "name": "fp32_L47_T7_sde",
+      "precision": "fp32",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp32_L47_T7_sde.bin",
+      "byteLength": 99640,
+      "sha256": "a9fccf394c7248d0471d796b753da921dc6eea37b34f11d021ed325c08e13785",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57340,
+          "length": 376
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 58844,
+          "length": 141
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 61476,
+          "length": 376
+        },
+        "draw.6": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 62980,
+          "length": 141
+        },
+        "draw.7": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "draw.8": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "draw.9": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 65612,
+          "length": 376
+        },
+        "draw.10": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 67116,
+          "length": 141
+        },
+        "draw.11": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "draw.12": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 69184,
+          "length": 376
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 70688,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 71252,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 73320,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 74824,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 75388,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 77456,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78960,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 79524,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 81592,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83096,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83660,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 85728,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87232,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87796,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 88360,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 89864,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91368,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91932,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 92496,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 94000,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 95504,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 96068,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 96632,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 98136,
+          "length": 376
+        }
+      }
+    },
+    {
+      "name": "fp32_L47_T7_ode",
+      "precision": "fp32",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp32_L47_T7_ode.bin",
+      "byteLength": 85728,
+      "sha256": "f52debd338c2e5ec712067279cd31c8ce170207155aac6c519bb24449ec9dfbc",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 57340,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57904,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 61476,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 62040,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65612,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 66176,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69184,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69748,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 70312,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73320,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73884,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 74448,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 77456,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78020,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 78584,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 81592,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 82156,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 82720,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        }
+      }
+    },
+    {
+      "name": "fp16_L47_T7_sde",
+      "precision": "fp16",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "sde",
+      "file": ".cache/fixtures/fp16_L47_T7_sde.bin",
+      "byteLength": 99640,
+      "sha256": "2b8a7c8775f088a1198fb2b0cce453b77cbba290bc5a183acd9f51f26b24b96d",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57340,
+          "length": 376
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 58844,
+          "length": 141
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 61476,
+          "length": 376
+        },
+        "draw.6": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 62980,
+          "length": 141
+        },
+        "draw.7": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "draw.8": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "draw.9": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 65612,
+          "length": 376
+        },
+        "draw.10": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 67116,
+          "length": 141
+        },
+        "draw.11": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "draw.12": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 69184,
+          "length": 376
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 70688,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 71252,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 73320,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 74824,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 75388,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 77456,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78960,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 79524,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 81592,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83096,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83660,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 85728,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87232,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87796,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 88360,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 89864,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91368,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91932,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 92496,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 94000,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 95504,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 96068,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 96632,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 98136,
+          "length": 376
+        }
+      }
+    },
+    {
+      "name": "fp16_L47_T7_ode",
+      "precision": "fp16",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "ode",
+      "file": ".cache/fixtures/fp16_L47_T7_ode.bin",
+      "byteLength": 85728,
+      "sha256": "f8363e2994d907fcf719957ddf28565d89884861705c2cbe05eebea1ff434787",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 57340,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57904,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 61476,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 62040,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65612,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 66176,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69184,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69748,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 70312,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73320,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73884,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 74448,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 77456,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78020,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 78584,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 81592,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 82156,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 82720,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        }
+      }
+    },
+    {
+      "name": "int8_L47_T7_sde",
+      "precision": "int8",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "sde",
+      "file": ".cache/fixtures/int8_L47_T7_sde.bin",
+      "byteLength": 99640,
+      "sha256": "8ed94550e22d8fd9883981ccebd246ae896e2c1ab703adf6961de96398ba4437",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "draw.0": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "draw.1": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57340,
+          "length": 376
+        },
+        "draw.2": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 58844,
+          "length": 141
+        },
+        "draw.3": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "draw.4": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "draw.5": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 61476,
+          "length": 376
+        },
+        "draw.6": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 62980,
+          "length": 141
+        },
+        "draw.7": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "draw.8": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "draw.9": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 65612,
+          "length": 376
+        },
+        "draw.10": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 67116,
+          "length": 141
+        },
+        "draw.11": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "draw.12": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 69184,
+          "length": 376
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 70688,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 71252,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 73320,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 74824,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 75388,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 77456,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78960,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 79524,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 81592,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83096,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 83660,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 85728,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87232,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 87796,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 88360,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 89864,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91368,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 91932,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 92496,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 94000,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 95504,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 96068,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 96632,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 98136,
+          "length": 376
+        }
+      }
+    },
+    {
+      "name": "int8_L47_T7_ode",
+      "precision": "int8",
+      "length": 47,
+      "steps": 7,
+      "seed": 2364,
+      "mode": "ode",
+      "file": ".cache/fixtures/int8_L47_T7_ode.bin",
+      "byteLength": 85728,
+      "sha256": "eb121ab763a7ffba66cf49db95d9005e75e500de1703153f5d748b544b803933",
+      "tensors": {
+        "initial_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 0,
+          "length": 141
+        },
+        "initial_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 564,
+          "length": 376
+        },
+        "final_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 2068,
+          "length": 141
+        },
+        "final_z": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 2632,
+          "length": 376
+        },
+        "coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 4136,
+          "length": 5217
+        },
+        "logits": {
+          "shape": [
+            1,
+            47,
+            20
+          ],
+          "offset": 25004,
+          "length": 940
+        },
+        "residue_types": {
+          "shape": [
+            1,
+            47
+          ],
+          "offset": 28764,
+          "length": 47
+        },
+        "atom_mask": {
+          "shape": [
+            1,
+            47,
+            37
+          ],
+          "offset": 28952,
+          "length": 1739
+        },
+        "masked_coords": {
+          "shape": [
+            1,
+            47,
+            37,
+            3
+          ],
+          "offset": 35908,
+          "length": 5217
+        },
+        "state.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 56776,
+          "length": 141
+        },
+        "velocity.0.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 57340,
+          "length": 141
+        },
+        "state.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 57904,
+          "length": 376
+        },
+        "velocity.0.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 59408,
+          "length": 376
+        },
+        "state.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 60912,
+          "length": 141
+        },
+        "velocity.1.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 61476,
+          "length": 141
+        },
+        "state.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 62040,
+          "length": 376
+        },
+        "velocity.1.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 63544,
+          "length": 376
+        },
+        "state.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65048,
+          "length": 141
+        },
+        "velocity.2.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 65612,
+          "length": 141
+        },
+        "state.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 66176,
+          "length": 376
+        },
+        "velocity.2.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 67680,
+          "length": 376
+        },
+        "state.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69184,
+          "length": 141
+        },
+        "velocity.3.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 69748,
+          "length": 141
+        },
+        "state.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 70312,
+          "length": 376
+        },
+        "velocity.3.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 71816,
+          "length": 376
+        },
+        "state.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73320,
+          "length": 141
+        },
+        "velocity.4.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 73884,
+          "length": 141
+        },
+        "state.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 74448,
+          "length": 376
+        },
+        "velocity.4.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 75952,
+          "length": 376
+        },
+        "state.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 77456,
+          "length": 141
+        },
+        "velocity.5.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 78020,
+          "length": 141
+        },
+        "state.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 78584,
+          "length": 376
+        },
+        "velocity.5.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 80088,
+          "length": 376
+        },
+        "state.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 81592,
+          "length": 141
+        },
+        "velocity.6.bb_ca": {
+          "shape": [
+            1,
+            47,
+            3
+          ],
+          "offset": 82156,
+          "length": 141
+        },
+        "state.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 82720,
+          "length": 376
+        },
+        "velocity.6.local_latents": {
+          "shape": [
+            1,
+            47,
+            8
+          ],
+          "offset": 84224,
+          "length": 376
+        }
+      }
+    }
+  ],
+  "quantization_drift": {
+    "fp16_L47_T7_sde": {
+      "final_ca": {
+        "relRMS": 0.012569967080365705,
+        "maxAbs": 0.42940372228622437
+      },
+      "final_z": {
+        "relRMS": 0.012150103532963016,
+        "maxAbs": 0.03493082523345947
+      },
+      "coords": {
+        "relRMS": 0.01247593737568958,
+        "maxAbs": 0.45018070936203003
+      },
+      "logits": {
+        "relRMS": 0.010334119284418589,
+        "maxAbs": 0.6328110694885254
+      }
+    },
+    "fp16_L47_T7_ode": {
+      "final_ca": {
+        "relRMS": 0.0021955234338917125,
+        "maxAbs": 0.0036347806453704834
+      },
+      "final_z": {
+        "relRMS": 0.015727416527943214,
+        "maxAbs": 0.11089324951171875
+      },
+      "coords": {
+        "relRMS": 0.016872151211606873,
+        "maxAbs": 0.11938567459583282
+      },
+      "logits": {
+        "relRMS": 0.07580442598436041,
+        "maxAbs": 7.09036922454834
+      }
+    },
+    "int8_L47_T7_sde": {
+      "final_ca": {
+        "relRMS": 0.045279509705315,
+        "maxAbs": 0.8729853630065918
+      },
+      "final_z": {
+        "relRMS": 0.05657478947674757,
+        "maxAbs": 0.13714304566383362
+      },
+      "coords": {
+        "relRMS": 0.04494568924389445,
+        "maxAbs": 0.8997368812561035
+      },
+      "logits": {
+        "relRMS": 0.02250635686910878,
+        "maxAbs": 0.4926271438598633
+      }
+    },
+    "int8_L47_T7_ode": {
+      "final_ca": {
+        "relRMS": 0.029801270025622363,
+        "maxAbs": 0.06182900257408619
+      },
+      "final_z": {
+        "relRMS": 0.15165257958246428,
+        "maxAbs": 0.9396751523017883
+      },
+      "coords": {
+        "relRMS": 0.07110678646891518,
+        "maxAbs": 0.2852463722229004
+      },
+      "logits": {
+        "relRMS": 0.311519033463816,
+        "maxAbs": 15.065195441246033
+      }
+    }
+  }
+}

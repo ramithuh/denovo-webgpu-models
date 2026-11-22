@@ -1,0 +1,21 @@
+{
+  "submissionStatus": "blocked",
+  "reason": "Launchpad project_required: no registered project matches this repository; project creation is unavailable through the connected tools.",
+  "availableProjects": [
+    "xymol-flow-map",
+    "xymol-flow-matching",
+    "xymol-genie3-port"
+  ],
+  "report": {
+    "agent_session_id": "01a20246-4738-7b13-8c80-680ed5ed1ff0",
+    "title": "SiD-Protein WebGPU port complete: dynamic 16-step sampling verified on NVIDIA GB10",
+    "takeaway": "The standalone SiD-Protein package passes npm test with zero skips: worst final-coordinate relRMS is 1.804e-5 on hardware WebGPU and 2.435e-5 on CPU. Packed FP16 and INT8 weights use 50.06% and 25.21% of FP32 GPU weight memory.",
+    "hypothesis": "An explicit dynamic-length, dynamic-step ES-module runtime using only WGSL neural operations can match the pinned checkpoint's complete noise-modulated trajectories below 1e-4 relative RMS.",
+    "outcome": "supported",
+    "details": "All work is confined to `/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/sid-protein/`. Upstream is pinned to `dfef6a29d975451144e8b0449c12cbea28b4ae15`. Only the released 16-step checkpoint was downloaded. No commits, pushes, uploads, or edits to root/sibling files.\n\nBoth `npm run test:gpu` and `npm test` exited 0 on NVIDIA GB10 / driver 580.159.03. These are local Chromium/PyTorch checks, not Slurm jobs. GPU tests cover 18 precision/case combinations (FP32/FP16/INT8; L32/L64; 1/4/8/16 steps; default and explicit CATH conditioning), plus the original L64/T8/seed1298 regression at final relRMS 7.673e-6. CPU tests cover six FP32 forward/trajectory cases. Comparisons use raw unaligned coordinates and complete trajectories with exact recorded Gaussian draws. [GPU metrics](/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/sid-protein/fixtures/gpu_metrics.json), [CPU metrics](/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/sid-protein/fixtures/cpu_metrics.json).\n\nThe model has 490 tensors / 191,102,976 parameters. Packed GPU weight bytes are 764,411,904 / 382,653,952 / 192,740,304 for FP32 / FP16 / INT8. Full 16-step sampling measured 452\u20131,153 ms for tested lengths, excluding weight loading. Quantized runtime parity is measured against identically quantized PyTorch; separate L32 full16 drift versus FP32 is 0.01767 for FP16 and 0.2298 for INT8. FP32 is appropriate for preserving original checkpoint coordinates; no designability evaluation is claimed.\n\nTests pass for production adapter retry/fallback policy, strict hardware enforcement, Web Worker forward/full sampling/cancellation, Cache API and OPFS cold/warm reads, simulated Safari storage denial, SHA corruption rejection, multipart scales, borrowed devices, buffer limits, packed FP16 without shader-f16, and normal/error/abort cleanup. Transient buffers are zero after calls; destruction leaves zero engine buffer bytes. Demo smoke verification generated a 32-atom C\u03b1 PDB and released the GPU. Schedules matched PyTorch exactly for every step count 1\u2013128.\n\nCATH indices are supported; named CATH codes need the caller's missing upstream vocabulary. The distilled loop uses zero self-conditioning features, exact launcher defaults of 16 steps / noise scale 0.45, and the separate one-step branch. [Complete audit, API, timings, quantization drift and denovo.run mapping](/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/sid-protein/README_WEBGPU.md).\n\nRuntime source SHA-256: `734702fec596e199d1ce37fa1ef0f493aa9cd50494a94d858eeadd63b45cce74`. [Validation provenance](/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/sid-protein/fixtures/validation.json). The vendor script staged and byte-verified 27 files under `.cache/vendor-stage/ProteinDesignSpace/web/static/vendor/sid-protein/` inside this package. External repositories remain untouched.",
+    "next_steps": [
+      "Coordinator review and promote the verified models/sid-protein package and its isolated vendor staging tree.",
+      "Serve the chosen SHA-verified bundle and manifest; choose FP32 when preserving original checkpoint coordinates matters."
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "description": "Exploratory trajectories outside the documented parity matrix. Discrete distogram bins amplify tiny floating-point differences; coarse exponential Euler steps additionally overshoot the rotational endpoint.",
+  "observations": [
+    {
+      "seed": 9064,
+      "precision": "fp16",
+      "length": 64,
+      "steps": 5,
+      "cpuFinalTranslationRelRMS": 0.00015839624056830352,
+      "cpuFinalRotationRelRMS": 0.00030802542825052507,
+      "gpuFinalTranslationRelRMS": 0.00015910655333304733
+    },
+    {
+      "seed": 123,
+      "precision": "fp32",
+      "length": 64,
+      "steps": 5,
+      "gpuFinalRotationRelRMS": 0.00010074446435723551
+    },
+    {
+      "seed": 123,
+      "precision": "fp16",
+      "length": 64,
+      "steps": 12,
+      "gpuFinalTranslationRelRMS": 0.0042100891925010734,
+      "gpuFinalRotationRelRMS": 0.006230954910849168
+    },
+    {
+      "seed": 123,
+      "precision": "int8",
+      "length": 64,
+      "steps": 12,
+      "gpuFinalTranslationRelRMS": 0.013985602260147499,
+      "gpuFinalRotationRelRMS": 0.03261757075723086
+    }
+  ],
+  "limitation": "The 1e-4 parity claim is limited to the recorded verification matrix. It is not a uniform bound over arbitrary initial frames and step counts. The runtime accepts every integer T>=2 without capturing or specializing the network."
+}

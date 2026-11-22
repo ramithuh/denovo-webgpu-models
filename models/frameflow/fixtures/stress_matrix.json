@@ -1,0 +1,193 @@
+{
+  "commit": "f50d8dbbdae827be291e9f73d732b61b195f8816",
+  "cases": [
+    "stress_fp32_L32_sc0",
+    "stress_fp32_L32_sc1",
+    "stress_fp32_L32_T12",
+    "stress_fp32_L64_sc0",
+    "stress_fp32_L64_sc1",
+    "stress_fp32_L64_T12",
+    "stress_fp16_L32_sc0",
+    "stress_fp16_L32_sc1",
+    "stress_fp16_L32_T12",
+    "stress_fp16_L64_sc0",
+    "stress_fp16_L64_sc1",
+    "stress_fp16_L64_T12",
+    "stress_int8_L32_sc0",
+    "stress_int8_L32_sc1",
+    "stress_int8_L32_T12",
+    "stress_int8_L64_sc0",
+    "stress_int8_L64_sc1",
+    "stress_int8_L64_T12"
+  ],
+  "quantizationDrift": {
+    "stress_fp16_L32_sc0": {
+      "pred_trans": {
+        "relRms": 0.00034573186052794816,
+        "maxAbs": 0.003753662109375
+      },
+      "pred_rotmats": {
+        "relRms": 0.0003230078277253161,
+        "maxAbs": 0.0005206465721130371
+      },
+      "coords": {
+        "relRms": 0.00034182876820250255,
+        "maxAbs": 0.003881216049194336
+      }
+    },
+    "stress_fp16_L32_sc1": {
+      "pred_trans": {
+        "relRms": 0.0003506378845210071,
+        "maxAbs": 0.003540515899658203
+      },
+      "pred_rotmats": {
+        "relRms": 0.00039488391242341477,
+        "maxAbs": 0.0010978281497955322
+      },
+      "coords": {
+        "relRms": 0.0003529272269462487,
+        "maxAbs": 0.004160881042480469
+      }
+    },
+    "stress_fp16_L32_T12": {
+      "pred_trans": {
+        "relRms": 0.005135087746294865,
+        "maxAbs": 0.07403969764709473
+      },
+      "pred_rotmats": {
+        "relRms": 0.006156877734745398,
+        "maxAbs": 0.014723241329193115
+      },
+      "coords": {
+        "relRms": 0.005268841856209725,
+        "maxAbs": 0.10899055004119873
+      }
+    },
+    "stress_fp16_L64_sc0": {
+      "pred_trans": {
+        "relRms": 0.0004148435095221243,
+        "maxAbs": 0.004688143730163574
+      },
+      "pred_rotmats": {
+        "relRms": 0.00039534220056099356,
+        "maxAbs": 0.0011585354804992676
+      },
+      "coords": {
+        "relRms": 0.000415309657124943,
+        "maxAbs": 0.005411863327026367
+      }
+    },
+    "stress_fp16_L64_sc1": {
+      "pred_trans": {
+        "relRms": 0.0002862314770416869,
+        "maxAbs": 0.0044803619384765625
+      },
+      "pred_rotmats": {
+        "relRms": 0.00028789339179550007,
+        "maxAbs": 0.0010048747062683105
+      },
+      "coords": {
+        "relRms": 0.0002858840069536902,
+        "maxAbs": 0.004809379577636719
+      }
+    },
+    "stress_fp16_L64_T12": {
+      "pred_trans": {
+        "relRms": 0.013175934122848836,
+        "maxAbs": 0.47008275985717773
+      },
+      "pred_rotmats": {
+        "relRms": 0.02648709283994809,
+        "maxAbs": 0.09541592001914978
+      },
+      "coords": {
+        "relRms": 0.013506997815056614,
+        "maxAbs": 0.54264235496521
+      }
+    },
+    "stress_int8_L32_sc0": {
+      "pred_trans": {
+        "relRms": 0.011031368625246655,
+        "maxAbs": 0.0957643985748291
+      },
+      "pred_rotmats": {
+        "relRms": 0.012138982882077634,
+        "maxAbs": 0.023427188396453857
+      },
+      "coords": {
+        "relRms": 0.01105829392881002,
+        "maxAbs": 0.11293739080429077
+      }
+    },
+    "stress_int8_L32_sc1": {
+      "pred_trans": {
+        "relRms": 0.010875417972454095,
+        "maxAbs": 0.09991621971130371
+      },
+      "pred_rotmats": {
+        "relRms": 0.014159518596682123,
+        "maxAbs": 0.028422117233276367
+      },
+      "coords": {
+        "relRms": 0.011140511099207608,
+        "maxAbs": 0.11683154106140137
+      }
+    },
+    "stress_int8_L32_T12": {
+      "pred_trans": {
+        "relRms": 0.013621597094768716,
+        "maxAbs": 0.1835002899169922
+      },
+      "pred_rotmats": {
+        "relRms": 0.01927068080888403,
+        "maxAbs": 0.030513644218444824
+      },
+      "coords": {
+        "relRms": 0.013775813829449554,
+        "maxAbs": 0.22506475448608398
+      }
+    },
+    "stress_int8_L64_sc0": {
+      "pred_trans": {
+        "relRms": 0.008806137629468363,
+        "maxAbs": 0.11393904685974121
+      },
+      "pred_rotmats": {
+        "relRms": 0.0106401679743186,
+        "maxAbs": 0.025203585624694824
+      },
+      "coords": {
+        "relRms": 0.008808813753155103,
+        "maxAbs": 0.13204264640808105
+      }
+    },
+    "stress_int8_L64_sc1": {
+      "pred_trans": {
+        "relRms": 0.009260217345737214,
+        "maxAbs": 0.12339621782302856
+      },
+      "pred_rotmats": {
+        "relRms": 0.011103313798084958,
+        "maxAbs": 0.02466946840286255
+      },
+      "coords": {
+        "relRms": 0.00930407394602674,
+        "maxAbs": 0.13436520099639893
+      }
+    },
+    "stress_int8_L64_T12": {
+      "pred_trans": {
+        "relRms": 0.0645238062270193,
+        "maxAbs": 1.9975242614746094
+      },
+      "pred_rotmats": {
+        "relRms": 0.15711526946993593,
+        "maxAbs": 0.7393321096897125
+      },
+      "coords": {
+        "relRms": 0.06972386559787004,
+        "maxAbs": 3.7704880237579346
+      }
+    }
+  }
+}

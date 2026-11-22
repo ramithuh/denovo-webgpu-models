@@ -1,0 +1,10 @@
+FrameFlow upstream: Microsoft, MIT license, commit f50d8dbbdae827be291e9f73d732b61b195f8816.
+This port translates the model and inference math; it does not redistribute upstream Python sources.
+
+Invariant point attention, rigid transforms, and idealized backbone constants derive from
+OpenFold/AlphaFold code included by the upstream project:
+Copyright 2021 AlQuraishi Laboratory
+Copyright 2021 DeepMind Technologies Limited
+Licensed under the Apache License, Version 2.0.
+https://www.apache.org/licenses/LICENSE-2.0
+See LICENSE-APACHE for the license text. The JavaScript/WGSL implementations are adaptations.

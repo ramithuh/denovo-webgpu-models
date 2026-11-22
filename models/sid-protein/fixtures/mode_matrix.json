@@ -1,0 +1,23 @@
+{
+  "checkpoint":"16-step-checkpoint.pt",
+  "commit":"dfef6a29d975451144e8b0449c12cbea28b4ae15",
+  "supported":{
+    "length":"positive integer, bounded by the adapter's memory/dispatch limits",
+    "steps":"any positive integer; default 16; nstep=20 is equivalent to the wrapper path",
+    "noiseScale":"finite nonnegative; default 0.45; applies to fresh centered Gaussian noise at each multistep iteration",
+    "oneStep":{"time":0.37,"initialNoiseGamma":1,"noiseScaleIgnored":true},
+    "foldConditioning":"C/A/T embedding row indices; named CATH code requires caller-supplied upstream vocabulary",
+    "cathMasking":"null rows 5/43/1472 allow C-only, C+A, or C+A+T conditioning",
+    "outputs":"C-alpha coordinates in nm; PDB coordinates in Angstroms; full predicted-coordinate trajectory",
+    "precision":["fp32","fp16","int8"]
+  },
+  "notEncodedInThisCheckpoint":["CATH label-to-index vocabulary","empirical length/fold sampling distribution","motif-specific feature tensors","long-chain v1.6 architecture","Genie architecture","amino-acid prediction","all-atom reconstruction"],
+  "samplerSelfConditioning":false,
+  "scriptDefaults":{"nstep":10,"noise_scale":0.4},
+  "launcherDefaults":{"nstep":16,"noise_scale":0.45,"seed":5},
+  "requiredCases":["L32_T16","L64_T16","L32_T4","L64_T8","L32_T1","L32_T4_cath"],
+  "cpuPrecision":"fp32",
+  "gpuPrecisions":["fp32","fp16","int8"],
+  "maximumParityRelRms":0.0001,
+  "comparison":"raw unaligned coordinates; identical recorded Gaussian draws and identically quantized weights"
+}

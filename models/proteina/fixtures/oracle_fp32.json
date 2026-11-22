@@ -1,0 +1,1236 @@
+{
+  "precision": "fp32",
+  "commit": "a44b407daf6a5358e43cd68907f3e3f1cbc65fdc",
+  "torch": "2.9.0+cpu",
+  "tensors": {
+    "denoise_L32_sc0.cond_factory": {
+      "offset": 0,
+      "length": 16384,
+      "shape": [
+        1,
+        32,
+        512
+      ]
+    },
+    "denoise_L32_sc0.transition_c_1": {
+      "offset": 65536,
+      "length": 16384,
+      "shape": [
+        1,
+        32,
+        512
+      ]
+    },
+    "denoise_L32_sc0.transition_c_2": {
+      "offset": 131072,
+      "length": 16384,
+      "shape": [
+        1,
+        32,
+        512
+      ]
+    },
+    "denoise_L32_sc0.init_repr_factory": {
+      "offset": 196608,
+      "length": 24576,
+      "shape": [
+        1,
+        32,
+        768
+      ]
+    },
+    "denoise_L32_sc0.pair_repr_builder": {
+      "offset": 294912,
+      "length": 524288,
+      "shape": [
+        1,
+        32,
+        32,
+        512
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.0": {
+      "offset": 2392064,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.1": {
+      "offset": 2521088,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.2": {
+      "offset": 2650112,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.3": {
+      "offset": 2779136,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.4": {
+      "offset": 2908160,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.5": {
+      "offset": 3037184,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.6": {
+      "offset": 3166208,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.7": {
+      "offset": 3295232,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.8": {
+      "offset": 3424256,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.9": {
+      "offset": 3553280,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.10": {
+      "offset": 3682304,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.11": {
+      "offset": 3811328,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.12": {
+      "offset": 3940352,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.13": {
+      "offset": 4069376,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.transformer_layers.14": {
+      "offset": 4198400,
+      "length": 32256,
+      "shape": [
+        1,
+        42,
+        768
+      ]
+    },
+    "denoise_L32_sc0.x": {
+      "offset": 4327424,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "denoise_L32_sc0.output": {
+      "offset": 4327808,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "denoise_L32_sc1.x": {
+      "offset": 4328192,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "denoise_L32_sc1.sc": {
+      "offset": 4328576,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "denoise_L32_sc1.output": {
+      "offset": 4328960,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.noise0": {
+      "offset": 4329344,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.input0": {
+      "offset": 4329728,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.pred0": {
+      "offset": 4330112,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.clean0": {
+      "offset": 4330496,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.step0": {
+      "offset": 4330880,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.input1": {
+      "offset": 4331264,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.pred1": {
+      "offset": 4331648,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.clean1": {
+      "offset": 4332032,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.step1": {
+      "offset": 4332416,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T2.output": {
+      "offset": 4332800,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.noise0": {
+      "offset": 4333184,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.input0": {
+      "offset": 4333568,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.pred0": {
+      "offset": 4333952,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.clean0": {
+      "offset": 4334336,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.noise1": {
+      "offset": 4334720,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.step0": {
+      "offset": 4335104,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.input1": {
+      "offset": 4335488,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.pred1": {
+      "offset": 4335872,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.clean1": {
+      "offset": 4336256,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.noise2": {
+      "offset": 4336640,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.step1": {
+      "offset": 4337024,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.input2": {
+      "offset": 4337408,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.pred2": {
+      "offset": 4337792,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.clean2": {
+      "offset": 4338176,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.noise3": {
+      "offset": 4338560,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.step2": {
+      "offset": 4338944,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T3.output": {
+      "offset": 4339328,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.noise0": {
+      "offset": 4339712,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.input0": {
+      "offset": 4340096,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.pred0": {
+      "offset": 4340480,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.clean0": {
+      "offset": 4340864,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.step0": {
+      "offset": 4341248,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.input1": {
+      "offset": 4341632,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.pred1": {
+      "offset": 4342016,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.clean1": {
+      "offset": 4342400,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.step1": {
+      "offset": 4342784,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.input2": {
+      "offset": 4343168,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.pred2": {
+      "offset": 4343552,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.clean2": {
+      "offset": 4343936,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.step2": {
+      "offset": 4344320,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.input3": {
+      "offset": 4344704,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.pred3": {
+      "offset": 4345088,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.clean3": {
+      "offset": 4345472,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.step3": {
+      "offset": 4345856,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "sample_L32_T4.output": {
+      "offset": 4346240,
+      "length": 96,
+      "shape": [
+        1,
+        32,
+        3
+      ]
+    },
+    "denoise_L64_sc0.x": {
+      "offset": 4346624,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "denoise_L64_sc0.output": {
+      "offset": 4347392,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "denoise_L64_sc1.x": {
+      "offset": 4348160,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "denoise_L64_sc1.sc": {
+      "offset": 4348928,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "denoise_L64_sc1.output": {
+      "offset": 4349696,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.noise0": {
+      "offset": 4350464,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.input0": {
+      "offset": 4351232,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.pred0": {
+      "offset": 4352000,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.clean0": {
+      "offset": 4352768,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.step0": {
+      "offset": 4353536,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.input1": {
+      "offset": 4354304,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.pred1": {
+      "offset": 4355072,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.clean1": {
+      "offset": 4355840,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.step1": {
+      "offset": 4356608,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T2.output": {
+      "offset": 4357376,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.noise0": {
+      "offset": 4358144,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.input0": {
+      "offset": 4358912,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.pred0": {
+      "offset": 4359680,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.clean0": {
+      "offset": 4360448,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.noise1": {
+      "offset": 4361216,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.step0": {
+      "offset": 4361984,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.input1": {
+      "offset": 4362752,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.pred1": {
+      "offset": 4363520,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.clean1": {
+      "offset": 4364288,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.noise2": {
+      "offset": 4365056,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.step1": {
+      "offset": 4365824,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.input2": {
+      "offset": 4366592,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.pred2": {
+      "offset": 4367360,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.clean2": {
+      "offset": 4368128,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.noise3": {
+      "offset": 4368896,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.step2": {
+      "offset": 4369664,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    },
+    "sample_L64_T3.output": {
+      "offset": 4370432,
+      "length": 192,
+      "shape": [
+        1,
+        64,
+        3
+      ]
+    }
+  },
+  "denoise": [
+    {
+      "id": "denoise_L32_sc0",
+      "length": 32,
+      "t": 0.3700000047683716,
+      "x": "denoise_L32_sc0.x",
+      "xSC": null,
+      "fold": null,
+      "output": "denoise_L32_sc0.output",
+      "trace": {
+        "cond_factory": "denoise_L32_sc0.cond_factory",
+        "transition_c_1": "denoise_L32_sc0.transition_c_1",
+        "transition_c_2": "denoise_L32_sc0.transition_c_2",
+        "init_repr_factory": "denoise_L32_sc0.init_repr_factory",
+        "pair_repr_builder": "denoise_L32_sc0.pair_repr_builder",
+        "transformer_layers.0": "denoise_L32_sc0.transformer_layers.0",
+        "transformer_layers.1": "denoise_L32_sc0.transformer_layers.1",
+        "transformer_layers.2": "denoise_L32_sc0.transformer_layers.2",
+        "transformer_layers.3": "denoise_L32_sc0.transformer_layers.3",
+        "transformer_layers.4": "denoise_L32_sc0.transformer_layers.4",
+        "transformer_layers.5": "denoise_L32_sc0.transformer_layers.5",
+        "transformer_layers.6": "denoise_L32_sc0.transformer_layers.6",
+        "transformer_layers.7": "denoise_L32_sc0.transformer_layers.7",
+        "transformer_layers.8": "denoise_L32_sc0.transformer_layers.8",
+        "transformer_layers.9": "denoise_L32_sc0.transformer_layers.9",
+        "transformer_layers.10": "denoise_L32_sc0.transformer_layers.10",
+        "transformer_layers.11": "denoise_L32_sc0.transformer_layers.11",
+        "transformer_layers.12": "denoise_L32_sc0.transformer_layers.12",
+        "transformer_layers.13": "denoise_L32_sc0.transformer_layers.13",
+        "transformer_layers.14": "denoise_L32_sc0.transformer_layers.14"
+      }
+    },
+    {
+      "id": "denoise_L32_sc1",
+      "length": 32,
+      "t": 0.6100000143051147,
+      "x": "denoise_L32_sc1.x",
+      "xSC": "denoise_L32_sc1.sc",
+      "fold": [
+        1,
+        1,
+        1
+      ],
+      "output": "denoise_L32_sc1.output",
+      "trace": {}
+    },
+    {
+      "id": "denoise_L64_sc0",
+      "length": 64,
+      "t": 0.3700000047683716,
+      "x": "denoise_L64_sc0.x",
+      "xSC": null,
+      "fold": null,
+      "output": "denoise_L64_sc0.output",
+      "trace": {}
+    },
+    {
+      "id": "denoise_L64_sc1",
+      "length": 64,
+      "t": 0.6100000143051147,
+      "x": "denoise_L64_sc1.x",
+      "xSC": "denoise_L64_sc1.sc",
+      "fold": [
+        1,
+        1,
+        1
+      ],
+      "output": "denoise_L64_sc1.output",
+      "trace": {}
+    }
+  ],
+  "samples": [
+    {
+      "id": "sample_L32_T2",
+      "length": 32,
+      "steps": 2,
+      "schedule": "uniform",
+      "schedulePower": 2.0,
+      "mode": "vf",
+      "noiseScale": 0.45,
+      "scoreScale": 1.0,
+      "gtMode": "1/t",
+      "gtPower": 1.0,
+      "gtClamp": 10.0,
+      "selfCondition": true,
+      "fold": null,
+      "guidanceWeight": 1.0,
+      "times": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "noise": [
+        "sample_L32_T2.noise0"
+      ],
+      "trajectory": [
+        "sample_L32_T2.step0",
+        "sample_L32_T2.step1"
+      ],
+      "predictions": [
+        "sample_L32_T2.pred0",
+        "sample_L32_T2.pred1"
+      ],
+      "clean": [
+        "sample_L32_T2.clean0",
+        "sample_L32_T2.clean1"
+      ],
+      "inputs": [
+        "sample_L32_T2.input0",
+        "sample_L32_T2.input1"
+      ],
+      "output": "sample_L32_T2.output"
+    },
+    {
+      "id": "sample_L32_T3",
+      "length": 32,
+      "steps": 3,
+      "schedule": "log",
+      "schedulePower": 2.0,
+      "mode": "sc",
+      "noiseScale": 0.45,
+      "scoreScale": 1.0,
+      "gtMode": "1/t",
+      "gtPower": 1.0,
+      "gtClamp": 10.0,
+      "selfCondition": true,
+      "fold": null,
+      "guidanceWeight": 1.0,
+      "times": [
+        0.0,
+        0.7924813032150269,
+        0.9632163047790527,
+        1.0
+      ],
+      "noise": [
+        "sample_L32_T3.noise0",
+        "sample_L32_T3.noise1",
+        "sample_L32_T3.noise2",
+        "sample_L32_T3.noise3"
+      ],
+      "trajectory": [
+        "sample_L32_T3.step0",
+        "sample_L32_T3.step1",
+        "sample_L32_T3.step2"
+      ],
+      "predictions": [
+        "sample_L32_T3.pred0",
+        "sample_L32_T3.pred1",
+        "sample_L32_T3.pred2"
+      ],
+      "clean": [
+        "sample_L32_T3.clean0",
+        "sample_L32_T3.clean1",
+        "sample_L32_T3.clean2"
+      ],
+      "inputs": [
+        "sample_L32_T3.input0",
+        "sample_L32_T3.input1",
+        "sample_L32_T3.input2"
+      ],
+      "output": "sample_L32_T3.output"
+    },
+    {
+      "id": "sample_L32_T4",
+      "length": 32,
+      "steps": 4,
+      "schedule": "power",
+      "schedulePower": 2.0,
+      "mode": "vf",
+      "noiseScale": 0.45,
+      "scoreScale": 1.0,
+      "gtMode": "1/t",
+      "gtPower": 1.0,
+      "gtClamp": 10.0,
+      "selfCondition": false,
+      "fold": [
+        1,
+        1,
+        1
+      ],
+      "guidanceWeight": 1.6,
+      "times": [
+        0.0,
+        0.0625,
+        0.25,
+        0.5625,
+        1.0
+      ],
+      "noise": [
+        "sample_L32_T4.noise0"
+      ],
+      "trajectory": [
+        "sample_L32_T4.step0",
+        "sample_L32_T4.step1",
+        "sample_L32_T4.step2",
+        "sample_L32_T4.step3"
+      ],
+      "predictions": [
+        "sample_L32_T4.pred0",
+        "sample_L32_T4.pred1",
+        "sample_L32_T4.pred2",
+        "sample_L32_T4.pred3"
+      ],
+      "clean": [
+        "sample_L32_T4.clean0",
+        "sample_L32_T4.clean1",
+        "sample_L32_T4.clean2",
+        "sample_L32_T4.clean3"
+      ],
+      "inputs": [
+        "sample_L32_T4.input0",
+        "sample_L32_T4.input1",
+        "sample_L32_T4.input2",
+        "sample_L32_T4.input3"
+      ],
+      "output": "sample_L32_T4.output"
+    },
+    {
+      "id": "sample_L64_T2",
+      "length": 64,
+      "steps": 2,
+      "schedule": "log",
+      "schedulePower": 2.0,
+      "mode": "vf",
+      "noiseScale": 0.45,
+      "scoreScale": 1.0,
+      "gtMode": "1/t",
+      "gtPower": 1.0,
+      "gtClamp": 10.0,
+      "selfCondition": true,
+      "fold": null,
+      "guidanceWeight": 1.0,
+      "times": [
+        0.0,
+        0.9090908765792847,
+        1.0
+      ],
+      "noise": [
+        "sample_L64_T2.noise0"
+      ],
+      "trajectory": [
+        "sample_L64_T2.step0",
+        "sample_L64_T2.step1"
+      ],
+      "predictions": [
+        "sample_L64_T2.pred0",
+        "sample_L64_T2.pred1"
+      ],
+      "clean": [
+        "sample_L64_T2.clean0",
+        "sample_L64_T2.clean1"
+      ],
+      "inputs": [
+        "sample_L64_T2.input0",
+        "sample_L64_T2.input1"
+      ],
+      "output": "sample_L64_T2.output"
+    },
+    {
+      "id": "sample_L64_T3",
+      "length": 64,
+      "steps": 3,
+      "schedule": "uniform",
+      "schedulePower": 2.0,
+      "mode": "sc",
+      "noiseScale": 0.45,
+      "scoreScale": 1.0,
+      "gtMode": "1/t",
+      "gtPower": 1.0,
+      "gtClamp": 10.0,
+      "selfCondition": true,
+      "fold": null,
+      "guidanceWeight": 1.0,
+      "times": [
+        0.0,
+        0.3333333432674408,
+        0.6666666269302368,
+        1.0
+      ],
+      "noise": [
+        "sample_L64_T3.noise0",
+        "sample_L64_T3.noise1",
+        "sample_L64_T3.noise2",
+        "sample_L64_T3.noise3"
+      ],
+      "trajectory": [
+        "sample_L64_T3.step0",
+        "sample_L64_T3.step1",
+        "sample_L64_T3.step2"
+      ],
+      "predictions": [
+        "sample_L64_T3.pred0",
+        "sample_L64_T3.pred1",
+        "sample_L64_T3.pred2"
+      ],
+      "clean": [
+        "sample_L64_T3.clean0",
+        "sample_L64_T3.clean1",
+        "sample_L64_T3.clean2"
+      ],
+      "inputs": [
+        "sample_L64_T3.input0",
+        "sample_L64_T3.input1",
+        "sample_L64_T3.input2"
+      ],
+      "output": "sample_L64_T3.output"
+    }
+  ],
+  "binary": ".cache/fixtures/oracle_fp32.bin",
+  "sha256": "49429a12ed4ed87d87d79f9f09179407a804938f4ef4c65164ec8d00534bba39"
+}

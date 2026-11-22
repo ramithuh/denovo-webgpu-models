@@ -1,0 +1,5 @@
+.cache/
+.venv/
+weights/
+node_modules/
+__pycache__/

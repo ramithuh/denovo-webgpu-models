@@ -1,0 +1,11 @@
+{
+  "clamped": {
+    "success": true
+  },
+  "guidance": {
+    "success": false,
+    "exception": "AttributeError",
+    "message": "module 'data.so3_utils' has no attribute 'sample_wrapped_normal'",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/frameflow/tools/probe_modes.py\", line 12, in <module>\n    a,b,c=it.sample(1,32,net,trans_0=x['trans_t'],rotmats_0=x['rotmats_t'],trans_1=x['trans_t'],rotmats_1=x['rotmats_t'],diffuse_mask=mask)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/frameflow/.cache/upstream/data/interpolant.py\", line 212, in sample\n    F, motif_locations = twisting.motif_offsets_and_rots_vec_F(num_res, motif_segments_length, motif_locations=motif_locations, num_rots=self._cfg.twisting.num_rots, align=self._cfg.twisting.align, scale=self._cfg.twisting.scale_rots, trans_motif=trans_motif, R_motif=R_motif, max_offsets=self._cfg.twisting.max_offsets, device=self._device, dtype=torch.float64, return_rots=False)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/frameflow/.cache/upstream/motif_scaffolding/twisting.py\", line 263, in motif_offsets_and_rots_vec_F\n    F_sampled_rots = so3_utils.sample_wrapped_normal(N=num_rots, scale=scale).to(device).to(dtype)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'data.so3_utils' has no attribute 'sample_wrapped_normal'\n"
+  }
+}

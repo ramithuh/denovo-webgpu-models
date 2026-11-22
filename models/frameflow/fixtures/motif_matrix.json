@@ -1,0 +1,16 @@
+{
+  "cases": [
+    "fp32_motif_L32",
+    "fp32_motif_L32_T3",
+    "fp32_motif_L64",
+    "fp32_motif_L64_T3",
+    "fp16_motif_L32",
+    "fp16_motif_L32_T3",
+    "fp16_motif_L64",
+    "fp16_motif_L64_T3",
+    "int8_motif_L32",
+    "int8_motif_L32_T3",
+    "int8_motif_L64",
+    "int8_motif_L64_T3"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "time_embedding",
+  "file": ".cache/fixtures/time_embedding.bin",
+  "byteLength": 16448,
+  "sha256": "8c9a7c9f4a61068b3b7a040c635c41472ddd54e40f31088f74bfa3e3c07a12f4",
+  "tensors": {
+    "times": {
+      "shape": [
+        16
+      ],
+      "offset": 0,
+      "length": 16
+    },
+    "embedding": {
+      "shape": [
+        16,
+        256
+      ],
+      "offset": 64,
+      "length": 4096
+    }
+  }
+}

@@ -1,0 +1,11 @@
+torch==2.9.0
+numpy==1.26.4
+scipy==1.16.3
+omegaconf==2.3.0
+safetensors==0.6.2
+biopython==1.86
+dm-tree==0.1.9
+einops==0.8.1
+tqdm==4.67.1
+
+packaging==25.0

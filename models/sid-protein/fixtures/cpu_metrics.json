@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "skipped": 0,
+  "rows": [
+    {
+      "name": "L64_T16",
+      "forward": {
+        "relRms": 4.718961277140994e-7,
+        "maxAbs": 4.172325134277344e-7,
+        "correlation": 0.9999999999998989
+      },
+      "sampling": {
+        "relRms": 2.306313084709693e-7,
+        "maxAbs": 4.172325134277344e-7,
+        "correlation": 0.9999999999999751
+      },
+      "trajectory": {
+        "relRms": 2.5847598526053237e-7,
+        "maxAbs": 8.344650268554688e-7,
+        "correlation": 0.9999999999999639
+      },
+      "milliseconds": 194162.75737099999
+    },
+    {
+      "name": "L32_T16",
+      "forward": {
+        "relRms": 5.030736310938982e-7,
+        "maxAbs": 2.8312206268310547e-7,
+        "correlation": 0.9999999999998758
+      },
+      "sampling": {
+        "relRms": 0.000024352768864254673,
+        "maxAbs": 0.000035881996154785156,
+        "correlation": 0.999999999703588
+      },
+      "trajectory": {
+        "relRms": 0.000022512041515517854,
+        "maxAbs": 0.0001032799482345581,
+        "correlation": 0.9999999997471115
+      },
+      "milliseconds": 104591.74883899999
+    },
+    {
+      "name": "L32_T1",
+      "forward": {
+        "relRms": 5.030736310938982e-7,
+        "maxAbs": 2.8312206268310547e-7,
+        "correlation": 0.9999999999998758
+      },
+      "sampling": {
+        "relRms": 3.304407117906047e-7,
+        "maxAbs": 3.5762786865234375e-7,
+        "correlation": 0.9999999999999468
+      },
+      "trajectory": {
+        "relRms": 3.304407117906047e-7,
+        "maxAbs": 3.5762786865234375e-7,
+        "correlation": 0.9999999999999468
+      },
+      "milliseconds": 12370.02508800001
+    },
+    {
+      "name": "L64_T8",
+      "forward": {
+        "relRms": 4.718961277140994e-7,
+        "maxAbs": 4.172325134277344e-7,
+        "correlation": 0.9999999999998989
+      },
+      "sampling": {
+        "relRms": 0.000001997395765762765,
+        "maxAbs": 0.000010015442967414856,
+        "correlation": 0.999999999998009
+      },
+      "trajectory": {
+        "relRms": 0.0000020465721590835724,
+        "maxAbs": 0.000015400350093841553,
+        "correlation": 0.9999999999979088
+      },
+      "milliseconds": 102238.01080799999
+    },
+    {
+      "name": "L32_T4",
+      "forward": {
+        "relRms": 5.030736310938982e-7,
+        "maxAbs": 2.8312206268310547e-7,
+        "correlation": 0.9999999999998758
+      },
+      "sampling": {
+        "relRms": 0.0000017802783158362031,
+        "maxAbs": 0.0000018924474716186523,
+        "correlation": 0.9999999999984168
+      },
+      "trajectory": {
+        "relRms": 0.0000015990309996716107,
+        "maxAbs": 0.0000018924474716186523,
+        "correlation": 0.9999999999987219
+      },
+      "milliseconds": 30900.309714000003
+    },
+    {
+      "name": "L32_T4_cath",
+      "forward": {
+        "relRms": 7.002741972815589e-7,
+        "maxAbs": 4.172325134277344e-7,
+        "correlation": 0.9999999999997553
+      },
+      "sampling": {
+        "relRms": 0.000003472997255217351,
+        "maxAbs": 0.000007316470146179199,
+        "correlation": 0.9999999999939836
+      },
+      "trajectory": {
+        "relRms": 0.000002958001892598072,
+        "maxAbs": 0.000007316470146179199,
+        "correlation": 0.9999999999956354
+      },
+      "milliseconds": 30858.394054000004
+    }
+  ],
+  "milliseconds": 196458.238897,
+  "memoryAfterDestroy": [
+    {
+      "totalBytes": 0,
+      "transientBuffers": 0
+    },
+    {
+      "totalBytes": 0,
+      "transientBuffers": 0
+    },
+    {
+      "totalBytes": 0,
+      "transientBuffers": 0
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "upstream_commit": "cde5de3ead6e4d76f367da6dc5174be9913ef6ca",
+  "models": {
+    "LD1": {
+      "fp32": {
+        "total_bytes": 633666032,
+        "total_params": 158402816,
+        "num_tensors": 457,
+        "shards": 29,
+        "max_shard_bytes": 22852672,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.0,
+        "strict_load": true
+      },
+      "fp16": {
+        "total_bytes": 317233888,
+        "total_params": 158402816,
+        "num_tensors": 457,
+        "shards": 14,
+        "max_shard_bytes": 24847336,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.0008957386016845703,
+        "strict_load": true
+      },
+      "int8": {
+        "total_bytes": 159920540,
+        "total_params": 158402816,
+        "num_tensors": 457,
+        "shards": 7,
+        "max_shard_bytes": 24844696,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.008829355239868164,
+        "strict_load": true
+      }
+    },
+    "AE1": {
+      "fp32": {
+        "total_bytes": 511799128,
+        "total_params": 127938304,
+        "num_tensors": 384,
+        "shards": 24,
+        "max_shard_bytes": 24433960,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.0,
+        "strict_load": true
+      },
+      "fp16": {
+        "total_bytes": 256228352,
+        "total_params": 127938304,
+        "num_tensors": 384,
+        "shards": 12,
+        "max_shard_bytes": 24835872,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.0001856684684753418,
+        "strict_load": true
+      },
+      "int8": {
+        "total_bytes": 129210140,
+        "total_params": 127938304,
+        "num_tensors": 384,
+        "shards": 6,
+        "max_shard_bytes": 24959980,
+        "roundtrip_maxAbs": 0.0,
+        "quantization_maxAbs": 0.0026015578769147396,
+        "strict_load": true
+      }
+    }
+  }
+}

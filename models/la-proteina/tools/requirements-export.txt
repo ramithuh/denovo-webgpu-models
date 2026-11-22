@@ -1,0 +1,11 @@
+torch==2.9.0+cpu
+numpy==1.26.4
+safetensors==0.8.0
+einops==0.8.2
+omegaconf==2.3.1
+jaxtyping==0.3.3
+loguru==0.7.3
+scipy==1.17.1
+dm-tree==0.1.9
+ml-collections==1.1.0
+biopython==1.86

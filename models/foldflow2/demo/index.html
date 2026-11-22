@@ -1,0 +1,112 @@
+<!doctype html><meta charset="utf-8" /><meta
+  name="viewport"
+  content="width=device-width"
+/><title>FoldFlow 2 · WebGPU</title>
+<style>
+  body {
+    font: 16px system-ui;
+    background: #101820;
+    color: #e5edf5;
+    max-width: 760px;
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+  label {
+    display: block;
+    margin: 1rem 0;
+  }
+  input,
+  select,
+  button {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+  a {
+    color: #89dcce;
+  }
+</style>
+<h1>FoldFlow 2</h1>
+<p>
+  Generate a protein backbone locally with WebGPU. Model weights include the
+  frozen ESM-2 encoder.
+</p>
+<label
+  >Precision
+  <select id="precision">
+    <option>int8</option>
+    <option selected>fp16</option>
+    <option>fp32</option>
+  </select></label
+><label>Length <input id="length" type="number" value="64" min="1" /></label
+><label>Flow steps <input id="steps" type="number" value="50" min="2" /></label
+><label>Seed <input id="seed" type="number" value="123" /></label>
+<button id="go">Generate</button> <button id="cancel" disabled>Cancel</button>
+<a id="download" hidden>Download PDB</a>
+<pre id="status">Ready. FP16 weights require approximately 1.34 GB.</pre>
+<script type="module">
+  import { toPDB } from "../shared/pdb.js";
+  const worker = new Worker("../webgpu/worker.js", { type: "module" }),
+    pending = new Map();
+  let id = 0,
+    loaded;
+  worker.onmessage = ({ data }) => {
+    if (data.progress) {
+      status.textContent = JSON.stringify(data.progress);
+      return;
+    }
+    const p = pending.get(data.id);
+    if (!p) return;
+    pending.delete(data.id);
+    data.error ? p.reject(Error(data.error.message)) : p.resolve(data.result);
+  };
+  const status = document.querySelector("#status"),
+    call = (type, options) =>
+      new Promise((resolve, reject) => {
+        const n = ++id;
+        pending.set(n, { resolve, reject });
+        worker.postMessage({ id: n, type, options });
+      });
+  document.querySelector("#cancel").onclick = () =>
+    worker.postMessage({ type: "abort" });
+  document.querySelector("#go").onclick = async () => {
+    const go = document.querySelector("#go"),
+      cancel = document.querySelector("#cancel");
+    go.disabled = true;
+    cancel.disabled = false;
+    try {
+      const p = document.querySelector("#precision").value;
+      if (loaded !== p) {
+        loaded = undefined;
+        status.textContent = "Loading weights…";
+        await call("init", {
+          baseUrl: new URL("../weights/" + p, location.href).href,
+          precision: p,
+          cache: "opfs",
+        });
+        loaded = p;
+      }
+      const result = await call("sample", {
+        length: +document.querySelector("#length").value,
+        steps: +document.querySelector("#steps").value,
+        seed: +document.querySelector("#seed").value,
+      });
+      const a = document.querySelector("#download");
+      if (a.href.startsWith("blob:")) URL.revokeObjectURL(a.href);
+      a.href = URL.createObjectURL(
+        new Blob([toPDB(result)], { type: "chemical/x-pdb" }),
+      );
+      a.download = "foldflow2.pdb";
+      a.hidden = false;
+      status.textContent = "Backbone generated.";
+    } catch (e) {
+      status.textContent = e.message;
+    } finally {
+      go.disabled = false;
+      cancel.disabled = true;
+    }
+  };
+</script>

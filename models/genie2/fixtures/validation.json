@@ -1,0 +1,61 @@
+{
+  "status": "blocked_on_strict_parity",
+  "reference": "unmodified pinned PyTorch",
+  "threshold": 0.0001,
+  "completeNeuralGPUExecution": true,
+  "cpuCases": 6,
+  "gpuCases": 18,
+  "cpuPassed": false,
+  "gpuPassed": false,
+  "npmTest": {
+    "tests": 12,
+    "pass": 4,
+    "fail": 8,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "sourceSnapshotSHA256": "1b0055dbecf49bd5a825811a439046d403dced66923cf13a2818632373248c52",
+  "sourceFiles": {
+    "shared/diffusion.js": "dd5d71279f5fedd5b413f13adfcc605d7e04a442b59535cdeba60d6bb99c32b5",
+    "shared/engine.js": "f18cf18305e62aea00eda3074fe7d7348f46f2ce462dc8efc3a0fb8a6129395f",
+    "shared/features.js": "42c1f06abb44f0d682cdb2e933bf8a50d78dbcaeb860684f1660cde918112a52",
+    "shared/fma.js": "d7cab9eb9402b157b959457f4fd2d8442a3c7a9546f2ee678d6887d649f4b906",
+    "shared/geometry.js": "8e46883bd3692962cb334b37b8852b71f99d9912a053441e01752bc37aa41ea8",
+    "shared/index.js": "76b4fa48045967bf695da9ff1e616817f05a800e418e16fbc1d91d5aa177c663",
+    "shared/moments.js": "0a831224ab72e802e782a33ce168b3c6e84b069c3f249793bcfd067f26265d4a",
+    "shared/network.js": "2b9892ba093683bc5598d36d5d9bb4bcf2a1661deb5fb209e54b0cbaf07ac812",
+    "shared/numeric.js": "34b976b7a4c9feb4eee352a782a7af34832b6e7b41c6b28d0d769ddb5a28c9f7",
+    "shared/pdb.js": "9b3cf68bd2a2d3366ff5c35fd3ccbddcb0e3ad1b789579f5915066ea22477ca8",
+    "shared/portable.js": "2644787e8f4185fed16da69ec80656c528b4aa6f27d4d65cde746babb56321bb",
+    "shared/quaternion.js": "035fe199e97e0d58bb740261277f5ad8ce09dec3499844587a1228b4b1903952",
+    "shared/tensor.js": "94c0399dddd3e18e258f8f2020b154c07670ee8b9e2fa4fd9b5ea87b48d929b4",
+    "shared/weights.js": "8716ec90cea2ea4539aea45a90d39eac41aa61448c51f8c5e11b9fdf3cffd3bd",
+    "cpu/algebra.js": "f32080fb5b684494efbe743f96db652682685dbf15faa258a00972a613a27929",
+    "cpu/index.js": "6906c3dfecebf78b1ec7bae2c6741c92c918d070bcb1007f07256f5210a57051",
+    "webgpu/algebra.js": "ed2b6c2861c0a85fddf436ee47c077fb303ca63d414af99306fc96a7626f8319",
+    "webgpu/device.js": "b10fbf9cfeaa00938e16c6c5a5d9702e4fa3f609ffd360ae83256dda9e22d4cb",
+    "webgpu/index.js": "9c6f0602c6757fa3577454f0f82047945581645bccc55a3f54e2afd3e9d62b4b",
+    "webgpu/worker-client.js": "c56c56536737c889dc49bf20cc80efb73f13638bd9a83c2f8ec1b1fdeda64c09",
+    "webgpu/worker.js": "1fc0ecd9f2905ea07e1e8e6018c5efff948af288554310f1bf79503bb09ecbd1"
+  },
+  "logs": {
+    "npm-test.log": "b5c5a2c3c921d8a9759c59d376969171fd9ebe9629e4715571f79966fdc958f3",
+    "test-gpu.log": "4c4defd87fe55dd4ba95e1839001279e5823f3fb2df4e180bc5fa31fdfc52bfc",
+    "test-shared.log": "e19ec86ef21464fda71d2e0236cff47972424a1806d49f9aed5a96b6414f6c2e"
+  },
+  "policy": {
+    "checkpointReferenceUnmodified": true,
+    "canonicalQuaternionSignPatchApplied": false,
+    "oracleInjectionInAcceptanceTests": false,
+    "committed": false,
+    "pushed": false,
+    "uploaded": false,
+    "vendorSyncWritten": false
+  },
+  "launchpadReport": {
+    "status": "submission_rejected",
+    "error": "project_required",
+    "reason": "denovo-webgpu-models is not registered in Launchpad; project mapping requested from user",
+    "agent_session_id": "01a20206-3295-7530-8027-81fac71af25d"
+  }
+}

@@ -1,0 +1,5314 @@
+{
+  "commit": "9a954578f7b5a39552545eebc6d4794447794c87",
+  "precision": "fp16",
+  "torch": "2.9.0+cpu",
+  "cases": [
+    {
+      "name": "fp16_unconditional_L24_T2",
+      "length": 24,
+      "mode": "unconditional",
+      "steps": 2,
+      "scale": 0.6,
+      "file": ".cache/fixtures/fp16_unconditional_L24_T2.bin",
+      "sha256": "835c4f265a2dc194cd9a2280e5a665eab94d2ca1329a13e970eddabe9397192b",
+      "byteLength": 1889772,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            24,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 1920
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1920,
+          "byteLength": 288
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2208,
+          "byteLength": 96
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2304,
+          "byteLength": 96
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2400,
+          "byteLength": 96
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2496,
+          "byteLength": 96
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            24,
+            24
+          ],
+          "offset": 2592,
+          "byteLength": 2304
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4896,
+          "byteLength": 96
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4992,
+          "byteLength": 96
+        },
+        "initial": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 5088,
+          "byteLength": 288
+        },
+        "betas": {
+          "shape": [
+            3
+          ],
+          "offset": 5376,
+          "byteLength": 12
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 5388,
+          "byteLength": 864
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 6252,
+          "byteLength": 288
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 6540,
+          "byteLength": 9216
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 15756,
+          "byteLength": 36864
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 52620,
+          "byteLength": 294912
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 347532,
+          "byteLength": 294912
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 642444,
+          "byteLength": 36864
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 679308,
+          "byteLength": 864
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 680172,
+          "byteLength": 288
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 680460,
+          "byteLength": 36864
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 717324,
+          "byteLength": 864
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 718188,
+          "byteLength": 288
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 718476,
+          "byteLength": 36864
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 755340,
+          "byteLength": 864
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 756204,
+          "byteLength": 288
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 756492,
+          "byteLength": 36864
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 793356,
+          "byteLength": 864
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 794220,
+          "byteLength": 288
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 794508,
+          "byteLength": 36864
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 831372,
+          "byteLength": 864
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 832236,
+          "byteLength": 288
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 832524,
+          "byteLength": 36864
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 869388,
+          "byteLength": 864
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 870252,
+          "byteLength": 288
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 870540,
+          "byteLength": 36864
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 907404,
+          "byteLength": 864
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 908268,
+          "byteLength": 288
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 908556,
+          "byteLength": 36864
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 945420,
+          "byteLength": 864
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946284,
+          "byteLength": 288
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946572,
+          "byteLength": 288
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946860,
+          "byteLength": 288
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 947148,
+          "byteLength": 288
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 947436,
+          "byteLength": 864
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 948300,
+          "byteLength": 288
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 948588,
+          "byteLength": 9216
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 957804,
+          "byteLength": 36864
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 994668,
+          "byteLength": 294912
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 1289580,
+          "byteLength": 294912
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1584492,
+          "byteLength": 36864
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1621356,
+          "byteLength": 864
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1622220,
+          "byteLength": 288
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1622508,
+          "byteLength": 36864
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1659372,
+          "byteLength": 864
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1660236,
+          "byteLength": 288
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1660524,
+          "byteLength": 36864
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1697388,
+          "byteLength": 864
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1698252,
+          "byteLength": 288
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1698540,
+          "byteLength": 36864
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1735404,
+          "byteLength": 864
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1736268,
+          "byteLength": 288
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1736556,
+          "byteLength": 36864
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1773420,
+          "byteLength": 864
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1774284,
+          "byteLength": 288
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1774572,
+          "byteLength": 36864
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1811436,
+          "byteLength": 864
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1812300,
+          "byteLength": 288
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1812588,
+          "byteLength": 36864
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1849452,
+          "byteLength": 864
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1850316,
+          "byteLength": 288
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1850604,
+          "byteLength": 36864
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1887468,
+          "byteLength": 864
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888332,
+          "byteLength": 288
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888620,
+          "byteLength": 288
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888908,
+          "byteLength": 288
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889196,
+          "byteLength": 288
+        },
+        "final": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889484,
+          "byteLength": 288
+        }
+      }
+    },
+    {
+      "name": "fp16_single_motif_L24_T2",
+      "length": 24,
+      "mode": "single_motif",
+      "steps": 2,
+      "scale": 0.4,
+      "file": ".cache/fixtures/fp16_single_motif_L24_T2.bin",
+      "sha256": "60796d5cb479b5a9e33dccd84d08715eb5ea3e292c3f67ecc83bdfa44147ce4f",
+      "byteLength": 1889772,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            24,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 1920
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1920,
+          "byteLength": 288
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2208,
+          "byteLength": 96
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2304,
+          "byteLength": 96
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2400,
+          "byteLength": 96
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2496,
+          "byteLength": 96
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            24,
+            24
+          ],
+          "offset": 2592,
+          "byteLength": 2304
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4896,
+          "byteLength": 96
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4992,
+          "byteLength": 96
+        },
+        "initial": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 5088,
+          "byteLength": 288
+        },
+        "betas": {
+          "shape": [
+            3
+          ],
+          "offset": 5376,
+          "byteLength": 12
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 5388,
+          "byteLength": 864
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 6252,
+          "byteLength": 288
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 6540,
+          "byteLength": 9216
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 15756,
+          "byteLength": 36864
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 52620,
+          "byteLength": 294912
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 347532,
+          "byteLength": 294912
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 642444,
+          "byteLength": 36864
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 679308,
+          "byteLength": 864
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 680172,
+          "byteLength": 288
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 680460,
+          "byteLength": 36864
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 717324,
+          "byteLength": 864
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 718188,
+          "byteLength": 288
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 718476,
+          "byteLength": 36864
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 755340,
+          "byteLength": 864
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 756204,
+          "byteLength": 288
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 756492,
+          "byteLength": 36864
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 793356,
+          "byteLength": 864
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 794220,
+          "byteLength": 288
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 794508,
+          "byteLength": 36864
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 831372,
+          "byteLength": 864
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 832236,
+          "byteLength": 288
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 832524,
+          "byteLength": 36864
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 869388,
+          "byteLength": 864
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 870252,
+          "byteLength": 288
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 870540,
+          "byteLength": 36864
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 907404,
+          "byteLength": 864
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 908268,
+          "byteLength": 288
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 908556,
+          "byteLength": 36864
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 945420,
+          "byteLength": 864
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946284,
+          "byteLength": 288
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946572,
+          "byteLength": 288
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946860,
+          "byteLength": 288
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 947148,
+          "byteLength": 288
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 947436,
+          "byteLength": 864
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 948300,
+          "byteLength": 288
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 948588,
+          "byteLength": 9216
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 957804,
+          "byteLength": 36864
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 994668,
+          "byteLength": 294912
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 1289580,
+          "byteLength": 294912
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1584492,
+          "byteLength": 36864
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1621356,
+          "byteLength": 864
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1622220,
+          "byteLength": 288
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1622508,
+          "byteLength": 36864
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1659372,
+          "byteLength": 864
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1660236,
+          "byteLength": 288
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1660524,
+          "byteLength": 36864
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1697388,
+          "byteLength": 864
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1698252,
+          "byteLength": 288
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1698540,
+          "byteLength": 36864
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1735404,
+          "byteLength": 864
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1736268,
+          "byteLength": 288
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1736556,
+          "byteLength": 36864
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1773420,
+          "byteLength": 864
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1774284,
+          "byteLength": 288
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1774572,
+          "byteLength": 36864
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1811436,
+          "byteLength": 864
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1812300,
+          "byteLength": 288
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1812588,
+          "byteLength": 36864
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1849452,
+          "byteLength": 864
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1850316,
+          "byteLength": 288
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1850604,
+          "byteLength": 36864
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1887468,
+          "byteLength": 864
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888332,
+          "byteLength": 288
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888620,
+          "byteLength": 288
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888908,
+          "byteLength": 288
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889196,
+          "byteLength": 288
+        },
+        "final": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889484,
+          "byteLength": 288
+        }
+      }
+    },
+    {
+      "name": "fp16_multi_motif_L24_T2",
+      "length": 24,
+      "mode": "multi_motif",
+      "steps": 2,
+      "scale": 0.4,
+      "file": ".cache/fixtures/fp16_multi_motif_L24_T2.bin",
+      "sha256": "8c1804e0f0806a5657e9c9d55309cc211ba2b9ded2f4fc898a7f79bf5b52dcdf",
+      "byteLength": 1889772,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            24,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 1920
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1920,
+          "byteLength": 288
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2208,
+          "byteLength": 96
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2304,
+          "byteLength": 96
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2400,
+          "byteLength": 96
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 2496,
+          "byteLength": 96
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            24,
+            24
+          ],
+          "offset": 2592,
+          "byteLength": 2304
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4896,
+          "byteLength": 96
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            24
+          ],
+          "offset": 4992,
+          "byteLength": 96
+        },
+        "initial": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 5088,
+          "byteLength": 288
+        },
+        "betas": {
+          "shape": [
+            3
+          ],
+          "offset": 5376,
+          "byteLength": 12
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 5388,
+          "byteLength": 864
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 6252,
+          "byteLength": 288
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 6540,
+          "byteLength": 9216
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 15756,
+          "byteLength": 36864
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 52620,
+          "byteLength": 294912
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 347532,
+          "byteLength": 294912
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 642444,
+          "byteLength": 36864
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 679308,
+          "byteLength": 864
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 680172,
+          "byteLength": 288
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 680460,
+          "byteLength": 36864
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 717324,
+          "byteLength": 864
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 718188,
+          "byteLength": 288
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 718476,
+          "byteLength": 36864
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 755340,
+          "byteLength": 864
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 756204,
+          "byteLength": 288
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 756492,
+          "byteLength": 36864
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 793356,
+          "byteLength": 864
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 794220,
+          "byteLength": 288
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 794508,
+          "byteLength": 36864
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 831372,
+          "byteLength": 864
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 832236,
+          "byteLength": 288
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 832524,
+          "byteLength": 36864
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 869388,
+          "byteLength": 864
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 870252,
+          "byteLength": 288
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 870540,
+          "byteLength": 36864
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 907404,
+          "byteLength": 864
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 908268,
+          "byteLength": 288
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 908556,
+          "byteLength": 36864
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 945420,
+          "byteLength": 864
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946284,
+          "byteLength": 288
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946572,
+          "byteLength": 288
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 946860,
+          "byteLength": 288
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 947148,
+          "byteLength": 288
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 947436,
+          "byteLength": 864
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 948300,
+          "byteLength": 288
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            24,
+            24,
+            4
+          ],
+          "offset": 948588,
+          "byteLength": 9216
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 957804,
+          "byteLength": 36864
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 994668,
+          "byteLength": 294912
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            24,
+            24,
+            128
+          ],
+          "offset": 1289580,
+          "byteLength": 294912
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1584492,
+          "byteLength": 36864
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1621356,
+          "byteLength": 864
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1622220,
+          "byteLength": 288
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1622508,
+          "byteLength": 36864
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1659372,
+          "byteLength": 864
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1660236,
+          "byteLength": 288
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1660524,
+          "byteLength": 36864
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1697388,
+          "byteLength": 864
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1698252,
+          "byteLength": 288
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1698540,
+          "byteLength": 36864
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1735404,
+          "byteLength": 864
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1736268,
+          "byteLength": 288
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1736556,
+          "byteLength": 36864
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1773420,
+          "byteLength": 864
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1774284,
+          "byteLength": 288
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1774572,
+          "byteLength": 36864
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1811436,
+          "byteLength": 864
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1812300,
+          "byteLength": 288
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1812588,
+          "byteLength": 36864
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1849452,
+          "byteLength": 864
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1850316,
+          "byteLength": 288
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            24,
+            384
+          ],
+          "offset": 1850604,
+          "byteLength": 36864
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            24,
+            3,
+            3
+          ],
+          "offset": 1887468,
+          "byteLength": 864
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888332,
+          "byteLength": 288
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888620,
+          "byteLength": 288
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1888908,
+          "byteLength": 288
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889196,
+          "byteLength": 288
+        },
+        "final": {
+          "shape": [
+            1,
+            24,
+            3
+          ],
+          "offset": 1889484,
+          "byteLength": 288
+        }
+      }
+    },
+    {
+      "name": "fp16_unconditional_L48_T3",
+      "length": 48,
+      "mode": "unconditional",
+      "steps": 3,
+      "scale": 0.6,
+      "file": ".cache/fixtures/fp16_unconditional_L48_T3.bin",
+      "sha256": "e6d350aee27fe823317bae809798ed25a3bccfd753b4e3966b1a76ad107d776f",
+      "byteLength": 9262480,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            48,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 3840
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3840,
+          "byteLength": 576
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4416,
+          "byteLength": 192
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4608,
+          "byteLength": 192
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4800,
+          "byteLength": 192
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4992,
+          "byteLength": 192
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            48,
+            48
+          ],
+          "offset": 5184,
+          "byteLength": 9216
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14400,
+          "byteLength": 192
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14592,
+          "byteLength": 192
+        },
+        "initial": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 14784,
+          "byteLength": 576
+        },
+        "betas": {
+          "shape": [
+            4
+          ],
+          "offset": 15360,
+          "byteLength": 16
+        },
+        "step3.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 15376,
+          "byteLength": 1728
+        },
+        "step3.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 17104,
+          "byteLength": 576
+        },
+        "step3.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 17680,
+          "byteLength": 36864
+        },
+        "step3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 54544,
+          "byteLength": 73728
+        },
+        "step3.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 128272,
+          "byteLength": 1179648
+        },
+        "step3.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 1307920,
+          "byteLength": 1179648
+        },
+        "step3.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2487568,
+          "byteLength": 73728
+        },
+        "step3.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2561296,
+          "byteLength": 1728
+        },
+        "step3.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2563024,
+          "byteLength": 576
+        },
+        "step3.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2563600,
+          "byteLength": 73728
+        },
+        "step3.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2637328,
+          "byteLength": 1728
+        },
+        "step3.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2639056,
+          "byteLength": 576
+        },
+        "step3.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2639632,
+          "byteLength": 73728
+        },
+        "step3.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2713360,
+          "byteLength": 1728
+        },
+        "step3.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2715088,
+          "byteLength": 576
+        },
+        "step3.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2715664,
+          "byteLength": 73728
+        },
+        "step3.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2789392,
+          "byteLength": 1728
+        },
+        "step3.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2791120,
+          "byteLength": 576
+        },
+        "step3.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2791696,
+          "byteLength": 73728
+        },
+        "step3.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2865424,
+          "byteLength": 1728
+        },
+        "step3.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2867152,
+          "byteLength": 576
+        },
+        "step3.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2867728,
+          "byteLength": 73728
+        },
+        "step3.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2941456,
+          "byteLength": 1728
+        },
+        "step3.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2943184,
+          "byteLength": 576
+        },
+        "step3.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2943760,
+          "byteLength": 73728
+        },
+        "step3.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3017488,
+          "byteLength": 1728
+        },
+        "step3.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3019216,
+          "byteLength": 576
+        },
+        "step3.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3019792,
+          "byteLength": 73728
+        },
+        "step3.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3093520,
+          "byteLength": 1728
+        },
+        "step3.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095248,
+          "byteLength": 576
+        },
+        "step3.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095824,
+          "byteLength": 576
+        },
+        "step3.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096400,
+          "byteLength": 576
+        },
+        "step3.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096976,
+          "byteLength": 576
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3097552,
+          "byteLength": 1728
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3099280,
+          "byteLength": 576
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 3099856,
+          "byteLength": 36864
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3136720,
+          "byteLength": 73728
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 3210448,
+          "byteLength": 1179648
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 4390096,
+          "byteLength": 1179648
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5569744,
+          "byteLength": 73728
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5643472,
+          "byteLength": 1728
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5645200,
+          "byteLength": 576
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5645776,
+          "byteLength": 73728
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5719504,
+          "byteLength": 1728
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5721232,
+          "byteLength": 576
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5721808,
+          "byteLength": 73728
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5795536,
+          "byteLength": 1728
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5797264,
+          "byteLength": 576
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5797840,
+          "byteLength": 73728
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5871568,
+          "byteLength": 1728
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5873296,
+          "byteLength": 576
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5873872,
+          "byteLength": 73728
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5947600,
+          "byteLength": 1728
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5949328,
+          "byteLength": 576
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5949904,
+          "byteLength": 73728
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6023632,
+          "byteLength": 1728
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6025360,
+          "byteLength": 576
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6025936,
+          "byteLength": 73728
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6099664,
+          "byteLength": 1728
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6101392,
+          "byteLength": 576
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6101968,
+          "byteLength": 73728
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6175696,
+          "byteLength": 1728
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6177424,
+          "byteLength": 576
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178000,
+          "byteLength": 576
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178576,
+          "byteLength": 576
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6179152,
+          "byteLength": 576
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6179728,
+          "byteLength": 1728
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6181456,
+          "byteLength": 576
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 6182032,
+          "byteLength": 36864
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6218896,
+          "byteLength": 73728
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 6292624,
+          "byteLength": 1179648
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 7472272,
+          "byteLength": 1179648
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8651920,
+          "byteLength": 73728
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8725648,
+          "byteLength": 1728
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8727376,
+          "byteLength": 576
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8727952,
+          "byteLength": 73728
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8801680,
+          "byteLength": 1728
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8803408,
+          "byteLength": 576
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8803984,
+          "byteLength": 73728
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8877712,
+          "byteLength": 1728
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8879440,
+          "byteLength": 576
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8880016,
+          "byteLength": 73728
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8953744,
+          "byteLength": 1728
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8955472,
+          "byteLength": 576
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8956048,
+          "byteLength": 73728
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9029776,
+          "byteLength": 1728
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9031504,
+          "byteLength": 576
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9032080,
+          "byteLength": 73728
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9105808,
+          "byteLength": 1728
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9107536,
+          "byteLength": 576
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9108112,
+          "byteLength": 73728
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9181840,
+          "byteLength": 1728
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9183568,
+          "byteLength": 576
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9184144,
+          "byteLength": 73728
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9257872,
+          "byteLength": 1728
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9259600,
+          "byteLength": 576
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260176,
+          "byteLength": 576
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260752,
+          "byteLength": 576
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261328,
+          "byteLength": 576
+        },
+        "final": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261904,
+          "byteLength": 576
+        }
+      }
+    },
+    {
+      "name": "fp16_single_motif_L48_T3",
+      "length": 48,
+      "mode": "single_motif",
+      "steps": 3,
+      "scale": 0.4,
+      "file": ".cache/fixtures/fp16_single_motif_L48_T3.bin",
+      "sha256": "f45b790a4be4be4c4f4240d4e973142af8d1272a984450860b9a2c895a7d6e43",
+      "byteLength": 9262480,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            48,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 3840
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3840,
+          "byteLength": 576
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4416,
+          "byteLength": 192
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4608,
+          "byteLength": 192
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4800,
+          "byteLength": 192
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4992,
+          "byteLength": 192
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            48,
+            48
+          ],
+          "offset": 5184,
+          "byteLength": 9216
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14400,
+          "byteLength": 192
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14592,
+          "byteLength": 192
+        },
+        "initial": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 14784,
+          "byteLength": 576
+        },
+        "betas": {
+          "shape": [
+            4
+          ],
+          "offset": 15360,
+          "byteLength": 16
+        },
+        "step3.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 15376,
+          "byteLength": 1728
+        },
+        "step3.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 17104,
+          "byteLength": 576
+        },
+        "step3.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 17680,
+          "byteLength": 36864
+        },
+        "step3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 54544,
+          "byteLength": 73728
+        },
+        "step3.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 128272,
+          "byteLength": 1179648
+        },
+        "step3.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 1307920,
+          "byteLength": 1179648
+        },
+        "step3.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2487568,
+          "byteLength": 73728
+        },
+        "step3.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2561296,
+          "byteLength": 1728
+        },
+        "step3.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2563024,
+          "byteLength": 576
+        },
+        "step3.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2563600,
+          "byteLength": 73728
+        },
+        "step3.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2637328,
+          "byteLength": 1728
+        },
+        "step3.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2639056,
+          "byteLength": 576
+        },
+        "step3.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2639632,
+          "byteLength": 73728
+        },
+        "step3.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2713360,
+          "byteLength": 1728
+        },
+        "step3.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2715088,
+          "byteLength": 576
+        },
+        "step3.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2715664,
+          "byteLength": 73728
+        },
+        "step3.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2789392,
+          "byteLength": 1728
+        },
+        "step3.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2791120,
+          "byteLength": 576
+        },
+        "step3.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2791696,
+          "byteLength": 73728
+        },
+        "step3.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2865424,
+          "byteLength": 1728
+        },
+        "step3.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2867152,
+          "byteLength": 576
+        },
+        "step3.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2867728,
+          "byteLength": 73728
+        },
+        "step3.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2941456,
+          "byteLength": 1728
+        },
+        "step3.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2943184,
+          "byteLength": 576
+        },
+        "step3.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2943760,
+          "byteLength": 73728
+        },
+        "step3.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3017488,
+          "byteLength": 1728
+        },
+        "step3.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3019216,
+          "byteLength": 576
+        },
+        "step3.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3019792,
+          "byteLength": 73728
+        },
+        "step3.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3093520,
+          "byteLength": 1728
+        },
+        "step3.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095248,
+          "byteLength": 576
+        },
+        "step3.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095824,
+          "byteLength": 576
+        },
+        "step3.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096400,
+          "byteLength": 576
+        },
+        "step3.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096976,
+          "byteLength": 576
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3097552,
+          "byteLength": 1728
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3099280,
+          "byteLength": 576
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 3099856,
+          "byteLength": 36864
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3136720,
+          "byteLength": 73728
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 3210448,
+          "byteLength": 1179648
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 4390096,
+          "byteLength": 1179648
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5569744,
+          "byteLength": 73728
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5643472,
+          "byteLength": 1728
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5645200,
+          "byteLength": 576
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5645776,
+          "byteLength": 73728
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5719504,
+          "byteLength": 1728
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5721232,
+          "byteLength": 576
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5721808,
+          "byteLength": 73728
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5795536,
+          "byteLength": 1728
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5797264,
+          "byteLength": 576
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5797840,
+          "byteLength": 73728
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5871568,
+          "byteLength": 1728
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5873296,
+          "byteLength": 576
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5873872,
+          "byteLength": 73728
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5947600,
+          "byteLength": 1728
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5949328,
+          "byteLength": 576
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5949904,
+          "byteLength": 73728
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6023632,
+          "byteLength": 1728
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6025360,
+          "byteLength": 576
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6025936,
+          "byteLength": 73728
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6099664,
+          "byteLength": 1728
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6101392,
+          "byteLength": 576
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6101968,
+          "byteLength": 73728
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6175696,
+          "byteLength": 1728
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6177424,
+          "byteLength": 576
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178000,
+          "byteLength": 576
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178576,
+          "byteLength": 576
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6179152,
+          "byteLength": 576
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6179728,
+          "byteLength": 1728
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6181456,
+          "byteLength": 576
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 6182032,
+          "byteLength": 36864
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6218896,
+          "byteLength": 73728
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 6292624,
+          "byteLength": 1179648
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 7472272,
+          "byteLength": 1179648
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8651920,
+          "byteLength": 73728
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8725648,
+          "byteLength": 1728
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8727376,
+          "byteLength": 576
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8727952,
+          "byteLength": 73728
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8801680,
+          "byteLength": 1728
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8803408,
+          "byteLength": 576
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8803984,
+          "byteLength": 73728
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8877712,
+          "byteLength": 1728
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8879440,
+          "byteLength": 576
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8880016,
+          "byteLength": 73728
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8953744,
+          "byteLength": 1728
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8955472,
+          "byteLength": 576
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8956048,
+          "byteLength": 73728
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9029776,
+          "byteLength": 1728
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9031504,
+          "byteLength": 576
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9032080,
+          "byteLength": 73728
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9105808,
+          "byteLength": 1728
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9107536,
+          "byteLength": 576
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9108112,
+          "byteLength": 73728
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9181840,
+          "byteLength": 1728
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9183568,
+          "byteLength": 576
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9184144,
+          "byteLength": 73728
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9257872,
+          "byteLength": 1728
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9259600,
+          "byteLength": 576
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260176,
+          "byteLength": 576
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260752,
+          "byteLength": 576
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261328,
+          "byteLength": 576
+        },
+        "final": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261904,
+          "byteLength": 576
+        }
+      }
+    },
+    {
+      "name": "fp16_multi_motif_L48_T3",
+      "length": 48,
+      "mode": "multi_motif",
+      "steps": 3,
+      "scale": 0.4,
+      "file": ".cache/fixtures/fp16_multi_motif_L48_T3.bin",
+      "sha256": "5fc1fba2e6e5ae9f181d17494a71b8c94e96f2d32a8d69c7eb312eb0027d9712",
+      "byteLength": 9262480,
+      "tensors": {
+        "features.aatype": {
+          "shape": [
+            1,
+            48,
+            20
+          ],
+          "offset": 0,
+          "byteLength": 3840
+        },
+        "features.atom_positions": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3840,
+          "byteLength": 576
+        },
+        "features.residue_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4416,
+          "byteLength": 192
+        },
+        "features.residue_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4608,
+          "byteLength": 192
+        },
+        "features.chain_index": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4800,
+          "byteLength": 192
+        },
+        "features.fixed_sequence_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 4992,
+          "byteLength": 192
+        },
+        "features.fixed_structure_mask": {
+          "shape": [
+            1,
+            48,
+            48
+          ],
+          "offset": 5184,
+          "byteLength": 9216
+        },
+        "features.fixed_group": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14400,
+          "byteLength": 192
+        },
+        "features.interface_mask": {
+          "shape": [
+            1,
+            48
+          ],
+          "offset": 14592,
+          "byteLength": 192
+        },
+        "initial": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 14784,
+          "byteLength": 576
+        },
+        "betas": {
+          "shape": [
+            4
+          ],
+          "offset": 15360,
+          "byteLength": 16
+        },
+        "step3.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 15376,
+          "byteLength": 1728
+        },
+        "step3.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 17104,
+          "byteLength": 576
+        },
+        "step3.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 17680,
+          "byteLength": 36864
+        },
+        "step3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 54544,
+          "byteLength": 73728
+        },
+        "step3.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 128272,
+          "byteLength": 1179648
+        },
+        "step3.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 1307920,
+          "byteLength": 1179648
+        },
+        "step3.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2487568,
+          "byteLength": 73728
+        },
+        "step3.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2561296,
+          "byteLength": 1728
+        },
+        "step3.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2563024,
+          "byteLength": 576
+        },
+        "step3.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2563600,
+          "byteLength": 73728
+        },
+        "step3.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2637328,
+          "byteLength": 1728
+        },
+        "step3.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2639056,
+          "byteLength": 576
+        },
+        "step3.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2639632,
+          "byteLength": 73728
+        },
+        "step3.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2713360,
+          "byteLength": 1728
+        },
+        "step3.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2715088,
+          "byteLength": 576
+        },
+        "step3.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2715664,
+          "byteLength": 73728
+        },
+        "step3.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2789392,
+          "byteLength": 1728
+        },
+        "step3.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2791120,
+          "byteLength": 576
+        },
+        "step3.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2791696,
+          "byteLength": 73728
+        },
+        "step3.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2865424,
+          "byteLength": 1728
+        },
+        "step3.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2867152,
+          "byteLength": 576
+        },
+        "step3.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2867728,
+          "byteLength": 73728
+        },
+        "step3.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 2941456,
+          "byteLength": 1728
+        },
+        "step3.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 2943184,
+          "byteLength": 576
+        },
+        "step3.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 2943760,
+          "byteLength": 73728
+        },
+        "step3.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3017488,
+          "byteLength": 1728
+        },
+        "step3.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3019216,
+          "byteLength": 576
+        },
+        "step3.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3019792,
+          "byteLength": 73728
+        },
+        "step3.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3093520,
+          "byteLength": 1728
+        },
+        "step3.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095248,
+          "byteLength": 576
+        },
+        "step3.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3095824,
+          "byteLength": 576
+        },
+        "step3.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096400,
+          "byteLength": 576
+        },
+        "step3.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3096976,
+          "byteLength": 576
+        },
+        "step2.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 3097552,
+          "byteLength": 1728
+        },
+        "step2.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 3099280,
+          "byteLength": 576
+        },
+        "step2.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 3099856,
+          "byteLength": 36864
+        },
+        "step2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 3136720,
+          "byteLength": 73728
+        },
+        "step2.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 3210448,
+          "byteLength": 1179648
+        },
+        "step2.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 4390096,
+          "byteLength": 1179648
+        },
+        "step2.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5569744,
+          "byteLength": 73728
+        },
+        "step2.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5643472,
+          "byteLength": 1728
+        },
+        "step2.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5645200,
+          "byteLength": 576
+        },
+        "step2.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5645776,
+          "byteLength": 73728
+        },
+        "step2.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5719504,
+          "byteLength": 1728
+        },
+        "step2.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5721232,
+          "byteLength": 576
+        },
+        "step2.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5721808,
+          "byteLength": 73728
+        },
+        "step2.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5795536,
+          "byteLength": 1728
+        },
+        "step2.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5797264,
+          "byteLength": 576
+        },
+        "step2.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5797840,
+          "byteLength": 73728
+        },
+        "step2.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5871568,
+          "byteLength": 1728
+        },
+        "step2.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5873296,
+          "byteLength": 576
+        },
+        "step2.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5873872,
+          "byteLength": 73728
+        },
+        "step2.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 5947600,
+          "byteLength": 1728
+        },
+        "step2.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 5949328,
+          "byteLength": 576
+        },
+        "step2.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 5949904,
+          "byteLength": 73728
+        },
+        "step2.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6023632,
+          "byteLength": 1728
+        },
+        "step2.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6025360,
+          "byteLength": 576
+        },
+        "step2.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6025936,
+          "byteLength": 73728
+        },
+        "step2.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6099664,
+          "byteLength": 1728
+        },
+        "step2.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6101392,
+          "byteLength": 576
+        },
+        "step2.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6101968,
+          "byteLength": 73728
+        },
+        "step2.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6175696,
+          "byteLength": 1728
+        },
+        "step2.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6177424,
+          "byteLength": 576
+        },
+        "step2.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178000,
+          "byteLength": 576
+        },
+        "step2.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6178576,
+          "byteLength": 576
+        },
+        "step2.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6179152,
+          "byteLength": 576
+        },
+        "step1.input_rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 6179728,
+          "byteLength": 1728
+        },
+        "step1.input_trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 6181456,
+          "byteLength": 576
+        },
+        "step1.orientations": {
+          "shape": [
+            1,
+            48,
+            48,
+            4
+          ],
+          "offset": 6182032,
+          "byteLength": 36864
+        },
+        "step1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 6218896,
+          "byteLength": 73728
+        },
+        "step1.pair": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 6292624,
+          "byteLength": 1179648
+        },
+        "step1.pair_final": {
+          "shape": [
+            1,
+            48,
+            48,
+            128
+          ],
+          "offset": 7472272,
+          "byteLength": 1179648
+        },
+        "step1.structure0.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8651920,
+          "byteLength": 73728
+        },
+        "step1.structure0.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8725648,
+          "byteLength": 1728
+        },
+        "step1.structure0.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8727376,
+          "byteLength": 576
+        },
+        "step1.structure1.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8727952,
+          "byteLength": 73728
+        },
+        "step1.structure1.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8801680,
+          "byteLength": 1728
+        },
+        "step1.structure1.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8803408,
+          "byteLength": 576
+        },
+        "step1.structure2.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8803984,
+          "byteLength": 73728
+        },
+        "step1.structure2.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8877712,
+          "byteLength": 1728
+        },
+        "step1.structure2.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8879440,
+          "byteLength": 576
+        },
+        "step1.structure3.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8880016,
+          "byteLength": 73728
+        },
+        "step1.structure3.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 8953744,
+          "byteLength": 1728
+        },
+        "step1.structure3.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 8955472,
+          "byteLength": 576
+        },
+        "step1.structure4.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 8956048,
+          "byteLength": 73728
+        },
+        "step1.structure4.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9029776,
+          "byteLength": 1728
+        },
+        "step1.structure4.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9031504,
+          "byteLength": 576
+        },
+        "step1.structure5.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9032080,
+          "byteLength": 73728
+        },
+        "step1.structure5.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9105808,
+          "byteLength": 1728
+        },
+        "step1.structure5.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9107536,
+          "byteLength": 576
+        },
+        "step1.structure6.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9108112,
+          "byteLength": 73728
+        },
+        "step1.structure6.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9181840,
+          "byteLength": 1728
+        },
+        "step1.structure6.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9183568,
+          "byteLength": 576
+        },
+        "step1.structure7.single": {
+          "shape": [
+            1,
+            48,
+            384
+          ],
+          "offset": 9184144,
+          "byteLength": 73728
+        },
+        "step1.structure7.rots": {
+          "shape": [
+            1,
+            48,
+            3,
+            3
+          ],
+          "offset": 9257872,
+          "byteLength": 1728
+        },
+        "step1.structure7.trans": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9259600,
+          "byteLength": 576
+        },
+        "step1.z": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260176,
+          "byteLength": 576
+        },
+        "step1.noise": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9260752,
+          "byteLength": 576
+        },
+        "step1.output": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261328,
+          "byteLength": 576
+        },
+        "final": {
+          "shape": [
+            1,
+            48,
+            3
+          ],
+          "offset": 9261904,
+          "byteLength": 576
+        }
+      }
+    }
+  ]
+}

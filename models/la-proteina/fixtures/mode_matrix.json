@@ -1,0 +1,65 @@
+{
+  "upstream_commit": "cde5de3ead6e4d76f367da6dc5174be9913ef6ca",
+  "neural_scope": [
+    "LD1",
+    "AE1 decoder"
+  ],
+  "cpu_cases": [
+    "fp32_L32_T1_sde",
+    "fp32_L32_T1_ode",
+    "fp32_L32_T3_sde",
+    "fp32_L32_T3_ode",
+    "fp32_L64_T1_sde",
+    "fp32_L64_T1_ode",
+    "fp32_L64_T3_sde",
+    "fp32_L64_T3_ode"
+  ],
+  "gpu_cases": [
+    "fp32_L32_T1_sde",
+    "fp32_L32_T1_ode",
+    "fp32_L32_T3_sde",
+    "fp32_L32_T3_ode",
+    "fp32_L64_T1_sde",
+    "fp32_L64_T1_ode",
+    "fp32_L64_T3_sde",
+    "fp32_L64_T3_ode",
+    "fp32_L47_T7_sde",
+    "fp32_L47_T7_ode",
+    "fp16_L32_T1_sde",
+    "fp16_L32_T1_ode",
+    "fp16_L32_T3_sde",
+    "fp16_L32_T3_ode",
+    "fp16_L64_T1_sde",
+    "fp16_L64_T1_ode",
+    "fp16_L64_T3_sde",
+    "fp16_L64_T3_ode",
+    "fp16_L47_T7_sde",
+    "fp16_L47_T7_ode",
+    "int8_L32_T1_sde",
+    "int8_L32_T1_ode",
+    "int8_L32_T3_sde",
+    "int8_L32_T3_ode",
+    "int8_L64_T1_sde",
+    "int8_L64_T1_ode",
+    "int8_L64_T3_sde",
+    "int8_L64_T3_ode",
+    "int8_L47_T7_sde",
+    "int8_L47_T7_ode"
+  ],
+  "gpu_long_cases": [
+    "int8_L32_T400_sde",
+    "int8_L32_T400_ode",
+    "fp32_L32_T400_sde",
+    "fp32_L32_T400_ode"
+  ],
+  "threshold_relRMS": 0.0001,
+  "runtime_dynamic_length": [
+    1,
+    500
+  ],
+  "runtime_dynamic_steps": "positive integer",
+  "encoder": false,
+  "triangular_models": false,
+  "motif_conditioning": false,
+  "skipped": 0
+}

@@ -1,0 +1,329 @@
+{
+  "name": "stress_int8_L64_T12",
+  "precision": "int8",
+  "length": 64,
+  "steps": 12,
+  "kind": "sample",
+  "selfCondition": true,
+  "seed": 123,
+  "file": ".cache/fixtures/stress_int8_L64_T12.bin",
+  "sha256": "acc26d9359818c1f47de70dc964fbd796fff5ed58255a649af269743244491d7",
+  "tensors": {
+    "input.trans_t": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 0,
+      "count": 192
+    },
+    "input.rotmats_t": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 768,
+      "count": 576
+    },
+    "input.res_mask": {
+      "shape": [
+        1,
+        64
+      ],
+      "offset": 3072,
+      "count": 64
+    },
+    "input.diffuse_mask": {
+      "shape": [
+        1,
+        64
+      ],
+      "offset": 3328,
+      "count": 64
+    },
+    "input.res_idx": {
+      "shape": [
+        1,
+        64
+      ],
+      "offset": 3584,
+      "count": 64
+    },
+    "input.so3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 3840,
+      "count": 1
+    },
+    "input.r3_t": {
+      "shape": [
+        1,
+        1
+      ],
+      "offset": 3844,
+      "count": 1
+    },
+    "output.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 3848,
+      "count": 192
+    },
+    "output.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 4616,
+      "count": 576
+    },
+    "output.coords": {
+      "shape": [
+        1,
+        64,
+        5,
+        3
+      ],
+      "offset": 6920,
+      "count": 960
+    },
+    "output.step0.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 10760,
+      "count": 192
+    },
+    "output.step0.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 11528,
+      "count": 576
+    },
+    "output.step1.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 13832,
+      "count": 192
+    },
+    "output.step1.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 14600,
+      "count": 576
+    },
+    "output.step2.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 16904,
+      "count": 192
+    },
+    "output.step2.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 17672,
+      "count": 576
+    },
+    "output.step3.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 19976,
+      "count": 192
+    },
+    "output.step3.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 20744,
+      "count": 576
+    },
+    "output.step4.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 23048,
+      "count": 192
+    },
+    "output.step4.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 23816,
+      "count": 576
+    },
+    "output.step5.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 26120,
+      "count": 192
+    },
+    "output.step5.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 26888,
+      "count": 576
+    },
+    "output.step6.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 29192,
+      "count": 192
+    },
+    "output.step6.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 29960,
+      "count": 576
+    },
+    "output.step7.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 32264,
+      "count": 192
+    },
+    "output.step7.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 33032,
+      "count": 576
+    },
+    "output.step8.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 35336,
+      "count": 192
+    },
+    "output.step8.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 36104,
+      "count": 576
+    },
+    "output.step9.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 38408,
+      "count": 192
+    },
+    "output.step9.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 39176,
+      "count": 576
+    },
+    "output.step10.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 41480,
+      "count": 192
+    },
+    "output.step10.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 42248,
+      "count": 576
+    },
+    "output.step11.pred_trans": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "offset": 44552,
+      "count": 192
+    },
+    "output.step11.pred_rotmats": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "offset": 45320,
+      "count": 576
+    }
+  }
+}

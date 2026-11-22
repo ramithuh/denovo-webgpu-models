@@ -1,0 +1,2530 @@
+{
+  "ok": true,
+  "adapterInfo": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "device": "",
+    "description": ""
+  },
+  "cases": [
+    {
+      "name": "fp32_L32_T1_sde",
+      "timingMs": 491.5,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T1_ode",
+      "timingMs": 108.70000076293945,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T3_sde",
+      "timingMs": 343.80000019073486,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L32_T3_ode",
+      "timingMs": 241.69999980926514,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T1_sde",
+      "timingMs": 405.80000019073486,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T1_ode",
+      "timingMs": 156.80000019073486,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T3_sde",
+      "timingMs": 415.4000005722046,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L64_T3_ode",
+      "timingMs": 263.30000019073486,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp32_L47_T7_sde",
+      "timingMs": 1077.6000003814697,
+      "parity": {
+        "ca": {
+          "relRMS": 0.0000012838398391523311,
+          "maxAbs": 0.000020682811737060547
+        },
+        "z": {
+          "relRMS": 0.0000015695151518880024,
+          "maxAbs": 0.0000036954879760742188
+        },
+        "coords": {
+          "relRMS": 0.0000012788791648300438,
+          "maxAbs": 0.00002187490463256836
+        },
+        "logits": {
+          "relRMS": 7.596477909379081e-7,
+          "maxAbs": 0.00002574920654296875
+        },
+        "maskedCoords": {
+          "relRMS": 0.0000012596619463409297,
+          "maxAbs": 0.000021398067474365234
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.2314549940533625e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.6557819309886403e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 7.804594768171831e-9,
+          "maxAbs": 0.000003814697265625
+        },
+        "step1.z": {
+          "relRMS": 1.2487060165976272e-8,
+          "maxAbs": 4.76837158203125e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 2.11757917292276e-7,
+          "maxAbs": 0.0000095367431640625
+        },
+        "step1.velocityZ": {
+          "relRMS": 4.4591440583809706e-7,
+          "maxAbs": 0.0000030994415283203125
+        },
+        "step2.ca": {
+          "relRMS": 3.692344759657656e-7,
+          "maxAbs": 0.0000152587890625
+        },
+        "step2.z": {
+          "relRMS": 6.938063204597809e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        "step2.velocityCa": {
+          "relRMS": 4.5261694314364706e-7,
+          "maxAbs": 0.0000152587890625
+        },
+        "step2.velocityZ": {
+          "relRMS": 3.8999682569848544e-7,
+          "maxAbs": 0.000003337860107421875
+        },
+        "step3.ca": {
+          "relRMS": 8.61857401207098e-7,
+          "maxAbs": 0.000011444091796875
+        },
+        "step3.z": {
+          "relRMS": 2.2368914315177187e-7,
+          "maxAbs": 9.5367431640625e-7
+        },
+        "step3.velocityCa": {
+          "relRMS": 7.596552863312667e-7,
+          "maxAbs": 0.0000152587890625
+        },
+        "step3.velocityZ": {
+          "relRMS": 7.392470776797494e-7,
+          "maxAbs": 0.0000026226043701171875
+        },
+        "step4.ca": {
+          "relRMS": 8.952630657269899e-7,
+          "maxAbs": 0.00000858306884765625
+        },
+        "step4.z": {
+          "relRMS": 5.931731521136852e-7,
+          "maxAbs": 9.5367431640625e-7
+        },
+        "step4.velocityCa": {
+          "relRMS": 9.490923378251299e-7,
+          "maxAbs": 0.000026702880859375
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.0000020119474651631723,
+          "maxAbs": 0.0000045299530029296875
+        },
+        "step5.ca": {
+          "relRMS": 0.0000010261375452788538,
+          "maxAbs": 0.0000133514404296875
+        },
+        "step5.z": {
+          "relRMS": 0.0000011865823405453682,
+          "maxAbs": 0.0000018775463104248047
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.0000012005773775865813,
+          "maxAbs": 0.00003600120544433594
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.0000018636264756181228,
+          "maxAbs": 0.0000031087547540664673
+        },
+        "step6.ca": {
+          "relRMS": 0.0000012756370316258984,
+          "maxAbs": 0.00002130866050720215
+        },
+        "step6.z": {
+          "relRMS": 0.0000013468772809235811,
+          "maxAbs": 0.0000017881393432617188
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.0000012592415994343659,
+          "maxAbs": 0.00003838539123535156
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.0000020604453213783313,
+          "maxAbs": 0.000004827976226806641
+        }
+      }
+    },
+    {
+      "name": "fp32_L47_T7_ode",
+      "timingMs": 684.5999994277954,
+      "parity": {
+        "ca": {
+          "relRMS": 0.0000013974932223408996,
+          "maxAbs": 0.000002734363079071045
+        },
+        "z": {
+          "relRMS": 0.000010994875297348355,
+          "maxAbs": 0.00012283027172088623
+        },
+        "coords": {
+          "relRMS": 0.0000037725850311095062,
+          "maxAbs": 0.000017464160919189453
+        },
+        "logits": {
+          "relRMS": 0.000016799663204643956,
+          "maxAbs": 0.0013852119445800781
+        },
+        "maskedCoords": {
+          "relRMS": 0.0000030437337442586608,
+          "maxAbs": 0.000017464160919189453
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.2314549940533625e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.6557819309886403e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 2.0965580745882371e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        "step1.z": {
+          "relRMS": 8.873730286265782e-9,
+          "maxAbs": 1.1920928955078125e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 4.74078651473547e-7,
+          "maxAbs": 0.0000017881393432617188
+        },
+        "step1.velocityZ": {
+          "relRMS": 2.5092854979057213e-7,
+          "maxAbs": 9.5367431640625e-7
+        },
+        "step2.ca": {
+          "relRMS": 3.05159723097376e-7,
+          "maxAbs": 3.129243850708008e-7
+        },
+        "step2.z": {
+          "relRMS": 3.746975891549707e-8,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step2.velocityCa": {
+          "relRMS": 8.361698644174883e-7,
+          "maxAbs": 0.0000030994415283203125
+        },
+        "step2.velocityZ": {
+          "relRMS": 4.893109220652526e-7,
+          "maxAbs": 0.0000021457672119140625
+        },
+        "step3.ca": {
+          "relRMS": 4.169629592392934e-7,
+          "maxAbs": 4.76837158203125e-7
+        },
+        "step3.z": {
+          "relRMS": 7.472955507622546e-8,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step3.velocityCa": {
+          "relRMS": 0.0000026462751133825915,
+          "maxAbs": 0.000011116266250610352
+        },
+        "step3.velocityZ": {
+          "relRMS": 0.0000017231506069004357,
+          "maxAbs": 0.000006973743438720703
+        },
+        "step4.ca": {
+          "relRMS": 6.906669017499675e-7,
+          "maxAbs": 0.0000010281801223754883
+        },
+        "step4.z": {
+          "relRMS": 3.201967007156838e-7,
+          "maxAbs": 0.0000010207295417785645
+        },
+        "step4.velocityCa": {
+          "relRMS": 0.000005791677449483742,
+          "maxAbs": 0.000034928321838378906
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.0000045675209087207724,
+          "maxAbs": 0.0000171661376953125
+        },
+        "step5.ca": {
+          "relRMS": 0.0000010343997085125318,
+          "maxAbs": 0.000002162531018257141
+        },
+        "step5.z": {
+          "relRMS": 0.000001199744280944302,
+          "maxAbs": 0.000003814697265625
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.00000823927003691685,
+          "maxAbs": 0.00007623434066772461
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.000009164077659814847,
+          "maxAbs": 0.00004684925079345703
+        },
+        "step6.ca": {
+          "relRMS": 0.0000012753638399363362,
+          "maxAbs": 0.00000233575701713562
+        },
+        "step6.z": {
+          "relRMS": 0.000003374206692460761,
+          "maxAbs": 0.000011444091796875
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.000009921417781228663,
+          "maxAbs": 0.00007027387619018555
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.000029479707506527875,
+          "maxAbs": 0.00041985511779785156
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T1_sde",
+      "timingMs": 545.6999998092651,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T1_ode",
+      "timingMs": 113.19999980926514,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T3_sde",
+      "timingMs": 347.29999923706055,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L32_T3_ode",
+      "timingMs": 252.80000019073486,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T1_sde",
+      "timingMs": 419.6000003814697,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T1_ode",
+      "timingMs": 133.5,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T3_sde",
+      "timingMs": 374.8999996185303,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L64_T3_ode",
+      "timingMs": 262.19999980926514,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "fp16_L47_T7_sde",
+      "timingMs": 1103.1999998092651,
+      "parity": {
+        "ca": {
+          "relRMS": 0.0000013037295880763753,
+          "maxAbs": 0.00001811981201171875
+        },
+        "z": {
+          "relRMS": 0.0000016257882763671197,
+          "maxAbs": 0.0000028014183044433594
+        },
+        "coords": {
+          "relRMS": 0.0000012998555439193366,
+          "maxAbs": 0.000019550323486328125
+        },
+        "logits": {
+          "relRMS": 8.337511769763174e-7,
+          "maxAbs": 0.000034332275390625
+        },
+        "maskedCoords": {
+          "relRMS": 0.0000012983073350876162,
+          "maxAbs": 0.000019550323486328125
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.0973539459464671e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.787662393771098e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 1.8514570959558435e-8,
+          "maxAbs": 0.00000762939453125
+        },
+        "step1.z": {
+          "relRMS": 1.4650243216054643e-8,
+          "maxAbs": 4.76837158203125e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 1.8743324368229072e-7,
+          "maxAbs": 0.00000762939453125
+        },
+        "step1.velocityZ": {
+          "relRMS": 4.132297630063396e-7,
+          "maxAbs": 0.000002384185791015625
+        },
+        "step2.ca": {
+          "relRMS": 2.687302988999476e-7,
+          "maxAbs": 0.00000762939453125
+        },
+        "step2.z": {
+          "relRMS": 5.887385556183028e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        "step2.velocityCa": {
+          "relRMS": 3.7946345326239076e-7,
+          "maxAbs": 0.00001430511474609375
+        },
+        "step2.velocityZ": {
+          "relRMS": 3.5101110164943767e-7,
+          "maxAbs": 0.00000286102294921875
+        },
+        "step3.ca": {
+          "relRMS": 7.224980995239782e-7,
+          "maxAbs": 0.00000762939453125
+        },
+        "step3.z": {
+          "relRMS": 2.0304433484696822e-7,
+          "maxAbs": 0.000001430511474609375
+        },
+        "step3.velocityCa": {
+          "relRMS": 8.092343070096802e-7,
+          "maxAbs": 0.0000209808349609375
+        },
+        "step3.velocityZ": {
+          "relRMS": 6.639321051904414e-7,
+          "maxAbs": 0.0000025033950805664062
+        },
+        "step4.ca": {
+          "relRMS": 9.370174825321766e-7,
+          "maxAbs": 0.00001049041748046875
+        },
+        "step4.z": {
+          "relRMS": 5.272719458821152e-7,
+          "maxAbs": 0.0000011920928955078125
+        },
+        "step4.velocityCa": {
+          "relRMS": 9.906004986698807e-7,
+          "maxAbs": 0.00002574920654296875
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.0000021476106385748,
+          "maxAbs": 0.0000037848949432373047
+        },
+        "step5.ca": {
+          "relRMS": 0.0000010702451031759158,
+          "maxAbs": 0.000012874603271484375
+        },
+        "step5.z": {
+          "relRMS": 0.000001259021707464849,
+          "maxAbs": 0.0000016093254089355469
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.0000012292712777403658,
+          "maxAbs": 0.00003528594970703125
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.000002185348120538837,
+          "maxAbs": 0.000005125999450683594
+        },
+        "step6.ca": {
+          "relRMS": 0.000001304314381798825,
+          "maxAbs": 0.000018835067749023438
+        },
+        "step6.z": {
+          "relRMS": 0.0000015754026900473136,
+          "maxAbs": 0.0000030994415283203125
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.0000013873943094749708,
+          "maxAbs": 0.00005245208740234375
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.0000020867127141094786,
+          "maxAbs": 0.000003814697265625
+        }
+      }
+    },
+    {
+      "name": "fp16_L47_T7_ode",
+      "timingMs": 554.8999996185303,
+      "parity": {
+        "ca": {
+          "relRMS": 9.836445383714421e-7,
+          "maxAbs": 0.0000021224841475486755
+        },
+        "z": {
+          "relRMS": 0.000009019624315928813,
+          "maxAbs": 0.00010260194540023804
+        },
+        "coords": {
+          "relRMS": 0.0000044569276346067396,
+          "maxAbs": 0.00003013014793395996
+        },
+        "logits": {
+          "relRMS": 0.000021805903210767007,
+          "maxAbs": 0.0018019676208496094
+        },
+        "maskedCoords": {
+          "relRMS": 0.000003118185166923845,
+          "maxAbs": 0.000023052096366882324
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.0973539459464671e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.787662393771098e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 2.063315700530094e-7,
+          "maxAbs": 4.76837158203125e-7
+        },
+        "step1.z": {
+          "relRMS": 1.479855427023381e-8,
+          "maxAbs": 1.1920928955078125e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 4.531571889929414e-7,
+          "maxAbs": 0.0000013113021850585938
+        },
+        "step1.velocityZ": {
+          "relRMS": 2.1547085693626847e-7,
+          "maxAbs": 8.344650268554688e-7
+        },
+        "step2.ca": {
+          "relRMS": 3.121249054729835e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        "step2.z": {
+          "relRMS": 3.035313355529019e-8,
+          "maxAbs": 1.1920928955078125e-7
+        },
+        "step2.velocityCa": {
+          "relRMS": 7.708023845992027e-7,
+          "maxAbs": 0.0000021457672119140625
+        },
+        "step2.velocityZ": {
+          "relRMS": 4.979016437007238e-7,
+          "maxAbs": 0.000002086162567138672
+        },
+        "step3.ca": {
+          "relRMS": 4.296656638215674e-7,
+          "maxAbs": 4.172325134277344e-7
+        },
+        "step3.z": {
+          "relRMS": 6.94767741599751e-8,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step3.velocityCa": {
+          "relRMS": 0.000001730899751775974,
+          "maxAbs": 0.000005125999450683594
+        },
+        "step3.velocityZ": {
+          "relRMS": 0.000001225949823519807,
+          "maxAbs": 0.000004649162292480469
+        },
+        "step4.ca": {
+          "relRMS": 5.133437945992006e-7,
+          "maxAbs": 5.960464477539062e-7
+        },
+        "step4.z": {
+          "relRMS": 2.432129185510057e-7,
+          "maxAbs": 8.940696716308594e-7
+        },
+        "step4.velocityCa": {
+          "relRMS": 0.00000412721370847823,
+          "maxAbs": 0.000015020370483398438
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.000003275814162687802,
+          "maxAbs": 0.000012785196304321289
+        },
+        "step5.ca": {
+          "relRMS": 6.860140103443874e-7,
+          "maxAbs": 7.82310962677002e-7
+        },
+        "step5.z": {
+          "relRMS": 8.253826809906254e-7,
+          "maxAbs": 0.000002682209014892578
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.000005855464641629492,
+          "maxAbs": 0.00005221366882324219
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.000007024944883106668,
+          "maxAbs": 0.0000374913215637207
+        },
+        "step6.ca": {
+          "relRMS": 8.685507476140798e-7,
+          "maxAbs": 0.000001635868102312088
+        },
+        "step6.z": {
+          "relRMS": 0.000002534831368827444,
+          "maxAbs": 0.000008732080459594727
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.000007922143842483756,
+          "maxAbs": 0.00005161762237548828
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.00002471386521492256,
+          "maxAbs": 0.00035458803176879883
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T1_sde",
+      "timingMs": 564.8999996185303,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T1_ode",
+      "timingMs": 115.19999980926514,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T3_sde",
+      "timingMs": 337.1000003814697,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L32_T3_ode",
+      "timingMs": 243.60000038146973,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T1_sde",
+      "timingMs": 420.5,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T1_ode",
+      "timingMs": 183.5999994277954,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T3_sde",
+      "timingMs": 369.8999996185303,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L64_T3_ode",
+      "timingMs": 245,
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      }
+    },
+    {
+      "name": "int8_L47_T7_sde",
+      "timingMs": 1119.3999996185303,
+      "parity": {
+        "ca": {
+          "relRMS": 0.0000013651156309525769,
+          "maxAbs": 0.00002384185791015625
+        },
+        "z": {
+          "relRMS": 0.0000016621228215129393,
+          "maxAbs": 0.0000029206275939941406
+        },
+        "coords": {
+          "relRMS": 0.000001359338370115702,
+          "maxAbs": 0.000025272369384765625
+        },
+        "logits": {
+          "relRMS": 7.264927697047594e-7,
+          "maxAbs": 0.00002765655517578125
+        },
+        "maskedCoords": {
+          "relRMS": 0.000001302668684629709,
+          "maxAbs": 0.00002384185791015625
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.2832016545651093e-7,
+          "maxAbs": 8.344650268554688e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.6761625469327958e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 1.3613409068888805e-8,
+          "maxAbs": 0.00000762939453125
+        },
+        "step1.z": {
+          "relRMS": 5.433657121486198e-9,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 1.635591653740494e-7,
+          "maxAbs": 0.0000057220458984375
+        },
+        "step1.velocityZ": {
+          "relRMS": 3.5177498996539667e-7,
+          "maxAbs": 0.000001430511474609375
+        },
+        "step2.ca": {
+          "relRMS": 2.5292867389077037e-7,
+          "maxAbs": 0.00000762939453125
+        },
+        "step2.z": {
+          "relRMS": 4.515141214328169e-8,
+          "maxAbs": 0.0000019073486328125
+        },
+        "step2.velocityCa": {
+          "relRMS": 3.486335281467633e-7,
+          "maxAbs": 0.00000762939453125
+        },
+        "step2.velocityZ": {
+          "relRMS": 3.4584170879448565e-7,
+          "maxAbs": 0.00000286102294921875
+        },
+        "step3.ca": {
+          "relRMS": 7.075395118824979e-7,
+          "maxAbs": 0.000005245208740234375
+        },
+        "step3.z": {
+          "relRMS": 2.1211743550998844e-7,
+          "maxAbs": 0.00000286102294921875
+        },
+        "step3.velocityCa": {
+          "relRMS": 8.252825396641558e-7,
+          "maxAbs": 0.00001811981201171875
+        },
+        "step3.velocityZ": {
+          "relRMS": 6.847898808578339e-7,
+          "maxAbs": 0.0000035762786865234375
+        },
+        "step4.ca": {
+          "relRMS": 9.656467180206392e-7,
+          "maxAbs": 0.000009775161743164062
+        },
+        "step4.z": {
+          "relRMS": 5.297682271934277e-7,
+          "maxAbs": 9.5367431640625e-7
+        },
+        "step4.velocityCa": {
+          "relRMS": 0.0000010423458060704919,
+          "maxAbs": 0.0000286102294921875
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.000002427052969649572,
+          "maxAbs": 0.000006712973117828369
+        },
+        "step5.ca": {
+          "relRMS": 0.0000011044986859319651,
+          "maxAbs": 0.000013828277587890625
+        },
+        "step5.z": {
+          "relRMS": 0.0000014229423825124187,
+          "maxAbs": 0.00000286102294921875
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.0000012814821175363577,
+          "maxAbs": 0.00004291534423828125
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.000002658817121320177,
+          "maxAbs": 0.000011146068572998047
+        },
+        "step6.ca": {
+          "relRMS": 0.0000013605478671401753,
+          "maxAbs": 0.000024318695068359375
+        },
+        "step6.z": {
+          "relRMS": 0.0000019168235083606206,
+          "maxAbs": 0.000006616115570068359
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.0000014229178699313886,
+          "maxAbs": 0.00006151199340820312
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.0000020919548151966164,
+          "maxAbs": 0.000003516674041748047
+        }
+      }
+    },
+    {
+      "name": "int8_L47_T7_ode",
+      "timingMs": 484.20000076293945,
+      "parity": {
+        "ca": {
+          "relRMS": 8.175122662241286e-7,
+          "maxAbs": 0.0000018030405044555664
+        },
+        "z": {
+          "relRMS": 0.0000035644622167026868,
+          "maxAbs": 0.000019729137420654297
+        },
+        "coords": {
+          "relRMS": 0.0000024045891416116515,
+          "maxAbs": 0.000012949109077453613
+        },
+        "logits": {
+          "relRMS": 0.000009641787889539106,
+          "maxAbs": 0.0006084442138671875
+        },
+        "maskedCoords": {
+          "relRMS": 0.0000014226321018282811,
+          "maxAbs": 0.000009149312973022461
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 2.2832016545651093e-7,
+          "maxAbs": 8.344650268554688e-7
+        },
+        "step0.velocityZ": {
+          "relRMS": 1.6761625469327958e-7,
+          "maxAbs": 7.152557373046875e-7
+        },
+        "step1.ca": {
+          "relRMS": 2.103820899277849e-7,
+          "maxAbs": 4.172325134277344e-7
+        },
+        "step1.z": {
+          "relRMS": 1.535714154776227e-8,
+          "maxAbs": 1.1920928955078125e-7
+        },
+        "step1.velocityCa": {
+          "relRMS": 4.178765907519713e-7,
+          "maxAbs": 0.0000010728836059570312
+        },
+        "step1.velocityZ": {
+          "relRMS": 2.5743580599067844e-7,
+          "maxAbs": 0.0000011920928955078125
+        },
+        "step2.ca": {
+          "relRMS": 3.092146912477269e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        "step2.z": {
+          "relRMS": 3.41202645743494e-8,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step2.velocityCa": {
+          "relRMS": 6.65902595074839e-7,
+          "maxAbs": 0.000002384185791015625
+        },
+        "step2.velocityZ": {
+          "relRMS": 4.888074657074917e-7,
+          "maxAbs": 0.000002086162567138672
+        },
+        "step3.ca": {
+          "relRMS": 3.372821343102003e-7,
+          "maxAbs": 3.5762786865234375e-7
+        },
+        "step3.z": {
+          "relRMS": 7.203756803566924e-8,
+          "maxAbs": 2.384185791015625e-7
+        },
+        "step3.velocityCa": {
+          "relRMS": 0.0000014889292656001794,
+          "maxAbs": 0.000005066394805908203
+        },
+        "step3.velocityZ": {
+          "relRMS": 9.937669416414068e-7,
+          "maxAbs": 0.000003725290298461914
+        },
+        "step4.ca": {
+          "relRMS": 3.8975639673939626e-7,
+          "maxAbs": 4.76837158203125e-7
+        },
+        "step4.z": {
+          "relRMS": 1.9947128298847397e-7,
+          "maxAbs": 5.289912223815918e-7
+        },
+        "step4.velocityCa": {
+          "relRMS": 0.000004324763098242018,
+          "maxAbs": 0.00003612041473388672
+        },
+        "step4.velocityZ": {
+          "relRMS": 0.000003764151722365044,
+          "maxAbs": 0.00001800060272216797
+        },
+        "step5.ca": {
+          "relRMS": 6.44156741730349e-7,
+          "maxAbs": 0.0000015795230865478516
+        },
+        "step5.z": {
+          "relRMS": 8.911499629701735e-7,
+          "maxAbs": 0.000003159046173095703
+        },
+        "step5.velocityCa": {
+          "relRMS": 0.000004355139126203617,
+          "maxAbs": 0.000025391578674316406
+        },
+        "step5.velocityZ": {
+          "relRMS": 0.000005578870453429923,
+          "maxAbs": 0.000020265579223632812
+        },
+        "step6.ca": {
+          "relRMS": 7.725172212686817e-7,
+          "maxAbs": 0.0000018030405044555664
+        },
+        "step6.z": {
+          "relRMS": 0.00000207066486061252,
+          "maxAbs": 0.0000069141387939453125
+        },
+        "step6.velocityCa": {
+          "relRMS": 0.000005621806265175788,
+          "maxAbs": 0.00002467632293701172
+        },
+        "step6.velocityZ": {
+          "relRMS": 0.000008211758052978526,
+          "maxAbs": 0.000056862831115722656
+        }
+      }
+    }
+  ],
+  "memory": {
+    "fp32": {
+      "loaded": {
+        "bytes": 1145364480,
+        "transientBuffers": 0,
+        "allocations": 841,
+        "reusedBuffers": 0
+      },
+      "loadMs": 4686.5
+    },
+    "fp16": {
+      "loaded": {
+        "bytes": 573364736,
+        "transientBuffers": 0,
+        "allocations": 841,
+        "reusedBuffers": 0
+      },
+      "loadMs": 3000.8999996185303
+    },
+    "int8": {
+      "loaded": {
+        "bytes": 288991768,
+        "transientBuffers": 0,
+        "allocations": 841,
+        "reusedBuffers": 0
+      },
+      "loadMs": 1811
+    }
+  },
+  "lifecycle": {
+    "fp32": {
+      "normal": true,
+      "inputError": true,
+      "midForwardError": true,
+      "midForwardAbort": true,
+      "recovery": true,
+      "bytes": 1145364480,
+      "transientBuffers": 0,
+      "allocations": 2727,
+      "reusedBuffers": 40651
+    },
+    "fp16": {
+      "normal": true,
+      "inputError": true,
+      "midForwardError": true,
+      "midForwardAbort": true,
+      "recovery": true,
+      "bytes": 573364736,
+      "transientBuffers": 0,
+      "allocations": 2727,
+      "reusedBuffers": 40651
+    },
+    "int8": {
+      "normal": true,
+      "inputError": true,
+      "midForwardError": true,
+      "midForwardAbort": true,
+      "recovery": true,
+      "bytes": 288991768,
+      "transientBuffers": 0,
+      "allocations": 2727,
+      "reusedBuffers": 40651
+    },
+    "normalization768": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "externalDeviceRetained": true,
+    "readbackError": true,
+    "weightUploadError": true,
+    "nativeF16": {
+      "parity": {
+        "ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "coords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "logits": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "maskedCoords": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step0.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step1.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.ca": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.z": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityCa": {
+          "relRMS": 0,
+          "maxAbs": 0
+        },
+        "step2.velocityZ": {
+          "relRMS": 0,
+          "maxAbs": 0
+        }
+      },
+      "packedBytes": 573364736
+    }
+  },
+  "timings": {
+    "fp32": {
+      "coldMs": 491.5,
+      "warmMs": 113
+    },
+    "fp16": {
+      "coldMs": 545.6999998092651,
+      "warmMs": 119.19999980926514
+    },
+    "int8": {
+      "coldMs": 564.8999996185303,
+      "warmMs": 112
+    }
+  },
+  "storage": {
+    "cache": {
+      "coldReads": 2,
+      "warmReads": 0
+    },
+    "opfs": {
+      "coldReads": 2,
+      "warmReads": 0
+    },
+    "deniedCache": true,
+    "deniedOPFS": true
+  },
+  "worker": {
+    "adapterInfo": {
+      "vendor": "nvidia",
+      "architecture": "",
+      "device": "",
+      "description": ""
+    },
+    "parity": {
+      "ca": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "z": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "coords": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "logits": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "maskedCoords": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step0.ca": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step0.z": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step0.velocityCa": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step0.velocityZ": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step1.ca": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step1.z": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step1.velocityCa": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step1.velocityZ": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step2.ca": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step2.z": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step2.velocityCa": {
+        "relRMS": 0,
+        "maxAbs": 0
+      },
+      "step2.velocityZ": {
+        "relRMS": 0,
+        "maxAbs": 0
+      }
+    },
+    "memory": {
+      "bytes": 288991768,
+      "transientBuffers": 0,
+      "allocations": 983,
+      "reusedBuffers": 3743
+    }
+  },
+  "demo": {
+    "generation": true,
+    "sequence": true,
+    "pdbDownload": true,
+    "preview": true,
+    "cancellation": true,
+    "release": true
+  },
+  "timeEmbedding": {
+    "relRMS": 0,
+    "maxAbs": 0
+  },
+  "linear": {
+    "relRMS": 0,
+    "maxAbs": 0
+  },
+  "centering": {
+    "1": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "4": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "32": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "47": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "64": {
+      "relRMS": 0,
+      "maxAbs": 0
+    },
+    "500": {
+      "relRMS": 0,
+      "maxAbs": 0
+    }
+  },
+  "shaderVariants": 462,
+  "skipped": 0,
+  "hostGPU": "NVIDIA GB10, 580.159.03"
+}

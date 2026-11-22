@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+  <title>Proteina · Cα backbone generation</title>
+  <style>
+    :root {
+      font:
+        16px system-ui,
+        sans-serif;
+      color: #dce8e5;
+      background: #101917;
+      color-scheme: dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 1080px;
+      padding: 32px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    p {
+      line-height: 1.55;
+      color: #acc0b8;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+    }
+    input,
+    select,
+    button {
+      font: inherit;
+      padding: 9px;
+      border: 1px solid #436055;
+      border-radius: 6px;
+      background: #1c2c26;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+      background: #23644b;
+    }
+    button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .row > * {
+      flex: 1;
+      min-width: 0;
+    }
+    canvas {
+      background: #16221e;
+      border: 1px solid #344a40;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 12px;
+      touch-action: none;
+    }
+    #status {
+      min-height: 3em;
+      white-space: pre-wrap;
+    }
+    small {
+      color: #acc0b8;
+    }
+    a {
+      color: #80dbb1;
+    }
+    @media (max-width: 700px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 20px;
+      }
+    }
+  </style>
+  <h1>Proteina</h1>
+  <p>
+    Generate a protein Cα backbone in your browser. Proteina v1.2 · 200M · no
+    triangle updates.
+  </p>
+  <main>
+    <form id="form">
+      <div class="row">
+        <label
+          >Residues<input
+            id="length"
+            type="number"
+            min="2"
+            max="512"
+            value="64" /></label
+        ><label
+          >Steps<input id="steps" type="number" min="1" max="2000" value="100"
+        /></label>
+      </div>
+      <label
+        >Weight precision<select id="precision">
+          <option value="fp16">FP16 · 384 MB</option>
+          <option value="int8">INT8 · 194 MB</option>
+          <option value="fp32">FP32 · 765 MB</option>
+        </select></label
+      >
+      <div class="row">
+        <label
+          >Integrator<select id="mode">
+            <option value="sc">SDE</option>
+            <option value="vf">ODE</option>
+          </select></label
+        ><label
+          >Time schedule<select id="schedule">
+            <option value="log">Log</option>
+            <option value="uniform">Linear</option>
+          </select></label
+        >
+      </div>
+      <div class="row">
+        <label
+          >Noise scale<input
+            id="noise"
+            type="number"
+            min="0"
+            step="0.05"
+            value="0.45" /></label
+        ><label>Seed<input id="seed" type="number" value="5" /></label>
+      </div>
+      <label
+        ><span
+          ><input id="self-condition" type="checkbox" checked />
+          Self-conditioning</span
+        ></label
+      >
+      <label
+        >Optional fold indices (C, A, T)<input
+          id="fold"
+          placeholder="Unconditional"
+          aria-describedby="fold-help" /></label
+      ><small id="fold-help"
+        >Embedding indices require the matching CATH vocabulary. Leave blank for
+        unconditional generation.</small
+      >
+      <div class="row">
+        <button id="run" type="submit">Generate</button
+        ><button id="cancel" type="button" disabled>Cancel</button>
+      </div>
+      <div class="row">
+        <button id="download" type="button" disabled>Download PDB</button
+        ><button id="release" type="button">Release GPU</button>
+      </div>
+    </form>
+    <section>
+      <canvas
+        id="view"
+        width="720"
+        height="720"
+        aria-label="Generated Cα backbone"
+      ></canvas
+      ><small>Drag to rotate. PDB output contains Cα atoms only.</small>
+      <p id="status" role="status">
+        Ready. The first run downloads the selected weight bundle.
+      </p>
+      <small id="adapter"></small>
+    </section>
+  </main>
+  <p>
+    <small
+      >This pinned model’s NVIDIA license limits use to research or evaluation.
+      <a href="../LICENSE.NVIDIA">License</a> ·
+      <a href="../README_WEBGPU.md">Runtime documentation</a></small
+    >
+  </p>
+  <script type="module" src="./main.js"></script>
+</html>

@@ -1,0 +1,4 @@
+wgpu==0.29.0
+cffi==2.1.1
+pycparser==3.12
+rendercanvas==3.0.1

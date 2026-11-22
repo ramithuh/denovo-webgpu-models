@@ -1,0 +1,44 @@
+{
+  "method": "Unmodified pinned PyTorch model, epoch 40; perturb initial coordinates only",
+  "rows": [
+    {
+      "coordinate_perturbation": 1e-08,
+      "quaternion_sign_flips": 131,
+      "pairs": 576,
+      "input": {
+        "relRMS": 1.0596891505491115e-08,
+        "maxAbs": 5.960464477539063e-08
+      },
+      "predicted_noise": {
+        "relRMS": 0.015280832250553556,
+        "maxAbs": 0.03696364164352417
+      }
+    },
+    {
+      "coordinate_perturbation": 1e-07,
+      "quaternion_sign_flips": 279,
+      "pairs": 576,
+      "input": {
+        "relRMS": 9.83310484301547e-08,
+        "maxAbs": 2.384185791015625e-07
+      },
+      "predicted_noise": {
+        "relRMS": 0.03086745904962452,
+        "maxAbs": 0.08485841751098633
+      }
+    },
+    {
+      "coordinate_perturbation": 1e-06,
+      "quaternion_sign_flips": 292,
+      "pairs": 576,
+      "input": {
+        "relRMS": 9.993096230771526e-07,
+        "maxAbs": 2.6579946279525757e-06
+      },
+      "predicted_noise": {
+        "relRMS": 0.021792027794901712,
+        "maxAbs": 0.058460116386413574
+      }
+    }
+  ]
+}

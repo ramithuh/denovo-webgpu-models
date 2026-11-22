@@ -1,0 +1,47 @@
+{
+  "name": "linear",
+  "file": ".cache/fixtures/linear.bin",
+  "byteLength": 2657280,
+  "sha256": "7917f128f14148efc3c21b00c4a8800d4a906ffe0ee0d286a7ce7b13053c5796",
+  "tensors": {
+    "x": {
+      "shape": [
+        32,
+        768
+      ],
+      "offset": 0,
+      "length": 24576
+    },
+    "w": {
+      "shape": [
+        768,
+        768
+      ],
+      "offset": 98304,
+      "length": 589824
+    },
+    "b": {
+      "shape": [
+        768
+      ],
+      "offset": 2457600,
+      "length": 768
+    },
+    "out": {
+      "shape": [
+        32,
+        768
+      ],
+      "offset": 2460672,
+      "length": 24576
+    },
+    "norm": {
+      "shape": [
+        32,
+        768
+      ],
+      "offset": 2558976,
+      "length": 24576
+    }
+  }
+}

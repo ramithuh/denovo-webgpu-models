@@ -1,0 +1,29 @@
+[
+  {
+    "precision": "fp32",
+    "tensors": 1065,
+    "parameters": 670492976,
+    "bytes": 2682103264,
+    "shards": 169,
+    "roundtrip_exact": true,
+    "weight_rmse": 0.0
+  },
+  {
+    "precision": "fp16",
+    "tensors": 1065,
+    "parameters": 670492976,
+    "bytes": 1342401952,
+    "shards": 68,
+    "roundtrip_exact": true,
+    "weight_rmse": 2.766130986770483e-06
+  },
+  {
+    "precision": "int8",
+    "tensors": 1065,
+    "parameters": 670492976,
+    "bytes": 674400652,
+    "shards": 34,
+    "roundtrip_exact": true,
+    "weight_rmse": 0.0008823329396009074
+  }
+]

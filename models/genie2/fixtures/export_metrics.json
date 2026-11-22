@@ -1,0 +1,83 @@
+{
+  "fp32": {
+    "total_params": 15732080,
+    "num_tensors": 396,
+    "total_bytes": 62974496,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 23340184,
+        "bytes": 23340184,
+        "sha256": "861b6a8db948dac0bd101e2d585e4a14419260f0a90747ff0b26a9437b5838f7"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 24816432,
+        "bytes": 24816432,
+        "sha256": "661e02ef223ce1d3b2deb17a84863ef74ddc9a30d76a323d3bcbcb3bbf7fa1b7"
+      },
+      {
+        "file": "model-003.safetensors",
+        "byteLength": 14817880,
+        "bytes": 14817880,
+        "sha256": "7d37f6742d79aea65fe6ecc926117fc3f2664acb9c8fee33d5b3bb868fa4e933"
+      }
+    ],
+    "roundtrip": {
+      "identically_quantized": true,
+      "maxAbs": 0
+    },
+    "weight_drift": {
+      "relRMS": 0.0,
+      "maxAbs": 0.0
+    }
+  },
+  "fp16": {
+    "total_params": 15732080,
+    "num_tensors": 396,
+    "total_bytes": 31611920,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 24784048,
+        "bytes": 24784048,
+        "sha256": "7844bb70fce9feace50b44de67e96574a554f915d8a884c14bca5d7720589864"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 6827872,
+        "bytes": 6827872,
+        "sha256": "10ea873f33fe995d264ed328486c619f05ce8a2f6c373b80179d325412347fe1"
+      }
+    ],
+    "roundtrip": {
+      "identically_quantized": true,
+      "maxAbs": 0
+    },
+    "weight_drift": {
+      "relRMS": 0.00019142786948009674,
+      "maxAbs": 0.0004876852035522461
+    }
+  },
+  "int8": {
+    "total_params": 15732080,
+    "num_tensors": 396,
+    "total_bytes": 16084040,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 16084040,
+        "bytes": 16084040,
+        "sha256": "20b3d4ea0af9a2e9f43349685cba5f4100762c0a661a80bbaad2e79a2c83cbc8"
+      }
+    ],
+    "roundtrip": {
+      "identically_quantized": true,
+      "maxAbs": 0
+    },
+    "weight_drift": {
+      "relRMS": 0.008811517916284416,
+      "maxAbs": 0.007332749664783478
+    }
+  }
+}

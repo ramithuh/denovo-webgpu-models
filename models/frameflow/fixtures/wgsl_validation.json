@@ -1,0 +1,40 @@
+{
+  "wgpu": "0.29.0",
+  "adapter": {
+    "vendor": "NVIDIA",
+    "architecture": "",
+    "device": "NVIDIA GB10",
+    "description": "580.159.03",
+    "stackgroup_min_size": 4,
+    "stackgroup_max_size": 128,
+    "vendor_id": 4318,
+    "device_id": 11794,
+    "adapter_type": "IntegratedGPU",
+    "backend_type": "Vulkan"
+  },
+  "validated": [
+    "add.wgsl",
+    "attentionLogits.wgsl",
+    "attentionOutput.wgsl",
+    "edgeFeatures.wgsl",
+    "eulerRotation.wgsl",
+    "eulerTranslation.wgsl",
+    "frameOutput.wgsl",
+    "frames.wgsl",
+    "ipaLogits.wgsl",
+    "ipaOutput.wgsl",
+    "linearF16.wgsl",
+    "linearF16native.wgsl",
+    "linearF32.wgsl",
+    "linearI8.wgsl",
+    "mask.wgsl",
+    "node.wgsl",
+    "norm.wgsl",
+    "pairConcat.wgsl",
+    "points.wgsl",
+    "relative.wgsl",
+    "softmax.wgsl",
+    "updateFrames.wgsl"
+  ],
+  "skipped": 0
+}

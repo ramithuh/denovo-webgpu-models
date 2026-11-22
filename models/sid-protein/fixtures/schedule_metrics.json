@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "stepCounts": [
+    1,
+    128
+  ],
+  "comparison": "bitwise FP32 equality to pinned PyTorch logarithmic schedule",
+  "mismatches": 0,
+  "referenceSha256": "e7f23387e11300f94043da19e23bb7ee84ba278eaad1b84fb6d8bf67b2bdfe91"
+}

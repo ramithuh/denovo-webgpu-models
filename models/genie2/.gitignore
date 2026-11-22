@@ -1,0 +1,7 @@
+.cache/
+.venv/
+weights/
+node_modules/
+.t/
+__pycache__/
+*.pyc

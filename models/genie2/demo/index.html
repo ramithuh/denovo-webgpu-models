@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Genie 2 · WebGPU backbone generation</title>
+  <style>
+    :root {
+      font-family: system-ui, sans-serif;
+      color: #e1e9ef;
+      background: #111b26;
+    }
+    body {
+      max-width: 1040px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      color: #b2c2cd;
+      line-height: 1.5;
+    }
+    .notice {
+      border-left: 3px solid #e9b76c;
+      padding: 10px 16px;
+      background: #262820;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 24px;
+    }
+    label {
+      display: block;
+      margin: 14px 0 4px;
+    }
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+      border: 1px solid #455566;
+      border-radius: 6px;
+      background: #1e2c3b;
+      color: inherit;
+      padding: 9px;
+      box-sizing: border-box;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+    }
+    button {
+      cursor: pointer;
+      margin: 16px 6px 0 0;
+    }
+    button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    canvas {
+      width: 100%;
+      height: 500px;
+      background: #142332;
+      border-radius: 12px;
+      touch-action: none;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-size: 13px;
+      color: #b2c2cd;
+    }
+    @media (max-width: 720px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      canvas {
+        height: 360px;
+      }
+    }
+  </style>
+  <h1>Genie 2</h1>
+  <p>
+    Generate Cα backbones locally in your browser. Drag the structure to rotate
+    it.
+  </p>
+  <p class="notice">
+    Experimental port: strict parity with the original PyTorch model has not
+    passed. Results are for development and review.
+  </p>
+  <main>
+    <section>
+      <label for="precision">Weight precision</label
+      ><select id="precision">
+        <option>fp32</option>
+        <option selected>fp16</option>
+        <option>int8</option>
+      </select>
+      <label for="length">Residues</label
+      ><input id="length" type="number" min="3" max="512" value="48" />
+      <label for="steps">Diffusion steps</label
+      ><input id="steps" type="number" min="1" max="1000" value="50" />
+      <label for="scale">Noise scale</label
+      ><input id="scale" type="number" min="0" max="1" step="0.1" value="0.6" />
+      <label for="seed">Seed</label
+      ><input id="seed" type="number" value="42" />
+      <label for="motif">Motif specification (optional)</label
+      ><textarea
+        id="motif"
+        rows="7"
+        placeholder="Paste REMARK 999 scaffold ranges and Cα PDB records. Supports multiple motif groups."
+      ></textarea>
+      <button id="generate">Generate</button
+      ><button id="cancel" disabled>Cancel</button
+      ><button id="save" disabled>Save PDB</button
+      ><button id="release">Release GPU</button>
+      <pre id="status">
+Ready. Weight bundles must be served from ../weights/.</pre
+      >
+    </section>
+    <section>
+      <canvas
+        id="view"
+        width="1000"
+        height="800"
+        aria-label="Generated C-alpha backbone"
+      ></canvas>
+      <p>Epoch 40 · Apache-2.0 · Cα coordinates in Ångströms</p>
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</html>

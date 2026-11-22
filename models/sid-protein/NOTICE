@@ -1,0 +1,23 @@
+SiD-Protein browser implementation and export/oracle tooling.
+SiD_Protein: Copyright (c) 2025 Liyang Xie; Copyright (c) 2024 Mingyuan Zhou.
+SiD repository is distributed under Apache-2.0; see LICENSE_SID.
+Proteina neural architecture: Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES.
+Proteina pair attention: Copyright (c) 2024 NVIDIA CORPORATION & AFFILIATES.
+Proteina's included license limits use to noncommercial research/evaluation;
+see LICENSE_PROTEINA. Its source files additionally carry these notices:
+
+SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+property and proprietary rights in and to this material, related
+ documentation and any modifications thereto. Any use, reproduction,
+disclosure or distribution of this material and related documentation
+without an express license agreement from NVIDIA CORPORATION or
+its affiliates is strictly prohibited.
+
+The browser loader, GPU buffer lifecycle, and Chromium harness were adapted
+from the sibling denovo-webgpu-models ESMC and EvoDiff implementations.
+No upstream Python source or binary weights are included in the runtime bundle.
+
+Floating-point transcendental and FMA helpers were adapted from the local
+la-proteina implementation, which derives the exponential/sine polynomials
+from SLEEF 3.8.0 (Boost Software License 1.0). See LICENSE_BOOST.

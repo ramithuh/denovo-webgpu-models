@@ -1,0 +1,307 @@
+{
+  "precision": "int8",
+  "length": 64,
+  "forward_time": 0.6,
+  "step_counts": [
+    2,
+    3
+  ],
+  "min_t": 0.01,
+  "self_conditioning": true,
+  "reference": "Pinned upstream eager FP32 arithmetic, identically dequantized weights (including ESM2)",
+  "tensors": {
+    "initial": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/initial.bin",
+      "sha256": "e9d636ecdace5da7d39b137d076268f4150e6c0f1266712f54294afad83d4a94"
+    },
+    "esm.single": {
+      "shape": [
+        1,
+        64,
+        34,
+        1280
+      ],
+      "file": ".cache/fixtures/int8/L64/esm.single.bin",
+      "sha256": "f08b1cbd90455b9d255160b4d9ccab10124c9b746850aff5137e1c20cba80348"
+    },
+    "esm.pair": {
+      "shape": [
+        1,
+        64,
+        64,
+        660
+      ],
+      "file": ".cache/fixtures/int8/L64/esm.pair.bin",
+      "sha256": "e31a2774e8745a974eb04dfd4bdc8e652ed5a07a4202c5df67375cc657b119d6"
+    },
+    "sequence.single": {
+      "shape": [
+        1,
+        64,
+        128
+      ],
+      "file": ".cache/fixtures/int8/L64/sequence.single.bin",
+      "sha256": "a64b29b2cc4b691b9a51f0685922fe1e03d93ea704d5b8d5bbe2e79a06de709d"
+    },
+    "sequence.pair": {
+      "shape": [
+        1,
+        64,
+        64,
+        128
+      ],
+      "file": ".cache/fixtures/int8/L64/sequence.pair.bin",
+      "sha256": "91abccdb57aff146dd64a5c1ca565ae888e4f4760c8a08979644a90fd41dd59f"
+    },
+    "encoder.single": {
+      "shape": [
+        1,
+        64,
+        256
+      ],
+      "file": ".cache/fixtures/int8/L64/encoder.single.bin",
+      "sha256": "646f7c591d9c7775ccd28c03b11bdf42483e0ba07c2404ace8d1dd439e13b1c1"
+    },
+    "encoder.pair": {
+      "shape": [
+        1,
+        64,
+        64,
+        128
+      ],
+      "file": ".cache/fixtures/int8/L64/encoder.pair.bin",
+      "sha256": "69fc2f17c9e93d4abc58162178c4e059a95e03ae30aead4824433b38c2294104"
+    },
+    "encoder.frames": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/encoder.frames.bin",
+      "sha256": "781d26cec105803139862ef13beb06e6c63c0a708a646f04457e6a7ba3b0d7f0"
+    },
+    "trunk.single": {
+      "shape": [
+        1,
+        64,
+        256
+      ],
+      "file": ".cache/fixtures/int8/L64/trunk.single.bin",
+      "sha256": "ae85fe034f9cf6ad42b4adfa74fe4bcd10494265dacdf87a892c8f9d2afc8c45"
+    },
+    "trunk.pair": {
+      "shape": [
+        1,
+        64,
+        64,
+        128
+      ],
+      "file": ".cache/fixtures/int8/L64/trunk.pair.bin",
+      "sha256": "e8d746fdf08b77653b9951d49bdbfdd0a6a3565603318833d070a0b6befbe4ea"
+    },
+    "forward.rigids": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.rigids.bin",
+      "sha256": "4b9871d0ad7375f9e5020a45fd282c888cdf75dd2611e2f43c9ef5ac1ce998de"
+    },
+    "forward.psi": {
+      "shape": [
+        1,
+        64,
+        2
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.psi.bin",
+      "sha256": "a3ef354a02e31c1a25b29b7bee9a32c3e9600481edf6e519f1f805f018a8edc6"
+    },
+    "forward.rot_vectorfield": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.rot_vectorfield.bin",
+      "sha256": "f5c47e56ff7b7c7302da68e0daff10d239f58857f12e1a976d31ab8a5f8ea270"
+    },
+    "forward.trans_vectorfield": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.trans_vectorfield.bin",
+      "sha256": "e15a096382afb3f538c43a0125a9f531db8243ba51f98077b7c57dc9a2a206ec"
+    },
+    "forward.atom37": {
+      "shape": [
+        1,
+        64,
+        37,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.atom37.bin",
+      "sha256": "9204ce0aad50a1088240f7094132d4a3bb9140072dbca209db56eb1165d867c9"
+    },
+    "forward.atom14": {
+      "shape": [
+        1,
+        64,
+        14,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/forward.atom14.bin",
+      "sha256": "203a2804a5a21394c3713ea249c7082526fae2ff41825b91249cb4a3b0a9b06e"
+    },
+    "T2.step0.pred": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.step0.pred.bin",
+      "sha256": "097ba75fd7ea7517737885b10fde1b19291afb430560da74929c4fd4760fba7e"
+    },
+    "T2.step1.pred": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.step1.pred.bin",
+      "sha256": "7ef81cd3826cdd597ec22170833a8654f5447819eba08304b1b6e4bbe000c08c"
+    },
+    "T2.trajectory": {
+      "shape": [
+        2,
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.trajectory.bin",
+      "sha256": "b091a4b9bd07fb642eef37f6a43ac44b09303edb4a2633711f646c975f844d04"
+    },
+    "T2.atoms": {
+      "shape": [
+        1,
+        64,
+        37,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.atoms.bin",
+      "sha256": "51419e7e8a7ce2bcaa36c5df4ee81d4f229474556cca09ba6b8353f7fd23ed22"
+    },
+    "T2.psi": {
+      "shape": [
+        1,
+        64,
+        2
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.psi.bin",
+      "sha256": "62a0fd7db4daae33d58ad6f7fcc84c267d3e4caff3dff4a878e4010e81522be7"
+    },
+    "T2.rotVF": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.rotVF.bin",
+      "sha256": "2ebc72b3f6721c88ca63204b0cedd6704b6fb68ee4d33003c2509a58a3ef301f"
+    },
+    "T2.transVF": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T2.transVF.bin",
+      "sha256": "030586a6954b42baad287990e4f09429f59d4553e4d797a437e2530cf94cc939"
+    },
+    "T3.step0.pred": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.step0.pred.bin",
+      "sha256": "097ba75fd7ea7517737885b10fde1b19291afb430560da74929c4fd4760fba7e"
+    },
+    "T3.step1.pred": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.step1.pred.bin",
+      "sha256": "f84a8bb68619a413fa712ebe2109bee814564e4f4e5b0ac667ad1ccec23910ef"
+    },
+    "T3.step2.pred": {
+      "shape": [
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.step2.pred.bin",
+      "sha256": "9b29d1ea68ac8b61e55696a11b67056c1c73fc6e5274e3bd05309b78c5078712"
+    },
+    "T3.trajectory": {
+      "shape": [
+        3,
+        1,
+        64,
+        7
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.trajectory.bin",
+      "sha256": "4cb01d002d534b9d545da1deb396954881799f8938530bdea3c5d556312ff78d"
+    },
+    "T3.atoms": {
+      "shape": [
+        1,
+        64,
+        37,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.atoms.bin",
+      "sha256": "f74ee19a1eb5faa0ca341d0fa9adb4cbc34ab3becaeaee8ababa32dd97929e72"
+    },
+    "T3.psi": {
+      "shape": [
+        1,
+        64,
+        2
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.psi.bin",
+      "sha256": "f9091e15ce14a5179707558a35b7c5c789c43ffba513c2a2d6569350ad268245"
+    },
+    "T3.rotVF": {
+      "shape": [
+        1,
+        64,
+        3,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.rotVF.bin",
+      "sha256": "5e04905ffe54b46bea434a3988f974ffcd89a4b78809ffdd510e0e52d837dab1"
+    },
+    "T3.transVF": {
+      "shape": [
+        1,
+        64,
+        3
+      ],
+      "file": ".cache/fixtures/int8/L64/T3.transVF.bin",
+      "sha256": "bceec137bad7896cf61e53203ae448b19333a2d31c926ed5450353909645acc3"
+    }
+  }
+}

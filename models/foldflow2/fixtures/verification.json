@@ -1,0 +1,55 @@
+{
+  "command": "npm test",
+  "exitCode": 0,
+  "completedUTC": "2026-11-22T09:15:26.661185+00:00",
+  "upstreamCommit": "9d2c260813da3c9a2bc944973953f63ea6d71203",
+  "hardware": "NVIDIA GB10, 580.159.03, GPU-cb4201ed-0d40-feb9-d1ff-5766b26ed9a1",
+  "browser": "Google Chrome for Testing 153.0.8010.12",
+  "shared": {
+    "passed": 5,
+    "skipped": 0
+  },
+  "cpu": {
+    "comparisons": 48,
+    "worst": {
+      "name": "64/T3/psi",
+      "relRMS": 7.055837366586662e-05,
+      "maxAbs": 0.0004826188087463379
+    },
+    "skipped": 0
+  },
+  "webgpu": {
+    "comparisons": 149,
+    "worst": {
+      "name": "int8/64/T3/psi",
+      "relRMS": 8.909605020744718e-05,
+      "maxAbs": 0.0004423856735229492
+    },
+    "skipped": 0
+  },
+  "logSha256": "db05617d308dd5924dcaefbdb11658229543435382b3379ae38fe9297b8726df",
+  "runtimeSha256": {
+    "shared/engine.js": "77c540c1cfd64cdceaddb7452fcb82316acc3ee41a05bf4b9673e63a25ddd4c4",
+    "shared/fma.js": "d7cab9eb9402b157b959457f4fd2d8442a3c7a9546f2ee678d6887d649f4b906",
+    "shared/geometry.js": "818e449308100edfd26494e02eb281f76cc16b40da39283d1deddbb38e794cd7",
+    "shared/loader.js": "39be65cb42a5a3fdb5ced82608745d0f1f1e25c7a0a9f4daa1edf9069910af92",
+    "shared/moments.js": "0a831224ab72e802e782a33ce168b3c6e84b069c3f249793bcfd067f26265d4a",
+    "shared/network.js": "fa352e6acab20019ae255b8292066125f57cfc5a10af2cf70d15e44ede04da95",
+    "shared/numeric.js": "b3f9d8bfd87de3bfdd0405b95e12965b73beafe69aff96cb4e175eef327f444a",
+    "shared/pdb.js": "8456ca3fdcd4e0e801159fd37dd475b3f2d125ce8647c0aa55b937d9879e3379",
+    "shared/tensor.js": "94c0399dddd3e18e258f8f2020b154c07670ee8b9e2fa4fd9b5ea87b48d929b4",
+    "cpu/algebra.js": "a5b38e737b9b35f0980388e63789d0ad6e93483b42b50b7453ddd41aa9c7351a",
+    "cpu/index.js": "f0703ffe4492d78267722580a12b86185944854839a19c2de6efcd1e3236d082",
+    "webgpu/algebra.js": "9a5de92b167e1f8a91c0742d8154fb8ffa8af27d73886fe4081fcfbf15d0ad20",
+    "webgpu/device.js": "0ff21b822b6d04c90ed327c074990ffeeda6fa92d67b21e8a923ee37b1c4d3ab",
+    "webgpu/edge-softmax.js": "fd943c54261389105e66955f9cd2433b2e86584b7ea426b8cccad662b6d90d8c",
+    "webgpu/index.js": "fd4b6eb86b0b473e89c2531e59083f700b79364ba2eb52c86c4560fc560b2879",
+    "webgpu/linear.js": "2bda2e31885efc56116d5ce6029c4b925b3e25cf60efe5bff336dde28155aeed",
+    "webgpu/worker.js": "d8d89f8c9d2c36f53a890631546323a998de78ed03947a33990a62eb6483ddb5"
+  },
+  "launchpadReport": {
+    "id": "1e1352e4-d372-4140-9e66-3097559caae0",
+    "revision": 1,
+    "project": "xymol-flow-matching"
+  }
+}

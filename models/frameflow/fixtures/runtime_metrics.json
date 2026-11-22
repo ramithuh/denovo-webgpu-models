@@ -1,0 +1,38 @@
+{
+  "workerParity": {
+    "name": "int8_L32_sc0",
+    "length": 32,
+    "steps": 1,
+    "ms": 297.5,
+    "metrics": {
+      "pred_trans": {
+        "relRms": 0.0000013676790007460456,
+        "maxAbs": 0.00001621246337890625,
+        "correlation": 0.9999999999990731
+      },
+      "pred_rotmats": {
+        "relRms": 0.0000015840977444804105,
+        "maxAbs": 0.000004500150680541992,
+        "correlation": 0.9999999999987446
+      },
+      "coords": {
+        "relRms": 0.0000013843331161469468,
+        "maxAbs": 0.000016689300537109375,
+        "correlation": 0.99999999999905
+      }
+    }
+  },
+  "records": [
+    {
+      "cache": "cache",
+      "coldRequests": 2,
+      "warmRequests": 0
+    },
+    {
+      "cache": "opfs",
+      "coldRequests": 2,
+      "warmRequests": 0
+    }
+  ],
+  "deniedStorageWarnings": 4
+}

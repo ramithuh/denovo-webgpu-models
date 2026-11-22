@@ -1,0 +1,32 @@
+{
+  "name": "@denovo/frameflow-webgpu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./worker": "./webgpu/worker.js",
+    "./geometry": "./shared/geometry.js"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node --test test/gpu.test.mjs",
+    "demo": "node tools/server.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.58.2"
+  },
+  "files": [
+    "shared/",
+    "cpu/",
+    "webgpu/",
+    "demo/",
+    "LICENSE",
+    "LICENSE-APACHE",
+    "NOTICE",
+    "README_WEBGPU.md",
+    "ARCHITECTURE.md"
+  ]
+}

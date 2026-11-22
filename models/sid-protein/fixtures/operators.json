@@ -1,0 +1,97 @@
+{
+  "norms": [
+    {
+      "width": 512,
+      "input": {
+        "file": ".cache/fixtures/norm512_input.bin",
+        "shape": [
+          3,
+          512
+        ],
+        "byteLength": 6144,
+        "sha256": "829fbd0ecfecaa83a3c748f3ed8b4b5d4ad8c6112ee6b85a2da1a06b4558fa9e"
+      },
+      "weight": {
+        "file": ".cache/fixtures/norm512_weight.bin",
+        "shape": [
+          512
+        ],
+        "byteLength": 2048,
+        "sha256": "44092d29ffaee2ac84f05ab65db5837fcb39d9013b821ad40d055017982b4517"
+      },
+      "bias": {
+        "file": ".cache/fixtures/norm512_bias.bin",
+        "shape": [
+          512
+        ],
+        "byteLength": 2048,
+        "sha256": "0e2f54db34be2fda45e8625184c03158fa465ef43215f2c65868a330653e1ab1"
+      },
+      "output": {
+        "file": ".cache/fixtures/norm512_output.bin",
+        "shape": [
+          3,
+          512
+        ],
+        "byteLength": 6144,
+        "sha256": "9b9344e98cacc7c8ae7af3a90a635fc983edee65343277a7419ec3e08d63b076"
+      }
+    },
+    {
+      "width": 768,
+      "input": {
+        "file": ".cache/fixtures/norm768_input.bin",
+        "shape": [
+          3,
+          768
+        ],
+        "byteLength": 9216,
+        "sha256": "87484fc62c25b1a011d86abcfa4b652a1cdd43909b2fe1d6eba1ecb516d34c88"
+      },
+      "weight": {
+        "file": ".cache/fixtures/norm768_weight.bin",
+        "shape": [
+          768
+        ],
+        "byteLength": 3072,
+        "sha256": "2c868a4659458cfe67bcfb9e9cc8dc802687027ccec75b34eb9edb26805e8aac"
+      },
+      "bias": {
+        "file": ".cache/fixtures/norm768_bias.bin",
+        "shape": [
+          768
+        ],
+        "byteLength": 3072,
+        "sha256": "5166ada42c72ca1471d0b92a4d9395f1f2a4c1e6470c27c048de2f7be3db0c0e"
+      },
+      "output": {
+        "file": ".cache/fixtures/norm768_output.bin",
+        "shape": [
+          3,
+          768
+        ],
+        "byteLength": 9216,
+        "sha256": "004c34d1660cbfb5eb5b3099975703d9f2f93fe07b2e96b850386409a955c901"
+      }
+    }
+  ],
+  "time": {
+    "file": ".cache/fixtures/time_embedding.bin",
+    "shape": [
+      1,
+      256
+    ],
+    "byteLength": 1024,
+    "sha256": "46f19653036b443e98ef73ac071d79c42bb52333aeb1939f90ac134a2f3d32ea"
+  },
+  "position": {
+    "file": ".cache/fixtures/position_embedding.bin",
+    "shape": [
+      1,
+      32,
+      132
+    ],
+    "byteLength": 16896,
+    "sha256": "5e5b8fc7da7eebaee48676573f9d1d754d94ccea724c14811c38fdd5cd8deec6"
+  }
+}

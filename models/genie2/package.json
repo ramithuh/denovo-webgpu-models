@@ -1,0 +1,29 @@
+{
+  "name": "genie2-webgpu",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./shared": "./shared/index.js",
+    "./worker": "./webgpu/worker-client.js"
+  },
+  "files": [
+    "shared/",
+    "cpu/",
+    "webgpu/",
+    "demo/",
+    "LICENSE",
+    "NOTICE",
+    "README_WEBGPU.md",
+    "sync-upstream.mjs",
+    "THIRD_PARTY_LICENSES.txt",
+    "tools/sync-upstream.mjs"
+  ],
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:cpu": "node --test test/cpu.test.mjs",
+    "test:gpu": "node --test test/gpu.test.mjs"
+  }
+}

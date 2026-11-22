@@ -1,0 +1,20 @@
+{
+  "name": "@denovo/foldflow2-webgpu",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "CC-BY-NC-4.0",
+  "exports": {
+    ".": "./webgpu/index.js",
+    "./cpu": "./cpu/index.js",
+    "./worker": "./webgpu/worker.js",
+    "./structure": "./shared/pdb.js"
+  },
+  "scripts": {
+    "test": "npm run test:shared && npm run test:cpu && npm run test:gpu",
+    "test:cpu": "node test/cpu.mjs",
+    "test:gpu": "node test/gpu.mjs",
+    "serve": "node tools/server.mjs",
+    "test:shared": "node --test test/shared.test.mjs test/geometry.test.mjs"
+  }
+}

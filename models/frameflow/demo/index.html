@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>FrameFlow · backbone generator</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font: 16px system-ui;
+      background: #10191c;
+      color: #e2efed;
+    }
+    body {
+      max-width: 1050px;
+      margin: 3rem auto;
+      padding: 0 1.4rem;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      margin-bottom: 0.3rem;
+    }
+    p {
+      color: #abc1bc;
+      line-height: 1.5;
+    }
+    form {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: end;
+      margin: 2rem 0;
+    }
+    label {
+      display: grid;
+      gap: 0.5rem;
+    }
+    input,
+    select,
+    button,
+    a {
+      font: inherit;
+      padding: 0.65rem;
+      border-radius: 6px;
+      border: 1px solid #476361;
+      background: #203233;
+      color: inherit;
+    }
+    input {
+      width: 6rem;
+    }
+    button,
+    a {
+      cursor: pointer;
+    }
+    button {
+      background: #8ed9ba;
+      color: #0c2920;
+      font-weight: 600;
+    }
+    button:disabled {
+      opacity: 0.4;
+    }
+    canvas {
+      width: 100%;
+      height: 460px;
+      background: #152428;
+      border: 1px solid #324b4a;
+      border-radius: 12px;
+    }
+    #status {
+      min-height: 3rem;
+    }
+    a[hidden] {
+      display: none;
+    }
+    small {
+      color: #abc1bc;
+    }
+    footer {
+      margin-top: 1.5rem;
+    }
+  </style>
+  <h1>FrameFlow</h1>
+  <p>
+    Generate a protein backbone in your browser. Rotate the Cα trace by
+    dragging, then save the N–Cα–C–O–Cβ structure as a PDB file.
+  </p>
+  <form id="controls">
+    <label
+      >Residues<input
+        id="length"
+        type="number"
+        min="1"
+        max="512"
+        value="64"
+        required /></label
+    ><label
+      >Flow steps<input
+        id="steps"
+        type="number"
+        min="2"
+        max="1000"
+        value="100"
+        required /></label
+    ><label
+      >Weights<select id="precision">
+        <option value="fp16">FP16 · 34 MB</option>
+        <option value="fp32">FP32 · 67 MB</option>
+        <option value="int8">INT8 · 17 MB</option>
+      </select></label
+    ><button id="run">Generate</button
+    ><button id="cancel" type="button" disabled>Cancel</button
+    ><a id="download" hidden download="frameflow.pdb">Save PDB</a>
+  </form>
+  <p id="status" role="status">
+    Ready. The first generation downloads the model weights.
+  </p>
+  <canvas id="view" width="1000" height="460"></canvas>
+  <footer>
+    <small
+      >FrameFlow produces research backbones, not designed amino-acid sequences.
+      Microsoft’s MIT-licensed checkpoint · inference stays on this
+      device.</small
+    >
+  </footer>
+  <script type="module" src="./main.js"></script>
+</html>

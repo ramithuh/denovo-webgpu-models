@@ -1,0 +1,19 @@
+{
+  "frontend": "wgpu-native/Naga",
+  "wgpu_version": "0.29.0",
+  "adapter": {
+    "vendor": "NVIDIA",
+    "architecture": "",
+    "device": "NVIDIA GB10",
+    "description": "580.159.03",
+    "stackgroup_min_size": 4,
+    "stackgroup_max_size": 128,
+    "vendor_id": 4318,
+    "device_id": 11794,
+    "adapter_type": "IntegratedGPU",
+    "backend_type": "Vulkan"
+  },
+  "passed": 462,
+  "failed": 0,
+  "skipped": 0
+}

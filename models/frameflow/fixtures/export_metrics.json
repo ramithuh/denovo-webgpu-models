@@ -1,0 +1,65 @@
+{
+  "fp32": {
+    "total_bytes": 67155776,
+    "total_params": 16779012,
+    "num_tensors": 382,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 24870368,
+        "bytes": 24870368,
+        "sha256": "699cde53b76d0d7b1c8df371f48ec32d0fc85ff21d5d2ceeab52d9908aa4a5e3"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 24857880,
+        "bytes": 24857880,
+        "sha256": "42e57881fcae281013a2d8956a6365089c9720394e01cf30fa41d825c74092b7"
+      },
+      {
+        "file": "model-003.safetensors",
+        "byteLength": 17427528,
+        "bytes": 17427528,
+        "sha256": "76785cefddc81e118956ed496107558f4aedc6787eaef8ce4ec0547295b60d82"
+      }
+    ],
+    "reload_exact": true,
+    "max_weight_drift": 0.0
+  },
+  "fp16": {
+    "total_bytes": 33746176,
+    "total_params": 16779012,
+    "num_tensors": 382,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 24969848,
+        "bytes": 24969848,
+        "sha256": "682ca0f8d27eaaad45876b1e57a7a0532a93ed69d1afcc80177127ee66b6ae9c"
+      },
+      {
+        "file": "model-002.safetensors",
+        "byteLength": 8776328,
+        "bytes": 8776328,
+        "sha256": "1b0c907383952ca80e0a434d291fdc7e25c3177e904766abd79804966ff181eb"
+      }
+    ],
+    "reload_exact": true,
+    "max_weight_drift": 0.00024139881134033203
+  },
+  "int8": {
+    "total_bytes": 17276704,
+    "total_params": 16779012,
+    "num_tensors": 382,
+    "shards": [
+      {
+        "file": "model-001.safetensors",
+        "byteLength": 17276704,
+        "bytes": 17276704,
+        "sha256": "cb9cdec321a936e6c84e452bcabe69ab65f997dd5494a52a46ca880fa11e2ed0"
+      }
+    ],
+    "reload_exact": true,
+    "max_weight_drift": 0.002845596522092819
+  }
+}

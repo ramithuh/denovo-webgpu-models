@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La-Proteina · de novo protein generation</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;background:#101b24;color:#e6f0ed;margin:0}main{max-width:980px;margin:3rem auto;padding:0 1.5rem}h1{font-size:2.5rem;line-height:1.1}p{color:#adc1c5}form{display:flex;gap:1rem;flex-wrap:wrap;align-items:end}label{display:grid;gap:.3rem;font-size:.85rem}input,select,button{font:inherit;padding:.6rem;border-radius:6px;border:1px solid #3b535e;background:#1c303a;color:#e6f0ed}input{width:6rem}button{cursor:pointer;background:#a8dec2;color:#11251b;border:0}button:disabled{opacity:.4;cursor:default}section{margin-top:1.5rem;background:#172a34;border:1px solid #334951;border-radius:10px;padding:1rem}canvas{width:100%;height:360px;display:block}pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#bbe5d3}a{color:#a8dec2}progress{width:100%;accent-color:#a8dec2}#cancel,#release{background:#3b535e;color:#e6f0ed}.tag{font:12px monospace;letter-spacing:.1em;color:#a8dec2}small{color:#adc1c5}
+</style>
+<main><div class="tag">LD1 + AE1 / WEBGPU</div><h1>Generate a protein, locally.</h1>
+<p>La-Proteina samples a Cα backbone and eight latent values per residue, then decodes a sequence and all-atom structure. Inference runs in your browser.</p>
+<form id="controls"><label>Residues<input id="length" type="number" min="1" max="500" value="100" required></label><label>Steps<input id="steps" type="number" min="1" value="400" required></label><label>Seed<input id="seed" type="number" value="5" required></label><label>Weights<select id="precision"><option>int8</option><option>fp16</option><option>fp32</option></select></label><button id="generate">Generate</button><button type="button" id="cancel" disabled>Cancel</button><button type="button" id="release" disabled>Release GPU</button></form>
+<section aria-live="polite"><div id="status">Ready. The first run downloads the selected weights (about 289 MB for INT8).</div><progress id="progress" value="0" max="1"></progress><small id="adapter"></small></section>
+<section><canvas id="structure" width="900" height="360" aria-label="Cα backbone preview"></canvas><small>Cα trace preview; the PDB download contains backbone and sidechain atoms.</small><pre id="sequence"></pre><a id="download" hidden download="laproteina.pdb">Download all-atom PDB</a></section>
+<p><small>Code and model notices: <a href="../LICENSE">Apache-2.0 code</a> · <a href="../WEIGHTS_LICENSE">NVIDIA model license</a>. This demo uses the worker API.</small></p>
+</main><script type="module" src="./app.js"></script></html>
