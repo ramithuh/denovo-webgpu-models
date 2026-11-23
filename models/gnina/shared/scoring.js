@@ -42,6 +42,17 @@ export function gridCPU({origin,groups}) {
   return out;
 }
 const clamp01=x=>Math.max(0,Math.min(1,x));
+// Surface distance d is the center distance minus the two XS radii.
+export function vinaPairEnergy(l,r,d,terms) {
+  const g1=-.035579*Math.exp(-4*d*d),g2=-.005156*Math.exp(-((d-3)**2)/4);
+  const rep=.840245*Math.min(d,0)**2;
+  const hydro=r.hydrophobic&&l.hydrophobic?-.035069*clamp01(1.5-d):0;
+  const hb=(r.acceptor&&l.donor)||(l.acceptor&&r.donor)?-.587439*clamp01(-d/.7):0;
+  if(terms) {
+    terms.gauss1+=g1;terms.gauss2+=g2;terms.repulsion+=rep;terms.hydrophobic+=hydro;terms.hbond+=hb;
+  }
+  return g1+g2+rep+hydro+hb;
+}
 export function vinaBreakdown(rec,lig) {
   const terms={gauss1:0,gauss2:0,repulsion:0,hydrophobic:0,hbond:0}, perAtom=new Float64Array(lig.atoms.length), perResidue=new Map();
   const penalty=1+.05846*lig.rotors;
@@ -49,12 +60,7 @@ export function vinaBreakdown(rec,lig) {
     const rsq=(r.x-l.x)**2+(r.y-l.y)**2+(r.z-l.z)**2;
     if(rsq>=64) continue;
     const d=Math.sqrt(rsq)-r.radius-l.radius;
-    const g1=-.035579*Math.exp(-4*d*d),g2=-.005156*Math.exp(-((d-3)**2)/4);
-    const rep=.840245*Math.min(d,0)**2;
-    const hydro=r.hydrophobic&&l.hydrophobic?-.035069*clamp01(1.5-d):0;
-    const hb=(r.acceptor&&l.donor)||(l.acceptor&&r.donor)?-.587439*clamp01(-d/.7):0;
-    terms.gauss1+=g1;terms.gauss2+=g2;terms.repulsion+=rep;terms.hydrophobic+=hydro;terms.hbond+=hb;
-    const energy=(g1+g2+rep+hydro+hb)/penalty;
+    const energy=vinaPairEnergy(l,r,d,terms)/penalty;
     perAtom[i]+=energy;perResidue.set(r.residue,(perResidue.get(r.residue)??0)+energy);
   }
   return {vinaScore:Object.values(terms).reduce((a,b)=>a+b)/penalty,terms,penalty,perAtom,perResidue:Object.fromEntries(perResidue)};

@@ -1,4 +1,4 @@
-# GNINA 1.3 — Pure WebGPU 3D CNN Protein–Ligand Scorer & Pose Optimizer
+# GNINA 1.3 — WebGPU protein–ligand scoring and flexible-ligand docking
 
 Zero-dependency, browser-native **WebGPU** implementation of **GNINA 1.3** (`gnina/gnina`) — pure-JS Smina 28-channel atom typing, Vina empirical energy decomposition, pure WGSL 3D Gaussian atom-density gridding (`48×48×48×28`, `0.5 Å` resolution), and the full 3-model default GNINA 1.3 3D CNN scoring ensemble (`dense_1.3`, `dense_1.3_PT_KD_3`, `crossdock_default2018_KD_4`).
 
@@ -44,15 +44,66 @@ Every precision was verified in real hardware WebGPU Chromium (`allowSoftwareFal
 import { createGninaEngine } from './webgpu/index.js';
 
 const engine = await createGninaEngine({
-  baseUrl: './weights/gnina/fp16',
+  baseUrl: './weights/default',
   precision: 'fp16',
 });
 
 const result = await engine.scorePose(receptorPdbText, ligandSdfText);
-// { cnnScore, cnnAffinity, cnnVS, vina, models: { dense_1.3, dense_1.3_PT_KD_3, crossdock_default2018_KD_4 } }
+// { cnnScore, cnnAffinity, cnnVS, vinaScore, models: { dense_1.3, dense_1.3_PT_KD_3, crossdock_default2018_KD_4 } }
 
 engine.destroy();
 ```
+
+## Flexible-ligand docking
+
+`dockPose` searches a specified pocket with a rigid receptor and one connected flexible ligand. Supply PDB/mmCIF and SDF/MOL2 text, or the typed molecules returned by `parseReceptor` and `parseLigands`. The default search follows GNINA's rescore architecture. Monte Carlo and BFGS use Vina energies in JavaScript, then the engine scores the retained poses with its CNN ensemble on WebGPU. [Upstream search implementation](https://github.com/gnina/gnina/blob/97fa6bcc465d62b40d87ccc85d3c53e9921a7cc0/gninasrc/main/main.cpp)
+
+```js
+const engine = await createGninaEngine({
+  baseUrl: './weights/default', precision: 'fp32', allowSoftwareFallback: false,
+});
+const controller = new AbortController();
+try {
+  const { poses, box, stats } = await engine.dockPose(receptorPdb, ligandSdf, {
+    autoboxLigand: pocketReferenceSdf,
+    seed: 42, exhaustiveness: 8, numModes: 9,
+    cnnScoring: 'rescore', sortBy: 'cnnScore',
+    signal: controller.signal,
+    onProgress({ phase, completed, total }) {
+      console.log(phase, completed, total);
+    },
+  });
+  const { pose, rank, cnnScore, cnnAffinity, cnnVS, vinaScore,
+          rmsdToBest, models, contributions } = poses[0];
+} finally {
+  engine.destroy();
+}
+```
+
+| Option | Meaning and default |
+| --- | --- |
+| `box` | `{ center: [x,y,z], size: [sx,sy,sz] }` in Å. Alternatively provide `autoboxLigand` or receptor `pocketResidues` such as `['A/52/GLY']`. |
+| `autoboxAdd` | Padding on each face, 4 Å. Automatic side lengths are clamped to 4–64 Å. |
+| `seed`, `exhaustiveness` | Seed 42, eight independently randomized chains. Browser module workers run chains in parallel. `workers: 1` runs them serially. |
+| `numModes`, `minRmsd` | Return up to nine poses separated by at least 1 Å heavy-atom RMSD in input atom order. `rmsdToBest` uses the same distance to rank 1. |
+| `rescoreTopK` | Maximum number of clustered Vina candidates to polish and score, default `Math.max(2 * numModes, 16)`. |
+| `cnnScoring` | `'rescore'` evaluates the final candidates. `'none'` ranks by exact Vina and returns null CNN values. `'refinement'` also optimizes CNN loss by coordinate search over translations, rotations and torsions with intraligand and wall restraints. This costs additional ensemble forwards. |
+| `sortBy` | Descending `'cnnScore'` (default), `'cnnAffinity'` or `'cnnVS'`, or ascending `'vina'`. |
+| `signal`, `onProgress` | Cancellation and progress for affinity-map construction, completed MC chains and rescored candidates. |
+
+The search builds rigid fragments from ligand connectivity and fixes a reference frame and dihedral convention. Each chain draws a root position uniformly inside the box, a uniform 3D orientation and independent uniform torsions. Polar hydrogens follow their parent fragments. Trilinear 0.375 Å Vina grids, intraligand pairs beyond three bonds and a quadratic wall supply analytical gradients. BFGS first relaxes mutations with bounded clash energies. Promising minima undergo full-potential relaxation, RMSD clustering and off-lattice pairwise polishing. Each returned `vinaScore` and its `contributions` come from the exact pairwise `vinaBreakdown`. `stats.evaluatedCandidates` counts MC trials across chains.
+
+### Blinded redocking on NVIDIA GB10
+
+Chromium 153.0.8010.12 ran the default FP32 three-model ensemble with `allowSoftwareFallback: false`. The benchmark used crystal coordinates to define the padded pocket bounds and calculate RMSD. Before docking, it scrambled every input translation, orientation and torsion with seed 1907. The docking engine received the scrambled molecule and six box values and started its own chains with seed 42.
+
+| Fixture | Rotors | Rescore K | Top-1 RMSD (Å) | Best top-3 RMSD (Å) | Top-1 CNNscore | Grid / search / rescore (s) | Wall (s) |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | ---: |
+| 184L | 2 | 18 | 0.51 | 0.51 | 0.934 | 0.03 / 0.12 / 1.28 | 1.43 |
+| 10GS | 13 | 18 | 1.86 | 1.86 | 0.833 | 0.21 / 1.06 / 1.45 | 2.72 |
+| 10GS | 13 | 48 | 2.12 | 1.86 | 0.867 | 0.21 / 1.06 / 3.68 | 4.95 |
+
+RMSD allows chemically equivalent atom permutations and uses the receptor coordinate frame without alignment. With fixed atom correspondence, default top-1 RMSDs were **1.59 Å** for 184L and **1.86 Å** for 10GS. Wall time covers one call with parsed inputs and a loaded engine. The engine recorded **0 B** of live GPU buffers after destruction. The saved run includes starting RMSDs, all returned ranks, exact Vina scores and the buffer counters. [Hardware measurements](fixtures/gpu_redocking.json)
 
 ## Reproducing Export & Tests
 

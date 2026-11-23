@@ -17,7 +17,7 @@ self.onmessage=async ({data:{id,method,args=[]}})=>{
     } else if(method==="destroy"){
       for(const [other,c] of pending) if(other!==id) c.abort();
       engine?.destroy();value=engine?.memoryUsage();engine=null;
-    } else if(["scorePose","scorePoses","minimizePose","maskContributions"].includes(method)){
+    } else if(["dockPose","scorePose","scorePoses","minimizePose","maskContributions"].includes(method)){
       if(!engine) throw Error("Initialize engine first");
       value=await engine[method](args[0],args[1],{...args[2],signal:controller.signal});
     } else throw Error("Unknown worker method");

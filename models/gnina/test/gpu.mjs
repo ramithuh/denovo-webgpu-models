@@ -12,6 +12,10 @@ try {
   const context=await browser.newContext(),page=await context.newPage();
   page.on("console",msg=>{if(["warning","error"].includes(msg.type())) console.error(msg.text());});
   await page.goto(server.url+"/test/browser.html");
+  const redocking=await page.evaluate(async ()=>(await import("./redocking.js")).redock());
+  console.table(Object.entries(redocking.runs).map(([fixture,r])=>({fixture,wallMs:r.wallMs,
+    top1:r.poses[0].rmsd,bestTop3:Math.min(...r.poses.slice(0,3).map(p=>p.rmsd)),cnnScore:r.poses[0].cnnScore})));
+  await writeFile("fixtures/gpu_redocking.json",JSON.stringify({chromium:browser.version(),...redocking},null,2)+"\n");
   const metrics={};
   for(const precision of ["fp32","fp16","int8"]){
     console.log("Testing",precision);

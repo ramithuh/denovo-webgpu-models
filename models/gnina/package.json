@@ -1,5 +1,5 @@
 {
   "name": "@denovo/gnina", "version": "1.3.0", "private": true, "type": "module",
   "exports": {".":"./webgpu/index.js","./cpu":"./cpu/index.js","./shared":"./shared/index.js","./worker":"./webgpu/worker.js"},
-  "scripts": {"test:cpu":"node test/shared.mjs && node test/cpu.mjs","test:gpu":"node test/gpu.mjs","test":"npm run test:cpu && npm run test:gpu","demo":"node tools/serve.mjs"}
+  "scripts": {"test:cpu":"node test/shared.mjs && node test/docking.mjs && node test/cpu.mjs","test:gpu":"node test/gpu.mjs","test":"npm run test:cpu && npm run test:gpu","demo":"node tools/serve.mjs"}
 }

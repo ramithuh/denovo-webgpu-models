@@ -192,10 +192,17 @@ export function typeMolecule({atoms,bonds}, role) {
     if(!adj[i]||!adj[j]||i===j||![1,2,3,4].includes(order)) throw Error("Invalid bond");
     adj[i].push({j,order,edge});adj[j].push({j:i,order,edge});
   });
-  const aromatic=aromaticRings(atoms,adj), typed=[],centerAtoms=[],addedHydrogens=[];
+  const aromatic=aromaticRings(atoms,adj), typed=[],centerAtoms=[],addedHydrogens=[], centerParents=[], addedParents=[];
   for(let i=0;i<atoms.length;i++) {
     const a=atoms[i], ns=adj[i].map(({j})=>atoms[j]), el=a.el==="Se"?"S":a.el;
-    if(el==="H") {if(ns.some(b=>b.el!=="C")) centerAtoms.push(a);continue;}
+    if(el==="H") {
+      if(ns.some(b=>b.el!=="C")) {
+        centerAtoms.push(a);
+        centerParents.push(adj[i].find(b=>atoms[b.j].el!=="H")?.j);
+      }
+      continue;
+    }
+    centerParents.push(i);
     centerAtoms.push(a);
     const hetero=ns.some(b=>b.el!=="H"&&b.el!=="C");
     const ar=aromatic.has(i)||a.aromatic||aromaticSidechains[a.res]?.split(" ").includes(a.name);
@@ -213,6 +220,7 @@ export function typeMolecule({atoms,bonds}, role) {
         const ref=carbonyl??others.at(-1);
         const conjugated=ns.some((n,k)=>n.el==="C" && adj[adj[i][k].j].some(b=>b.order===2&&atoms[b.j].el==="O"));
         const planar=!!ar||conjugated||adj[i].some(b=>b.order>=2)||["N.am","N.pl3","N.2","O.2"].includes(a.sybyl);
+        for(let h=0;h<missing;h++) addedParents.push(i);
         addedHydrogens.push(...polarHydrogens(a,ns,missing,planar,ref?atoms[ref.j]:undefined));
       }
     } else if(!donor && a.res && !ns.some(b=>b.el==="H")) {
@@ -246,18 +254,19 @@ export function typeMolecule({atoms,bonds}, role) {
     typed.push({...a,index:i,channel:ch+(lig?14:0),radius:xs[el]??1.2,donor,acceptor,hydrophobic,
       residue:[a.chain,a.seq,a.ins,a.res].filter(Boolean).join("/")});
   }
-  let rotors=0;
+  const rotorBonds=[];
   if(lig) {
     const cut=bridges(adj);
     for(const index of cut) {
       const [i,j,order]=bonds[index];
       if(order!==1 || [i,j].some(k=>adj[k].filter(b=>atoms[b.j].el!=="H").length<2)) continue;
       const amide=[[i,j],[j,i]].some(([n,c])=>atoms[n].el==="N" && atoms[c].el==="C" && adj[c].some(b=>b.order===2&&atoms[b.j].el==="O"));
-      if(!amide) rotors++;
+      if(!amide) rotorBonds.push(index);
     }
   }
   if(!typed.length) throw Error("No heavy atoms");
-  return {atoms:typed,centerAtoms:centerAtoms.concat(addedHydrogens),rotors};
+  return {atoms:typed,centerAtoms:centerAtoms.concat(addedHydrogens),rotors:rotorBonds.length,
+    ...(lig?{bonds,rotorBonds,centerParents:centerParents.concat(addedParents)}:{})};
 }
 export function parseReceptor(text,format="pdb") {
   return typeMolecule(/cif/i.test(format)?parseMMCIF(text):parsePDB(text),"receptor");

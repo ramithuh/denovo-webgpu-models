@@ -1,3 +1,4 @@
+import {dockPose} from "./docking.js";
 import {checkAbort} from "./loader.js";
 import {forward} from "./network.js";
 import {prepareGrid,vinaBreakdown,transformPose,centroid} from "./scoring.js";
@@ -84,7 +85,8 @@ export function createScorer(backend,models,creationSignal) {
     }
     return {pose,scores,objective:energy(scores)};
   }
-  return {scorePose,scorePoses,minimizePose,maskContributions,ensemble:[...models],adapterInfo:backend.adapterInfo,
+  return {scorePose,scorePoses,minimizePose,maskContributions,
+    dockPose:(rec,lig,options)=>dockPose(rec,lig,options,scorePose,check),ensemble:[...models],adapterInfo:backend.adapterInfo,
     isFallbackAdapter:backend.isFallbackAdapter,memoryUsage:()=>backend.memoryUsage(),
     destroy(){if(!closed){closed=true;backend.destroy();}}};
 }
