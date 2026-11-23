@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GNINA · Pose scoring</title><link rel="stylesheet" href="./style.css"></head>
+<body><main>
+<header><div><span class="brand">GNINA</span><span class="version">1.3</span></div><span class="platform">WebGPU</span></header>
+<h1>Protein–ligand pose scoring</h1>
+<div class="layout"><section class="controls"><h2>Complex</h2>
+<label>Structure pair<select id="complex"><option value="184l">184L · T4 lysozyme</option><option value="10gs">10GS · Glutathione transferase</option><option value="custom">Uploaded structures</option></select></label>
+<label>Receptor <small>PDB / mmCIF</small><input id="rec" type="file" accept=".pdb,.cif,.mmcif"></label>
+<label>Ligand <small>SDF / MOL2</small><input id="lig" type="file" accept=".mol,.sdf,.mol2"></label>
+<label>Weight precision<select id="precision"><option value="fp32">FP32</option><option value="fp16">FP16</option><option value="int8">INT8</option></select></label>
+<button id="score" class="primary">Score both poses</button><div class="actions"><button id="cancel" disabled>Cancel</button><button id="release" disabled>Release GPU</button></div>
+<progress id="progress" hidden></progress><p role="status" id="status">Loading crystal structure…</p></section>
+<section class="viewer"><div class="viewhead"><h2>Binding pocket</h2><select id="pose" aria-label="Displayed pose"><option>Input pose</option><option>Perturbed pose</option></select></div>
+<canvas id="pocket" aria-label="Projection of ligand and surrounding receptor atoms"></canvas>
+<div class="legend"><span><i></i> Receptor</span><span><i></i> Ligand</span><small>Drag to rotate</small></div></section></div>
+<section id="results" hidden><div class="viewhead"><h2>Scores</h2><button id="download">Download JSON</button></div>
+<p class="note">The perturbed pose is rotated 90° around its centroid and translated by (9, 6, 0) Å.</p>
+<div class="scroll"><table><thead><tr><th>Pose / model</th><th>CNNscore</th><th>CNNaffinity</th><th>CNN_VS</th><th>Vina (kcal/mol)</th></tr></thead><tbody id="table"></tbody></table></div></section>
+</main><script type="module" src="./app.js"></script></body></html>

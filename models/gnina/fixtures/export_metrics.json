@@ -1,0 +1,32 @@
+{
+  "fp32": {
+    "total_bytes": 7082796,
+    "total_params": 1765065,
+    "num_tensors": 178,
+    "probe_relRMS": {
+      "dense_1.3": 0.0,
+      "dense_1.3_PT_KD_3": 0.0,
+      "crossdock_default2018_KD_4": 0.0
+    }
+  },
+  "fp16": {
+    "total_bytes": 3577652,
+    "total_params": 1765065,
+    "num_tensors": 178,
+    "probe_relRMS": {
+      "dense_1.3": 8.894545317161828e-05,
+      "dense_1.3_PT_KD_3": 0.00023779600451234728,
+      "crossdock_default2018_KD_4": 2.906157897086814e-05
+    }
+  },
+  "int8": {
+    "total_bytes": 1835352,
+    "total_params": 1765065,
+    "num_tensors": 178,
+    "probe_relRMS": {
+      "dense_1.3": 0.002346408786252141,
+      "dense_1.3_PT_KD_3": 0.018858805298805237,
+      "crossdock_default2018_KD_4": 0.00279930024407804
+    }
+  }
+}
