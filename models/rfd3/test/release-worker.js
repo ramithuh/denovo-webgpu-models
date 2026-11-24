@@ -210,6 +210,95 @@ async function run() {
       maxBFactor: cfgOut.rows.reduce((m, r) => Math.max(m, Number(r.b_iso_or_equiv)), 0),
     };
 
+    // 8. Issue #98: 1CTT-scale benchmark (L=184 + 4 unindexed catalytic residues + ZN + 16-atom DHZ => n=205, l=2603)
+    engine.trim();
+    const theozyme1ctt = [
+      'ATOM      1  N   HIS A 102       0.000   0.000   0.000  1.00 20.00           N',
+      'ATOM      2  CA  HIS A 102       1.458   0.000   0.000  1.00 20.00           C',
+      'ATOM      3  C   HIS A 102       2.009   1.420   0.000  1.00 20.00           C',
+      'ATOM      4  O   HIS A 102       1.251   2.390   0.000  1.00 20.00           O',
+      'ATOM      5  CB  HIS A 102       1.988  -0.773  -1.208  1.00 20.00           C',
+      'ATOM      6  CG  HIS A 102       3.450  -0.950  -1.250  1.00 20.00           C',
+      'ATOM      7  ND1 HIS A 102       4.250  -0.100  -1.950  1.00 20.00           N',
+      'ATOM      8  CD2 HIS A 102       4.220  -1.880  -0.650  1.00 20.00           C',
+      'ATOM      9  CE1 HIS A 102       5.500  -0.500  -1.780  1.00 20.00           C',
+      'ATOM     10  NE2 HIS A 102       5.520  -1.580  -0.990  1.00 20.00           N',
+      'ATOM     11  N   GLU A 104       6.000   2.000   1.000  1.00 20.00           N',
+      'ATOM     12  CA  GLU A 104       7.458   2.000   1.000  1.00 20.00           C',
+      'ATOM     13  C   GLU A 104       8.009   3.420   1.000  1.00 20.00           C',
+      'ATOM     14  O   GLU A 104       7.251   4.390   1.000  1.00 20.00           O',
+      'ATOM     15  CB  GLU A 104       7.988   1.227  -0.208  1.00 20.00           C',
+      'ATOM     16  CG  GLU A 104       7.600  -0.240  -0.250  1.00 20.00           C',
+      'ATOM     17  CD  GLU A 104       6.120  -0.520  -0.300  1.00 20.00           C',
+      'ATOM     18  OE1 GLU A 104       5.300   0.400  -0.250  1.00 20.00           O',
+      'ATOM     19  OE2 GLU A 104       5.780  -1.710  -0.400  1.00 20.00           O',
+      'ATOM     20  N   CYS A 129       2.000  -4.000  -2.000  1.00 20.00           N',
+      'ATOM     21  CA  CYS A 129       3.458  -4.000  -2.000  1.00 20.00           C',
+      'ATOM     22  C   CYS A 129       4.009  -2.580  -2.000  1.00 20.00           C',
+      'ATOM     23  O   CYS A 129       3.251  -1.610  -2.000  1.00 20.00           O',
+      'ATOM     24  CB  CYS A 129       3.988  -4.773  -3.208  1.00 20.00           C',
+      'ATOM     25  SG  CYS A 129       3.800  -3.850  -4.750  1.00 20.00           S',
+      'ATOM     26  N   CYS A 132       6.500  -4.000  -4.000  1.00 20.00           N',
+      'ATOM     27  CA  CYS A 132       7.958  -4.000  -4.000  1.00 20.00           C',
+      'ATOM     28  C   CYS A 132       8.509  -2.580  -4.000  1.00 20.00           C',
+      'ATOM     29  O   CYS A 132       7.751  -1.610  -4.000  1.00 20.00           O',
+      'ATOM     30  CB  CYS A 132       8.488  -4.773  -5.208  1.00 20.00           C',
+      'ATOM     31  SG  CYS A 132       6.950  -4.900  -6.200  1.00 20.00           S',
+      'HETATM   32 ZN    ZN B 296       4.900  -2.200  -3.600  1.00 15.00          ZN2+',
+      ...Array.from({ length: 16 }, (_, k) => {
+        const el = k < 10 ? 'C' : k < 13 ? 'N' : 'O';
+        const nm = `${el}${k + 1}`.padEnd(3);
+        const x = (3.5 + (k % 4) * 1.42).toFixed(3).padStart(8);
+        const y = (1.5 + Math.floor(k / 4) * 1.42).toFixed(3).padStart(8);
+        const z = (-3.2 + (k % 2) * 0.5).toFixed(3).padStart(8);
+        return `HETATM   ${String(33 + k).padStart(2)}  ${nm} DHZ C 295    ${x}${y}${z}  1.00 15.00           ${el}`;
+      }),
+      'END',
+    ].join('\n');
+    const cttSpec = {
+      mode: 'motif',
+      length: 184,
+      structure: theozyme1ctt,
+      unindex: 'A102,A104,A129,A132',
+      fixedAtoms: { A102: 'ND1,CG,CE1', A104: 'OE1,CD', A129: 'SG,CB', A132: 'SG,CB,CA' },
+      ligand: 'ZN,DHZ',
+    };
+    const cttBuilt = buildInput(cttSpec);
+    const cttT0 = performance.now();
+    const cttHandle = await engine.initialize(cttBuilt.features);
+    const cttInitMs = performance.now() - cttT0;
+    const cttInitPeakBytes = engine.peakMemoryUsage();
+    const cttNoisy = new Float32Array(cttBuilt.features.atom_to_token_map.length * 3);
+    await engine.run({ features: cttBuilt.features, X_noisy_L: cttNoisy, t: 16, n_recycle: 2, initializer: cttHandle, coordinatesOnly: true });
+    const cttWarmMs = [];
+    for (let i = 0; i < 3; i++) {
+      const s0 = performance.now();
+      await engine.run({ features: cttBuilt.features, X_noisy_L: cttNoisy, t: 8 - i, n_recycle: 2, initializer: cttHandle, coordinatesOnly: true });
+      cttWarmMs.push(performance.now() - s0);
+    }
+    engine.releaseInitializer(cttHandle);
+    const cttGenStart = performance.now();
+    const cttOut = await engine.generate({ ...cttSpec, steps: 11, seed: 42, retainTrajectory: false });
+    const cttGenMs = performance.now() - cttGenStart;
+    const cttPeakBytes = engine.peakMemoryUsage();
+    engine.trim();
+    const cttAfterBytes = engine.memoryUsage();
+    out.cttScale = {
+      tokens: cttBuilt.features.residue_index.length,
+      atoms: cttBuilt.features.atom_to_token_map.length,
+      initMs: Number(cttInitMs.toFixed(1)),
+      initPeakGB: Number((cttInitPeakBytes / 1e9).toFixed(3)),
+      warmStepMs: cttWarmMs.map(v => Number(v.toFixed(1))),
+      warmStepMeanMs: Number((cttWarmMs.reduce((a, b) => a + b, 0) / cttWarmMs.length).toFixed(1)),
+      tenStepGenMs: Number(cttGenMs.toFixed(1)),
+      peakGB: Number((cttPeakBytes / 1e9).toFixed(3)),
+      leakedBytes: cttAfterBytes - baselineBytes,
+      finite: cttOut.X_L.data.every(Number.isFinite),
+      assignmentsCount: cttOut.motifAssignments?.length ?? 0,
+      hasZN: cttOut.rows.some(r => r.label_comp_id === 'ZN'),
+      hasDHZ: cttOut.rows.some(r => r.label_comp_id === 'DHZ'),
+    };
+
     return out;
   } finally {
     engine.destroy();

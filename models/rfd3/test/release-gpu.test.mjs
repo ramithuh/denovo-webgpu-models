@@ -103,6 +103,15 @@ test("GB10 release verification: L=160 VRAM, transaction recovery, triad, non-AT
     // P2-3: CFG + P3-2 entropy B-factor
     assert.equal(result.cfg.finite, true);
     assert.equal(result.cfg.bFactorsFinite, true);
+    // Issue #98: 1CTT-scale (n=205, l=2603) zero OOM, fast step time, 0 leaked bytes
+    assert.equal(result.cttScale.tokens, 205);
+    assert.equal(result.cttScale.atoms, 2603);
+    assert.equal(result.cttScale.finite, true);
+    assert.equal(result.cttScale.assignmentsCount, 4);
+    assert.equal(result.cttScale.hasZN, true);
+    assert.equal(result.cttScale.hasDHZ, true);
+    assert.equal(result.cttScale.leakedBytes, 0);
+    assert.ok(result.cttScale.peakGB < 2.5, `Expected 1CTT-scale peak < 2.5 GB, got ${result.cttScale.peakGB} GB`);
   } finally {
     clearTimeout(timer);
     if (child) {

@@ -8,6 +8,13 @@ function checkAdapter(info, fallback, allowed) {
   if (!allowed && (fallback || software.test(adapterText(info))))
     throw new Error('A hardware WebGPU adapter is required');
 }
+export function formatGpuLossDetail(loss) {
+  if (!loss || typeof loss !== 'object') return '';
+  const parts = [];
+  if (loss.reason) parts.push('reason=' + String(loss.reason));
+  if (loss.message) parts.push(String(loss.message).trim());
+  return parts.length ? ' (' + parts.join(': ') + ')' : '';
+}
 
 export async function createGpuResources({ device: supplied, allowSoftwareFallback = false, signal,
   requiredLimits = {} } = {}) {
@@ -62,7 +69,7 @@ export async function createGpuResources({ device: supplied, allowSoftwareFallba
     peakMemoryUsage: () => peak,
     resetPeakMemoryUsage: () => { peak = resident; },
     allocate(size, usage, label = '') {
-      if (closed) throw new Error('GPU resources destroyed or device lost');
+      if (closed) throw new Error('GPU resources destroyed or device lost' + formatGpuLossDetail(loss));
       if (!Number.isSafeInteger(size) || size <= 0) throw new RangeError('Invalid buffer size');
       if (!Number.isInteger(usage) || usage <= 0 || usage > 0x3ff) throw new RangeError('Invalid buffer usage');
       const aligned = 4 * Math.ceil(size / 4);
@@ -74,7 +81,8 @@ export async function createGpuResources({ device: supplied, allowSoftwareFallba
       return buffer;
     },
     storageBinding(buffer, { offset = 0, size = buffer.size - offset } = {}) {
-      if (closed || !buffers.has(buffer)) throw new Error('Buffer is not live in this owner');
+      if (closed) throw new Error('GPU resources destroyed or device lost' + formatGpuLossDetail(loss));
+      if (!buffers.has(buffer)) throw new Error('Buffer is not live in this owner');
       if (!(buffer.usage & 128)) throw new Error('Buffer lacks STORAGE usage');
       if (!Number.isSafeInteger(offset) || offset < 0 || offset % device.limits.minStorageBufferOffsetAlignment ||
           !Number.isSafeInteger(size) || size <= 0 || size % 4 || offset + size > buffer.size ||

@@ -18,12 +18,12 @@ test('device loss invalidates owner and clears accounting, preserving peak', asy
   assert.throws(() => owner.storageBinding(b), /binding/);
   assert.throws(() => owner.allocate(4, 0), /usage/);
   assert.throws(() => owner.allocate(4, 2 ** 32 + 128), /usage/);
-  lose({ reason: 'unknown', message: 'test loss' });
+  lose({ reason: 'destroyed', message: 'MTLCommandBuffer execution failed: Timeout' });
   await owner.lost;
   assert.equal(owner.memoryUsage(), 0);
   assert.equal(owner.peakMemoryUsage(), 256);
   assert.equal(b.destroyed, true);
-  assert.throws(() => owner.allocate(4, 128), /lost/);
+  assert.throws(() => owner.allocate(4, 128), /lost.*reason=destroyed.*Timeout/);
   owner.release(b); owner.destroy();
   assert.equal(device.destroyed, undefined);
 });

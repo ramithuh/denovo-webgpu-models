@@ -64,27 +64,29 @@ function* sampleSteps(engine,{features,coordinates,random,seed,schedule,steps=20
   if(cfgScale!==1&&!referenceFeatures)throw new Error('CFG requires explicit referenceFeatures');
   refInit=cfgScale!==1?yield ()=>engine.initialize(referenceFeatures):undefined;
   const trajectory=[],entropy=[],times=[];let out;
-  for(let step=0;step<resolvedSchedule.length-1;step++) {
+  const lastStep=resolvedSchedule.length-2;
+  for(let step=0;step<=lastStep;step++) {
+    const isFinalStep=step===lastStep;
     signal?.throwIfAborted();
     if(allowRealignment){const augmentation=random?.augmentations?.[step]??{angles:rng.uniform(3).map(v=>v*2*Math.PI),translation:rng.normal(3)};x=rigidAugment(x,base,fixed,{...augmentation,centerOption,sTrans}).coordinates;}
     const previous=resolvedSchedule[step],next=resolvedSchedule[step+1],gamma=next>gammaMin?gamma0:0,hat=f32(previous*f32(1+gamma));
     const scale=f32(noiseScale*f32(Math.sqrt(f32(f32(hat*hat)-f32(previous*previous))))),noise=draw(random?.steps[step]);
     const noisy=Float32Array.from(x,(v,i)=>v+(fixed[Math.floor(i/3)]?0:f32(scale*noise[i])));
-    out=yield ()=>engine.run({features,X_noisy_L:noisy,t:hat,n_recycle,initializer});
+    out=yield ()=>engine.run({features,X_noisy_L:noisy,t:hat,n_recycle,initializer,coordinatesOnly:!isFinalStep});
     if(symmetric&&next>resolvedSchedule[Math.min(Math.floor(resolvedSchedule.length*symStepFrac),resolvedSchedule.length-1)])out.X_L.data=applySymmetry(out.X_L.data,features,{partialDiffusion:partialT!==undefined||!allowRealignment&&fixed.some((v,i)=>v&&features.is_sym_asu[i]&&features.sym_entity_id[i]!==-1)});
     const denoised=out.X_L.data;
     let delta=Float32Array.from(noisy,(v,i)=>f32(v-denoised[i])/hat);
     if(cfgScale!==1){
       const refSize=referenceFeatures.atom_to_token_map.length*3;
       if(refSize>size)throw new Error('Reference atom count exceeds conditional atom count');
-      const refOut=yield ()=>engine.run({features:referenceFeatures,X_noisy_L:noisy.slice(0,refSize),t:hat,n_recycle,initializer:refInit});
+      const refOut=yield ()=>engine.run({features:referenceFeatures,X_noisy_L:noisy.slice(0,refSize),t:hat,n_recycle,initializer:refInit,coordinatesOnly:true});
       const ref=refOut.X_L.data;
       delta=Float32Array.from(delta,(v,i)=>v+f32(f32(cfgScale-1)*f32(v-(i<refSize?f32(f32(noisy[i]-ref[i])/hat):0))));
     }
     const multiplier=f32(stepScale*f32(next-hat));
     x=Float32Array.from(noisy,(v,i)=>v+f32(multiplier*delta[i]));
     if(retainTrajectory)trajectory.push({noisy,denoised:denoised.slice(),coordinates:x.slice()});times.push(hat);
-    entropy.push(sequenceEntropy(out.sequence_logits_I.data));
+    if(out.sequence_logits_I?.data)entropy.push(sequenceEntropy(out.sequence_logits_I.data));
     onStep?.({step,total:resolvedSchedule.length-1,coordinates:x.slice()});
   }
   if(allowRealignment&&fixed.some(Boolean)){const augmentation=random?.finalAugmentation??{angles:rng.uniform(3).map(v=>v*2*Math.PI),translation:rng.normal(3)};x=rigidAugment(x,base,fixed,{...augmentation}).coordinates;if(symmetric)x=applySymmetry(x,features,{partialDiffusion:partialT!==undefined});x=rigidAlign(base,x,{mask:fixed}).coordinates;}
