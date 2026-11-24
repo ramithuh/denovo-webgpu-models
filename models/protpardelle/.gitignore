@@ -1,0 +1,10 @@
+.cache
+.t
+.venv
+weights
+node_modules
+fixtures
+src
+examples
+__pycache__/
+*.pyc

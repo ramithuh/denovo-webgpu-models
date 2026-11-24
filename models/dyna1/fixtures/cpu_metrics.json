@@ -1,6 +1,6 @@
 {
   "trp_cage": {
-    "timingMs": 9926.062811,
+    "timingMs": 10349.224621,
     "tensors": {
       "embedding": {
         "relRms": 0,
@@ -200,7 +200,7 @@
     }
   },
   "ubiquitin": {
-    "timingMs": 38361.05071899999,
+    "timingMs": 38987.209898,
     "tensors": {
       "embedding": {
         "relRms": 0,

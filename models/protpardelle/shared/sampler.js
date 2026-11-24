@@ -370,12 +370,14 @@ export async function sample(
   x = ops.mask(x, mask);
   if (!jump && !uniform) seq = bbSeq;
   if (!known && (jump || uniform)) seq = sampleSequence(uniformLogprobs);
+  const legacy = !!options.legacyUpstreamSchedule,
+    initSigma = legacy ? schedule[0] : sigma;
   let state0 = jump ? ops.zeros(n, 219) : null,
-    stateT = jump ? scale(gaussian("randn", 219), sigma) : null,
+    stateT = jump ? scale(gaussian("randn", 219), initSigma) : null,
     lastSigma = jump
-      ? arr(new Float32Array(n * 73).fill(sigma), 73)
+      ? arr(new Float32Array(n * 73).fill(initSigma), 73)
       : null;
-  if (jump && (pd || options.initialCoordinates)) {
+  if (!legacy && jump && (pd || options.initialCoordinates)) {
     stateT = point(
       219,
       [stateT, x, seq, map73],
@@ -397,12 +399,15 @@ export async function sample(
   const outputs = {};
   for (let step = 0; step < numSteps - begin; step++) {
     abort(signal);
-    const absStep = begin + step;
-    let next = schedule[absStep + 1];
+    const absStep = legacy ? step : begin + step;
+    let next = schedule[begin + step + 1];
     if (absStep === numSteps - 1) next = 0;
+    const rawGamma = (options.sChurn ?? 50) / numSteps;
     const gamma =
       next >= (options.sTMin ?? 0.01) * sd && next <= (options.sTMax ?? 50) * sd
-        ? Math.min((options.sChurn ?? 50) / numSteps, Math.SQRT2 - 1)
+        ? legacy
+          ? rawGamma
+          : Math.min(rawGamma, Math.SQRT2 - 1)
         : 0;
     const runMPNN =
       sidechain &&
@@ -432,10 +437,12 @@ export async function sample(
           : gamma > 0
             ? f(Math.sqrt(f(f(hat * hat) - f(sigma * sigma))))
             : 0;
+      const deltaScaled = f(delta * (options.noiseScale ?? 1));
+      const deltaParam = ops.fromArray(Float32Array.of(deltaScaled), 1, 1);
       let xhat = point(
         111,
-        [x, gaussian(), maskTensor],
-        `b3[i]=(b0[i]+b1[i]*${L(f(delta * (options.noiseScale ?? 1)))})*b2[r];`,
+        [x, gaussian(), maskTensor, deltaParam],
+        `b4[i]=(b0[i]+b1[i]*b3[0])*b2[r];`,
         (i, r, c, [x, z, m]) =>
           f(x[i] + f(f(z[i] * delta) * (options.noiseScale ?? 1))) * m[r],
       );
@@ -574,12 +581,17 @@ export async function sample(
             (i, r, c, [m, fixed, loss]) => m[i] * (fixed[r] >= 0 ? loss[i] : 1),
           )
         : m;
+      const eulerParams = ops.fromArray(
+        Float32Array.of(guidanceScale, stepScale, next),
+        1,
+        3,
+      );
       const euler = (start, clean, prev) => {
         const g = gradient ?? ops.zeros(n, 111);
         return point(
           111,
-          [start, clean, prev, g, guidanceMask],
-          `let sigma=b2[i];let score=select(0.0,(b0[i]-b1[i])/max(sigma,0.000001),sigma>0.0)+b3[i]*b4[r*37u+c/3u]*${L(guidanceScale)};b5[i]=b0[i]+score*${L(stepScale)}*(${L(next)}-sigma);`,
+          [start, clean, prev, g, guidanceMask, eulerParams],
+          `let sigma=b2[i];let score=select(0.0,(b0[i]-b1[i])/max(sigma,0.000001),sigma>0.0)+b3[i]*b4[r*37u+c/3u]*b5[0];b6[i]=b0[i]+score*b5[1]*(b5[2]-sigma);`,
           (i, r, c, [x, x0, s, g, m]) => {
             const score = f(
               s[i] > 0 ? f(x[i] - x0[i]) / Math.max(s[i], 1e-6) : 0,
@@ -602,6 +614,11 @@ export async function sample(
         );
       };
       if (jump) {
+        const jumpParams = ops.fromArray(
+          Float32Array.of(hat, 1 + gamma, next),
+          1,
+          3,
+        );
         state0 = point(
           219,
           [state0, x0, oldSeq, map73],
@@ -623,8 +640,8 @@ export async function sample(
           );
         const prev = point(
           111,
-          [lastSigma, seq, map37],
-          `let mapped=i32(b2[u32(b1[r])*37u+c/3u]);b3[i]=select(${L(hat)},b0[r*73u+u32(max(mapped,0))]*${L(1 + gamma)},mapped>=0);`,
+          [lastSigma, seq, map37, jumpParams],
+          `let mapped=i32(b2[u32(b1[r])*37u+c/3u]);b4[i]=select(b3[0],b0[r*73u+u32(max(mapped,0))]*b3[1],mapped>=0);`,
           (i, r, c, [s, aa, map]) => {
             const a = map[aa[r] * 37 + Math.floor(c / 3)];
             return a < 0 ? hat : f(s[r * 73 + a] + f(gamma * s[r * 73 + a]));
@@ -642,8 +659,8 @@ export async function sample(
         );
         lastSigma = point(
           73,
-          [lastSigma, seq, map73],
-          `b3[i]=select(b0[i],${L(next)},b2[u32(b1[r])*73u+c]>=0.0);`,
+          [lastSigma, seq, map73, jumpParams],
+          `b4[i]=select(b0[i],b3[2],b2[u32(b1[r])*73u+c]>=0.0);`,
           (i, r, c, [s, aa, map]) => (map[aa[r] * 73 + c] >= 0 ? next : s[i]),
         );
         oldSeq = seq;
@@ -685,8 +702,20 @@ export async function sample(
       lossMask,
       ...Object.values(outputs),
     ]);
-    // Yield at step boundaries so cancellation reaches command preparation.
-    await new Promise((resolve) => setTimeout(resolve, 0));
+    // Yield at step boundaries without HTML timer clamping so cancellation reaches command preparation.
+    if (typeof MessageChannel === "function") {
+      await new Promise((resolve) => {
+        const ch = new MessageChannel();
+        ch.port1.onmessage = () => {
+          ch.port1.close();
+          ch.port2.close();
+          resolve();
+        };
+        ch.port2.postMessage(null);
+      });
+    } else {
+      await Promise.resolve();
+    }
     abort(signal);
   }
   if (options.stage2) {

@@ -5,7 +5,7 @@ import { mkdtemp, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
-export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
+async function singleRunBrowser(modulePath, { timeoutMs = 300000 } = {}) {
   const chrome = [
     process.env.CHROME_PATH,
     `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`,
@@ -35,7 +35,7 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
     if (pathname === "/") {
       res.setHeader("Content-Type", "text/html");
       res.end(
-        `<script type="module">try {const {run}=await import('${modulePath}');const result=await run();await fetch('/done',{method:'POST',body:JSON.stringify({ok:true,...result})});}catch(e){await fetch('/done',{method:'POST',body:JSON.stringify({ok:false,error:e.stack||String(e)})});}</script>`,
+        `<script type="module">try {for(let i=0;i<50;i++){try{const a=await navigator.gpu?.requestAdapter({powerPreference:'high-performance'});if(a){const d=await a.requestDevice();d.destroy();break;}}catch{}await new Promise(r=>setTimeout(r,100));}const {run}=await import('${modulePath}');const result=await run();await fetch('/done',{method:'POST',body:JSON.stringify({ok:true,...result})});}catch(e){await fetch('/done',{method:'POST',body:JSON.stringify({ok:false,error:e.stack||String(e)})});}</script>`,
       );
       return;
     }
@@ -64,11 +64,13 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
   const env = {
     ...process.env,
     TMPDIR: ".t",
-    XDG_CACHE_HOME: path.join(ROOT, ".cache/browser-cache"),
-    XDG_CONFIG_HOME: path.join(ROOT, ".cache/browser-config"),
+    XDG_CACHE_HOME: path.join(profile, "cache"),
+    XDG_CONFIG_HOME: path.join(profile, "config"),
   };
   delete env.DISPLAY;
   delete env.WAYLAND_DISPLAY;
+  delete env.DBUS_SESSION_BUS_ADDRESS;
+  env.NO_AT_BRIDGE = "1";
   if (existsSync("/usr/share/vulkan/icd.d/nvidia_icd.json"))
     env.VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
   const proc = spawn(
@@ -77,6 +79,13 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
       "--headless=new",
       "--no-first-run",
       "--no-default-browser-check",
+      "--password-store=basic",
+      "--use-mock-keychain",
+      "--disable-search-engine-choice-screen",
+      "--enable-automation",
+      "--disable-dev-shm-usage",
+      "--disable-breakpad",
+      "--disable-renderer-accessibility",
       "--disable-background-networking",
       "--disable-component-update",
       "--disable-sync",
@@ -120,5 +129,21 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
     server.closeAllConnections();
     await new Promise((r) => server.close(r));
     await rm(profile, { recursive: true, force: true });
+  }
+}
+
+export async function runBrowser(modulePath, options = {}) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    const result = await singleRunBrowser(modulePath, options);
+    if (
+      result.ok ||
+      attempt === 5 ||
+      !/Hardware adapter missing|No WebGPU adapter|A valid external Instance reference no longer exists|VK_ERROR_INITIALIZATION_FAILED|vkCreateDevice failed/.test(
+        String(result.error),
+      )
+    )
+      return result;
+    console.warn(`Native Vulkan startup retry ${attempt}/5: ${String(result.error).split("\n")[0]}`);
+    await new Promise((r) => setTimeout(r, 250 * attempt));
   }
 }

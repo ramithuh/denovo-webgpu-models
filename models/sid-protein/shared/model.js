@@ -24,11 +24,10 @@ export async function forwardNetwork(b, x, t, cath, trace) {
   let s = await b.add(await b.linear(x, "linear_3d_embed"), initial);
   s = await b.registers(s);
   const pp = "pair_repr_builder";
-  let pair = await b.pairFeatures(x);
-  pair = await b.norm(
-    await b.linear(pair, `${pp}.init_repr_factory.linear_out`),
-    `${pp}.init_repr_factory.ln_out`,
-  );
+  let pairLin = b.pairLinearInit
+    ? await b.pairLinearInit(x, `${pp}.init_repr_factory.linear_out`)
+    : await b.linear(await b.pairFeatures(x), `${pp}.init_repr_factory.linear_out`);
+  let pair = await b.norm(pairLin, `${pp}.init_repr_factory.ln_out`);
   let pc = await b.norm(
     await b.linear(time, `${pp}.cond_factory.linear_out`),
     `${pp}.cond_factory.ln_out`,
@@ -36,7 +35,8 @@ export async function forwardNetwork(b, x, t, cath, trace) {
   pair = await adaptive(b, pair, pc, `${pp}.adaln`, 0);
   await emit("pair_repr_builder", pair);
   pair = await b.padPair(pair, L);
-  b.keep([x, s, c, pair]);
+  const pStats = b.pairStats ? b.pairStats(pair) : null;
+  b.keep([x, s, c, pair, pStats]);
   for (let layer = 0; layer < 15; layer++) {
     b.check();
     const root = `transformer_layers.${layer}`;
@@ -63,10 +63,9 @@ export async function forwardNetwork(b, x, t, cath, trace) {
       await emit(`${ap}.k_layer_norm`, k);
       await emit(`${ap}.to_g`, g);
     }
-    const bias = await b.linear(
-      await b.norm(pair, `${ap}.pair_norm`),
-      `${ap}.to_bias`,
-    );
+    const bias = pStats
+      ? await b.pairBias(pair, pStats, `${ap}.pair_norm`, `${ap}.to_bias`)
+      : await b.linear(await b.norm(pair, `${ap}.pair_norm`), `${ap}.to_bias`);
     if (layer === 0) await emit(`${ap}.to_bias`, bias);
     let h = await b.attention(q, k, qkv, bias, g, N);
     if (layer === 0) await emit(`${ap}.context`, h);
@@ -77,7 +76,7 @@ export async function forwardNetwork(b, x, t, cath, trace) {
       `${root}.mhba.scale_output.to_adaln_zero_gamma.0`,
     );
     s = await b.residualGate(s, h, hg);
-    b.keep([x, s, c, pair]);
+    b.keep([x, s, c, pair, pStats]);
     a = await adaptive(b, s, c, `${root}.transition.adaln`, 1);
     if (layer === 0) await emit(`${root}.transition.adaln`, a);
     h = await b.linear(
@@ -93,7 +92,7 @@ export async function forwardNetwork(b, x, t, cath, trace) {
     s = await b.residualGate(s, h, tg);
     if (layer === 0 || layer === 14)
       await emit(`transformer_layers.${layer}`, s);
-    b.keep([x, s, c, pair]);
+    b.keep([x, s, c, pair, pStats]);
   }
   const out = await b.linear(
     await b.norm(s, "coors_3d_decoder.0"),
@@ -106,6 +105,7 @@ async function adaptive(b, x, c, p, mode) {
   const cn = await b.norm(c, `${p}.norm_cond`);
   const gamma = await b.linear(cn, `${p}.to_gamma.0`),
     beta = await b.linear(cn, `${p}.to_beta`);
+  if (b.fastAdaptive) return b.fastAdaptive(x, gamma, beta, mode);
   return b.adaptive(await b.norm(x), gamma, beta, mode);
 }
 export function assertModelManifest(m) {

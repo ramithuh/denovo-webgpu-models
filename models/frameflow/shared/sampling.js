@@ -58,7 +58,30 @@ export async function sample(engine, options = {}) {
   for (let i = 0; i < steps; i++) {
     signal?.throwIfAborted();
     const t = ts[Math.min(i, steps - 2)]; // Preserve pinned upstream final-call time reuse.
-    pred = await engine.forward({ ...x, so3_t: t, r3_t: t }, { signal });
+    const isLast = i === steps - 1;
+    const dt = isLast ? 0 : Math.fround(ts[i + 1] - ts[i]);
+    const rotationScale = isLast
+      ? 0
+      : Math.fround(
+          dt * (schedule === "exp" ? expRate : 1 / Math.fround(1 - t)),
+        );
+    let trans = null,
+      rot = null;
+    if (engine.step) {
+      const stepRes = await engine.step(
+        { ...x, so3_t: t, r3_t: t },
+        isLast ? null : { dt, t, rotationScale },
+        { signal },
+      );
+      pred = {
+        pred_trans: stepRes.pred_trans,
+        pred_rotmats: stepRes.pred_rotmats,
+      };
+      trans = stepRes.trans_t;
+      rot = stepRes.rotmats_t;
+    } else {
+      pred = await engine.forward({ ...x, so3_t: t, r3_t: t }, { signal });
+    }
     if (keepTrajectory)
       trajectory.push({
         pred_trans: pred.pred_trans.slice(),
@@ -66,39 +89,36 @@ export async function sample(engine, options = {}) {
       });
     onProgress?.({ phase: "step", step: i + 1, total: steps });
     signal?.throwIfAborted();
-    if (i === steps - 1) break;
-    const dt = Math.fround(ts[i + 1] - ts[i]);
-    let trans, rot;
-    if (engine.integrate) {
-      ({ trans_t: trans, rotmats_t: rot } = await engine.integrate(x, pred, {
-        dt,
-        t,
-        rotationScale: Math.fround(
-          dt * (schedule === "exp" ? expRate : 1 / Math.fround(1 - t)),
-        ),
-        signal,
-      }));
-    } else {
-      trans = new Float32Array(x.trans_t.length);
-      rot = new Float32Array(x.rotmats_t.length);
-      for (let j = 0; j < trans.length; j++)
-        trans[j] =
-          x.trans_t[j] +
-          Math.fround(
-            Math.fround(pred.pred_trans[j] - x.trans_t[j]) / Math.fround(1 - t),
-          ) *
-            dt;
-      for (let j = 0; j < x.length; j++)
-        rot.set(
-          geodesic(
-            x.rotmats_t.subarray(9 * j, 9 * j + 9),
-            pred.pred_rotmats.subarray(9 * j, 9 * j + 9),
+    if (isLast) break;
+    if (!trans || !rot) {
+      if (engine.integrate) {
+        ({ trans_t: trans, rotmats_t: rot } = await engine.integrate(x, pred, {
+          dt,
+          t,
+          rotationScale,
+          signal,
+        }));
+      } else {
+        trans = new Float32Array(x.trans_t.length);
+        rot = new Float32Array(x.rotmats_t.length);
+        for (let j = 0; j < trans.length; j++)
+          trans[j] =
+            x.trans_t[j] +
             Math.fround(
-              dt * (schedule === "exp" ? expRate : 1 / Math.fround(1 - t)),
+              Math.fround(pred.pred_trans[j] - x.trans_t[j]) /
+                Math.fround(1 - t),
+            ) *
+              dt;
+        for (let j = 0; j < x.length; j++)
+          rot.set(
+            geodesic(
+              x.rotmats_t.subarray(9 * j, 9 * j + 9),
+              pred.pred_rotmats.subarray(9 * j, 9 * j + 9),
+              rotationScale,
             ),
-          ),
-          9 * j,
-        );
+            9 * j,
+          );
+      }
     }
     // Frame clamping accepts explicit fixed frames; it is not the separate amortized checkpoint.
     for (let j = 0; j < x.length; j++)

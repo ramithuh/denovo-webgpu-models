@@ -18,6 +18,66 @@ export function expF32(x) {
   u = f(1 + fmaF32(f(s * s), u, s));
   return f(u * 2 ** q);
 }
+
+function dfAdd2F32(a, b) {
+  const f = Math.fround;
+  const s = fmaF32(1, a, b);
+  const v = fmaF32(-1, a, s);
+  return [s, fmaF32(1, fmaF32(-1, fmaF32(-1, v, s), a), fmaF32(-1, v, b))];
+}
+function dfAddF32(a, b) {
+  const s = fmaF32(1, a[0], b);
+  return [s, fmaF32(1, fmaF32(1, fmaF32(-1, s, a[0]), b), a[1])];
+}
+function dfMulF32(a, b) {
+  const p = fmaF32(a[0], b[0], 0);
+  return [p, fmaF32(a[0], b[1], fmaF32(a[1], b[0], fmaF32(a[0], b[0], -p)))];
+}
+function reducedSinF32(t) {
+  const f = Math.fround;
+  const square = fmaF32(t[0], t[0], 0);
+  const s = [square, fmaF32(f(t[0] + t[0]), t[1], fmaF32(t[0], t[0], -square))];
+  let u = f(2.6083159809786593541503e-6);
+  u = fmaF32(u, s[0], f(-0.0001981069071916863322258));
+  u = fmaF32(u, s[0], f(0.00833307858556509017944336));
+  const c = f(-0.166666597127914428710938);
+  const p = fmaF32(u, s[0], 0);
+  const cp = fmaF32(1, c, p);
+  const a = [cp, fmaF32(1, fmaF32(-1, cp, c), p)];
+  const y = dfMulF32(a, s);
+  const yh = fmaF32(1, y[0], 1);
+  const x = [yh, fmaF32(1, fmaF32(1, fmaF32(-1, yh, 1), y[0]), y[1])];
+  return fmaF32(t[0], x[0], fmaF32(t[1], x[0], f(t[0] * x[1])));
+}
+function trigReduceF32(x, q, large) {
+  const f = Math.fround;
+  const a = fmaF32(q, f(-1.57073974609375), 0);
+  let t = dfAdd2F32(x, a);
+  t[1] = fmaF32(1, t[1], fmaF32(q, f(-1.57073974609375), -a));
+  const y = f(q * f(-0.00005657970905303955));
+  const next = dfAdd2F32(t[0], y);
+  t = [next[0], fmaF32(1, next[1], t[1])];
+  if (large) t[1] = f(t[1] + fmaF32(q, f(-0.00005657970905303955), -y));
+  t = dfAddF32(t, f(q * f(-9.92093629470503e-10)));
+  if (large) {
+    const h = fmaF32(1, t[0], t[1]);
+    return [h, fmaF32(1, fmaF32(-1, h, t[0]), t[1])];
+  }
+  return t;
+}
+export function sinCosF32(x, large = Math.abs(x) >= 125) {
+  const f = Math.fround;
+  const invPi = f(0.3183098861837907);
+  const roundEven = (v) => {
+    const r = Math.round(v);
+    return Math.abs(v - r) === 0.5 ? 2 * Math.round(v * 0.5) : r;
+  };
+  const qs = f(roundEven(f(x * invPi)));
+  const qc = f(2 * roundEven(fmaF32(x, invPi, -0.5)) + 1);
+  const sn = reducedSinF32(trigReduceF32(x, f(2 * qs), large));
+  const cs = reducedSinF32(trigReduceF32(x, qc, large));
+  return [(qs | 0) & 1 ? -sn : sn, ((qc | 0) & 2) === 0 ? -cs : cs];
+}
 export const numericWGSL = `
 // SLEEF u10 sine polynomial with double-float reduction on the time
 // embedding domain |x| <= 2000. Float pairs preserve cancellation near pi.

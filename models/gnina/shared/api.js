@@ -1,6 +1,6 @@
 import {dockPose} from "./docking.js";
 import {checkAbort} from "./loader.js";
-import {forward} from "./network.js";
+import {forward,forwardGraph,decodeScores} from "./network.js";
 import {prepareGrid,vinaBreakdown,transformPose,centroid} from "./scoring.js";
 import {parseReceptor,parseLigands} from "./structure.js";
 
@@ -22,17 +22,39 @@ export function createScorer(backend,models,creationSignal) {
     const input=prepareGrid(receptor,ligand,center), ops=backend.begin(()=>check(signal));
     try {
       const grid=ops.grid(input);
-      if(trace) await trace("grid",await ops.read(grid));
-      const perModel={};
-      let score=0,affinity=0;
+      if(trace || !ops.readMany) {
+        if(trace) await trace("grid",await ops.read(grid));
+        const perModel={};
+        let score=0,affinity=0;
+        for(const name of models) {
+          check(signal);
+          const result=await forward(ops,grid,name,trace);
+          perModel[name]=result;score+=result.cnnScore;affinity+=result.cnnAffinity;
+        }
+        check(signal);
+        const cnnScore=score/models.length, cnnAffinity=affinity/models.length;
+        const breakdown=vinaBreakdown(receptor,ligand);
+        return {cnnScore,cnnAffinity,cnnVS:cnnScore*cnnAffinity,vinaScore:breakdown.vinaScore,
+          models:perModel,...(contributions?{contributions:breakdown}:{})};
+      }
+      const scoreTensors=[];
       for(const name of models) {
         check(signal);
-        const result=await forward(ops,grid,name,trace);
-        perModel[name]=result;score+=result.cnnScore;affinity+=result.cnnAffinity;
+        scoreTensors.push(await forwardGraph(ops,grid,name,null));
       }
-      check(signal);
-      const cnnScore=score/models.length, cnnAffinity=affinity/models.length;
+      // Submit single batched GPU pass across all ensemble models and overlap CPU Vina pairwise evaluation.
+      const gpuPromise=ops.readMany(scoreTensors);
       const breakdown=vinaBreakdown(receptor,ligand);
+      const rawList=await gpuPromise;
+      for(const t of scoreTensors) ops.release(t);
+      check(signal);
+      const perModel={};
+      let score=0,affinity=0;
+      for(let i=0;i<models.length;i++) {
+        const result=decodeScores(rawList[i]);
+        perModel[models[i]]=result;score+=result.cnnScore;affinity+=result.cnnAffinity;
+      }
+      const cnnScore=score/models.length, cnnAffinity=affinity/models.length;
       return {cnnScore,cnnAffinity,cnnVS:cnnScore*cnnAffinity,vinaScore:breakdown.vinaScore,
         models:perModel,...(contributions?{contributions:breakdown}:{})};
     } finally {ops.finish();}

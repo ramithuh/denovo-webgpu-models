@@ -19,7 +19,7 @@
         "maxAbs": 8.344650268554688e-7,
         "correlation": 0.9999999999999639
       },
-      "milliseconds": 194162.75737099999
+      "milliseconds": 196358.46884
     },
     {
       "name": "L32_T16",
@@ -38,7 +38,7 @@
         "maxAbs": 0.0001032799482345581,
         "correlation": 0.9999999997471115
       },
-      "milliseconds": 104591.74883899999
+      "milliseconds": 104261.859545
     },
     {
       "name": "L32_T1",
@@ -57,7 +57,7 @@
         "maxAbs": 3.5762786865234375e-7,
         "correlation": 0.9999999999999468
       },
-      "milliseconds": 12370.02508800001
+      "milliseconds": 12586.401998000001
     },
     {
       "name": "L64_T8",
@@ -76,7 +76,7 @@
         "maxAbs": 0.000015400350093841553,
         "correlation": 0.9999999999979088
       },
-      "milliseconds": 102238.01080799999
+      "milliseconds": 102518.54944999999
     },
     {
       "name": "L32_T4",
@@ -95,7 +95,7 @@
         "maxAbs": 0.0000018924474716186523,
         "correlation": 0.9999999999987219
       },
-      "milliseconds": 30900.309714000003
+      "milliseconds": 31263.06158200001
     },
     {
       "name": "L32_T4_cath",
@@ -114,10 +114,10 @@
         "maxAbs": 0.000007316470146179199,
         "correlation": 0.9999999999956354
       },
-      "milliseconds": 30858.394054000004
+      "milliseconds": 31155.19212000002
     }
   ],
-  "milliseconds": 196458.238897,
+  "milliseconds": 210080.09092800002,
   "memoryAfterDestroy": [
     {
       "totalBytes": 0,

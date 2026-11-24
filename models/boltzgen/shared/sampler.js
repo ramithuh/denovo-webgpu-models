@@ -64,6 +64,20 @@ export function rigidAlign(o, x, y, mask) {
     return o.add(o.mm(xx, o.transpose(rot)), yc);
   });
 }
+const fastYield =
+  typeof MessageChannel === "function"
+    ? () =>
+        new Promise((resolve) => {
+          const ch = new MessageChannel();
+          ch.port1.onmessage = () => {
+            ch.port1.close();
+            ch.port2.close();
+            resolve();
+          };
+          ch.port2.postMessage(null);
+        })
+    : () => Promise.resolve();
+
 export async function sample(
   model,
   f,
@@ -71,7 +85,7 @@ export async function sample(
   sInputs,
   sTrunk,
   random,
-  { numSteps, signal, onProgress, stage },
+  { numSteps, signal, onProgress, stage, denoiseCache = null },
 ) {
   const o = model.o,
     sigmas = sigmaSchedule(numSteps),
@@ -104,7 +118,7 @@ export async function sample(
       sTrunk,
       noisy,
       Math.fround(tHat),
-      { signal, onProgress, step: i },
+      { signal, onProgress, step: i, cache: denoiseCache },
     );
     denoised.push(den);
     await stage?.("denoised." + i, den);
@@ -117,9 +131,19 @@ export async function sample(
     });
     trajectory.push(x);
     await stage?.("trajectory." + (i + 1), x);
-    o.collect(f, conditioning, sInputs, sTrunk, random, trajectory, denoised);
-    await o.backend.flush?.(true);
+    o.collect(
+      f,
+      conditioning,
+      sInputs,
+      sTrunk,
+      random,
+      trajectory,
+      denoised,
+      denoiseCache,
+    );
+    await o.backend.flush?.(false);
     onProgress?.({ phase: "diffusion", step: i + 1, total: numSteps });
+    if (i % 4 === 3) await fastYield();
   }
   trajectory.push(x);
   return { atom_coords: x, trajectory, denoised };

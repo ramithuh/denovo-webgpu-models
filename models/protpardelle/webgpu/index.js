@@ -11,7 +11,7 @@ export async function createProtpardelleEngine({
   precision = "int8",
   device,
   cache = "none",
-  useF16 = false,
+  useF16 = true,
   signal,
   onProgress,
   read,
@@ -47,7 +47,9 @@ export async function createProtpardelleEngine({
       signal,
       onProgress,
     });
-    ops = new GPUOps(device, weights);
+    ops = new GPUOps(device, weights, {
+      hasF16: Boolean(useF16 && device.features?.has?.("shader-f16")),
+    });
     abort(signal);
     return {
       config: manifest.config,

@@ -18,7 +18,7 @@ export async function createRFdiffusionEngine(options = {}) {
             maxBufferSize: adapter.limits.maxBufferSize,
           },
           requiredFeatures:
-            options.useF16 && adapter.features.has("shader-f16")
+            options.useF16 !== false && adapter.features.has("shader-f16")
               ? ["shader-f16"]
               : [],
         });
@@ -30,8 +30,10 @@ export async function createRFdiffusionEngine(options = {}) {
     }
     if (!device) throw last;
   }
+  const hasShaderF16 = Boolean(device.features?.has?.("shader-f16"));
+  const useF16 = options.useF16 === undefined ? hasShaderF16 : Boolean(options.useF16 && hasShaderF16);
   try {
-    const engine = await makeEngine(new GPUAlgebra(device), options);
+    const engine = await makeEngine(new GPUAlgebra(device, { useF16 }), options);
     const destroy = engine.destroy;
     let released = false;
     engine.destroy = () => {

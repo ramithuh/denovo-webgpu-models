@@ -10,6 +10,58 @@ export class BoltzGen {
     this.atoms = new AtomModules(this.o, this.layers);
     this.trunk = new Trunk(this.o, this.layers);
   }
+  prepareDenoiseCache(f, c, sInputs, sTrunk) {
+    const o = this.o,
+      p = "structure_module.score_model",
+      single = p + ".single_conditioner",
+      N = f.token_pad_mask.shape[1];
+    return o.tidy(() => {
+      const sBase = o.linear(
+        o.norm(o.cat([sTrunk, sInputs]), single + ".norm_single"),
+        single + ".single_embed",
+      );
+      const atomMeanT = o.contiguous(
+        o.transpose(
+          o.div(
+            f.atom_to_token,
+            o.add(o.sum(f.atom_to_token, 1, true), 1e-6),
+          ),
+        ),
+      );
+      const maskTerm = o.mul(
+        o.sub(1, o.reshape(f.token_pad_mask, [1, 1, 1, N])),
+        -1e6,
+      );
+      const tokenLayers = Array.from({ length: 24 }, (_, i) => ({
+        attnMask: o.add(
+          maskTerm,
+          o.permute(
+            o.slice(c.token_trans_bias, -1, i * 16, i * 16 + 16),
+            [0, 3, 1, 2],
+          ),
+        ),
+      }));
+      const atomEncLayers = this.layers.prepareAtomTransformerCache(
+        c.c,
+        c.atom_enc_bias,
+        f.atom_pad_mask,
+        p + ".atom_attention_encoder.atom_encoder",
+      );
+      const atomDecLayers = this.layers.prepareAtomTransformerCache(
+        c.c,
+        c.atom_dec_bias,
+        f.atom_pad_mask,
+        p + ".atom_attention_decoder.atom_decoder",
+      );
+      return {
+        sBase,
+        atomMeanT,
+        tokenLayers,
+        atomEncLayers,
+        atomDecLayers,
+      };
+    });
+  }
   async denoise(
     f,
     c,
@@ -17,16 +69,18 @@ export class BoltzGen {
     sTrunk,
     noisy,
     sigma,
-    { signal, onProgress, step },
+    { signal, cache = null },
   ) {
     const o = this.o,
       p = "structure_module.score_model",
       single = p + ".single_conditioner";
     let s = o.tidy(() => {
-      let t = o.linear(
-        o.norm(o.cat([sTrunk, sInputs]), single + ".norm_single"),
-        single + ".single_embed",
-      );
+      let t =
+        cache?.sBase ??
+        o.linear(
+          o.norm(o.cat([sTrunk, sInputs]), single + ".norm_single"),
+          single + ".single_embed",
+        );
       const time = o.fill(
         [1, 1],
         Math.fround(Math.log(Math.fround(sigma / 16))) * 0.25,
@@ -60,6 +114,7 @@ export class BoltzGen {
       c.atom_enc_bias,
       p + ".atom_attention_encoder",
       o.mul(noisy, cin),
+      cache,
     );
     let a = o.add(encoded.a, o.seq(s, p + ".s_to_a_linear"));
     // Scope each token layer, so its temporary attention and MLP tensors are reusable.
@@ -72,8 +127,9 @@ export class BoltzGen {
         f.token_pad_mask,
         `${p}.token_transformer.layers.${i}`,
         16,
+        false,
+        cache?.tokenLayers?.[i] ?? null,
       );
-      if (i % 4 === 3) await o.backend.flush?.();
     }
     a = o.norm(a, p + ".a_norm");
     const update = this.atoms.decoder(
@@ -83,6 +139,7 @@ export class BoltzGen {
       encoded.c,
       c.atom_dec_bias,
       p + ".atom_attention_decoder",
+      cache,
     );
     const skip = Math.fround(
         256 / Math.fround(Math.fround(sigma * sigma) + 256),
@@ -151,7 +208,7 @@ export class BoltzGen {
         await stage?.("pairformer_module.layers." + i, [s, z]);
         keep();
         if (i % 4 === 3) {
-          await o.backend.flush?.();
+          await o.backend.flush?.(false);
           onProgress?.({ phase: "trunk", block: i + 1, total: 64, recycle });
         }
       }
@@ -168,12 +225,15 @@ export class BoltzGen {
     await o.backend.flush?.(true);
     timings.push({ phase: "trunk", milliseconds: performance.now() - start });
     start = performance.now();
+    const denoiseCache = this.prepareDenoiseCache(f, c, sInputs, s);
     const result = await sample(this, f, c, sInputs, s, random, {
       numSteps,
       signal,
       onProgress,
       stage,
+      denoiseCache,
     });
+    o.collect(result);
     await o.backend.flush?.(true);
     timings.push({
       phase: "diffusion",

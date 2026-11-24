@@ -5,7 +5,7 @@ export function selectModels(selection) {
   return [...names];
 }
 // Operators own their output. A released activation may be reused by the next dispatch.
-export async function forward(ops, grid, name, trace) {
+export async function forwardGraph(ops, grid, name, trace) {
   const layer=s=>name+"/"+s;
   let x=grid;
   function replace(y) {if(x!==grid) ops.release(x);x=y;}
@@ -38,8 +38,18 @@ export async function forward(ops, grid, name, trace) {
     }
   }
   const scores=ops.heads(x,layer("pose_output"),layer("affinity_output"));
-  const [cnnScore,cnnAffinity]=await ops.read(scores);
-  ops.release(scores);ops.release(x);
+  ops.release(x);
+  return scores;
+}
+
+export function decodeScores([cnnScore,cnnAffinity]) {
   if(!Number.isFinite(cnnScore+cnnAffinity)) throw Error("Non-finite neural output");
   return {cnnScore,cnnAffinity,cnnVS:cnnScore*cnnAffinity};
+}
+
+export async function forward(ops, grid, name, trace) {
+  const scores=await forwardGraph(ops,grid,name,trace);
+  const raw=await ops.read(scores);
+  ops.release(scores);
+  return decodeScores(raw);
 }

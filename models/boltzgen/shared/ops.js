@@ -1,4 +1,4 @@
-import { tensor, view, broadcast, sizeOf, axis } from "./tensor.js";
+import { contiguous, tensor, view, broadcast, sizeOf, axis } from "./tensor.js";
 
 // Eager tensor algebra shared by the JavaScript and WGSL implementations.
 // Shapes come from live inputs; no operation tape or captured program is used.
@@ -135,21 +135,23 @@ export class Ops {
     );
     return this.calc("reduce", [t], sh, { dims, kind });
   }
+  contiguous(t) {
+    return !this.backend.device || contiguous(t)
+      ? t
+      : this.calc("copy", [t], t.shape);
+  }
   norm(t, p, eps = 1e-5) {
-    const w = t.shape.at(-1),
-      sh = [...t.shape.slice(0, -1), 1];
-    return this.track(
-      this.backend.compute(
-        "norm",
-        [
-          t,
-          p ? this.weight(p + ".weight", true) : null,
-          p ? this.weight(p + ".bias", true) : null,
-        ],
-        [t.shape, sh, sh],
-        { width: w, epsilon: eps },
-      ),
-    )[0];
+    const w = t.shape.at(-1);
+    return this.calc(
+      "norm",
+      [
+        t,
+        p ? this.weight(p + ".weight", true) : null,
+        p ? this.weight(p + ".bias", true) : null,
+      ],
+      t.shape,
+      { width: w, epsilon: eps },
+    );
   }
   mm(a, b, bias) {
     const batch = broadcastShape(a.shape.slice(0, -2), b.shape.slice(0, -2));

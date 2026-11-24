@@ -128,6 +128,18 @@ export async function initializeEngine(o, options, metadata = {}) {
               : undefined,
           },
         );
+        if (o.readMany) {
+          const [zArr, coordsArr, rotsArr] = await o.readMany([
+            out.z,
+            out.trans,
+            out.rots,
+          ]);
+          return {
+            z: zArr,
+            coordinates: coordsArr,
+            rotations: rotsArr,
+          };
+        }
         return {
           z: await o.read(out.z),
           coordinates: await o.read(out.trans),
@@ -162,6 +174,7 @@ export async function initializeEngine(o, options, metadata = {}) {
         const f = buildFeatures({ ...spec, ...features }),
           L = f.length,
           ft = uploadFeatures(f),
+          staticCache = {},
           saved = [];
         const noiseTensor = (data) => {
           if (
@@ -188,6 +201,7 @@ export async function initializeEngine(o, options, metadata = {}) {
             steps,
             {
               signal,
+              staticCache,
               onStage: onStage
                 ? async (n, x) => onStage(t, n, await o.read(x))
                 : undefined,
@@ -215,12 +229,33 @@ export async function initializeEngine(o, options, metadata = {}) {
             await onStep({ step: t });
           }
           onProgress?.({ step: steps - t + 1, totalSteps: steps, t });
-          await o.checkpoint([...Object.values(ft), trans], {
-            sync: t === 1 || t % 5 === 0,
-          });
+          await o.checkpoint(
+            [
+              ...Object.values(ft),
+              staticCache.pm,
+              staticCache.relProj,
+              staticCache.motifProj,
+              trans,
+            ],
+            {
+              sync: t === 1 || t % 50 === 0,
+            },
+          );
           signal?.throwIfAborted();
         }
         const rotations = frenet(o, trans, ft.chain_index, ft.residue_mask);
+        if (o.readMany) {
+          const [coordsArr, rotsArr] = await o.readMany([trans, rotations]);
+          return {
+            coordinates: coordsArr,
+            rotations: rotsArr,
+            features: f,
+            trajectory: saved,
+            steps,
+            scale,
+            seed,
+          };
+        }
         return {
           coordinates: await o.read(trans),
           rotations: await o.read(rotations),

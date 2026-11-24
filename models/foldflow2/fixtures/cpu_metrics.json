@@ -245,36 +245,36 @@
     {
       "L": 32,
       "phase": "full_forward",
-      "ms": 91074.634869
+      "ms": 91422.99106799999
     },
     {
       "L": 32,
       "steps": 2,
       "phase": "sample_cached_esm",
-      "ms": 45185.62273199999
+      "ms": 45304.699849
     },
     {
       "L": 32,
       "steps": 3,
       "phase": "sample_cached_esm",
-      "ms": 60200.443841
+      "ms": 60401.465704
     },
     {
       "L": 64,
       "phase": "full_forward",
-      "ms": 228228.75804499997
+      "ms": 230322.41112200002
     },
     {
       "L": 64,
       "steps": 2,
       "phase": "sample_cached_esm",
-      "ms": 208753.248953
+      "ms": 208790.10097100004
     },
     {
       "L": 64,
       "steps": 3,
       "phase": "sample_cached_esm",
-      "ms": 278569.44639100006
+      "ms": 277642.80354
     }
   ],
   "skipped": 0

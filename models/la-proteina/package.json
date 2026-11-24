@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Standalone La-Proteina LD1 + AE1 inference with packed WebGPU weights",
+  "description": "Standalone La-Proteina unconditional (LD1 + AE1) and conditional motif scaffolding (LD4-LD7 + AE3) inference with packed WebGPU weights",
   "exports": {".": "./webgpu/index.js", "./cpu": "./cpu/index.js", "./shared": "./shared/index.js", "./worker": "./webgpu/worker-client.js"},
   "scripts": {
     "test": "npm run test:shared && npm run test:cpu && npm run test:gpu",
@@ -11,6 +11,9 @@
     "test:cpu": "node test/cpu.mjs",
     "test:gpu": "node test/gpu.mjs",
     "test:gpu:long": "node test/gpu-long.mjs",
+    "test:motif:cpu": "node test/motif-cpu.mjs",
+    "test:motif:gpu": "node test/motif-gpu.mjs",
+    "test:motif": "npm run test:motif:cpu && npm run test:motif:gpu",
     "serve": "node tools/server.mjs"
   }
 }

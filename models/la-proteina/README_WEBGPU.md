@@ -1,10 +1,18 @@
-# La-Proteina LD1 + AE1 for WebGPU
+# La-Proteina Unconditional (`LD1` + `AE1`) & Conditional Motif Scaffolding (`LD4`–`LD7` + `AE3`) for WebGPU
 
-Standalone, dependency-free ES modules for de novo protein generation: the full
-LD1 velocity network, self-conditioned sampling, and the full AE1 decoder through
-atom37 coordinates and sequence logits. All neural operations and numerical
-sampling updates execute WGSL in the GPU engine. A separate JavaScript CPU
-backend implements the same explicit module hierarchy.
+Standalone, dependency-free ES modules for de novo protein generation and
+conditional atomistic motif scaffolding:
+- **Unconditional generation (`variant: 'ld1'`, default):** `LD1` velocity network, self-conditioned sampling, and `AE1` decoder through atom37 coordinates and sequence logits.
+- **Conditional atomistic motif scaffolding (`variant: 'ld4' | 'ld5' | 'ld6' | 'ld7'`):**
+  - `LD4` (`LD4_motif_idx_aa`): indexed all-atom motif scaffolding (`549`-ch token + `301`-ch pair conditioning)
+  - `LD5` (`LD5_motif_idx_tip`): indexed sidechain tip-atom motif scaffolding (`250`-ch token + `217`-ch pair conditioning)
+  - `LD6` (`LD6_motif_uidx_aa`): unindexed all-atom motif scaffolding (`L + M` extended tokens + `205`-ch `motif_uidx` projection)
+  - `LD7` (`LD7_motif_uidx_tip`): unindexed sidechain tip-atom motif scaffolding (`L + M` extended tokens + `205`-ch `motif_uidx` projection)
+- **Motif Autoencoder (`variant: 'ae3'` and paired decoder for `LD4`–`LD7`):** full `AE3` encoder (`468`-ch all-atom sequence + `316`-ch backbone distance/orientation pair features -> `[L, 8]` `mean`, `logScale`, `z`) and `AE3` decoder (`[L, 37, 3]` coordinates + `[L, 20]` sequence logits).
+
+All neural operations, structural/motif featurizers, and numerical sampling updates
+execute WGSL directly in the GPU engine (zero CPU fallback, zero FP32 weight shadows).
+A separate JavaScript CPU backend implements the same explicit module hierarchy.
 
 Upstream: [NVIDIA-BioNeMo/la-proteina](https://github.com/NVIDIA-BioNeMo/la-proteina/tree/cde5de3ead6e4d76f367da6dc5174be9913ef6ca),
 commit **`cde5de3ead6e4d76f367da6dc5174be9913ef6ca`**. Code is accompanied by
@@ -23,9 +31,9 @@ commit **`cde5de3ead6e4d76f367da6dc5174be9913ef6ca`**. Code is accompanied by
 | Output | LD1 Cα/latent velocities; AE1 20 sequence logits and 37 × 3 coordinates per residue |
 | Dynamic execution | Handwritten neural modules; runtime `length` and `steps`; no ATen/FX graph capture or shape/step replay |
 | Scope | One unpadded contiguous chain, integer lengths 1–500, arbitrary positive integer step count |
-| Sampling | Default `sde` matches `inference_ucond_notri`; optional `ode` changes the integration mode to upstream `vf` |
-| AE1 encoder | Deliberately omitted. Export and browser inference include the decoder only; generation is complete without the encoder |
-| Motif / triangular models | Outside this LD1 + AE1 package |
+| Sampling | Default `sde` matches `inference_ucond_notri` / `inference_motif_*`; optional `ode` changes the integration mode to upstream `vf` |
+| AE1 / AE3 | `AE1` exports the unconditional decoder; `AE3` exports **both** the all-atom encoder (`encode`, `encodeDecode`) and decoder (paired with `LD4`–`LD7`) |
+| Conditional motif models | `LD4` (indexed all-atom), `LD5` (indexed tip-atom), `LD6` (unindexed all-atom), `LD7` (unindexed tip-atom); `center_every_step = false` with origin-centered `x_motif` |
 
 Checkpoint configuration is authoritative. In particular, LD1 has a 46-channel
 initial feature vector including `cropped_flag_seq`, which is missing from the
@@ -78,9 +86,11 @@ dependencies or Node built-ins. Node APIs are confined to development tooling.
 
 | Method | Contract |
 |---|---|
-| `sample({length=100, steps=400, seed=5, mode='sde', signal, onProgress, returnTrajectory=false})` | Full LD1 sampling + AE1 decoding |
-| `denoiseStep({length, ca, z, tCa, tZ, scCa?, scZ?}, options)` | Complete LD1 forward; returns Cα and latent velocities |
-| `decode({length, ca, z}, options)` | Complete AE1 decoder; returns sequence, all-atom tensors, PDB |
+| `sample({length=100, steps=400, seed=5, mode='sde', variant?, motif?, signal, onProgress, returnTrajectory=false})` | Full unconditional (`LD1`+`AE1`) or motif-conditioned (`LD4`–`LD7`+`AE3`) sampling + decoding (`motifMetrics` attached for motif runs) |
+| `denoiseStep({length, ca, z, tCa, tZ, scCa?, scZ?, variant?, motif?}, options)` | Complete `LD1` or `LD4`–`LD7` forward; returns Cα and latent velocities |
+| `decode({length, ca, z, variant?}, options)` | Complete `AE1` or `AE3` decoder; returns sequence, all-atom tensors, PDB |
+| `encode({pdb} \| {length, coordsNm, coordMask, residueTypes, chainBreaks?, eps?, seed?, deterministic?}, options)` | Complete `AE3` encoder; returns `{length, ca, mean, logScale, z}` |
+| `encodeDecode(input, options)` | Complete `AE3` encoder -> decoder round-trip; returns decoded structure + `{mean, logScale, z}` |
 | `memoryUsage()` | Tracked GPUBuffer `bytes`, `transientBuffers`, cumulative allocations and scratch reuse; excludes driver pipeline memory and host arrays |
 | `destroy()` | Idempotent; frees every owned buffer; retains a caller-owned GPUDevice |
 
@@ -164,6 +174,11 @@ Only two official NGC version 1.0 checkpoint files are downloaded:
 |---|---:|---|
 | `LD1_ucond_notri_512.ckpt` | 2,926,616,286 | `6d9ec013f73be6bc305876a02f2aa5dbf3183a938332bac9262aa30f8c963f66` |
 | `AE1_ucond_512.ckpt` | 4,100,184,649 | `898da17022cdeaaaea7caace41c8b6fe7bfcb78be4876b0113127eb9bb1527e6` |
+| `AE3_motif.ckpt` | 4,100,197,925 | `63b1358c5459e968628094fdc9a2a6a95ac003606fcf7b1a3a21174458a69734` |
+| `LD4_motif_idx_aa.ckpt` | 2,931,464,466 | `8bd61de905c62bbe6b26c2669694e413e547c23d7a91515de965371cddd7db7d` |
+| `LD5_motif_idx_tip.ckpt` | 2,928,462,198 | `dd0a888c2fe69715c1fb246339375f464c2d442a46566199191371ddcde9f441` |
+| `LD6_motif_uidx_aa.ckpt` | 2,928,525,858 | `9c52db67d2fec4b30134cd8c15132732f188bf1e82d72c9adc3c941086dcf589` |
+| `LD7_motif_uidx_tip.ckpt` | 2,928,525,538 | `6b4a5f15dfabbe5594550c9d3042b3770bb9ee11632101b392cdda6a304fb393` |
 
 `tools/download_weights.py` obtains signed URLs from the NGC v2
 `resources/org/nvidia/team/clara/<resource>/1.0/files` endpoint, checks the
@@ -242,10 +257,10 @@ The parity threshold is `relRMS < 1e-4` against the identical exported precision
 
 | Additional L32 / 400-step case | Worst final relRMS | Runtime (s) | Worst trajectory relRMS |
 |---|---:|---:|---:|
-| int8_L32_T400_sde | 2.353e-07 | 49.36 | 1.478e-05 |
-| int8_L32_T400_ode | 4.003e-07 | 27.91 | 1.273e-05 |
-| fp32_L32_T400_sde | 2.880e-07 | 48.69 | 1.464e-05 |
-| fp32_L32_T400_ode | 5.129e-07 | 25.72 | 1.295e-05 |
+| int8_L32_T400_sde | 2.697e-07 | 8.28 | 1.631e-05 |
+| int8_L32_T400_ode | 4.003e-07 | 8.05 | 1.273e-05 |
+| fp32_L32_T400_sde | 2.922e-07 | 9.27 | 1.524e-05 |
+| fp32_L32_T400_ode | 5.129e-07 | 8.31 | 1.295e-05 |
 
 All four long cases pass the same `1e-4` threshold for every trajectory input and velocity as well as final tensors, with exact sequence/atom-mask agreement. Per-step measurements are retained in `fixtures/gpu_long_metrics.json`.
 
@@ -262,14 +277,14 @@ These drift maxima include very short SDE/ODE trajectories; they measure model q
 
 | Precision | Packed GPU weight bytes | Ratio to FP32 | First L32/T1 SDE call (ms) | Same call warm (ms) |
 |---|---:|---:|---:|---:|
-| fp32 | 1,145,364,480 | 1.0000 | 491.5 | 113.0 |
-| fp16 | 573,364,736 | 0.5006 | 545.7 | 119.2 |
-| int8 | 288,991,768 | 0.2523 | 564.9 | 112.0 |
+| fp32 | 1,145,364,480 | 1.0000 | 165.2 | 38.3 |
+| fp16 | 573,364,736 | 0.5006 | 96.4 | 31.4 |
+| int8 | 288,991,768 | 0.2523 | 92.7 | 38.0 |
 
 Cold here means the first invocation on a new engine; the browser/driver shader cache may already be warm. Weight fetch/loading is excluded from these forward timings and recorded separately in `fixtures/gpu_metrics.json`.
 
 Lifecycle tests pass for normal completion, invalid inputs, an injected mid-forward error, mid-forward cancellation, recovery, external GPUDevice ownership, and idempotent destruction. Every completion path leaves **0 transient buffers**, and destruction leaves **0 tracked bytes**. Real worker parity, native F16, real Cache API/OPFS cold and warm loads, and injected storage-denial fallback pass.
 
-**462 shader variants** compiled through wgpu-native/Naga on NVIDIA GB10; 0 failures and 0 skips. Runtime WGSL uses mutable local/workgroup arrays rather than dynamically indexed const arrays.
+**87 shader variants** compiled through wgpu-native/Naga on NVIDIA GB10; 0 failures and 0 skips. Runtime WGSL uses mutable local/workgroup arrays rather than dynamically indexed const arrays.
 
 Evidence: `fixtures/export_metrics.json`, `fixtures/cpu_metrics.json`, `fixtures/gpu_metrics.json`, `fixtures/gpu_long_metrics.json`, `fixtures/wgsl_validation.json`, and the hash-addressed binary fixture metadata.

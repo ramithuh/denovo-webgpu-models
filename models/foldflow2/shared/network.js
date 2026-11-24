@@ -135,6 +135,7 @@ export class FoldFlow2Network {
   }
   gelu(x) {
     const o = this.o;
+    if (o.fastGelu) return o.fastGelu(x);
     return o.kernel(
       x.shape,
       [x],
@@ -164,9 +165,29 @@ export class FoldFlow2Network {
     );
     return [s, z];
   }
-  embedding(L, time, idx, sc) {
+  embedding(L, time, idx, sc, idxTensor = null) {
     const o = this.o,
       p = "bb_encoder.embedding_layer";
+    const embed = (x, n) =>
+      this.norm(
+        this.lin(
+          o.relu(
+            this.lin(
+              o.relu(this.lin(x, p + "." + n + ".0")),
+              p + "." + n + ".2",
+            ),
+          ),
+          p + "." + n + ".4",
+        ),
+        p + "." + n + ".5",
+      );
+    if (o.fastEmbedFeatures && idxTensor) {
+      const [singleFeat, edgeFeat] = o.fastEmbedFeatures(idxTensor, time, sc, L);
+      return [
+        embed(singleFeat, "node_embedder"),
+        embed(edgeFeat, "edge_embedder"),
+      ];
+    }
     const f = Math.fround,
       te = Array.from({ length: 32 }, (_, c) => {
         let a = f(
@@ -205,19 +226,6 @@ export class FoldFlow2Network {
       `const r=Math.floor(i/22),a=Math.floor(r/${L})*3,b=r%${L}*3,k=i%22;let d=0;for(let j=0;j<3;j++)d+=Math.fround(a0[a+j]-a0[b+j])**2;d=Math.sqrt(d);const lo=Math.fround(.00001+k*(20-.00001)/21),hi=k===21?1e8:Math.fround(.00001+(k+1)*(20-.00001)/21);o[i]=d>lo&&d<hi?1:0;`,
       `let r=i/22u;let a=r/${L}u*3u;let b=r%${L}u*3u;let k=i%22u;var d=0.0;for(var j=0u;j<3u;j++){let x=a0[a+j]-a0[b+j];d+=x*x;}d=sqrt(d);let lo=0.00001+f32(k)*(20.0-0.00001)/21.0;var hi=1e8;if(k<21u){hi=0.00001+f32(k+1u)*(20.0-0.00001)/21.0;}o[i]=select(0.0,1.0,d>lo&&d<hi);`,
     );
-    const embed = (x, n) =>
-      this.norm(
-        this.lin(
-          o.relu(
-            this.lin(
-              o.relu(this.lin(x, p + "." + n + ".0")),
-              p + "." + n + ".2",
-            ),
-          ),
-          p + "." + n + ".4",
-        ),
-        p + "." + n + ".5",
-      );
     return [
       embed(single, "node_embedder"),
       embed(o.cat([pairBase, dist]), "edge_embedder"),
@@ -469,13 +477,13 @@ export class FoldFlow2Network {
     }
     return [s, z];
   }
-  async forward(frames, time, sc, sequence, idx) {
+  async forward(frames, time, sc, sequence, idx, idxTensor = null) {
     const o = this.o,
       L = idx.length;
     let q = o.slice(frames, 1, 0, 4),
       t = o.slice(frames, 1, 4, 7);
-    const [s0, z0] = this.embedding(L, time, idx, sc);
-    this.keep.push(s0, z0, frames, sc, ...sequence);
+    const [s0, z0] = this.embedding(L, time, idx, sc, idxTensor);
+    this.keep.push(s0, z0, frames, sc, idxTensor, ...sequence);
     let [s, z, nq, nt] = await this.structure(s0, z0, q, t, "bb_encoder");
     this.keep.push(nq, nt);
     const p = "combiner_network";

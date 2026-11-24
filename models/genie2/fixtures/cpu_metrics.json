@@ -21,7 +21,7 @@
           "correlation": 0.9999999999999227
         }
       ],
-      "elapsedMs": 13236.244854
+      "elapsedMs": 13218.885892
     },
     {
       "case": "fp32_single_motif_L24_T2",
@@ -42,7 +42,7 @@
           "correlation": 0.9999999999998941
         }
       ],
-      "elapsedMs": 13115.002525000002
+      "elapsedMs": 13053.604179999998
     },
     {
       "case": "fp32_multi_motif_L24_T2",
@@ -63,7 +63,7 @@
           "correlation": 0.9999999999998513
         }
       ],
-      "elapsedMs": 13068.065395999998
+      "elapsedMs": 13024.065335
     },
     {
       "case": "fp32_unconditional_L48_T3",
@@ -89,7 +89,7 @@
           "correlation": 0.9999999999999252
         }
       ],
-      "elapsedMs": 69490.67014999999
+      "elapsedMs": 69112.887419
     },
     {
       "case": "fp32_single_motif_L48_T3",
@@ -115,7 +115,7 @@
           "correlation": 0.9999999999999037
         }
       ],
-      "elapsedMs": 69178.20428399999
+      "elapsedMs": 69069.12561100001
     },
     {
       "case": "fp32_multi_motif_L48_T3",
@@ -141,7 +141,7 @@
           "correlation": 0.9999999999999087
         }
       ],
-      "elapsedMs": 69370.350618
+      "elapsedMs": 69116.988855
     }
   ],
   "skipped": 0,

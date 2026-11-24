@@ -63,6 +63,7 @@ export function cdist(o, x) {
   );
 }
 export function rbf(o, dist) {
+  if (o.rbfFused) return o.rbfFused(dist);
   const mu = o.tensor([36], constants.rbfMu),
     q = o.div(o.sub(o.reshape(dist, [...dist.shape, 1]), mu), 20 / 36);
   return o.unary(o.mul(q, q), "exp(-$0)");

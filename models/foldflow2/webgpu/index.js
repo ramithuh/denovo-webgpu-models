@@ -4,7 +4,7 @@ import { Engine } from "../shared/engine.js";
 import { acquire } from "./device.js";
 export async function createFoldFlow2Engine(options = {}) {
   const env = await acquire(options),
-    o = new GPUAlgebra(env.device);
+    o = new GPUAlgebra(env.device, { useF16: options.useF16 ?? true });
   try {
     const { manifest, weights } = await loadBundle(options);
     if (options.precision && manifest.precision !== options.precision)

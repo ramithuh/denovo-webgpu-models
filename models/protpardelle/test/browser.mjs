@@ -8,9 +8,7 @@ export async function browserTask(run) {
     process.env.CHROME_PATH ??
     "/home/ruh/.cache/ms-playwright/chromium-1243/chrome-linux-arm64/chrome";
   await access(chrome);
-  await mkdir(root + ".cache/chromium", { recursive: true });
-  await mkdir(root + ".t", { recursive: true });
-  process.env.TMPDIR = root + ".t";
+  await mkdir(root + ".cache", { recursive: true });
   const server = createServer(async (req, res) => {
     if (req.url === "/favicon.ico") {
       res.writeHead(204);
@@ -44,21 +42,24 @@ export async function browserTask(run) {
   });
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const url = `http://127.0.0.1:${server.address().port}`;
-  const profile = await mkdtemp(root + ".cache/browser-profile-");
+  const tmpBase = await mkdtemp("/tmp/pp-wgpu-");
+  const profile = tmpBase + "/profile";
+  await mkdir(profile, { recursive: true });
   let browser;
   try {
     const env = {
       ...process.env,
-      TMPDIR: root + ".t",
-      XDG_CACHE_HOME: root + ".cache/chromium",
-      XDG_CONFIG_HOME: root + ".cache/chromium",
+      TMPDIR: tmpBase,
+      XDG_CACHE_HOME: tmpBase + "/cache",
+      XDG_CONFIG_HOME: tmpBase + "/config",
       // Isolate headless Chrome from the host desktop/accessibility session.
       NO_AT_BRIDGE: "1",
-      DBUS_SESSION_BUS_ADDRESS: "unix:path=" + root + ".t/no-session-bus",
-      AT_SPI_BUS_ADDRESS: "unix:path=" + root + ".t/no-accessibility-bus",
+      DBUS_SESSION_BUS_ADDRESS: "unix:path=" + tmpBase + "/no-session-bus",
+      AT_SPI_BUS_ADDRESS: "unix:path=" + tmpBase + "/no-accessibility-bus",
     };
     delete env.DISPLAY;
     delete env.WAYLAND_DISPLAY;
+    delete env.DBUS_SESSION_BUS_ADDRESS;
     try {
       await access("/usr/share/vulkan/icd.d/nvidia_icd.json");
       env.VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
@@ -73,6 +74,8 @@ export async function browserTask(run) {
         "--no-sandbox",
         "--disable-gpu-sandbox",
         "--disable-renderer-accessibility",
+        "--password-store=basic",
+        "--use-mock-keychain",
         "--ozone-platform=headless",
         "--enable-unsafe-webgpu",
         "--ignore-gpu-blocklist",
@@ -94,6 +97,6 @@ export async function browserTask(run) {
   } finally {
     await browser?.close();
     await new Promise((resolve) => server.close(resolve));
-    await rm(profile, { recursive: true, force: true });
+    await rm(tmpBase, { recursive: true, force: true });
   }
 }

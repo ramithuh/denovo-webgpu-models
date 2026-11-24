@@ -1,4 +1,9 @@
 import * as S from "./shaders.js";
+
+function fold2(groups) {
+  return groups <= 65535 ? [Math.max(1, groups)] : [65535, Math.ceil(groups / 65535)];
+}
+
 export class GPUOps {
   constructor(engine, input) {
     this.engine = engine;
@@ -9,6 +14,8 @@ export class GPUOps {
     this.transients = [];
     this.traces = {};
     this.encoder = this.device.createCommandEncoder();
+    this.pass = null;
+    this.dispatchCount = 0;
   }
   init() {
     const input = this.input;
@@ -37,6 +44,13 @@ export class GPUOps {
       L,
       1,
     );
+    this.engine.ensureUniformCapacity(512);
+  }
+  _endPass() {
+    if (this.pass) {
+      this.pass.end();
+      this.pass = null;
+    }
   }
   tensor(rows, cols) {
     const bytes = rows * cols * 4,
@@ -46,19 +60,28 @@ export class GPUOps {
     return t;
   }
   release(t) {
-    if (!this.active.has(t) || this.pinned.has(t)) return;
+    if (!t || !this.active.has(t) || this.pinned.has(t)) return;
     this.active.delete(t);
     this.engine.recycle(t.buffer);
   }
   retain(keep) {
-    const set = new Set(keep);
+    const set = new Set();
+    for (const k of keep) {
+      if (!k) continue;
+      set.add(k);
+      if (k.base) set.add(k.base);
+      if (k._unit) set.add(k._unit);
+    }
     for (const t of this.active) if (!set.has(t)) this.release(t);
   }
   scope(fn) {
     const before = new Set(this.active);
     const out = fn();
+    const keepBase = out?.base ?? null;
+    const keepUnit = out?._unit ?? null;
     for (const t of this.active)
-      if (!before.has(t) && t !== out) this.release(t);
+      if (!before.has(t) && t !== out && t !== keepBase && t !== keepUnit)
+        this.release(t);
     return out;
   }
   weight(n) {
@@ -74,7 +97,7 @@ export class GPUOps {
         binding: i,
         visibility: GPUShaderStage.COMPUTE,
         buffer: {
-          type: source.includes(`@binding(${i}) var<storage,read_write>`)
+          type: source.includes(`@binding(${i}) var<storage,read_write`)
             ? "storage"
             : "read-only-storage",
         },
@@ -95,30 +118,8 @@ export class GPUOps {
         },
       });
       this.engine.pipelines.set(key, pipeline);
+      this.engine.hasUnvalidatedPipelines = true;
     }
-    const data = new ArrayBuffer(48),
-      u = new Uint32Array(data),
-      f = new Float32Array(data);
-    const names = ["n", "c", "k", "m", "a", "b", "d", "e"];
-    for (let i = 0; i < 8; i++) u[i] = values[names[i]] ?? 0;
-    f[8] = values.t ?? 0;
-    const uniform = this.engine.allocate(
-      48,
-      GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
-      "transient",
-    );
-    this.transients.push(uniform);
-    d.queue.writeBuffer(uniform, 0, data);
-    const bind = d.createBindGroup({
-      layout: pipeline.getBindGroupLayout(0),
-      entries: [...buffers, uniform].map((b, i) => ({
-        binding: i,
-        resource: { buffer: b.buffer ?? b },
-      })),
-    });
-    const pass = this.encoder.beginComputePass();
-    pass.setPipeline(pipeline);
-    pass.setBindGroup(0, bind);
     if (groups.length === 1 && groups[0] > 65535)
       groups = [65535, Math.ceil(groups[0] / 65535)];
     if (
@@ -127,38 +128,124 @@ export class GPUOps {
       )
     )
       throw RangeError("Dispatch exceeds device limits");
-    pass.dispatchWorkgroups(...groups);
-    pass.end();
+
+    const slot = this.dispatchCount++;
+    this.engine.ensureUniformCapacity(slot + 1);
+    const baseWord = slot * 64;
+    const u = this.engine.uniformU32,
+      f = this.engine.uniformF32;
+    u[baseWord] = values.n ?? 0;
+    u[baseWord + 1] = values.c ?? 0;
+    u[baseWord + 2] = values.k ?? 0;
+    u[baseWord + 3] = values.m ?? 0;
+    u[baseWord + 4] = values.a ?? 0;
+    u[baseWord + 5] = values.b ?? 0;
+    u[baseWord + 6] = values.d ?? 0;
+    u[baseWord + 7] = values.e ?? 0;
+    f[baseWord + 8] = values.t ?? 0;
+    f[baseWord + 9] = values.s ?? 0;
+    f[baseWord + 10] = values.z ?? 0;
+    f[baseWord + 11] = values.w ?? 0;
+
+    const entries = buffers.map((b, i) => ({
+      binding: i,
+      resource: { buffer: b.buffer ?? b },
+    }));
+    entries.push({
+      binding: buffers.length,
+      resource: {
+        buffer: this.engine.uniformBuffer,
+        offset: slot * 256,
+        size: 48,
+      },
+    });
+    const bind = d.createBindGroup({
+      layout: pipeline.getBindGroupLayout(0),
+      entries,
+    });
+    if (!this.pass) this.pass = this.encoder.beginComputePass();
+    this.pass.setPipeline(pipeline);
+    this.pass.setBindGroup(0, bind);
+    this.pass.dispatchWorkgroups(...groups);
   }
   linear(x, name) {
+    if (x.lazyPairNorm) {
+      const w = this.weight(name + ".weight"),
+        [C, K] = w.shape,
+        b = this.engine.weights[name + ".bias"],
+        dtype = w.dtype,
+        half = this.engine.useF16;
+      if (C === 12 && K === 512) {
+        const y = this.tensor(x.rows, 12);
+        this.dispatch(
+          "pairBias-" + dtype + "-" + half,
+          S.pairBias(dtype, half),
+          [
+            x.unit,
+            x.normW,
+            x.normB,
+            w,
+            b ?? this.engine.zero,
+            w.scale ?? this.engine.zero,
+            y,
+          ],
+          { n: x.rows, c: 12, k: 512, a: b ? 1 : 0 },
+          fold2(Math.ceil(x.rows / 32)),
+        );
+        return y;
+      }
+      x = this._materializeLazyNorm(x);
+    }
+    if (x.viewSlice) x = this._materializeSlice(x);
+    if (x.lazyUnitNorm) x = this._rawNorm(x.base, null);
     const w = this.weight(name + ".weight"),
       [C, K] = w.shape;
     if (K !== x.cols) throw Error("Linear shape mismatch " + name);
     const y = this.tensor(x.rows, C),
       dtype = w.dtype,
       half = this.engine.useF16;
-    if (x.sparse)
+    if (x.cond2) {
+      y.cond2 = true;
+      y.logicalRows = x.logicalRows;
+    }
+    if (x.sparse) {
       this.dispatch(
         "sparse-" + dtype + "-" + half,
         S.sparseLinear(dtype, half),
         [x, w, w.scale ?? this.engine.zero, y],
         { n: x.rows, c: C, k: K },
-        [Math.ceil((x.rows * C) / 256)],
+        fold2(Math.ceil((x.rows * C) / 256)),
       );
-    else {
+    } else {
       const b = this.engine.weights[name + ".bias"];
-      this.dispatch(
-        "linear-" + dtype + "-" + half,
-        S.linear(dtype, half),
-        [x, w, b ?? this.engine.zero, w.scale ?? this.engine.zero, y],
-        { n: x.rows, c: C, k: K, a: b ? 1 : 0 },
-        [Math.ceil(C / 32), Math.ceil(x.rows / 8)],
-      );
+      const bufs = [x, w, b ?? this.engine.zero, w.scale ?? this.engine.zero, y];
+      const vals = { n: x.rows, c: C, k: K, a: b ? 1 : 0 };
+      if (x.rows <= 160) {
+        this.dispatch(
+          "linear32x64-" + dtype + "-" + half,
+          S.linear32x64(dtype, half),
+          bufs,
+          vals,
+          fold2(Math.ceil(x.rows / 32) * Math.ceil(C / 64)),
+        );
+      } else {
+        this.dispatch(
+          "linear64x128-" + dtype + "-" + half,
+          S.linear64x128(dtype, half),
+          bufs,
+          vals,
+          fold2(Math.ceil(x.rows / 64) * Math.ceil(C / 128)),
+        );
+      }
     }
     return y;
   }
-  norm(x, name) {
-    const y = this.tensor(x.rows, x.cols);
+  _rawNorm(x, name, cols = x.cols, stride = 0, offset = 0) {
+    const y = this.tensor(x.rows, cols);
+    if (x.cond2) {
+      y.cond2 = true;
+      y.logicalRows = x.logicalRows;
+    }
     this.dispatch(
       "norm",
       S.norm,
@@ -168,10 +255,48 @@ export class GPUOps {
         name ? this.weight(name + ".bias") : this.engine.zero,
         y,
       ],
-      { n: x.rows, c: x.cols, a: name ? 1 : 0 },
-      [x.rows],
+      { n: x.rows, c: cols, a: name ? 1 : 0, b: stride, d: offset },
+      fold2(x.rows),
     );
     return y;
+  }
+  _materializeLazyNorm(x) {
+    const y = this.tensor(x.rows, x.cols);
+    this.dispatch(
+      "element-pair-affine",
+      S.element,
+      [x.unit, x.normW, x.normB, y],
+      { n: x.rows, c: x.cols, a: 1, m: x.cols },
+      fold2(Math.ceil((x.rows * x.cols) / 256)),
+    );
+    return y;
+  }
+  _materializeSlice(s) {
+    return this.rearrange(s.base, null, s.rows, s.cols, 0, s.rowStride, s.colOffset);
+  }
+  norm(x, name) {
+    if (x.viewSlice) {
+      return this._rawNorm(x.base, name, x.cols, x.rowStride, x.colOffset);
+    }
+    if (!name && !x.isStaticPair && !x.cond2) {
+      return { lazyUnitNorm: true, base: x, rows: x.rows, cols: x.cols };
+    }
+    if (x.isStaticPair && name && x.cols === 512) {
+      if (!x._unit) {
+        x._unit = this._rawNorm(x, null);
+        this.pinned.add(x._unit);
+      }
+      return {
+        lazyPairNorm: true,
+        base: x,
+        unit: x._unit,
+        normW: this.weight(name + ".weight"),
+        normB: this.weight(name + ".bias"),
+        rows: x.rows,
+        cols: 512,
+      };
+    }
+    return this._rawNorm(x, name);
   }
   element(x, a, b, mode, cols = x.cols) {
     const y = this.tensor(x.rows, cols);
@@ -185,7 +310,7 @@ export class GPUOps {
         a: mode,
         m: mode === 1 ? a.rows * a.cols : mode === 2 ? b.rows * b.cols : 0,
       },
-      [Math.ceil((x.rows * cols) / 256)],
+      fold2(Math.ceil((x.rows * cols) / 256)),
     );
     return y;
   }
@@ -193,9 +318,28 @@ export class GPUOps {
     return this.element(x, b, null, 0);
   }
   adapt(x, g, b) {
+    if (x.lazyUnitNorm) {
+      const src = x.base;
+      const y = this.tensor(src.rows, src.cols);
+      this.dispatch(
+        "normAdapt",
+        S.normAdapt,
+        [src, g, b, y],
+        {
+          n: src.rows,
+          c: src.cols,
+          a: g.cond2 ? 1 : 0,
+          m: g.rows * g.cols,
+        },
+        fold2(src.rows),
+      );
+      return y;
+    }
+    if (g.cond2) return this.element(x, g, b, 4);
     return this.element(x, g, b, 1);
   }
   scaledAdd(x, d, g) {
+    if (g.cond2) return this.element(x, d, g, 5);
     return this.element(x, d, g, 2);
   }
   swiglu(x) {
@@ -208,24 +352,40 @@ export class GPUOps {
       S.rearrange,
       [x, extra ?? this.engine.zero, y],
       { n: rows, c: cols, k, a: mode, b },
-      [Math.ceil((rows * cols) / 256)],
+      fold2(Math.ceil((rows * cols) / 256)),
     );
     return y;
   }
   slice(x, start, width) {
+    if ((start & 3) === 0 && (width & 3) === 0 && (x.cols & 3) === 0) {
+      return {
+        viewSlice: true,
+        base: x,
+        buffer: x.buffer,
+        rows: x.rows,
+        cols: width,
+        rowStride: x.cols,
+        colOffset: start,
+      };
+    }
     return this.rearrange(x, null, x.rows, width, 0, x.cols, start);
   }
   concat(a, b) {
     return this.rearrange(a, b, 1, a.cols + b.cols, 1, a.cols);
   }
   extendCond(x, L) {
-    return this.rearrange(x, null, L + 10, 512, 2);
+    const y = this.rearrange(x, null, 2, 512, 6);
+    y.cond2 = true;
+    y.logicalRows = L + 10;
+    return y;
   }
   extendSequence(x, L) {
     return this.rearrange(x, this.weight("registers"), L + 10, 768, 3);
   }
   extendPair(x, L) {
-    return this.rearrange(x, null, (L + 10) ** 2, 512, 4, L + 10);
+    const y = this.rearrange(x, null, (L + 10) ** 2, 512, 4, L + 10);
+    y.isStaticPair = true;
+    return y;
   }
   removeRegisters(x, L) {
     return this.rearrange(x, null, L, 768, 5);
@@ -269,7 +429,7 @@ export class GPUOps {
         y,
       ],
       { n: input.length },
-      [Math.ceil((input.length * 132) / 256)],
+      fold2(Math.ceil((input.length * 132) / 256)),
     );
     return y;
   }
@@ -280,7 +440,7 @@ export class GPUOps {
       S.pairs,
       [this.x, this.sc, this.indices, this.engine.constants.bins, y],
       { n: input.length, a: input.xSC ? 1 : 0 },
-      [Math.ceil(input.length ** 2 / 256)],
+      fold2(Math.ceil(input.length ** 2 / 256)),
     );
     y.cols = 319;
     y.sparse = true;
@@ -288,22 +448,25 @@ export class GPUOps {
   }
   gatedAttention(q, k, v, g, bias, N) {
     return this.scope(() => {
-      const logits = this.tensor(N * 12, N),
-        prob = this.tensor(N * 12, N),
-        y = this.tensor(N, 768);
-      this.dispatch("logits", S.logits, [q, k, bias, logits], { n: N }, [
-        Math.ceil((N * N * 12) / 256),
-      ]);
-      this.dispatch("softmax", S.softmax, [logits, prob], { n: N * 12, c: N }, [
-        N * 12,
-      ]);
-      this.dispatch("attend", S.attend, [prob, v, g, y], { n: N }, [
-        Math.ceil((N * 768) / 256),
-      ]);
+      const y = this.tensor(N, 768);
+      const vBuf = v.viewSlice ? v.base : v;
+      const vStrideVec = v.viewSlice ? v.rowStride / 4 : 192;
+      const vOffVec = v.viewSlice ? v.colOffset / 4 : 0;
+      this.dispatch(
+        "gatedAttention",
+        S.gatedAttention,
+        [q, k, vBuf, g, bias, y],
+        { n: N, a: vStrideVec, b: vOffVec },
+        [Math.ceil(N / 64), 12],
+      );
       return y;
     });
   }
   trace(name, t) {
+    if (t.viewSlice) t = this._materializeSlice(t);
+    if (t.lazyUnitNorm) t = this._rawNorm(t.base, null);
+    if (t.lazyPairNorm) t = this._materializeLazyNorm(t);
+    this._endPass();
     const b = this.engine.allocate(
       t.bytes,
       GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ,
@@ -314,6 +477,16 @@ export class GPUOps {
     this.traces[name] = { buffer: b, bytes: t.bytes };
   }
   async finish(t, signal) {
+    this._endPass();
+    if (this.dispatchCount > 0) {
+      this.device.queue.writeBuffer(
+        this.engine.uniformBuffer,
+        0,
+        this.engine.uniformData,
+        0,
+        this.dispatchCount * 256,
+      );
+    }
     const read = this.engine.allocate(
       t.bytes,
       GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ,
@@ -339,6 +512,7 @@ export class GPUOps {
     return { coordinates, trace: traces };
   }
   cleanup() {
+    this._endPass();
     this.pinned.clear();
     for (const t of this.active) this.release(t);
     for (const b of this.transients) this.engine.free(b);

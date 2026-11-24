@@ -107,12 +107,14 @@ export function integrate(o, frames, pred, time, dt, rotScale = 10) {
       (rotScale < 0
         ? 1 / Math.max(-rotScale, Math.min(0.9999, Math.max(0.0001, time)))
         : rotScale);
-  const dq = o.kernel(
-    [L, 4],
-    [rel],
-    `const r=Math.floor(i/4)*4,k=i%4,n=Math.hypot(a0[r+1],a0[r+2],a0[r+3]),theta=2*Math.atan2(n,a0[r]),theta2=theta*theta,scale=theta<=1e-3?2+theta2/12+7*theta2*theta2/2880:theta/Math.sin(theta/2+1e-6),angle=.5*n/Math.hypot(n,a0[r])*scale*${alpha};o[i]=k===0?Math.cos(angle):a0[i]*(n<1e-8?${alpha}:Math.sin(angle)/n);`,
-    `let r=i/4u*4u;let k=i%4u;let n=sqrt(a0[r+1u]*a0[r+1u]+a0[r+2u]*a0[r+2u]+a0[r+3u]*a0[r+3u]);let theta=2.0*atan2(n,a0[r]);let theta2=theta*theta;var scale=2.0+theta2/12.0+7.0*theta2*theta2/2880.0;if(theta>1e-3){scale=theta/sin(theta/2.0+1e-6);}let angle=0.5*n/sqrt(n*n+a0[r]*a0[r])*scale*${alpha};var s=${Number(alpha).toExponential()};if(n>1e-8){s=sin(angle)/n;}if(k==0u){o[i]=cos(angle);}else{o[i]=a0[i]*s;}`,
-  );
+  const dq = o.fastSo3Dq
+    ? o.fastSo3Dq(rel, alpha)
+    : o.kernel(
+        [L, 4],
+        [rel],
+        `const r=Math.floor(i/4)*4,k=i%4,n=Math.hypot(a0[r+1],a0[r+2],a0[r+3]),theta=2*Math.atan2(n,a0[r]),theta2=theta*theta,scale=theta<=1e-3?2+theta2/12+7*theta2*theta2/2880:theta/Math.sin(theta/2+1e-6),angle=.5*n/Math.hypot(n,a0[r])*scale*${alpha};o[i]=k===0?Math.cos(angle):a0[i]*(n<1e-8?${alpha}:Math.sin(angle)/n);`,
+        `let r=i/4u*4u;let k=i%4u;let n=sqrt(a0[r+1u]*a0[r+1u]+a0[r+2u]*a0[r+2u]+a0[r+3u]*a0[r+3u]);let theta=2.0*atan2(n,a0[r]);let theta2=theta*theta;var scale=2.0+theta2/12.0+7.0*theta2*theta2/2880.0;if(theta>1e-3){scale=theta/sin(theta/2.0+1e-6);}let angle=0.5*n/sqrt(n*n+a0[r]*a0[r])*scale*${alpha};var s=${Number(alpha).toExponential()};if(n>1e-8){s=sin(angle)/n;}if(k==0u){o[i]=cos(angle);}else{o[i]=a0[i]*s;}`,
+      );
   const conj = o.kernel(
       q.shape,
       [q],

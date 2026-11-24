@@ -37,15 +37,15 @@
       "maxAbs": 0.0001354217529296875
     }
   },
-  "seconds": 52.233929127999986,
+  "seconds": 51.85280742099997,
   "timings": [
     {
       "phase": "trunk",
-      "milliseconds": 32186.732670000056
+      "milliseconds": 32141.131385999965
     },
     {
       "phase": "diffusion",
-      "milliseconds": 20037.91622600006
+      "milliseconds": 19519.745730999974
     }
   ]
 }

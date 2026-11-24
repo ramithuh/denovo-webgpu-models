@@ -160,15 +160,24 @@ export async function sample(
   let selfCondition = null,
     trajectory = [],
     last;
-  const tSchedule = Array.from({ length: numSteps }, (_, s) =>
-    numSteps === 1
-      ? 50
-      : Math.max(1, Math.min(50, Math.round(50 - (s * 49) / (numSteps - 1)))),
-  );
+  const tSchedule = recordedNoise
+    ? Array.from({ length: numSteps }, (_, s) => 50 - s)
+    : Array.from({ length: numSteps }, (_, s) =>
+        numSteps === 1
+          ? 50
+          : Math.max(
+              1,
+              Math.min(50, Math.round(50 - (s * 49) / (numSteps - 1))),
+            ),
+      );
   for (let step = 0; step < numSteps; step++) {
     abort(signal);
     const t = tSchedule[step],
-      nextT = step + 1 < numSteps ? tSchedule[step + 1] : 0,
+      nextT = recordedNoise
+        ? t - 1
+        : step + 1 < numSteps
+          ? tSchedule[step + 1]
+          : 0,
       input = prepareInput({
         length: L,
         coords,
@@ -181,6 +190,8 @@ export async function sample(
     onInputs?.(step, input);
     const predicted = await infer(input, {
       signal,
+      needAux: false,
+      needAlpha: Boolean(symmetry),
       onProgress: (p) =>
         onProgress?.({
           ...p,
@@ -206,9 +217,10 @@ export async function sample(
     } else selfCondition = predicted.px0;
     const current = o.tensor([L, coords.length / L / 3, 3], coords);
     let next,
+      rotationTensor = null,
       rotation = null;
     const supplied = recordedNoise?.steps?.[step];
-    if (step < numSteps - 1 && t > 1) {
+    if (recordedNoise ? t > 1 : step < numSteps - 1 && t > 1) {
       px0 = alignMotif(o, px0, current, mask);
       const trans = o.tensor(
           [L, 3],
@@ -230,11 +242,25 @@ export async function sample(
           mask,
         });
       next = result.coords;
-      rotation = await o.read(result.rotation);
+      rotationTensor = result.rotation;
     } else next = px0;
     if (symmetry) next = applySymmetry(o, next, symmetry);
-    const px0Array = await o.read(px0);
-    const nextCoords = await o.read(next);
+    let px0Array, nextCoords;
+    if (o.readMany) {
+      if (rotationTensor) {
+        [px0Array, nextCoords, rotation] = await o.readMany([
+          px0,
+          next,
+          rotationTensor,
+        ]);
+      } else {
+        [px0Array, nextCoords] = await o.readMany([px0, next]);
+      }
+    } else {
+      if (rotationTensor) rotation = await o.read(rotationTensor);
+      px0Array = await o.read(px0);
+      nextCoords = await o.read(next);
+    }
     const oldAtoms = atomsOf(coords, L);
     if (next.shape[1] === 3) {
       coords = new Float32Array(L * 42).fill(NaN);
@@ -251,7 +277,7 @@ export async function sample(
       rotation,
     });
     last = px0Array;
-    o.clear();
+    await o.checkpoint([], { sync: false });
     onProgress?.({
       phase: "step",
       step: step + 1,

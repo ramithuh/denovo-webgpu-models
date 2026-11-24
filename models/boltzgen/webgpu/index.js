@@ -14,6 +14,9 @@ export async function hardwareDevice() {
     )
   )
     throw Error("Software WebGPU adapters are forbidden");
+  const requiredFeatures = adapter.features.has("shader-f16")
+    ? ["shader-f16"]
+    : [];
   const requiredLimits = {};
   for (const name of [
     "maxStorageBuffersPerShaderStage",
@@ -21,7 +24,10 @@ export async function hardwareDevice() {
     "maxBufferSize",
   ])
     requiredLimits[name] = adapter.limits[name];
-  const device = await adapter.requestDevice({ requiredLimits });
+  const device = await adapter.requestDevice({
+    requiredFeatures,
+    requiredLimits,
+  });
   return {
     device,
     info: {

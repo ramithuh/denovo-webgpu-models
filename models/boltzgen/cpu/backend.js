@@ -253,8 +253,10 @@ export class CPUBackend {
             variance += d * d;
           }
           const inv = 1 / Math.sqrt(variance / width + attrs.epsilon);
-          outputs[1].storage.data[r] = mean;
-          outputs[2].storage.data[r] = inv;
+          if (outputs.length > 1) {
+            outputs[1].storage.data[r] = mean;
+            outputs[2].storage.data[r] = inv;
+          }
           for (let j = 0; j < width; j++)
             set(
               r * width + j,

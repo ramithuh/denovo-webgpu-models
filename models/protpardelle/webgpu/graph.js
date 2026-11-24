@@ -118,12 +118,9 @@ const N:i32=${n};${geometry}
 const N:i32=${n};${geometry}
 @compute @workgroup_size(64) fn main(@builtin(global_invocation_id) id:vec3<u32>){let r=id.x;if(r>=${n}u){return;}var a=vec3<f32>(0.0);var b=vec3<f32>(0.0);var c=vec3<f32>(0.0);if(r>=1u&&r<${Math.max(1, n - 2)}u){let u2=direction(i32(r)-1);let u1=direction(i32(r));a=normalized(u2-u1);b=normalized(cross(u2,u1));c=cross(a,b);}for(var j=0u;j<3u;j++){O[r*9u+j]=a[j];O[r*9u+3u+j]=b[j];O[r*9u+6u+j]=c[j];}}`;
     this.dispatch(orientation, [coords, frames.buffer], [Math.ceil(n / 64)]);
-    // F32 positional embedding weights and bias packed into one binding.
+    // F32 positional embedding weights and bias bound directly (8 bindings <= WebGPU minimum).
     const w = this.weight(prefix + "embeddings.linear.weight"),
-      b = this.weight(prefix + "embeddings.linear.bias"),
-      position = this.allocate((16 * 66 + 16) * 4);
-    this.encoder.copyBufferToBuffer(w.buffer, 0, position, 0, 16 * 66 * 4);
-    this.encoder.copyBufferToBuffer(b.buffer, 0, position, 16 * 66 * 4, 16 * 4);
+      b = this.weight(prefix + "embeddings.linear.bias");
     const indexData = this.tensor(
       n,
       2,
@@ -137,13 +134,14 @@ const N:i32=${n};${geometry}
 @group(0) @binding(1) var<storage,read> I:array<f32>;
 @group(0) @binding(2) var<storage,read> D:array<f32>;
 @group(0) @binding(3) var<storage,read> O:array<f32>;
-@group(0) @binding(4) var<storage,read> P:array<f32>;
-@group(0) @binding(5) var<storage,read> Ridx:array<f32>;
-@group(0) @binding(6) var<storage,read_write> Y:array<f32>;
+@group(0) @binding(4) var<storage,read> Pw:array<f32>;
+@group(0) @binding(5) var<storage,read> Pb:array<f32>;
+@group(0) @binding(6) var<storage,read> Ridx:array<f32>;
+@group(0) @binding(7) var<storage,read_write> Y:array<f32>;
 const N:i32=${n};${geometry}
 fn frame(r:u32)->mat3x3<f32>{return transpose(mat3x3<f32>(vec3<f32>(O[r*9u],O[r*9u+1u],O[r*9u+2u]),vec3<f32>(O[r*9u+3u],O[r*9u+4u],O[r*9u+5u]),vec3<f32>(O[r*9u+6u],O[r*9u+7u],O[r*9u+8u])));}
-@compute @workgroup_size(64) fn main(@builtin(global_invocation_id) id:vec3<u32>){let t=id.x;if(t>=${n * k}u){return;}let i=t/${k}u;let j=u32(I[t]);let base=t*167u;let offset=select(65u,u32(clamp(Ridx[i*2u]-Ridx[j*2u]+32.0,0.0,64.0)),Ridx[i*2u+1u]==Ridx[j*2u+1u]);for(var c=0u;c<16u;c++){Y[base+c]=P[c*66u+offset]+P[1056u+c];}
-let sa=array<i32,9>(0,-1,1,-1,-1,0,0,1,1);let sb=array<i32,9>(0,-1,1,0,1,-1,1,-1,0);
+@compute @workgroup_size(64) fn main(@builtin(global_invocation_id) id:vec3<u32>){let t=id.x;if(t>=${n * k}u){return;}let i=t/${k}u;let j=u32(I[t]);let base=t*167u;let offset=select(65u,u32(clamp(Ridx[i*2u]-Ridx[j*2u]+32.0,0.0,64.0)),Ridx[i*2u+1u]==Ridx[j*2u+1u]);for(var c=0u;c<16u;c++){Y[base+c]=Pw[c*66u+offset]+Pb[c];}
+var sa=array<i32,9>(0,-1,1,-1,-1,0,0,1,1);var sb=array<i32,9>(0,-1,1,0,1,-1,1,-1,0);
 for(var p=0u;p<9u;p++){let diff=ca(i32(i)+sa[p])-ca(i32(j)+sb[p]);let dist=select(sqrt(dot(diff,diff)+1e-6),D[t],p==0u);for(var c=0u;c<16u;c++){let mu=2.0+20.0*f32(c)/15.0;let v=(dist-mu)/1.25;Y[base+16u+p*16u+c]=exp(-v*v);}}
 let F=frame(i);let G=frame(j);let Ft=transpose(F);let delta=ca(i32(j))-ca(i32(i));let u=normalized(vec3<f32>(dot3(Ft[0],delta),dot3(Ft[1],delta),dot3(Ft[2],delta)));
 let R=mat3x3<f32>(vec3<f32>(dot3(F[0],G[0]),dot3(F[1],G[0]),dot3(F[2],G[0])),vec3<f32>(dot3(F[0],G[1]),dot3(F[1],G[1]),dot3(F[2],G[1])),vec3<f32>(dot3(F[0],G[2]),dot3(F[1],G[2]),dot3(F[2],G[2])));
@@ -158,7 +156,8 @@ for(var c=0u;c<3u;c++){Y[base+160u+c]=u[c];}for(var c=0u;c<4u;c++){Y[base+163u+c
         indices.buffer,
         distances.buffer,
         frames.buffer,
-        position,
+        w.buffer,
+        b.buffer,
         indexData.buffer,
         features.buffer,
       ],

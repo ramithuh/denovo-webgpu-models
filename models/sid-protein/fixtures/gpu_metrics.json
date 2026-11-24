@@ -12,594 +12,594 @@
       "precision": "fp32",
       "name": "L32_T16",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.626646100164249e-7,
+        "maxAbs": 3.2782554626464844e-7,
+        "correlation": 0.9999999999998936
       },
       "sampling": {
-        "relRms": 0.000018040103465340188,
-        "maxAbs": 0.00002396106719970703,
-        "correlation": 0.9999999998385057
+        "relRms": 0.000019520469405048884,
+        "maxAbs": 0.000030875205993652344,
+        "correlation": 0.9999999998097311
       },
       "trajectory": {
-        "relRms": 0.00001702592056973138,
-        "maxAbs": 0.00008344650268554688,
-        "correlation": 0.9999999998550559
+        "relRms": 0.000018642477786749755,
+        "maxAbs": 0.00009310245513916016,
+        "correlation": 0.9999999998264085
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 112.30000019073486,
-      "forwardWarmMs": 34.60000038146973,
-      "samplingMs": 540.1999998092651,
+      "forwardColdMs": 141,
+      "forwardWarmMs": 25.899999618530273,
+      "samplingMs": 332.3999996185303,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 9302
+        "scratchReuses": 7489
       }
     },
     {
       "precision": "fp32",
       "name": "L64_T16",
       "forward": {
-        "relRms": 3.41608518095848e-7,
-        "maxAbs": 2.384185791015625e-7,
-        "correlation": 0.9999999999999424
+        "relRms": 4.501874321687121e-7,
+        "maxAbs": 4.6193599700927734e-7,
+        "correlation": 0.9999999999999004
       },
       "sampling": {
-        "relRms": 1.978938611113838e-7,
-        "maxAbs": 2.980232238769531e-7,
-        "correlation": 0.9999999999999811
+        "relRms": 2.742165153687245e-7,
+        "maxAbs": 7.152557373046875e-7,
+        "correlation": 0.9999999999999634
       },
       "trajectory": {
-        "relRms": 2.1224571336684825e-7,
-        "maxAbs": 7.152557373046875e-7,
-        "correlation": 0.9999999999999739
+        "relRms": 2.9792439848360364e-7,
+        "maxAbs": 7.450580596923828e-7,
+        "correlation": 0.999999999999954
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 50.80000019073486,
-      "forwardWarmMs": 69.39999961853027,
-      "samplingMs": 1152.9000005722046,
+      "forwardColdMs": 27.40000057220459,
+      "forwardWarmMs": 38.90000057220459,
+      "samplingMs": 337.70000076293945,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 18604
+        "scratchReuses": 14978
       }
     },
     {
       "precision": "fp32",
       "name": "L32_T4",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.626646100164249e-7,
+        "maxAbs": 3.2782554626464844e-7,
+        "correlation": 0.9999999999998936
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.0000015153263692708387,
+        "maxAbs": 0.0000036954879760742188,
+        "correlation": 0.9999999999988726
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.0000014414014912401746,
+        "maxAbs": 0.0000036954879760742188,
+        "correlation": 0.9999999999989725
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 55.30000019073486,
-      "forwardWarmMs": 34.5,
-      "samplingMs": 135.9000005722046,
+      "forwardColdMs": 41.60000038146973,
+      "forwardWarmMs": 32,
+      "samplingMs": 93.30000019073486,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 21690
+        "scratchReuses": 17451
       }
     },
     {
       "precision": "fp32",
       "name": "L64_T8",
       "forward": {
-        "relRms": 3.41608518095848e-7,
-        "maxAbs": 2.384185791015625e-7,
-        "correlation": 0.9999999999999424
+        "relRms": 4.501874321687121e-7,
+        "maxAbs": 4.6193599700927734e-7,
+        "correlation": 0.9999999999999004
       },
       "sampling": {
-        "relRms": 8.748591373066284e-7,
-        "maxAbs": 0.000004056841135025024,
-        "correlation": 0.9999999999996211
+        "relRms": 0.0000021724893575112485,
+        "maxAbs": 0.000011526048183441162,
+        "correlation": 0.999999999997642
       },
       "trajectory": {
-        "relRms": 8.519687747144794e-7,
-        "maxAbs": 0.0000060070306062698364,
-        "correlation": 0.9999999999996386
+        "relRms": 0.0000021927484150114567,
+        "maxAbs": 0.00001738686114549637,
+        "correlation": 0.9999999999975967
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 54.19999980926514,
-      "forwardWarmMs": 73.19999980926514,
-      "samplingMs": 603.5999994277954,
+      "forwardColdMs": 32.10000038146973,
+      "forwardWarmMs": 43.20000076293945,
+      "samplingMs": 182.20000076293945,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 26848
+        "scratchReuses": 21596
       }
     },
     {
       "precision": "fp32",
       "name": "L32_T1",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.626646100164249e-7,
+        "maxAbs": 3.2782554626464844e-7,
+        "correlation": 0.9999999999998936
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.1277159979498774e-7,
+        "maxAbs": 4.917383193969727e-7,
+        "correlation": 0.9999999999999156
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.1277159979498774e-7,
+        "maxAbs": 4.917383193969727e-7,
+        "correlation": 0.9999999999999156
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 56.09999942779541,
-      "forwardWarmMs": 34.39999961853027,
-      "samplingMs": 36,
+      "forwardColdMs": 41.19999980926514,
+      "forwardWarmMs": 31.700000762939453,
+      "samplingMs": 33.10000038146973,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 28380
+        "scratchReuses": 22815
       }
     },
     {
       "precision": "fp32",
       "name": "L32_T4_cath",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 5.92009948265702e-7,
+        "maxAbs": 2.60770320892334e-7,
+        "correlation": 0.9999999999998251
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000002824819225860926,
+        "maxAbs": 0.0000050961971282958984,
+        "correlation": 0.9999999999960129
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000002465874952090731,
+        "maxAbs": 0.0000050961971282958984,
+        "correlation": 0.9999999999969627
       },
       "quantizationDrift": {
         "relRms": 0,
         "maxAbs": 0
       },
-      "forwardColdMs": 34.19999980926514,
-      "forwardWarmMs": 34.29999923706055,
-      "samplingMs": 138.89999961853027,
+      "forwardColdMs": 32.80000019073486,
+      "forwardWarmMs": 32.30000019073486,
+      "samplingMs": 91.19999980926514,
       "memoryAfterInference": {
         "weightBytes": 764411904,
         "totalBytes": 764412940,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 31466
+        "scratchReuses": 25288
       }
     },
     {
       "precision": "fp16",
       "name": "L32_T16",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.2905700994362695e-7,
+        "maxAbs": 2.980232238769531e-7,
+        "correlation": 0.9999999999999098
       },
       "sampling": {
-        "relRms": 0.000007336759134735423,
-        "maxAbs": 0.000013828277587890625,
-        "correlation": 0.9999999999738283
+        "relRms": 0.000006096677396091274,
+        "maxAbs": 0.000010132789611816406,
+        "correlation": 0.9999999999823929
       },
       "trajectory": {
-        "relRms": 0.000007924656958999632,
-        "maxAbs": 0.000028755515813827515,
-        "correlation": 0.9999999999689327
+        "relRms": 0.0000071891929362567005,
+        "maxAbs": 0.00003534555435180664,
+        "correlation": 0.9999999999744613
       },
       "quantizationDrift": {
         "relRms": 0.01767062060702267,
         "maxAbs": 0.018458634614944458
       },
-      "forwardColdMs": 76.79999923706055,
-      "forwardWarmMs": 31.300000190734863,
-      "samplingMs": 507.19999980926514,
+      "forwardColdMs": 83.30000019073486,
+      "forwardWarmMs": 29.299999237060547,
+      "samplingMs": 301.80000019073486,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 9302
+        "scratchReuses": 7489
       }
     },
     {
       "precision": "fp16",
       "name": "L64_T16",
       "forward": {
-        "relRms": 3.892897453066916e-7,
-        "maxAbs": 3.5762786865234375e-7,
-        "correlation": 0.9999999999999256
+        "relRms": 3.9478337561847445e-7,
+        "maxAbs": 2.5331974029541016e-7,
+        "correlation": 0.999999999999925
       },
       "sampling": {
-        "relRms": 3.343237107416695e-7,
-        "maxAbs": 6.258487701416016e-7,
-        "correlation": 0.999999999999946
+        "relRms": 2.2869137225040607e-7,
+        "maxAbs": 3.5762786865234375e-7,
+        "correlation": 0.9999999999999754
       },
       "trajectory": {
-        "relRms": 3.2965881271461494e-7,
-        "maxAbs": 8.344650268554688e-7,
-        "correlation": 0.999999999999943
+        "relRms": 2.5463625051540924e-7,
+        "maxAbs": 8.940696716308594e-7,
+        "correlation": 0.9999999999999676
       },
       "quantizationDrift": {
         "relRms": 0.0007384738876340248,
         "maxAbs": 0.0022135600447654724
       },
-      "forwardColdMs": 48.5,
-      "forwardWarmMs": 67.39999961853027,
-      "samplingMs": 1088.3000001907349,
+      "forwardColdMs": 27.800000190734863,
+      "forwardWarmMs": 39,
+      "samplingMs": 316.8999996185303,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 18604
+        "scratchReuses": 14978
       }
     },
     {
       "precision": "fp16",
       "name": "L32_T4",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.2905700994362695e-7,
+        "maxAbs": 2.980232238769531e-7,
+        "correlation": 0.9999999999999098
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.0000013812051364404027,
+        "maxAbs": 0.000002682209014892578,
+        "correlation": 0.999999999999047
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.00000125813506215972,
+        "maxAbs": 0.000002682209014892578,
+        "correlation": 0.9999999999992109
       },
       "quantizationDrift": {
         "relRms": 0.0012203609542099992,
         "maxAbs": 0.0022881627082824707
       },
-      "forwardColdMs": 49.39999961853027,
-      "forwardWarmMs": 31.800000190734863,
-      "samplingMs": 131.4000005722046,
+      "forwardColdMs": 37.10000038146973,
+      "forwardWarmMs": 24.899999618530273,
+      "samplingMs": 78.89999961853027,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 21690
+        "scratchReuses": 17451
       }
     },
     {
       "precision": "fp16",
       "name": "L64_T8",
       "forward": {
-        "relRms": 3.892897453066916e-7,
-        "maxAbs": 3.5762786865234375e-7,
-        "correlation": 0.9999999999999256
+        "relRms": 3.9478337561847445e-7,
+        "maxAbs": 2.5331974029541016e-7,
+        "correlation": 0.999999999999925
       },
       "sampling": {
-        "relRms": 0.000003459565756461847,
-        "maxAbs": 0.000020400620996952057,
-        "correlation": 0.9999999999940248
+        "relRms": 0.000007043437768499404,
+        "maxAbs": 0.000042489729821681976,
+        "correlation": 0.999999999975297
       },
       "trajectory": {
-        "relRms": 0.0000025430612317018836,
-        "maxAbs": 0.000020400620996952057,
-        "correlation": 0.9999999999967656
+        "relRms": 0.0000049194425034302084,
+        "maxAbs": 0.000042489729821681976,
+        "correlation": 0.9999999999879129
       },
       "quantizationDrift": {
         "relRms": 0.006603797548633479,
         "maxAbs": 0.03675989340990782
       },
-      "forwardColdMs": 53.69999980926514,
-      "forwardWarmMs": 72.90000057220459,
-      "samplingMs": 592.6000003814697,
+      "forwardColdMs": 36.80000019073486,
+      "forwardWarmMs": 38.10000038146973,
+      "samplingMs": 169.10000038146973,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 26848
+        "scratchReuses": 21596
       }
     },
     {
       "precision": "fp16",
       "name": "L32_T1",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.2905700994362695e-7,
+        "maxAbs": 2.980232238769531e-7,
+        "correlation": 0.9999999999999098
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.048179416060449e-7,
+        "maxAbs": 4.3213367462158203e-7,
+        "correlation": 0.9999999999999226
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.048179416060449e-7,
+        "maxAbs": 4.3213367462158203e-7,
+        "correlation": 0.9999999999999226
       },
       "quantizationDrift": {
         "relRms": 0.00011803191344840792,
         "maxAbs": 0.00012117624282836914
       },
-      "forwardColdMs": 54.5,
-      "forwardWarmMs": 34.30000019073486,
-      "samplingMs": 35.70000076293945,
+      "forwardColdMs": 35.19999980926514,
+      "forwardWarmMs": 24.899999618530273,
+      "samplingMs": 27.100000381469727,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 28380
+        "scratchReuses": 22815
       }
     },
     {
       "precision": "fp16",
       "name": "L32_T4_cath",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 6.152856194836264e-7,
+        "maxAbs": 4.3213367462158203e-7,
+        "correlation": 0.9999999999998176
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000003181844491278699,
+        "maxAbs": 0.000005170702934265137,
+        "correlation": 0.9999999999949445
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000002703627019748921,
+        "maxAbs": 0.000005170702934265137,
+        "correlation": 0.9999999999963464
       },
       "quantizationDrift": {
         "relRms": 0.0032312301914333603,
         "maxAbs": 0.0034941136837005615
       },
-      "forwardColdMs": 34.30000019073486,
-      "forwardWarmMs": 34,
-      "samplingMs": 131.9000005722046,
+      "forwardColdMs": 24,
+      "forwardWarmMs": 24.5,
+      "samplingMs": 78.5,
       "memoryAfterInference": {
         "weightBytes": 382653952,
         "totalBytes": 382654988,
         "bufferCount": 494,
         "transientBuffers": 0,
-        "scratchReuses": 31466
+        "scratchReuses": 25288
       }
     },
     {
       "precision": "int8",
       "name": "L32_T16",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.3748851611149664e-7,
+        "maxAbs": 3.0547380447387695e-7,
+        "correlation": 0.9999999999999045
       },
       "sampling": {
-        "relRms": 0.00000683657571109157,
-        "maxAbs": 0.000012814998626708984,
-        "correlation": 0.9999999999767938
+        "relRms": 0.000014861386216788325,
+        "maxAbs": 0.000027000904083251953,
+        "correlation": 0.999999999890987
       },
       "trajectory": {
-        "relRms": 0.000006480481401471983,
-        "maxAbs": 0.000025540590286254883,
-        "correlation": 0.9999999999791144
+        "relRms": 0.00001346666361218363,
+        "maxAbs": 0.00005257129669189453,
+        "correlation": 0.9999999999102126
       },
       "quantizationDrift": {
         "relRms": 0.22975540206348863,
         "maxAbs": 0.35299456119537354
       },
-      "forwardColdMs": 76.69999980926514,
-      "forwardWarmMs": 27.699999809265137,
-      "samplingMs": 451.8999996185303,
+      "forwardColdMs": 86.40000057220459,
+      "forwardWarmMs": 22,
+      "samplingMs": 288.69999980926514,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 9302
+        "scratchReuses": 7489
       }
     },
     {
       "precision": "int8",
       "name": "L64_T16",
       "forward": {
-        "relRms": 3.7100810917987624e-7,
-        "maxAbs": 2.682209014892578e-7,
-        "correlation": 0.9999999999999344
+        "relRms": 3.9933099330275913e-7,
+        "maxAbs": 3.725290298461914e-7,
+        "correlation": 0.9999999999999227
       },
       "sampling": {
-        "relRms": 2.976585854843649e-7,
-        "maxAbs": 5.960464477539062e-7,
-        "correlation": 0.9999999999999586
+        "relRms": 2.9466952894220553e-7,
+        "maxAbs": 4.76837158203125e-7,
+        "correlation": 0.99999999999996
       },
       "trajectory": {
-        "relRms": 3.1215980626626337e-7,
-        "maxAbs": 8.344650268554688e-7,
-        "correlation": 0.9999999999999512
+        "relRms": 2.982525629726889e-7,
+        "maxAbs": 5.960464477539062e-7,
+        "correlation": 0.9999999999999507
       },
       "quantizationDrift": {
         "relRms": 0.004407539983257963,
         "maxAbs": 0.007117152214050293
       },
-      "forwardColdMs": 48.30000019073486,
-      "forwardWarmMs": 67.69999980926514,
-      "samplingMs": 1084.1000003814697,
+      "forwardColdMs": 26.5,
+      "forwardWarmMs": 34.80000019073486,
+      "samplingMs": 310.69999980926514,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 18604
+        "scratchReuses": 14978
       }
     },
     {
       "precision": "int8",
       "name": "L32_T4",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.3748851611149664e-7,
+        "maxAbs": 3.0547380447387695e-7,
+        "correlation": 0.9999999999999045
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.0000014283053306727009,
+        "maxAbs": 0.0000018477439880371094,
+        "correlation": 0.9999999999989829
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000001311581225521326,
+        "maxAbs": 0.0000018477439880371094,
+        "correlation": 0.9999999999991406
       },
       "quantizationDrift": {
         "relRms": 0.013025196207227382,
         "maxAbs": 0.01675918698310852
       },
-      "forwardColdMs": 46.19999980926514,
-      "forwardWarmMs": 28.300000190734863,
-      "samplingMs": 112.80000019073486,
+      "forwardColdMs": 33.19999980926514,
+      "forwardWarmMs": 22.5,
+      "samplingMs": 76.30000019073486,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 21690
+        "scratchReuses": 17451
       }
     },
     {
       "precision": "int8",
       "name": "L64_T8",
       "forward": {
-        "relRms": 3.7100810917987624e-7,
-        "maxAbs": 2.682209014892578e-7,
-        "correlation": 0.9999999999999344
+        "relRms": 3.9933099330275913e-7,
+        "maxAbs": 3.725290298461914e-7,
+        "correlation": 0.9999999999999227
       },
       "sampling": {
-        "relRms": 5.729398529144424e-7,
-        "maxAbs": 0.0000014901161193847656,
-        "correlation": 0.9999999999998395
+        "relRms": 5.403604741922704e-7,
+        "maxAbs": 0.0000011324882507324219,
+        "correlation": 0.9999999999998552
       },
       "trajectory": {
-        "relRms": 5.779965477181034e-7,
-        "maxAbs": 0.0000027418136596679688,
-        "correlation": 0.999999999999833
+        "relRms": 4.97327212723357e-7,
+        "maxAbs": 0.0000011324882507324219,
+        "correlation": 0.9999999999998754
       },
       "quantizationDrift": {
         "relRms": 0.007455115888673067,
         "maxAbs": 0.021014699712395668
       },
-      "forwardColdMs": 51.19999980926514,
-      "forwardWarmMs": 67.39999961853027,
-      "samplingMs": 575.3999996185303,
+      "forwardColdMs": 25.800000190734863,
+      "forwardWarmMs": 34.80000019073486,
+      "samplingMs": 159.5,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 26848
+        "scratchReuses": 21596
       }
     },
     {
       "precision": "int8",
       "name": "L32_T1",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 4.3748851611149664e-7,
+        "maxAbs": 3.0547380447387695e-7,
+        "correlation": 0.9999999999999045
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 3.5634970158290347e-7,
+        "maxAbs": 4.2188912630081177e-7,
+        "correlation": 0.9999999999999376
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 3.5634970158290347e-7,
+        "maxAbs": 4.2188912630081177e-7,
+        "correlation": 0.9999999999999376
       },
       "quantizationDrift": {
         "relRms": 0.009190949940923619,
         "maxAbs": 0.006498903036117554
       },
-      "forwardColdMs": 50.5,
-      "forwardWarmMs": 28.5,
-      "samplingMs": 32.30000019073486,
+      "forwardColdMs": 32.10000038146973,
+      "forwardWarmMs": 21.5,
+      "samplingMs": 24.600000381469727,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 28380
+        "scratchReuses": 22815
       }
     },
     {
       "precision": "int8",
       "name": "L32_T4_cath",
       "forward": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 6.223146360883578e-7,
+        "maxAbs": 3.2782554626464844e-7,
+        "correlation": 0.9999999999998093
       },
       "sampling": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.0000036184637736983583,
+        "maxAbs": 0.000004023313522338867,
+        "correlation": 0.9999999999934996
       },
       "trajectory": {
-        "relRms": 0,
-        "maxAbs": 0,
-        "correlation": 1
+        "relRms": 0.000003039499448991194,
+        "maxAbs": 0.000004023313522338867,
+        "correlation": 0.9999999999954264
       },
       "quantizationDrift": {
         "relRms": 0.019077964703630677,
         "maxAbs": 0.022479623556137085
       },
-      "forwardColdMs": 28.199999809265137,
-      "forwardWarmMs": 28.59999942779541,
-      "samplingMs": 117.30000019073486,
+      "forwardColdMs": 23.300000190734863,
+      "forwardWarmMs": 22.399999618530273,
+      "samplingMs": 80.09999942779541,
       "memoryAfterInference": {
         "weightBytes": 192740304,
         "totalBytes": 192741340,
         "bufferCount": 690,
         "transientBuffers": 0,
-        "scratchReuses": 31466
+        "scratchReuses": 25288
       }
     }
   ],
@@ -705,14 +705,14 @@
       "name": "L64_T8_seed1298",
       "seed": 1298,
       "sampling": {
-        "relRms": 0.000007672987798791106,
-        "maxAbs": 0.0000400543212890625,
-        "correlation": 0.9999999999705771
+        "relRms": 0.000009703111744984702,
+        "maxAbs": 0.000037610530853271484,
+        "correlation": 0.9999999999534336
       },
       "trajectory": {
-        "relRms": 0.000004590932463035217,
-        "maxAbs": 0.0000400543212890625,
-        "correlation": 0.9999999999894644
+        "relRms": 0.000006455111083712226,
+        "maxAbs": 0.000037610530853271484,
+        "correlation": 0.9999999999793112
       }
     },
     "cache": {
@@ -751,5 +751,5 @@
     "int8": 0.2521419446654771
   },
   "hostGPU": "NVIDIA GB10, 580.159.03, GPU-cb4201ed-0d40-feb9-d1ff-5766b26ed9a1",
-  "timestamp": "2026-11-22T08:57:44.245Z"
+  "timestamp": "2026-11-24T09:42:17.695Z"
 }

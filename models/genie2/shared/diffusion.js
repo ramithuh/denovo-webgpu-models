@@ -44,14 +44,18 @@ export function reverseStep(o, x, z, noise, mask, schedule, t, scale) {
   const { alpha, cum, beta } = schedule,
     L = x.shape[0];
   const wz = f(f(1 - alpha[t]) / f(Math.sqrt(f(1 - cum[t])))),
-    recip = f(1 / f(Math.sqrt(alpha[t])));
+    recip = f(1 / f(Math.sqrt(alpha[t]))),
+    wNoise = t > 1 ? f(f(scale) * f(Math.sqrt(beta[t]))) : 0;
+  if (o.reverseStepFused) {
+    return o.reverseStepFused(x, z, noise, mask, wz, recip, wNoise, t > 1);
+  }
   let mean = o.mul(
     o.mul(o.sub(x, o.mul(z, wz)), recip),
     o.reshape(mask, [L, 1]),
   );
   if (t > 1)
     mean = o.mul(
-      o.add(mean, o.mul(noise, f(f(scale) * f(Math.sqrt(beta[t]))))),
+      o.add(mean, o.mul(noise, wNoise)),
       o.reshape(mask, [L, 1]),
     );
   return mean;

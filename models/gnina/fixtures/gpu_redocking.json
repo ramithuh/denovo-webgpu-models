@@ -18,18 +18,18 @@
   "afterDestroy": {
     "residentBytes": 0,
     "transientBytes": 0,
-    "peakBytes": 68000264,
+    "peakBytes": 68063508,
     "totalBytes": 0,
     "buffers": 0
   },
   "runs": {
     "184l": {
       "options": {},
-      "wallMs": 1432.0999994277954,
+      "wallMs": 809.3999996185303,
       "stats": {
-        "gridMs": 31.600000381469727,
-        "searchMs": 120.60000038146973,
-        "rescoreMs": 1279.5999994277954,
+        "gridMs": 24.199999809265137,
+        "searchMs": 128.30000019073486,
+        "rescoreMs": 656.6999998092651,
         "evaluatedCandidates": 7040,
         "rotors": 2
       },
@@ -114,11 +114,11 @@
     },
     "10gs": {
       "options": {},
-      "wallMs": 2723.5,
+      "wallMs": 2242.300000190735,
       "stats": {
-        "gridMs": 212.5999994277954,
-        "searchMs": 1063.9000005722046,
-        "rescoreMs": 1447,
+        "gridMs": 306.0999994277954,
+        "searchMs": 1122,
+        "rescoreMs": 814.2000007629395,
         "evaluatedCandidates": 42240,
         "rotors": 13
       },
@@ -205,11 +205,11 @@
       "options": {
         "rescoreTopK": 48
       },
-      "wallMs": 4952.60000038147,
+      "wallMs": 3522.4000005722046,
       "stats": {
-        "gridMs": 210.9000005722046,
-        "searchMs": 1059.5999994277954,
-        "rescoreMs": 3682.1000003814697,
+        "gridMs": 241.10000038146973,
+        "searchMs": 1102.8999996185303,
+        "rescoreMs": 2178.4000005722046,
         "evaluatedCandidates": 42240,
         "rotors": 13
       },

@@ -69,6 +69,7 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
   };
   delete env.DISPLAY;
   delete env.WAYLAND_DISPLAY;
+  delete env.DBUS_SESSION_BUS_ADDRESS;
   if (existsSync("/usr/share/vulkan/icd.d/nvidia_icd.json"))
     env.VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
   const proc = spawn(
@@ -77,6 +78,10 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
       "--headless=new",
       "--no-first-run",
       "--no-default-browser-check",
+      "--password-store=basic",
+      "--use-mock-keychain",
+      "--disable-search-engine-choice-screen",
+      "--enable-automation",
       "--disable-background-networking",
       "--disable-component-update",
       "--disable-sync",

@@ -13,7 +13,7 @@
     "adapter_type": "IntegratedGPU",
     "backend_type": "Vulkan"
   },
-  "passed": 462,
+  "passed": 87,
   "failed": 0,
   "skipped": 0
 }

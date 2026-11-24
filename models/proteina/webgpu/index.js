@@ -36,6 +36,26 @@ export async function createProteinaEngine(options = {}) {
     constants,
     pipelines,
     useF16,
+    hasUnvalidatedPipelines: true,
+    uniformCapacity: 0,
+    uniformData: null,
+    uniformU32: null,
+    uniformF32: null,
+    uniformBuffer: null,
+    ensureUniformCapacity(slots) {
+      if (slots <= e.uniformCapacity && e.uniformBuffer) return;
+      const next = Math.max(512, 1 << Math.ceil(Math.log2(slots)));
+      if (e.uniformBuffer) e.free(e.uniformBuffer);
+      e.uniformData = new ArrayBuffer(next * 256);
+      e.uniformU32 = new Uint32Array(e.uniformData);
+      e.uniformF32 = new Float32Array(e.uniformData);
+      e.uniformBuffer = e.allocate(
+        next * 256,
+        GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+        "scratch",
+      );
+      e.uniformCapacity = next;
+    },
     allocate(bytes, usage, kind) {
       const size = Math.max(4, Math.ceil(bytes / 4) * 4);
       if (
@@ -102,6 +122,8 @@ export async function createProteinaEngine(options = {}) {
     if (destroyed) return;
     destroyed = true;
     for (const b of allocation.keys()) e.free(b);
+    e.uniformBuffer = null;
+    e.uniformCapacity = 0;
     pool.clear();
     pipelines.clear();
     for (const n of Object.keys(weights)) delete weights[n];
@@ -158,7 +180,7 @@ export async function createProteinaEngine(options = {}) {
         ...manifest.constants.xtBins,
       ]),
     );
-    e.zero = upload(new Float32Array(1));
+    e.zero = upload(new Float32Array(4));
     signal?.throwIfAborted();
   } catch (error) {
     destroy();
@@ -179,7 +201,8 @@ export async function createProteinaEngine(options = {}) {
       throw RangeError("Length exceeds pair buffer device limit");
     const started = performance.now();
     let ops;
-    device.pushErrorScope("validation");
+    const checkValidation = e.hasUnvalidatedPipelines || Boolean(options.trace);
+    if (checkValidation) device.pushErrorScope("validation");
     try {
       ops = new GPUOps(e, input);
       ops.init();
@@ -187,6 +210,7 @@ export async function createProteinaEngine(options = {}) {
         trace: options.trace ? (n, t) => ops.trace(n, t) : undefined,
       });
       const result = await ops.finish(y, options.signal);
+      if (checkValidation) e.hasUnvalidatedPipelines = false;
       return {
         ...result,
         length: input.length,
@@ -196,8 +220,10 @@ export async function createProteinaEngine(options = {}) {
     } finally {
       ops?.cleanup();
       e.trim();
-      const error = await device.popErrorScope();
-      if (error) throw Error(error.message);
+      if (checkValidation) {
+        const error = await device.popErrorScope();
+        if (error) throw Error(error.message);
+      }
     }
   }
   async function locked(fn) {

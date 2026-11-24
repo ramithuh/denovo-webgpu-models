@@ -7,23 +7,23 @@
       "description": "",
       "isFallbackAdapter": false
     },
-    "coldMs": 974.9000005722046,
+    "coldMs": 391.5,
     "warmMs": [
-      68.90000057220459,
-      68.29999923706055,
-      65.80000019073486
+      38.60000038146973,
+      34.80000019073486,
+      38
     ],
     "mem": {
       "residentBytes": 7060260,
       "transientBytes": 0,
-      "peakBytes": 72148416,
+      "peakBytes": 72212556,
       "totalBytes": 7060260,
       "buffers": 1
     },
     "afterDestroy": {
       "residentBytes": 0,
       "transientBytes": 0,
-      "peakBytes": 72148416,
+      "peakBytes": 72212556,
       "totalBytes": 0,
       "buffers": 0
     },
@@ -210,23 +210,23 @@
       "description": "",
       "isFallbackAdapter": false
     },
-    "coldMs": 246.29999923706055,
+    "coldMs": 402,
     "warmMs": [
-      66.30000019073486,
-      64.19999980926514,
-      64.40000057220459
+      34.60000038146973,
+      32.19999980926514,
+      33.60000038146973
     ],
     "mem": {
       "residentBytes": 3555748,
       "transientBytes": 0,
-      "peakBytes": 68643904,
+      "peakBytes": 68708044,
       "totalBytes": 3555748,
       "buffers": 1
     },
     "afterDestroy": {
       "residentBytes": 0,
       "transientBytes": 0,
-      "peakBytes": 68643904,
+      "peakBytes": 68708044,
       "totalBytes": 0,
       "buffers": 0
     },
@@ -413,23 +413,23 @@
       "description": "",
       "isFallbackAdapter": false
     },
-    "coldMs": 249.69999980926514,
+    "coldMs": 329.4000005722046,
     "warmMs": [
-      67,
-      61.09999942779541,
-      61.90000057220459
+      35.5,
+      32.30000019073486,
+      31.899999618530273
     ],
     "mem": {
       "residentBytes": 1808648,
       "transientBytes": 0,
-      "peakBytes": 66896804,
+      "peakBytes": 66960944,
       "totalBytes": 1808648,
       "buffers": 1
     },
     "afterDestroy": {
       "residentBytes": 0,
       "transientBytes": 0,
-      "peakBytes": 66896804,
+      "peakBytes": 66960944,
       "totalBytes": 0,
       "buffers": 0
     },

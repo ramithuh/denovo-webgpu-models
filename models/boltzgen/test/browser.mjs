@@ -55,6 +55,7 @@ async function singleBrowserTask(run) {
     };
     delete env.DISPLAY;
     delete env.WAYLAND_DISPLAY;
+    delete env.DBUS_SESSION_BUS_ADDRESS;
     await access("/usr/share/vulkan/icd.d/nvidia_icd.json");
     env.VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
     browser = await chromium.launchPersistentContext(profile, {
@@ -68,6 +69,8 @@ async function singleBrowserTask(run) {
         "--headless=new",
         "--no-sandbox",
         "--disable-gpu-sandbox",
+        "--password-store=basic",
+        "--use-mock-keychain",
         "--ozone-platform=headless",
         "--enable-unsafe-webgpu",
         "--ignore-gpu-blocklist",

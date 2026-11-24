@@ -41,6 +41,7 @@ export function samplerOptions(meta, binary, pdb) {
     jumpSteps: aa.jump_steps,
     uniformSteps: aa.uniform_steps,
     annealSequence: aa.anneal_seq_resampling_rate,
+    legacyUpstreamSchedule: true,
     conditioning: {
       crop: cc.crop_conditional_guidance.enabled,
       cropStart: cc.crop_conditional_guidance.start,

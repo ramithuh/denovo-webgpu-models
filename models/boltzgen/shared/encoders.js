@@ -74,7 +74,7 @@ export class AtomModules {
       return { q, c, p: pair };
     });
   }
-  attentionEncoder(f, q, c, bias, p, r) {
+  attentionEncoder(f, q, c, bias, p, r, cache = null) {
     const o = this.o;
     return o.tidy(() => {
       if (r) q = o.add(q, o.linear(r, p + ".r_to_q_trans"));
@@ -84,13 +84,18 @@ export class AtomModules {
         bias,
         f.atom_pad_mask,
         p + ".atom_encoder",
+        cache?.atomEncLayers ?? null,
       );
       const qa = o.relu(o.linear(q, p + ".atom_to_token_trans.0"));
-      const mean = o.div(
-        f.atom_to_token,
-        o.add(o.sum(f.atom_to_token, 1, true), 1e-6),
-      );
-      return { a: o.mm(o.transpose(mean), qa), q, c };
+      const meanT =
+        cache?.atomMeanT ??
+        o.transpose(
+          o.div(
+            f.atom_to_token,
+            o.add(o.sum(f.atom_to_token, 1, true), 1e-6),
+          ),
+        );
+      return { a: o.mm(meanT, qa), q, c };
     });
   }
   input(f) {
@@ -153,7 +158,7 @@ export class AtomModules {
       };
     });
   }
-  decoder(f, a, q, c, bias, p) {
+  decoder(f, a, q, c, bias, p, cache = null) {
     const o = this.o;
     return o.tidy(() => {
       q = o.add(q, o.mm(f.atom_to_token, o.linear(a, p + ".a_to_q_trans")));
@@ -163,6 +168,7 @@ export class AtomModules {
         bias,
         f.atom_pad_mask,
         p + ".atom_decoder",
+        cache?.atomDecLayers ?? null,
       );
       return o.seq(q, p + ".atom_feat_to_atom_pos_update");
     });

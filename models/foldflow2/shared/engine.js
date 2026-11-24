@@ -123,23 +123,25 @@ export class Engine {
       await n.mark("sequence.pair", seq[1]);
       if (scCa && scCa.length !== length * 3)
         throw RangeError("self-conditioning shape");
+      const idxTensor = o.fastEmbedFeatures ? o.tensor([length], idx) : null;
       let sc = scCa ? o.tensor([length, 3], scCa) : o.constant([length, 3]),
         pred,
         lastInput,
-        trajectory = [];
-      n.keep = [frames, ...seq, sc];
+        trajectory = [],
+        trajTensors = [];
+      n.keep = [frames, idxTensor, ...seq, sc];
       if (steps && selfConditioning) {
-        pred = await n.forward(frames, 1, sc, seq, idx);
+        pred = await n.forward(frames, 1, sc, seq, idx, idxTensor);
         sc = pred.t;
-        n.keep = [frames, ...seq, sc];
+        n.keep = [frames, idxTensor, ...seq, sc];
         await n.boundary(n.keep);
       }
       for (let step = 0; step < (steps || 1); step++) {
         abort(signal);
         const t = steps ? 1 - (step * (1 - minTime)) / (steps - 1) : time;
-        n.keep = [frames, ...seq, sc];
+        n.keep = [frames, idxTensor, ...seq, sc, ...trajTensors];
         lastInput = frames;
-        pred = await n.forward(frames, t, sc, seq, idx);
+        pred = await n.forward(frames, t, sc, seq, idx, idxTensor);
         if (steps) {
           frames = integrate(
             o,
@@ -149,14 +151,20 @@ export class Engine {
             (1 - minTime) / (steps - 1),
             rotationScaling,
           );
-          trajectory.push(await o.read(frames));
+          if (o.readMany) trajTensors.push(frames);
+          else trajectory.push(await o.read(frames));
           if (selfConditioning) sc = pred.t;
         }
         onProgress?.({ phase: "inference", step: step + 1, total: steps || 1 });
         abort(signal);
         if (step < (steps || 1) - 1) {
-          n.keep = [frames, ...seq, sc];
-          await n.boundary(n.keep);
+          n.keep = [frames, idxTensor, ...seq, sc, ...trajTensors];
+          if (o.stepBoundary) {
+            await o.stepBoundary(n.keep, step);
+            abort(signal);
+          } else {
+            await n.boundary(n.keep);
+          }
         }
       }
       const vf = vectorfields(
@@ -174,21 +182,55 @@ export class Engine {
               pred.psi,
             )
           : pred.atoms,
+        rigidsTensor = o.cat([canonical(o, pred.q), pred.t]),
+        atom37Tensor = expandAtoms(o, atomTensor, 37),
+        atom14Tensor = expandAtoms(o, atomTensor, 14);
+      let result;
+      if (o.readMany) {
+        const toRead = [
+          rigidsTensor,
+          pred.psi,
+          atomTensor,
+          atom37Tensor,
+          atom14Tensor,
+          vf.rot,
+          vf.trans,
+          ...(steps ? [frames, ...trajTensors] : []),
+        ];
+        const arrays = await o.readMany(toRead);
         result = {
           length,
           steps,
-          rigids: await o.read(o.cat([canonical(o, pred.q), pred.t])),
+          rigids: arrays[0],
+          psi: arrays[1],
+          atoms: arrays[2],
+          atom37: arrays[3],
+          atom14: arrays[4],
+          rotVectorfield: arrays[5],
+          transVectorfield: arrays[6],
+          trace: n.trace,
+        };
+        if (steps) {
+          result.frames = arrays[7];
+          result.trajectory = arrays.slice(8);
+        }
+      } else {
+        result = {
+          length,
+          steps,
+          rigids: await o.read(rigidsTensor),
           psi: await o.read(pred.psi),
           atoms: await o.read(atomTensor),
-          atom37: await o.read(expandAtoms(o, atomTensor, 37)),
-          atom14: await o.read(expandAtoms(o, atomTensor, 14)),
+          atom37: await o.read(atom37Tensor),
+          atom14: await o.read(atom14Tensor),
           rotVectorfield: await o.read(vf.rot),
           transVectorfield: await o.read(vf.trans),
           trace: n.trace,
         };
-      if (steps) {
-        result.frames = await o.read(frames);
-        result.trajectory = trajectory;
+        if (steps) {
+          result.frames = await o.read(frames);
+          result.trajectory = trajectory;
+        }
       }
       await o.checkpoint([frames]);
       return result;

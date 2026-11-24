@@ -4,9 +4,9 @@
   "mode": "binder_l8_t12_s3",
   "stats": {
     "atom_coords": {
-      "relRMS": 0.00002394527900418484,
-      "maxAbs": 0.0005385875701904297,
-      "paddedRelRMS": 0.00002394527900418484
+      "relRMS": 0.000011630381893645544,
+      "maxAbs": 0.00030732154846191406,
+      "paddedRelRMS": 0.000011630381893645544
     },
     "trajectory.0": {
       "relRMS": 0,
@@ -14,54 +14,54 @@
       "paddedRelRMS": 0
     },
     "trajectory.1": {
-      "relRMS": 0.000014335520330565268,
-      "maxAbs": 0.0029296875,
-      "paddedRelRMS": 0.000014335520330565268
+      "relRMS": 0.00000815217215391432,
+      "maxAbs": 0.001953125,
+      "paddedRelRMS": 0.00000815217215391432
     },
     "trajectory.2": {
-      "relRMS": 0.000008145601857648642,
-      "maxAbs": 0.0004482269287109375,
-      "paddedRelRMS": 0.000008145601857648642
+      "relRMS": 0.0000038247551152600325,
+      "maxAbs": 0.000274658203125,
+      "paddedRelRMS": 0.0000038247551152600325
     },
     "trajectory.3": {
-      "relRMS": 0.00002394527900418484,
-      "maxAbs": 0.0005385875701904297,
-      "paddedRelRMS": 0.00002394527900418484
+      "relRMS": 0.000011630381893645544,
+      "maxAbs": 0.00030732154846191406,
+      "paddedRelRMS": 0.000011630381893645544
     },
     "trajectory.4": {
-      "relRMS": 0.00002394527900418484,
-      "maxAbs": 0.0005385875701904297,
-      "paddedRelRMS": 0.00002394527900418484
+      "relRMS": 0.000011630381893645544,
+      "maxAbs": 0.00030732154846191406,
+      "paddedRelRMS": 0.000011630381893645544
     },
     "denoised.0": {
-      "relRMS": 0.000003975740653044574,
-      "maxAbs": 0.00014209747314453125,
-      "paddedRelRMS": 0.000003975740653044574
+      "relRMS": 0.000001475666912476374,
+      "maxAbs": 0.00005245208740234375,
+      "paddedRelRMS": 0.000001475666912476374
     },
     "denoised.1": {
-      "relRMS": 0.000008148092010650923,
-      "maxAbs": 0.00045013427734375,
-      "paddedRelRMS": 0.000008148092010650923
+      "relRMS": 0.0000038093875973891304,
+      "maxAbs": 0.00026702880859375,
+      "paddedRelRMS": 0.0000038093875973891304
     },
     "denoised.2": {
-      "relRMS": 0.00002394527900418484,
-      "maxAbs": 0.0005385875701904297,
-      "paddedRelRMS": 0.00002394527900418484
+      "relRMS": 0.000011630381893645544,
+      "maxAbs": 0.00030732154846191406,
+      "paddedRelRMS": 0.000011630381893645544
     }
   },
-  "seconds": 3.86539999961853,
-  "warmSeconds": 0.43110000038146973,
+  "seconds": 1.2906999998092652,
+  "warmSeconds": 0.276,
   "warmTimings": [
     {
       "phase": "trunk",
-      "milliseconds": 197.69999980926514
+      "milliseconds": 82.69999980926514
     },
     {
       "phase": "diffusion",
-      "milliseconds": 182.30000019073486
+      "milliseconds": 98.5
     }
   ],
-  "coldLoadMs": 10094.300000190735,
+  "coldLoadMs": 37286.39999961853,
   "adapter": {
     "vendor": "nvidia",
     "architecture": "",
@@ -72,7 +72,7 @@
     "persistentBytes": 1985992584,
     "transientBytes": 0,
     "totalBytes": 1985992584,
-    "pipelines": 1024,
-    "allocations": 7635
+    "pipelines": 312,
+    "allocations": 7507
   }
 }

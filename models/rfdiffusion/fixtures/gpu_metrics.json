@@ -23,8 +23,8 @@
         "relRMS": 2.1443794775452685e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 3885.5,
-      "loadMs": 1496
+      "timingMs": 1702.0999994277954,
+      "loadMs": 4371.39999961853
     },
     {
       "name": "fp32_unconditional_L24_selfcond",
@@ -42,8 +42,8 @@
         "relRMS": 2.099954333831093e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 600.1999998092651,
-      "loadMs": 1496
+      "timingMs": 480.29999923706055,
+      "loadMs": 4371.39999961853
     },
     {
       "name": "fp32_motif_L24",
@@ -61,8 +61,8 @@
         "relRMS": 2.594893565837226e-8,
         "maxAbs": 0.0000019073486328125
       },
-      "timingMs": 589,
-      "loadMs": 1496
+      "timingMs": 418,
+      "loadMs": 4371.39999961853
     },
     {
       "name": "fp32_symmetric_L24",
@@ -80,8 +80,8 @@
         "relRMS": 3.141485028814225e-8,
         "maxAbs": 4.76837158203125e-7
       },
-      "timingMs": 487.30000019073486,
-      "loadMs": 1496
+      "timingMs": 387.5,
+      "loadMs": 4371.39999961853
     },
     {
       "name": "trajectory_fp32_unconditional_L24",
@@ -171,7 +171,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 1058.8000001907349
+      "timingMs": 316.3999996185303
     },
     {
       "name": "trajectory_fp32_motif_L24",
@@ -261,7 +261,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 885.8999996185303
+      "timingMs": 327.80000019073486
     },
     {
       "name": "trajectory_fp32_symmetric_L24",
@@ -351,7 +351,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 832.3000001907349
+      "timingMs": 291.6000003814697
     },
     {
       "name": "fp16_unconditional_L24",
@@ -369,8 +369,8 @@
         "relRMS": 2.4922072602295254e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 1557.5999994277954,
-      "loadMs": 978.6000003814697
+      "timingMs": 977.4000005722046,
+      "loadMs": 2502.1000003814697
     },
     {
       "name": "fp16_unconditional_L24_selfcond",
@@ -388,8 +388,8 @@
         "relRMS": 2.4656986216246343e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 561.3999996185303,
-      "loadMs": 978.6000003814697
+      "timingMs": 480.29999923706055,
+      "loadMs": 2502.1000003814697
     },
     {
       "name": "fp16_motif_L24",
@@ -407,8 +407,8 @@
         "relRMS": 1.4558827591235715e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 792.9000005722046,
-      "loadMs": 978.6000003814697
+      "timingMs": 396.80000019073486,
+      "loadMs": 2502.1000003814697
     },
     {
       "name": "fp16_symmetric_L24",
@@ -426,8 +426,8 @@
         "relRMS": 2.914431227305397e-8,
         "maxAbs": 4.76837158203125e-7
       },
-      "timingMs": 890.5,
-      "loadMs": 978.6000003814697
+      "timingMs": 392.5,
+      "loadMs": 2502.1000003814697
     },
     {
       "name": "trajectory_fp16_unconditional_L24",
@@ -517,7 +517,7 @@
           "maxAbs": 3.203749656677246e-7
         }
       ],
-      "timingMs": 947
+      "timingMs": 299.4000005722046
     },
     {
       "name": "trajectory_fp16_motif_L24",
@@ -607,7 +607,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 833.5
+      "timingMs": 281.70000076293945
     },
     {
       "name": "trajectory_fp16_symmetric_L24",
@@ -697,7 +697,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 864.1999998092651
+      "timingMs": 278.3999996185303
     },
     {
       "name": "int8_unconditional_L24",
@@ -715,8 +715,8 @@
         "relRMS": 2.1595764020652084e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 1629.6999998092651,
-      "loadMs": 623.0999994277954
+      "timingMs": 911.1999998092651,
+      "loadMs": 1607.5
     },
     {
       "name": "int8_unconditional_L24_selfcond",
@@ -734,8 +734,8 @@
         "relRMS": 2.4596213918590793e-8,
         "maxAbs": 9.5367431640625e-7
       },
-      "timingMs": 860,
-      "loadMs": 623.0999994277954
+      "timingMs": 508.6000003814697,
+      "loadMs": 1607.5
     },
     {
       "name": "int8_motif_L24",
@@ -753,8 +753,8 @@
         "relRMS": 2.219861879980651e-8,
         "maxAbs": 0.0000019073486328125
       },
-      "timingMs": 942.8000001907349,
-      "loadMs": 623.0999994277954
+      "timingMs": 400,
+      "loadMs": 1607.5
     },
     {
       "name": "int8_symmetric_L24",
@@ -772,8 +772,8 @@
         "relRMS": 2.0931704493777185e-8,
         "maxAbs": 4.76837158203125e-7
       },
-      "timingMs": 888.5,
-      "loadMs": 623.0999994277954
+      "timingMs": 434.70000076293945,
+      "loadMs": 1607.5
     },
     {
       "name": "trajectory_int8_unconditional_L24",
@@ -863,7 +863,7 @@
           "maxAbs": 1.7881393432617188e-7
         }
       ],
-      "timingMs": 855
+      "timingMs": 290.80000019073486
     },
     {
       "name": "trajectory_int8_motif_L24",
@@ -953,7 +953,7 @@
           "maxAbs": 2.980232238769531e-7
         }
       ],
-      "timingMs": 822.1000003814697
+      "timingMs": 273.69999980926514
     },
     {
       "name": "trajectory_int8_symmetric_L24",
@@ -1043,7 +1043,7 @@
           "maxAbs": 2.384185791015625e-7
         }
       ],
-      "timingMs": 885.8999996185303
+      "timingMs": 277.4000005722046
     }
   ]
 }

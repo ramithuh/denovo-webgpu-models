@@ -9,7 +9,7 @@
   "cases": [
     {
       "name": "fp32_L32_T1_sde",
-      "timingMs": 491.5,
+      "timingMs": 158.5,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -51,7 +51,7 @@
     },
     {
       "name": "fp32_L32_T1_ode",
-      "timingMs": 108.70000076293945,
+      "timingMs": 38.89999961853027,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -93,7 +93,7 @@
     },
     {
       "name": "fp32_L32_T3_sde",
-      "timingMs": 343.80000019073486,
+      "timingMs": 76.80000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -167,7 +167,7 @@
     },
     {
       "name": "fp32_L32_T3_ode",
-      "timingMs": 241.69999980926514,
+      "timingMs": 74.60000038146973,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -241,7 +241,7 @@
     },
     {
       "name": "fp32_L64_T1_sde",
-      "timingMs": 405.80000019073486,
+      "timingMs": 53.40000057220459,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -283,7 +283,7 @@
     },
     {
       "name": "fp32_L64_T1_ode",
-      "timingMs": 156.80000019073486,
+      "timingMs": 45.69999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -325,7 +325,7 @@
     },
     {
       "name": "fp32_L64_T3_sde",
-      "timingMs": 415.4000005722046,
+      "timingMs": 86.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -399,7 +399,7 @@
     },
     {
       "name": "fp32_L64_T3_ode",
-      "timingMs": 263.30000019073486,
+      "timingMs": 84.19999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -473,7 +473,7 @@
     },
     {
       "name": "fp32_L47_T7_sde",
-      "timingMs": 1077.6000003814697,
+      "timingMs": 184.70000076293945,
       "parity": {
         "ca": {
           "relRMS": 0.0000012838398391523311,
@@ -611,7 +611,7 @@
     },
     {
       "name": "fp32_L47_T7_ode",
-      "timingMs": 684.5999994277954,
+      "timingMs": 172.80000019073486,
       "parity": {
         "ca": {
           "relRMS": 0.0000013974932223408996,
@@ -749,7 +749,7 @@
     },
     {
       "name": "fp16_L32_T1_sde",
-      "timingMs": 545.6999998092651,
+      "timingMs": 91.40000057220459,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -791,7 +791,7 @@
     },
     {
       "name": "fp16_L32_T1_ode",
-      "timingMs": 113.19999980926514,
+      "timingMs": 32.20000076293945,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -833,7 +833,7 @@
     },
     {
       "name": "fp16_L32_T3_sde",
-      "timingMs": 347.29999923706055,
+      "timingMs": 66.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -907,7 +907,7 @@
     },
     {
       "name": "fp16_L32_T3_ode",
-      "timingMs": 252.80000019073486,
+      "timingMs": 66.39999961853027,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -981,7 +981,7 @@
     },
     {
       "name": "fp16_L64_T1_sde",
-      "timingMs": 419.6000003814697,
+      "timingMs": 38.5,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1023,7 +1023,7 @@
     },
     {
       "name": "fp16_L64_T1_ode",
-      "timingMs": 133.5,
+      "timingMs": 37.89999961853027,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1065,7 +1065,7 @@
     },
     {
       "name": "fp16_L64_T3_sde",
-      "timingMs": 374.8999996185303,
+      "timingMs": 70.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1139,7 +1139,7 @@
     },
     {
       "name": "fp16_L64_T3_ode",
-      "timingMs": 262.19999980926514,
+      "timingMs": 71.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1213,7 +1213,7 @@
     },
     {
       "name": "fp16_L47_T7_sde",
-      "timingMs": 1103.1999998092651,
+      "timingMs": 135.4000005722046,
       "parity": {
         "ca": {
           "relRMS": 0.0000013037295880763753,
@@ -1351,7 +1351,7 @@
     },
     {
       "name": "fp16_L47_T7_ode",
-      "timingMs": 554.8999996185303,
+      "timingMs": 128.0999994277954,
       "parity": {
         "ca": {
           "relRMS": 9.836445383714421e-7,
@@ -1489,7 +1489,7 @@
     },
     {
       "name": "int8_L32_T1_sde",
-      "timingMs": 564.8999996185303,
+      "timingMs": 96.19999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1531,7 +1531,7 @@
     },
     {
       "name": "int8_L32_T1_ode",
-      "timingMs": 115.19999980926514,
+      "timingMs": 38.29999923706055,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1573,7 +1573,7 @@
     },
     {
       "name": "int8_L32_T3_sde",
-      "timingMs": 337.1000003814697,
+      "timingMs": 84.69999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1647,7 +1647,7 @@
     },
     {
       "name": "int8_L32_T3_ode",
-      "timingMs": 243.60000038146973,
+      "timingMs": 82.19999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1721,7 +1721,7 @@
     },
     {
       "name": "int8_L64_T1_sde",
-      "timingMs": 420.5,
+      "timingMs": 51.20000076293945,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1763,7 +1763,7 @@
     },
     {
       "name": "int8_L64_T1_ode",
-      "timingMs": 183.5999994277954,
+      "timingMs": 52.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1805,7 +1805,7 @@
     },
     {
       "name": "int8_L64_T3_sde",
-      "timingMs": 369.8999996185303,
+      "timingMs": 102.69999980926514,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1879,7 +1879,7 @@
     },
     {
       "name": "int8_L64_T3_ode",
-      "timingMs": 245,
+      "timingMs": 95.40000057220459,
       "parity": {
         "ca": {
           "relRMS": 0,
@@ -1953,7 +1953,7 @@
     },
     {
       "name": "int8_L47_T7_sde",
-      "timingMs": 1119.3999996185303,
+      "timingMs": 186.30000019073486,
       "parity": {
         "ca": {
           "relRMS": 0.0000013651156309525769,
@@ -2091,7 +2091,7 @@
     },
     {
       "name": "int8_L47_T7_ode",
-      "timingMs": 484.20000076293945,
+      "timingMs": 181.69999980926514,
       "parity": {
         "ca": {
           "relRMS": 8.175122662241286e-7,
@@ -2236,7 +2236,7 @@
         "allocations": 841,
         "reusedBuffers": 0
       },
-      "loadMs": 4686.5
+      "loadMs": 21463.89999961853
     },
     "fp16": {
       "loaded": {
@@ -2245,7 +2245,7 @@
         "allocations": 841,
         "reusedBuffers": 0
       },
-      "loadMs": 3000.8999996185303
+      "loadMs": 11135.699999809265
     },
     "int8": {
       "loaded": {
@@ -2254,7 +2254,7 @@
         "allocations": 841,
         "reusedBuffers": 0
       },
-      "loadMs": 1811
+      "loadMs": 5377.299999237061
     }
   },
   "lifecycle": {
@@ -2266,8 +2266,8 @@
       "recovery": true,
       "bytes": 1145364480,
       "transientBuffers": 0,
-      "allocations": 2727,
-      "reusedBuffers": 40651
+      "allocations": 1862,
+      "reusedBuffers": 15588
     },
     "fp16": {
       "normal": true,
@@ -2277,8 +2277,8 @@
       "recovery": true,
       "bytes": 573364736,
       "transientBuffers": 0,
-      "allocations": 2727,
-      "reusedBuffers": 40651
+      "allocations": 1862,
+      "reusedBuffers": 15588
     },
     "int8": {
       "normal": true,
@@ -2288,8 +2288,8 @@
       "recovery": true,
       "bytes": 288991768,
       "transientBuffers": 0,
-      "allocations": 2727,
-      "reusedBuffers": 40651
+      "allocations": 1862,
+      "reusedBuffers": 15588
     },
     "normalization768": {
       "relRMS": 0,
@@ -2374,16 +2374,16 @@
   },
   "timings": {
     "fp32": {
-      "coldMs": 491.5,
-      "warmMs": 113
+      "coldMs": 158.5,
+      "warmMs": 39.29999923706055
     },
     "fp16": {
-      "coldMs": 545.6999998092651,
-      "warmMs": 119.19999980926514
+      "coldMs": 91.40000057220459,
+      "warmMs": 33.59999942779541
     },
     "int8": {
-      "coldMs": 564.8999996185303,
-      "warmMs": 112
+      "coldMs": 96.19999980926514,
+      "warmMs": 37.80000019073486
     }
   },
   "storage": {
@@ -2478,8 +2478,8 @@
     "memory": {
       "bytes": 288991768,
       "transientBuffers": 0,
-      "allocations": 983,
-      "reusedBuffers": 3743
+      "allocations": 921,
+      "reusedBuffers": 1450
     }
   },
   "demo": {
@@ -2524,7 +2524,7 @@
       "maxAbs": 0
     }
   },
-  "shaderVariants": 462,
+  "shaderVariants": 42,
   "skipped": 0,
   "hostGPU": "NVIDIA GB10, 580.159.03"
 }

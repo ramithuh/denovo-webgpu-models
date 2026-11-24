@@ -72,11 +72,7 @@ export async function makeEngine(
           return await sample(
             ops,
             async (state, opts) => {
-              try {
-                return await model.forward(state, opts);
-              } finally {
-                ops.clear();
-              }
+              return await model.forward(state, opts);
             },
             options,
           );

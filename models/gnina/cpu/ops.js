@@ -5,6 +5,7 @@ export class CPUOps {
     this.weights=Object.fromEntries(Object.entries(tensors).map(([key,t])=>[key,{data:tensorToFloat(t),shape:t.shape}]));
   }
   read(x){return x.data;}
+  readMany(xs){return xs.map(x=>x.data);}
   release(){}
   pool({data,c,d},kind,k) {
     const n=d/k, out=new Float32Array(c*n**3);

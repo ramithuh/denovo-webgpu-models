@@ -26,6 +26,8 @@ export async function createLaProteinaWorker(options={}) {
   return {...metadata,
     sample(args={}){const {signal,onProgress,...input}=args;return call('sample',input,{signal,onProgress});},
     decode:(args,control)=>call('decode',args,control),
+    encode:(args,control)=>call('encode',args,control),
+    encodeDecode:(args,control)=>call('encodeDecode',args,control),
     denoiseStep:(args,control)=>call('denoiseStep',args,control),
     memoryUsage:()=>closed?Promise.resolve({bytes:0,transientBuffers:0}):call('memoryUsage'),
     async destroy(){if(closed)return;try{return await call('destroy');}finally{closed=true;worker.terminate();failAll(Error('Worker destroyed'));}},

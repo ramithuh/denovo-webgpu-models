@@ -117,7 +117,9 @@ export async function loadEngine(
         });
         signal.throwIfAborted();
         const outputs = {},
-          structure = {};
+          structure = {},
+          readKeys = [],
+          readTensors = [];
         for (const name of ["atom_coords", "trajectory", "denoised"]) {
           const list = Array.isArray(result[name])
             ? result[name]
@@ -125,12 +127,18 @@ export async function loadEngine(
           const refs = [];
           for (let i = 0; i < list.length; i++) {
             const key = name === "atom_coords" ? name : `${name}.${i}`;
-            signal.throwIfAborted();
-            outputs[key] = await backend.read(list[i]);
+            readKeys.push(key);
+            readTensors.push(list[i]);
             refs.push({ ref: key });
           }
           structure[name] = name === "atom_coords" ? refs[0] : refs;
         }
+        signal.throwIfAborted();
+        const readValues = backend.readMany
+          ? await backend.readMany(readTensors)
+          : await Promise.all(readTensors.map((t) => backend.read(t)));
+        signal.throwIfAborted();
+        for (let i = 0; i < readKeys.length; i++) outputs[readKeys[i]] = readValues[i];
         return {
           outputs,
           structure,

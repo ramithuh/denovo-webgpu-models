@@ -18,15 +18,27 @@ export class RoseTTAFold {
   linear(x, p) {
     return this.o.linear(x, this.w[p + ".weight"], this.w[p + ".bias"]);
   }
+  linearRelu(x, p) {
+    const o = this.o;
+    return o.linearRelu
+      ? o.linearRelu(x, this.w[p + ".weight"], this.w[p + ".bias"])
+      : o.relu(this.linear(x, p));
+  }
   norm(x, p) {
     return this.o.norm(x, this.w[p + ".weight"], this.w[p + ".bias"]);
   }
-  ff(x, p) {
+  normRelu(x, p) {
     const o = this.o;
-    return this.linear(
-      o.relu(this.linear(this.norm(x, p + ".norm"), p + ".linear1")),
-      p + ".linear2",
-    );
+    return o.normRelu
+      ? o.normRelu(x, this.w[p + ".weight"], this.w[p + ".bias"])
+      : o.relu(this.norm(x, p));
+  }
+  gated(x, g) {
+    const o = this.o;
+    return o.gatedMul ? o.gatedMul(x, g) : o.mul(x, o.sigmoid(g));
+  }
+  ff(x, p) {
+    return this.linear(this.linearRelu(this.norm(x, p + ".norm"), p + ".linear1"), p + ".linear2");
   }
   axial(pair, bias, p, row) {
     const o = this.o,
@@ -54,17 +66,14 @@ export class RoseTTAFold {
     );
     let out = o.reshape(o.einsum("ijh,kjhd->ikhd", att, v), [L, L, H * D]);
     out = this.linear(
-      o.mul(out, o.sigmoid(this.linear(pair, p + ".to_g"))),
+      this.gated(out, this.linear(pair, p + ".to_g")),
       p + ".to_out",
     );
     return row ? o.permute(out, [1, 0, 2]) : out;
   }
   pairBlock(pair, dist, p) {
     const o = this.o,
-      bias = this.linear(
-        o.relu(this.linear(dist, p + ".emb_rbf")),
-        p + ".proj_rbf",
-      );
+      bias = this.linear(this.linearRelu(dist, p + ".emb_rbf"), p + ".proj_rbf");
     pair = o.add(pair, this.axial(pair, bias, p + ".row_attn", true));
     pair = o.add(pair, this.axial(pair, bias, p + ".col_attn", false));
     return o.add(pair, this.ff(pair, p + ".ff"));
@@ -88,9 +97,9 @@ export class RoseTTAFold {
       1,
     );
     return this.linear(
-      o.mul(
+      this.gated(
         o.reshape(o.einsum("qkh,khd->qhd", att, v), [L, H * D]),
-        o.sigmoid(this.linear(msa, p + ".to_g")),
+        this.linear(msa, p + ".to_g"),
       ),
       p + ".to_out",
     );
@@ -103,13 +112,13 @@ export class RoseTTAFold {
     if (global) {
       const H = this.c.n_head_msa,
         D = value.shape[1];
-      value = o.reshape(
-        o.expr([L, H, D], [o.reshape(value, [L, 1, D])], "$0"),
-        [L, H * D],
-      );
+      value = o.reshape(o.add(o.reshape(value, [L, 1, D]), o.constant([1, H, 1], 0)), [
+        L,
+        H * D,
+      ]);
     }
     return this.linear(
-      o.mul(value, o.sigmoid(this.linear(msa, p + ".to_g"))),
+      this.gated(value, this.linear(msa, p + ".to_g")),
       p + ".to_out",
     );
   }
@@ -148,15 +157,9 @@ export class RoseTTAFold {
       this.linear(this.norm(state, p + ".norm_si"), p + ".linear_si"),
     );
     x = o.relu(x);
-    x = o.add(
-      x,
-      this.linear(o.relu(this.linear(x, p + ".linear_1")), p + ".linear_2"),
-    );
+    x = o.add(x, this.linear(this.linearRelu(x, p + ".linear_1"), p + ".linear_2"));
     x = o.relu(x);
-    x = o.add(
-      x,
-      this.linear(o.relu(this.linear(x, p + ".linear_3")), p + ".linear_4"),
-    );
+    x = o.add(x, this.linear(this.linearRelu(x, p + ".linear_3"), p + ".linear_4"));
     return o.reshape(this.linear(o.relu(x), p + ".linear_out"), [
       msa.shape[0],
       10,
@@ -164,20 +167,17 @@ export class RoseTTAFold {
     ]);
   }
   radial(edge, p) {
-    const o = this.o;
-    let x = o.relu(this.norm(this.linear(edge, p + ".net.0"), p + ".net.1"));
-    x = o.relu(this.norm(this.linear(x, p + ".net.3"), p + ".net.4"));
+    let x = this.normRelu(this.linear(edge, p + ".net.0"), p + ".net.1");
+    x = this.normRelu(this.linear(x, p + ".net.3"), p + ".net.4");
     return this.linear(x, p + ".net.6");
   }
-  basis(relative) {
+  basis(relative, basisCoeffs) {
     const o = this.o,
-      E = relative.shape[0],
       sh = sphericalHarmonics(o, relative),
       result = {};
     for (const [name, entry] of Object.entries(this.constants.basis)) {
-      const coeff = o.tensor(entry.shape, entry.data);
-      const out = o.einsum("es,slfk->elfk", sh, coeff);
-      result[name] = out;
+      const coeff = basisCoeffs ? basisCoeffs[name] : o.tensor(entry.shape, entry.data);
+      result[name] = o.einsum("es,slfk->elfk", sh, coeff);
     }
     return result;
   }
@@ -242,21 +242,25 @@ export class RoseTTAFold {
       }
     return out;
   }
-  se3(node, edge, CA, p, topk, indices) {
+  se3(node, edge, CA, p, topk, indices, stepCache) {
     const o = this.o,
       L = CA.shape[0],
       E = L * L,
-      src = o.tensor(
-        [E],
-        Array.from({ length: E }, (_, i) => Math.floor(i / L)),
-      ),
-      dst = o.tensor(
-        [E],
-        Array.from({ length: E }, (_, i) => i % L),
-      );
+      src =
+        stepCache?.src ??
+        o.tensor(
+          [E],
+          Array.from({ length: E }, (_, i) => Math.floor(i / L)),
+        ),
+      dst =
+        stepCache?.dst ??
+        o.tensor(
+          [E],
+          Array.from({ length: E }, (_, i) => i % L),
+        );
     const relative = o.sub(o.gather(CA, dst), o.gather(CA, src)),
-      basis = this.basis(relative),
-      mask = this.graphMask(CA, indices, topk);
+      basis = this.basis(relative, stepCache?.basis),
+      mask = this.graphMask(CA, indices, topk, stepCache);
     edge = o.cat([
       o.reshape(edge, [E, edge.shape.at(-1)]),
       normLast(o, relative),
@@ -326,7 +330,9 @@ export class RoseTTAFold {
           (d + 1) * channels,
         );
       const n = o.reshape(
-        o.relu(o.groupNorm(o.reshape(norms[d], [L, channels]), weight, bias)),
+        o.groupNormRelu
+          ? o.groupNormRelu(o.reshape(norms[d], [L, channels]), weight, bias)
+          : o.relu(o.groupNorm(o.reshape(norms[d], [L, channels]), weight, bias)),
         [L, channels, 1],
       );
       normed[d] = o.mul(o.div(next[d], norms[d]), n);
@@ -343,19 +349,24 @@ export class RoseTTAFold {
       mask,
     );
   }
-  graphMask(CA, indices, topk) {
+  graphMask(CA, indices, topk, stepCache) {
     const o = this.o,
       L = CA.shape[0];
-    if (!topk)
+    if (!topk) {
+      if (stepCache?.maskNoTopk) return stepCache.maskNoTopk;
       return o.tensor(
         [L, L],
         Array.from({ length: L * L }, (_, i) =>
           Number(indices[Math.floor(i / L)] !== indices[i % L]),
         ),
       );
-    if (L <= 64) return o.constant([L, L], 1);
+    }
+    if (L <= 64) {
+      if (stepCache?.maskTopkSmall) return stepCache.maskTopkSmall;
+      return o.constant([L, L], 1);
+    }
     const dist = cdist(o, CA),
-      ix = o.tensor([L], indices);
+      ix = stepCache?.ix ?? o.tensor([L], indices);
     return o.kernel(
       [L, L],
       [dist, ix],
@@ -363,7 +374,7 @@ export class RoseTTAFold {
       `let row=i/${L}u;let col=i%${L}u;let sep=abs(a1[row]-a1[col])+select(0.0,999.9,row==col);let d=a0[i]+select(0.0,999.9,row==col)+sep*1e-6;var rank=0u;for(var j=0u;j<${L}u;j++){let s=abs(a1[row]-a1[j])+select(0.0,999.9,row==j);let v=a0[row*${L}u+j]+select(0.0,999.9,row==j)+s*1e-6;if(v<d||(v==d&&j<col)){rank++;}}o[i]=select(0.0,1.0,sep<32.0||rank<64u);`,
     );
   }
-  structure(msa, pair, R, T, xyz, state, indices, motif, p, topk) {
+  structure(msa, pair, R, T, xyz, state, indices, motif, p, topk, stepCache) {
     const o = this.o,
       L = msa.shape[0];
     let node = o.cat([
@@ -376,13 +387,15 @@ export class RoseTTAFold {
       p + ".norm_edge1",
     );
     const CA = o.reshape(o.slice(xyz, 1, 1, 2), [L, 3]),
-      neighbor = o.tensor(
-        [L, L, 1],
-        Array.from({ length: L * L }, (_, i) => {
-          const d = indices[i % L] - indices[Math.floor(i / L)];
-          return Math.abs(d) <= 1 ? d : 0;
-        }),
-      );
+      neighbor =
+        stepCache?.neighbor ??
+        o.tensor(
+          [L, L, 1],
+          Array.from({ length: L * L }, (_, i) => {
+            const d = indices[i % L] - indices[Math.floor(i / L)];
+            return Math.abs(d) <= 1 ? d : 0;
+          }),
+        );
     pair = this.norm(
       this.linear(
         o.cat([pair, rbf(o, cdist(o, CA)), neighbor]),
@@ -398,17 +411,18 @@ export class RoseTTAFold {
       p + ".se3.se3",
       topk,
       indices,
+      stepCache,
     );
     state = o.reshape(shift[0], [L, -1]);
-    const offset = o.mul(
-        shift[1],
+    const motifFactor =
+        stepCache?.motifFactor ??
         o.tensor(
           [L, 1, 1],
           Array.from(motif, (x) =>
             this.c.freeze_track_motif ? 1 - Number(x) : 1,
           ),
         ),
-      ),
+      offset = o.mul(shift[1], motifFactor),
       dT = o.div(o.reshape(o.slice(offset, 1, 0, 1), [L, 3]), 10),
       dR = quaternionRotation(
         o,
@@ -423,10 +437,17 @@ export class RoseTTAFold {
   }
   async forward(
     input,
-    { signal, returnIntermediates = false, onProgress } = {},
+    {
+      signal,
+      returnIntermediates = false,
+      onProgress,
+      needAux = true,
+      needAlpha = true,
+    } = {},
   ) {
     const o = this.o,
       L = input.length,
+      E = L * L,
       trace = {};
     const take = async (name, x) => {
       if (returnIntermediates) trace[name] = await o.read(x);
@@ -437,6 +458,51 @@ export class RoseTTAFold {
       xyz = get("xyz", [L, 3, 3]),
       indices = input.idx,
       motif = input.motif_mask ?? new Uint8Array(L);
+
+    // Pre-upload step-invariant index/basis tensors once per forward pass instead of 40x per block!
+    const srcArr = new Float32Array(E),
+      dstArr = new Float32Array(E),
+      neighArr = new Float32Array(E),
+      noTopkArr = new Float32Array(E);
+    for (let i = 0; i < L; i++) {
+      for (let j = 0; j < L; j++) {
+        const idx = i * L + j;
+        srcArr[idx] = i;
+        dstArr[idx] = j;
+        const d = indices[j] - indices[i];
+        neighArr[idx] = Math.abs(d) <= 1 ? d : 0;
+        noTopkArr[idx] = indices[i] !== indices[j] ? 1 : 0;
+      }
+    }
+    const motifArr = new Float32Array(L);
+    for (let i = 0; i < L; i++) {
+      motifArr[i] = this.c.freeze_track_motif ? 1 - Number(motif[i]) : 1;
+    }
+    const basisMap = {};
+    for (const [name, entry] of Object.entries(this.constants.basis)) {
+      basisMap[name] = o.tensor(entry.shape, entry.data);
+    }
+    const stepCache = {
+      basis: basisMap,
+      src: o.tensor([E], srcArr),
+      dst: o.tensor([E], dstArr),
+      neighbor: o.tensor([L, L, 1], neighArr),
+      motifFactor: o.tensor([L, 1, 1], motifArr),
+      maskNoTopk: o.tensor([L, L], noTopkArr),
+      maskTopkSmall: L <= 64 ? o.constant([L, L], 1) : null,
+      ix: L > 64 ? o.tensor([L], indices) : null,
+    };
+    const cachedTensors = [
+      ...Object.values(basisMap),
+      stepCache.src,
+      stepCache.dst,
+      stepCache.neighbor,
+      stepCache.motifFactor,
+      stepCache.maskNoTopk,
+      stepCache.maskTopkSmall,
+      stepCache.ix,
+    ].filter(Boolean);
+
     let msa = o.add(
         this.linear(get("msa_latent", [L, 48]), "latent_emb.emb"),
         o.einsum("lk,kc->lc", seq, this.w["latent_emb.emb_q.weight"]),
@@ -455,15 +521,13 @@ export class RoseTTAFold {
         [L, 1, -1],
       ),
     );
-    const pos = o.tensor(
-      [L, L],
-      Array.from({ length: L * L }, (_, i) =>
-        Math.max(
-          0,
-          Math.min(64, indices[i % L] - indices[Math.floor(i / L)] + 32),
-        ),
-      ),
-    );
+    const posArr = new Float32Array(E);
+    for (let i = 0; i < L; i++) {
+      for (let j = 0; j < L; j++) {
+        posArr[i * L + j] = Math.max(0, Math.min(64, indices[j] - indices[i] + 32));
+      }
+    }
+    const pos = o.tensor([L, L], posArr);
     pair = o.add(pair, o.gather(this.w["latent_emb.pos.emb.weight"], pos));
     let state = o.einsum(
       "lk,kc->lc",
@@ -488,17 +552,10 @@ export class RoseTTAFold {
         input.pair_prev ? get("pair_prev", pair.shape) : o.constant(pair.shape),
         "recycle.norm_pair",
       );
-    const dist = rbf(o, cdist(o, cbeta(o, xyz))),
-      left = o.expr(
-        [L, L, prevState.shape[1]],
-        [o.reshape(prevState, [L, 1, -1])],
-        "$0",
-      ),
-      right = o.expr(
-        [L, L, prevState.shape[1]],
-        [o.reshape(prevState, [1, L, -1])],
-        "$0",
-      );
+    const zPairShape = o.constant([L, L, 1], 0),
+      dist = rbf(o, cdist(o, cbeta(o, xyz))),
+      left = o.add(o.reshape(prevState, [L, 1, -1]), zPairShape),
+      right = o.add(o.reshape(prevState, [1, L, -1]), zPairShape);
     msa = o.add(msa, prevMSA);
     pair = o.add(
       pair,
@@ -518,8 +575,8 @@ export class RoseTTAFold {
     let templ = this.linear(
       o.cat([
         t2d,
-        o.expr([L, L, t1d.shape[1]], [o.reshape(t1d, [L, 1, -1])], "$0"),
-        o.expr([L, L, t1d.shape[1]], [o.reshape(t1d, [1, L, -1])], "$0"),
+        o.add(o.reshape(t1d, [L, 1, -1]), zPairShape),
+        o.add(o.reshape(t1d, [1, L, -1]), zPairShape),
       ]),
       "templ_emb.emb",
     );
@@ -537,7 +594,7 @@ export class RoseTTAFold {
     }
     templ = this.norm(templ, "templ_emb.templ_stack.norm");
     const tors = this.linear(
-      o.relu(this.linear(o.cat([t1d, alpha_t]), "templ_emb.emb_t1d")),
+      this.linearRelu(o.cat([t1d, alpha_t]), "templ_emb.emb_t1d"),
       "templ_emb.proj_t1d",
     );
     // One template: pointwise attention softmax has exactly one key.
@@ -560,12 +617,13 @@ export class RoseTTAFold {
     let R,
       T = o.reshape(o.slice(xyz, 1, 1, 2), [L, 3]),
       centered = o.sub(xyz, o.reshape(T, [L, 1, 3]));
-    R = o.tensor(
-      [L, 3, 3],
-      Array.from({ length: L * 9 }, (_, i) =>
-        Number([0, 4, 8].includes(i % 9)),
-      ),
-    );
+    const eyeArr = new Float32Array(L * 9);
+    for (let i = 0; i < L; i++) {
+      eyeArr[i * 9 + 0] = 1;
+      eyeArr[i * 9 + 4] = 1;
+      eyeArr[i * 9 + 8] = 1;
+    }
+    R = o.tensor([L, 3, 3], eyeArr);
     state = this.linear(state, "simulator.proj_state");
     let alpha;
     const stages = [
@@ -616,6 +674,7 @@ export class RoseTTAFold {
         motif,
         p + (ref ? "" : ".str2str"),
         ref,
+        stepCache,
       ));
       await take(`${p}.${j}.R`, R);
       await take(`${p}.${j}.T`, T);
@@ -624,22 +683,38 @@ export class RoseTTAFold {
       await take(`${p}.${j}.pair`, pair);
       await take(`${p}.${j}.alpha`, alpha);
       onProgress?.({ phase: "denoise", block: k + 1, total: stages.length });
-      await o.checkpoint([msa, full, pair, R, T, state, alpha, centered, xyz]);
+      await o.checkpoint([
+        msa,
+        full,
+        pair,
+        R,
+        T,
+        state,
+        alpha,
+        centered,
+        xyz,
+        ...cachedTensors,
+      ]);
     }
     const px0 = o.add(
-        o.einsum("nij,naj->nai", R, centered),
-        o.reshape(T, [L, 1, 3]),
-      ),
-      logits = this.linear(msa, "aa_pred.proj"),
-      lddt = o.einsum(
-        "nk,k->n",
-        o.softmax(this.linear(state, "lddt_pred.proj")),
-        o.tensor([50], this.constants.lddtBins),
-      );
+      o.einsum("nij,naj->nai", R, centered),
+      o.reshape(T, [L, 1, 3]),
+    );
+    const computeAux = needAux || returnIntermediates;
+    const logits = computeAux ? this.linear(msa, "aa_pred.proj") : null;
+    const lddt = computeAux
+      ? o.einsum(
+          "nk,k->n",
+          o.softmax(this.linear(state, "lddt_pred.proj")),
+          o.tensor([50], this.constants.lddtBins),
+        )
+      : null;
     await take("px0", px0);
     await take("alpha", alpha);
-    await take("logits", logits);
-    await take("plddt", lddt);
+    if (computeAux) {
+      await take("logits", logits);
+      await take("plddt", lddt);
+    }
     const coords = backbone(
       o,
       px0,
@@ -652,14 +727,50 @@ export class RoseTTAFold {
       }),
     );
     await take("backbone", coords);
-    const result = {
-      coords: await o.read(coords),
-      px0: await o.read(px0),
-      alpha: await o.read(alpha),
-      logits: await o.read(logits),
-      plddt: await o.read(lddt),
-      intermediates: trace,
-    };
+
+    let result;
+    if (o.readMany) {
+      if (computeAux) {
+        const [coordsArr, px0Arr, alphaArr, logitsArr, plddtArr] =
+          await o.readMany([coords, px0, alpha, logits, lddt]);
+        result = {
+          coords: coordsArr,
+          px0: px0Arr,
+          alpha: alphaArr,
+          logits: logitsArr,
+          plddt: plddtArr,
+          intermediates: trace,
+        };
+      } else if (needAlpha) {
+        const [coordsArr, px0Arr, alphaArr] = await o.readMany([
+          coords,
+          px0,
+          alpha,
+        ]);
+        result = {
+          coords: coordsArr,
+          px0: px0Arr,
+          alpha: alphaArr,
+          intermediates: trace,
+        };
+      } else {
+        const [coordsArr, px0Arr] = await o.readMany([coords, px0]);
+        result = {
+          coords: coordsArr,
+          px0: px0Arr,
+          intermediates: trace,
+        };
+      }
+    } else {
+      result = {
+        coords: await o.read(coords),
+        px0: await o.read(px0),
+        alpha: needAlpha || computeAux ? await o.read(alpha) : null,
+        logits: computeAux ? await o.read(logits) : null,
+        plddt: computeAux ? await o.read(lddt) : null,
+        intermediates: trace,
+      };
+    }
     abort(signal);
     return result;
   }

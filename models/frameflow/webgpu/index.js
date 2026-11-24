@@ -4,7 +4,7 @@ import { backbone } from "../shared/geometry.js";
 import { sample } from "../shared/sampling.js";
 import { acquireDevice } from "./device.js";
 import { GPUOps } from "./ops.js";
-import { integrate } from "./integrate.js";
+import { integrate, recordEulerStep } from "./integrate.js";
 export async function createFrameFlowEngine({
   baseUrl,
   precision = "fp32",
@@ -49,7 +49,8 @@ export async function createFrameFlowEngine({
         signal?.throwIfAborted();
         const x = normalizeInput(input);
         busy = true;
-        context.device.pushErrorScope("validation");
+        const checkValidation = ops.hasUnvalidatedPipelines;
+        if (checkValidation) context.device.pushErrorScope("validation");
         try {
           ops.begin();
           const out = forward(ops, x, config, (p) => {
@@ -60,6 +61,7 @@ export async function createFrameFlowEngine({
             out.pred_trans,
             out.pred_rotmats,
           ]);
+          if (checkValidation) ops.hasUnvalidatedPipelines = false;
           signal?.throwIfAborted();
           return {
             pred_trans,
@@ -69,21 +71,78 @@ export async function createFrameFlowEngine({
         } finally {
           ops.cancel();
           busy = false;
-          const error = await context.device.popErrorScope();
-          if (error) throw Error(error.message);
+          if (checkValidation) {
+            const error = await context.device.popErrorScope();
+            if (error) throw Error(error.message);
+          }
+        }
+      },
+      async step(input, eulerOptions = null, { signal, onProgress } = {}) {
+        if (destroyed) throw Error("Engine destroyed");
+        if (busy) throw Error("Concurrent calls require separate engines");
+        signal?.throwIfAborted();
+        const x = normalizeInput(input);
+        busy = true;
+        const checkValidation = ops.hasUnvalidatedPipelines;
+        if (checkValidation) context.device.pushErrorScope("validation");
+        try {
+          ops.begin();
+          const transIn = eulerOptions
+            ? ops.pinnedTensor(x.trans_t, [x.length, 3])
+            : null;
+          const rotIn = eulerOptions
+            ? ops.pinnedTensor(x.rotmats_t, [x.length, 9])
+            : null;
+          const out = forward(ops, x, config, (p) => {
+            onProgress?.(p);
+            signal?.throwIfAborted();
+          });
+          let targets = [out.pred_trans, out.pred_rotmats];
+          if (eulerOptions) {
+            const { nextTrans, nextRot } = recordEulerStep(
+              ops,
+              transIn,
+              rotIn,
+              out.pred_trans,
+              out.pred_rotmats,
+              eulerOptions,
+            );
+            targets = [out.pred_trans, out.pred_rotmats, nextTrans, nextRot];
+          }
+          const arrays = await ops.finish(targets);
+          if (checkValidation) ops.hasUnvalidatedPipelines = false;
+          signal?.throwIfAborted();
+          return {
+            pred_trans: arrays[0],
+            pred_rotmats: arrays[1],
+            trans_t: arrays[2] ?? null,
+            rotmats_t: arrays[3] ?? null,
+          };
+        } finally {
+          ops.cancel();
+          busy = false;
+          if (checkValidation) {
+            const error = await context.device.popErrorScope();
+            if (error) throw Error(error.message);
+          }
         }
       },
       async integrate(x, pred, options) {
         if (destroyed) throw Error("Engine destroyed");
         if (busy) throw Error("Engine busy");
         busy = true;
-        context.device.pushErrorScope("validation");
+        const checkValidation = ops.hasUnvalidatedPipelines;
+        if (checkValidation) context.device.pushErrorScope("validation");
         try {
-          return await integrate(ops, x, pred, options);
+          const res = await integrate(ops, x, pred, options);
+          if (checkValidation) ops.hasUnvalidatedPipelines = false;
+          return res;
         } finally {
           busy = false;
-          const error = await context.device.popErrorScope();
-          if (error) throw Error(error.message);
+          if (checkValidation) {
+            const error = await context.device.popErrorScope();
+            if (error) throw Error(error.message);
+          }
         }
       },
       sample(o) {

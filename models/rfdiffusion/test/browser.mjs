@@ -45,18 +45,19 @@ async function singleBrowserTask(run) {
   });
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const url = `http://127.0.0.1:${server.address().port}`;
-  const profile = await mkdtemp(root + ".cache/browser-profile-");
+  const profile = await mkdtemp("/dev/shm/rfd-browser-profile-");
+  await mkdir(profile + "/tmp", { recursive: true });
   let browser, timer;
   try {
     const env = {
       ...process.env,
-      TMPDIR: ".cache/tmp",
+      TMPDIR: profile + "/tmp",
       XDG_CACHE_HOME: profile + "/cache",
       XDG_CONFIG_HOME: profile + "/config",
       // Isolate headless Chrome from the host desktop/accessibility session.
       NO_AT_BRIDGE: "1",
-      DBUS_SESSION_BUS_ADDRESS: "unix:path=.cache/tmp/no-session-bus",
-      AT_SPI_BUS_ADDRESS: "unix:path=.cache/tmp/no-accessibility-bus",
+      DBUS_SESSION_BUS_ADDRESS: `unix:path=${profile}/tmp/no-session-bus`,
+      AT_SPI_BUS_ADDRESS: `unix:path=${profile}/tmp/no-accessibility-bus`,
     };
     delete env.DISPLAY;
     delete env.WAYLAND_DISPLAY;
@@ -74,6 +75,8 @@ async function singleBrowserTask(run) {
         "--no-sandbox",
         "--disable-gpu-sandbox",
         "--disable-renderer-accessibility",
+        "--password-store=basic",
+        "--use-mock-keychain",
         "--ozone-platform=headless",
         "--enable-unsafe-webgpu",
         "--ignore-gpu-blocklist",
@@ -118,7 +121,7 @@ export async function browserTask(run) {
     } catch (error) {
       if (
         attempt === 5 ||
-        !/Hardware WebGPU adapter required|No adapter|VK_ERROR_INITIALIZATION_FAILED|vkCreateDevice failed/.test(
+        !/external Instance reference|Hardware WebGPU adapter required|No adapter|VK_ERROR_INITIALIZATION_FAILED|vkCreateDevice failed/.test(
           error.message,
         )
       )

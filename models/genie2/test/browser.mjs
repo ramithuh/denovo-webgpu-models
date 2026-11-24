@@ -1,11 +1,11 @@
 import { spawn } from "node:child_process";
 import { createServer } from "node:http";
 import { createReadStream, existsSync } from "node:fs";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
-export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
+async function singleRunBrowser(modulePath, { timeoutMs = 300000 } = {}) {
   const chrome = [
     process.env.CHROME_PATH,
     `${process.env.HOME}/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome`,
@@ -60,15 +60,21 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
   });
   await new Promise((r) => server.listen(0, "127.0.0.1", r));
   const port = server.address().port;
-  const profile = await mkdtemp(path.join(ROOT, ".cache", "chrome-"));
+  const profile = await mkdtemp("/dev/shm/genie2-chrome-");
+  await mkdir(path.join(profile, "cache"), { recursive: true });
+  await mkdir(path.join(profile, "config"), { recursive: true });
+  await mkdir(path.join(profile, "tmp"), { recursive: true });
   const env = {
     ...process.env,
-    TMPDIR: ".t",
-    XDG_CACHE_HOME: path.join(ROOT, ".cache/browser-cache"),
-    XDG_CONFIG_HOME: path.join(ROOT, ".cache/browser-config"),
+    TMPDIR: path.join(profile, "tmp"),
+    XDG_CACHE_HOME: path.join(profile, "cache"),
+    XDG_CONFIG_HOME: path.join(profile, "config"),
+    NO_AT_BRIDGE: "1",
   };
   delete env.DISPLAY;
   delete env.WAYLAND_DISPLAY;
+  delete env.DBUS_SESSION_BUS_ADDRESS;
+  delete env.AT_SPI_BUS_ADDRESS;
   if (existsSync("/usr/share/vulkan/icd.d/nvidia_icd.json"))
     env.VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
   const proc = spawn(
@@ -77,10 +83,15 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
       "--headless=new",
       "--no-first-run",
       "--no-default-browser-check",
+      "--password-store=basic",
+      "--use-mock-keychain",
+      "--disable-search-engine-choice-screen",
+      "--enable-automation",
       "--disable-background-networking",
       "--disable-component-update",
       "--disable-sync",
       "--disable-default-apps",
+      "--disable-renderer-accessibility",
       "--no-sandbox",
       "--disable-gpu-sandbox",
       "--ozone-platform=headless",
@@ -120,5 +131,19 @@ export async function runBrowser(modulePath, { timeoutMs = 300000 } = {}) {
     server.closeAllConnections();
     await new Promise((r) => server.close(r));
     await rm(profile, { recursive: true, force: true });
+  }
+}
+export async function runBrowser(modulePath, options = {}) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    const res = await singleRunBrowser(modulePath, options);
+    if (
+      res.ok ||
+      attempt === 5 ||
+      !/external Instance reference|Hardware WebGPU required|No WebGPU adapter|VK_ERROR_INITIALIZATION_FAILED|vkCreateDevice failed/i.test(
+        String(res.error ?? ""),
+      )
+    )
+      return res;
+    console.warn(`Native Vulkan startup retry ${attempt}/5: ${String(res.error).split("\n")[0]}`);
   }
 }

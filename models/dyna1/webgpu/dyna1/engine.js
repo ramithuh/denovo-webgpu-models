@@ -10,11 +10,13 @@ import {
 } from '../../shared/dyna1/index.js';
 import {
   matmulSource,
+  matmulGrid,
   normSource,
   elementSource,
   gatherSource,
   gatherAddSource,
   ropeSource,
+  streamingAttn64Source,
   scoresSource,
   softmaxSource,
   contextSource,
@@ -29,12 +31,16 @@ const STRUCT_CHUNK_SIZE = 192; // 192 * 16 * 8192 * 4 = 100.66 MB < 128 MB defau
 
 function grid1d(count, wgSize = 256) {
   const wg = Math.ceil(count / wgSize);
-  return wg <= 65535 ? [wg] : [65535, Math.ceil(wg / 65535)];
+  return wg <= 65535 ? [Math.max(1, wg)] : [65535, Math.ceil(wg / 65535)];
 }
 
 export async function requestWebGpuDevice({ useF16 = true } = {}) {
   if (!globalThis.navigator?.gpu) throw new Error('WebGPU requires a supported browser and HTTPS or localhost');
-  const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
+  let adapter = null;
+  for (let attempt = 0; attempt < 3 && !adapter; attempt++) {
+    adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
+  }
+  if (!adapter) adapter = await navigator.gpu.requestAdapter();
   if (!adapter) throw new Error('No WebGPU adapter');
   const hasF16 = adapter.features.has('shader-f16');
   const device = await adapter.requestDevice({ requiredFeatures: useF16 && hasF16 ? ['shader-f16'] : [] });
@@ -55,12 +61,21 @@ class Engine {
     this._structLoading = null;
     this.buffers = new Set();
     this.pipelines = new Map();
+    this.readyPipelines = new Map();
+    this.hasNewPipelines = false;
     this.destroyed = false;
     this.busy = false;
     this.lost = null;
+    this.pass = null;
     this._uploadedBytes = 0;
     device.lost.then(info => { this.lost = info.message || 'Device lost'; });
     this.zero = this.buffer(new Float32Array(4));
+  }
+  _endPass() {
+    if (this.pass) {
+      this.pass.end();
+      this.pass = null;
+    }
   }
   buffer(dataOrSize, temporary = false) {
     const data = typeof dataOrSize === 'number' ? null : dataOrSize;
@@ -106,6 +121,7 @@ class Engine {
     this._uploadedBytes += t.bytes.byteLength;
     if (this._uploadedBytes >= 256 * 1024 * 1024) {
       this._uploadedBytes = 0;
+      this.device.queue.submit([]);
       await this.device.queue.onSubmittedWorkDone();
     }
   }
@@ -146,6 +162,8 @@ class Engine {
     await this._structLoading;
   }
   async pipeline(code, count) {
+    const ready = this.readyPipelines.get(code);
+    if (ready) return ready;
     let promise = this.pipelines.get(code);
     if (!promise) {
       promise = (async () => {
@@ -164,21 +182,34 @@ class Engine {
           layout: this.device.createPipelineLayout({ bindGroupLayouts: [layout] }),
           compute: { module, entryPoint: 'main' },
         });
-        return { pipeline, layout };
+        const entry = { pipeline, layout };
+        this.readyPipelines.set(code, entry);
+        this.hasNewPipelines = true;
+        return entry;
       })();
       this.pipelines.set(code, promise);
     }
     return promise;
   }
+  _recordDispatch(pipeline, layout, buffers, groups) {
+    const bind = this.device.createBindGroup({
+      layout,
+      entries: buffers.map((buffer, binding) => ({ binding, resource: { buffer } })),
+    });
+    if (!this.pass) this.pass = this.encoder.beginComputePass();
+    this.pass.setPipeline(pipeline);
+    this.pass.setBindGroup(0, bind);
+    this.pass.dispatchWorkgroups(...groups);
+  }
   async dispatch(code, inputs, n, groups) {
     const y = this.buffer(n * 4, true), buffers = [...inputs, y];
+    const ready = this.readyPipelines.get(code);
+    if (ready) {
+      this._recordDispatch(ready.pipeline, ready.layout, buffers, groups);
+      return y;
+    }
     const { pipeline, layout } = await this.pipeline(code, buffers.length);
-    const bind = this.device.createBindGroup({ layout, entries: buffers.map((buffer, binding) => ({ binding, resource: { buffer } })) });
-    const pass = this.encoder.beginComputePass();
-    pass.setPipeline(pipeline);
-    pass.setBindGroup(0, bind);
-    pass.dispatchWorkgroups(...groups);
-    pass.end();
+    this._recordDispatch(pipeline, layout, buffers, groups);
     return y;
   }
   async _encodeStructureOps(coords, residueIndex, { signal, traces = {}, save = () => {} } = {}) {
@@ -203,7 +234,7 @@ class Engine {
         matmulSource(R, Ndim, Kdim, weight.dtype, !!bias, this.useF16),
         [x, weight.buffer, bias?.buffer ?? this.zero, weight.scales],
         R * Ndim,
-        [Math.ceil(Ndim / 16), Math.ceil(R / 16)]
+        matmulGrid(R, Ndim)
       );
     };
     const elemS = (n, exp, inputs) => this.dispatch(elementSource(n, exp, inputs.length), inputs, n, grid1d(n, 256));
@@ -251,12 +282,13 @@ class Engine {
         this.releaseExcept([x, knnFramesBuf, nodeFramesBuf, allSelected], traces);
         const ffnIn = await lnS(x, p + '.ffn.0', R);
         const ff = await linS(ffnIn, p + '.ffn.1', R, D, 2 * F);
-        const act = await elemS(R * F, `let r=i/${F}u;let j=i%${F}u;let a=x[r*${2*F}u+j];y[i]=(a/(1.0+exp(-a)))*x[r*${2*F}u+${F}u+j];`, [ff]);
+        const act = await elemS(R * F, `let r=i/${F}u;let j=i%${F}u;let a=x[r*${2 * F}u+j];y[i]=(a/(1.0+exp(-a)))*x[r*${2 * F}u+${F}u+j];`, [ff]);
         const fOut = await linS(act, p + '.ffn.3', R, F, D);
         x = await elemS(R * D, 'y[i]=x[i]+b[i];', [x, fOut]);
         this.releaseExcept([x, knnFramesBuf, nodeFramesBuf, allSelected], traces);
       }
       const chunkSel = await this.dispatch(selectLocalSource(B, K, D), [x, nodeFramesBuf], B * D, grid1d(B * D, 256));
+      this._endPass();
       this.encoder.copyBufferToBuffer(chunkSel, 0, allSelected, b0 * D * 4, B * D * 4);
       this.releaseExcept([allSelected], traces);
     }
@@ -267,13 +299,13 @@ class Engine {
       matmulSource(L, codes, codeDim, 'F32', false, false),
       [preVq, cb.buffer, this.zero, this.zero],
       L * codes,
-      [Math.ceil(codes / 16), Math.ceil(L / 16)]
+      matmulGrid(L, codes)
     );
     const structTokensBuf = await this.dispatch(
       codebookArgminSource(L, codes, codeDim),
       [preVq, dots, sw['encoder.codebook.norms'].buffer],
       L,
-      [L]
+      grid1d(L, 1)
     );
     this.releaseExcept([structTokensBuf], traces);
     return structTokensBuf;
@@ -293,10 +325,15 @@ class Engine {
     this.liveTemps = new Set();
     this.pool = new Map();
     this.encoder = this.device.createCommandEncoder();
+    this.pass = null;
+    this.hasNewPipelines = false;
     const started = performance.now();
-    this.device.pushErrorScope('validation');
+    let checkValidation = false;
     try {
       const structTokensBuf = await this._encodeStructureOps(coords, resIdx, { signal });
+      this._endPass();
+      checkValidation = this.hasNewPipelines;
+      if (checkValidation) this.device.pushErrorScope('validation');
       const readback = this.device.createBuffer({ size: L * 4, usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST });
       this.buffers.add(readback);
       this.temporary.add(readback);
@@ -308,7 +345,8 @@ class Engine {
       signal?.throwIfAborted();
       return { structureTokens, timingMs: performance.now() - started };
     } finally {
-      const validation = await this.device.popErrorScope();
+      this._endPass();
+      const validation = checkValidation ? await this.device.popErrorScope() : null;
       for (const b of this.temporary) { b.destroy(); this.buffers.delete(b); }
       this.temporary.clear(); this.liveTemps.clear(); this.pool.clear(); this.busy = false;
       if (validation) throw new Error(`WebGPU validation: ${validation.message}`);
@@ -332,8 +370,10 @@ class Engine {
     this.liveTemps = new Set();
     this.pool = new Map();
     this.encoder = this.device.createCommandEncoder();
+    this.pass = null;
+    this.hasNewPipelines = false;
     const started = performance.now(), traces = {}, w = this.weights;
-    this.device.pushErrorScope('validation');
+    let checkValidation = false;
     const save = (name, value, n = L * D, dtype = 'F32') => { if (returnIntermediates) traces[name] = { buffer: value, n, dtype }; };
     const elem = (n, exp, inputs) => this.dispatch(elementSource(n, exp, inputs.length), inputs, n, grid1d(n, 256));
     const ln = (x, p, { stride = D, offset = 0, eps = 1e-5 } = {}) => this.dispatch(
@@ -348,11 +388,14 @@ class Engine {
         matmulSource(L, N, K, weight.dtype, !!bias, this.useF16),
         [x, weight.buffer, bias?.buffer ?? this.zero, weight.scales],
         L * N,
-        [Math.ceil(N / 16), Math.ceil(L / 16)]
+        matmulGrid(L, N)
       );
     };
     const residual = (x, y, scale = 1) => elem(L * D, `y[i]=x[i]+b[i]/${scale};`, [x, y]);
     const attn = async (q, k, qkv, H, layout) => {
+      if (!layout?.packedQkv && D / H === 64) {
+        return this.dispatch(streamingAttn64Source(D, H), [q, k, qkv], L * D, [Math.ceil(L / 64), H]);
+      }
       const scores = await this.dispatch(scoresSource(L, D, H, layout), [q, k], H * L * L, grid1d(H * L * L, 64));
       const prob = await this.dispatch(softmaxSource(L, H), [scores], H * L * L, grid1d(H * L, 1));
       return this.dispatch(contextSource(L, D, H, { stride: 3 * D, offset: 2 * D }), [prob, qkv], L * D, grid1d(L * D, 64));
@@ -411,6 +454,9 @@ class Engine {
       const probs = await elem(L, `y[i]=1.0/(1.0+exp(-(x[i]-(${Math.log(.05 / .95)}))));`, [logits]);
       traces.logits = { buffer: logits, n: L, dtype: 'F32' };
       traces.probs = { buffer: probs, n: L, dtype: 'F32' };
+      this._endPass();
+      checkValidation = this.hasNewPipelines;
+      if (checkValidation) this.device.pushErrorScope('validation');
       const size = Object.values(traces).reduce((a, t) => a + t.n * 4, 0);
       const readback = this.device.createBuffer({ size, usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST });
       this.buffers.add(readback);
@@ -445,7 +491,8 @@ class Engine {
         ...(returnIntermediates ? { intermediates: { tokens, ...values } } : {}),
       };
     } finally {
-      const validation = await this.device.popErrorScope();
+      this._endPass();
+      const validation = checkValidation ? await this.device.popErrorScope() : null;
       for (const b of this.temporary) { b.destroy(); this.buffers.delete(b); }
       this.temporary.clear(); this.liveTemps.clear(); this.pool.clear(); this.busy = false;
       if (validation) throw new Error(`WebGPU validation: ${validation.message}`);
@@ -454,12 +501,14 @@ class Engine {
   destroy() {
     if (this.destroyed) return;
     this.destroyed = true;
+    this._endPass();
     for (const b of this.buffers) b.destroy();
     this.buffers.clear();
     this.weights = {};
     this.structWeights = null;
     this._structLoading = null;
     this.pipelines.clear();
+    this.readyPipelines.clear();
     if (this.ownsDevice) this.device.destroy();
   }
 }

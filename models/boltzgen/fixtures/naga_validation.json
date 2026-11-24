@@ -13,7 +13,7 @@
     "adapter_type": "IntegratedGPU",
     "backend_type": "Vulkan"
   },
-  "shaders": 1806,
+  "shaders": 410,
   "failures": 0,
-  "seconds": 21.019630978815258
+  "seconds": 4.092919471673667
 }
