@@ -1,0 +1,295 @@
+{
+  "node": "v22.21.1",
+  "hardware": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "description": "NVIDIA GB10",
+    "fallback": false
+  },
+  "commands": [
+    {
+      "command": "npm test",
+      "tests": 61,
+      "passed": 61,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 566683.550403,
+      "completedAt": "2026-11-24T03:56:31.459Z",
+      "logSha256": "1caf86942169487a58f3752daa3b1c43a00c4546d0ca228a79689c544a357566",
+      "cases": [
+        {
+          "name": "Kabsch vs PyTorch SVD: full",
+          "durationMs": 0.962737
+        },
+        {
+          "name": "Kabsch vs PyTorch SVD: planar",
+          "durationMs": 0.15456
+        },
+        {
+          "name": "Kabsch vs PyTorch SVD: reflection",
+          "durationMs": 0.169968
+        },
+        {
+          "name": "Kabsch vs PyTorch SVD: weighted",
+          "durationMs": 0.096368
+        },
+        {
+          "name": "Kabsch remains finite for rank-zero and rank-one motifs",
+          "durationMs": 0.804289
+        },
+        {
+          "name": "rigid augmentation agrees with upstream shared angles and translations",
+          "durationMs": 0.29024
+        },
+        {
+          "name": "atomwise symmetry agrees with PyTorch and validates CFG at any non-unit scale",
+          "durationMs": 0.482241
+        },
+        {
+          "name": "GB10 full trajectory benchmark",
+          "durationMs": 157038.724038
+        },
+        {
+          "name": "real browser demo generates and exposes PDB/mmCIF downloads",
+          "durationMs": 21820.808411
+        },
+        {
+          "name": "CPU full denoiser, 18 token blocks and two recycling passes, official checkpoint",
+          "durationMs": 149213.717607
+        },
+        {
+          "name": "all monomer featurizer tensors exactly match upstream",
+          "durationMs": 14.255206
+        },
+        {
+          "name": "all cyclic featurizer tensors exactly match upstream",
+          "durationMs": 9.576239
+        },
+        {
+          "name": "monomer featurizer builds dynamic token and atom counts",
+          "durationMs": 0.605985
+        },
+        {
+          "name": "unsupported short multichain inputs fail before GPU neighbor dispatch",
+          "durationMs": 11.460706
+        },
+        {
+          "name": "GB10 module worker, hardware compute, buffer lifecycle and verified storage",
+          "durationMs": 72603.386613
+        },
+        {
+          "name": "complete CPU token initializer matches real checkpoint FP32 oracle",
+          "durationMs": 2798.314264
+        },
+        {
+          "name": "general featurizer vs PyTorch: monomer",
+          "durationMs": 15.926312
+        },
+        {
+          "name": "general featurizer vs PyTorch: cyclic",
+          "durationMs": 10.567098
+        },
+        {
+          "name": "general featurizer vs PyTorch: atomic-motif",
+          "durationMs": 9.074941
+        },
+        {
+          "name": "general featurizer vs PyTorch: ligand",
+          "durationMs": 36.335607
+        },
+        {
+          "name": "general featurizer vs PyTorch: dna",
+          "durationMs": 9.77402
+        },
+        {
+          "name": "general featurizer vs PyTorch: binder-hotspot",
+          "durationMs": 6.916955
+        },
+        {
+          "name": "general featurizer vs PyTorch: unindexed",
+          "durationMs": 9.290975
+        },
+        {
+          "name": "general featurizer vs PyTorch: hbond-exposure",
+          "durationMs": 7.379088
+        },
+        {
+          "name": "general featurizer vs PyTorch: multichain",
+          "durationMs": 434.063842
+        },
+        {
+          "name": "general featurizer vs PyTorch: fixed-backbone",
+          "durationMs": 1.206474
+        },
+        {
+          "name": "general featurizer vs PyTorch: sequence-redesign",
+          "durationMs": 1.41742
+        },
+        {
+          "name": "general featurizer vs PyTorch: partial",
+          "durationMs": 1.372427
+        },
+        {
+          "name": "general featurizer vs PyTorch: rna",
+          "durationMs": 9.04115
+        },
+        {
+          "name": "general featurizer vs PyTorch: atomic-triad",
+          "durationMs": 14.835183
+        },
+        {
+          "name": "reference chemistry is copied and explicit unknown chemistry fails closed",
+          "durationMs": 0.325475
+        },
+        {
+          "name": "C2 high-level symmetry features match upstream",
+          "durationMs": 3.615423
+        },
+        {
+          "name": "unindexed guidepost cleanup reports pre-insertion RMSD and preserves selected output atoms",
+          "durationMs": 1.073417
+        },
+        {
+          "name": "Biopython independently identifies missing-element CA as carbon after roundtrip",
+          "durationMs": 144.671334
+        },
+        {
+          "name": "ProteinDesignSpace source parser reads polymer residues and zinc from generated CIF",
+          "durationMs": 313.191847
+        },
+        {
+          "name": "ProteinDesignSpace preserves every generated atom, including ATP and DNA coordinates",
+          "durationMs": 107.89713
+        },
+        {
+          "name": "GB10 complete model numerical parity",
+          "durationMs": 109607.831858
+        },
+        {
+          "name": "device loss invalidates owner and clears accounting, preserving peak",
+          "durationMs": 0.806406
+        },
+        {
+          "name": "software detection handles descriptions and normalized fallback flags",
+          "durationMs": 0.18821
+        },
+        {
+          "name": "device acquisition requests full adapter buffer limits",
+          "durationMs": 0.79719
+        },
+        {
+          "name": "partial schedule rejects fewer than two points and invalid controls",
+          "durationMs": 1.127193
+        },
+        {
+          "name": "random draws persist resolved seeds, including zero",
+          "durationMs": 1.39809
+        },
+        {
+          "name": "entropy includes all 32 classes, independent of sequence decoding mask",
+          "durationMs": 0.165985
+        },
+        {
+          "name": "CFG applies for scales below and above one; fixed atoms remain fixed",
+          "durationMs": 1.506043
+        },
+        {
+          "name": "PDB → mmCIF → PDB retains ATOM/HETATM identity, models and coordinates",
+          "durationMs": 1.794957
+        },
+        {
+          "name": "mmCIF handles unrelated loops, quoted names, whitespace and multiline metadata",
+          "durationMs": 0.332755
+        },
+        {
+          "name": "corrupt cached content is replaced only after a verified fetch",
+          "durationMs": 12.671822
+        },
+        {
+          "name": "in-flight cancellation prevents persistence",
+          "durationMs": 0.619157
+        },
+        {
+          "name": "packed safetensors views share the shard and reject malformed layouts",
+          "durationMs": 0.417091
+        },
+        {
+          "name": "PDB alignment survives missing elements, CIF uses dictionary case and unique IDs",
+          "durationMs": 0.428931
+        },
+        {
+          "name": "PDB preflight rejects collisions and noninteger numbering; models are contiguous",
+          "durationMs": 0.329267
+        },
+        {
+          "name": "CIF trailing tokens, quoted missing markers and numeric uncertainties",
+          "durationMs": 0.255474
+        },
+        {
+          "name": "safetensors rejects duplicate escaped keys, metadata types and leading whitespace",
+          "durationMs": 0.257442
+        },
+        {
+          "name": "cancellation interrupts stalled storage open",
+          "durationMs": 10.103803
+        },
+        {
+          "name": "cancellation interrupts stalled storage read",
+          "durationMs": 9.312981
+        },
+        {
+          "name": "cancellation interrupts stalled storage write",
+          "durationMs": 10.670159
+        },
+        {
+          "name": "staged vendor includes all runtimes and replaces previous generation as a directory",
+          "durationMs": 58.951157
+        },
+        {
+          "name": "full shard verification and schema: fp32",
+          "durationMs": 25312.57387
+        },
+        {
+          "name": "full shard verification and schema: fp16",
+          "durationMs": 13710.797136
+        },
+        {
+          "name": "full shard verification and schema: int8",
+          "durationMs": 7182.935689
+        },
+        {
+          "name": "real checkpoint linear CPU FP32 oracle parity",
+          "durationMs": 5065.767342
+        }
+      ]
+    },
+    {
+      "command": "npm run test:gpu",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 384944.674615,
+      "completedAt": "2026-11-24T03:46:51.159Z",
+      "logSha256": "9c41907b27868088e7fa76773204d6dcf22dcddaa7366d4b8ea411fcbf7ab54c",
+      "cases": [
+        {
+          "name": "GB10 full trajectory benchmark",
+          "durationMs": 160347.792978
+        },
+        {
+          "name": "real browser demo generates and exposes PDB/mmCIF downloads",
+          "durationMs": 23513.97491
+        },
+        {
+          "name": "GB10 module worker, hardware compute, buffer lifecycle and verified storage",
+          "durationMs": 83012.327842
+        },
+        {
+          "name": "GB10 complete model numerical parity",
+          "durationMs": 117658.505057
+        }
+      ]
+    }
+  ]
+}

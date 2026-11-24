@@ -1,0 +1,5 @@
+# Add locally with --no-deps --target .cache/python-deps on top of the supplied
+# foundry Python environment. No runtime/browser dependence on these packages.
+atomworks==3.0.4
+biotite==1.6.0
+safetensors==0.6.2

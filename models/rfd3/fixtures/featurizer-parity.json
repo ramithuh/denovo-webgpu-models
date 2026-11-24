@@ -1,0 +1,4230 @@
+[
+  {
+    "case": "monomer",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "monomer",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "cyclic_asym_ids",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "cyclic",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "ligand",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "dna",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "unindexed",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "multichain",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "partial_t",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "partial",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "rna",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "active_acceptor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "active_donor",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "asym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "atom_to_token_map",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "entity_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "has_zero_occupancy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_atom_level_hotspot",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_backbone",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_ca",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_central",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_dna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_ligand",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_motif_atom_with_fixed_seq",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_motif_token_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_motif_token_with_fully_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_non_loopy",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_polar",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_protein",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_rna",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_sidechain",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "is_virtual",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "motif_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_atom_name_chars",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_atomwise_rasa",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_charge",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_element",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_is_motif_atom_unindexed",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_is_motif_atom_with_fixed_coord",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_motif_token_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_plddt",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_pos",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_pos_is_ground_truth",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "ref_space_uid",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "residue_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "restype",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "sym_id",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "terminus_type",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "token_bonds",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "token_index",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "unindexing_pair_mask",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1
+  }
+]

@@ -1,0 +1,393 @@
+{
+  "gpu": {
+    "vendor": "nvidia",
+    "architecture": "",
+    "description": "NVIDIA GB10",
+    "fallback": false
+  },
+  "compute": [
+    1,
+    4,
+    7,
+    10
+  ],
+  "peak": 32,
+  "resident": 0,
+  "offlineReads": 0,
+  "converted": true,
+  "linear": [
+    {
+      "precision": "fp32",
+      "layer": "diffusion_module.process_r",
+      "inputShape": [
+        7,
+        3
+      ],
+      "outputShape": [
+        7,
+        128
+      ],
+      "maxAbsDiff": 4.76837158203125e-7,
+      "rmse": 7.975878329109943e-8,
+      "cosineSim": 0.9999999999999987,
+      "kernelParity": {
+        "maxAbsDiff": 4.76837158203125e-7,
+        "rmse": 7.975878329109943e-8,
+        "cosineSim": 0.9999999999999987
+      },
+      "medianDispatchRoundtripMs": 3.3000001907348633,
+      "packedWeightBytes": 1536,
+      "peakTrackedBytes": 8824
+    },
+    {
+      "precision": "fp32",
+      "layer": "token_initializer.atom_1d_embedder_1.embedders.ref_atom_name_chars",
+      "inputShape": [
+        3,
+        256
+      ],
+      "outputShape": [
+        3,
+        384
+      ],
+      "maxAbsDiff": 0.00000762939453125,
+      "rmse": 0.0000010679237329795429,
+      "cosineSim": 0.9999999999999494,
+      "kernelParity": {
+        "maxAbsDiff": 0.00000762939453125,
+        "rmse": 0.0000010679237329795429,
+        "cosineSim": 0.9999999999999494
+      },
+      "medianDispatchRoundtripMs": 2.8999996185302734,
+      "packedWeightBytes": 393216,
+      "peakTrackedBytes": 405540
+    },
+    {
+      "precision": "fp32",
+      "layer": "token_initializer.transition_post_token.linear_1",
+      "inputShape": [
+        5,
+        384
+      ],
+      "outputShape": [
+        5,
+        768
+      ],
+      "maxAbsDiff": 0.00000762939453125,
+      "rmse": 0.0000013055202422389147,
+      "cosineSim": 0.9999999999999281,
+      "kernelParity": {
+        "maxAbsDiff": 0.00000762939453125,
+        "rmse": 0.0000013055202422389147,
+        "cosineSim": 0.9999999999999281
+      },
+      "medianDispatchRoundtripMs": 3.1000003814697266,
+      "packedWeightBytes": 1179648,
+      "peakTrackedBytes": 1218084
+    },
+    {
+      "precision": "fp32",
+      "layer": "diffusion_module.diffusion_transformer.blocks.0.transition_block.linear_1",
+      "inputShape": [
+        9,
+        768
+      ],
+      "outputShape": [
+        9,
+        1536
+      ],
+      "maxAbsDiff": 0.0000171661376953125,
+      "rmse": 0.0000017817535637366212,
+      "cosineSim": 0.9999999999998499,
+      "kernelParity": {
+        "maxAbsDiff": 0.0000171661376953125,
+        "rmse": 0.0000017817535637366212,
+        "cosineSim": 0.9999999999998499
+      },
+      "medianDispatchRoundtripMs": 3.3000001907348633,
+      "packedWeightBytes": 4718592,
+      "peakTrackedBytes": 4856868
+    },
+    {
+      "precision": "fp32",
+      "layer": "diffusion_module.sequence_head.linear",
+      "inputShape": [
+        2,
+        768
+      ],
+      "outputShape": [
+        2,
+        32
+      ],
+      "maxAbsDiff": 0.000003814697265625,
+      "rmse": 0.000001141210321029541,
+      "cosineSim": 0.9999999999997824,
+      "kernelParity": {
+        "maxAbsDiff": 0.000003814697265625,
+        "rmse": 0.000001141210321029541,
+        "cosineSim": 0.9999999999997824
+      },
+      "medianDispatchRoundtripMs": 2.8000001907348633,
+      "packedWeightBytes": 98304,
+      "peakTrackedBytes": 4856868
+    },
+    {
+      "precision": "fp16",
+      "layer": "diffusion_module.process_r",
+      "inputShape": [
+        7,
+        3
+      ],
+      "outputShape": [
+        7,
+        128
+      ],
+      "maxAbsDiff": 0.0017290115356445312,
+      "rmse": 0.00037844241218640463,
+      "cosineSim": 0.9999999790540631,
+      "kernelParity": {
+        "maxAbsDiff": 4.76837158203125e-7,
+        "rmse": 8.273105328736093e-8,
+        "cosineSim": 0.999999999999999
+      },
+      "medianDispatchRoundtripMs": 3,
+      "packedWeightBytes": 768,
+      "peakTrackedBytes": 8056
+    },
+    {
+      "precision": "fp16",
+      "layer": "token_initializer.atom_1d_embedder_1.embedders.ref_atom_name_chars",
+      "inputShape": [
+        3,
+        256
+      ],
+      "outputShape": [
+        3,
+        384
+      ],
+      "maxAbsDiff": 0.00000762939453125,
+      "rmse": 0.0000010679237329795429,
+      "cosineSim": 0.9999999999999494,
+      "kernelParity": {
+        "maxAbsDiff": 0.00000762939453125,
+        "rmse": 0.0000010679237329795429,
+        "cosineSim": 0.9999999999999494
+      },
+      "medianDispatchRoundtripMs": 2.5,
+      "packedWeightBytes": 393216,
+      "peakTrackedBytes": 405540
+    },
+    {
+      "precision": "fp16",
+      "layer": "token_initializer.transition_post_token.linear_1",
+      "inputShape": [
+        5,
+        384
+      ],
+      "outputShape": [
+        5,
+        768
+      ],
+      "maxAbsDiff": 0.0031347274780273438,
+      "rmse": 0.0006258403166147718,
+      "cosineSim": 0.9999999852983921,
+      "kernelParity": {
+        "maxAbsDiff": 0.00000858306884765625,
+        "rmse": 0.000001300494358121793,
+        "cosineSim": 0.99999999999993
+      },
+      "medianDispatchRoundtripMs": 2.59999942779541,
+      "packedWeightBytes": 589824,
+      "peakTrackedBytes": 628260
+    },
+    {
+      "precision": "fp16",
+      "layer": "diffusion_module.diffusion_transformer.blocks.0.transition_block.linear_1",
+      "inputShape": [
+        9,
+        768
+      ],
+      "outputShape": [
+        9,
+        1536
+      ],
+      "maxAbsDiff": 0.005167961120605469,
+      "rmse": 0.0007373818834229962,
+      "cosineSim": 0.9999999774111215,
+      "kernelParity": {
+        "maxAbsDiff": 0.0000209808349609375,
+        "rmse": 0.0000018244251967056843,
+        "cosineSim": 0.9999999999998435
+      },
+      "medianDispatchRoundtripMs": 2.8999996185302734,
+      "packedWeightBytes": 2359296,
+      "peakTrackedBytes": 2497572
+    },
+    {
+      "precision": "fp16",
+      "layer": "diffusion_module.sequence_head.linear",
+      "inputShape": [
+        2,
+        768
+      ],
+      "outputShape": [
+        2,
+        32
+      ],
+      "maxAbsDiff": 0.002173900604248047,
+      "rmse": 0.0004761622680298977,
+      "cosineSim": 0.9999999624874794,
+      "kernelParity": {
+        "maxAbsDiff": 0.0000016689300537109375,
+        "rmse": 5.296859787747688e-7,
+        "cosineSim": 0.9999999999999544
+      },
+      "medianDispatchRoundtripMs": 2.700000762939453,
+      "packedWeightBytes": 49152,
+      "peakTrackedBytes": 2497572
+    },
+    {
+      "precision": "int8",
+      "layer": "diffusion_module.process_r",
+      "inputShape": [
+        7,
+        3
+      ],
+      "outputShape": [
+        7,
+        128
+      ],
+      "maxAbsDiff": 0.0189971923828125,
+      "rmse": 0.004304010312051899,
+      "cosineSim": 0.9999972810611831,
+      "kernelParity": {
+        "maxAbsDiff": 4.76837158203125e-7,
+        "rmse": 7.912103576122607e-8,
+        "cosineSim": 0.9999999999999994
+      },
+      "medianDispatchRoundtripMs": 3.1999998092651367,
+      "packedWeightBytes": 896,
+      "peakTrackedBytes": 8184
+    },
+    {
+      "precision": "int8",
+      "layer": "token_initializer.atom_1d_embedder_1.embedders.ref_atom_name_chars",
+      "inputShape": [
+        3,
+        256
+      ],
+      "outputShape": [
+        3,
+        384
+      ],
+      "maxAbsDiff": 0.00000762939453125,
+      "rmse": 0.0000010679237329795429,
+      "cosineSim": 0.9999999999999494,
+      "kernelParity": {
+        "maxAbsDiff": 0.00000762939453125,
+        "rmse": 0.0000010679237329795429,
+        "cosineSim": 0.9999999999999494
+      },
+      "medianDispatchRoundtripMs": 2.6999998092651367,
+      "packedWeightBytes": 393216,
+      "peakTrackedBytes": 405540
+    },
+    {
+      "precision": "int8",
+      "layer": "token_initializer.transition_post_token.linear_1",
+      "inputShape": [
+        5,
+        384
+      ],
+      "outputShape": [
+        5,
+        768
+      ],
+      "maxAbsDiff": 0.11533814668655396,
+      "rmse": 0.027045411155796693,
+      "cosineSim": 0.9999725024680424,
+      "kernelParity": {
+        "maxAbsDiff": 0.00001049041748046875,
+        "rmse": 0.000001254040428535992,
+        "cosineSim": 0.999999999999938
+      },
+      "medianDispatchRoundtripMs": 2.700000762939453,
+      "packedWeightBytes": 297984,
+      "peakTrackedBytes": 405540
+    },
+    {
+      "precision": "int8",
+      "layer": "diffusion_module.diffusion_transformer.blocks.0.transition_block.linear_1",
+      "inputShape": [
+        9,
+        768
+      ],
+      "outputShape": [
+        9,
+        1536
+      ],
+      "maxAbsDiff": 0.35257625579833984,
+      "rmse": 0.03801105341796761,
+      "cosineSim": 0.9999399726424991,
+      "kernelParity": {
+        "maxAbsDiff": 0.0000247955322265625,
+        "rmse": 0.0000018142526464528474,
+        "cosineSim": 0.9999999999998456
+      },
+      "medianDispatchRoundtripMs": 2.6999998092651367,
+      "packedWeightBytes": 1185792,
+      "peakTrackedBytes": 1324068
+    },
+    {
+      "precision": "int8",
+      "layer": "diffusion_module.sequence_head.linear",
+      "inputShape": [
+        2,
+        768
+      ],
+      "outputShape": [
+        2,
+        32
+      ],
+      "maxAbsDiff": 0.3301734924316406,
+      "rmse": 0.10886146862612442,
+      "cosineSim": 0.9980260759174514,
+      "kernelParity": {
+        "maxAbsDiff": 0.000002384185791015625,
+        "rmse": 7.361856065277139e-7,
+        "cosineSim": 0.9999999999999086
+      },
+      "medianDispatchRoundtripMs": 3.1999998092651367,
+      "packedWeightBytes": 24704,
+      "peakTrackedBytes": 1324068
+    }
+  ],
+  "weightResidency": [
+    {
+      "precision": "fp32",
+      "packedWeightBytes": 672160072,
+      "tensors": 806,
+      "loadMs": 10601.699999809265,
+      "maxBufferSize": 4294967292,
+      "maxStorageBufferBindingSize": 2147483644
+    },
+    {
+      "precision": "fp16",
+      "packedWeightBytes": 336768744,
+      "tensors": 806,
+      "loadMs": 5627.199999809265,
+      "maxBufferSize": 4294967292,
+      "maxStorageBufferBindingSize": 2147483644
+    },
+    {
+      "precision": "int8",
+      "packedWeightBytes": 170199268,
+      "tensors": 806,
+      "loadMs": 2996.300000190735,
+      "maxBufferSize": 4294967292,
+      "maxStorageBufferBindingSize": 2147483644
+    }
+  ],
+  "demoLayer": true,
+  "networkReads": 3
+}

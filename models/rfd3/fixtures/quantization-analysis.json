@@ -1,0 +1,194 @@
+[
+  {
+    "precision": "fp16",
+    "case": "atomic-motif",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.003955841064453125,
+    "rmse": 0.001410625703672992,
+    "cosineSim": 0.9999997832871137
+  },
+  {
+    "precision": "fp16",
+    "case": "atomic-motif",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.444793701171875,
+    "rmse": 0.13680550914964593,
+    "cosineSim": 0.9999999114423619
+  },
+  {
+    "precision": "fp16",
+    "case": "dna",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0020813941955566406,
+    "rmse": 0.0006531933723030534,
+    "cosineSim": 0.9999999791388289
+  },
+  {
+    "precision": "fp16",
+    "case": "dna",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.750244140625,
+    "rmse": 0.16461490922038777,
+    "cosineSim": 0.9999998974061334
+  },
+  {
+    "precision": "fp16",
+    "case": "ligand",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00209808349609375,
+    "rmse": 0.0004877120006699124,
+    "cosineSim": 0.999999986932159
+  },
+  {
+    "precision": "fp16",
+    "case": "ligand",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.37432861328125,
+    "rmse": 0.10684845458358402,
+    "cosineSim": 0.9999999856271979
+  },
+  {
+    "precision": "fp16",
+    "case": "monomer",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0025148391723632812,
+    "rmse": 0.0008127436450948729,
+    "cosineSim": 0.9999999064046904
+  },
+  {
+    "precision": "fp16",
+    "case": "monomer",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.42547607421875,
+    "rmse": 0.10139442874672651,
+    "cosineSim": 0.9999999426837537
+  },
+  {
+    "precision": "int8",
+    "case": "atomic-motif",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.19645977020263672,
+    "rmse": 0.09115944537484698,
+    "cosineSim": 0.9990887937138011
+  },
+  {
+    "precision": "int8",
+    "case": "atomic-motif",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 40.301025390625,
+    "rmse": 10.350686535015079,
+    "cosineSim": 0.999209612717922
+  },
+  {
+    "precision": "int8",
+    "case": "dna",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.09109210968017578,
+    "rmse": 0.0355924892353801,
+    "cosineSim": 0.9999648169238804
+  },
+  {
+    "precision": "int8",
+    "case": "dna",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 41.732177734375,
+    "rmse": 13.212441637336958,
+    "cosineSim": 0.999223065387681
+  },
+  {
+    "precision": "int8",
+    "case": "ligand",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.13617271184921265,
+    "rmse": 0.04779510278758629,
+    "cosineSim": 0.9998805779838529
+  },
+  {
+    "precision": "int8",
+    "case": "ligand",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 52.219146728515625,
+    "rmse": 5.6303851084668795,
+    "cosineSim": 0.9997642955083423
+  },
+  {
+    "precision": "int8",
+    "case": "monomer",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.1401042938232422,
+    "rmse": 0.05862265353865485,
+    "cosineSim": 0.9995095225959347
+  },
+  {
+    "precision": "int8",
+    "case": "monomer",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 60.58329772949219,
+    "rmse": 17.266285314022326,
+    "cosineSim": 0.9975306989904871
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "atomic-motif",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.1407771110534668,
+    "rmse": 0.0713913187434183,
+    "cosineSim": 0.9994509341445434
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "atomic-motif",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 19.68975830078125,
+    "rmse": 6.896872826837268,
+    "cosineSim": 0.9997903790310637
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "dna",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.07653093338012695,
+    "rmse": 0.030824948502799546,
+    "cosineSim": 0.9999591545869835
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "dna",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 27.450836181640625,
+    "rmse": 8.745086376047222,
+    "cosineSim": 0.9997704828166378
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "ligand",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.06057983636856079,
+    "rmse": 0.02094615858220796,
+    "cosineSim": 0.9999785716964872
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "ligand",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 21.53387451171875,
+    "rmse": 4.540338738794229,
+    "cosineSim": 0.9999350852625248
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "monomer",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0780181884765625,
+    "rmse": 0.02771090463258893,
+    "cosineSim": 0.9998868821707237
+  },
+  {
+    "precision": "int8-fp32-output",
+    "case": "monomer",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 35.062538146972656,
+    "rmse": 13.312281562108788,
+    "cosineSim": 0.9992528480261098
+  }
+]

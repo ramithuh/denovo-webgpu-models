@@ -1,0 +1,26 @@
+{
+  "atomworks_version": "3.0.4",
+  "biotite_version": "1.6.0",
+  "case_seed_offset": 100,
+  "checkpoint_sha256": "9b3f85923e0d51e9453e15cdd2f8c666e7ce096a60577f57d11bbc54ae6d67c1",
+  "device": "cuda",
+  "linear_cases": [
+    "linear-0.json",
+    "linear-1.json",
+    "linear-2.json",
+    "linear-3.json",
+    "linear-4.json"
+  ],
+  "model_cases": [
+    "monomer.json",
+    "cyclic.json",
+    "atomic-motif.json"
+  ],
+  "precision": "FP32; TF32 disabled; forced BF16 disabled; eager torch kernels",
+  "recycles": 2,
+  "seed": 20261123,
+  "state_branch": "shadow",
+  "torch_version": "2.10.0+cu130",
+  "trajectory_seed_offset": 10000,
+  "upstream_commit": "a13b299a05897b951ea28b65e977eebb984380bc"
+}

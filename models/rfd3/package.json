@@ -1,0 +1,32 @@
+{
+  "name": "@denovo/rfd3-browser",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./shard": "./shared/shard.js",
+    "./structure": "./shared/structure.js",
+    "./resources": "./webgpu/resources.js",
+    "./cpu": "./cpu/index.js",
+    "./features": "./shared/features.js",
+    "./sampler": "./shared/sampler.js",
+    "./weights": "./shared/weights.js",
+    "./packed-linear": "./webgpu/linear.js",
+    "./gpu-weights": "./webgpu/weights.js",
+    ".": "./webgpu/index.js",
+    "./webgpu": "./webgpu/index.js",
+    "./input": "./shared/input.js",
+    "./alignment": "./shared/alignment.js",
+    "./symmetry": "./shared/symmetry.js"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "test:gpu": "node --test --test-concurrency=1 test/hardware.test.mjs test/model-gpu.test.mjs test/benchmark-gpu.test.mjs test/demo-gpu.test.mjs test/release-gpu.test.mjs",
+    "test:cpu": "node --test --test-concurrency=1 test/features.test.mjs test/input.test.mjs test/alignment.test.mjs test/initializer.test.mjs test/denoiser.test.mjs test/sampler.test.mjs",
+    "serve": "node tools/serve.mjs",
+    "export:weights": "/home/ruh/miniconda3/envs/foundry/bin/python -B tools/export_weights.py",
+    "oracle": "/home/ruh/miniconda3/envs/foundry/bin/python -B tools/generate_oracle.py --trajectory",
+    "oracle:conditioned": "/home/ruh/miniconda3/envs/foundry/bin/python -B tools/generate_oracle.py --specifications fixtures/pass2-specifications.json --output fixtures/oracle-pass2",
+    "summarize": "node tools/summarize.mjs"
+  },
+  "version": "0.2.0"
+}

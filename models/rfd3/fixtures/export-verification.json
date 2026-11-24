@@ -1,0 +1,32 @@
+{
+  "checkpoint_sha256": "9b3f85923e0d51e9453e15cdd2f8c666e7ce096a60577f57d11bbc54ae6d67c1",
+  "results": [
+    {
+      "all_shas_valid": true,
+      "elementwise_match": true,
+      "precision": "fp32",
+      "reader": "safetensors 0.6.2",
+      "shards": 29,
+      "tensors": 806,
+      "total_bytes": 672279616
+    },
+    {
+      "all_shas_valid": true,
+      "elementwise_match": true,
+      "precision": "fp16",
+      "reader": "safetensors 0.6.2",
+      "shards": 14,
+      "tensors": 806,
+      "total_bytes": 336887416
+    },
+    {
+      "all_shas_valid": true,
+      "elementwise_match": true,
+      "precision": "int8",
+      "reader": "safetensors 0.6.2",
+      "shards": 7,
+      "tensors": 806,
+      "total_bytes": 170394484
+    }
+  ]
+}

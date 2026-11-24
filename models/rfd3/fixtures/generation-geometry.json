@@ -1,0 +1,979 @@
+[
+  {
+    "precision": "fp32",
+    "case": "monomer",
+    "tokens": 64,
+    "atoms": 896,
+    "updates": 50,
+    "warmStepMs": [
+      101.89999961853027,
+      101.80000019073486,
+      100.90000057220459
+    ],
+    "warmStepMeanMs": 101.53333346048991,
+    "wallSeconds": 8.07960000038147,
+    "peakBytes": 1056140872,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 463,
+    "proteinResidues": 64,
+    "biopythonAtoms": 463,
+    "chainBreaks": 0,
+    "caMean": 3.8166314685155474,
+    "caMin": 3.7628698348999023,
+    "caMax": 3.8660264015197754,
+    "peptideCNMean": 1.3242337382028972,
+    "peptideCNMax": 1.3532229661941528,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 4,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 28,
+      "coil": 36
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        36,
+        462,
+        2.8019373416900635
+      ],
+      [
+        42,
+        52,
+        2.4023354053497314
+      ],
+      [
+        163,
+        323,
+        2.6403629779815674
+      ],
+      [
+        174,
+        347,
+        2.648674726486206
+      ]
+    ]
+  },
+  {
+    "precision": "fp32",
+    "case": "motif",
+    "tokens": 64,
+    "atoms": 887,
+    "updates": 50,
+    "warmStepMs": [
+      99.89999961853027,
+      98.90000057220459,
+      96.69999980926514
+    ],
+    "warmStepMeanMs": 98.5,
+    "wallSeconds": 7.550199999809265,
+    "peakBytes": 1051476532,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 433,
+    "proteinResidues": 64,
+    "biopythonAtoms": 433,
+    "chainBreaks": 0,
+    "caMean": 3.781719941941519,
+    "caMin": 3.7306125164031982,
+    "caMax": 3.843989133834839,
+    "peptideCNMean": 1.3219696510405767,
+    "peptideCNMax": 1.4691256284713745,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 12,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 44,
+      "coil": 20
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        18,
+        160,
+        2.6458892822265625
+      ],
+      [
+        36,
+        139,
+        2.581207752227783
+      ],
+      [
+        45,
+        129,
+        2.602921485900879
+      ],
+      [
+        48,
+        126,
+        2.6437509059906006
+      ],
+      [
+        134,
+        199,
+        2.6599247455596924
+      ],
+      [
+        149,
+        153,
+        2.800261974334717
+      ],
+      [
+        215,
+        289,
+        2.6518256664276123
+      ],
+      [
+        241,
+        265,
+        2.6046230792999268
+      ],
+      [
+        244,
+        251,
+        2.803579330444336
+      ],
+      [
+        287,
+        395,
+        2.6172921657562256
+      ],
+      [
+        294,
+        386,
+        2.6090126037597656
+      ],
+      [
+        311,
+        372,
+        2.876708745956421
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "monomer",
+    "tokens": 64,
+    "atoms": 896,
+    "updates": 50,
+    "warmStepMs": [
+      102.40000057220459,
+      103.69999980926514,
+      103.89999961853027
+    ],
+    "warmStepMeanMs": 103.33333333333333,
+    "wallSeconds": 5.9975,
+    "peakBytes": 720749544,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 463,
+    "proteinResidues": 64,
+    "biopythonAtoms": 463,
+    "chainBreaks": 0,
+    "caMean": 3.818105213225834,
+    "caMin": 3.7639479637145996,
+    "caMax": 3.867676258087158,
+    "peptideCNMean": 1.3248833436814567,
+    "peptideCNMax": 1.353623867034912,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 7,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 28,
+      "coil": 36
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        36,
+        462,
+        2.799367904663086
+      ],
+      [
+        42,
+        52,
+        2.3869545459747314
+      ],
+      [
+        63,
+        110,
+        2.873558759689331
+      ],
+      [
+        65,
+        110,
+        2.7267727851867676
+      ],
+      [
+        111,
+        130,
+        2.682608127593994
+      ],
+      [
+        163,
+        323,
+        2.6648101806640625
+      ],
+      [
+        174,
+        347,
+        2.542783498764038
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "motif",
+    "tokens": 64,
+    "atoms": 887,
+    "updates": 50,
+    "warmStepMs": [
+      114.5,
+      114.80000019073486,
+      111.10000038146973
+    ],
+    "warmStepMeanMs": 113.46666685740153,
+    "wallSeconds": 5.481199999809265,
+    "peakBytes": 716085204,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 434,
+    "proteinResidues": 64,
+    "biopythonAtoms": 434,
+    "chainBreaks": 0,
+    "caMean": 3.7815800734928677,
+    "caMin": 3.726677894592285,
+    "caMax": 3.8433315753936768,
+    "peptideCNMean": 1.3216023180219862,
+    "peptideCNMax": 1.4660159349441528,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 11,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 44,
+      "coil": 20
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        18,
+        160,
+        2.6161160469055176
+      ],
+      [
+        36,
+        139,
+        2.5757148265838623
+      ],
+      [
+        45,
+        129,
+        2.605808973312378
+      ],
+      [
+        48,
+        126,
+        2.6469192504882812
+      ],
+      [
+        134,
+        199,
+        2.6638619899749756
+      ],
+      [
+        149,
+        153,
+        2.798762798309326
+      ],
+      [
+        215,
+        289,
+        2.6697447299957275
+      ],
+      [
+        241,
+        265,
+        2.6078040599823
+      ],
+      [
+        244,
+        251,
+        2.8026294708251953
+      ],
+      [
+        287,
+        396,
+        2.618828773498535
+      ],
+      [
+        294,
+        387,
+        2.6158041954040527
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "ligand",
+    "tokens": 55,
+    "atoms": 367,
+    "updates": 20,
+    "warmStepMs": [
+      81.90000057220459,
+      78.19999980926514,
+      79.69999980926514
+    ],
+    "warmStepMeanMs": 79.93333339691162,
+    "wallSeconds": 3.006,
+    "peakBytes": 485773080,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 183,
+    "proteinResidues": 24,
+    "biopythonAtoms": 183,
+    "chainBreaks": 0,
+    "caMean": 3.804385454758354,
+    "caMin": 3.768411636352539,
+    "caMax": 3.8498082160949707,
+    "peptideCNMean": 1.3218466613603674,
+    "peptideCNMax": 1.3629086017608643,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 5,
+    "secondaryStructurePSEA": {
+      "helix": 15,
+      "strand": 0,
+      "coil": 9
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        50,
+        175,
+        2.719419002532959
+      ],
+      [
+        153,
+        157,
+        2.5458123683929443
+      ],
+      [
+        155,
+        158,
+        2.5417633056640625
+      ],
+      [
+        157,
+        162,
+        2.5459494590759277
+      ],
+      [
+        158,
+        161,
+        2.547051191329956
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "dna",
+    "tokens": 25,
+    "atoms": 358,
+    "updates": 20,
+    "warmStepMs": [
+      74.89999961853027,
+      77,
+      75.30000019073486
+    ],
+    "warmStepMeanMs": 75.73333326975505,
+    "wallSeconds": 2.62410000038147,
+    "peakBytes": 414219612,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 147,
+    "proteinResidues": 24,
+    "biopythonAtoms": 147,
+    "chainBreaks": 0,
+    "caMean": 3.778643048327902,
+    "caMin": 3.759202003479004,
+    "caMax": 3.7998318672180176,
+    "peptideCNMean": 1.3003621308699898,
+    "peptideCNMax": 1.3307380676269531,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 7,
+    "secondaryStructurePSEA": {
+      "helix": 14,
+      "strand": 0,
+      "coil": 10
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        11,
+        15,
+        2.777426242828369
+      ],
+      [
+        110,
+        127,
+        2.4703197479248047
+      ],
+      [
+        111,
+        126,
+        2.965660572052002
+      ],
+      [
+        111,
+        127,
+        2.2045395374298096
+      ],
+      [
+        111,
+        128,
+        2.734743356704712
+      ],
+      [
+        114,
+        127,
+        2.629061698913574
+      ],
+      [
+        114,
+        130,
+        2.4808719158172607
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "cyclic",
+    "tokens": 12,
+    "atoms": 168,
+    "updates": 30,
+    "warmStepMs": [
+      54.39999961853027,
+      51.70000076293945,
+      56.59999942779541
+    ],
+    "warmStepMeanMs": 54.23333326975504,
+    "wallSeconds": 3.2844000005722047,
+    "peakBytes": 360671452,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 64,
+    "proteinResidues": 12,
+    "biopythonAtoms": 64,
+    "chainBreaks": 0,
+    "caMean": 3.8289620226079766,
+    "caMin": 3.7816078662872314,
+    "caMax": 3.863833427429199,
+    "peptideCNMean": 1.313609079881148,
+    "peptideCNMax": 1.3259752988815308,
+    "cyclicClosure": {
+      "CN": 1.3264849185943604,
+      "CA": 3.842435121536255
+    },
+    "severeClashes": 0,
+    "vdwOverlapPairs": 0,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 0,
+      "coil": 12
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": []
+  },
+  {
+    "precision": "fp16",
+    "case": "hbond-exposure",
+    "tokens": 24,
+    "atoms": 327,
+    "updates": 20,
+    "warmStepMs": [
+      69,
+      76.09999942779541,
+      102.20000076293945
+    ],
+    "warmStepMeanMs": 82.43333339691162,
+    "wallSeconds": 2.6009000005722047,
+    "peakBytes": 404699700,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 123,
+    "proteinResidues": 24,
+    "biopythonAtoms": 123,
+    "chainBreaks": 0,
+    "caMean": 3.886013663333395,
+    "caMin": 3.8035197257995605,
+    "caMax": 3.9168505668640137,
+    "peptideCNMean": 1.3696507008179375,
+    "peptideCNMax": 1.4421144723892212,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 0,
+    "secondaryStructurePSEA": {
+      "helix": 22,
+      "strand": 0,
+      "coil": 2
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": []
+  },
+  {
+    "precision": "fp16",
+    "case": "unindexed",
+    "tokens": 25,
+    "atoms": 338,
+    "updates": 20,
+    "warmStepMs": [
+      76.40000057220459,
+      75.5,
+      76.90000057220459
+    ],
+    "warmStepMeanMs": 76.2666670481364,
+    "wallSeconds": 2.4425,
+    "peakBytes": 409367212,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "motifAssignments": [
+      {
+        "source": "A1",
+        "token": 4,
+        "chain": "A",
+        "residue": 5,
+        "insertionRmsd": 0.7589695487581899
+      }
+    ],
+    "outputAtoms": 149,
+    "proteinResidues": 24,
+    "biopythonAtoms": 149,
+    "chainBreaks": 0,
+    "caMean": 3.767804985461028,
+    "caMin": 3.5014922618865967,
+    "caMax": 3.8304128646850586,
+    "peptideCNMean": 1.3306821584701538,
+    "peptideCNMax": 1.5792908668518066,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 3,
+    "secondaryStructurePSEA": {
+      "helix": 7,
+      "strand": 10,
+      "coil": 7
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        14,
+        89,
+        2.6296308040618896
+      ],
+      [
+        17,
+        86,
+        2.413365364074707
+      ],
+      [
+        33,
+        73,
+        2.627500534057617
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "binder",
+    "tokens": 25,
+    "atoms": 341,
+    "updates": 20,
+    "warmStepMs": [
+      76.09999942779541,
+      75.60000038146973,
+      76.39999961853027
+    ],
+    "warmStepMeanMs": 76.03333314259847,
+    "wallSeconds": 2.446,
+    "peakBytes": 410082424,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 156,
+    "proteinResidues": 25,
+    "biopythonAtoms": 156,
+    "chainBreaks": 0,
+    "caMean": 3.7883824058201,
+    "caMin": 3.762490749359131,
+    "caMax": 3.814865827560425,
+    "peptideCNMean": 1.3129899242649907,
+    "peptideCNMax": 1.3546677827835083,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 1,
+    "secondaryStructurePSEA": {
+      "helix": 8,
+      "strand": 0,
+      "coil": 17
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        32,
+        135,
+        3.0331010818481445
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "rna",
+    "tokens": 25,
+    "atoms": 359,
+    "updates": 20,
+    "warmStepMs": [
+      79.40000057220459,
+      79.59999942779541,
+      77.5
+    ],
+    "warmStepMeanMs": 78.83333333333333,
+    "wallSeconds": 2.4026999998092653,
+    "peakBytes": 414467440,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 148,
+    "proteinResidues": 24,
+    "biopythonAtoms": 148,
+    "chainBreaks": 0,
+    "caMean": 3.77275158011395,
+    "caMin": 3.75830078125,
+    "caMax": 3.7865076065063477,
+    "peptideCNMean": 1.3148650915726372,
+    "peptideCNMax": 1.3323678970336914,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 3,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 11,
+      "coil": 13
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        42,
+        126,
+        2.591749906539917
+      ],
+      [
+        42,
+        127,
+        2.057380437850952
+      ],
+      [
+        43,
+        125,
+        2.662917375564575
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "realignment",
+    "tokens": 24,
+    "atoms": 327,
+    "updates": 20,
+    "warmStepMs": [
+      73.5,
+      74.30000019073486,
+      78.5
+    ],
+    "warmStepMeanMs": 75.43333339691162,
+    "wallSeconds": 1.5135,
+    "peakBytes": 404699700,
+    "finite": true,
+    "motifRmsd": 3.5766704697712766e-07,
+    "seed": 20261123,
+    "outputAtoms": 122,
+    "proteinResidues": 24,
+    "biopythonAtoms": 122,
+    "chainBreaks": 0,
+    "caMean": 3.809738791507223,
+    "caMin": 3.7564916610717773,
+    "caMax": 3.8626482486724854,
+    "peptideCNMean": 1.2979382846666419,
+    "peptideCNMax": 1.3409696817398071,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 1,
+    "secondaryStructurePSEA": {
+      "helix": 7,
+      "strand": 0,
+      "coil": 17
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        102,
+        106,
+        2.495615243911743
+      ]
+    ]
+  },
+  {
+    "precision": "fp16",
+    "case": "partial",
+    "tokens": 1,
+    "atoms": 5,
+    "updates": 5,
+    "warmStepMs": [
+      57.5,
+      57.10000038146973,
+      60.19999980926514
+    ],
+    "warmStepMeanMs": 58.26666673024496,
+    "wallSeconds": 0.5905,
+    "peakBytes": 337305064,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 5,
+    "proteinResidues": 1,
+    "biopythonAtoms": 5,
+    "chainBreaks": 0,
+    "caMean": null,
+    "caMin": null,
+    "caMax": null,
+    "peptideCNMean": null,
+    "peptideCNMax": null,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 0,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 0,
+      "coil": 1
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": []
+  },
+  {
+    "precision": "fp16",
+    "case": "symmetry",
+    "tokens": 24,
+    "atoms": 336,
+    "updates": 20,
+    "warmStepMs": [
+      70.10000038146973,
+      80.09999942779541,
+      75.40000057220459
+    ],
+    "warmStepMeanMs": 75.20000012715657,
+    "wallSeconds": 2.3390999994277952,
+    "peakBytes": 406797960,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 130,
+    "proteinResidues": 24,
+    "biopythonAtoms": 130,
+    "chainBreaks": 0,
+    "caMean": 3.8225440220399336,
+    "caMin": 3.7857372760772705,
+    "caMax": 3.874412775039673,
+    "peptideCNMean": 1.3201124343005093,
+    "peptideCNMax": 1.3516095876693726,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 3,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 0,
+      "coil": 24
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        17,
+        83,
+        2.81256365776062
+      ],
+      [
+        18,
+        83,
+        2.0589003562927246
+      ],
+      [
+        40,
+        126,
+        2.5340640544891357
+      ]
+    ]
+  },
+  {
+    "precision": "int8",
+    "case": "monomer",
+    "tokens": 64,
+    "atoms": 896,
+    "updates": 50,
+    "warmStepMs": [
+      96.5,
+      99.80000019073486,
+      98.19999980926514
+    ],
+    "warmStepMeanMs": 98.16666666666667,
+    "wallSeconds": 5.779300000190735,
+    "peakBytes": 554180068,
+    "finite": true,
+    "motifRmsd": null,
+    "seed": 20261123,
+    "outputAtoms": 485,
+    "proteinResidues": 64,
+    "biopythonAtoms": 485,
+    "chainBreaks": 0,
+    "caMean": 3.815450013629974,
+    "caMin": 3.7684786319732666,
+    "caMax": 3.861154794692993,
+    "peptideCNMean": 1.314795418391152,
+    "peptideCNMax": 1.3545808792114258,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 3,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 28,
+      "coil": 36
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        36,
+        484,
+        2.873375415802002
+      ],
+      [
+        126,
+        382,
+        2.507580041885376
+      ],
+      [
+        298,
+        438,
+        2.75028395652771
+      ]
+    ]
+  },
+  {
+    "precision": "int8",
+    "case": "motif",
+    "tokens": 64,
+    "atoms": 887,
+    "updates": 50,
+    "warmStepMs": [
+      108.30000019073486,
+      112,
+      104.30000019073486
+    ],
+    "warmStepMeanMs": 108.20000012715657,
+    "wallSeconds": 5.689900000572204,
+    "peakBytes": 549515728,
+    "finite": true,
+    "motifRmsd": 0,
+    "seed": 20261123,
+    "outputAtoms": 437,
+    "proteinResidues": 64,
+    "biopythonAtoms": 437,
+    "chainBreaks": 0,
+    "caMean": 3.780981605015104,
+    "caMin": 3.7180793285369873,
+    "caMax": 3.844888687133789,
+    "peptideCNMean": 1.3157399060234192,
+    "peptideCNMax": 1.46969473361969,
+    "cyclicClosure": null,
+    "severeClashes": 0,
+    "vdwOverlapPairs": 12,
+    "secondaryStructurePSEA": {
+      "helix": 0,
+      "strand": 44,
+      "coil": 20
+    },
+    "severeClashPairs": [],
+    "vdwOverlapPairsFirst20": [
+      [
+        18,
+        161,
+        2.6659913063049316
+      ],
+      [
+        36,
+        140,
+        2.590484142303467
+      ],
+      [
+        45,
+        129,
+        2.60990047454834
+      ],
+      [
+        48,
+        126,
+        2.644916534423828
+      ],
+      [
+        72,
+        113,
+        2.8071951866149902
+      ],
+      [
+        150,
+        154,
+        2.801365852355957
+      ],
+      [
+        213,
+        294,
+        2.6609787940979004
+      ],
+      [
+        216,
+        291,
+        2.64058780670166
+      ],
+      [
+        243,
+        267,
+        2.621155023574829
+      ],
+      [
+        289,
+        399,
+        2.6142756938934326
+      ],
+      [
+        296,
+        390,
+        2.604085922241211
+      ],
+      [
+        313,
+        374,
+        2.9194610118865967
+      ]
+    ]
+  }
+]

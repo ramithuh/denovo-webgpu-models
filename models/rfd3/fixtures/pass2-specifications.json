@@ -1,0 +1,83 @@
+{
+  "ligand": {
+    "length": "3",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/ligand.pdb",
+    "ligand": "ATP"
+  },
+  "dna": {
+    "contig": "3,/0,D1",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/dna.pdb"
+  },
+  "binder-hotspot": {
+    "contig": "3,/0,A1",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "select_hotspots": {
+      "A1": "CA,CB"
+    }
+  },
+  "unindexed": {
+    "length": "4",
+    "unindex": "A1",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "select_fixed_atoms": {
+      "A1": "N,CA"
+    }
+  },
+  "hbond-exposure": {
+    "contig": "1,A1,2",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "select_fixed_atoms": {
+      "A1": "N,CA"
+    },
+    "select_hbond_acceptor": {
+      "A1": "O"
+    },
+    "select_hbond_donor": {
+      "A1": "N"
+    },
+    "select_exposed": {
+      "A1": "CB"
+    },
+    "select_partially_buried": {
+      "A1": "C"
+    }
+  },
+  "multichain": {
+    "contig": "8,/0,8,/0,8,/0,8",
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb"
+  },
+  "fixed-backbone": {
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "contig": "A1",
+    "select_fixed_atoms": {
+      "A1": "BKBN"
+    }
+  },
+  "sequence-redesign": {
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "contig": "A1",
+    "select_fixed_atoms": {
+      "A1": "BKBN"
+    },
+    "select_unfixed_sequence": true
+  },
+  "partial": {
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/conditioning.pdb",
+    "contig": "A1",
+    "select_fixed_atoms": false,
+    "partial_t": 5.0
+  },
+  "rna": {
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/rna.pdb",
+    "contig": "3,/0,R1"
+  },
+  "atomic-triad": {
+    "input": "/home/ruh/ramith/personal_projects/denovo-webgpu-models/models/rfd3/fixtures/triad.pdb",
+    "contig": "1,A1,1,A2,1,A3,1",
+    "select_fixed_atoms": {
+      "A1": "ND1,NE2",
+      "A2": "OG",
+      "A3": "OD1,OD2"
+    }
+  }
+}

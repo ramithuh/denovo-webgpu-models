@@ -1,0 +1,16 @@
+import { parsePDB } from '../shared/structure.js';
+const $=id=>document.getElementById(id),form=$('generate');let worker,urls=[];
+function clearOutput(){urls.forEach(URL.revokeObjectURL);urls=[];for(const id of ['pdb','cif']){$(id).hidden=true;$(id).removeAttribute('href');}}
+function finish(){ $('start').disabled=false;$('cancel').disabled=true;}
+$('mode').onchange=()=>{document.body.classList.toggle('motif-mode',$('mode').value==='motif');$('structure').required=$('mode').value==='motif';$('length').disabled=$('mode').value==='motif';};
+function preview(pdb){const canvas=$('preview'),ctx=canvas.getContext('2d'),scale=devicePixelRatio||1;canvas.width=canvas.clientWidth*scale;canvas.height=350*scale;ctx.scale(scale,scale);ctx.clearRect(0,0,canvas.clientWidth,350);const points=parsePDB(pdb).filter(r=>r.label_atom_id==='CA').map(r=>({x:+r.cartn_x,y:+r.cartn_y,z:+r.cartn_z,chain:r.auth_asym_id}));if(!points.length)return;const xx=points.map(p=>p.x),yy=points.map(p=>p.y),factor=Math.min((canvas.clientWidth-60)/(Math.max(...xx)-Math.min(...xx)||1),290/(Math.max(...yy)-Math.min(...yy)||1)),cx=(Math.max(...xx)+Math.min(...xx))/2,cy=(Math.max(...yy)+Math.min(...yy))/2;ctx.lineWidth=2;for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i];if(a.chain!==b.chain)continue;ctx.strokeStyle=`hsl(${160+i/points.length*70} 65% 65%)`;ctx.beginPath();ctx.moveTo((a.x-cx)*factor+canvas.clientWidth/2,175-(a.y-cy)*factor);ctx.lineTo((b.x-cx)*factor+canvas.clientWidth/2,175-(b.y-cy)*factor);ctx.stroke();}}
+form.onsubmit=async event=>{event.preventDefault();clearOutput();$('start').disabled=true;$('cancel').disabled=false;$('progress').value=0;
+ try{const options={mode:$('mode').value,length:Number($('length').value),steps:Number($('steps').value)+1,n_recycle:Number($('recycles').value),seed:$('seed').value===''?undefined:Number($('seed').value)};
+ if(options.mode==='motif'){const file=$('structure').files[0];if(!file)throw new Error('Select a motif structure.');options.structure=await file.text();options.contig=$('contig').value;options.fixedAtoms=JSON.parse($('fixed').value);}
+ worker??=new Worker(new URL('./generation-worker.js',import.meta.url),{type:'module'});
+ worker.onmessage=({data})=>{if(data.status)$('status').textContent=data.status;if(data.step){$('progress').max=data.total;$('progress').value=data.step;}if(data.error){$('status').textContent=data.error;finish();}if(data.done){finish();$('seed').value=data.seed;$('status').textContent=`Finished in ${data.seconds.toFixed(2)} s · seed ${data.seed}\nPeak GPU buffers ${(data.peakBytes/1e9).toFixed(2)} GB · ${data.adapter}`;for(const [id,text]of [['pdb',data.pdb],['cif',data.mmcif]]){const url=URL.createObjectURL(new Blob([text],{type:'text/plain'}));urls.push(url);$(id).href=url;$(id).download=`rfd3-${data.seed}.${id}`;$(id).hidden=false;}preview(data.pdb);}};
+ worker.onerror=e=>{$('status').textContent=e.message;worker.terminate();worker=null;finish();};worker.postMessage({precision:$('precision').value,options});
+ }catch(error){$('status').textContent=error.message;finish();}
+};
+$('cancel').onclick=()=>{worker?.postMessage({cancel:true});$('status').textContent='Cancelling after the current GPU operation…';$('cancel').disabled=true;};
+addEventListener('beforeunload',()=>{worker?.terminate();urls.forEach(URL.revokeObjectURL);});

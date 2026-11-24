@@ -1,0 +1,367 @@
+[
+  {
+    "case": "monomer",
+    "tensor": "trajectory_final",
+    "maxAbsDiff": 0.0003662109375,
+    "rmse": 0.00007451937869740268,
+    "cosineSim": 0.999999999999989,
+    "cpuTrajectoryMs": 10623.304174999997
+  },
+  {
+    "case": "monomer",
+    "tensor": "trajectory_denoised_0",
+    "maxAbsDiff": 0.000008225440979003906,
+    "rmse": 0.0000030612717325805112,
+    "cosineSim": 0.9999999999987621
+  },
+  {
+    "case": "monomer",
+    "tensor": "trajectory_denoised_1",
+    "maxAbsDiff": 0.0001468658447265625,
+    "rmse": 0.000046327899471281405,
+    "cosineSim": 0.9999999999989314
+  },
+  {
+    "case": "monomer",
+    "tensor": "trajectory_denoised_2",
+    "maxAbsDiff": 0.0003662109375,
+    "rmse": 0.0000805927431477533,
+    "cosineSim": 0.9999999999999909
+  },
+  {
+    "case": "monomer",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00001049041748046875,
+    "rmse": 0.000003944621658529111,
+    "cosineSim": 0.9999999999977068,
+    "cpuStepMs": 3715.719623000001
+  },
+  {
+    "case": "monomer",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.0012836456298828125,
+    "rmse": 0.00034286495198673284,
+    "cosineSim": 0.9999999999989694,
+    "cpuStepMs": 3715.719623000001
+  },
+  {
+    "case": "monomer",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3715.719623000001
+  },
+  {
+    "case": "cyclic",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0000095367431640625,
+    "rmse": 0.0000030374463315861955,
+    "cosineSim": 0.9999999999994275,
+    "cpuStepMs": 3661.3872339999944
+  },
+  {
+    "case": "cyclic",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.001708984375,
+    "rmse": 0.00040598336335617496,
+    "cosineSim": 0.9999999999989798,
+    "cpuStepMs": 3661.3872339999944
+  },
+  {
+    "case": "cyclic",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3661.3872339999944
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00001049041748046875,
+    "rmse": 0.0000034532426841015953,
+    "cosineSim": 0.9999999999986936,
+    "cpuStepMs": 3582.1604949999964
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.0020751953125,
+    "rmse": 0.0005467307318576064,
+    "cosineSim": 0.9999999999980028,
+    "cpuStepMs": 3582.1604949999964
+  },
+  {
+    "case": "atomic-motif",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3582.1604949999964
+  },
+  {
+    "case": "ligand",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.000019073486328125,
+    "rmse": 0.000003555739683129073,
+    "cosineSim": 0.9999999999994085,
+    "cpuStepMs": 32335.93743199999
+  },
+  {
+    "case": "ligand",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.004058837890625,
+    "rmse": 0.0004719845867350298,
+    "cosineSim": 0.9999999999982719,
+    "cpuStepMs": 32335.93743199999
+  },
+  {
+    "case": "ligand",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 32335.93743199999
+  },
+  {
+    "case": "dna",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00009250640869140625,
+    "rmse": 0.00004362525344928843,
+    "cosineSim": 0.9999999999074071,
+    "cpuStepMs": 3766.753579000011
+  },
+  {
+    "case": "dna",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.0064697265625,
+    "rmse": 0.0015897010812931092,
+    "cosineSim": 0.9999999999895723,
+    "cpuStepMs": 3766.753579000011
+  },
+  {
+    "case": "dna",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3766.753579000011
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0000667572021484375,
+    "rmse": 0.000035051160882821876,
+    "cosineSim": 0.9999999999180101,
+    "cpuStepMs": 3586.244596999997
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.00927734375,
+    "rmse": 0.003476957295617872,
+    "cosineSim": 0.9999999999415591,
+    "cpuStepMs": 3586.244596999997
+  },
+  {
+    "case": "binder-hotspot",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3586.244596999997
+  },
+  {
+    "case": "unindexed",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00001621246337890625,
+    "rmse": 0.000004279986186586158,
+    "cosineSim": 0.9999999999983067,
+    "cpuStepMs": 4504.175879999995
+  },
+  {
+    "case": "unindexed",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.00164794921875,
+    "rmse": 0.00035484767119591204,
+    "cosineSim": 0.9999999999994013,
+    "cpuStepMs": 4504.175879999995
+  },
+  {
+    "case": "unindexed",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 4504.175879999995
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0000152587890625,
+    "rmse": 0.000005432213812200174,
+    "cosineSim": 0.9999999999978962,
+    "cpuStepMs": 3574.992412000007
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.002197265625,
+    "rmse": 0.0006369320993241012,
+    "cosineSim": 0.9999999999966989,
+    "cpuStepMs": 3574.992412000007
+  },
+  {
+    "case": "hbond-exposure",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3574.992412000007
+  },
+  {
+    "case": "multichain",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0000209808349609375,
+    "rmse": 0.000007510280142025244,
+    "cosineSim": 0.9999999999960273,
+    "cpuStepMs": 38782.979821
+  },
+  {
+    "case": "multichain",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.007537841796875,
+    "rmse": 0.0010429026221851787,
+    "cosineSim": 0.9999999999919481,
+    "cpuStepMs": 38782.979821
+  },
+  {
+    "case": "multichain",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 38782.979821
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.000001430511474609375,
+    "rmse": 6.397441799640054e-7,
+    "cosineSim": 0.9999999999997446,
+    "cpuStepMs": 815.5080580000067
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.00055694580078125,
+    "rmse": 0.0002545902633315691,
+    "cosineSim": 0.9999999999996871,
+    "cpuStepMs": 815.5080580000067
+  },
+  {
+    "case": "fixed-backbone",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 815.5080580000067
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00000762939453125,
+    "rmse": 0.000002014653158311116,
+    "cosineSim": 0.9999999999985624,
+    "cpuStepMs": 894.6961200000078
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.00115966796875,
+    "rmse": 0.0003343203803501666,
+    "cosineSim": 0.9999999999995723,
+    "cpuStepMs": 894.6961200000078
+  },
+  {
+    "case": "sequence-redesign",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 894.6961200000078
+  },
+  {
+    "case": "partial",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.0000095367431640625,
+    "rmse": 0.00000453872834560043,
+    "cosineSim": 0.9999999999998608,
+    "cpuStepMs": 816.5515319999831
+  },
+  {
+    "case": "partial",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.0018134117126464844,
+    "rmse": 0.0005031995820091548,
+    "cosineSim": 0.9999999999983609,
+    "cpuStepMs": 816.5515319999831
+  },
+  {
+    "case": "partial",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 816.5515319999831
+  },
+  {
+    "case": "rna",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.00037670135498046875,
+    "rmse": 0.00015432743671622506,
+    "cosineSim": 0.9999999990497761,
+    "cpuStepMs": 3781.6360219999915
+  },
+  {
+    "case": "rna",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.05861663818359375,
+    "rmse": 0.013258143725675646,
+    "cosineSim": 0.9999999990196935,
+    "cpuStepMs": 3781.6360219999915
+  },
+  {
+    "case": "rna",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 3781.6360219999915
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "X_L",
+    "maxAbsDiff": 0.000019073486328125,
+    "rmse": 0.000007256898394036211,
+    "cosineSim": 0.9999999999963723,
+    "cpuStepMs": 6388.918861000013
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "sequence_logits_I",
+    "maxAbsDiff": 0.00262451171875,
+    "rmse": 0.0006472892362579096,
+    "cosineSim": 0.9999999999987006,
+    "cpuStepMs": 6388.918861000013
+  },
+  {
+    "case": "atomic-triad",
+    "tensor": "sequence_indices_I",
+    "maxAbsDiff": 0,
+    "rmse": 0,
+    "cosineSim": 1,
+    "cpuStepMs": 6388.918861000013
+  }
+]

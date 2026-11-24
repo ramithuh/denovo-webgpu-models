@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFD3 · Browser protein design</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0c161b;color:#e2eeef}body{max-width:1000px;margin:48px auto;padding:0 24px}h1{font-weight:550;letter-spacing:-.04em;font-size:2.8rem;margin-bottom:8px}p{line-height:1.6;color:#acc1c9}form{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}label{display:grid;gap:8px;font-size:.9rem}input,select,button,textarea{font:inherit;border:1px solid #3d555f;border-radius:6px;padding:10px;background:#17272e;color:inherit}button{cursor:pointer;background:#196d62}button:disabled{opacity:.45;cursor:default}.wide{grid-column:1/-1}.motif{display:none}body.motif-mode .motif{display:grid}textarea{min-height:70px}progress{width:100%;accent-color:#57d9bc}canvas{width:100%;height:350px;border:1px solid #3d555f;border-radius:8px;background:#102028}nav{display:flex;gap:12px;margin:20px 0}a{color:#79e3ce}#status{white-space:pre-wrap}small{color:#a2b9c0}details{margin-top:24px}@media(max-width:650px){form{grid-template-columns:1fr}h1{font-size:2.2rem}}
+</style>
+<main>
+ <small>RFD3 / PURE WEBGPU</small><h1>Design a protein here.</h1>
+ <p>Generate a monomer or scaffold an atomic motif on your GPU. Structures and input files stay in this browser. FP16 weights download about 337 MB on first use.</p>
+ <form id="generate">
+  <label>Design mode<select id="mode"><option value="unconditional">Unconditional monomer</option><option value="motif">Atomic motif scaffold</option></select></label>
+  <label>Precision<select id="precision"><option value="fp16">FP16</option><option value="fp32">FP32 reference</option><option value="int8">INT8 · experimental</option></select></label>
+  <label>Seed<input id="seed" type="number" min="0" max="4294967295" value="20261123"></label>
+  <label>Residues<input id="length" type="number" min="3" max="100" value="64"></label>
+  <label>Diffusion updates<input id="steps" type="number" min="20" max="200" value="50"></label>
+  <label>Recycles<input id="recycles" type="number" min="1" max="8" value="2"></label>
+  <label class="motif wide">Motif PDB or mmCIF<input id="structure" type="file" accept=".pdb,.cif,.mmcif,.ent"></label>
+  <label class="motif wide">Contig (numbers add residues; source IDs select residues)<input id="contig" value="30,A1,33"></label>
+  <label class="motif wide">Fixed atoms (JSON residue → atom names)<textarea id="fixed">{"A1":"N,CA,C,O"}</textarea></label>
+  <div class="wide"><button id="start">Generate</button> <button type="button" id="cancel" disabled>Cancel</button></div>
+ </form>
+ <progress id="progress" value="0" max="1"></progress><p id="status" role="status">Ready. Requires a hardware WebGPU browser.</p>
+ <canvas id="preview" aria-label="Generated protein backbone preview"></canvas>
+ <nav><a id="pdb" hidden>Download PDB</a><a id="cif" hidden>Download mmCIF</a><a href="../README_WEBGPU.md">Measurements and supported inputs</a></nav>
+ <p><small>Generated structures are model predictions. Geometry varies by seed and conditioning. INT8 changes sequence predictions; use FP32 or FP16 for the validated workflows.</small></p>
+</main><script type="module" src="./demo.js"></script></html>
